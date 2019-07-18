@@ -1,0 +1,212 @@
+MetaInfo {
+    Type {
+        name: "TaoQuick.BasicComponent.Button.TGradientBtn"
+        icon: "images/TGradientBtn.png"
+
+        ItemLibraryEntry {
+            name: "TGradientBtn"
+            category: "TaoQuick - Buttons"
+            libraryIcon: "images/TGradientBtn.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Button.TImageBtn"
+        icon: "images/TImageBtn.png"
+
+        ItemLibraryEntry {
+            name: "TImageBtn"
+            category: "TaoQuick - Buttons"
+            libraryIcon: "images/TImageBtn.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Button.TImgTextBtn"
+        icon: "images/TImgTextBtn.png"
+
+        ItemLibraryEntry {
+            name: "TImgTextBtn"
+            category: "TaoQuick - Buttons"
+            libraryIcon: "images/TImgTextBtn.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Button.TTextBtn"
+        icon: "images/TTextBtn.png"
+
+        ItemLibraryEntry {
+            name: "TTextBtn"
+            category: "TaoQuick - Buttons"
+            libraryIcon: "images/TTextBtn.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Mouse.TMoveArea"
+        icon: "images/TMoveArea.png"
+
+        ItemLibraryEntry {
+            name: "TMoveArea"
+            category: "TaoQuick - Mouse"
+            libraryIcon: "images/TMoveArea.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Mouse.TTransArea"
+        icon: "images/TTransArea.png"
+
+        ItemLibraryEntry {
+            name: "TTransArea"
+            category: "TaoQuick - Mouse"
+            libraryIcon: "images/TTransArea.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Progress.TNormalProgress"
+        icon: "images/TNormalProgress.png"
+
+        ItemLibraryEntry {
+            name: "TNormalProgress"
+            category: "TaoQuick - Progress"
+            libraryIcon: "images/TNormalProgress.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Progress.TCircleProgress"
+        icon: "images/TCircleProgress.png"
+
+        ItemLibraryEntry {
+            name: "TCircleProgress"
+            category: "TaoQuick - Progress"
+            libraryIcon: "images/TCircleProgress.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Others.TBusyIndicator"
+        icon: "images/TBusyIndicator.png"
+
+        ItemLibraryEntry {
+            name: "TBusyIndicator"
+            category: "TaoQuick - Others"
+            libraryIcon: "images/TBusyIndicator.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Others.TDialog"
+        icon: "images/TDialog.png"
+
+        ItemLibraryEntry {
+            name: "TDialog"
+            category: "TaoQuick - Others"
+            libraryIcon: "images/TDialog.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Others.TDragItem"
+        icon: "images/TDragItem.png"
+
+        ItemLibraryEntry {
+            name: "TDragItem"
+            category: "TaoQuick - Others"
+            libraryIcon: "images/TDragItem.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Others.TFPS"
+        icon: "images/TFPS.png"
+
+        ItemLibraryEntry {
+            name: "TFPS"
+            category: "TaoQuick - Others"
+            libraryIcon: "images/TFPS.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Others.TPopup"
+        icon: "images/TPopup.png"
+
+        ItemLibraryEntry {
+            name: "TPopup"
+            category: "TaoQuick - Others"
+            libraryIcon: "images/TPopup.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Others.TResizeBorder"
+        icon: "images/TResizeBorder.png"
+
+        ItemLibraryEntry {
+            name: "TResizeBorder"
+            category: "TaoQuick - Others"
+            libraryIcon: "images/TResizeBorder.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.BasicComponent.Others.TToolTip"
+        icon: "images/TToolTip.png"
+
+        ItemLibraryEntry {
+            name: "TToolTip"
+            category: "TaoQuick - Others"
+            libraryIcon: "images/TToolTip.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+}
