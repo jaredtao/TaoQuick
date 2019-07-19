@@ -139,9 +139,13 @@
 
 [ShaderToy效果预览](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview-ShaderToy.md)
 
+ShaderToy效果已开源，且支持安卓。也可以在单独的仓库中看到：[https://github.com/jaredtao/TaoShaderToy](https://github.com/jaredtao/TaoShaderToy)
+
 ### 其它特效
 
 [其它特效](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview-Effect.md)
+
+收集一些在网络上看到的比较有意思的效果。
 
 ## TaoQuick 安装和使用
 
