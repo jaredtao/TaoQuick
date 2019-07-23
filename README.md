@@ -187,7 +187,7 @@ QQ(TIM)、微信二维码
 
 感谢以下网友的赞助与支持(排名不分先后)：
 
-hxhlb (花心胡萝卜工作室http://www.hxhlb.cn/default.html)
+hxhlb (花心胡萝卜工作室)
 
 咸鱼猴
 
