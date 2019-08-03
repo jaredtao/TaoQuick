@@ -19,5 +19,5 @@ public:
     //翻译
     virtual void replaceTranslater(const QString &oldLang, const QString &newLang) const = 0;
 };
-#define TaoQuickInterface_iid "jaredtao.github.io/TaoQuick/1.0"
+#define TaoQuickInterface_iid "jaredtao.github.io/TaoQuick"
 Q_DECLARE_INTERFACE(ITaoQuickPlugin, TaoQuickInterface_iid)

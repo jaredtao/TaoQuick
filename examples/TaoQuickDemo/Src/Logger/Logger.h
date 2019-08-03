@@ -4,10 +4,10 @@
 namespace Logger
 {
 #ifdef _DEBUG
-#define LOG_DEBUG qDebug() << __FILE__ << __FUNCTION__ << __LINE__
-#define LOG_INFO qInfo() << __FILE__ << __FUNCTION__ << __LINE__
-#define LOG_WARN qWarning() << __FILE__ << __FUNCTION__ << __LINE__
-#define LOG_CRIT qCritical() << __FILE__ << __FUNCTION__ << __LINE__
+#define LOG_DEBUG qDebug() << __FILE__ << __LINE__
+#define LOG_INFO qInfo() << __FILE__ << __LINE__
+#define LOG_WARN qWarning() << __FILE__ << __LINE__
+#define LOG_CRIT qCritical() << __FILE__ << __LINE__
 #else
 #define LOG_DEBUG qDebug() << __FUNCTION__
 #define LOG_INFO qInfo() << __FUNCTION__

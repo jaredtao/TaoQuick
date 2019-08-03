@@ -2,23 +2,18 @@
 - [目录](#%e7%9b%ae%e5%bd%95)
 - [TaoQuick](#taoquick)
   - [徽章预览](#%e5%be%bd%e7%ab%a0%e9%a2%84%e8%a7%88)
-    - [CI](#ci)
-    - [Repo](#repo)
+    - [持续集成状态](#%e6%8c%81%e7%bb%ad%e9%9b%86%e6%88%90%e7%8a%b6%e6%80%81)
+    - [仓库状态](#%e4%bb%93%e5%ba%93%e7%8a%b6%e6%80%81)
     - [Issue](#issue)
-    - [Other status](#other-status)
-  - [开发环境](#%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83)
-  - [效果预览](#%e6%95%88%e6%9e%9c%e9%a2%84%e8%a7%88)
+    - [其它状态](#%e5%85%b6%e5%ae%83%e7%8a%b6%e6%80%81)
+  - [部分Demo效果预览](#%e9%83%a8%e5%88%86demo%e6%95%88%e6%9e%9c%e9%a2%84%e8%a7%88)
     - [启动界面](#%e5%90%af%e5%8a%a8%e7%95%8c%e9%9d%a2)
     - [动态换皮肤](#%e5%8a%a8%e6%80%81%e6%8d%a2%e7%9a%ae%e8%82%a4)
     - [百叶窗特效](#%e7%99%be%e5%8f%b6%e7%aa%97%e7%89%b9%e6%95%88)
     - [棋盘特效](#%e6%a3%8b%e7%9b%98%e7%89%b9%e6%95%88)
-    - [ShaderToy-超级马里奥](#shadertoy-%e8%b6%85%e7%ba%a7%e9%a9%ac%e9%87%8c%e5%a5%a5)
-    - [Qml 安卓简易热加载](#qml-%e5%ae%89%e5%8d%93%e7%ae%80%e6%98%93%e7%83%ad%e5%8a%a0%e8%bd%bd)
-    - [更多基础效果预览](#%e6%9b%b4%e5%a4%9a%e5%9f%ba%e7%a1%80%e6%95%88%e6%9e%9c%e9%a2%84%e8%a7%88)
-    - [动画效果预览](#%e5%8a%a8%e7%94%bb%e6%95%88%e6%9e%9c%e9%a2%84%e8%a7%88)
-    - [页面切换效果预览](#%e9%a1%b5%e9%9d%a2%e5%88%87%e6%8d%a2%e6%95%88%e6%9e%9c%e9%a2%84%e8%a7%88)
-    - [ShaderToy效果预览](#shadertoy%e6%95%88%e6%9e%9c%e9%a2%84%e8%a7%88)
-    - [其它特效](#%e5%85%b6%e5%ae%83%e7%89%b9%e6%95%88)
+  - [全部效果预览](#%e5%85%a8%e9%83%a8%e6%95%88%e6%9e%9c%e9%a2%84%e8%a7%88)
+  - [功能列表](#%e5%8a%9f%e8%83%bd%e5%88%97%e8%a1%a8)
+  - [开发环境](#%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83)
   - [TaoQuick 安装和使用](#taoquick-%e5%ae%89%e8%a3%85%e5%92%8c%e4%bd%bf%e7%94%a8)
   - [联系方式](#%e8%81%94%e7%b3%bb%e6%96%b9%e5%bc%8f)
   - [赞助](#%e8%b5%9e%e5%8a%a9)
@@ -39,8 +34,8 @@
 微信公众号： Qt进阶之路
 
 ## 徽章预览
-### CI
-|[License][license-link]| [Ubuntu/MacOS][lin-link] | [Windows][win-link] |[Release][release-link]|[Download][download-link]|latest|
+### 持续集成状态
+|[许可][license-link]| [Ubuntu/MacOS编译][lin-link] | [Windows编译][win-link] |[最新版本][release-link]|[总下载次数][download-link]|最新版下载次数|
 |:--:|:--:|:--:|:--:|:--:|:--:|
 |![license-badge]| ![lin-badge]| ![win-badge]|![release-badge] |![download-badge]|![download-latest]|
 
@@ -58,8 +53,8 @@
 [download-badge]: https://img.shields.io/github/downloads/jaredtao/TaoQuick/total.svg "Download status"
 [download-latest]: https://img.shields.io/github/downloads/jaredtao/TaoQuick/latest/total.svg "latest status"
 
-### Repo 
-|latest tag|languages|top language|code size|repo size|
+### 仓库状态
+|最新标签|用到的编程语言数量|用最多的编程语言|代码大小|仓库大小|
 |:--: |:--: |:--:|:--:|:--:|
 |![tag-latest]|![languanges]|![taolanguage]|![code-size]|![repo-size]|
 
@@ -70,7 +65,7 @@
 [tag-latest]: https://img.shields.io/github/tag/jaredtao/taoquick.svg
 
 ### Issue
-|[Issues][issues-link]|closed issue|pull request|pull closed|
+|[Issues][issues-link]|关掉的issue|pull请求|关掉的pull|
 |:--:|:--:|:--:|:--:|
 |![issuse-badge]|![issue-closed]|![pull-request]|![pull-closed]|
 
@@ -80,24 +75,20 @@
 [pull-request]: https://img.shields.io/github/issues-pr/jaredtao/taoquick.svg
 [pull-closed]: https://img.shields.io/github/issues-pr-closed/jaredtao/taoquick.svg
 
-### Other status
+### 其它状态
 
-|commit-active|laste commit|release date|forks|stars|goto hit|
-|:--:|:--:|:--:|:--:|:--:|:--:|
-|![commit-active]|![commit-latest]|![release-date]|![forks-badge]|![stars-badge]|![goto-hit]|
+|提交频率|最后一次提交|发布时间|forks|stars|
+|:--:|:--:|:--:|:--:|:--:|
+|![commit-active]|![commit-latest]|![release-date]|![forks-badge]|![stars-badge]|
 
 [forks-badge]: https://img.shields.io/github/forks/jaredtao/taoquick.svg "forks"
 [stars-badge]: https://img.shields.io/github/stars/jaredtao/taoquick.svg "stars"
-[goto-hit]: https://img.shields.io/github/search/jaredtao/taoquick/goto.svg "goto-hit"
 [commit-active]: https://img.shields.io/github/commit-activity/w/jaredtao/taoquick.svg
 [commit-latest]: https://img.shields.io/github/last-commit/jaredtao/taoquick.svg
 [release-date]: https://img.shields.io/github/release-date/jaredtao/taoquick.svg
 
-## 开发环境
 
-* Qt 5.12.x
-
-## 效果预览
+## 部分Demo效果预览
 
 ### 启动界面
 
@@ -114,42 +105,77 @@
 ### 棋盘特效
 ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/PageSwitch/棋盘效果.gif)
 
-### ShaderToy-超级马里奥
-![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/ShaderToy/Preview4.gif)
+## 全部效果预览
 
-### Qml 安卓简易热加载
+gif太多，放进单独的仓库了[TaoQuickPreview](https://github.com/jaredtao/TaoQuickPreview)
 
-![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/Hotload2.gif)
+## 功能列表
+|用途|分类|名称|进度|说明|
+|--|--|--|--|--|
+|基础组件|-|-|-|-|
+||按钮|-|-|-|
+|||图片按钮|完成||
+|||文字按钮|完成||
+|||图文按钮|完成|左右或上下布局可调|
+|||渐变背景按钮|完成|Material风格的圆角渐变背景|
+||进度条|-|-|-|
+|||条形进度条|完成|支持圆角、闪光效果、提示性文字或图片|
+|||圆环进度条|完成||
+||鼠标事件|-|-|-|
+|||拖拽区域|完成||
+|||透传区域|完成|透传鼠标事件|
+||功能组件|-|-|-|
+|||等待指示器|完成|小圆点数量、半径、颜色、转动速度都可以调节|
+|||对话框|完成|单个组件支持创建文件、打开文件、打开文件夹、打开多个文件四种用法|
+|||可拖动组件|完成|鼠标在边缘改变大小、鼠标在中间拖动改变位置|
+|||帧率组件|完成|显示帧率|
+|||提示框|完成|Slack风格，带三角箭头|
+|自绘组件|-|-|-|-|
+||Shapes自绘|-|-|-|
+|||圆角矩形|完成|支持任意圆角、支持透明色|
+|动画组件|-|-|-|-|
+||进场动画|-|-|参考ppt的基础动画|
+|||平移|完成|支持上、下、左、右四个方向|
+|||梯度|完成|支持上、下、左、右四个方向|
+|||劈裂|完成|支持水平由内、水平由外、垂直由内、垂直由外四种|
+|||对角线|完成|支持从左上角、从右上角、从左下角、从右下角四种|
+|||百叶窗|完成|支持上、下、左、右四个方向|
+|||方盒|完成|支持由内、由外两种|
+|||圆盒|完成|支持由内、由外两种|
+|||十字|完成|支持由内、由外两种|
+|||菱形|完成|支持由内、由外两种|
+|||轮子|完成|支持顺时针、逆时针、扇形三种|
+|||棋盘|完成|支持向右、向下两种|
+|||溶解|完成||
+||页面切换动画|-|-|-|
+|||平移|完成|支持上、下、左、右四个方向|
+|||梯度|完成|支持上、下、左、右四个方向|
+|||劈裂|完成|支持水平由内、水平由外、垂直由内、垂直由外四种|
+|||对角线|完成|支持从左上角、从右上角、从左下角、从右下角四种|
+|||百叶窗|完成|支持上、下、左、右四个方向|
+|||方盒|完成|支持由内、由外两种|
+|||圆盒|完成|支持由内、由外两种|
+|||十字|完成|支持由内、由外两种|
+|||菱形|完成|支持由内、由外两种|
+|||轮子|完成|支持顺时针、逆时针、扇形三种|
+|||棋盘|完成|支持向右、向下两种|
+|||溶解|完成||
+|特效组件|-|-|-|-|
+|||跟上节奏|完成|老式DVD上音符抖动的效果|
+|||暗流涌动|完成|流动的箭头和倒影效果|
+|||魔力圈圈|完成|爱的魔力转圈圈|
+||ShaderToy|-|-|在Android上测试过|
+|||穿云洞|完成||
+|||星球之光|完成||
+|||蜗牛|完成||
+|||超级马里奥|完成||
+|研究性组件|-|-|-|-|
+|||圆环视图|研究中||
+|||流体效果|研究中||
 
-说明：简易热加载功能，正在完善中。整个TaoQuick将支持热加载。
+## 开发环境
 
-
-预览效果太多，浏览器会卡，放进单独的Markdown
-### 更多基础效果预览
-
-[基础效果预览](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview-normal.md)
-
-### 动画效果预览
-
-[动画效果预览](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview-animation.md)
-
-说明：动画效果暂不开源，博客/知乎/公众号会有教程和核心代码，有需要请单独联系我。
-
-### 页面切换效果预览
-[页面切换效果预览](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview-PageSwitch.md)
-
-说明：页面切换效果暂不开源，博客/知乎/公众号会有教程和核心代码，有需要请单独联系我。
-### ShaderToy效果预览
-
-[ShaderToy效果预览](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview-ShaderToy.md)
-
-ShaderToy效果已开源，且支持安卓。也可以在单独的仓库中看到：[https://github.com/jaredtao/TaoShaderToy](https://github.com/jaredtao/TaoShaderToy)
-
-### 其它特效
-
-[其它特效](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview-Effect.md)
-
-收集一些在网络上看到的比较有意思的效果。
+* Qt 5.12.x
 
 ## TaoQuick 安装和使用
 
