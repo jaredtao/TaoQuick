@@ -1,11 +1,12 @@
 TEMPLATE = subdirs
 SUBDIRS += \
-    TaoQuickDemo \
-    TaoQuick
+    src \
+    examples
 
 CONFIG += ordered
 
 OTHER_FILES += README.md \
+    README-en_us.md \
     Install.md \
     Preview-animation.md \
     Preview-normal.md \

@@ -1,19 +1,17 @@
-﻿TGradientBtn 1.0 BasicComponent/Button/TGradientBtn.qml
+TGradientBtn 1.0 BasicComponent/Button/TGradientBtn.qml
 TImageBtn 1.0 BasicComponent/Button/TImageBtn.qml
 TImgTextBtn 1.0 BasicComponent/Button/TImgTextBtn.qml
 TTextBtn 1.0 BasicComponent/Button/TTextBtn.qml
-
 TMoveArea 1.0 BasicComponent/Mouse/TMoveArea.qml
 TTransArea 1.0 BasicComponent/Mouse/TTransArea.qml
-
-TNormalProgress 1.0 BasicComponent/Progress/TNormalProgress.qml
-TCircleProgress 1.0 BasicComponent/Progress/TCircleProgress.qml
-
 TBusyIndicator 1.0 BasicComponent/Others/TBusyIndicator.qml
-TDragItem 1.0 BasicComponent/Others/TDragItem.qml
-TResizeBorder 1.0 BasicComponent/Others/TResizeBorder.qml
-TToolTip 1.0 BasicComponent/Others/TToolTip.qml
 TDialog 1.0 BasicComponent/Others/TDialog.qml
-TPopup 1.0 BasicComponent/Others/TPopup.qml
+TDragItem 1.0 BasicComponent/Others/TDragItem.qml
 TFPS 1.0 BasicComponent/Others/TFPS.qml
+TPopup 1.0 BasicComponent/Others/TPopup.qml
+TResizeBorder 1.0 BasicComponent/Others/TResizeBorder.qml
 TShaderToy 1.0 BasicComponent/Others/TShaderToy.qml
+TToolTip 1.0 BasicComponent/Others/TToolTip.qml
+TCircleProgress 1.0 BasicComponent/Progress/TCircleProgress.qml
+TInOut 1.0 BasicComponent/Progress/TInOut.qml
+TNormalProgress 1.0 BasicComponent/Progress/TNormalProgress.qml

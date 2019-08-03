@@ -8,6 +8,7 @@
 #include <QDir>
 #include <QJsonDocument>
 #include <QQuickItem>
+#include <QScreen>
 TaoView::TaoView(QWindow *parent) : QQuickView(parent)
 {
     setFlag(Qt::FramelessWindowHint);
@@ -56,6 +57,7 @@ TaoView::TaoView(QWindow *parent) : QQuickView(parent)
 TaoView::~TaoView()
 {
     qDeleteAll(m_pluginList);
+    m_pluginList.clear();
 }
 
 void TaoView::reTrans(const QString &lang)
@@ -121,4 +123,12 @@ void TaoView::initAppInfo()
         pInfo->setProperty("descript", QString::fromLocal8Bit(VER_FILEDESCRIPTION_STR));
         pInfo->setProperty("compilerVendor", TaoCompilerVendor);
     }
+}
+
+void TaoView::moveToScreenCenter()
+{
+    auto screenGeo = qApp->primaryScreen()->geometry();
+    auto viewGeo = geometry();
+    QPoint centerPos = {(screenGeo.width() - viewGeo.width()) / 2, (screenGeo.height() - viewGeo.height()) /2 };
+    setPosition(centerPos);
 }

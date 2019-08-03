@@ -3,7 +3,7 @@ TARGET = TaoQuickDemo
 QT += qml quick
 CONFIG += plugin c++14 qtquickcompiler
 
-include(../Common/TaoVersion.pri)
+include(../../common/TaoVersion.pri)
 #msvc{
 #    QMAKE_CFLAGS += -source-charset:utf-8
 #    QMAKE_CXXFLAGS += -source-charset:utf-8
@@ -22,24 +22,18 @@ macos {
     ICON = milk.icns
 }
 CONFIG(debug,debug|release){
-    DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../bin/debug/)
+    DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../../bin/debug/)
     MOC_DIR = build/debug/moc
     RCC_DIR = build/debug/rcc
     UI_DIR = build/debug/ui
     OBJECTS_DIR = build/debug/obj
 } else {
-    DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../bin/release/)
+    DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../../bin/release/)
     MOC_DIR = build/release/moc
     RCC_DIR = build/release/rcc
     UI_DIR = build/release/ui
     OBJECTS_DIR = build/release/obj
 }
-
-# Additional import path used to resolve QML modules in Qt Creator's code model
-QML2_IMPORT_PATH += $${_PRO_FILE_PWD_}/../Core/Qml
-
-# Additional import path used to resolve QML modules just for Qt Quick Designer
-QML_DESIGNER_IMPORT_PATH += $${_PRO_FILE_PWD_}/../Core/Qml
 
 HEADERS += \
     Src/ITaoQuickPlugin.h \
@@ -80,7 +74,6 @@ TRANSLATIONS += \
         srs ~= s,/,\\\\,g
     }
     copy_qm.commands = $${QMAKE_COPY_FILE} $${srs} $${tgt}
-
 }
 macos{
     CONFIG(debug, debug|release){

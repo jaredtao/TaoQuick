@@ -16,32 +16,16 @@ macos{
 }
 
 CONFIG(debug, debug|release){
-    DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../bin/debug/$${BundlePath}$${uri})
+    DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../../bin/debug/$${BundlePath}$${uri})
 } else {
-    DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../bin/release/$${BundlePath}$${uri})
+    DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../../bin/release/$${BundlePath}$${uri})
 }
 
-include(../Common/TaoVersion.pri)
+include(../../common/TaoVersion.pri)
 include(Qml/TaoQuickDesigner.pri)
-HEADERS += \
-        Src/taoquick_plugin.h
+include(TaoQuick.pri)
 
-SOURCES += \
-    Src/taoquick_plugin.cpp
-
-RESOURCES += \
-    Image.qrc \
-    Qml.qrc
-
-
-
-# Additional import path used to resolve QML modules in Qt Creator's code model
-QML2_IMPORT_PATH += $$_PRO_FILE_PWD_/Qml
-
-# Additional import path used to resolve QML modules just for Qt Quick Designer
-QML_DESIGNER_IMPORT_PATH += $$_PRO_FILE_PWD_/Qml
-
-!equals(_PRO_FILE_PWD_, $$DESTDIR) {
+build_pass:!equals(_PRO_FILE_PWD_, $$DESTDIR) {
     copy_qmldir.target = $$DESTDIR/qmldir
     copy_qmldir.depends = $$_PRO_FILE_PWD_/qmldir
     win32 {
