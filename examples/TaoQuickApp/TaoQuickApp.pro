@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = TaoQuickDemo
+TARGET = TaoQuickApp
 QT += qml quick
 CONFIG += plugin c++14 qtquickcompiler
 
@@ -21,6 +21,7 @@ win32 {
 macos {
     ICON = milk.icns
 }
+
 CONFIG(debug,debug|release){
     DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../../bin/debug/)
     MOC_DIR = build/debug/moc
