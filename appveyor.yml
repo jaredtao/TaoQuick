@@ -16,7 +16,7 @@ build_script:
   - qmake
   - nmake
 after_build:
-  - if "%APPVEYOR_REPO_TAG%"=="true" windeployqt bin\release\TaoQuickDemo.exe --qmldir %QTDIR%\qml
+  - if "%APPVEYOR_REPO_TAG%"=="true" windeployqt bin\release\TaoQuickApp.exe --qmldir %QTDIR%\qml
 artifacts:
   - path: bin
     name: $(releaseName)
