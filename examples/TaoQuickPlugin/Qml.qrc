@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Qml/Contents/BaseComponent/Buttons.qml</file>
+        <file>Qml/Contents/BaseComponent/Dialogs.qml</file>
+        <file>Qml/Contents/BaseComponent/Drags.qml</file>
+        <file>Qml/Contents/BaseComponent/Gradiants.qml</file>
+        <file>Qml/Contents/BaseComponent/Progresses.qml</file>
+        <file>Qml/Contents/ShaderEffect/CloudHole.qml</file>
+        <file>Qml/Contents/ShaderEffect/Planet.qml</file>
+        <file>Qml/Contents/ShaderEffect/Planet1.png</file>
+        <file>Qml/Contents/ShaderEffect/Snail.qml</file>
+        <file>Qml/Contents/ShaderEffect/SuperMario.qml</file>
+        <file>Image/Button/cry-fill.png</file>
+        <file>Image/Button/smile-fill-hover.png</file>
+        <file>Image/Button/smile-fill.png</file>
+    </qresource>
+</RCC>

@@ -17,6 +17,35 @@
         <file>Qml/BasicComponent/Progress/TInOut.qml</file>
         <file>Qml/BasicComponent/Others/TFPS.qml</file>
         <file>Qml/qmldir</file>
-        <file>Qml/BasicComponent/Others/TShaderToy.qml</file>
+        <file>Qml/EffectComponent/Animation/ABoard.qml</file>
+        <file>Qml/EffectComponent/Animation/ACircle.qml</file>
+        <file>Qml/EffectComponent/Animation/ACleavage.qml</file>
+        <file>Qml/EffectComponent/Animation/ACross.qml</file>
+        <file>Qml/EffectComponent/Animation/ADiagonal.qml</file>
+        <file>Qml/EffectComponent/Animation/ADissolve.qml</file>
+        <file>Qml/EffectComponent/Animation/AGrad.qml</file>
+        <file>Qml/EffectComponent/Animation/ALouver.qml</file>
+        <file>Qml/EffectComponent/Animation/ARhombus.qml</file>
+        <file>Qml/EffectComponent/Animation/ASector.qml</file>
+        <file>Qml/EffectComponent/Animation/ASlowEnter.qml</file>
+        <file>Qml/EffectComponent/Animation/ASquare.qml</file>
+        <file>Qml/EffectComponent/Animation/AWheel.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SBoard.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SCircle.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SCleavage.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SCross.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SDiagonal.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SDissolve.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SFadeInOut.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SGrad.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SLouver.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SRhombus.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SSector.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SSquare.qml</file>
+        <file>Qml/EffectComponent/PageSwitch/SWheel.qml</file>
+        <file>Qml/EffectComponent/Shapes/TKLine.qml</file>
+        <file>Qml/EffectComponent/Shapes/TRoundRect.qml</file>
+        <file>Qml/EffectComponent/TCommon.qml</file>
+        <file>Qml/EffectComponent/TShaderToy.qml</file>
     </qresource>
 </RCC>
