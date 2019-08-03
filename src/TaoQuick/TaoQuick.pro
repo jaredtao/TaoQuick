@@ -6,10 +6,10 @@ QT += qml quick
 CONFIG += plugin c++11 qtquickcompiler
 uri = TaoQuick
 
-include(../../common/TaoVersion.pri)
-include(../../common/BundleCommon.pri)
-include(Qml/TaoQuickDesigner.pri)
+include(../TaoVersion.pri)
+include(../TaoBundle.pri)
 include(TaoQuick.pri)
+include(Qml/TaoQuickDesigner.pri)
 
 CONFIG(debug, debug|release){
     DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../../bin/debug/$${BundlePath}$${uri})

@@ -1,9 +1,6 @@
 TEMPLATE = subdirs
 SUBDIRS += \
-    src \
-    examples
-
-CONFIG += ordered
+    src
 
 OTHER_FILES += README.md \
     README-en_us.md \

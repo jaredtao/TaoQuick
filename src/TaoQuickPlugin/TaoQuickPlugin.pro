@@ -1,6 +1,6 @@
 QT  += core gui qml
 
-TARGET = $$qtLibraryTarget(TaoEffect)
+TARGET = $$qtLibraryTarget(TaoQuickPlugin)
 TEMPLATE = lib
 CONFIG += plugin
 msvc {
@@ -8,18 +8,19 @@ msvc {
     QMAKE_CXXFLAGS += -source-charset:utf-8
 }
 
-include(../TaoQuickApp/PluginCommon.pri)
+include(../TaoPlugin.pri)
+include(../TaoBundle.pri)
 
 SOURCES += \
-        Src/EffectsPlugin.cpp
+        Src/TaoQuickPlugin.cpp
 
 HEADERS += \
-        Src/EffectsPlugin.h
+        Src/TaoQuickPlugin.h
 
 RESOURCES += \
     Qml.qrc
 CONFIG(debug, debug|release){
-    tgt=$$absolute_path($${_PRO_FILE_PWD_}/../../bin/debug/TaoPlugin)
+    tgt=$$absolute_path($${_PRO_FILE_PWD_}/../../bin/debug/$${BundlePath}TaoPlugin)
 } else {
     tgt=$$absolute_path($${_PRO_FILE_PWD_}/../../bin/release/$${BundlePath}TaoPlugin)
 }
