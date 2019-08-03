@@ -21,7 +21,7 @@ RESOURCES += \
 CONFIG(debug, debug|release){
     tgt=$$absolute_path($${_PRO_FILE_PWD_}/../../bin/debug/TaoPlugin)
 } else {
-    tgt=$$absolute_path($${_PRO_FILE_PWD_}/../../bin/release/TaoPlugin)
+    tgt=$$absolute_path($${_PRO_FILE_PWD_}/../../bin/release/$${BundlePath}TaoPlugin)
 }
 win32 {
     tgt ~= s,/,\\\\,g

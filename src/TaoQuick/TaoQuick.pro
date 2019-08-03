@@ -6,14 +6,10 @@ QT += qml quick
 CONFIG += plugin c++11 qtquickcompiler
 uri = TaoQuick
 
-BundlePath=
-macos{
-    CONFIG(debug, debug|release){
-          CONFIG -=app_bundle
-    } else {
-          BundlePath=TaoQuickDemo.app/Contents/MacOS/
-    }
-}
+include(../../common/TaoVersion.pri)
+include(../../common/BundleCommon.pri)
+include(Qml/TaoQuickDesigner.pri)
+include(TaoQuick.pri)
 
 CONFIG(debug, debug|release){
     DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../../bin/debug/$${BundlePath}$${uri})
@@ -21,11 +17,7 @@ CONFIG(debug, debug|release){
     DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../../bin/release/$${BundlePath}$${uri})
 }
 
-include(../../common/TaoVersion.pri)
-include(Qml/TaoQuickDesigner.pri)
-include(TaoQuick.pri)
-
-build_pass:!equals(_PRO_FILE_PWD_, $$DESTDIR) {
+!equals(_PRO_FILE_PWD_, $$DESTDIR) {
     copy_qmldir.target = $$DESTDIR/qmldir
     copy_qmldir.depends = $$_PRO_FILE_PWD_/qmldir
     win32 {
