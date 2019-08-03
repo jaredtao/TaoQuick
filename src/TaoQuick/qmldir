@@ -8,19 +8,47 @@ TGradientBtn 1.0 BasicComponent/Button/TGradientBtn.qml
 TImageBtn 1.0 BasicComponent/Button/TImageBtn.qml
 TImgTextBtn 1.0 BasicComponent/Button/TImgTextBtn.qml
 TTextBtn 1.0 BasicComponent/Button/TTextBtn.qml
-
 TMoveArea 1.0 BasicComponent/Mouse/TMoveArea.qml
 TTransArea 1.0 BasicComponent/Mouse/TTransArea.qml
-
-TNormalProgress 1.0 BasicComponent/Progress/TNormalProgress.qml
-TCircleProgress 1.0 BasicComponent/Progress/TCircleProgress.qml
-
 TBusyIndicator 1.0 BasicComponent/Others/TBusyIndicator.qml
+TDialog 1.0 BasicComponent/Others/TDialog.qml
 TDragItem 1.0 BasicComponent/Others/TDragItem.qml
+TFPS 1.0 BasicComponent/Others/TFPS.qml
+TPopup 1.0 BasicComponent/Others/TPopup.qml
 TResizeBorder 1.0 BasicComponent/Others/TResizeBorder.qml
 TToolTip 1.0 BasicComponent/Others/TToolTip.qml
-TDialog 1.0 BasicComponent/Others/TDialog.qml
-TPopup 1.0 BasicComponent/Others/TPopup.qml
-TFPS 1.0 BasicComponent/Others/TFPS.qml
+TCircleProgress 1.0 BasicComponent/Progress/TCircleProgress.qml
+TInOut 1.0 BasicComponent/Progress/TInOut.qml
+TNormalProgress 1.0 BasicComponent/Progress/TNormalProgress.qml
+singleton TCommon 1.0 EffectComponent/TCommon.qml
+TShaderToy 1.0 EffectComponent/TShaderToy.qml
+ABoard 1.0 EffectComponent/Animation/ABoard.qml
+ACircle 1.0 EffectComponent/Animation/ACircle.qml
+ACleavage 1.0 EffectComponent/Animation/ACleavage.qml
+ACross 1.0 EffectComponent/Animation/ACross.qml
+ADiagonal 1.0 EffectComponent/Animation/ADiagonal.qml
+ADissolve 1.0 EffectComponent/Animation/ADissolve.qml
+AGrad 1.0 EffectComponent/Animation/AGrad.qml
+ALouver 1.0 EffectComponent/Animation/ALouver.qml
+ARhombus 1.0 EffectComponent/Animation/ARhombus.qml
+ASector 1.0 EffectComponent/Animation/ASector.qml
+ASlowEnter 1.0 EffectComponent/Animation/ASlowEnter.qml
+ASquare 1.0 EffectComponent/Animation/ASquare.qml
+AWheel 1.0 EffectComponent/Animation/AWheel.qml
+SBoard 1.0 EffectComponent/PageSwitch/SBoard.qml
+SCircle 1.0 EffectComponent/PageSwitch/SCircle.qml
+SCleavage 1.0 EffectComponent/PageSwitch/SCleavage.qml
+SCross 1.0 EffectComponent/PageSwitch/SCross.qml
+SDiagonal 1.0 EffectComponent/PageSwitch/SDiagonal.qml
+SDissolve 1.0 EffectComponent/PageSwitch/SDissolve.qml
+SFadeInOut 1.0 EffectComponent/PageSwitch/SFadeInOut.qml
+SGrad 1.0 EffectComponent/PageSwitch/SGrad.qml
+SLouver 1.0 EffectComponent/PageSwitch/SLouver.qml
+SRhombus 1.0 EffectComponent/PageSwitch/SRhombus.qml
+SSector 1.0 EffectComponent/PageSwitch/SSector.qml
+SSquare 1.0 EffectComponent/PageSwitch/SSquare.qml
+SWheel 1.0 EffectComponent/PageSwitch/SWheel.qml
+TKLine 1.0 EffectComponent/Shapes/TKLine.qml
+TRoundRect 1.0 EffectComponent/Shapes/TRoundRect.qml
 
 designersupported

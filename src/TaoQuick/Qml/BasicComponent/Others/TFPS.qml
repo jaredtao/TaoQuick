@@ -1,6 +1,5 @@
 ﻿import QtQuick 2.12
 import QtQuick.Controls 2.12
-import TaoQuick 1.0
 Item {
     property int fps: 60
 

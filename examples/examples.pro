@@ -1,3 +1,6 @@
 TEMPLATE = subdirs
 SUBDIRS += \
-    TaoQuickDemo
+    TaoQuickApp \
+    TaoQuickPlugin \
+    TaoEffectPlugin
+CONFIG += ordered
