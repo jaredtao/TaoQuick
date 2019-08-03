@@ -1,6 +1,3 @@
-isEmpty(TaoVersionPri) {
-    TaoVersionPri=1
-
     TAO_VERSION_TAG = 1.0
 
     # current commit hash
@@ -28,5 +25,3 @@ isEmpty(TaoVersionPri) {
     DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
     DEFINES += TaoCompilerVendor=\"\\\"$${QT_VERSION} $${QMAKE_PLATFORM} $${QMAKE_COMPILER} $${QMAKE_TARGET.arch}\\\"\"
 #    message($${DEFINES})
-}
-
