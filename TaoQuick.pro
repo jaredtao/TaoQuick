@@ -3,10 +3,7 @@ SUBDIRS += \
     src
 
 OTHER_FILES += README.md \
-    README-en_us.md \
     Install.md \
-    Preview-animation.md \
-    Preview-normal.md \
     .clang-format \
     LICENSE \
     appveyor.yml \
@@ -23,5 +20,4 @@ linux {
 OTHER_FILES += \
     scripts/ubuntu/install.sh \
     scripts/ubuntu/build.sh \
-    scripts/ubuntu/deploy.sh
 }
