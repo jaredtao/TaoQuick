@@ -1,27 +1,53 @@
 # 目录
-- [目录](#%E7%9B%AE%E5%BD%95)
-  - [代码结构](#%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84)
-  - [TaoQuick 安装](#TaoQuick-%E5%AE%89%E8%A3%85)
-    - [QtCreator安装TaoQuick](#QtCreator%E5%AE%89%E8%A3%85TaoQuick)
-    - [命令行安装TaoQuick](#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%89%E8%A3%85TaoQuick)
-  - [TaoQuick dll的使用](#TaoQuick-dll%E7%9A%84%E4%BD%BF%E7%94%A8)
-  - [TaoQuick Designer的使用](#TaoQuick-Designer%E7%9A%84%E4%BD%BF%E7%94%A8)
+- [目录](#%e7%9b%ae%e5%bd%95)
+  - [代码结构](#%e4%bb%a3%e7%a0%81%e7%bb%93%e6%9e%84)
+  - [TaoQuick 安装](#taoquick-%e5%ae%89%e8%a3%85)
+    - [QtCreator安装TaoQuick](#qtcreator%e5%ae%89%e8%a3%85taoquick)
+    - [命令行安装TaoQuick](#%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%ae%89%e8%a3%85taoquick)
+  - [TaoQuick dll的使用](#taoquick-dll%e7%9a%84%e4%bd%bf%e7%94%a8)
+  - [TaoQuick Designer的使用](#taoquick-designer%e7%9a%84%e4%bd%bf%e7%94%a8)
 
 ## 代码结构
 
-![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/Struct.png)
+![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/1.png)
 
-TaoQuickDemo目录是Demo项目，示例如何使用TaoQuick库。
+src文件夹下包含四个子项目：
 
-TaoQuick目录就是TaoQuick库。
+1. TaoQuick
+   
+   核心库，包括基础组件、动画效果的实现。 
 
-可以使用生成的dll库，dll生成目录在项目的bin/TaoQuick目录下。
+   ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/2.png)
+   
+   核心库支持 make install 安装进QTDIR。
+
+2. TaoQuickApp
+   
+   Demo项目，示例如何使用TaoQuick库。
+
+   本质是一个内容加载器，提供基本的窗口和菜单栏等功能，并以插件的方式加载内容。
+
+   ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/3.png)
+
+3. TaoQuickPlugin
+
+    插件，由TaoQuickApp加载。展示TaoQuick中的基础组件。
+
+    ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/5.png)
+
+4. TaoEffectPlugin
+
+    插件，由TaoQuickApp加载。展示TaoQuick中的动画效果。
+
+    ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/4.png)
+
+## TaoQuick 安装
+
+可以使用生成的dll库，dll生成目录在项目的bin/debug/TaoQuick 或者 bin/release/TaoQuick目录下。
 
 也可以将TaoQuick安装进Qt环境，支持在QtCreator中使用Designer进行拖拽式设计。
 
-安装方法可以直接用QtCreator进行安装，也可以用命令行安装。
-
-## TaoQuick 安装
+安装方法可以用命令行安装， 可以直接用QtCreator进行安装。
 
 ### QtCreator安装TaoQuick
 
