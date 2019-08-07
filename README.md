@@ -35,7 +35,7 @@
 
 ## 徽章预览
 ### 持续集成状态
-|[许可][license-link]| [Ubuntu/MacOS编译][lin-link] | [Windows编译][win-link] |[最新版本][release-link]|[总下载次数][download-link]|最新版下载次数|
+|[许可][license-link]| [Ubuntu/MacOS编译][lin-link] | [Windows编译][win-link] |[已发布][release-link]|[最新发布][download-link]|下载次数|
 |:--:|:--:|:--:|:--:|:--:|:--:|
 |![license-badge]| ![lin-badge]| ![win-badge]|![release-badge] |![download-badge]|![download-latest]|
 
