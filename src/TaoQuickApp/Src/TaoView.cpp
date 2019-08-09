@@ -81,7 +81,7 @@ void TaoView::reTrans(const QString &lang)
 
 void TaoView::loadPlugin(const QString &pluginPath)
 {
-    QDir dir(pluginPath);
+    QDir dir(qApp->applicationDirPath() + "/" + pluginPath);
 
     auto list = dir.entryInfoList({"*"}, QDir::Files);
 
