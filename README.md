@@ -35,7 +35,7 @@
 
 ## 徽章预览
 ### 项目状态
-|[最佳实践][CII-link]|[许可][license-link]| [Ubuntu/MacOS][lin-link] | [Windows][win-link] |[已发布][release-link]|[下载][download-link]|下载次数|
+|[最佳实践计划][CII-link]|[许可][license-link]| [Ubuntu/MacOS][lin-link] | [Windows][win-link] |[已发布][release-link]|[下载][download-link]|下载次数|
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |![CII-badge]|![license-badge]|![lin-badge]| ![win-badge]|![release-badge] |![download-badge]|![download-latest]|
 
