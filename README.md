@@ -35,9 +35,9 @@
 
 ## 徽章预览
 ### 持续集成状态
-|[许可][license-link]| [Ubuntu/MacOS编译][lin-link] | [Windows编译][win-link] |[已发布][release-link]|[最新发布][download-link]|下载次数|
-|:--:|:--:|:--:|:--:|:--:|:--:|
-|![license-badge]| ![lin-badge]| ![win-badge]|![release-badge] |![download-badge]|![download-latest]|
+|[许可][license-link]|[最佳实践计划][CII-link]| [Ubuntu/MacOS编译][lin-link] | [Windows编译][win-link] |[已发布][release-link]|[下载][download-link]|下载次数|
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|![license-badge]|![CII-badge]|![lin-badge]| ![win-badge]|![release-badge] |![download-badge]|![download-latest]|
 
 [license-link]: https://github.com/jaredtao/TaoQuick/blob/master/LICENSE "LICENSE"
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg "MIT"
@@ -52,7 +52,8 @@
 [download-link]: https://github.com/jaredtao/TaoQuick/releases/latest "Download status"
 [download-badge]: https://img.shields.io/github/downloads/jaredtao/TaoQuick/total.svg "Download status"
 [download-latest]: https://img.shields.io/github/downloads/jaredtao/TaoQuick/latest/total.svg "latest status"
-
+[CII-badge]: https://bestpractices.coreinfrastructure.org/projects/3060/badge
+[CII-link]: https://bestpractices.coreinfrastructure.org/projects/3060
 ### 仓库状态
 |最新标签|用到的编程语言数量|用最多的编程语言|代码大小|仓库大小|
 |:--: |:--: |:--:|:--:|:--:|
