@@ -34,10 +34,10 @@
 微信公众号： Qt进阶之路
 
 ## 徽章预览
-### 持续集成状态
-|[许可][license-link]|[最佳实践][CII-link]| [Ubuntu/MacOS编译][lin-link] | [Windows编译][win-link] |[已发布][release-link]|[下载][download-link]|下载次数|
+### 项目状态
+|[最佳实践][CII-link]|[许可][license-link]| [Ubuntu/MacOS][lin-link] | [Windows][win-link] |[已发布][release-link]|[下载][download-link]|下载次数|
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|![license-badge]|![CII-badge]|![lin-badge]| ![win-badge]|![release-badge] |![download-badge]|![download-latest]|
+|![CII-badge]|![license-badge]|![lin-badge]| ![win-badge]|![release-badge] |![download-badge]|![download-latest]|
 
 [license-link]: https://github.com/jaredtao/TaoQuick/blob/master/LICENSE "LICENSE"
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg "MIT"
