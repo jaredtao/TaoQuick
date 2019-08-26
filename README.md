@@ -173,6 +173,10 @@ gif太多，放进单独的仓库了[TaoQuickPreview](https://github.com/jaredta
 
 [TaoQuick 安装和使用](Install.md)
 
+## 答疑和技术支持
+
+QQ群：734623697
+
 ## 联系方式
 
 ***
