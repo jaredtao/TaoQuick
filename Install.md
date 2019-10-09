@@ -49,8 +49,6 @@ src文件夹下包含四个子项目：
 
 安装方法可以用命令行安装， 可以直接用QtCreator进行安装。
 
-（注意在QtCreator中使用，需要release模式的dll，而不是debug模式的）
-
 ### QtCreator安装TaoQuick
 
 如下图所示:
@@ -76,7 +74,7 @@ make install
 
 ## TaoQuick dll的使用
 
-1. 将bin/TaoQuick文件夹复制到你的可执行程序同级目录下
+1. 将编译好的bin/debug/TaoQuick或者bin/release/TaoQuick文件夹，复制到你的可执行程序对应的debug或release的目录下
 
 2. 在你的Qml中写上这两句，就完成了TaoQuick的导入
 ```
@@ -87,7 +85,10 @@ import "qrc:/Tao/Qml/"
 ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/TaoQuick-use.png)
 
 `import TaoQuick 1.0` 是在导入dll库。
-`import "qrc:/Tao/Qml/` 是在导入"qrc:/Tao/Qml/"路径下的qmldir文件。这个文件描述了TaoQuick中的所有组件。导入过后就能使用全部的组件了。
+
+`import "qrc:/Tao/Qml/` 是在导入"qrc:/Tao/Qml/"路径下的qmldir文件，这个文件描述了TaoQuick中的所有组件。
+
+导入过后就能使用全部的组件了。
 
 这种方式TaoQuick的Qml是以资源文件的方式编译进dll的，所以不支持QtCreator的语法高亮。（商业版有内建资源功能，或许可以支持）
 
