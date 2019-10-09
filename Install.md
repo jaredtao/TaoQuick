@@ -49,6 +49,8 @@ src文件夹下包含四个子项目：
 
 安装方法可以用命令行安装， 可以直接用QtCreator进行安装。
 
+（注意在QtCreator中使用，需要release模式的dll，而不是debug模式的）
+
 ### QtCreator安装TaoQuick
 
 如下图所示:
