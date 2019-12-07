@@ -89,6 +89,9 @@ jobs:
           New-Item -ItemType Directory ${env:archiveName}
           # 拷贝exe
           Copy-Item bin\release\${env:targetName} ${env:archiveName}\
+          Copy-Item bin\release\*.qm ${env:archiveName}\
+          Copy-Item bin\release\TaoPlugin ${env:archiveName}\TaoPlugin -Recurse -Exclude *.ilk,*.exp,*.lib,*.pdb
+          Copy-Item bin\release\TaoQuick ${env:archiveName}\TaoQuick -Recurse -Exclude *.ilk,*.exp,*.lib,*.pdb
           # 拷贝依赖
           windeployqt --qmldir . ${env:archiveName}\${env:targetName}
           # 打包zip
