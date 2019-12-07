@@ -16,7 +16,17 @@ CONFIG(debug, debug|release){
 } else {
     DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../../bin/release/$${BundlePath}$${uri})
 }
-
+CONFIG(debug,debug|release){
+    MOC_DIR = $$absolute_path($${_PRO_FILE_PWD_}/../../build/debug/moc)
+    RCC_DIR = $$absolute_path($${_PRO_FILE_PWD_}/../../build/debug/rcc)
+    UI_DIR = $$absolute_path($${_PRO_FILE_PWD_}/../../build/debug/ui)
+    OBJECTS_DIR = $$absolute_path($${_PRO_FILE_PWD_}/../../build/debug/obj)
+} else {
+    MOC_DIR = $$absolute_path($${_PRO_FILE_PWD_}/../../build/release/moc)
+    RCC_DIR = $$absolute_path($${_PRO_FILE_PWD_}/../../build/release/rcc)
+    UI_DIR = $$absolute_path($${_PRO_FILE_PWD_}/../../build/release/ui)
+    OBJECTS_DIR = $$absolute_path($${_PRO_FILE_PWD_}/../../build/release/obj)
+}
 !equals(_PRO_FILE_PWD_, $$DESTDIR) {
     copy_qmldir.target = $$DESTDIR/qmldir
     copy_qmldir.depends = $$_PRO_FILE_PWD_/qmldir

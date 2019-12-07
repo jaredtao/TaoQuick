@@ -80,6 +80,7 @@
 |[已发布][release-link]|[下载][download-link]|下载次数|
 |:--:|:--:|:--:|
 |![release-badge] |![download-badge]|![download-latest]|
+
 [release-link]: https://github.com/jaredtao/TaoQuick/releases "Release status"
 [release-badge]: https://img.shields.io/github/release/jaredtao/TaoQuick.svg?style=flat-square "Release status"
 [download-link]: https://github.com/jaredtao/TaoQuick/releases/latest "Download status"
