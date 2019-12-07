@@ -53,7 +53,7 @@ jobs:
         if: startsWith(github.event.ref, 'refs/tags/')
         run: |
           # 拷贝依赖
-          macdeployqt bin/${targetName}.app -qmldir=. -verbose=1 -dmg
+          macdeployqt bin/release/${targetName}.app -qmldir=. -verbose=1 -dmg
       # tag 查询github-Release
       - name: queryRelease
         id: queryReleaseMacos
@@ -126,6 +126,6 @@ jobs:
         uses: actions/upload-release-asset@v1.0.1
         with:
           upload_url: ${{ env.uploadUrl }}
-          asset_path: ./bin/${{ env.targetName }}.dmg
+          asset_path: ./bin/release/${{ env.targetName }}.dmg
           asset_name: ${{ runner.os }}-${{ env.targetName }}.dmg
           asset_content_type: application/applefile
