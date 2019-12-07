@@ -6,7 +6,9 @@
 - [catalogue](#catalogue)
 - [TaoQuick](#taoquick)
   - [Badge preview](#badge-preview)
-    - [Project Status](#project-status)
+    - [Project](#project)
+    - [Build](#build)
+    - [Release](#release)
     - [Repository status](#repository-status)
     - [Issue](#issue)
     - [Other status](#other-status)
@@ -28,27 +30,54 @@ This is a QtQuick/Qml Component library, integrated some commonly used QtQuick c
 make the appropriate function expansion to  facilitate development of Qml applications.
 
 ## Badge preview
-### Project Status
-|[Best Practices plan][CII-link]|[License][license-link]| [Ubuntu/MacOS][lin-link] | [Windows][win-link] |[Released][release-link]|[Download][download-link]|Download count|
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|![CII-badge]|![license-badge]|![lin-badge]| ![win-badge]|![release-badge] |![download-badge]|![download-latest]|
+
+### Project
+
+|[Best Practices plan][CII-link]|[License][license-link]|
+|:--:|:--:|
+|![CII-badge]|![license-badge]|
 
 [license-link]: https://github.com/jaredtao/TaoQuick/blob/master/LICENSE "LICENSE"
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg "MIT"
+[CII-badge]: https://bestpractices.coreinfrastructure.org/projects/3060/badge
+[CII-link]: https://bestpractices.coreinfrastructure.org/projects/3060
 
-[lin-badge]: https://travis-ci.com/jaredtao/TaoQuick.svg?branch=master "Travis build status"
-[lin-link]: https://travis-ci.com/jaredtao/TaoQuick "Travis build status"
-[win-badge]: https://ci.appveyor.com/api/projects/status/ontim37g33hvfv72?svg=true "AppVeyor build status"
-[win-link]: https://ci.appveyor.com/project/jiawentao/TaoQuick "AppVeyor build status"
+### Build
+
+| [Windows][win-link]| [Ubuntu][ubuntu-link]|[MacOS][macos-link]|[Android][android-link]|[IOS][ios-link]|
+|---------------|---------------|-----------------|-----------------|----------------|
+| ![win-badge]  | ![ubuntu-badge]      | ![macos-badge] |![android-badge]   |![ios-badge]   |
+
+
+[win-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AWindows "WindowsAction"
+[win-badge]: https://github.com/JaredTao/TaoQuick/workflows/Windows/badge.svg  "Windows"
+
+[ubuntu-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AUbuntu "UbuntuAction"
+[ubuntu-badge]: https://github.com/JaredTao/TaoQuick/workflows/Ubuntu/badge.svg "Ubuntu"
+
+[macos-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AMacOS "MacOSAction"
+[macos-badge]: https://github.com/JaredTao/TaoQuick/workflows/MacOS/badge.svg "MacOS"
+
+[android-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AAndroid "AndroidAction"
+[android-badge]: https://github.com/JaredTao/TaoQuick/workflows/Android/badge.svg "Android"
+
+[ios-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AIOS "IOSAction"
+[ios-badge]: https://github.com/JaredTao/TaoQuick/workflows/IOS/badge.svg "IOS"
+
+### Release
+
+|[Released][release-link]|[Download][download-link]|Download count|
+|:--:|:--:|:--:|
+|![release-badge] |![download-badge]|![download-latest]|
 
 [release-link]: https://github.com/jaredtao/TaoQuick/releases "Release status"
 [release-badge]: https://img.shields.io/github/release/jaredtao/TaoQuick.svg?style=flat-square "Release status"
 [download-link]: https://github.com/jaredtao/TaoQuick/releases/latest "Download status"
 [download-badge]: https://img.shields.io/github/downloads/jaredtao/TaoQuick/total.svg "Download status"
 [download-latest]: https://img.shields.io/github/downloads/jaredtao/TaoQuick/latest/total.svg "latest status"
-[CII-badge]: https://bestpractices.coreinfrastructure.org/projects/3060/badge
-[CII-link]: https://bestpractices.coreinfrastructure.org/projects/3060
+
 ### Repository status
+
 |Tag|Languages|Top Language|code size|repo size|
 |:--: |:--: |:--:|:--:|:--:|
 |![tag-latest]|![languanges]|![taolanguage]|![code-size]|![repo-size]|
