@@ -1,0 +1,46 @@
+name: Android
+on: 
+  push:
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'      
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'      
+jobs:
+  build:
+    name: Build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        # 5.9.8 版本低，需要额外设置工具链。这里暂不支持。
+        qt_ver: [5.12.6]
+        qt_target: [android]
+        # android_arm64_v8a 暂时不支持. install-qt-action 依赖的aqtinstall版本为0.5*,需要升级
+        # qt_arch: [android_x86,android_armv7,android_arm64_v8a]
+        qt_arch: [android_x86,android_armv7]
+        # exclude:
+        #   - qt_ver: 5.9.8
+        #     qt_arch: android_arm64_v8a
+    steps:
+      - name: Install Qt
+        # if: steps.cacheqt.outputs.cache-hit != 'true'
+        uses: jurplel/install-qt-action@v2.0.0
+        with:
+          # Version of Qt to install
+          version: ${{ matrix.qt_ver }}
+          # Target platform for build
+          target: ${{ matrix.qt_target }}
+          # Architecture for Windows/Android
+          arch: ${{ matrix.qt_arch }}
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: build android
+        run: |
+          export ANDROID_SDK_ROOT=$ANDROID_HOME
+          export ANDROID_NDK_ROOT=$ANDROID_HOME/ndk-bundle
+          qmake
+          make

@@ -6,7 +6,9 @@
 - [目录](#%e7%9b%ae%e5%bd%95)
 - [TaoQuick](#taoquick)
   - [徽章预览](#%e5%be%bd%e7%ab%a0%e9%a2%84%e8%a7%88)
-    - [项目状态](#%e9%a1%b9%e7%9b%ae%e7%8a%b6%e6%80%81)
+    - [项目](#%e9%a1%b9%e7%9b%ae)
+    - [编译](#%e7%bc%96%e8%af%91)
+    - [发布](#%e5%8f%91%e5%b8%83)
     - [仓库状态](#%e4%bb%93%e5%ba%93%e7%8a%b6%e6%80%81)
     - [Issue](#issue)
     - [其它状态](#%e5%85%b6%e5%ae%83%e7%8a%b6%e6%80%81)
@@ -19,6 +21,7 @@
   - [功能列表](#%e5%8a%9f%e8%83%bd%e5%88%97%e8%a1%a8)
   - [开发环境](#%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83)
   - [TaoQuick 安装和使用](#taoquick-%e5%ae%89%e8%a3%85%e5%92%8c%e4%bd%bf%e7%94%a8)
+  - [答疑和技术支持](#%e7%ad%94%e7%96%91%e5%92%8c%e6%8a%80%e6%9c%af%e6%94%af%e6%8c%81)
   - [联系方式](#%e8%81%94%e7%b3%bb%e6%96%b9%e5%bc%8f)
   - [赞助](#%e8%b5%9e%e5%8a%a9)
   - [赞助列表](#%e8%b5%9e%e5%8a%a9%e5%88%97%e8%a1%a8)
@@ -37,27 +40,54 @@
 
 
 ## 徽章预览
-### 项目状态
-|[最佳实践计划][CII-link]|[许可][license-link]| [Ubuntu/MacOS][lin-link] | [Windows][win-link] |[已发布][release-link]|[下载][download-link]|下载次数|
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|![CII-badge]|![license-badge]|![lin-badge]| ![win-badge]|![release-badge] |![download-badge]|![download-latest]|
+
+### 项目
+
+|[最佳实践计划][CII-link]|[许可][license-link]|
+|:--:|:--:|
+|![CII-badge]|![license-badge]|
+
+[CII-badge]: https://bestpractices.coreinfrastructure.org/projects/3060/badge
+[CII-link]: https://bestpractices.coreinfrastructure.org/projects/3060
 
 [license-link]: https://github.com/jaredtao/TaoQuick/blob/master/LICENSE "LICENSE"
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg "MIT"
 
-[lin-badge]: https://travis-ci.com/jaredtao/TaoQuick.svg?branch=master "Travis build status"
-[lin-link]: https://travis-ci.com/jaredtao/TaoQuick "Travis build status"
-[win-badge]: https://ci.appveyor.com/api/projects/status/ontim37g33hvfv72?svg=true "AppVeyor build status"
-[win-link]: https://ci.appveyor.com/project/jiawentao/TaoQuick "AppVeyor build status"
+### 编译
 
+| [Windows][win-link]| [Ubuntu][ubuntu-link]|[MacOS][macos-link]|[Android][android-link]|[IOS][ios-link]|
+|---------------|---------------|-----------------|-----------------|----------------|
+| ![win-badge]  | ![ubuntu-badge]      | ![macos-badge] |![android-badge]   |![ios-badge]   |
+
+
+[win-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AWindows "WindowsAction"
+[win-badge]: https://github.com/JaredTao/TaoQuick/workflows/Windows/badge.svg  "Windows"
+
+[ubuntu-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AUbuntu "UbuntuAction"
+[ubuntu-badge]: https://github.com/JaredTao/TaoQuick/workflows/Ubuntu/badge.svg "Ubuntu"
+
+[macos-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AMacOS "MacOSAction"
+[macos-badge]: https://github.com/JaredTao/TaoQuick/workflows/MacOS/badge.svg "MacOS"
+
+[android-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AAndroid "AndroidAction"
+[android-badge]: https://github.com/JaredTao/TaoQuick/workflows/Android/badge.svg "Android"
+
+[ios-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AIOS "IOSAction"
+[ios-badge]: https://github.com/JaredTao/TaoQuick/workflows/IOS/badge.svg "IOS"
+
+### 发布
+
+|[已发布][release-link]|[下载][download-link]|下载次数|
+|:--:|:--:|:--:|
+|![release-badge] |![download-badge]|![download-latest]|
 [release-link]: https://github.com/jaredtao/TaoQuick/releases "Release status"
 [release-badge]: https://img.shields.io/github/release/jaredtao/TaoQuick.svg?style=flat-square "Release status"
 [download-link]: https://github.com/jaredtao/TaoQuick/releases/latest "Download status"
 [download-badge]: https://img.shields.io/github/downloads/jaredtao/TaoQuick/total.svg "Download status"
 [download-latest]: https://img.shields.io/github/downloads/jaredtao/TaoQuick/latest/total.svg "latest status"
-[CII-badge]: https://bestpractices.coreinfrastructure.org/projects/3060/badge
-[CII-link]: https://bestpractices.coreinfrastructure.org/projects/3060
+
 ### 仓库状态
+
 |最新标签|用到的编程语言数量|用最多的编程语言|代码大小|仓库大小|
 |:--: |:--: |:--:|:--:|:--:|
 |![tag-latest]|![languanges]|![taolanguage]|![code-size]|![repo-size]|
