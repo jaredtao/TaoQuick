@@ -12,10 +12,12 @@ include(../TaoVersion.pri)
 #}
 
 #一部分头文件加入编译预处理，提高编译速度
-CONFIG += precompile_header
-PRECOMPILED_HEADER = Src/stdafx.h
-precompile_header:!isEmpty(PRECOMPILED_HEADER) {
-    DEFINES += USING_PCH
+msvc {
+    CONFIG += precompile_header
+    PRECOMPILED_HEADER = Src/stdafx.h
+    precompile_header:!isEmpty(PRECOMPILED_HEADER) {
+        DEFINES += USING_PCH
+    }
 }
 
 win32 {
@@ -42,3 +44,4 @@ CONFIG(debug,debug|release){
     OBJECTS_DIR = build/release/obj
 }
 include(TaoQuickApp.pri)
+
