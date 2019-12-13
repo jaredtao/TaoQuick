@@ -47,5 +47,6 @@
         <file>Qml/EffectComponent/Shapes/TRoundRect.qml</file>
         <file>Qml/EffectComponent/TCommon.qml</file>
         <file>Qml/EffectComponent/TShaderToy.qml</file>
+        <file>Qml/BasicComponent/Others/CallLatter.qml</file>
     </qresource>
 </RCC>
