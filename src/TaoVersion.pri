@@ -3,7 +3,12 @@ TAO_VERSION_TAG = 1.0
 # current commit hash
 REVISION=$$system("git rev-parse HEAD")
 REVISION=$$str_member($${REVISION}, 0, $$num_add(10, -1))
-
+isEmpty(REVISION) {
+    REVISION = 0000000000
+}
+isEmpty(Ver) {
+    Ver=0.0.0
+}
 # last tag
 Ver=$$system("git describe --abbrev=0 --tags")
 VerList =$$split(Ver, .)
