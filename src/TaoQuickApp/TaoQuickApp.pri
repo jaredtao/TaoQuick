@@ -2,7 +2,7 @@ HEADERS += \
     $$PWD/Src/ITaoQuickPlugin.h \
     $$PWD/Src/Logger/Logger.h \
     $$PWD/Src/Logger/LoggerTemplate.h \
-    $$PWD/Src/TaoView.h \
+    $$PWD/Src/TaoView.h
 
 msvc {
     HEADERS += $$PWD/Ver.h
