@@ -4,9 +4,10 @@ HEADERS += \
     $$PWD/Src/Logger/LoggerTemplate.h \
     $$PWD/Src/TaoView.h
 
-win32:msvc {
+msvc {
     HEADERS += $$PWD/Ver.h
-} else {
+}
+!msvc {
     HEADERS += $$PWD/Ver-u8.h
 }
 SOURCES += \
