@@ -4,7 +4,7 @@
 
 #include <QTranslator>
 #include <QQmlEngine>
-#include <QCoreApplication>
+#include <QGuiApplication>
 #include <QDir>
 #include <QJsonDocument>
 #include <QQuickItem>
