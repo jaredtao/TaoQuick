@@ -3,7 +3,12 @@ HEADERS += \
     $$PWD/Src/Logger/Logger.h \
     $$PWD/Src/Logger/LoggerTemplate.h \
     $$PWD/Src/TaoView.h \
-    $$PWD/Ver.h
+
+msvc {
+    HEADERS += $$PWD/Ver.h
+} else {
+    HEADERS += $$PWD/Ver-u8.h
+}
 SOURCES += \
     $$PWD/Src/Logger/Logger.cpp \
     $$PWD/Src/TaoView.cpp \
