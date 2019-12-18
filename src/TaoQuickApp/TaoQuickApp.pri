@@ -4,7 +4,7 @@ HEADERS += \
     $$PWD/Src/Logger/LoggerTemplate.h \
     $$PWD/Src/TaoView.h
 
-msvc {
+win32:msvc {
     HEADERS += $$PWD/Ver.h
 } else {
     HEADERS += $$PWD/Ver-u8.h
