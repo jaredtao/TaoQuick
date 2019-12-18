@@ -8,11 +8,12 @@ REVISION=$$str_member($${REVISION}, 0, $$num_add(10, -1))
 isEmpty(REVISION) {
     REVISION = 0000000000
 }
+
+# last tag
+Ver=$$system("git describe --abbrev=0 --tags")
 isEmpty(Ver) {
     Ver=0.0.0
 }
-# last tag
-Ver=$$system("git describe --abbrev=0 --tags")
 VerList =$$split(Ver, .)
 MAJ = $$take_first(VerList)
 MIN = $$take_first(VerList)
@@ -24,8 +25,8 @@ equals(TEMPLATE, lib) {
     VER_PAT = $${PAT}
     VERSION = $${Ver}
 }
-DEFINES += TaoREVISIONNUMBER=$${REVISION}
-DEFINES += TaoREVISION=\"\\\"$${REVISION}\\\"\"
+DEFINES += TaoREVISION=$${REVISION}
+DEFINES += TaoREVISIONSTR=\"\\\"$${REVISION}\\\"\"
 DEFINES += TaoVer=\"\\\"$${Ver}\\\"\"
 DEFINES += TaoMAJ=$${MAJ}
 DEFINES += TaoMIN=$${MIN}

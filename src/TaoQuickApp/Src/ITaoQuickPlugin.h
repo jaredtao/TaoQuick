@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <QJsonArray>
 #include <QtPlugin>
 //ITaoQuickPlugin 插件接口

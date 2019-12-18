@@ -6,11 +6,6 @@ CONFIG += plugin c++14 qtquickcompiler
 include(../TaoVersion.pri)
 #include(../TaoBundle.pri)
 
-#msvc{
-#    QMAKE_CFLAGS += -source-charset:utf-8
-#    QMAKE_CXXFLAGS += -source-charset:utf-8
-#}
-
 #一部分头文件加入编译预处理，提高编译速度
 msvc {
     CONFIG += precompile_header
@@ -20,6 +15,10 @@ msvc {
     }
 }
 
+msvc{
+    QMAKE_CFLAGS += -source-charset:utf-8
+    QMAKE_CXXFLAGS += -source-charset:utf-8
+}
 win32 {
     RC_FILE = App.rc
 }
