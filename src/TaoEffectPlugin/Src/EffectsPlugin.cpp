@@ -1,4 +1,4 @@
-﻿#include "EffectsPlugin.h"
+#include "EffectsPlugin.h"
 #include <QQmlEngine>
 EffectsPlugin::EffectsPlugin(QObject *parent) : QObject (parent)
 {

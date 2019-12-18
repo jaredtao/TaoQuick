@@ -118,7 +118,7 @@ void TaoView::initAppInfo()
         pInfo->setProperty("appVersion", TaoVer);
         pInfo->setProperty("latestVersion", TaoVer);
         pInfo->setProperty("buildDateTime", TaoDATETIME);
-        pInfo->setProperty("buildRevision", TaoREVISION);
+        pInfo->setProperty("buildRevision", TaoREVISIONSTR);
         pInfo->setProperty("copyRight", VER_LEGALCOPYRIGHT_STR);
         pInfo->setProperty("descript", QString::fromLocal8Bit(VER_FILEDESCRIPTION_STR));
         pInfo->setProperty("compilerVendor", TaoCompilerVendor);
