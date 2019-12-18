@@ -1,3 +1,5 @@
+isEmpty(TaoVersionInclude) {
+TaoVersionInclude=1
 TAO_VERSION_TAG = 1.0
 
 # current commit hash
@@ -22,6 +24,7 @@ equals(TEMPLATE, lib) {
     VER_PAT = $${PAT}
     VERSION = $${Ver}
 }
+DEFINES += TaoREVISIONNUMBER=$${REVISION}
 DEFINES += TaoREVISION=\"\\\"$${REVISION}\\\"\"
 DEFINES += TaoVer=\"\\\"$${Ver}\\\"\"
 DEFINES += TaoMAJ=$${MAJ}
@@ -30,3 +33,4 @@ DEFINES += TaoPAT=$${PAT}
 DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
 DEFINES += TaoCompilerVendor=\"\\\"$${QT_VERSION} $${QMAKE_PLATFORM} $${QMAKE_COMPILER} $${QMAKE_TARGET.arch}\\\"\"
 #    message($${DEFINES})
+}
