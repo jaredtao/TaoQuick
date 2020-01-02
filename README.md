@@ -1,5 +1,6 @@
 ﻿[English](README-en.md)
 
+[gitee镜像:https://gitee.com/jaredtao/TaoQuick](https://gitee.com/jaredtao/TaoQuick)
 -------------------------------------------------------------
 
 # 目录
