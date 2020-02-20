@@ -31,5 +31,5 @@ taoquick_qml_shapes.path = $$[QT_INSTALL_QML]/$${uri}/EffectComponent/Shapes
 taoquick_degisner_images.files = $$PWD/designer/images/*.png
 taoquick_degisner_images.path = $$[QT_INSTALL_QML]/$${uri}/designer/images
 
-INSTALLS  += taoquick_designer toaquick_qmldir taoquick_qml_buttons taoquick_qml_mouse taoquick_qml_others taoquick_qml_progress taoquick_degisner_images \
+!android:INSTALLS  += taoquick_designer toaquick_qmldir taoquick_qml_buttons taoquick_qml_mouse taoquick_qml_others taoquick_qml_progress taoquick_degisner_images \
     taoquick_qml_effect taoquick_qml_animation taoquick_qml_PageSwitch taoquick_qml_shapes

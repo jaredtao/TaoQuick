@@ -1,8 +1,7 @@
-﻿#pragma once
+#pragma once
 #include <QDebug>
 
-namespace Logger
-{
+namespace Logger {
 #ifdef _DEBUG
 #define LOG_DEBUG qDebug() << __FILE__ << __LINE__
 #define LOG_INFO qInfo() << __FILE__ << __LINE__

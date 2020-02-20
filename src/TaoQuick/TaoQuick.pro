@@ -27,7 +27,8 @@ CONFIG(debug,debug|release){
     UI_DIR = build/release/ui
     OBJECTS_DIR = build/release/obj
 }
-!equals(_PRO_FILE_PWD_, $$DESTDIR) {
+
+!android:!equals(_PRO_FILE_PWD_, $$DESTDIR) {
     copy_qmldir.target = $$DESTDIR/qmldir
     copy_qmldir.depends = $$_PRO_FILE_PWD_/qmldir
     win32 {
@@ -39,14 +40,16 @@ CONFIG(debug,debug|release){
     PRE_TARGETDEPS += $$copy_qmldir.target
 }
 
-DISTFILES = qmldir
-qmldir.files = qmldir
+
 
 installPath = $$[QT_INSTALL_QML]/$${uri}
 win32 {
     installPath ~= s,/,\\,g
 }
+qmldir.files = qmldir
 qmldir.path = $$installPath
-target.path = $$installPath
-INSTALLS += target qmldir
+!android:INSTALLS += qmldir
+
+!android:target.path = $$installPath
+INSTALLS += target
 
