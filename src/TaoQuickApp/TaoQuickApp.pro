@@ -6,11 +6,6 @@ CONFIG += plugin c++14 qtquickcompiler
 include(../TaoVersion.pri)
 #include(../TaoBundle.pri)
 
-#msvc{
-#    QMAKE_CFLAGS += -source-charset:utf-8
-#    QMAKE_CXXFLAGS += -source-charset:utf-8
-#}
-
 #一部分头文件加入编译预处理，提高编译速度
 msvc {
     CONFIG += precompile_header
@@ -20,19 +15,23 @@ msvc {
     }
 }
 
-win32 {
+msvc{
+    QMAKE_CFLAGS += -source-charset:utf-8
+    QMAKE_CXXFLAGS += -source-charset:utf-8
+}
+win32:!mingw {
     RC_FILE = App.rc
 }
 macos {
     ICON = milk.icns
 }
 
-CONFIG(debug,debug|release){
+CONFIG(debug,debug|release) {
     DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../../bin/debug/)
 } else {
     DESTDIR = $$absolute_path($${_PRO_FILE_PWD_}/../../bin/release/)
 }
-CONFIG(debug,debug|release){
+CONFIG(debug,debug|release) {
     MOC_DIR = build/debug/moc
     RCC_DIR = build/debug/rcc
     UI_DIR = build/debug/ui

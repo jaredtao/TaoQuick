@@ -8,7 +8,7 @@ void TaoQuickPlugin::registerTypes(const char *uri)
     qInfo() << "\033[35m"
             << "Your application is using TaoQuick ";
     qInfo() << " Version:" << TaoVer;
-    qInfo() << " Revision:" << TaoREVISION;
+    qInfo() << " Revision:" << TaoREVISIONSTR;
     qInfo() << " Author: Jared Tao";
     qInfo() << " You can find more info about TaoQuick in website:"
             << "\033[0m"
