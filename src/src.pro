@@ -4,5 +4,4 @@ SUBDIRS += \
     TaoQuickApp \
     TaoQuickPlugin \
     TaoEffectPlugin
-
 CONFIG += ordered

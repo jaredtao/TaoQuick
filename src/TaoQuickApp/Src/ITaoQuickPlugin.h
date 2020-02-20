@@ -1,8 +1,9 @@
-﻿#pragma once
+#pragma once
 #include <QJsonArray>
 #include <QtPlugin>
 //ITaoQuickPlugin 插件接口
-class ITaoQuickPlugin {
+class ITaoQuickPlugin
+{
 public:
     virtual ~ITaoQuickPlugin() {}
     //插件初始化
