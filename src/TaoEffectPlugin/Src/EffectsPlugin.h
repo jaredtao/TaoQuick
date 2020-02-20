@@ -1,7 +1,10 @@
 #pragma once
 
 #include "ITaoQuickPlugin.h"
-class EffectsPlugin : public QObject, public ITaoQuickPlugin {
+class EffectsPlugin
+    : public QObject
+    , public ITaoQuickPlugin
+{
 
     Q_OBJECT
     Q_PLUGIN_METADATA(IID TaoQuickInterface_iid)

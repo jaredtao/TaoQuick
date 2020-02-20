@@ -33,7 +33,7 @@ TRANSLATIONS += \
     copy_qm.depends = $$PWD/Trans/*.qm
     srs = $$PWD//Trans/*.qm
     tgt = $$DESTDIR
-    win32 {
+    win32|android {
         tgt ~= s,/,\\\\,g
         srs ~= s,/,\\\\,g
     }

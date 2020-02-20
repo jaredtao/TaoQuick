@@ -1,4 +1,4 @@
-﻿#include "Logger.h"
+#include "Logger.h"
 #include "LoggerTemplate.h"
 
 #include <QCoreApplication>
@@ -14,34 +14,31 @@
 #include <cstdio>
 #endif
 
-namespace Logger
-{
+namespace Logger {
 static QString gLogDir;
 static int gLogMaxCount;
 
-static void outputMessage(QtMsgType type, const QMessageLogContext &context, const QString &msg);
+static void outputMessage(QtMsgType type, const QMessageLogContext& context, const QString& msg);
 
-void initLog(const QString &logPath, int logMaxCount)
+void initLog(const QString& logPath, int logMaxCount)
 {
     qInstallMessageHandler(outputMessage);
     gLogDir = QCoreApplication::applicationDirPath() + "/" + logPath;
     gLogMaxCount = logMaxCount;
     QDir dir(gLogDir);
-    if (!dir.exists())
-    {
+    if (!dir.exists()) {
         dir.mkpath(dir.absolutePath());
     }
     QStringList infoList = dir.entryList(QDir::Files, QDir::Name);
-    while (infoList.size() > gLogMaxCount)
-    {
+    while (infoList.size() > gLogMaxCount) {
         dir.remove(infoList.first());
         infoList.removeFirst();
     }
 }
-static void outputMessage(QtMsgType type, const QMessageLogContext &context, const QString &msg)
+static void outputMessage(QtMsgType type, const QMessageLogContext& context, const QString& msg)
 {
-    static const QString messageTemp= QString("<div class=\"%1\">%2</div>\r\n");
-    static const char typeList[] = {'d', 'w', 'c', 'f', 'i'};
+    static const QString messageTemp = QString("<div class=\"%1\">%2</div>\r\n");
+    static const char typeList[] = { 'd', 'w', 'c', 'f', 'i' };
     static QMutex mutex;
     static QFile file;
     static QTextStream textStream;
@@ -61,10 +58,8 @@ static void outputMessage(QtMsgType type, const QMessageLogContext &context, con
     QString htmlMessage = messageTemp.arg(typeList[static_cast<int>(type)]).arg(message);
     QString newfileName = QString("%1/%2_log.html").arg(gLogDir).arg(fileNameDt);
     mutex.lock();
-    if (file.fileName() != newfileName)
-    {
-        if (file.isOpen())
-        {
+    if (file.fileName() != newfileName) {
+        if (file.isOpen()) {
             file.close();
         }
         file.setFileName(newfileName);
@@ -72,8 +67,7 @@ static void outputMessage(QtMsgType type, const QMessageLogContext &context, con
         file.open(QIODevice::WriteOnly | QIODevice::Append);
         textStream.setDevice(&file);
         textStream.setCodec("UTF-8");
-        if (!exist)
-        {
+        if (!exist) {
             textStream << logTemplate << "\r\n";
         }
     }
