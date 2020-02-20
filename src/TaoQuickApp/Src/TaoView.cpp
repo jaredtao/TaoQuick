@@ -1,10 +1,14 @@
-﻿#include "TaoView.h"
+#include "TaoView.h"
 #include "Logger/Logger.h"
-#include "Ver.h"
+#ifdef VER_Utf16
+#include "Ver-u16.h"
+#else
+#include "Ver-u8.h"
+#endif
 
 #include <QTranslator>
 #include <QQmlEngine>
-#include <QCoreApplication>
+#include <QGuiApplication>
 #include <QDir>
 #include <QJsonDocument>
 #include <QQuickItem>
@@ -118,7 +122,7 @@ void TaoView::initAppInfo()
         pInfo->setProperty("appVersion", TaoVer);
         pInfo->setProperty("latestVersion", TaoVer);
         pInfo->setProperty("buildDateTime", TaoDATETIME);
-        pInfo->setProperty("buildRevision", TaoREVISION);
+        pInfo->setProperty("buildRevision", TaoREVISIONSTR);
         pInfo->setProperty("copyRight", VER_LEGALCOPYRIGHT_STR);
         pInfo->setProperty("descript", QString::fromLocal8Bit(VER_FILEDESCRIPTION_STR));
         pInfo->setProperty("compilerVendor", TaoCompilerVendor);
