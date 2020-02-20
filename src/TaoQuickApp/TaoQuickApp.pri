@@ -1,9 +1,17 @@
+msvc {
+    HEADERS += $$PWD/Ver-u16.h
+    DEFINES += VER_Utf16
+} else {
+    HEADERS += $$PWD/Ver-u8.h
+}
+
 HEADERS += \
     $$PWD/Src/ITaoQuickPlugin.h \
     $$PWD/Src/Logger/Logger.h \
     $$PWD/Src/Logger/LoggerTemplate.h \
-    $$PWD/Src/TaoView.h \
-    $$PWD/Ver.h
+    $$PWD/Src/TaoView.h
+
+
 SOURCES += \
     $$PWD/Src/Logger/Logger.cpp \
     $$PWD/Src/TaoView.cpp \

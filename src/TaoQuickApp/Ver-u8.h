@@ -9,6 +9,8 @@
 #define RELEASE_VER_MAIN2 TaoMIN
 #define RELEASE_VER_SUB  TaoPAT
 
+#define FILE_VER_STR TaoREVISIONSTR
+
 #define VER_COMPANYNAME_STR        "JaredTao\0"
 
 #define VER_FILEDESCRIPTION_STR    "TaoQuickDemo,未经授权不得商用,侵权必究\0"

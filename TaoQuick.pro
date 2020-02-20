@@ -5,4 +5,5 @@ SUBDIRS += \
 OTHER_FILES += README.md \
     Install.md \
     .clang-format \
-    LICENSE
+    LICENSE \
+    .github/workflows/*
