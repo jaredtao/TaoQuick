@@ -1,4 +1,4 @@
-﻿#include "TaoView.h"
+#include "TaoView.h"
 #include "Logger/Logger.h"
 
 #include <QGuiApplication>
@@ -15,6 +15,8 @@ int main(int argc, char **argv)
     Logger::initLog();
 
     TaoView view;
+    view.engine()->addImportPath(app.applicationDirPath());
+    view.engine()->addPluginPath(app.applicationDirPath());
     view.rootContext()->setContextProperty("view", &view);
     view.setSource(QUrl(QStringLiteral("qrc:/Qml/main.qml")));
     view.moveToScreenCenter();

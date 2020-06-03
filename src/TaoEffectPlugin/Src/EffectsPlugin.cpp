@@ -11,8 +11,8 @@ QJsonArray EffectsPlugin::infos() const
 {
     static QJsonArray arr{
         QJsonObject{
-            { "name", u8"特效" },
-            { "title", u8"特效" },
+            { "name", tr(u8"特效") },
+            { "title", tr(u8"特效") },
             { "children",
               QJsonArray{ QJsonObject{ { "name", u8"环" }, { "title", u8"环" }, { "url", "qrc:/Effect/Qml/ContentPage/Effect/RingPage.qml" } },
                           QJsonObject{ { "name", u8"璀璨星空" }, { "title", u8"璀璨星空" }, { "url", "qrc:/Effect/Qml/ContentPage/Effect/Swapper.qml" } },

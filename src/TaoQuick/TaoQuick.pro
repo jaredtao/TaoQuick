@@ -1,11 +1,12 @@
 TEMPLATE = lib
 
-TARGET = $$qtLibraryTarget(TaoQuick)
-
+#TARGET = $$qtLibraryTarget(TaoQuick)
+TARGET = TaoQuick
 QT += qml quick
-CONFIG += plugin c++11 qtquickcompiler
+CONFIG += plugin c++11 qtquickcompiler qmltypes
 uri = TaoQuick
-
+QML_IMPORT_NAME = $$TARGET
+QML_IMPORT_MAJOR_VERSION = 1
 include(../TaoVersion.pri)
 include(../TaoBundle.pri)
 include(TaoQuick.pri)
