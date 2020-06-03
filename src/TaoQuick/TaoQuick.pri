@@ -1,8 +1,7 @@
 HEADERS += \
         $$PWD/Src/taoquick_plugin.h
 
-SOURCES += \
-    $$PWD/Src/taoquick_plugin.cpp
+SOURCES +=
 
 RESOURCES += \
     $$PWD/Image.qrc \
