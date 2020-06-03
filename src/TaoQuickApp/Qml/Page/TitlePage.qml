@@ -173,7 +173,7 @@ Rectangle {
                         width: langListView.width
                         height: 36
                         text: modelData
-                        color: containsMouse ? "lightgray" : pop.barColor
+                        color: view.currentLang === modelData ? gConfig.titleBackground :( containsMouse ? "lightgray" : pop.barColor)
                         onClicked: {
                             pop.hide()
                             view.reTrans(modelData)

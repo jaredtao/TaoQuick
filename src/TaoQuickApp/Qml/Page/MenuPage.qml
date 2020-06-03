@@ -1,4 +1,4 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 import TaoQuick 1.0
 import "qrc:/Tao/Qml"
@@ -18,14 +18,15 @@ ListView {
     property var mainIndex: -1
     property var subIndex: -1
     Connections{
+
         target: view
-        onReTransed: {
+        function onReTransed() {
             var m = model.get(mainIndex)
             if (subIndex != -1) {
                 var s = m.children.get(subIndex)
-                currentTitle = s.name
+                currentTitle = qsTranslate(s.name,s.name)
             } else {
-                currentTitle = m.name
+                currentTitle = qsTranslate(m.name,m.name)
             }
         }
     }
@@ -41,14 +42,14 @@ ListView {
             id: btn
             width: root.width
             height: rowHeight
-            text: model.name
+            text: qsTranslate(model.name, model.name)
             textItem.leftPadding: 6
             textHorizontalAlignment: Text.AlignLeft
             textColor: text === currentTitle ? gConfig.titleBackground : gConfig.textColor
             onClicked: {
                 if (model.url)
                 {
-                    currentTitle = model.name
+                    currentTitle = qsTranslate(model.name,model.name)
                     currentUrl = model.url
                 } else {
                     if (!subListView.initOnce) {
@@ -80,10 +81,10 @@ ListView {
             delegate: TGradientBtn {
                 width: root.width
                 height: rowHeight
-                text: model.name
+                text: qsTranslate(model.name, model.name)
                 textColor: text === currentTitle ? gConfig.titleBackground : gConfig.textColor
                 onClicked: {
-                    currentTitle = model.name
+                    currentTitle = qsTranslate(model.name,model.name)
                     currentUrl = model.url
                     subIndex = index
                 }

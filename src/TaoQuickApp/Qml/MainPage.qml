@@ -1,4 +1,4 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import "./Page"
 
 import TaoQuick 1.0
@@ -27,7 +27,10 @@ Item {
     }
     Connections {
         target: view
-        onPluginReady: {
+//        onPluginReady: {
+//            onPluginReady(pluginInfo)
+//        }
+        function onPluginReady(pluginInfo) {
             console.log("onPluginReady")
             var arr = null
             try {
