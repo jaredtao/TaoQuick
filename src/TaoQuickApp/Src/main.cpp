@@ -5,6 +5,10 @@
 #include <QQmlContext>
 #include <QQmlEngine>
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+#include <QQmlFileSelector>
+#endif
+
 int main(int argc, char **argv)
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -15,8 +19,10 @@ int main(int argc, char **argv)
     Logger::initLog();
 
     TaoView view;
-    view.engine()->addImportPath(app.applicationDirPath());
-    view.engine()->addPluginPath(app.applicationDirPath());
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+    QQmlFileSelector fs(view.engine());
+    fs.setExtraSelectors({"QT6"});
+#endif
     view.rootContext()->setContextProperty("view", &view);
     view.setSource(QUrl(QStringLiteral("qrc:/Qml/main.qml")));
     view.moveToScreenCenter();
