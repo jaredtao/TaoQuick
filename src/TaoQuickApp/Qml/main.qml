@@ -1,4 +1,4 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 
 import "./Page"
@@ -14,7 +14,7 @@ Item {
     }
     Loader {
         id: loader
-        source: "qrc:/Qml/MainPage.qml"
+        source: "MainPage.qml"
         asynchronous: true
         opacity: 0
         anchors.fill: parent
