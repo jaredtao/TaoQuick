@@ -1,4 +1,4 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 
 import TaoQuick 1.0
@@ -54,7 +54,7 @@ Popup {
             Text {
                 anchors.left: parent.left
                 anchors.right: parent.right
-                text: appInfo.appName + " " + appInfo.appVersion
+                text: appInfo.appName + " " + appInfo.app
 
                 font.pixelSize: 20
                 renderType: Text.NativeRendering
