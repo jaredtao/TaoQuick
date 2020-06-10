@@ -174,6 +174,7 @@ Rectangle {
                         height: 36
                         text: modelData
                         color: view.currentLang === modelData ? gConfig.titleBackground :( containsMouse ? "lightgray" : pop.barColor)
+                        textColor: gConfig.textColor
                         onClicked: {
                             pop.hide()
                             view.reTrans(modelData)
