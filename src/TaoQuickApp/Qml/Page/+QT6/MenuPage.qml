@@ -19,7 +19,7 @@ ListView {
     property var subIndex: -1
     Connections{
         target: view
-        onReTransed: {
+        function onReTransed() {
             var m = model.get(mainIndex)
             if (subIndex != -1) {
                 var s = m.children.get(subIndex)

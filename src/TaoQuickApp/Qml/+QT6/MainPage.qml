@@ -1,11 +1,10 @@
 import QtQuick 2.12
-import "./Page"
-import "./+QT6"
+import "../Page"
+
 import TaoQuick 1.0
 import "qrc:/Tao/Qml"
 
 Item {
-    anchors.fill: parent
     ContentData {
         id: gConfig
         objectName: "gConfig"
@@ -28,7 +27,7 @@ Item {
     }
     Connections {
         target: view
-        onPluginReady: {
+        function onPluginReady(pluginInfo) {
             console.log("onPluginReady")
             var arr = null
             try {

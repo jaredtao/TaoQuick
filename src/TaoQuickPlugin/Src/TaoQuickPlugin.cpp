@@ -1,4 +1,4 @@
-﻿#include "TaoQuickPlugin.h"
+#include "TaoQuickPlugin.h"
 #include <QQmlEngine>
 TaoQuickPlugin::TaoQuickPlugin(QObject *parent) : QObject (parent)
 {
