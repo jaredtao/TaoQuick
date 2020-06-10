@@ -5,6 +5,7 @@ import TaoQuick 1.0
 import "qrc:/Tao/Qml"
 
 Item {
+    anchors.fill: parent
     ContentData {
         id: gConfig
         objectName: "gConfig"
