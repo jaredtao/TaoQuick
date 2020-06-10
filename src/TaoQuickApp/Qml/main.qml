@@ -8,8 +8,9 @@ Item {
     width: 1440
     height: 960
     RectangularGlow {
+        id: glow
         anchors.fill: parent
-        visible: !splash.visible && view.active
+        visible: false
         color: "#005fa3"
         spread: 1.0
         glowRadius: 2
@@ -32,6 +33,11 @@ Item {
         }
         onLoaded: {
             timer.start()
+        }
+        onOpacityChanged: {
+            if (opacity === 1) {
+                glow.visible = Qt.binding(function() {return !splash.visible && view.active;})
+            }
         }
     }
     Timer {
