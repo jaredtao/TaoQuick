@@ -11,6 +11,7 @@ class TaoView : public QQuickView
 {
     Q_OBJECT
     Q_PROPERTY(QStringList languageList READ languageList NOTIFY languageListChanged)
+    Q_PROPERTY(QString currentLang READ currentLang NOTIFY currentLangChanged)
 public:
     explicit TaoView(QWindow *parent = nullptr);
     ~TaoView();
@@ -24,10 +25,15 @@ public:
     {
         return m_languageList;
     }
+    const QString &currentLang() const
+    {
+        return m_lang;
+    }
 signals:
     void reTransed();
     void languageListChanged();
     void pluginReady(QString pluginInfo);
+    void currentLangChanged();
 public slots:
 private:
     QString m_lang;

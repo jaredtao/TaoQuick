@@ -1,6 +1,7 @@
 QT  += core gui qml
 
-TARGET = $$qtLibraryTarget(TaoEffect)
+#TARGET = $$qtLibraryTarget(TaoEffect)
+TARGET = TaoEffect
 TEMPLATE = lib
 CONFIG += plugin
 msvc {
