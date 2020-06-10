@@ -12,5 +12,6 @@ QtObject {
 #   define highp
 #endif // GL_ES
         "
+
 }
 

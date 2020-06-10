@@ -81,6 +81,7 @@ void TaoView::reTrans(const QString &lang)
     m_lang = lang;
     engine()->retranslate();
     emit reTransed();
+    emit currentLangChanged();
 }
 
 void TaoView::loadPlugin(const QString &pluginPath)
