@@ -1,13 +1,19 @@
 ﻿import QtQuick 2.12
 QtObject {
 
-    property color titleBackground: "#c62f2f"
-    property color background: "#f6f6f6"
+//    property color titleBackground: "#c62f2f"
+//    property color background: "#f6f6f6"
+//    property color reserverColor: "#ffffff"
+//    property color textColor: "black"
+//    property color splitColor: "gray"
+
+    property color titleBackground: "#222225"
+    property color background: "#272c25"
+    property color textColor: "#adafb2"
     property color reserverColor: "#ffffff"
-    property color textColor: "black"
     property color splitColor: "gray"
 
-    property int currentTheme: 0
+    property int currentTheme: 1
     onCurrentThemeChanged: {
         var t = themes.get(currentTheme)
         titleBackground = t.titleBackground
