@@ -1,6 +1,7 @@
 QT  += core gui qml
 
-TARGET = $$qtLibraryTarget(TaoQuickPlugin)
+#TARGET = $$qtLibraryTarget(TaoQuickPlugin)
+TARGET = TaoQuickPlugin
 TEMPLATE = lib
 CONFIG += plugin
 msvc {
