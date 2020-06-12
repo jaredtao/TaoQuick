@@ -1,7 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import TaoQuick 1.0
-import "qrc:/Tao/Qml"
+import "qrc:/TaoQuick"
 ListView {
     id: root
     anchors.fill: parent

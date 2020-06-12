@@ -18,7 +18,7 @@ uri = $$TARGET
 include(../TaoVersion.pri)
 include(../TaoBundle.pri)
 include(TaoQuick.pri)
-include(Qml/TaoQuickDesigner.pri)
+include(TaoQuick/TaoQuickDesigner.pri)
 
 CONFIG(debug, debug|release){
     DESTDIR = $${TaoQuick_RUN_TREE}/debug/$${BundlePath}$${uri}
