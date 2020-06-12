@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/Core">
-        <file>Image/ProgressBar/fail.png</file>
-        <file>Image/ProgressBar/ok.png</file>
-        <file>Image/ProgressBar/ok_circle.png</file>
-        <file>Image/ProgressBar/fail_circle.png</file>
-        <file>Image/Others/spinner.png</file>
-    </qresource>
-</RCC>

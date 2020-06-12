@@ -1,5 +1,6 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import QtQuick.Controls 2.12
+import "../.."
 Item {
     property int fps: 60
 
@@ -7,7 +8,7 @@ Item {
     property color textColor: "#f7e08c"
     Image {
         id: spinner
-        source: "qrc:/Core/Image/Others/spinner.png"
+        source: "spinner.png"
         width: 32
         height: 32
         anchors.verticalCenter: parent.verticalCenter

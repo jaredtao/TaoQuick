@@ -4,7 +4,6 @@ HEADERS += \
 SOURCES +=
 
 RESOURCES += \
-    $$PWD/Image.qrc \
     $$PWD/Qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
