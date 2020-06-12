@@ -1,0 +1,150 @@
+[
+    {
+        "fr": "Bouton d 'angle",
+        "key": "圆角文本按钮"
+    },
+    {
+        "fr": "Element Flow",
+        "key": "元素流"
+    },
+    {
+        "fr": "Fumight Dance",
+        "key": "烟花漫舞"
+    },
+    {
+        "fr": "Bouton rond",
+        "key": "圆按钮"
+    },
+    {
+        "fr": "Gradual",
+        "key": "渐变"
+    },
+    {
+        "fr": "Badge",
+        "key": "徽章"
+    },
+    {
+        "fr": "Projectile",
+        "key": "弹幕"
+    },
+    {
+        "fr": "Ensemble de page d 'étiquette",
+        "key": "标签页组件"
+    },
+    {
+        "fr": "Ensemble barre de progression",
+        "key": "进度条组件"
+    },
+    {
+        "fr": "Liste de défilement",
+        "key": "滚动列表"
+    },
+    {
+        "fr": "Menu",
+        "key": "菜单"
+    },
+    {
+        "fr": "taoquick",
+        "key": "TaoQuick"
+    },
+    {
+        "fr": "Azur",
+        "key": "苍穹蓝"
+    },
+    {
+        "fr": "Le chagrin de la crème",
+        "key": "霜之哀伤"
+    },
+    {
+        "fr": "Bienvenue dans la présentation de taoquick.",
+        "key": "\r\n<p>\r\n   欢迎使用TaoQuick演示程序，此程序罗列了<br/>\r\nTaoQuick的所有功能，并全面支持动态切换UI风格<br/>\r\n(换皮肤)、动态翻译多国语言等功能。<br/>\r\n</p>\r\n<p>\r\n    更多功能正在路上，敬请期待。\r\n</p>\r\n"
+    },
+    {
+        "fr": "Bienvenue.",
+        "key": "欢迎"
+    },
+    {
+        "fr": "Vert clair",
+        "key": " 清爽绿"
+    },
+    {
+        "fr": "Code bidimensionnel",
+        "key": "二维码"
+    },
+    {
+        "fr": "Shadow Flow",
+        "key": "暗影之流"
+    },
+    {
+        "fr": "Ensemble de traction",
+        "key": "下拉组件"
+    },
+    {
+        "fr": "Bouton de texte",
+        "key": "图文按钮"
+    },
+    {
+        "fr": "Ensemble de base",
+        "key": "基础组件"
+    },
+    {
+        "fr": "Plaisir de flamme",
+        "key": "焰之欢愉"
+    },
+    {
+        "fr": "Cool assemblage",
+        "key": "酷炫组件"
+    },
+    {
+        "fr": "Poudre",
+        "key": "淑女粉"
+    },
+    {
+        "fr": "Adresse IP",
+        "key": "IP地址"
+    },
+    {
+        "fr": "Page d 'accueil",
+        "key": "首页"
+    },
+    {
+        "fr": "Ensemble de traction",
+        "key": "拖动组件"
+    },
+    {
+        "fr": "Bouton texte",
+        "key": "文本按钮"
+    },
+    {
+        "fr": "Boule d 'énergie",
+        "key": "能量球"
+    },
+    {
+        "fr": "Un pin de rouge",
+        "key": "一品红"
+    },
+    {
+        "fr": "Ensemble bouton",
+        "key": "按钮组件"
+    },
+    {
+        "fr": "Argent riche",
+        "key": "富贵金"
+    },
+    {
+        "fr": "High Cold Black",
+        "key": "高冷黑"
+    },
+    {
+        "fr": "Ensemble fonctionnel",
+        "key": "功能组件"
+    },
+    {
+        "fr": "Comète Harley",
+        "key": "哈雷彗星"
+    },
+    {
+        "fr": "Bouton progressif",
+        "key": "渐变按钮"
+    }
+]
