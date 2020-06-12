@@ -1,6 +1,9 @@
 ﻿[English](README-en.md)
 
-[gitee镜像:https://gitee.com/jaredtao/TaoQuick](https://gitee.com/jaredtao/TaoQuick)
+[github原始仓库https://github.com/jaredtao/taoquick](github原始仓库https://github.com/jaredtao/taoquick)
+
+[gitee镜像仓库https://gitee.com/jaredtao/TaoQuick](gitee镜像仓库https://gitee.com/jaredtao/TaoQuick)
+
 -------------------------------------------------------------
 
 # 目录
@@ -38,7 +41,6 @@
 [涛哥的博客-国内镜像](https://jaredtao.gitee.io)
 
 [知乎专栏-Qt进阶之路](https://zhuanlan.zhihu.com/TaoQt)
-
 
 ## 徽章预览
 
