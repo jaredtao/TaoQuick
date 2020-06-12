@@ -147,6 +147,8 @@
 
 gif太多，放进单独的仓库了[TaoQuickPreview](https://github.com/jaredtao/TaoQuickPreview)
 
+也可以访问gitee镜像仓库 [TaoQuickPreview gitee](https://gitee.com/jaredtao/TaoQuickPreview)
+
 ## 功能列表
 |用途|分类|名称|进度|说明|
 |--|--|--|--|--|
