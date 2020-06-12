@@ -2,7 +2,7 @@ import QtQuick 2.12
 import "./Page"
 import "./+QT6"
 import TaoQuick 1.0
-import "qrc:/Tao/Qml"
+import "qrc:/TaoQuick"
 
 Item {
     anchors.fill: parent
