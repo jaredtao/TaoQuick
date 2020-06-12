@@ -49,16 +49,6 @@ src文件夹下包含四个子项目：
 
 安装方法可以用命令行安装， 可以直接用QtCreator进行安装。
 
-### QtCreator安装TaoQuick
-
-如下图所示:
-
-![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/QtCreator-install.png)
-
-任意编译器kit都可以，项目->构建步骤->添加build步骤->Make，添加之后在make参数中输入install。最后重新构建工程，即可完成安装。
-
-TaoQuick库将被安装到{QTDIR}/qml/TaoQuick/ 路径下。
-
 ### 命令行安装TaoQuick
 
 确保环境变量PATH中有QTDIR/bin，即能找到qmake
@@ -71,6 +61,17 @@ make
 make install
 
 ```
+
+### QtCreator安装TaoQuick
+
+如下图所示:
+
+![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/QtCreator-install.png)
+
+任意编译器kit都可以，项目->构建步骤->添加build步骤->Make，添加之后在make参数中输入install。最后重新构建工程，即可完成安装。
+
+TaoQuick库将被安装到{QTDIR}/qml/TaoQuick/ 路径下。
+
 
 ## TaoQuick dll的使用
 

@@ -1,0 +1,150 @@
+[
+    {
+        "es": "filee tekst nupp",
+        "key": "圆角文本按钮"
+    },
+    {
+        "es": "元素流",
+        "key": "元素流"
+    },
+    {
+        "es": "ilutulestik ja tantsija.",
+        "key": "烟花漫舞"
+    },
+    {
+        "es": "ümar nupp.",
+        "key": "圆按钮"
+    },
+    {
+        "es": "järk - järgult.",
+        "key": "渐变"
+    },
+    {
+        "es": "märk.",
+        "key": "徽章"
+    },
+    {
+        "es": "tule,",
+        "key": "弹幕"
+    },
+    {
+        "es": "arve osa",
+        "key": "标签页组件"
+    },
+    {
+        "es": "artikli osa.",
+        "key": "进度条组件"
+    },
+    {
+        "es": "selle loetelu",
+        "key": "滚动列表"
+    },
+    {
+        "es": "menüü.",
+        "key": "菜单"
+    },
+    {
+        "es": "TaoQuickGenericName",
+        "key": "TaoQuick"
+    },
+    {
+        "es": "taevas on sinine",
+        "key": "苍穹蓝"
+    },
+    {
+        "es": "härmatis.",
+        "key": "霜之哀伤"
+    },
+    {
+        "es": "Bienvenidos a la demostración de'taoquick'.",
+        "key": "\r\n<p>\r\n   欢迎使用TaoQuick演示程序，此程序罗列了<br/>\r\nTaoQuick的所有功能，并全面支持动态切换UI风格<br/>\r\n(换皮肤)、动态翻译多国语言等功能。<br/>\r\n</p>\r\n<p>\r\n    更多功能正在路上，敬请期待。\r\n</p>\r\n"
+    },
+    {
+        "es": "tere tulemast",
+        "key": "欢迎"
+    },
+    {
+        "es": "värske ja roheline.",
+        "key": " 清爽绿"
+    },
+    {
+        "es": "2d - kood",
+        "key": "二维码"
+    },
+    {
+        "es": "nagu vari.",
+        "key": "暗影之流"
+    },
+    {
+        "es": "- osa",
+        "key": "下拉组件"
+    },
+    {
+        "es": "pilt nuppu.",
+        "key": "图文按钮"
+    },
+    {
+        "es": "põhilised osad",
+        "key": "基础组件"
+    },
+    {
+        "es": "õnne, leek.",
+        "key": "焰之欢愉"
+    },
+    {
+        "es": "lahe osa,",
+        "key": "酷炫组件"
+    },
+    {
+        "es": "daamid, pulber",
+        "key": "淑女粉"
+    },
+    {
+        "es": "ip - aadressi.",
+        "key": "IP地址"
+    },
+    {
+        "es": "koju.",
+        "key": "首页"
+    },
+    {
+        "es": "vedada osade",
+        "key": "拖动组件"
+    },
+    {
+        "es": "tekst nupp",
+        "key": "文本按钮"
+    },
+    {
+        "es": "palli.",
+        "key": "能量球"
+    },
+    {
+        "es": "euphorbia pulcherrima",
+        "key": "一品红"
+    },
+    {
+        "es": "nupp komponent",
+        "key": "按钮组件"
+    },
+    {
+        "es": "ja kulda.",
+        "key": "富贵金"
+    },
+    {
+        "es": "高冷黑",
+        "key": "高冷黑"
+    },
+    {
+        "es": "funktsionaalne üksus",
+        "key": "功能组件"
+    },
+    {
+        "es": "halley komeet.",
+        "key": "哈雷彗星"
+    },
+    {
+        "es": "järk - järgult nuppu.",
+        "key": "渐变按钮"
+    }
+]

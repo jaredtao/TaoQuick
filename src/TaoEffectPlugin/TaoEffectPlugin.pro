@@ -40,6 +40,3 @@ CONFIG(debug,debug|release){
     UI_DIR = build/release/ui
     OBJECTS_DIR = build/release/obj
 }
-OTHER_FILES += README.md \
-    .clang-format \
-    LICENSE
