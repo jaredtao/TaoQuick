@@ -1,0 +1,150 @@
+[
+    {
+        "en": "Corner",
+        "key": "圆角文本按钮"
+    },
+    {
+        "en": "Elementary streams",
+        "key": "元素流"
+    },
+    {
+        "en": "Fireworks dancing",
+        "key": "烟花漫舞"
+    },
+    {
+        "en": "Round",
+        "key": "圆按钮"
+    },
+    {
+        "en": "Gradiant",
+        "key": "渐变"
+    },
+    {
+        "en": "Badget",
+        "key": "徽章"
+    },
+    {
+        "en": "Barrage",
+        "key": "弹幕"
+    },
+    {
+        "en": "Label",
+        "key": "标签页组件"
+    },
+    {
+        "en": "ProgressBar",
+        "key": "进度条组件"
+    },
+    {
+        "en": "Scrolling",
+        "key": "滚动列表"
+    },
+    {
+        "en": "Menu",
+        "key": "菜单"
+    },
+    {
+        "en": "TaoQuick",
+        "key": "TaoQuick"
+    },
+    {
+        "en": "Blue",
+        "key": "苍穹蓝"
+    },
+    {
+        "en": "Frostmourne",
+        "key": "霜之哀伤"
+    },
+    {
+        "en": "\r\nWelcome to the 'TaoQuick' demo program\r\n",
+        "key": "\r\n<p>\r\n   欢迎使用TaoQuick演示程序，此程序罗列了<br/>\r\nTaoQuick的所有功能，并全面支持动态切换UI风格<br/>\r\n(换皮肤)、动态翻译多国语言等功能。<br/>\r\n</p>\r\n<p>\r\n    更多功能正在路上，敬请期待。\r\n</p>\r\n"
+    },
+    {
+        "en": "Welcome",
+        "key": "欢迎"
+    },
+    {
+        "en": "Green",
+        "key": " 清爽绿"
+    },
+    {
+        "en": "QRcode",
+        "key": "二维码"
+    },
+    {
+        "en": "Shadow flow",
+        "key": "暗影之流"
+    },
+    {
+        "en": "Drop-down",
+        "key": "下拉组件"
+    },
+    {
+        "en": "Graphic",
+        "key": "图文按钮"
+    },
+    {
+        "en": "Basic",
+        "key": "基础组件"
+    },
+    {
+        "en": "Joy of fire",
+        "key": "焰之欢愉"
+    },
+    {
+        "en": "Cool",
+        "key": "酷炫组件"
+    },
+    {
+        "en": "Pink",
+        "key": "淑女粉"
+    },
+    {
+        "en": "IP address",
+        "key": "IP地址"
+    },
+    {
+        "en": "Home",
+        "key": "首页"
+    },
+    {
+        "en": "Drag",
+        "key": "拖动组件"
+    },
+    {
+        "en": "Text",
+        "key": "文本按钮"
+    },
+    {
+        "en": "Energy ball",
+        "key": "能量球"
+    },
+    {
+        "en": "Red",
+        "key": "一品红"
+    },
+    {
+        "en": "Button",
+        "key": "按钮组件"
+    },
+    {
+        "en": "Gold",
+        "key": "富贵金"
+    },
+    {
+        "en": "Black",
+        "key": "高冷黑"
+    },
+    {
+        "en": "Functional",
+        "key": "功能组件"
+    },
+    {
+        "en": "Comet Halley",
+        "key": "哈雷彗星"
+    },
+    {
+        "en": "Gradient",
+        "key": "渐变按钮"
+    }
+]
