@@ -1,6 +1,5 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
-import TaoQuick 1.0
 import "../../"
 Item {
     id: r
@@ -41,7 +40,7 @@ Item {
     }
     Image {
         id: image
-        source: percent === 100 ? "qrc:/Core/Image/ProgressBar/ok_circle.png" : "qrc:/Core/Image/ProgressBar/fail_circle.png"
+        source: percent === 100 ? "ok_circle.png" : "fail_circle.png"
         height: parent.height
         width: height
         enabled: barType === TNormalProgress.BarType.SucceedOrFailed

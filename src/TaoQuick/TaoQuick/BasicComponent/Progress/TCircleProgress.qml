@@ -1,7 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtGraphicalEffects 1.12
-import TaoQuick 1.0
+
 import "../../"
 Item {
     id: r
@@ -47,7 +47,7 @@ Item {
     }
     Image {
         id: image
-        source: percent === 100 ? "qrc:/Core/Image/ProgressBar/ok.png" : "qrc:/Core/Image/ProgressBar/fail.png"
+        source: percent === 100 ? "ok.png" : "fail.png"
         enabled: barType === TCircleProgress.BarType.SucceedOrFailed
         visible: enabled
         scale: 2
