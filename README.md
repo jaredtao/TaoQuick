@@ -1,8 +1,8 @@
 ﻿[English](README-en.md)
 
-[github原始仓库https://github.com/jaredtao/taoquick](github原始仓库https://github.com/jaredtao/taoquick)
+[github原始仓库https://github.com/jaredtao/TaoQuick](https://github.com/jaredtao/TaoQuick)
 
-[gitee镜像仓库https://gitee.com/jaredtao/TaoQuick](gitee镜像仓库https://gitee.com/jaredtao/TaoQuick)
+[gitee镜像仓库https://gitee.com/jaredtao/TaoQuick](https://gitee.com/jaredtao/TaoQuick)
 
 -------------------------------------------------------------
 
