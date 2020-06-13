@@ -7,13 +7,13 @@ QtObject {
 //    property color textColor: "black"
 //    property color splitColor: "gray"
 
-    property color titleBackground: "#222225"
-    property color background: "#272c25"
-    property color textColor: "#adafb2"
+    property color titleBackground: themes.get(0).titleBackground
+    property color background: themes.get(0).background
+    property color textColor: themes.get(0).textColor
     property color reserverColor: "#ffffff"
     property color splitColor: "gray"
 
-    property int currentTheme: 1
+    property int currentTheme: 0
     onCurrentThemeChanged: {
         var t = themes.get(currentTheme)
         titleBackground = t.titleBackground
