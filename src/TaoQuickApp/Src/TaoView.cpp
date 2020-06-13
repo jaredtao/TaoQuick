@@ -1,17 +1,13 @@
 #include "TaoView.h"
-#include "Logger/Logger.h"
 #ifdef VER_Utf16
 #include "Ver-u16.h"
 #else
 #include "Ver-u8.h"
 #endif
-
-#include <QTranslator>
+#include <QQmlContext>
 #include <QQmlEngine>
-#include <QGuiApplication>
-#include <QDir>
-#include <QJsonDocument>
 #include <QQuickItem>
+#include <QGuiApplication>
 #include <QScreen>
 TaoView::TaoView(QWindow *parent) : QQuickView(parent)
 {
@@ -23,39 +19,6 @@ TaoView::TaoView(QWindow *parent) : QQuickView(parent)
 
 TaoView::~TaoView()
 {
-    qDeleteAll(m_pluginList);
-    m_pluginList.clear();
-}
-
-
-void TaoView::loadPlugin(const QString &pluginPath)
-{
-    QDir dir(qApp->applicationDirPath() + "/" + pluginPath);
-
-    auto list = dir.entryInfoList({"*"}, QDir::Files);
-
-    for (auto info : list) {
-        if (QLibrary::isLibrary(info.absoluteFilePath()))
-        {
-            m_loader = std::make_unique<QPluginLoader>();
-            m_loader->setFileName(info.absoluteFilePath());
-            if (!m_loader->load())
-            {
-                LOG_WARN << m_loader->fileName() << m_loader->errorString();
-                continue;
-            }
-            QObject *pObj = m_loader->instance();
-            auto pPlugin = qobject_cast<ITaoQuickPlugin *>(pObj);
-            if (!pPlugin)
-            {
-                continue;
-            }
-            pPlugin->init();
-            emit pluginReady(QString(QJsonDocument(pPlugin->infos()).toJson()));
-            m_pluginList.append(pPlugin);
-            LOG_INFO << "loaded plugin " << info.absoluteFilePath();
-        }
-    }
 }
 
 void TaoView::initAppInfo()

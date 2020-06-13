@@ -2,7 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import TaoQuick 1.0
 import "qrc:/TaoQuick"
-
+import "Biz"
 Rectangle {
     Row {
         anchors.left: parent.left
@@ -79,109 +79,15 @@ Rectangle {
         anchors.right: splitLine.left
         anchors.rightMargin: 10
         spacing: 10
-        TImageBtn {
+        SkinBtn {
             width: 20
             height: 20
             anchors.verticalCenter: parent.verticalCenter
-            imageUrl: containsMouse ? "qrc:/Image/Window/skin_white.png" : "qrc:/Image/Window/skin_gray.png"
-            onClicked: {
-                skinBox.show()
-            }
-            TPopup {
-                id: skinBox
-                barColor: gConfig.reserverColor
-                backgroundWidth: 280
-                backgroundHeight: 180
-                contentItem: GridView {
-                    anchors.fill: parent
-                    anchors.margins: 10
-                    model: gConfig.themes
-                    cellWidth: 80
-                    cellHeight: 80
-                    clip: true
-                    delegate: Item {
-                        width: 80
-                        height: 80
-                        Rectangle {
-                            anchors.fill: parent
-                            anchors.margins: 4
-                            height: width
-                            color: model.titleBackground
-                        }
-                        Rectangle {
-                            anchors.fill: parent
-                            color: "transparent"
-                            border.color: model.titleBackground
-                            border.width: 2
-                            visible: a.containsMouse
-                        }
-                        Text {
-                            anchors {
-                                left: parent.left
-                                bottom: parent.bottom
-                                leftMargin: 8
-                                bottomMargin: 8
-                            }
-                            color: "white"
-                            text: model.name
-                        }
-                        Rectangle {
-                            x: parent.width - width
-                            y: parent.height - height
-                            width: 20
-                            height: width
-                            radius: width / 2
-                            color: model.titleBackground
-                            border.width: 3
-                            border.color: gConfig.reserverColor
-                            visible: gConfig.currentTheme === index
-                        }
-                        MouseArea {
-                            id: a
-                            anchors.fill: parent
-                            hoverEnabled: true
-                            onClicked: {
-                                gConfig.currentTheme = index
-                            }
-                        }
-                    }
-                }
-
-            }
         }
-        TImageBtn {
+        LangBtn {
             width: 20
             height: 20
             anchors.verticalCenter: parent.verticalCenter
-            imageUrl: containsMouse ? "qrc:/Image/Window/lang_white.png" : "qrc:/Image/Window/lang_gray.png"
-            onClicked: {
-                //                notifyBox.notify("change language")
-                pop.show()
-            }
-            TPopup {
-                id: pop
-                barColor: gConfig.reserverColor
-                backgroundWidth: 100
-                backgroundHeight: 400
-                contentItem: ListView {
-                    id: langListView
-                    anchors.fill: parent
-                    anchors.margins: 2
-                    model: view.languageList
-                    clip: true
-                    delegate: TTextBtn {
-                        width: langListView.width
-                        height: 36
-                        text: modelData
-                        color: view.currentLang === modelData ? gConfig.titleBackground :( containsMouse ? "lightgray" : pop.barColor)
-                        textColor: gConfig.textColor
-                        onClicked: {
-                            pop.hide()
-                            view.reTrans(modelData)
-                        }
-                    }
-                }
-            }
         }
         TImageBtn {
             width: 20
