@@ -14,5 +14,4 @@ public:
 
     void init() override;
     QJsonArray infos() const override;
-    void replaceTranslater(const QString &oldLang, const QString &newLang) const override;
 };
