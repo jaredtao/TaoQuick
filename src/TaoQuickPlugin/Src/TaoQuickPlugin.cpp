@@ -9,36 +9,30 @@ void TaoQuickPlugin::init()
     Q_INIT_RESOURCE(Qml);
 }
 
-    QJsonArray TaoQuickPlugin::infos() const
+QJsonArray TaoQuickPlugin::infos() const
 {
     static QJsonArray arr {
         QJsonObject {
-            {"name", u8"基础组件"},
-            {"title",u8"基础组件"},
+            {"name", u8"Basic"},
             { "children", QJsonArray{
                               QJsonObject {
-                                  {"name", u8"按钮组件"},
-                                  {"title",u8"按钮组件"},
+                                  {"name", u8"Button"},
                                   {"url", "qrc:/Qml/Contents/BaseComponent/Buttons.qml"}
                                   },
                               QJsonObject {
-                                  {"name", u8"拖动组件"},
-                                  {"title",u8"拖动组件"},
+                                  {"name", u8"Drag"},
                                   {"url", "qrc:/Qml/Contents/BaseComponent/Drags.qml"},
                                   },
                               QJsonObject {
-                                  {"name", u8"渐变"},
-                                  {"title",u8"渐变"},
+                                  {"name", u8"Gradient"},
                                   {"url", "qrc:/Qml/Contents/BaseComponent/Gradiants.qml"},
                                   },
                               QJsonObject {
-                                  {"name", u8"进度条组件"},
-                                  {"title",u8"进度条组件"},
+                                  {"name", u8"ProgressBar"},
                                   {"url", "qrc:/Qml/Contents/BaseComponent/Progresses.qml"},
                                   },
                               QJsonObject {
-                                  {"name", u8"对话框"},
-                                  {"title",u8"对话框"},
+                                  {"name", u8"Dialog"},
                                   {"url", "qrc:/Qml/Contents/BaseComponent/Dialogs.qml"}
                                   },
                               }
@@ -46,26 +40,21 @@ void TaoQuickPlugin::init()
         },
         QJsonObject {
             {"name", u8"ShaderEffect"},
-            {"title",u8"ShaderEffect"},
             { "children", QJsonArray{
                               QJsonObject {
-                                  {"name", u8"穿云洞"},
-                                  {"title",u8"穿云洞"},
+                                  {"name", u8"Cloud Hole"},
                                   {"url", "qrc:/Qml/Contents/ShaderEffect/CloudHole.qml"}
                               },
                               QJsonObject {
-                                  {"name", u8"星球之光"},
-                                  {"title",u8"星球之光"},
+                                  {"name", u8"Star Light"},
                                   {"url", "qrc:/Qml/Contents/ShaderEffect/Planet.qml"}
                               },
                               QJsonObject {
-                                  {"name", u8"蜗牛"},
-                                  {"title",u8"蜗牛"},
+                                  {"name", u8"Snail"},
                                   {"url", "qrc:/Qml/Contents/ShaderEffect/Snail.qml"}
                               },
                               QJsonObject {
-                                  {"name", u8"超级马里奥"},
-                                  {"title",u8"超级马里奥"},
+                                  {"name", u8"Super Mario"},
                                   {"url", "qrc:/Qml/Contents/ShaderEffect/SuperMario.qml"}
                               }
                           }
@@ -73,10 +62,4 @@ void TaoQuickPlugin::init()
         }
     };
     return arr;
-}
-
-void TaoQuickPlugin::replaceTranslater(const QString &oldLang, const QString &newLang) const
-{
-    (void)oldLang;
-    (void)newLang;
 }

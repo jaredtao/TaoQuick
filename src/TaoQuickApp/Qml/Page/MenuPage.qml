@@ -17,18 +17,6 @@ ListView {
     }
     property var mainIndex: -1
     property var subIndex: -1
-    Connections{
-        target: view
-        onReTransed: {
-            var m = model.get(mainIndex)
-            if (subIndex != -1) {
-                var s = m.children.get(subIndex)
-                currentTitle = qsTranslate(s.name,s.name)
-            } else {
-                currentTitle = qsTranslate(m.name,m.name)
-            }
-        }
-    }
     delegate: Item {
         id: delegateItem
         width: root.width
@@ -41,14 +29,14 @@ ListView {
             id: btn
             width: root.width
             height: rowHeight
-            text: qsTranslate(model.name, model.name)
+            text: trans.trans(model.name) + trans.transString
             textItem.leftPadding: 6
             textHorizontalAlignment: Text.AlignLeft
             textColor: text === currentTitle ? gConfig.titleBackground : gConfig.textColor
             onClicked: {
                 if (model.url)
                 {
-                    currentTitle = qsTranslate(model.name,model.name)
+                    currentTitle = model.name
                     currentUrl = model.url
                 } else {
                     if (!subListView.initOnce) {
@@ -80,10 +68,10 @@ ListView {
             delegate: TGradientBtn {
                 width: root.width
                 height: rowHeight
-                text: qsTranslate(model.name, model.name)
+                text: trans.trans(model.name) + trans.transString
                 textColor: text === currentTitle ? gConfig.titleBackground : gConfig.textColor
                 onClicked: {
-                    currentTitle = qsTranslate(model.name,model.name)
+                    currentTitle = model.name
                     currentUrl = model.url
                     subIndex = index
                 }

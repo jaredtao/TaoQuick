@@ -10,7 +10,8 @@
         <file>Qml/Page/ContentData.qml</file>
         <file>Qml/Page/AboutDialog.qml</file>
         <file>Qml/Welcome/Welcome.qml</file>
-        <file>Qml/+QT6/MainPage.qml</file>
-        <file>Qml/Page/+QT6/MenuPage.qml</file>
+        <file>Qml/Page/Biz/Background.qml</file>
+        <file>Qml/Page/Biz/LangBtn.qml</file>
+        <file>Qml/Page/Biz/SkinBtn.qml</file>
     </qresource>
 </RCC>
