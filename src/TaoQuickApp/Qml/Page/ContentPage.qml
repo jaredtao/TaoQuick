@@ -1,53 +1,10 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 import TaoQuick 1.0
 import "qrc:/TaoQuick"
-
-Rectangle {
+import "Biz"
+Background {
     id: root
-    SequentialAnimation {
-        running: s.checked
-        loops: Animation.Infinite
-        ParallelAnimation {
-            PropertyAnimation { target: img1; property: "x"; to: -root.width; duration: 50000}
-            PropertyAnimation { target: img2; property: "x"; to: 0; duration: 50000}
-        }
-        ScriptAction {
-            script: { img1.x = root.width}
-        }
-        ParallelAnimation {
-            PropertyAnimation { target: img2; property: "x"; to: -root.width; duration: 50000}
-            PropertyAnimation { target: img1; property: "x"; to: 0; duration: 50000}
-        }
-        ScriptAction {
-            script: { img2.x = root.width}
-        }
-    }
-    Switch {
-        id: s
-        text: "Background"
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.topMargin: 40
-    }
-    Image {
-        id: img1
-        x: 0
-        y: 0
-        opacity: 0.2
-        width: parent.width
-        height: parent.height
-        source: "qrc:/Image/Window/flower.jpg"
-    }
-    Image {
-        id: img2
-        x: root.width
-        y: 0
-        opacity: 0.2
-        width: parent.width
-        height: parent.height
-        source: "qrc:/Image/Window/flower.jpg"
-    }
     Rectangle {
         id: vLine
         width: parent.width - 2
@@ -73,7 +30,7 @@ Rectangle {
             bottom: vLine.top
         }
         Text {
-            text: qsTr("菜单")
+            text: trans.trans("Menu") + trans.transString
             anchors.centerIn: parent
             color: gConfig.textColor
         }
@@ -88,7 +45,7 @@ Rectangle {
         }
         Text {
             id: titleText
-            text: qsTr(menuPage.currentTitle)
+            text: trans.trans(menuPage.currentTitle) + trans.transString
             anchors.centerIn: parent
             font.pixelSize: 26
             color: gConfig.titleBackground

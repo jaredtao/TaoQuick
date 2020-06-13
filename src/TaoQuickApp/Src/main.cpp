@@ -4,10 +4,8 @@
 #include <QGuiApplication>
 #include <QQmlContext>
 #include <QQmlEngine>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-#include <QQmlFileSelector>
-#endif
+#include "Trans.h"
+#include "PluginLoader.h"
 
 int main(int argc, char **argv)
 {
@@ -17,13 +15,15 @@ int main(int argc, char **argv)
     app.setOrganizationName("JaredTao");
     app.setOrganizationDomain("https://jaredtao.github.io");
     Logger::initLog();
-
+    Trans trans;
+    trans.loadFolder(":/Trans/");
+    PluginLoader loader;
     TaoView view;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-    QQmlFileSelector fs(view.engine());
-    fs.setExtraSelectors({"QT6"});
-#endif
+
     view.rootContext()->setContextProperty("view", &view);
+    view.rootContext()->setContextProperty("trans", &trans);
+    view.rootContext()->setContextProperty("pluginLoader", &loader);
+
     view.setSource(QUrl(QStringLiteral("qrc:/Qml/main.qml")));
     view.moveToScreenCenter();
     view.show();

@@ -12,7 +12,8 @@ class Trans : public QObject
     Q_PROPERTY(QString transString READ transString NOTIFY transStringChanged)
 public:
     explicit Trans(QObject *parent = nullptr);
-    void load(const QString &filePath);
+    void loadFolder(const QString &folder);
+    bool load(QString &lang, const QString &filePath);
 public:
     const QString &currentLang() const
     {
@@ -32,7 +33,6 @@ public:
 
 public slots:
     QString trans(const QString &source) const;
-
     void setCurrentLang(const QString &currentLang);
 signals:
     void currentLangChanged(const QString &currentLang);
@@ -42,14 +42,12 @@ signals:
     void transStringChanged();
 
 protected:
-
     void setLanguages(const QStringList &languages);
 
+    void initEnglish();
 private:
-
     QString m_currentLang;
-
-    // <en, <"key", "value">>
+    // <"English", <"key", "value">>
     QHash<QString, QHash<QString, QString>> m_map;
     QStringList m_languages;
     QString m_transString;

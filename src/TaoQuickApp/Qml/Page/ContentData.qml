@@ -1,4 +1,4 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 QtObject {
 
 //    property color titleBackground: "#c62f2f"
@@ -22,37 +22,37 @@ QtObject {
     }
     property ListModel themes: ListModel {
         ListElement {
-            name: qsTr("一品红")
+            name: "Red"
             titleBackground: "#c62f2f"
             background: "#f6f6f6"
             textColor: "#5c5c5c"
         }
         ListElement {
-            name: qsTr("高冷黑")
+            name: "Black"
             titleBackground: "#222225"
             background: "#272c25"
             textColor: "#adafb2"
         }
         ListElement {
-            name: qsTr("淑女粉")
+            name: "Pink"
             titleBackground: "#faa0c5"
             background: "#f6f6f6"
             textColor: "#5c5c5c"
         }
         ListElement {
-            name: qsTr("富贵金")
+            name: "Gold"
             titleBackground: "#fed98f"
             background: "#f6f6f6"
             textColor: "#5c5c5c"
         }
         ListElement {
-            name: qsTr(" 清爽绿")
+            name: "Green"
             titleBackground: "#58c979"
             background: "#f6f6f6"
             textColor: "#5c5c5c"
         }
         ListElement {
-            name: qsTr("苍穹蓝")
+            name: "Blue"
             titleBackground: "#67c1fd"
             background: "#f6f6f6"
             textColor: "#5c5c5c"
@@ -60,6 +60,6 @@ QtObject {
     }
 
     property ListModel contentData: ListModel {
-        ListElement { name: qsTr("首页"); title: qsTr("欢迎"); url: "qrc:/Qml/Welcome/Welcome.qml"; children: []}
+        ListElement { name: "Home"; url: "qrc:/Qml/Welcome/Welcome.qml"; children: []}
     }
 }
