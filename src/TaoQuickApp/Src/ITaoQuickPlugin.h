@@ -17,8 +17,8 @@ public:
     //      ]
     // ]
     virtual QJsonArray infos() const = 0;
-    //翻译
-    virtual void replaceTranslater(const QString &oldLang, const QString &newLang) const = 0;
+
+    virtual void uninit() {}
 };
 #define TaoQuickInterface_iid "jaredtao.github.io/TaoQuick"
 Q_DECLARE_INTERFACE(ITaoQuickPlugin, TaoQuickInterface_iid)

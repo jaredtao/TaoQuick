@@ -1,6 +1,6 @@
 import QtQuick 2.12
 import "./Page"
-import "./+QT6"
+
 import TaoQuick 1.0
 import "qrc:/TaoQuick"
 
@@ -26,27 +26,25 @@ Item {
         id: aboutDialog
 
     }
-    Connections {
-        target: view
-        onPluginReady: {
-            console.log("onPluginReady")
-            var arr = null
-            try {
-                arr = JSON.parse(pluginInfo)
-            } catch (e) {
-                console.log(e)
-                return
-            }
-            gConfig.contentData.append(arr)
-        }
-    }
     Component.onCompleted: {
         view.initAppInfo()
-        view.loadPlugin("TaoPlugin")
+        pluginLoader.pluginReady.connect(onPluginReady);
+        pluginLoader.loadPlugin("TaoPlugin")
+    }
+    function onPluginReady(pluginInfo) {
+        console.log("onPluginReady")
+        var arr = null
+        try {
+            arr = JSON.parse(pluginInfo)
+        } catch (e) {
+            console.log(e)
+            return
+        }
+        gConfig.contentData.append(arr)
     }
     TitlePage {
         id: titleRect
-        width: root.width
+        width: rootView.width
         height: 60
         color: gConfig.titleBackground
         TMoveArea {
