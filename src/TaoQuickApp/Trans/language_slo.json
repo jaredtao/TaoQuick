@@ -1,0 +1,389 @@
+﻿{
+    "lang":  "SlovenskoName",
+    "trans":  [
+                  {
+                      "key":  "Chinese",
+                      "value":  "Chinese"
+                  },
+                  {
+                      "key":  "traditional Chinese",
+                      "value":  "tradicionalni kitajski"
+                  },
+                  {
+                      "key":  "Cantonese",
+                      "value":  "kantonščina"
+                  },
+                  {
+                      "key":  "classical Chinese",
+                      "value":  "klasična kitajska"
+                  },
+                  {
+                      "key":  "Japanese",
+                      "value":  "Japonska"
+                  },
+                  {
+                      "key":  "Korean",
+                      "value":  "KorejskoName"
+                  },
+                  {
+                      "key":  "French",
+                      "value":  "FrancoskoName"
+                  },
+                  {
+                      "key":  "Spanish",
+                      "value":  "španščina"
+                  },
+                  {
+                      "key":  "Thai",
+                      "value":  "Tajska"
+                  },
+                  {
+                      "key":  "Arabic",
+                      "value":  "ArabskoName"
+                  },
+                  {
+                      "key":  "Russian",
+                      "value":  "Ruski"
+                  },
+                  {
+                      "key":  "Portuguese",
+                      "value":  "portugalskoName"
+                  },
+                  {
+                      "key":  "German",
+                      "value":  "nemško"
+                  },
+                  {
+                      "key":  "Italian",
+                      "value":  "ItalijanskoName"
+                  },
+                  {
+                      "key":  "Greek",
+                      "value":  "grščina"
+                  },
+                  {
+                      "key":  "Dutch",
+                      "value":  "NizozemskaName"
+                  },
+                  {
+                      "key":  "Polish",
+                      "value":  "poljščina"
+                  },
+                  {
+                      "key":  "Bulgarian",
+                      "value":  "bolgarščina"
+                  },
+                  {
+                      "key":  "Estonian",
+                      "value":  "estonščina"
+                  },
+                  {
+                      "key":  "Danish",
+                      "value":  "Danščina"
+                  },
+                  {
+                      "key":  "Finnish",
+                      "value":  "Finščina"
+                  },
+                  {
+                      "key":  "Czech",
+                      "value":  "Češka"
+                  },
+                  {
+                      "key":  "Romanian",
+                      "value":  "Romunsko"
+                  },
+                  {
+                      "key":  "Slovenian",
+                      "value":  "SlovenskoName"
+                  },
+                  {
+                      "key":  "Swedish",
+                      "value":  "Švedska"
+                  },
+                  {
+                      "key":  "Hungarian",
+                      "value":  "MadžarskoName"
+                  },
+                  {
+                      "key":  "Vietnamese",
+                      "value":  "vietnamskoName"
+                  },
+                  {
+                      "key":  "Corner",
+                      "value":  "Vogal"
+                  },
+                  {
+                      "key":  "Elemkeytary streams",
+                      "value":  "Elektroključni tokovi"
+                  },
+                  {
+                      "key":  "Fireworks dancing",
+                      "value":  "Ognjemet, ki pleše"
+                  },
+                  {
+                      "key":  "Round",
+                      "value":  "Okrogla"
+                  },
+                  {
+                      "key":  "Gradiant",
+                      "value":  "Gradiant"
+                  },
+                  {
+                      "key":  "Badget",
+                      "value":  "Badget."
+                  },
+                  {
+                      "key":  "Barrage",
+                      "value":  "Motnje"
+                  },
+                  {
+                      "key":  "Label",
+                      "value":  "Oznaka"
+                  },
+                  {
+                      "key":  "ProgressBar",
+                      "value":  "ProgressBar"
+                  },
+                  {
+                      "key":  "Scrolling",
+                      "value":  "Zvitek"
+                  },
+                  {
+                      "key":  "Mkeyu",
+                      "value":  "Mkeyu"
+                  },
+                  {
+                      "key":  "TaoQuick",
+                      "value":  "TaoQuickComment"
+                  },
+                  {
+                      "key":  "Blue",
+                      "value":  "Modri"
+                  },
+                  {
+                      "key":  "Frostmourne",
+                      "value":  "Frostmourne"
+                  },
+                  {
+                      "key":  "Welcome to the \u0027TaoQuick\u0027 demo program",
+                      "value":  "Dobrodošli v demo programu \"TaoQuick\""
+                  },
+                  {
+                      "key":  "Welcome",
+                      "value":  "Dobrodošli."
+                  },
+                  {
+                      "key":  "Close",
+                      "value":  "Zapri"
+                  },
+                  {
+                      "key":  "Green",
+                      "value":  "Zeleno"
+                  },
+                  {
+                      "key":  "QRcode",
+                      "value":  "QRCode"
+                  },
+                  {
+                      "key":  "Shadow flow",
+                      "value":  "Pretok senc"
+                  },
+                  {
+                      "key":  "Drop-down",
+                      "value":  "Spust"
+                  },
+                  {
+                      "key":  "Graphic",
+                      "value":  "Grafični"
+                  },
+                  {
+                      "key":  "Basic",
+                      "value":  "Osnovno"
+                  },
+                  {
+                      "key":  "Joy of fire",
+                      "value":  "Veselje ognja."
+                  },
+                  {
+                      "key":  "Cool",
+                      "value":  "Kul."
+                  },
+                  {
+                      "key":  "Pink",
+                      "value":  "Rožnata"
+                  },
+                  {
+                      "key":  "IP address",
+                      "value":  "Naslov IP"
+                  },
+                  {
+                      "key":  "Home",
+                      "value":  "Dom"
+                  },
+                  {
+                      "key":  "Drag",
+                      "value":  "Povleci"
+                  },
+                  {
+                      "key":  "Text",
+                      "value":  "Besedilo"
+                  },
+                  {
+                      "key":  "keyergy ball",
+                      "value":  "keyergy ball"
+                  },
+                  {
+                      "key":  "Red",
+                      "value":  "Rdeča"
+                  },
+                  {
+                      "key":  "Button",
+                      "value":  "Gumb"
+                  },
+                  {
+                      "key":  "Gold",
+                      "value":  "Zlato"
+                  },
+                  {
+                      "key":  "Black",
+                      "value":  "Črna"
+                  },
+                  {
+                      "key":  "Functional",
+                      "value":  "Funkcionalno"
+                  },
+                  {
+                      "key":  "Comet Halley",
+                      "value":  "Komet Halley."
+                  },
+                  {
+                      "key":  "Gradient",
+                      "value":  "Smer"
+                  },
+                  {
+                      "key":  "Background",
+                      "value":  "Ozadje"
+                  },
+                  {
+                      "key":  "Dialog",
+                      "value":  "Pogovorno"
+                  },
+                  {
+                      "key":  "ShaderEffect",
+                      "value":  "Senčni učinek"
+                  },
+                  {
+                      "key":  "Cloud Hole",
+                      "value":  "Luknja oblakov"
+                  },
+                  {
+                      "key":  "Star Light",
+                      "value":  "Svetloba zvezd"
+                  },
+                  {
+                      "key":  "Snail",
+                      "value":  "Polž"
+                  },
+                  {
+                      "key":  "Super Mario",
+                      "value":  "Super Mario."
+                  },
+                  {
+                      "key":  "Effect",
+                      "value":  "Učinek"
+                  },
+                  {
+                      "key":  "Ring",
+                      "value":  "Prstan"
+                  },
+                  {
+                      "key":  "Brilliant Starry Sky",
+                      "value":  "Briljantno zvezdno nebo"
+                  },
+                  {
+                      "key":  "Keep up with the pace",
+                      "value":  "Drži se tempa."
+                  },
+                  {
+                      "key":  "Undercurrent surge",
+                      "value":  "Podvodna povečava"
+                  },
+                  {
+                      "key":  "Magic Circle",
+                      "value":  "Čarobni krog"
+                  },
+                  {
+                      "key":  "Painter",
+                      "value":  "Slikar"
+                  },
+                  {
+                      "key":  "RoundRect",
+                      "value":  "Krožno"
+                  },
+                  {
+                      "key":  "KLine",
+                      "value":  "KLine"
+                  },
+                  {
+                      "key":  "Animation",
+                      "value":  "Animacija"
+                  },
+                  {
+                      "key":  "Enter",
+                      "value":  "Vstopi."
+                  },
+                  {
+                      "key":  "Grad",
+                      "value":  "Grad"
+                  },
+                  {
+                      "key":  "Cleavage",
+                      "value":  "Kleavage."
+                  },
+                  {
+                      "key":  "Diagonal",
+                      "value":  "Diagonalno"
+                  },
+                  {
+                      "key":  "Louver",
+                      "value":  "Luver"
+                  },
+                  {
+                      "key":  "Square",
+                      "value":  "Kvadrat"
+                  },
+                  {
+                      "key":  "Circle",
+                      "value":  "Krog"
+                  },
+                  {
+                      "key":  "Cross",
+                      "value":  "Križ"
+                  },
+                  {
+                      "key":  "Rhombus",
+                      "value":  "Rhombus"
+                  },
+                  {
+                      "key":  "Wheel",
+                      "value":  "Kolo"
+                  },
+                  {
+                      "key":  "Board",
+                      "value":  "Deska"
+                  },
+                  {
+                      "key":  "Dissolve",
+                      "value":  "Raztopi"
+                  },
+                  {
+                      "key":  "PageSwitch",
+                      "value":  "Preklopi"
+                  },
+                  {
+                      "key":  "FadeInOut",
+                      "value":  "FadeInOutComment"
+                  }
+              ]
+}

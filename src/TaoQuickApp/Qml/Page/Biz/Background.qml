@@ -25,7 +25,7 @@ Rectangle {
     }
     Switch {
         id: s
-        text: "Background" + trans.transString
+        text: trans.trans("Background") + trans.transString
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.topMargin: 40

@@ -1,0 +1,389 @@
+﻿{
+    "lang":  "Eesti",
+    "trans":  [
+                  {
+                      "key":  "Chinese",
+                      "value":  "Chinese"
+                  },
+                  {
+                      "key":  "traditional Chinese",
+                      "value":  "traditsiooniline Hiina"
+                  },
+                  {
+                      "key":  "Cantonese",
+                      "value":  "Kantoni"
+                  },
+                  {
+                      "key":  "classical Chinese",
+                      "value":  "klassikaline Hiina"
+                  },
+                  {
+                      "key":  "Japanese",
+                      "value":  "Jaapani"
+                  },
+                  {
+                      "key":  "Korean",
+                      "value":  "Korea"
+                  },
+                  {
+                      "key":  "French",
+                      "value":  "Prantsuse"
+                  },
+                  {
+                      "key":  "Spanish",
+                      "value":  "Hispaania"
+                  },
+                  {
+                      "key":  "Thai",
+                      "value":  "Tai"
+                  },
+                  {
+                      "key":  "Arabic",
+                      "value":  "Araabia"
+                  },
+                  {
+                      "key":  "Russian",
+                      "value":  "Venemaa"
+                  },
+                  {
+                      "key":  "Portuguese",
+                      "value":  "Portugali"
+                  },
+                  {
+                      "key":  "German",
+                      "value":  "Saksa"
+                  },
+                  {
+                      "key":  "Italian",
+                      "value":  "Itaalia"
+                  },
+                  {
+                      "key":  "Greek",
+                      "value":  "Kreeka"
+                  },
+                  {
+                      "key":  "Dutch",
+                      "value":  "Hollandi"
+                  },
+                  {
+                      "key":  "Polish",
+                      "value":  "Poola"
+                  },
+                  {
+                      "key":  "Bulgarian",
+                      "value":  "Bulgaaria"
+                  },
+                  {
+                      "key":  "Estonian",
+                      "value":  "Eesti"
+                  },
+                  {
+                      "key":  "Danish",
+                      "value":  "Taani"
+                  },
+                  {
+                      "key":  "Finnish",
+                      "value":  "Soome"
+                  },
+                  {
+                      "key":  "Czech",
+                      "value":  "Tšehhi"
+                  },
+                  {
+                      "key":  "Romanian",
+                      "value":  "Rumeenia"
+                  },
+                  {
+                      "key":  "Slovenian",
+                      "value":  "Sloveenia"
+                  },
+                  {
+                      "key":  "Swedish",
+                      "value":  "Rootsi"
+                  },
+                  {
+                      "key":  "Hungarian",
+                      "value":  "Ungari"
+                  },
+                  {
+                      "key":  "Vietnamese",
+                      "value":  "VietnamiName"
+                  },
+                  {
+                      "key":  "Corner",
+                      "value":  "Nurk"
+                  },
+                  {
+                      "key":  "Elemkeytary streams",
+                      "value":  "Elemkoelised ojad"
+                  },
+                  {
+                      "key":  "Fireworks dancing",
+                      "value":  "Ilutulestiku tants"
+                  },
+                  {
+                      "key":  "Round",
+                      "value":  "Ümar"
+                  },
+                  {
+                      "key":  "Gradiant",
+                      "value":  "Gradiant"
+                  },
+                  {
+                      "key":  "Badget",
+                      "value":  "Märk"
+                  },
+                  {
+                      "key":  "Barrage",
+                      "value":  "Sulgemine"
+                  },
+                  {
+                      "key":  "Label",
+                      "value":  "Pealdis"
+                  },
+                  {
+                      "key":  "ProgressBar",
+                      "value":  "Progressriba"
+                  },
+                  {
+                      "key":  "Scrolling",
+                      "value":  "Kerimine"
+                  },
+                  {
+                      "key":  "Mkeyu",
+                      "value":  "MkeyuName"
+                  },
+                  {
+                      "key":  "TaoQuick",
+                      "value":  "TaoQuickGenericName"
+                  },
+                  {
+                      "key":  "Blue",
+                      "value":  "Sinine"
+                  },
+                  {
+                      "key":  "Frostmourne",
+                      "value":  "Frostbourne"
+                  },
+                  {
+                      "key":  "Welcome to the \u0027TaoQuick\u0027 demo program",
+                      "value":  "Tere tulemast TaoQuicki demoprogrammi"
+                  },
+                  {
+                      "key":  "Welcome",
+                      "value":  "Tere"
+                  },
+                  {
+                      "key":  "Close",
+                      "value":  "Sulge"
+                  },
+                  {
+                      "key":  "Green",
+                      "value":  "Roheline"
+                  },
+                  {
+                      "key":  "QRcode",
+                      "value":  "QRcode"
+                  },
+                  {
+                      "key":  "Shadow flow",
+                      "value":  "Varju voog"
+                  },
+                  {
+                      "key":  "Drop-down",
+                      "value":  "Mahapanek"
+                  },
+                  {
+                      "key":  "Graphic",
+                      "value":  "Graafiline"
+                  },
+                  {
+                      "key":  "Basic",
+                      "value":  "Põhi"
+                  },
+                  {
+                      "key":  "Joy of fire",
+                      "value":  "Tulede rõõm"
+                  },
+                  {
+                      "key":  "Cool",
+                      "value":  "Lahe."
+                  },
+                  {
+                      "key":  "Pink",
+                      "value":  "Roosa"
+                  },
+                  {
+                      "key":  "IP address",
+                      "value":  "IP- aadress"
+                  },
+                  {
+                      "key":  "Home",
+                      "value":  "Kodu"
+                  },
+                  {
+                      "key":  "Drag",
+                      "value":  "Lohista"
+                  },
+                  {
+                      "key":  "Text",
+                      "value":  "Tekst"
+                  },
+                  {
+                      "key":  "keyergy ball",
+                      "value":  "keyergy pall"
+                  },
+                  {
+                      "key":  "Red",
+                      "value":  "Punane"
+                  },
+                  {
+                      "key":  "Button",
+                      "value":  "Nupp"
+                  },
+                  {
+                      "key":  "Gold",
+                      "value":  "Kuld"
+                  },
+                  {
+                      "key":  "Black",
+                      "value":  "Must"
+                  },
+                  {
+                      "key":  "Functional",
+                      "value":  "Funktsionaalne"
+                  },
+                  {
+                      "key":  "Comet Halley",
+                      "value":  "Komeet Halley"
+                  },
+                  {
+                      "key":  "Gradient",
+                      "value":  "Astmik"
+                  },
+                  {
+                      "key":  "Background",
+                      "value":  "Taust"
+                  },
+                  {
+                      "key":  "Dialog",
+                      "value":  "Dialoog"
+                  },
+                  {
+                      "key":  "ShaderEffect",
+                      "value":  "Varjuefekt"
+                  },
+                  {
+                      "key":  "Cloud Hole",
+                      "value":  "Pilv Auk"
+                  },
+                  {
+                      "key":  "Star Light",
+                      "value":  "Tähe valgus"
+                  },
+                  {
+                      "key":  "Snail",
+                      "value":  "Tigu"
+                  },
+                  {
+                      "key":  "Super Mario",
+                      "value":  "Super Mario"
+                  },
+                  {
+                      "key":  "Effect",
+                      "value":  "Mõju"
+                  },
+                  {
+                      "key":  "Ring",
+                      "value":  "Ring"
+                  },
+                  {
+                      "key":  "Brilliant Starry Sky",
+                      "value":  "Briljantne Tähetaevas"
+                  },
+                  {
+                      "key":  "Keep up with the pace",
+                      "value":  "Hoia tempot, nagu sa ütlesid."
+                  },
+                  {
+                      "key":  "Undercurrent surge",
+                      "value":  "Alavoolu pinge"
+                  },
+                  {
+                      "key":  "Magic Circle",
+                      "value":  "Maagiline ring"
+                  },
+                  {
+                      "key":  "Painter",
+                      "value":  "Painter"
+                  },
+                  {
+                      "key":  "RoundRect",
+                      "value":  "RoundRect"
+                  },
+                  {
+                      "key":  "KLine",
+                      "value":  "Kline"
+                  },
+                  {
+                      "key":  "Animation",
+                      "value":  "Animatsioon"
+                  },
+                  {
+                      "key":  "Enter",
+                      "value":  "Sisesta"
+                  },
+                  {
+                      "key":  "Grad",
+                      "value":  "Üleminek"
+                  },
+                  {
+                      "key":  "Cleavage",
+                      "value":  "Sügav"
+                  },
+                  {
+                      "key":  "Diagonal",
+                      "value":  "Diagonaalne"
+                  },
+                  {
+                      "key":  "Louver",
+                      "value":  "Kõvemini."
+                  },
+                  {
+                      "key":  "Square",
+                      "value":  "Ruut"
+                  },
+                  {
+                      "key":  "Circle",
+                      "value":  "Ring"
+                  },
+                  {
+                      "key":  "Cross",
+                      "value":  "Rist"
+                  },
+                  {
+                      "key":  "Rhombus",
+                      "value":  "Romus."
+                  },
+                  {
+                      "key":  "Wheel",
+                      "value":  "Ratas"
+                  },
+                  {
+                      "key":  "Board",
+                      "value":  "Laud"
+                  },
+                  {
+                      "key":  "Dissolve",
+                      "value":  "Lahustada"
+                  },
+                  {
+                      "key":  "PageSwitch",
+                      "value":  "PageSwitch"
+                  },
+                  {
+                      "key":  "FadeInOut",
+                      "value":  "Kustutamine"
+                  }
+              ]
+}

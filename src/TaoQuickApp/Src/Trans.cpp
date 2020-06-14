@@ -2,6 +2,7 @@
 #include "FileReadWrite.h"
 #include <QDir>
 const static auto cEnglisthStr = QStringLiteral("English");
+const static auto cChineseStr = QStringLiteral("简体中文");
 Trans::Trans(QObject* parent)
     : QObject(parent)
 {
@@ -16,8 +17,17 @@ void Trans::loadFolder(const QString& folder)
         load(lang, info.absoluteFilePath());
     }
     initEnglish();
-    setLanguages(m_map.uniqueKeys());
-    setCurrentLang(cEnglisthStr);
+    auto langs = m_map.uniqueKeys();
+    if (langs.contains(cChineseStr)) {
+        langs.removeAll(cChineseStr);
+        langs.push_front(cChineseStr);
+    }
+    setLanguages(langs);
+    if (m_map.contains(cChineseStr)) {
+        setCurrentLang(cChineseStr);
+    } else {
+        setCurrentLang(cEnglisthStr);
+    }
     emit transStringChanged();
 }
 
@@ -42,7 +52,12 @@ bool Trans::load(QString& lang, const QString& filePath)
 void Trans::initEnglish()
 {
     if (!m_map.contains(cEnglisthStr)) {
-        const auto& map = m_map.value(m_map.keys().first());
+        QHash<QString, QString> map;
+        if (m_map.contains(cChineseStr)) {
+            map = m_map.value(cChineseStr);
+        } else {
+            map = m_map.value(m_map.keys().first());
+        }
         for (auto key : map.uniqueKeys()) {
             m_map[cEnglisthStr][key] = key;
         }

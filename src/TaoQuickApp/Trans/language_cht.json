@@ -1,0 +1,389 @@
+﻿{
+    "lang":  "繁體中文",
+    "trans":  [
+                  {
+                      "key":  "Chinese",
+                      "value":  "Chinese"
+                  },
+                  {
+                      "key":  "traditional Chinese",
+                      "value":  "繁體中文"
+                  },
+                  {
+                      "key":  "Cantonese",
+                      "value":  "廣東話"
+                  },
+                  {
+                      "key":  "classical Chinese",
+                      "value":  "文言文"
+                  },
+                  {
+                      "key":  "Japanese",
+                      "value":  "日本人"
+                  },
+                  {
+                      "key":  "Korean",
+                      "value":  "韓國人"
+                  },
+                  {
+                      "key":  "French",
+                      "value":  "法語"
+                  },
+                  {
+                      "key":  "Spanish",
+                      "value":  "西班牙的"
+                  },
+                  {
+                      "key":  "Thai",
+                      "value":  "泰國人"
+                  },
+                  {
+                      "key":  "Arabic",
+                      "value":  "阿拉伯語"
+                  },
+                  {
+                      "key":  "Russian",
+                      "value":  "俄語"
+                  },
+                  {
+                      "key":  "Portuguese",
+                      "value":  "葡萄牙語"
+                  },
+                  {
+                      "key":  "German",
+                      "value":  "德國的"
+                  },
+                  {
+                      "key":  "Italian",
+                      "value":  "義大利人"
+                  },
+                  {
+                      "key":  "Greek",
+                      "value":  "希臘人"
+                  },
+                  {
+                      "key":  "Dutch",
+                      "value":  "荷蘭語"
+                  },
+                  {
+                      "key":  "Polish",
+                      "value":  "波蘭語"
+                  },
+                  {
+                      "key":  "Bulgarian",
+                      "value":  "保加利亞人"
+                  },
+                  {
+                      "key":  "Estonian",
+                      "value":  "愛沙尼亞語"
+                  },
+                  {
+                      "key":  "Danish",
+                      "value":  "丹麥語"
+                  },
+                  {
+                      "key":  "Finnish",
+                      "value":  "芬蘭語"
+                  },
+                  {
+                      "key":  "Czech",
+                      "value":  "捷克的"
+                  },
+                  {
+                      "key":  "Romanian",
+                      "value":  "羅馬尼亞語"
+                  },
+                  {
+                      "key":  "Slovenian",
+                      "value":  "斯洛文尼亞語"
+                  },
+                  {
+                      "key":  "Swedish",
+                      "value":  "瑞典的"
+                  },
+                  {
+                      "key":  "Hungarian",
+                      "value":  "匈牙利語"
+                  },
+                  {
+                      "key":  "Vietnamese",
+                      "value":  "越南人"
+                  },
+                  {
+                      "key":  "Corner",
+                      "value":  "角落"
+                  },
+                  {
+                      "key":  "Elemkeytary streams",
+                      "value":  "溪流"
+                  },
+                  {
+                      "key":  "Fireworks dancing",
+                      "value":  "焰火舞"
+                  },
+                  {
+                      "key":  "Round",
+                      "value":  "圓"
+                  },
+                  {
+                      "key":  "Gradiant",
+                      "value":  "梯度"
+                  },
+                  {
+                      "key":  "Badget",
+                      "value":  "徽章"
+                  },
+                  {
+                      "key":  "Barrage",
+                      "value":  "攔河壩"
+                  },
+                  {
+                      "key":  "Label",
+                      "value":  "標籤"
+                  },
+                  {
+                      "key":  "ProgressBar",
+                      "value":  "進度條"
+                  },
+                  {
+                      "key":  "Scrolling",
+                      "value":  "滾動"
+                  },
+                  {
+                      "key":  "Mkeyu",
+                      "value":  "姆凱尤"
+                  },
+                  {
+                      "key":  "TaoQuick",
+                      "value":  "淘氣"
+                  },
+                  {
+                      "key":  "Blue",
+                      "value":  "藍色"
+                  },
+                  {
+                      "key":  "Frostmourne",
+                      "value":  "霜之哀傷"
+                  },
+                  {
+                      "key":  "Welcome to the \u0027TaoQuick\u0027 demo program",
+                      "value":  "歡迎使用“taokick”演示程式"
+                  },
+                  {
+                      "key":  "Welcome",
+                      "value":  "歡迎光臨"
+                  },
+                  {
+                      "key":  "Close",
+                      "value":  "關閉"
+                  },
+                  {
+                      "key":  "Green",
+                      "value":  "綠色"
+                  },
+                  {
+                      "key":  "QRcode",
+                      "value":  "QRcode碼"
+                  },
+                  {
+                      "key":  "Shadow flow",
+                      "value":  "陰影流"
+                  },
+                  {
+                      "key":  "Drop-down",
+                      "value":  "下拉清單"
+                  },
+                  {
+                      "key":  "Graphic",
+                      "value":  "圖解的"
+                  },
+                  {
+                      "key":  "Basic",
+                      "value":  "基本"
+                  },
+                  {
+                      "key":  "Joy of fire",
+                      "value":  "火的喜悅"
+                  },
+                  {
+                      "key":  "Cool",
+                      "value":  "酷"
+                  },
+                  {
+                      "key":  "Pink",
+                      "value":  "粉紅色"
+                  },
+                  {
+                      "key":  "IP address",
+                      "value":  "IP地址"
+                  },
+                  {
+                      "key":  "Home",
+                      "value":  "家"
+                  },
+                  {
+                      "key":  "Drag",
+                      "value":  "阻力"
+                  },
+                  {
+                      "key":  "Text",
+                      "value":  "文字"
+                  },
+                  {
+                      "key":  "keyergy ball",
+                      "value":  "能量球"
+                  },
+                  {
+                      "key":  "Red",
+                      "value":  "紅色"
+                  },
+                  {
+                      "key":  "Button",
+                      "value":  "按鈕"
+                  },
+                  {
+                      "key":  "Gold",
+                      "value":  "黃金"
+                  },
+                  {
+                      "key":  "Black",
+                      "value":  "黑色"
+                  },
+                  {
+                      "key":  "Functional",
+                      "value":  "功能性"
+                  },
+                  {
+                      "key":  "Comet Halley",
+                      "value":  "哈雷慧星"
+                  },
+                  {
+                      "key":  "Gradient",
+                      "value":  "梯度"
+                  },
+                  {
+                      "key":  "Background",
+                      "value":  "背景"
+                  },
+                  {
+                      "key":  "Dialog",
+                      "value":  "對話"
+                  },
+                  {
+                      "key":  "ShaderEffect",
+                      "value":  "陰影效果"
+                  },
+                  {
+                      "key":  "Cloud Hole",
+                      "value":  "雲洞"
+                  },
+                  {
+                      "key":  "Star Light",
+                      "value":  "星光"
+                  },
+                  {
+                      "key":  "Snail",
+                      "value":  "蝸牛"
+                  },
+                  {
+                      "key":  "Super Mario",
+                      "value":  "超級馬里奧"
+                  },
+                  {
+                      "key":  "Effect",
+                      "value":  "影響"
+                  },
+                  {
+                      "key":  "Ring",
+                      "value":  "戒指"
+                  },
+                  {
+                      "key":  "Brilliant Starry Sky",
+                      "value":  "燦爛的星空"
+                  },
+                  {
+                      "key":  "Keep up with the pace",
+                      "value":  "跟上步伐"
+                  },
+                  {
+                      "key":  "Undercurrent surge",
+                      "value":  "潜流湧浪"
+                  },
+                  {
+                      "key":  "Magic Circle",
+                      "value":  "魔術圈"
+                  },
+                  {
+                      "key":  "Painter",
+                      "value":  "畫家"
+                  },
+                  {
+                      "key":  "RoundRect",
+                      "value":  "圓角矩形"
+                  },
+                  {
+                      "key":  "KLine",
+                      "value":  "克林"
+                  },
+                  {
+                      "key":  "Animation",
+                      "value":  "動畫"
+                  },
+                  {
+                      "key":  "Enter",
+                      "value":  "進入"
+                  },
+                  {
+                      "key":  "Grad",
+                      "value":  "格拉德"
+                  },
+                  {
+                      "key":  "Cleavage",
+                      "value":  "解理"
+                  },
+                  {
+                      "key":  "Diagonal",
+                      "value":  "對角線的"
+                  },
+                  {
+                      "key":  "Louver",
+                      "value":  "百葉窗"
+                  },
+                  {
+                      "key":  "Square",
+                      "value":  "正方形"
+                  },
+                  {
+                      "key":  "Circle",
+                      "value":  "圓圈"
+                  },
+                  {
+                      "key":  "Cross",
+                      "value":  "十字架"
+                  },
+                  {
+                      "key":  "Rhombus",
+                      "value":  "菱形"
+                  },
+                  {
+                      "key":  "Wheel",
+                      "value":  "輪子"
+                  },
+                  {
+                      "key":  "Board",
+                      "value":  "董事會"
+                  },
+                  {
+                      "key":  "Dissolve",
+                      "value":  "溶解"
+                  },
+                  {
+                      "key":  "PageSwitch",
+                      "value":  "頁面切換"
+                  },
+                  {
+                      "key":  "FadeInOut",
+                      "value":  "法迪諾"
+                  }
+              ]
+}
