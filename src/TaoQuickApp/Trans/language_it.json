@@ -1,0 +1,389 @@
+﻿{
+    "lang":  "Italiano",
+    "trans":  [
+                  {
+                      "key":  "Chinese",
+                      "value":  "Chinese"
+                  },
+                  {
+                      "key":  "traditional Chinese",
+                      "value":  "tradizionale cinese"
+                  },
+                  {
+                      "key":  "Cantonese",
+                      "value":  "cantonese"
+                  },
+                  {
+                      "key":  "classical Chinese",
+                      "value":  "classico cinese"
+                  },
+                  {
+                      "key":  "Japanese",
+                      "value":  "Giapponese"
+                  },
+                  {
+                      "key":  "Korean",
+                      "value":  "Coreano"
+                  },
+                  {
+                      "key":  "French",
+                      "value":  "Francese"
+                  },
+                  {
+                      "key":  "Spanish",
+                      "value":  "Spagnolo"
+                  },
+                  {
+                      "key":  "Thai",
+                      "value":  "Thailandese."
+                  },
+                  {
+                      "key":  "Arabic",
+                      "value":  "Arabo"
+                  },
+                  {
+                      "key":  "Russian",
+                      "value":  "Russo"
+                  },
+                  {
+                      "key":  "Portuguese",
+                      "value":  "Portoghese"
+                  },
+                  {
+                      "key":  "German",
+                      "value":  "Tedesco"
+                  },
+                  {
+                      "key":  "Italian",
+                      "value":  "Italiano"
+                  },
+                  {
+                      "key":  "Greek",
+                      "value":  "Greco"
+                  },
+                  {
+                      "key":  "Dutch",
+                      "value":  "Olandese"
+                  },
+                  {
+                      "key":  "Polish",
+                      "value":  "Polacco"
+                  },
+                  {
+                      "key":  "Bulgarian",
+                      "value":  "Bulgaro"
+                  },
+                  {
+                      "key":  "Estonian",
+                      "value":  "estone"
+                  },
+                  {
+                      "key":  "Danish",
+                      "value":  "Danese"
+                  },
+                  {
+                      "key":  "Finnish",
+                      "value":  "Finlandese"
+                  },
+                  {
+                      "key":  "Czech",
+                      "value":  "ceco"
+                  },
+                  {
+                      "key":  "Romanian",
+                      "value":  "romeno"
+                  },
+                  {
+                      "key":  "Slovenian",
+                      "value":  "Sloveno"
+                  },
+                  {
+                      "key":  "Swedish",
+                      "value":  "Svedese"
+                  },
+                  {
+                      "key":  "Hungarian",
+                      "value":  "Ungherese"
+                  },
+                  {
+                      "key":  "Vietnamese",
+                      "value":  "Vietnamita"
+                  },
+                  {
+                      "key":  "Corner",
+                      "value":  "Angolo"
+                  },
+                  {
+                      "key":  "Elemkeytary streams",
+                      "value":  "Flussi elettrici"
+                  },
+                  {
+                      "key":  "Fireworks dancing",
+                      "value":  "Ballo dei fuochi"
+                  },
+                  {
+                      "key":  "Round",
+                      "value":  "Rotondo"
+                  },
+                  {
+                      "key":  "Gradiant",
+                      "value":  "SoUrcerer"
+                  },
+                  {
+                      "key":  "Badget",
+                      "value":  "Segnale"
+                  },
+                  {
+                      "key":  "Barrage",
+                      "value":  "Barraggio"
+                  },
+                  {
+                      "key":  "Label",
+                      "value":  "Etichetta"
+                  },
+                  {
+                      "key":  "ProgressBar",
+                      "value":  "Progressista"
+                  },
+                  {
+                      "key":  "Scrolling",
+                      "value":  "Scorrimento"
+                  },
+                  {
+                      "key":  "Mkeyu",
+                      "value":  "MkeyuGenericName"
+                  },
+                  {
+                      "key":  "TaoQuick",
+                      "value":  "TaoQuick."
+                  },
+                  {
+                      "key":  "Blue",
+                      "value":  "Blu"
+                  },
+                  {
+                      "key":  "Frostmourne",
+                      "value":  "Frostmour"
+                  },
+                  {
+                      "key":  "Welcome to the \u0027TaoQuick\u0027 demo program",
+                      "value":  "Benvenuti al programma demo \"TaoQuick\""
+                  },
+                  {
+                      "key":  "Welcome",
+                      "value":  "Benvenuto."
+                  },
+                  {
+                      "key":  "Close",
+                      "value":  "Chiudi"
+                  },
+                  {
+                      "key":  "Green",
+                      "value":  "Verde"
+                  },
+                  {
+                      "key":  "QRcode",
+                      "value":  "QRcode"
+                  },
+                  {
+                      "key":  "Shadow flow",
+                      "value":  "Flusso ombra"
+                  },
+                  {
+                      "key":  "Drop-down",
+                      "value":  "Scendere"
+                  },
+                  {
+                      "key":  "Graphic",
+                      "value":  "Grafico"
+                  },
+                  {
+                      "key":  "Basic",
+                      "value":  "Base"
+                  },
+                  {
+                      "key":  "Joy of fire",
+                      "value":  "Gioia del fuoco"
+                  },
+                  {
+                      "key":  "Cool",
+                      "value":  "Fico."
+                  },
+                  {
+                      "key":  "Pink",
+                      "value":  "Rosa"
+                  },
+                  {
+                      "key":  "IP address",
+                      "value":  "Indirizzo IP"
+                  },
+                  {
+                      "key":  "Home",
+                      "value":  "Home"
+                  },
+                  {
+                      "key":  "Drag",
+                      "value":  "Trascina"
+                  },
+                  {
+                      "key":  "Text",
+                      "value":  "Testo"
+                  },
+                  {
+                      "key":  "keyergy ball",
+                      "value":  "keyergy ball"
+                  },
+                  {
+                      "key":  "Red",
+                      "value":  "Rosso"
+                  },
+                  {
+                      "key":  "Button",
+                      "value":  "Pulsante"
+                  },
+                  {
+                      "key":  "Gold",
+                      "value":  "Oro"
+                  },
+                  {
+                      "key":  "Black",
+                      "value":  "Nero"
+                  },
+                  {
+                      "key":  "Functional",
+                      "value":  "Funzionale"
+                  },
+                  {
+                      "key":  "Comet Halley",
+                      "value":  "Comet Halley"
+                  },
+                  {
+                      "key":  "Gradient",
+                      "value":  "Gradiente"
+                  },
+                  {
+                      "key":  "Background",
+                      "value":  "Antefatti"
+                  },
+                  {
+                      "key":  "Dialog",
+                      "value":  "Finestra"
+                  },
+                  {
+                      "key":  "ShaderEffect",
+                      "value":  "ShaderEffect"
+                  },
+                  {
+                      "key":  "Cloud Hole",
+                      "value":  "Cloud Hole"
+                  },
+                  {
+                      "key":  "Star Light",
+                      "value":  "Luce stellare"
+                  },
+                  {
+                      "key":  "Snail",
+                      "value":  "Serpente"
+                  },
+                  {
+                      "key":  "Super Mario",
+                      "value":  "Super Mario"
+                  },
+                  {
+                      "key":  "Effect",
+                      "value":  "Effetto"
+                  },
+                  {
+                      "key":  "Ring",
+                      "value":  "Anello"
+                  },
+                  {
+                      "key":  "Brilliant Starry Sky",
+                      "value":  "Cielo stellato brillante"
+                  },
+                  {
+                      "key":  "Keep up with the pace",
+                      "value":  "Stai al passo con il passo."
+                  },
+                  {
+                      "key":  "Undercurrent surge",
+                      "value":  "Bassa corrente"
+                  },
+                  {
+                      "key":  "Magic Circle",
+                      "value":  "Cerchio magico"
+                  },
+                  {
+                      "key":  "Painter",
+                      "value":  "Pittore"
+                  },
+                  {
+                      "key":  "RoundRect",
+                      "value":  "RoundRect"
+                  },
+                  {
+                      "key":  "KLine",
+                      "value":  "Klina"
+                  },
+                  {
+                      "key":  "Animation",
+                      "value":  "Animazione"
+                  },
+                  {
+                      "key":  "Enter",
+                      "value":  "Entra."
+                  },
+                  {
+                      "key":  "Grad",
+                      "value":  "Grado"
+                  },
+                  {
+                      "key":  "Cleavage",
+                      "value":  "Cleavage"
+                  },
+                  {
+                      "key":  "Diagonal",
+                      "value":  "Diagonale"
+                  },
+                  {
+                      "key":  "Louver",
+                      "value":  "Louver"
+                  },
+                  {
+                      "key":  "Square",
+                      "value":  "Quadrato"
+                  },
+                  {
+                      "key":  "Circle",
+                      "value":  "Cerchio"
+                  },
+                  {
+                      "key":  "Cross",
+                      "value":  "Croce"
+                  },
+                  {
+                      "key":  "Rhombus",
+                      "value":  "Rhombus"
+                  },
+                  {
+                      "key":  "Wheel",
+                      "value":  "Ruota"
+                  },
+                  {
+                      "key":  "Board",
+                      "value":  "Regime"
+                  },
+                  {
+                      "key":  "Dissolve",
+                      "value":  "Dissolve"
+                  },
+                  {
+                      "key":  "PageSwitch",
+                      "value":  "Pagina"
+                  },
+                  {
+                      "key":  "FadeInOut",
+                      "value":  "FadeInOut"
+                  }
+              ]
+}

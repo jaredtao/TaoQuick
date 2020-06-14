@@ -16,7 +16,7 @@ int main(int argc, char **argv)
     app.setOrganizationDomain("https://jaredtao.github.io");
     Logger::initLog();
     Trans trans;
-    trans.loadFolder(":/Trans/");
+    trans.loadFolder(app.applicationDirPath() + "/Trans");
     PluginLoader loader;
     TaoView view;
 
