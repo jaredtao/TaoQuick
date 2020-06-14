@@ -1,0 +1,389 @@
+﻿{
+    "lang":  "Ελληνικά",
+    "trans":  [
+                  {
+                      "key":  "Chinese",
+                      "value":  "Chinese"
+                  },
+                  {
+                      "key":  "traditional Chinese",
+                      "value":  "παραδοσιακή Κινέζικη"
+                  },
+                  {
+                      "key":  "Cantonese",
+                      "value":  "Καντονέζικα"
+                  },
+                  {
+                      "key":  "classical Chinese",
+                      "value":  "Κινέζικα κλασσικά"
+                  },
+                  {
+                      "key":  "Japanese",
+                      "value":  "Ιαπωνικά"
+                  },
+                  {
+                      "key":  "Korean",
+                      "value":  "Κορεάτικα"
+                  },
+                  {
+                      "key":  "French",
+                      "value":  "Γαλλικά"
+                  },
+                  {
+                      "key":  "Spanish",
+                      "value":  "Ισπανικά"
+                  },
+                  {
+                      "key":  "Thai",
+                      "value":  "Ταϊλανδέζικο"
+                  },
+                  {
+                      "key":  "Arabic",
+                      "value":  "Αραβικά"
+                  },
+                  {
+                      "key":  "Russian",
+                      "value":  "Ρωσικά"
+                  },
+                  {
+                      "key":  "Portuguese",
+                      "value":  "Πορτογαλικά"
+                  },
+                  {
+                      "key":  "German",
+                      "value":  "Γερμανικά"
+                  },
+                  {
+                      "key":  "Italian",
+                      "value":  "Ιταλικά"
+                  },
+                  {
+                      "key":  "Greek",
+                      "value":  "Ελληνικά"
+                  },
+                  {
+                      "key":  "Dutch",
+                      "value":  "Ολλανδικά"
+                  },
+                  {
+                      "key":  "Polish",
+                      "value":  "Πολωνικά"
+                  },
+                  {
+                      "key":  "Bulgarian",
+                      "value":  "Βουλγαρικά"
+                  },
+                  {
+                      "key":  "Estonian",
+                      "value":  "Εσθονικά"
+                  },
+                  {
+                      "key":  "Danish",
+                      "value":  "Δανέζικα"
+                  },
+                  {
+                      "key":  "Finnish",
+                      "value":  "Φινλανδικά"
+                  },
+                  {
+                      "key":  "Czech",
+                      "value":  "τσεχικά"
+                  },
+                  {
+                      "key":  "Romanian",
+                      "value":  "Ρουμανικά"
+                  },
+                  {
+                      "key":  "Slovenian",
+                      "value":  "Σλοβενικά"
+                  },
+                  {
+                      "key":  "Swedish",
+                      "value":  "Σουηδικά"
+                  },
+                  {
+                      "key":  "Hungarian",
+                      "value":  "Ουγγρικό"
+                  },
+                  {
+                      "key":  "Vietnamese",
+                      "value":  "Βιετναμέζικα"
+                  },
+                  {
+                      "key":  "Corner",
+                      "value":  "Γωνία"
+                  },
+                  {
+                      "key":  "Elemkeytary streams",
+                      "value":  "Ηλεκτρονικά ρεύματα"
+                  },
+                  {
+                      "key":  "Fireworks dancing",
+                      "value":  "Χορός πυροτεχνημάτων"
+                  },
+                  {
+                      "key":  "Round",
+                      "value":  "Στρογγυλή"
+                  },
+                  {
+                      "key":  "Gradiant",
+                      "value":  "Gradiant"
+                  },
+                  {
+                      "key":  "Badget",
+                      "value":  "Κακός"
+                  },
+                  {
+                      "key":  "Barrage",
+                      "value":  "Βαρέλι"
+                  },
+                  {
+                      "key":  "Label",
+                      "value":  "Ετικέτα"
+                  },
+                  {
+                      "key":  "ProgressBar",
+                      "value":  "Πρόγκρες"
+                  },
+                  {
+                      "key":  "Scrolling",
+                      "value":  "Κύλιση"
+                  },
+                  {
+                      "key":  "Mkeyu",
+                      "value":  "MkeyComment"
+                  },
+                  {
+                      "key":  "TaoQuick",
+                      "value":  "TaokicComment"
+                  },
+                  {
+                      "key":  "Blue",
+                      "value":  "Μπλε"
+                  },
+                  {
+                      "key":  "Frostmourne",
+                      "value":  "Παγωμένο"
+                  },
+                  {
+                      "key":  "Welcome to the \u0027TaoQuick\u0027 demo program",
+                      "value":  "Καλώς ήρθατε στο ντέμο του TaouQuick"
+                  },
+                  {
+                      "key":  "Welcome",
+                      "value":  "Καλώς"
+                  },
+                  {
+                      "key":  "Close",
+                      "value":  "Κλείσιμο"
+                  },
+                  {
+                      "key":  "Green",
+                      "value":  "Πράσινο"
+                  },
+                  {
+                      "key":  "QRcode",
+                      "value":  "QRcode"
+                  },
+                  {
+                      "key":  "Shadow flow",
+                      "value":  "Ροή σκιάς"
+                  },
+                  {
+                      "key":  "Drop-down",
+                      "value":  "Πτώση"
+                  },
+                  {
+                      "key":  "Graphic",
+                      "value":  "Γραφικό"
+                  },
+                  {
+                      "key":  "Basic",
+                      "value":  "Βασικό"
+                  },
+                  {
+                      "key":  "Joy of fire",
+                      "value":  "Χαρά της φωτιάς"
+                  },
+                  {
+                      "key":  "Cool",
+                      "value":  "Ωραία."
+                  },
+                  {
+                      "key":  "Pink",
+                      "value":  "Ροζ"
+                  },
+                  {
+                      "key":  "IP address",
+                      "value":  "Διεύθυνση IP"
+                  },
+                  {
+                      "key":  "Home",
+                      "value":  "Σπίτι"
+                  },
+                  {
+                      "key":  "Drag",
+                      "value":  "Σύρσου"
+                  },
+                  {
+                      "key":  "Text",
+                      "value":  "Κείμενο"
+                  },
+                  {
+                      "key":  "keyergy ball",
+                      "value":  "keyergy ball"
+                  },
+                  {
+                      "key":  "Red",
+                      "value":  "Κόκκινο"
+                  },
+                  {
+                      "key":  "Button",
+                      "value":  "Κουμπί"
+                  },
+                  {
+                      "key":  "Gold",
+                      "value":  "Χρυσός"
+                  },
+                  {
+                      "key":  "Black",
+                      "value":  "Μαύρο"
+                  },
+                  {
+                      "key":  "Functional",
+                      "value":  "Λειτουργική"
+                  },
+                  {
+                      "key":  "Comet Halley",
+                      "value":  "Κομήτης Χάλεϊ."
+                  },
+                  {
+                      "key":  "Gradient",
+                      "value":  "Βαθμός"
+                  },
+                  {
+                      "key":  "Background",
+                      "value":  "Ιστορικό"
+                  },
+                  {
+                      "key":  "Dialog",
+                      "value":  "Διάλογος"
+                  },
+                  {
+                      "key":  "ShaderEffect",
+                      "value":  "ShaderEffect"
+                  },
+                  {
+                      "key":  "Cloud Hole",
+                      "value":  "Σύννεφη τρύπα"
+                  },
+                  {
+                      "key":  "Star Light",
+                      "value":  "Αστέρι Light"
+                  },
+                  {
+                      "key":  "Snail",
+                      "value":  "Σνέιλ"
+                  },
+                  {
+                      "key":  "Super Mario",
+                      "value":  "Σούπερ Μάριο"
+                  },
+                  {
+                      "key":  "Effect",
+                      "value":  "Εφέ"
+                  },
+                  {
+                      "key":  "Ring",
+                      "value":  "Κύκλος"
+                  },
+                  {
+                      "key":  "Brilliant Starry Sky",
+                      "value":  "Λαμπρά Starry Sky"
+                  },
+                  {
+                      "key":  "Keep up with the pace",
+                      "value":  "Συνέχισε με τον ρυθμό."
+                  },
+                  {
+                      "key":  "Undercurrent surge",
+                      "value":  "Υπόγειο κύμα"
+                  },
+                  {
+                      "key":  "Magic Circle",
+                      "value":  "Μαγικός κύκλος"
+                  },
+                  {
+                      "key":  "Painter",
+                      "value":  "Ζωγράφος"
+                  },
+                  {
+                      "key":  "RoundRect",
+                      "value":  "Στρογγυλό"
+                  },
+                  {
+                      "key":  "KLine",
+                      "value":  "KLINE"
+                  },
+                  {
+                      "key":  "Animation",
+                      "value":  "Ενεργοποίηση"
+                  },
+                  {
+                      "key":  "Enter",
+                      "value":  "Εισάγετε"
+                  },
+                  {
+                      "key":  "Grad",
+                      "value":  "Βαθμός"
+                  },
+                  {
+                      "key":  "Cleavage",
+                      "value":  "Κληβάζ"
+                  },
+                  {
+                      "key":  "Diagonal",
+                      "value":  "Διαγώνια"
+                  },
+                  {
+                      "key":  "Louver",
+                      "value":  "Λουβέρ"
+                  },
+                  {
+                      "key":  "Square",
+                      "value":  "Τετράγωνο"
+                  },
+                  {
+                      "key":  "Circle",
+                      "value":  "Κύκλος"
+                  },
+                  {
+                      "key":  "Cross",
+                      "value":  "Σταυρός"
+                  },
+                  {
+                      "key":  "Rhombus",
+                      "value":  "Rhombus"
+                  },
+                  {
+                      "key":  "Wheel",
+                      "value":  "Τροχός"
+                  },
+                  {
+                      "key":  "Board",
+                      "value":  "Συμβούλιο"
+                  },
+                  {
+                      "key":  "Dissolve",
+                      "value":  "Διαλυθείτε"
+                  },
+                  {
+                      "key":  "PageSwitch",
+                      "value":  "Εναλλαγή"
+                  },
+                  {
+                      "key":  "FadeInOut",
+                      "value":  "Σβήσιμο"
+                  }
+              ]
+}

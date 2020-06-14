@@ -13,7 +13,7 @@ TImageBtn {
         id: pop
         barColor: gConfig.reserverColor
         backgroundWidth: 100
-        backgroundHeight: langListView.contentHeight
+        backgroundHeight: langListView.contentHeight > 500 ? 500 : langListView.contentHeight
         contentItem: ListView {
             id: langListView
             anchors.fill: parent
@@ -23,7 +23,7 @@ TImageBtn {
             delegate: TTextBtn {
                 width: langListView.width
                 height: 36
-                text: modelData
+                text: trans.trans(modelData) + trans.transString
                 color: trans.currentLang === modelData ? gConfig.titleBackground :( containsMouse ? "lightgray" : pop.barColor)
                 textColor: gConfig.textColor
                 onClicked: {

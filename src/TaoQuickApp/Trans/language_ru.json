@@ -1,0 +1,389 @@
+﻿{
+    "lang":  "русский язык",
+    "trans":  [
+                  {
+                      "key":  "Chinese",
+                      "value":  "Chinese"
+                  },
+                  {
+                      "key":  "traditional Chinese",
+                      "value":  "китайский язык"
+                  },
+                  {
+                      "key":  "Cantonese",
+                      "value":  "кантонский диалект"
+                  },
+                  {
+                      "key":  "classical Chinese",
+                      "value":  "литературное сочинение"
+                  },
+                  {
+                      "key":  "Japanese",
+                      "value":  "японец"
+                  },
+                  {
+                      "key":  "Korean",
+                      "value":  "кореец"
+                  },
+                  {
+                      "key":  "French",
+                      "value":  "французский язык"
+                  },
+                  {
+                      "key":  "Spanish",
+                      "value":  "испанский"
+                  },
+                  {
+                      "key":  "Thai",
+                      "value":  "таиландец"
+                  },
+                  {
+                      "key":  "Arabic",
+                      "value":  "арабский"
+                  },
+                  {
+                      "key":  "Russian",
+                      "value":  "русский язык"
+                  },
+                  {
+                      "key":  "Portuguese",
+                      "value":  "португальский язык"
+                  },
+                  {
+                      "key":  "German",
+                      "value":  "немецкий"
+                  },
+                  {
+                      "key":  "Italian",
+                      "value":  "итальянец"
+                  },
+                  {
+                      "key":  "Greek",
+                      "value":  "грек"
+                  },
+                  {
+                      "key":  "Dutch",
+                      "value":  "голландский язык"
+                  },
+                  {
+                      "key":  "Polish",
+                      "value":  "польский язык"
+                  },
+                  {
+                      "key":  "Bulgarian",
+                      "value":  "болгарка"
+                  },
+                  {
+                      "key":  "Estonian",
+                      "value":  "Эстонский язык"
+                  },
+                  {
+                      "key":  "Danish",
+                      "value":  "датский язык"
+                  },
+                  {
+                      "key":  "Finnish",
+                      "value":  "финский язык"
+                  },
+                  {
+                      "key":  "Czech",
+                      "value":  "чешский"
+                  },
+                  {
+                      "key":  "Romanian",
+                      "value":  "Румынский язык"
+                  },
+                  {
+                      "key":  "Slovenian",
+                      "value":  "Словенский язык"
+                  },
+                  {
+                      "key":  "Swedish",
+                      "value":  "шведский"
+                  },
+                  {
+                      "key":  "Hungarian",
+                      "value":  "венгерский язык"
+                  },
+                  {
+                      "key":  "Vietnamese",
+                      "value":  "вьетнамец"
+                  },
+                  {
+                      "key":  "Corner",
+                      "value":  "угол"
+                  },
+                  {
+                      "key":  "Elemkeytary streams",
+                      "value":  "ручей"
+                  },
+                  {
+                      "key":  "Fireworks dancing",
+                      "value":  "пламя"
+                  },
+                  {
+                      "key":  "Round",
+                      "value":  "круг"
+                  },
+                  {
+                      "key":  "Gradiant",
+                      "value":  "градиент"
+                  },
+                  {
+                      "key":  "Badget",
+                      "value":  "эмблема"
+                  },
+                  {
+                      "key":  "Barrage",
+                      "value":  "плотина"
+                  },
+                  {
+                      "key":  "Label",
+                      "value":  "метка"
+                  },
+                  {
+                      "key":  "ProgressBar",
+                      "value":  "темп"
+                  },
+                  {
+                      "key":  "Scrolling",
+                      "value":  "прокрутка"
+                  },
+                  {
+                      "key":  "Mkeyu",
+                      "value":  "мкайю"
+                  },
+                  {
+                      "key":  "TaoQuick",
+                      "value":  "шалость"
+                  },
+                  {
+                      "key":  "Blue",
+                      "value":  "синий"
+                  },
+                  {
+                      "key":  "Frostmourne",
+                      "value":  "скорбь инея"
+                  },
+                  {
+                      "key":  "Welcome to the \u0027TaoQuick\u0027 demo program",
+                      "value":  "Добро пожаловать в программу презентации \"Taokick\""
+                  },
+                  {
+                      "key":  "Welcome",
+                      "value":  "Добро пожаловать"
+                  },
+                  {
+                      "key":  "Close",
+                      "value":  "закрыть"
+                  },
+                  {
+                      "key":  "Green",
+                      "value":  "зелёный"
+                  },
+                  {
+                      "key":  "QRcode",
+                      "value":  "код QRcode"
+                  },
+                  {
+                      "key":  "Shadow flow",
+                      "value":  "теневой поток"
+                  },
+                  {
+                      "key":  "Drop-down",
+                      "value":  "нижний список"
+                  },
+                  {
+                      "key":  "Graphic",
+                      "value":  "графический"
+                  },
+                  {
+                      "key":  "Basic",
+                      "value":  "основной"
+                  },
+                  {
+                      "key":  "Joy of fire",
+                      "value":  "радость огня"
+                  },
+                  {
+                      "key":  "Cool",
+                      "value":  "жестокий"
+                  },
+                  {
+                      "key":  "Pink",
+                      "value":  "розовый"
+                  },
+                  {
+                      "key":  "IP address",
+                      "value":  "IP - адрес"
+                  },
+                  {
+                      "key":  "Home",
+                      "value":  "жилище"
+                  },
+                  {
+                      "key":  "Drag",
+                      "value":  "сопротивление"
+                  },
+                  {
+                      "key":  "Text",
+                      "value":  "текст"
+                  },
+                  {
+                      "key":  "keyergy ball",
+                      "value":  "энергетический шар"
+                  },
+                  {
+                      "key":  "Red",
+                      "value":  "красный"
+                  },
+                  {
+                      "key":  "Button",
+                      "value":  "кнопка"
+                  },
+                  {
+                      "key":  "Gold",
+                      "value":  "золото"
+                  },
+                  {
+                      "key":  "Black",
+                      "value":  "чёрный"
+                  },
+                  {
+                      "key":  "Functional",
+                      "value":  "функциональность"
+                  },
+                  {
+                      "key":  "Comet Halley",
+                      "value":  "комета Харлея"
+                  },
+                  {
+                      "key":  "Gradient",
+                      "value":  "градиент"
+                  },
+                  {
+                      "key":  "Background",
+                      "value":  "фон"
+                  },
+                  {
+                      "key":  "Dialog",
+                      "value":  "диалог"
+                  },
+                  {
+                      "key":  "ShaderEffect",
+                      "value":  "теневой эффект"
+                  },
+                  {
+                      "key":  "Cloud Hole",
+                      "value":  "облачная дыра"
+                  },
+                  {
+                      "key":  "Star Light",
+                      "value":  "звезда"
+                  },
+                  {
+                      "key":  "Snail",
+                      "value":  "улитка"
+                  },
+                  {
+                      "key":  "Super Mario",
+                      "value":  "Super Mario"
+                  },
+                  {
+                      "key":  "Effect",
+                      "value":  "влияние"
+                  },
+                  {
+                      "key":  "Ring",
+                      "value":  "кольцо"
+                  },
+                  {
+                      "key":  "Brilliant Starry Sky",
+                      "value":  "блестящее звездное небо"
+                  },
+                  {
+                      "key":  "Keep up with the pace",
+                      "value":  "идти в ногу"
+                  },
+                  {
+                      "key":  "Undercurrent surge",
+                      "value":  "приливная волна"
+                  },
+                  {
+                      "key":  "Magic Circle",
+                      "value":  "магический круг"
+                  },
+                  {
+                      "key":  "Painter",
+                      "value":  "художник"
+                  },
+                  {
+                      "key":  "RoundRect",
+                      "value":  "закругленный прямоугольник"
+                  },
+                  {
+                      "key":  "KLine",
+                      "value":  "Келин"
+                  },
+                  {
+                      "key":  "Animation",
+                      "value":  "Анимация"
+                  },
+                  {
+                      "key":  "Enter",
+                      "value":  "войти"
+                  },
+                  {
+                      "key":  "Grad",
+                      "value":  "град"
+                  },
+                  {
+                      "key":  "Cleavage",
+                      "value":  "кливаж"
+                  },
+                  {
+                      "key":  "Diagonal",
+                      "value":  "диагональный"
+                  },
+                  {
+                      "key":  "Louver",
+                      "value":  "жалюзи"
+                  },
+                  {
+                      "key":  "Square",
+                      "value":  "квадрат"
+                  },
+                  {
+                      "key":  "Circle",
+                      "value":  "круг"
+                  },
+                  {
+                      "key":  "Cross",
+                      "value":  "крест"
+                  },
+                  {
+                      "key":  "Rhombus",
+                      "value":  "ромб"
+                  },
+                  {
+                      "key":  "Wheel",
+                      "value":  "колесо"
+                  },
+                  {
+                      "key":  "Board",
+                      "value":  "правление"
+                  },
+                  {
+                      "key":  "Dissolve",
+                      "value":  "растворение"
+                  },
+                  {
+                      "key":  "PageSwitch",
+                      "value":  "переключение страниц"
+                  },
+                  {
+                      "key":  "FadeInOut",
+                      "value":  "фаддино"
+                  }
+              ]
+}
