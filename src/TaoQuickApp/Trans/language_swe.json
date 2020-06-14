@@ -1,0 +1,389 @@
+﻿{
+    "lang":  "Svenska",
+    "trans":  [
+                  {
+                      "key":  "Chinese",
+                      "value":  "Chinese"
+                  },
+                  {
+                      "key":  "traditional Chinese",
+                      "value":  "traditionella kinesiska"
+                  },
+                  {
+                      "key":  "Cantonese",
+                      "value":  "kantonesiskaName"
+                  },
+                  {
+                      "key":  "classical Chinese",
+                      "value":  "klassisk kinesiska"
+                  },
+                  {
+                      "key":  "Japanese",
+                      "value":  "JapanskaName"
+                  },
+                  {
+                      "key":  "Korean",
+                      "value":  "Koreanska"
+                  },
+                  {
+                      "key":  "French",
+                      "value":  "Franska"
+                  },
+                  {
+                      "key":  "Spanish",
+                      "value":  "Spanska"
+                  },
+                  {
+                      "key":  "Thai",
+                      "value":  "Thailändska"
+                  },
+                  {
+                      "key":  "Arabic",
+                      "value":  "Arabiska"
+                  },
+                  {
+                      "key":  "Russian",
+                      "value":  "Ryska"
+                  },
+                  {
+                      "key":  "Portuguese",
+                      "value":  "PortugisiskaName"
+                  },
+                  {
+                      "key":  "German",
+                      "value":  "Tyska"
+                  },
+                  {
+                      "key":  "Italian",
+                      "value":  "Italienska"
+                  },
+                  {
+                      "key":  "Greek",
+                      "value":  "Grekiska"
+                  },
+                  {
+                      "key":  "Dutch",
+                      "value":  "nederländska"
+                  },
+                  {
+                      "key":  "Polish",
+                      "value":  "polska"
+                  },
+                  {
+                      "key":  "Bulgarian",
+                      "value":  "Bulgariska"
+                  },
+                  {
+                      "key":  "Estonian",
+                      "value":  "estniska"
+                  },
+                  {
+                      "key":  "Danish",
+                      "value":  "Danska"
+                  },
+                  {
+                      "key":  "Finnish",
+                      "value":  "Finska"
+                  },
+                  {
+                      "key":  "Czech",
+                      "value":  "Tjeckiska"
+                  },
+                  {
+                      "key":  "Romanian",
+                      "value":  "Rumänska"
+                  },
+                  {
+                      "key":  "Slovenian",
+                      "value":  "slovenska"
+                  },
+                  {
+                      "key":  "Swedish",
+                      "value":  "Svenska"
+                  },
+                  {
+                      "key":  "Hungarian",
+                      "value":  "Ungerska"
+                  },
+                  {
+                      "key":  "Vietnamese",
+                      "value":  "Vietnamesiska"
+                  },
+                  {
+                      "key":  "Corner",
+                      "value":  "Hörnet"
+                  },
+                  {
+                      "key":  "Elemkeytary streams",
+                      "value":  "Eletangentära strömmar"
+                  },
+                  {
+                      "key":  "Fireworks dancing",
+                      "value":  "Fyrverkerier som dansar"
+                  },
+                  {
+                      "key":  "Round",
+                      "value":  "Rund"
+                  },
+                  {
+                      "key":  "Gradiant",
+                      "value":  "Gradiant"
+                  },
+                  {
+                      "key":  "Badget",
+                      "value":  "Badget"
+                  },
+                  {
+                      "key":  "Barrage",
+                      "value":  "Barrage"
+                  },
+                  {
+                      "key":  "Label",
+                      "value":  "Etikett"
+                  },
+                  {
+                      "key":  "ProgressBar",
+                      "value":  "ProgressBar"
+                  },
+                  {
+                      "key":  "Scrolling",
+                      "value":  "Panorera"
+                  },
+                  {
+                      "key":  "Mkeyu",
+                      "value":  "MkeyuGenericName"
+                  },
+                  {
+                      "key":  "TaoQuick",
+                      "value":  "TaoukQShortcut"
+                  },
+                  {
+                      "key":  "Blue",
+                      "value":  "Blå"
+                  },
+                  {
+                      "key":  "Frostmourne",
+                      "value":  "Frostmourn"
+                  },
+                  {
+                      "key":  "Welcome to the \u0027TaoQuick\u0027 demo program",
+                      "value":  "Välkommen till TaooQuick demo programmet"
+                  },
+                  {
+                      "key":  "Welcome",
+                      "value":  "Välkommen."
+                  },
+                  {
+                      "key":  "Close",
+                      "value":  "Stäng"
+                  },
+                  {
+                      "key":  "Green",
+                      "value":  "Grönt"
+                  },
+                  {
+                      "key":  "QRcode",
+                      "value":  "QRcode"
+                  },
+                  {
+                      "key":  "Shadow flow",
+                      "value":  "Skuggflöde@ info: whatsthis"
+                  },
+                  {
+                      "key":  "Drop-down",
+                      "value":  "Nedsläpp"
+                  },
+                  {
+                      "key":  "Graphic",
+                      "value":  "Grafisk"
+                  },
+                  {
+                      "key":  "Basic",
+                      "value":  "Grundläggande"
+                  },
+                  {
+                      "key":  "Joy of fire",
+                      "value":  "Glädje av eld"
+                  },
+                  {
+                      "key":  "Cool",
+                      "value":  "Coolt."
+                  },
+                  {
+                      "key":  "Pink",
+                      "value":  "Rosa"
+                  },
+                  {
+                      "key":  "IP address",
+                      "value":  "IP- adress"
+                  },
+                  {
+                      "key":  "Home",
+                      "value":  "Hem"
+                  },
+                  {
+                      "key":  "Drag",
+                      "value":  "Drag"
+                  },
+                  {
+                      "key":  "Text",
+                      "value":  "Text"
+                  },
+                  {
+                      "key":  "keyergy ball",
+                      "value":  "keyboll@ info: whatsthis"
+                  },
+                  {
+                      "key":  "Red",
+                      "value":  "Röd"
+                  },
+                  {
+                      "key":  "Button",
+                      "value":  "Knapp"
+                  },
+                  {
+                      "key":  "Gold",
+                      "value":  "Guld"
+                  },
+                  {
+                      "key":  "Black",
+                      "value":  "Svart"
+                  },
+                  {
+                      "key":  "Functional",
+                      "value":  "Funktionell"
+                  },
+                  {
+                      "key":  "Comet Halley",
+                      "value":  "Comet Halley."
+                  },
+                  {
+                      "key":  "Gradient",
+                      "value":  "Toning"
+                  },
+                  {
+                      "key":  "Background",
+                      "value":  "Bakgrund"
+                  },
+                  {
+                      "key":  "Dialog",
+                      "value":  "Dialogruta"
+                  },
+                  {
+                      "key":  "ShaderEffect",
+                      "value":  "ShaderEffect"
+                  },
+                  {
+                      "key":  "Cloud Hole",
+                      "value":  "Cloud hole"
+                  },
+                  {
+                      "key":  "Star Light",
+                      "value":  "Ljus för stjärnor"
+                  },
+                  {
+                      "key":  "Snail",
+                      "value":  "Snal"
+                  },
+                  {
+                      "key":  "Super Mario",
+                      "value":  "Super Mario"
+                  },
+                  {
+                      "key":  "Effect",
+                      "value":  "Effekt"
+                  },
+                  {
+                      "key":  "Ring",
+                      "value":  "Ring"
+                  },
+                  {
+                      "key":  "Brilliant Starry Sky",
+                      "value":  "Lysande stjärnhimmel"
+                  },
+                  {
+                      "key":  "Keep up with the pace",
+                      "value":  "Håll jämna steg med takten"
+                  },
+                  {
+                      "key":  "Undercurrent surge",
+                      "value":  "Underströvande våg"
+                  },
+                  {
+                      "key":  "Magic Circle",
+                      "value":  "Magisk cirkel"
+                  },
+                  {
+                      "key":  "Painter",
+                      "value":  "Målare"
+                  },
+                  {
+                      "key":  "RoundRect",
+                      "value":  "RoundRectName"
+                  },
+                  {
+                      "key":  "KLine",
+                      "value":  "KLine"
+                  },
+                  {
+                      "key":  "Animation",
+                      "value":  "Animering"
+                  },
+                  {
+                      "key":  "Enter",
+                      "value":  "Skriv"
+                  },
+                  {
+                      "key":  "Grad",
+                      "value":  "Grad"
+                  },
+                  {
+                      "key":  "Cleavage",
+                      "value":  "Kleavage."
+                  },
+                  {
+                      "key":  "Diagonal",
+                      "value":  "Diagonal"
+                  },
+                  {
+                      "key":  "Louver",
+                      "value":  "Louver"
+                  },
+                  {
+                      "key":  "Square",
+                      "value":  "Fyrkant"
+                  },
+                  {
+                      "key":  "Circle",
+                      "value":  "Cirkel"
+                  },
+                  {
+                      "key":  "Cross",
+                      "value":  "Kors"
+                  },
+                  {
+                      "key":  "Rhombus",
+                      "value":  "Rombus"
+                  },
+                  {
+                      "key":  "Wheel",
+                      "value":  "Hjul"
+                  },
+                  {
+                      "key":  "Board",
+                      "value":  "Styrbord"
+                  },
+                  {
+                      "key":  "Dissolve",
+                      "value":  "Lös"
+                  },
+                  {
+                      "key":  "PageSwitch",
+                      "value":  "Sidbyte"
+                  },
+                  {
+                      "key":  "FadeInOut",
+                      "value":  "FadeInut"
+                  }
+              ]
+}

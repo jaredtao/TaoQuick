@@ -1,0 +1,389 @@
+﻿{
+    "lang":  "Български",
+    "trans":  [
+                  {
+                      "key":  "Chinese",
+                      "value":  "Chinese"
+                  },
+                  {
+                      "key":  "traditional Chinese",
+                      "value":  "традиционно китайско"
+                  },
+                  {
+                      "key":  "Cantonese",
+                      "value":  "КантонскиName"
+                  },
+                  {
+                      "key":  "classical Chinese",
+                      "value":  "класически китайски"
+                  },
+                  {
+                      "key":  "Japanese",
+                      "value":  "Японски"
+                  },
+                  {
+                      "key":  "Korean",
+                      "value":  "Корейски"
+                  },
+                  {
+                      "key":  "French",
+                      "value":  "Френски"
+                  },
+                  {
+                      "key":  "Spanish",
+                      "value":  "Испански"
+                  },
+                  {
+                      "key":  "Thai",
+                      "value":  "Тайландски"
+                  },
+                  {
+                      "key":  "Arabic",
+                      "value":  "Арабски"
+                  },
+                  {
+                      "key":  "Russian",
+                      "value":  "Руски"
+                  },
+                  {
+                      "key":  "Portuguese",
+                      "value":  "Португалски"
+                  },
+                  {
+                      "key":  "German",
+                      "value":  "Немски"
+                  },
+                  {
+                      "key":  "Italian",
+                      "value":  "Италиански"
+                  },
+                  {
+                      "key":  "Greek",
+                      "value":  "Гръцки"
+                  },
+                  {
+                      "key":  "Dutch",
+                      "value":  "Холандски"
+                  },
+                  {
+                      "key":  "Polish",
+                      "value":  "Полски"
+                  },
+                  {
+                      "key":  "Bulgarian",
+                      "value":  "Български"
+                  },
+                  {
+                      "key":  "Estonian",
+                      "value":  "Естонски"
+                  },
+                  {
+                      "key":  "Danish",
+                      "value":  "Датски"
+                  },
+                  {
+                      "key":  "Finnish",
+                      "value":  "Финландски"
+                  },
+                  {
+                      "key":  "Czech",
+                      "value":  "Чешки"
+                  },
+                  {
+                      "key":  "Romanian",
+                      "value":  "Румънски"
+                  },
+                  {
+                      "key":  "Slovenian",
+                      "value":  "Словенски"
+                  },
+                  {
+                      "key":  "Swedish",
+                      "value":  "Шведски"
+                  },
+                  {
+                      "key":  "Hungarian",
+                      "value":  "Унгарски"
+                  },
+                  {
+                      "key":  "Vietnamese",
+                      "value":  "ВиетнамскиName"
+                  },
+                  {
+                      "key":  "Corner",
+                      "value":  "Ъгъл"
+                  },
+                  {
+                      "key":  "Elemkeytary streams",
+                      "value":  "Elemkeytary потоци"
+                  },
+                  {
+                      "key":  "Fireworks dancing",
+                      "value":  "Танцуващи фойерверки"
+                  },
+                  {
+                      "key":  "Round",
+                      "value":  "Кръгло"
+                  },
+                  {
+                      "key":  "Gradiant",
+                      "value":  "Градиант"
+                  },
+                  {
+                      "key":  "Badget",
+                      "value":  "Баджет"
+                  },
+                  {
+                      "key":  "Barrage",
+                      "value":  "Барж"
+                  },
+                  {
+                      "key":  "Label",
+                      "value":  "Етикет"
+                  },
+                  {
+                      "key":  "ProgressBar",
+                      "value":  "Comment"
+                  },
+                  {
+                      "key":  "Scrolling",
+                      "value":  "Превъртане"
+                  },
+                  {
+                      "key":  "Mkeyu",
+                      "value":  "MkeyName"
+                  },
+                  {
+                      "key":  "TaoQuick",
+                      "value":  "TaoQuickGenericName"
+                  },
+                  {
+                      "key":  "Blue",
+                      "value":  "Синьо"
+                  },
+                  {
+                      "key":  "Frostmourne",
+                      "value":  "Фростурн"
+                  },
+                  {
+                      "key":  "Welcome to the \u0027TaoQuick\u0027 demo program",
+                      "value":  "Добре дошли в демо програмата \"TaoQuick\""
+                  },
+                  {
+                      "key":  "Welcome",
+                      "value":  "Добре."
+                  },
+                  {
+                      "key":  "Close",
+                      "value":  "Затваряне"
+                  },
+                  {
+                      "key":  "Green",
+                      "value":  "Зелено"
+                  },
+                  {
+                      "key":  "QRcode",
+                      "value":  "QRcodeName"
+                  },
+                  {
+                      "key":  "Shadow flow",
+                      "value":  "Поток на сянка"
+                  },
+                  {
+                      "key":  "Drop-down",
+                      "value":  "Падане"
+                  },
+                  {
+                      "key":  "Graphic",
+                      "value":  "Графично"
+                  },
+                  {
+                      "key":  "Basic",
+                      "value":  "Основни"
+                  },
+                  {
+                      "key":  "Joy of fire",
+                      "value":  "Радост от огъня"
+                  },
+                  {
+                      "key":  "Cool",
+                      "value":  "Яко."
+                  },
+                  {
+                      "key":  "Pink",
+                      "value":  "Розово"
+                  },
+                  {
+                      "key":  "IP address",
+                      "value":  "IP адрес"
+                  },
+                  {
+                      "key":  "Home",
+                      "value":  "Вкъщи"
+                  },
+                  {
+                      "key":  "Drag",
+                      "value":  "Завлачване"
+                  },
+                  {
+                      "key":  "Text",
+                      "value":  "Текст"
+                  },
+                  {
+                      "key":  "keyergy ball",
+                      "value":  "киерги топка"
+                  },
+                  {
+                      "key":  "Red",
+                      "value":  "Червено"
+                  },
+                  {
+                      "key":  "Button",
+                      "value":  "Бутон"
+                  },
+                  {
+                      "key":  "Gold",
+                      "value":  "Злато"
+                  },
+                  {
+                      "key":  "Black",
+                      "value":  "Черно"
+                  },
+                  {
+                      "key":  "Functional",
+                      "value":  "Функционално"
+                  },
+                  {
+                      "key":  "Comet Halley",
+                      "value":  "Комета Халей"
+                  },
+                  {
+                      "key":  "Gradient",
+                      "value":  "Градиент"
+                  },
+                  {
+                      "key":  "Background",
+                      "value":  "Фон"
+                  },
+                  {
+                      "key":  "Dialog",
+                      "value":  "Прозорец"
+                  },
+                  {
+                      "key":  "ShaderEffect",
+                      "value":  "Ефект"
+                  },
+                  {
+                      "key":  "Cloud Hole",
+                      "value":  "Облачна дупка"
+                  },
+                  {
+                      "key":  "Star Light",
+                      "value":  "Звездна светлина"
+                  },
+                  {
+                      "key":  "Snail",
+                      "value":  "Охлюв"
+                  },
+                  {
+                      "key":  "Super Mario",
+                      "value":  "Супер Марио."
+                  },
+                  {
+                      "key":  "Effect",
+                      "value":  "Ефект"
+                  },
+                  {
+                      "key":  "Ring",
+                      "value":  "Пръстен"
+                  },
+                  {
+                      "key":  "Brilliant Starry Sky",
+                      "value":  "Брилянтно звездно небе"
+                  },
+                  {
+                      "key":  "Keep up with the pace",
+                      "value":  "Не изоставай с темпото."
+                  },
+                  {
+                      "key":  "Undercurrent surge",
+                      "value":  "Подтокова вълна"
+                  },
+                  {
+                      "key":  "Magic Circle",
+                      "value":  "Магически кръг"
+                  },
+                  {
+                      "key":  "Painter",
+                      "value":  "Художник"
+                  },
+                  {
+                      "key":  "RoundRect",
+                      "value":  "Област"
+                  },
+                  {
+                      "key":  "KLine",
+                      "value":  "KlineGenericName"
+                  },
+                  {
+                      "key":  "Animation",
+                      "value":  "Анимация"
+                  },
+                  {
+                      "key":  "Enter",
+                      "value":  "Въведете"
+                  },
+                  {
+                      "key":  "Grad",
+                      "value":  "Степен"
+                  },
+                  {
+                      "key":  "Cleavage",
+                      "value":  "Разкопване"
+                  },
+                  {
+                      "key":  "Diagonal",
+                      "value":  "Диагонално"
+                  },
+                  {
+                      "key":  "Louver",
+                      "value":  "Лувър"
+                  },
+                  {
+                      "key":  "Square",
+                      "value":  "Квадрат"
+                  },
+                  {
+                      "key":  "Circle",
+                      "value":  "Кръг"
+                  },
+                  {
+                      "key":  "Cross",
+                      "value":  "Кръст"
+                  },
+                  {
+                      "key":  "Rhombus",
+                      "value":  "Rhombus"
+                  },
+                  {
+                      "key":  "Wheel",
+                      "value":  "Колело"
+                  },
+                  {
+                      "key":  "Board",
+                      "value":  "Борд"
+                  },
+                  {
+                      "key":  "Dissolve",
+                      "value":  "Разтвор"
+                  },
+                  {
+                      "key":  "PageSwitch",
+                      "value":  "PageSwitch"
+                  },
+                  {
+                      "key":  "FadeInOut",
+                      "value":  "Comment"
+                  }
+              ]
+}

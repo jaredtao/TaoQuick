@@ -1,0 +1,389 @@
+﻿{
+    "lang":  "Suomi",
+    "trans":  [
+                  {
+                      "key":  "Chinese",
+                      "value":  "Chinese"
+                  },
+                  {
+                      "key":  "traditional Chinese",
+                      "value":  "perinteinen kiinalainen"
+                  },
+                  {
+                      "key":  "Cantonese",
+                      "value":  "KantoniName"
+                  },
+                  {
+                      "key":  "classical Chinese",
+                      "value":  "klassinen kiinalainen"
+                  },
+                  {
+                      "key":  "Japanese",
+                      "value":  "JapaniName"
+                  },
+                  {
+                      "key":  "Korean",
+                      "value":  "KoreaName"
+                  },
+                  {
+                      "key":  "French",
+                      "value":  "Ranska"
+                  },
+                  {
+                      "key":  "Spanish",
+                      "value":  "Espanja"
+                  },
+                  {
+                      "key":  "Thai",
+                      "value":  "ThaimaaName"
+                  },
+                  {
+                      "key":  "Arabic",
+                      "value":  "arabiaName"
+                  },
+                  {
+                      "key":  "Russian",
+                      "value":  "Venäjä"
+                  },
+                  {
+                      "key":  "Portuguese",
+                      "value":  "Portugali"
+                  },
+                  {
+                      "key":  "German",
+                      "value":  "Saksa"
+                  },
+                  {
+                      "key":  "Italian",
+                      "value":  "Italialainen"
+                  },
+                  {
+                      "key":  "Greek",
+                      "value":  "Kreikka"
+                  },
+                  {
+                      "key":  "Dutch",
+                      "value":  "hollantilainen"
+                  },
+                  {
+                      "key":  "Polish",
+                      "value":  "PuolaName"
+                  },
+                  {
+                      "key":  "Bulgarian",
+                      "value":  "BulgariaName"
+                  },
+                  {
+                      "key":  "Estonian",
+                      "value":  "Viro"
+                  },
+                  {
+                      "key":  "Danish",
+                      "value":  "Tanskalainen"
+                  },
+                  {
+                      "key":  "Finnish",
+                      "value":  "Suomi"
+                  },
+                  {
+                      "key":  "Czech",
+                      "value":  "Tšekki"
+                  },
+                  {
+                      "key":  "Romanian",
+                      "value":  "Romanian"
+                  },
+                  {
+                      "key":  "Slovenian",
+                      "value":  "SloveniaName"
+                  },
+                  {
+                      "key":  "Swedish",
+                      "value":  "Ruotsi"
+                  },
+                  {
+                      "key":  "Hungarian",
+                      "value":  "UnkariName"
+                  },
+                  {
+                      "key":  "Vietnamese",
+                      "value":  "vietnamilainen"
+                  },
+                  {
+                      "key":  "Corner",
+                      "value":  "Kulma"
+                  },
+                  {
+                      "key":  "Elemkeytary streams",
+                      "value":  "Elemkeytaariset virtaukset"
+                  },
+                  {
+                      "key":  "Fireworks dancing",
+                      "value":  "Ilotulitteiden tanssiminen"
+                  },
+                  {
+                      "key":  "Round",
+                      "value":  "Pyöreä"
+                  },
+                  {
+                      "key":  "Gradiant",
+                      "value":  "Gradiantti"
+                  },
+                  {
+                      "key":  "Badget",
+                      "value":  "Mäyrä"
+                  },
+                  {
+                      "key":  "Barrage",
+                      "value":  "Sulku"
+                  },
+                  {
+                      "key":  "Label",
+                      "value":  "Nimike"
+                  },
+                  {
+                      "key":  "ProgressBar",
+                      "value":  "Progress-palkki"
+                  },
+                  {
+                      "key":  "Scrolling",
+                      "value":  "Vieritys"
+                  },
+                  {
+                      "key":  "Mkeyu",
+                      "value":  "MkeyuName"
+                  },
+                  {
+                      "key":  "TaoQuick",
+                      "value":  "TaoQuick."
+                  },
+                  {
+                      "key":  "Blue",
+                      "value":  "Sininen"
+                  },
+                  {
+                      "key":  "Frostmourne",
+                      "value":  "Palstamourne"
+                  },
+                  {
+                      "key":  "Welcome to the \u0027TaoQuick\u0027 demo program",
+                      "value":  "Tervetuloa Tao Quickin demo ohjelmaan."
+                  },
+                  {
+                      "key":  "Welcome",
+                      "value":  "Tervetuloa."
+                  },
+                  {
+                      "key":  "Close",
+                      "value":  "Sulje"
+                  },
+                  {
+                      "key":  "Green",
+                      "value":  "Vihreä"
+                  },
+                  {
+                      "key":  "QRcode",
+                      "value":  "QRcode"
+                  },
+                  {
+                      "key":  "Shadow flow",
+                      "value":  "Varjojen virta"
+                  },
+                  {
+                      "key":  "Drop-down",
+                      "value":  "Pudotus"
+                  },
+                  {
+                      "key":  "Graphic",
+                      "value":  "Graafinen"
+                  },
+                  {
+                      "key":  "Basic",
+                      "value":  "Perus"
+                  },
+                  {
+                      "key":  "Joy of fire",
+                      "value":  "Tulinen ilo"
+                  },
+                  {
+                      "key":  "Cool",
+                      "value":  "Siistiä."
+                  },
+                  {
+                      "key":  "Pink",
+                      "value":  "Vaaleanpunainen"
+                  },
+                  {
+                      "key":  "IP address",
+                      "value":  "IP- osoite"
+                  },
+                  {
+                      "key":  "Home",
+                      "value":  "Koti"
+                  },
+                  {
+                      "key":  "Drag",
+                      "value":  "Vedä"
+                  },
+                  {
+                      "key":  "Text",
+                      "value":  "Teksti"
+                  },
+                  {
+                      "key":  "keyergy ball",
+                      "value":  "Keyergy pallo"
+                  },
+                  {
+                      "key":  "Red",
+                      "value":  "Punainen"
+                  },
+                  {
+                      "key":  "Button",
+                      "value":  "Nappi"
+                  },
+                  {
+                      "key":  "Gold",
+                      "value":  "Kulta"
+                  },
+                  {
+                      "key":  "Black",
+                      "value":  "Musta"
+                  },
+                  {
+                      "key":  "Functional",
+                      "value":  "Toiminnallinen"
+                  },
+                  {
+                      "key":  "Comet Halley",
+                      "value":  "Komeetta Halley"
+                  },
+                  {
+                      "key":  "Gradient",
+                      "value":  "Gradientti"
+                  },
+                  {
+                      "key":  "Background",
+                      "value":  "Tausta"
+                  },
+                  {
+                      "key":  "Dialog",
+                      "value":  "Vuoropuhelu"
+                  },
+                  {
+                      "key":  "ShaderEffect",
+                      "value":  "ShaderEffect"
+                  },
+                  {
+                      "key":  "Cloud Hole",
+                      "value":  "Pilven reikä"
+                  },
+                  {
+                      "key":  "Star Light",
+                      "value":  "Tähtien valo"
+                  },
+                  {
+                      "key":  "Snail",
+                      "value":  "Etana"
+                  },
+                  {
+                      "key":  "Super Mario",
+                      "value":  "Super Mario."
+                  },
+                  {
+                      "key":  "Effect",
+                      "value":  "Vaikutus"
+                  },
+                  {
+                      "key":  "Ring",
+                      "value":  "Sormus"
+                  },
+                  {
+                      "key":  "Brilliant Starry Sky",
+                      "value":  "Loistava Tähtitaivas"
+                  },
+                  {
+                      "key":  "Keep up with the pace",
+                      "value":  "Pysy mukana tahdissa"
+                  },
+                  {
+                      "key":  "Undercurrent surge",
+                      "value":  "Virtauksen alittavuus"
+                  },
+                  {
+                      "key":  "Magic Circle",
+                      "value":  "Maaginen ympyrä"
+                  },
+                  {
+                      "key":  "Painter",
+                      "value":  "Maalari"
+                  },
+                  {
+                      "key":  "RoundRect",
+                      "value":  "Pyöristystoisto"
+                  },
+                  {
+                      "key":  "KLine",
+                      "value":  "KLine."
+                  },
+                  {
+                      "key":  "Animation",
+                      "value":  "Animointi"
+                  },
+                  {
+                      "key":  "Enter",
+                      "value":  "Syötä"
+                  },
+                  {
+                      "key":  "Grad",
+                      "value":  "Luokka"
+                  },
+                  {
+                      "key":  "Cleavage",
+                      "value":  "Cleavage"
+                  },
+                  {
+                      "key":  "Diagonal",
+                      "value":  "Vino"
+                  },
+                  {
+                      "key":  "Louver",
+                      "value":  "Louver."
+                  },
+                  {
+                      "key":  "Square",
+                      "value":  "Neliö"
+                  },
+                  {
+                      "key":  "Circle",
+                      "value":  "Ympyrä"
+                  },
+                  {
+                      "key":  "Cross",
+                      "value":  "Risti"
+                  },
+                  {
+                      "key":  "Rhombus",
+                      "value":  "Rhombus."
+                  },
+                  {
+                      "key":  "Wheel",
+                      "value":  "Pyörä"
+                  },
+                  {
+                      "key":  "Board",
+                      "value":  "Lauta"
+                  },
+                  {
+                      "key":  "Dissolve",
+                      "value":  "Liuota"
+                  },
+                  {
+                      "key":  "PageSwitch",
+                      "value":  "Sivunvaihto"
+                  },
+                  {
+                      "key":  "FadeInOut",
+                      "value":  "FadeInOutName"
+                  }
+              ]
+}
