@@ -1,9 +1,8 @@
 #include "TaoView.h"
-#ifdef VER_Utf16
-#include "Ver-u16.h"
-#else
+
 #include "Ver-u8.h"
-#endif
+
+
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickItem>

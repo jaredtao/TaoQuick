@@ -38,7 +38,7 @@ class TaoQuickPlugin : public QQmlExtensionPlugin {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID QQmlExtensionInterface_iid)
 public:
-    void registerTypes(const char* uri) override
+    void registerTypes(const char*) override
     {
         Q_INIT_RESOURCE(Qml);
         qInfo() << "\033[35m"
