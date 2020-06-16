@@ -70,13 +70,13 @@ QtCreator also can use build argument.
 2. import in you qml
 ```
 import TaoQuick 1.0
-import "qrc:/Tao/Qml/"
+import "qrc:/TaoQuick"
 ```
 
 ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/TaoQuick-use.png)
 
 `import TaoQuick 1.0` is import library.
-`import "qrc:/Tao/Qml/` is import Resource by qmldir file in "qrc:/Tao/Qml/"
+`import "qrc:/TaoQuick/` is import Resource by qmldir file in "qrc:/TaoQuick/"
 
 this use method not support QtCreator HighLight.
 
