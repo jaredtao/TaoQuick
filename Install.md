@@ -80,14 +80,14 @@ TaoQuick库将被安装到{QTDIR}/qml/TaoQuick/ 路径下。
 2. 在你的Qml中写上这两句，就完成了TaoQuick的导入
 ```
 import TaoQuick 1.0
-import "qrc:/Tao/Qml/"
+import "qrc:/TaoQuick"
 ```
 
 ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/TaoQuick-use.png)
 
 `import TaoQuick 1.0` 是在导入dll库。
 
-`import "qrc:/Tao/Qml/` 是在导入"qrc:/Tao/Qml/"路径下的qmldir文件，这个文件描述了TaoQuick中的所有组件。
+`import "qrc:/TaoQuick/` 是在导入"qrc:/TaoQuick/"路径下的qmldir文件，这个文件描述了TaoQuick中的所有组件。
 
 导入过后就能使用全部的组件了。
 
