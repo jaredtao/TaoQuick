@@ -1,5 +1,5 @@
-$baiduId = "20190502000293463"
-$baiduSecret = "0d2RvCho9XZNEO5GCGNs"
+$baiduId = "xxxx"
+$baiduSecret = "xxxx"
 $baiduLangs = @{
     zh="中文";
     # cht="繁体中文";
