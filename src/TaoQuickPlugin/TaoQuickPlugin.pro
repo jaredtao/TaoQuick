@@ -8,7 +8,7 @@ msvc {
     QMAKE_CFLAGS += -source-charset:utf-8
     QMAKE_CXXFLAGS += -source-charset:utf-8
 }
-
+load(taoVersion)
 include(../TaoPlugin.pri)
 include(../TaoBundle.pri)
 
