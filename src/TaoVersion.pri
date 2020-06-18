@@ -1,4 +1,4 @@
-isEmpty(TaoVersionInclude) {
+!exists(TaoVersionInclude) {
 TaoVersionInclude=1
 TAO_VERSION_TAG = 1.0
 

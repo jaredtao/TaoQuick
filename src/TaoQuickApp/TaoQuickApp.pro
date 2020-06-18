@@ -27,7 +27,7 @@ msvc {
 
 
 
-include(../TaoVersion.pri)
+load(taoVersion)
 #include(../TaoBundle.pri)
 
 
