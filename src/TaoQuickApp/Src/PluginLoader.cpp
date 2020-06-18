@@ -1,5 +1,8 @@
 #include "PluginLoader.h"
 #include "Logger/Logger.h"
+#include <QDir>
+#include <QCoreApplication>
+#include <QJsonDocument>
 PluginLoader::PluginLoader(QObject *parent) : QObject(parent)
 {
 

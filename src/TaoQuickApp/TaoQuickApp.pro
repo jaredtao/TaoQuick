@@ -58,8 +58,7 @@ include(TaoQuickApp.pri)
 
 
 !android {
-
-    trans.files = $$_PRO_FILE_PWD_/Trans/*.json
+    trans.files = $$files($$_PRO_FILE_PWD_/Trans/language_*.json)
     trans.path = $$DESTDIR/Trans
     COPIES += trans
 }
