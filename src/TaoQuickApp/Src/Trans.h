@@ -15,21 +15,12 @@ public:
     void loadFolder(const QString &folder);
     bool load(QString &lang, const QString &filePath);
 public:
-    const QString &currentLang() const
-    {
-        return m_currentLang;
-    }
+    const QString &currentLang() const;
 
 
-    const QStringList &languages() const
-    {
-        return m_languages;
-    }
+    const QStringList &languages() const;
 
-    const QString &transString() const
-    {
-        return m_transString;
-    }
+    const QString &transString() const;
 
 public slots:
     QString trans(const QString &source) const;
