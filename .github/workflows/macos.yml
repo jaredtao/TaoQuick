@@ -26,20 +26,21 @@ jobs:
         with:
           path: ../Qt/${{matrix.qt_ver}}/${{matrix.qt_arch}}
           key: ${{ runner.os }}-Qt/${{matrix.qt_ver}}/${{matrix.qt_arch}}
-      - name: setupQt
-        if: steps.MacosCacheQt.outputs.cache-hit == 'true'
-        shell: pwsh
-        env:
-          QtPath: ../Qt/${{matrix.qt_ver}}/${{matrix.qt_arch}}
-        run: |
-          $qt_Path=${env:QtPath}
-          echo "::set-env name=Qt5_Dir::$qt_Path"
-          echo "::add-path::$qt_Path/bin"    
+      # - name: setupQt
+      #   if: steps.MacosCacheQt.outputs.cache-hit == 'true'
+      #   shell: pwsh
+      #   env:
+      #     QtPath: ../Qt/${{matrix.qt_ver}}/${{matrix.qt_arch}}
+      #   run: |
+      #     $qt_Path=${env:QtPath}
+      #     echo "::set-env name=Qt5_Dir::$qt_Path"
+      #     echo "::add-path::$qt_Path/bin"    
       - name: Install Qt
-        if: steps.MacosCacheQt.outputs.cache-hit != 'true'
-        uses: jurplel/install-qt-action@v2.0.0
+        # if: steps.MacosCacheQt.outputs.cache-hit != 'true'
+        uses: jurplel/install-qt-action@v2.6.3
         with:
           version: ${{ matrix.qt_ver }}
+          cached: ${{ steps.MacosCacheQt.outputs.cache-hit }}
       
       - uses: actions/checkout@v1
         with:
