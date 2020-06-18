@@ -49,6 +49,21 @@ bool Trans::load(QString& lang, const QString& filePath)
     return true;
 }
 
+const QString &Trans::currentLang() const
+{
+    return m_currentLang;
+}
+
+const QStringList &Trans::languages() const
+{
+    return m_languages;
+}
+
+const QString &Trans::transString() const
+{
+    return m_transString;
+}
+
 void Trans::initEnglish()
 {
     if (!m_map.contains(cEnglisthStr)) {
