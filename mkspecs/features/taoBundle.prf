@@ -1,0 +1,12 @@
+defineReplace(getBundlePath) {
+    appName = $$1
+    BundlePath =
+    macos{
+        CONFIG(debug, debug|release){
+            CONFIG -=app_bundle
+        } else {
+            BundlePath=$${appName}.app/Contents/MacOS/
+        }
+    }
+    return ($$BundlePath)
+}
