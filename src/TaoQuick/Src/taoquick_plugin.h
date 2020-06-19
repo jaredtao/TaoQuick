@@ -14,6 +14,7 @@ public:
     void initializeEngine(QQmlEngine* engine, const char* uri) override
     {
         Q_INIT_RESOURCE(Qml);
+
         qInfo() << "\033[35m"
                 << "Your application is using TaoQuick ";
         qInfo() << " Version:" << TaoVer;
@@ -27,6 +28,7 @@ public:
         qInfo() << "\033[0m\033[32m"
                 << "Good luck to you."
                 << "\033[0m";
+
         QQmlEngineExtensionPlugin::initializeEngine(engine, uri);
     }
 };
@@ -40,7 +42,9 @@ class TaoQuickPlugin : public QQmlExtensionPlugin {
 public:
     void registerTypes(const char*) override
     {
+
         Q_INIT_RESOURCE(Qml);
+
         qInfo() << "\033[35m"
                 << "Your application is using TaoQuick ";
         qInfo() << " Version:" << TaoVer;

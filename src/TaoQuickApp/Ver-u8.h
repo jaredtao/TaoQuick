@@ -13,7 +13,7 @@
 
 #define VER_COMPANYNAME_STR        "JaredTao\0"
 
-#define VER_FILEDESCRIPTION_STR    "TaoQuickDemo,未经授权不得商用,侵权必究\0"
+#define VER_FILEDESCRIPTION_STR    "TaoQuickDemo\0"
 #define VER_INTERNALNAME_STR        "jaredtao.github.io\0"
 #define VER_LEGALCOPYRIGHT_STR      "Copyright(C)2019-2029 JaredTao\0"
 #define VER_LEGALTRADEMARKS_STR    "JaredTao\0"
