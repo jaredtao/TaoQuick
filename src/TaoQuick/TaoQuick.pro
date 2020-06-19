@@ -6,6 +6,7 @@ QT += qml quick
 
 CONFIG += plugin c++11 qtquickcompiler
 CONFIG += file_copies
+
 versionAtLeast(QT_VERSION, 5.15.0) {
     # 5.15 use new feature: qmltypes,QML_IMPORT_NAME
     CONFIG += qmltypes
@@ -14,10 +15,10 @@ versionAtLeast(QT_VERSION, 5.15.0) {
 }
 
 uri = $$TARGET
-load(taoVersion)
+#load(taoVersion)
 load(taoBundle)
 load(taoBuildPath)
-BundlePath = getBundlePath(TaoQuickApp)
+BundlePath = $$getBundlePath("TaoQuickApp")
 #include(../TaoBundle.pri)
 include(TaoQuick.pri)
 include(TaoQuick/TaoQuickDesigner.pri)
@@ -28,19 +29,6 @@ CONFIG(debug, debug|release){
     DESTDIR = $${TaoQuick_RUN_TREE}/release/$${BundlePath}$${uri}
 }
 setBuildPath($${TaoQuick_BUILD_TREE}/$${TARGET})
-#CONFIG(debug,debug|release){
-#    MOC_DIR = $${TaoQuick_BUILD_TREE}/$${TARGET}/debug/moc
-#    RCC_DIR = $${TaoQuick_BUILD_TREE}/$${TARGET}/debug/rcc
-#    UI_DIR = $${TaoQuick_BUILD_TREE}/$${TARGET}/debug/ui
-#    OBJECTS_DIR = $${TaoQuick_BUILD_TREE}/$${TARGET}/debug/obj
-#    QMLCACHE_DIR = $${TaoQuick_BUILD_TREE}/$${TARGET}/debug/qmlcache
-#} else {
-#    MOC_DIR = $${TaoQuick_BUILD_TREE}/$${TARGET}/release/moc
-#    RCC_DIR = $${TaoQuick_BUILD_TREE}/$${TARGET}/release/rcc
-#    UI_DIR = $${TaoQuick_BUILD_TREE}/$${TARGET}/release/ui
-#    OBJECTS_DIR = $${TaoQuick_BUILD_TREE}/$${TARGET}/release/obj
-#    QMLCACHE_DIR = $${TaoQuick_BUILD_TREE}/$${TARGET}/release/qmlcache
-#}
 
 #copy_qmldir
 !android {

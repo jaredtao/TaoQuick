@@ -1,4 +1,4 @@
-defineReplace(setBuildPath) {
+defineTest(setBuildPath) {
     buildPath = $$1
     CONFIG(debug,debug|release){
         MOC_DIR = $${buildPath}/debug/moc
@@ -13,4 +13,9 @@ defineReplace(setBuildPath) {
         OBJECTS_DIR = $${buildPath}/release/obj
         QMLCACHE_DIR = $${buildPath}/release/qmlcache
     }
+    export(MOC_DIR)
+    export(RCC_DIR)
+    export(UI_DIR)
+    export(OBJECTS_DIR)
+    export(QMLCACHE_DIR)
 }
