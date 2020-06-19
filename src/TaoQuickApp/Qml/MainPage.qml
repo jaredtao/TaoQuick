@@ -71,14 +71,14 @@ Item {
     NotifyBox {
         id: notifyBox
     }
-    ShaderEffectSource {
-        anchors {
-            right: parent.right
-            bottom: parent.bottom
-        }
-        sourceItem: rootView
-        width: 300
-        height: width / rootView.width * rootView.height
-        recursive: true
-    }
+//    ShaderEffectSource {
+//        anchors {
+//            right: parent.right
+//            bottom: parent.bottom
+//        }
+//        sourceItem: rootView
+//        width: 300
+//        height: width / rootView.width * rootView.height
+//        recursive: true
+//    }
 }
