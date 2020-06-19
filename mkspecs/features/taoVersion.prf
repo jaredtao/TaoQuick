@@ -19,10 +19,13 @@
     MAJ = $$take_first(VerList)
     MIN = $$take_first(VerList)
     PAT = $$take_first(VerList)
-#    VER_MAJ = $${MAJ}
-#    VER_MIN = $${MIN}
-#    VER_PAT = $${PAT}
-#    VERSION = $${Ver}
+    equals(TEMPLATE, lib) {
+        CONFIG += skip_target_version_ext
+        VER_MAJ = $${MAJ}
+        VER_MIN = $${MIN}
+        VER_PAT = $${PAT}
+        VERSION = $${Ver}
+    }
 
     DEFINES += TaoREVISION=$${REVISION}
     DEFINES += TaoREVISIONSTR=\"\\\"$${REVISION}\\\"\"

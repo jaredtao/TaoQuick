@@ -11,17 +11,14 @@ CONFIG += file_copies
 #    HEADERS += $$PWD/Ver-u8.h
 #}
 
-msvc{
+msvc {
     QMAKE_CFLAGS += -source-charset:utf-8
     QMAKE_CXXFLAGS += -source-charset:utf-8
 }
 #一部分头文件加入编译预处理，提高编译速度
-msvc {
+msvc | gcc | xcode {
     CONFIG += precompile_header
     PRECOMPILED_HEADER = $$PWD/Src/stdafx.h
-    precompile_header:!isEmpty(PRECOMPILED_HEADER) {
-        DEFINES += USING_PCH
-    }
 }
 
 HEADERS += \
