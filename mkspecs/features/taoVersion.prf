@@ -19,14 +19,18 @@
     MAJ = $$take_first(VerList)
     MIN = $$take_first(VerList)
     PAT = $$take_first(VerList)
-    VER_MAJ = $${MAJ}
-    VER_MIN = $${MIN}
-    VER_PAT = $${PAT}
-    VERSION = $${Ver}
+#    VER_MAJ = $${MAJ}
+#    VER_MIN = $${MIN}
+#    VER_PAT = $${PAT}
+#    VERSION = $${Ver}
 
     DEFINES += TaoREVISION=$${REVISION}
     DEFINES += TaoREVISIONSTR=\"\\\"$${REVISION}\\\"\"
+    DEFINES += TaoVer=\"\\\"$${Ver}\\\"\"
+    DEFINES += TaoMAJ=$${MAJ}
+    DEFINES += TaoMIN=$${MIN}
+    DEFINES += TaoPAT=$${PAT}
     DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
     DEFINES += TaoCompilerVendor=\"\\\"$${QT_VERSION} $${QMAKE_PLATFORM} $${QMAKE_COMPILER} $${QMAKE_TARGET.arch}\\\"\"
-    #    message($${DEFINES})
+#    message($${DEFINES})
 }
