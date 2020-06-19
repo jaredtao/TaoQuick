@@ -1,7 +1,15 @@
-
 QT += qml quick
+
 CONFIG += plugin c++14 qtquickcompiler
+
 CONFIG += file_copies
+
+#msvc {
+#    HEADERS += $$PWD/Ver-u16.h
+#    DEFINES += VER_Utf16
+#} else {
+#    HEADERS += $$PWD/Ver-u8.h
+#}
 
 msvc{
     QMAKE_CFLAGS += -source-charset:utf-8
@@ -10,18 +18,12 @@ msvc{
 #一部分头文件加入编译预处理，提高编译速度
 msvc {
     CONFIG += precompile_header
-    PRECOMPILED_HEADER = Src/stdafx.h
+    PRECOMPILED_HEADER = $$PWD/Src/stdafx.h
     precompile_header:!isEmpty(PRECOMPILED_HEADER) {
         DEFINES += USING_PCH
     }
 }
 
-#msvc {
-#    HEADERS += $$PWD/Ver-u16.h
-#    DEFINES += VER_Utf16
-#} else {
-    HEADERS += $$PWD/Ver-u8.h
-#}
 HEADERS += \
     $$PWD/Src/ITaoQuickPlugin.h \
     $$PWD/Src/Logger/Logger.h \
@@ -42,3 +44,9 @@ SOURCES += \
 RESOURCES += \
     $$PWD/Qml.qrc \
     $$PWD/Image.qrc
+
+!android {
+    trans.files = $$files($$_PRO_FILE_PWD_/Trans/language_*.json)
+    trans.path = $$DESTDIR/Trans
+    COPIES += trans
+}
