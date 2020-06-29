@@ -26,5 +26,5 @@ CONFIG(debug, debug|release){
 }
 
 include(TaoQuick.pri)
-include(TaoQuick/TaoQuickDesigner.pri)
+include(TaoQuick/designer.pri)
 

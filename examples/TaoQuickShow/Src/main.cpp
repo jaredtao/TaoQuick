@@ -1,6 +1,5 @@
 #include "TaoView.h"
-#include "Logger/Logger.h"
-
+#include "logger.h"
 #include <QGuiApplication>
 #include <QQmlContext>
 #include <QQmlEngine>

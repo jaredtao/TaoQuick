@@ -1,5 +1,5 @@
 #include "PluginLoader.h"
-#include "Logger/Logger.h"
+#include "logger.h"
 #include <QDir>
 #include <QCoreApplication>
 #include <QJsonDocument>
