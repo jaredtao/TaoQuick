@@ -9,11 +9,11 @@ public:
     //插件初始化
     virtual void init() = 0;
     //获取插件内容,Json格式为
-    // [name: qsTr("首页"), title: qsTr("欢迎"), url: "qrc:/Qml/Contents/Welcome/Welcome.qml", children: []]
+    // [name: "首页", title: "欢迎", url: "qrc:/Qml/Contents/Welcome/Welcome.qml", children: []]
     //或者
     // [
-    //      name: qsTr("基础组件"); title: qsTr("基础组件"); children: [
-    //          { name: qsTr("按钮组件"); title: qsTr("按钮组件"); url: "qrc:/Qml/Contents/BaseComponent/Buttons.qml"}
+    //      name: "基础组件"; title: "基础组件"; children: [
+    //          { name: "按钮组件"; title: "按钮组件"; url: "qrc:/Qml/Contents/BaseComponent/Buttons.qml"}
     //      ]
     // ]
     virtual QJsonArray infos() const = 0;

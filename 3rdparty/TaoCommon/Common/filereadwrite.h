@@ -5,6 +5,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QString>
+#include "Logger/logger.h"
 namespace TaoCommon
 {
     static bool readFile(const QString &filePath, QByteArray &content)
@@ -12,7 +13,7 @@ namespace TaoCommon
         QFile file(filePath);
         if (!file.open(QFile::ReadOnly))
         {
-            qWarning() << "open file " << filePath << "failed:" << file.errorString();
+            LOG_WARN << "open file " << filePath << "failed:" << file.errorString();
             return false;
         }
         content = file.readAll();
@@ -25,7 +26,7 @@ namespace TaoCommon
         doc = QJsonDocument::fromJson(data, &err);
         if (doc.isNull())
         {
-            qWarning() << "parse json failed:" << err.errorString();
+            LOG_WARN << "parse json failed:" << err.errorString();
             return false;
         }
         return true;
@@ -83,7 +84,7 @@ namespace TaoCommon
         QFile file(filePath);
         if (!file.open(QFile::WriteOnly))
         {
-            qWarning() << "open file " << filePath << "failed:" << file.errorString();
+            LOG_WARN << "open file " << filePath << "failed:" << file.errorString();
             return false;
         }
         file.write(content);
