@@ -1,5 +1,4 @@
-#ifndef STDAFX_H
-#define STDAFX_H
+#pragma once
 /* Add C includes here */
 
 
@@ -31,4 +30,3 @@
 
 #endif
 
-#endif
