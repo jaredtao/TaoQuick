@@ -27,6 +27,7 @@ QML_DESIGNER_IMPORT_PATH += $$PWD/TaoQuick
 
     #install_qmldir for install
     installPath = $$[QT_INSTALL_QML]/$${uri}
+
     install_qmldir.files = $${qmldirFile}
     install_qmldir.path = $${installPath}
     INSTALLS += install_qmldir

@@ -3,13 +3,13 @@
 #include <string>
 namespace Logger
 {
-    const static QString logTemplate = u8R"logTemplate(
+    const static auto logTemplate = QString::fromUtf8(u8R"logTemplate(
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 
 <head>
-    <title>TaoLogger</title>
+    <title>Lubansoft log file</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style type="text/css" id="logCss">
         body {
@@ -86,7 +86,7 @@ namespace Logger
 </head>
 
 <body>
-    <h1><a href="https://jaredtao.github.io">TaoLogger</a> 日志文件</h1>
+    <h1><a href="http://jaredtao.github.io/">TaoLogger</a> 日志文件</h1>
     <script type="text/JavaScript">
         function objHide(obj) {
             obj.style.display="none"
@@ -122,5 +122,5 @@ namespace Logger
         <option value='c'>Critical</option>
         <option value='f'>Fatal</option>
     </select>
-)logTemplate";
+)logTemplate");
 }

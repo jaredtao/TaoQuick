@@ -1,3 +1,4 @@
+build_pass {
 !exists(TaoVersionDefined) {
     TaoVersionDefined=1
 
@@ -35,5 +36,6 @@
     DEFINES += TaoPAT=$${PAT}
     DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
     DEFINES += TaoCompilerVendor=\"\\\"$${QT_VERSION} $${QMAKE_PLATFORM} $${QMAKE_COMPILER} $${QMAKE_TARGET.arch}\\\"\"
-#    message($${DEFINES})
+    message(DEFINES $${TARGET} $${DEFINES})
+}
 }
