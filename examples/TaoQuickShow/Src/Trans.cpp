@@ -1,5 +1,5 @@
 #include "Trans.h"
-#include "FileReadWrite.h"
+#include "filereadwrite.h"
 #include <QDir>
 const static auto cEnglisthStr = QStringLiteral("English");
 const static auto cChineseStr = QStringLiteral("简体中文");

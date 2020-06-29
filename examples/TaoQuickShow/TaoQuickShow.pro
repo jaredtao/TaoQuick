@@ -15,7 +15,7 @@ CONFIG(debug,debug|release) {
     DESTDIR = $${TaoQuick_RUN_TREE}/release
 }
 
-include(TaoQuickApp.pri)
+include(TaoQuickShow.pri)
 
 win32:!mingw {
     RC_FILE = App.rc
