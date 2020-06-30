@@ -6,6 +6,10 @@ Item {
     id: rootView
     width: 1440
     height: 960
+    Component.onCompleted: {
+        view.initAppInfo()
+        trans.loadFolder(appPath + "/Trans")
+    }
     RectangularGlow {
         id: glow
         anchors.fill: parent

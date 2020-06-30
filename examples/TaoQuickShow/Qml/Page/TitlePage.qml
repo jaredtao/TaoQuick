@@ -9,7 +9,7 @@ Rectangle {
         height: parent.height
         spacing: 4
         Image {
-            source: "qrc:/Image/logo/milk.png"
+            source: imgPath + "logo/milk.png"
         }
         Text {
             id: t
@@ -31,7 +31,7 @@ Rectangle {
         TImageBtn {
             width: 20
             height: 20
-            imageUrl: containsMouse ? "qrc:/Image/Window/minimal_white.png" : "qrc:/Image/Window/minimal_gray.png"
+            imageUrl: imgPath + (containsMouse ? "Window/minimal_white.png" : "Window/minimal_gray.png")
             onClicked: {
                 view.showMinimized()
             }
@@ -40,7 +40,7 @@ Rectangle {
             width: 20
             height: 20
             visible: !isMaxed
-            imageUrl: containsMouse ? "qrc:/Image/Window/max_white.png" : "qrc:/Image/Window/max_gray.png"
+            imageUrl: imgPath + (containsMouse ? "Window/max_white.png" : "Window/max_gray.png")
             onClicked: {
                 view.showMaximized()
                 isMaxed = true
@@ -50,7 +50,7 @@ Rectangle {
             width: 20
             height: 20
             visible: isMaxed
-            imageUrl: containsMouse ? "qrc:/Image/Window/normal_white.png" : "qrc:/Image/Window/normal_gray.png"
+            imageUrl: imgPath + (containsMouse ? "Window/normal_white.png" : "Window/normal_gray.png")
             onClicked: {
                 view.showNormal()
                 isMaxed = false
@@ -59,7 +59,7 @@ Rectangle {
         TImageBtn {
             width: 20
             height: 20
-            imageUrl: containsMouse ? "qrc:/Image/Window/close_white.png" : "qrc:/Image/Window/close_gray.png"
+            imageUrl: imgPath + (containsMouse ? "Window/close_white.png" : "Window/close_gray.png")
             onClicked: {
                 view.close()
             }
@@ -94,7 +94,7 @@ Rectangle {
             height: 20
             anchors.verticalCenter: parent.verticalCenter
 
-            imageUrl: containsMouse ? "qrc:/Image/Window/about_white.png" : "qrc:/Image/Window/about_gray.png"
+            imageUrl: imgPath + (containsMouse ? "Window/about_white.png" : "Window/about_gray.png")
             onClicked: {
                 aboutDialog.show()
             }
