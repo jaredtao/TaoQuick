@@ -1,4 +1,4 @@
-#include "Trans.h"
+﻿#include "Trans.h"
 #include "filereadwrite.h"
 #include <QDir>
 const static auto cEnglisthStr = QStringLiteral("English");
@@ -93,7 +93,6 @@ void Trans::setCurrentLang(const QString& currentLang)
         return;
 
     m_currentLang = currentLang;
-//    qWarning() << "m_currentLang" << m_currentLang;
     emit currentLangChanged(m_currentLang);
     emit transStringChanged();
 }

@@ -12,8 +12,8 @@ class Trans : public QObject
     Q_PROPERTY(QString transString READ transString NOTIFY transStringChanged)
 public:
     explicit Trans(QObject *parent = nullptr);
-    void loadFolder(const QString &folder);
-    bool load(QString &lang, const QString &filePath);
+    Q_INVOKABLE void loadFolder(const QString &folder);
+    Q_INVOKABLE bool load(QString &lang, const QString &filePath);
 public:
     const QString &currentLang() const;
 
