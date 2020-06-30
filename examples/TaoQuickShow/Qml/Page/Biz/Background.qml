@@ -37,7 +37,7 @@ Rectangle {
         opacity: 0.2
         width: parent.width
         height: parent.height
-        source: "qrc:/Image/Window/flower.jpg"
+        source: imgPath + "Window/flower.jpg"
     }
     Image {
         id: img2
@@ -46,6 +46,6 @@ Rectangle {
         opacity: 0.2
         width: parent.width
         height: parent.height
-        source: "qrc:/Image/Window/flower.jpg"
+        source: imgPath + "Window/flower.jpg"
     }
 }

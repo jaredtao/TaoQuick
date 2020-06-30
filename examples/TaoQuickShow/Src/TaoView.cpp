@@ -2,7 +2,6 @@
 
 #include "Ver-u8.h"
 
-
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickItem>

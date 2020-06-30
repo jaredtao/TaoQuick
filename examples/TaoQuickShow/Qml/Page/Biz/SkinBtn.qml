@@ -4,7 +4,7 @@ import TaoQuick 1.0
 import "qrc:/TaoQuick"
 TImageBtn {
 
-    imageUrl: containsMouse ? "qrc:/Image/Window/skin_white.png" : "qrc:/Image/Window/skin_gray.png"
+    imageUrl: imgPath + (containsMouse ? "Window/skin_white.png" : "Window/skin_gray.png")
     onClicked: {
         skinBox.show()
     }

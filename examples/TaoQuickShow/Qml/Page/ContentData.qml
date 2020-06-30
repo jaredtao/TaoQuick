@@ -60,6 +60,6 @@ QtObject {
     }
 
     property ListModel contentData: ListModel {
-        ListElement { name: "Home"; url: "qrc:/Qml/Welcome/Welcome.qml"; children: []}
+        ListElement { name: "Home"; url: ""; children: []}
     }
 }

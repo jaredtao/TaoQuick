@@ -4,7 +4,7 @@ import TaoQuick 1.0
 import "qrc:/TaoQuick"
 
 TImageBtn {
-    imageUrl: containsMouse ? "qrc:/Image/Window/lang_white.png" : "qrc:/Image/Window/lang_gray.png"
+    imageUrl: imgPath + (containsMouse ? "Window/lang_white.png" : "Window/lang_gray.png")
     onClicked: {
         //                notifyBox.notify("change language")
         pop.show()

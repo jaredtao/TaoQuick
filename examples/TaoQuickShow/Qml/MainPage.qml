@@ -26,11 +26,7 @@ Item {
         id: aboutDialog
 
     }
-    Component.onCompleted: {
-        view.initAppInfo()
-        pluginLoader.pluginReady.connect(onPluginReady);
-        pluginLoader.loadPlugin("TaoPlugin")
-    }
+
     function onPluginReady(pluginInfo) {
         console.log("onPluginReady")
         var arr = null
