@@ -1,4 +1,4 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 Item {
     width: 1024
@@ -10,6 +10,6 @@ Item {
 
     AnimatedImage {
         anchors.fill: parent
-        source: "qrc:/Image/logo/splash.gif"
+        source: imgPath + "logo/splash.gif"
     }
 }

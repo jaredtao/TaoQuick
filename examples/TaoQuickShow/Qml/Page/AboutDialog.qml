@@ -26,7 +26,7 @@ Popup {
             anchors.left: parent.left
             anchors.leftMargin: 2
             anchors.verticalCenter: parent.verticalCenter
-            source: "qrc:/Image/logo/milk.png"
+            source: imgPath + "logo/milk.png"
         }
         TTextBtn {
             id: closeBtn

@@ -9,7 +9,6 @@
         <file>Qml/MainPage.qml</file>
         <file>Qml/Page/ContentData.qml</file>
         <file>Qml/Page/AboutDialog.qml</file>
-        <file>Qml/Welcome/Welcome.qml</file>
         <file>Qml/Page/Biz/Background.qml</file>
         <file>Qml/Page/Biz/LangBtn.qml</file>
         <file>Qml/Page/Biz/SkinBtn.qml</file>
