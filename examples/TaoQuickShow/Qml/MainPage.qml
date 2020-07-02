@@ -31,15 +31,6 @@ Item {
         width: rootView.width - 2
         height: 60
         color: gConfig.titleBackground
-//        TMoveArea {
-//            height: parent.height
-//            anchors {
-//                left: parent.left
-//                right: parent.right
-//                rightMargin: 200
-//            }
-//            control: view
-//        }
     }
     ContentPage {
         id: contentRect

@@ -19,8 +19,7 @@ Rectangle {
             text: "TaoQuick"
         }
     }
-
-    property bool isMaxed: false
+    property bool isMaxed: view.isMax
     Row {
         id: controlButtons
         height: 20
@@ -43,7 +42,6 @@ Rectangle {
             imageUrl: imgPath + (containsMouse ? "Window/max_white.png" : "Window/max_gray.png")
             onClicked: {
                 view.showMaximized()
-                isMaxed = true
             }
         }
         TImageBtn {
@@ -53,7 +51,6 @@ Rectangle {
             imageUrl: imgPath + (containsMouse ? "Window/normal_white.png" : "Window/normal_gray.png")
             onClicked: {
                 view.showNormal()
-                isMaxed = false
             }
         }
         TImageBtn {
