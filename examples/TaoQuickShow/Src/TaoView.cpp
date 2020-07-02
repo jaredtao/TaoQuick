@@ -25,7 +25,7 @@ const LONG border_width = 6;
 TaoView::TaoView(QWindow* parent)
     : QQuickView(parent)
 {
-    setFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinimizeButtonHint);
+    setFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
     setResizeMode(SizeRootObjectToView);
     setColor(QColor(Qt::transparent));
     resize(1440, 960);
@@ -34,9 +34,11 @@ TaoView::TaoView(QWindow* parent)
     style |= WS_MINIMIZEBOX | WS_THICKFRAME | WS_CAPTION;
     ::SetWindowLong(HWND(winId()), GWL_STYLE, style);
 
-//    const MARGINS shadow = { -1, -1, -1, -1 };
-//    DwmExtendFrameIntoClientArea(HWND(winId()), &shadow);
 #endif
+    setIsMax(windowState() == Qt::WindowMaximized);
+    connect(this, &QWindow::windowStateChanged, this, [&](Qt::WindowState state){
+        setIsMax(state == Qt::WindowMaximized);
+    });
 }
 
 TaoView::~TaoView()
@@ -66,35 +68,15 @@ void TaoView::moveToScreenCenter()
     setPosition(centerPos);
 }
 
-void TaoView::mouseMoveEvent(QMouseEvent* e)
+void TaoView::setIsMax(bool isMax)
 {
-    if (m_pressed) {
-        auto diff = e->pos() - m_pressedPos;
-        this->setPosition(position() + diff);
-    }
-    Super::mouseMoveEvent(e);
+    if (m_isMax == isMax)
+        return;
+
+    m_isMax = isMax;
+    emit isMaxChanged(m_isMax);
 }
 
-void TaoView::mousePressEvent(QMouseEvent* e)
-{
-    const int titleHeiht = 40;
-    const int titleWidth = width() * 0.8;
-    if (!m_pressed) {
-        if (border_width < e->pos().y() && e->pos().y() < titleHeiht && border_width << e->pos().x() && e->pos().x() < titleWidth) {
-            m_pressed = true;
-            m_pressedPos = e->pos();
-        }
-    }
-    Super::mousePressEvent(e);
-}
-
-void TaoView::mouseReleaseEvent(QMouseEvent* e)
-{
-    if (m_pressed) {
-        m_pressed = false;
-    }
-    Super::mouseReleaseEvent(e);
-}
 #if WIN32
 bool TaoView::nativeEvent(const QByteArray& eventType, void* message, long* result)
 {
@@ -164,7 +146,18 @@ bool TaoView::nativeEvent(const QByteArray& eventType, void* message, long* resu
                 *result = HTTOPRIGHT;
             }
         }
-        return (0 != *result);
+        if (0 != *result) {
+            return true;
+        }
+        double dpr = qApp->devicePixelRatio();
+        QPoint pos = mapFromGlobal(QPoint(x/dpr,y/dpr));
+        QRect titleRect(border_width, border_width, width() * 0.8, 40);
+        if (titleRect.contains(pos))
+        {
+            *result = HTCAPTION;
+            return true;
+        }
+        return false;
     } //end case WM_NCHITTEST
     }
     return QQuickView::nativeEvent(eventType, message, result);
