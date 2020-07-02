@@ -2,11 +2,11 @@
 
 #include "Ver-u8.h"
 
+#include <QCursor>
 #include <QGuiApplication>
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickItem>
-#include <QScreen>
 
 #if WIN32
 
@@ -19,10 +19,13 @@
 #pragma comment(lib, "user32.lib")
 
 #endif
+
+const LONG border_width = 6;
+
 TaoView::TaoView(QWindow* parent)
     : QQuickView(parent)
 {
-    setFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinimizeButtonHint);
+    setFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinimizeButtonHint);
     setResizeMode(SizeRootObjectToView);
     setColor(QColor(Qt::transparent));
     resize(1440, 960);
@@ -31,7 +34,7 @@ TaoView::TaoView(QWindow* parent)
     style |= WS_MINIMIZEBOX | WS_THICKFRAME | WS_CAPTION;
     ::SetWindowLong(HWND(winId()), GWL_STYLE, style);
 
-//    const MARGINS shadow = { 1, 1, 1, 1 };
+//    const MARGINS shadow = { -1, -1, -1, -1 };
 //    DwmExtendFrameIntoClientArea(HWND(winId()), &shadow);
 #endif
 }
@@ -62,6 +65,36 @@ void TaoView::moveToScreenCenter()
     QPoint centerPos = { (screenGeo.width() - viewGeo.width()) / 2, (screenGeo.height() - viewGeo.height()) / 2 };
     setPosition(centerPos);
 }
+
+void TaoView::mouseMoveEvent(QMouseEvent* e)
+{
+    if (m_pressed) {
+        auto diff = e->pos() - m_pressedPos;
+        this->setPosition(position() + diff);
+    }
+    Super::mouseMoveEvent(e);
+}
+
+void TaoView::mousePressEvent(QMouseEvent* e)
+{
+    const int titleHeiht = 40;
+    const int titleWidth = width() * 0.8;
+    if (!m_pressed) {
+        if (border_width < e->pos().y() && e->pos().y() < titleHeiht && border_width << e->pos().x() && e->pos().x() < titleWidth) {
+            m_pressed = true;
+            m_pressedPos = e->pos();
+        }
+    }
+    Super::mousePressEvent(e);
+}
+
+void TaoView::mouseReleaseEvent(QMouseEvent* e)
+{
+    if (m_pressed) {
+        m_pressed = false;
+    }
+    Super::mouseReleaseEvent(e);
+}
 #if WIN32
 bool TaoView::nativeEvent(const QByteArray& eventType, void* message, long* result)
 {
@@ -84,7 +117,6 @@ bool TaoView::nativeEvent(const QByteArray& eventType, void* message, long* resu
     case WM_NCHITTEST: {
         *result = 0;
 
-        const LONG border_width = 6;
         RECT winrect;
         GetWindowRect(HWND(winId()), &winrect);
 
