@@ -12,5 +12,6 @@
         <file>Qml/Page/Biz/Background.qml</file>
         <file>Qml/Page/Biz/LangBtn.qml</file>
         <file>Qml/Page/Biz/SkinBtn.qml</file>
+        <file>Qml/TBusyIndicator.qml</file>
     </qresource>
 </RCC>
