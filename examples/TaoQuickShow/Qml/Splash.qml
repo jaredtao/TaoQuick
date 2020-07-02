@@ -7,9 +7,12 @@ Item {
     Behavior on opacity {
         NumberAnimation { duration: 500 }
     }
-
-    AnimatedImage {
-        anchors.fill: parent
-        source: imgPath + "logo/splash.gif"
+    TBusyIndicator {
+        id: control
+        running: true
+        anchors.centerIn: parent
+        width: 160
+        height: 160
+        durationPerCycle: 2000
     }
 }
