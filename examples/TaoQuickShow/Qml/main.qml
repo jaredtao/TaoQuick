@@ -20,7 +20,7 @@ Item {
     }
     Splash {
         id: splash
-        anchors.fill: parent
+        anchors.centerIn: parent
     }
     Loader {
         id: loader
