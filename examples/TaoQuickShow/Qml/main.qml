@@ -10,14 +10,6 @@ Item {
         view.initAppInfo()
         trans.loadFolder(appPath + "/Trans")
     }
-    RectangularGlow {
-        id: glow
-        anchors.fill: parent
-        visible: false
-        color: "#005fa3"
-        spread: 1.0
-        glowRadius: 2
-    }
     Splash {
         id: splash
         anchors.centerIn: parent
@@ -32,20 +24,15 @@ Item {
             margins: 2
         }
         Behavior on opacity {
-            NumberAnimation { duration: 600 }
+            NumberAnimation { duration: 800 }
         }
         onLoaded: {
             timer.start()
         }
-        onOpacityChanged: {
-            if (opacity === 1) {
-                glow.visible = Qt.binding(function() {return !splash.visible && view.active;})
-            }
-        }
     }
     Timer {
         id: timer
-        interval: 600
+        interval: 800
         repeat: false
         triggeredOnStart: false
         onTriggered: {

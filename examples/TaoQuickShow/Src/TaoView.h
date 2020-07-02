@@ -12,5 +12,9 @@ public:
     Q_INVOKABLE void initAppInfo();
 
     void moveToScreenCenter();
+protected:
+#if WIN32
+    bool nativeEvent(const QByteArray &eventType, void *message, long *result) override;
+#endif
 };
 

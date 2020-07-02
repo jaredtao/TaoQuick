@@ -26,21 +26,9 @@ Item {
         id: aboutDialog
 
     }
-
-    function onPluginReady(pluginInfo) {
-        console.log("onPluginReady")
-        var arr = null
-        try {
-            arr = JSON.parse(pluginInfo)
-        } catch (e) {
-            console.log(e)
-            return
-        }
-        gConfig.contentData.append(arr)
-    }
     TitlePage {
         id: titleRect
-        width: rootView.width
+        width: rootView.width - 2
         height: 60
         color: gConfig.titleBackground
         TMoveArea {
@@ -53,10 +41,6 @@ Item {
             control: view
         }
     }
-    TResizeBorder {
-        control: view
-        anchors.fill: parent
-    }
     ContentPage {
         id: contentRect
         width: parent.width
@@ -67,14 +51,4 @@ Item {
     NotifyBox {
         id: notifyBox
     }
-//    ShaderEffectSource {
-//        anchors {
-//            right: parent.right
-//            bottom: parent.bottom
-//        }
-//        sourceItem: rootView
-//        width: 300
-//        height: width / rootView.width * rootView.height
-//        recursive: true
-//    }
 }
