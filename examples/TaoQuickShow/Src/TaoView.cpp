@@ -1,13 +1,11 @@
 #include "TaoView.h"
 
-#include "Ver-u8.h"
-
 #include <QCursor>
 #include <QGuiApplication>
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickItem>
-
+#include <QScreen>
 #if WIN32
 
 #include <WinUser.h>
@@ -43,21 +41,6 @@ TaoView::TaoView(QWindow* parent)
 
 TaoView::~TaoView()
 {
-}
-
-void TaoView::initAppInfo()
-{
-    auto pInfo = rootObject()->findChild<QObject*>("appInfo");
-    if (pInfo) {
-        pInfo->setProperty("appName", VER_PRODUCTNAME_STR);
-        pInfo->setProperty("appVersion", TaoVer);
-        pInfo->setProperty("latestVersion", TaoVer);
-        pInfo->setProperty("buildDateTime", TaoDATETIME);
-        pInfo->setProperty("buildRevision", TaoREVISIONSTR);
-        pInfo->setProperty("copyRight", VER_LEGALCOPYRIGHT_STR);
-        pInfo->setProperty("descript", QString::fromLocal8Bit(VER_FILEDESCRIPTION_STR));
-        pInfo->setProperty("compilerVendor", TaoCompilerVendor);
-    }
 }
 
 void TaoView::moveToScreenCenter()
