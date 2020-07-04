@@ -54,7 +54,7 @@ Popup {
             Text {
                 anchors.left: parent.left
                 anchors.right: parent.right
-                text: appInfo.appName + " " + appInfo.app
+                text: appInfo.appName + " " + appInfo.appVersion
 
                 font.pixelSize: 20
                 renderType: Text.NativeRendering
