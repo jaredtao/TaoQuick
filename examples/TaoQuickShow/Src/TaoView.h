@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QQuickView>
-//无边框窗口，支持拖动和改变大小
+//无边框窗口，支持拖动和改变大小，支持Windows平台Aero效果
 class TaoView : public QQuickView
 {
     Q_OBJECT
@@ -10,9 +10,6 @@ class TaoView : public QQuickView
 public:
     explicit TaoView(QWindow *parent = nullptr);
     ~TaoView();
-
-    Q_INVOKABLE void initAppInfo();
-
     void moveToScreenCenter();
     bool isMax() const
     {

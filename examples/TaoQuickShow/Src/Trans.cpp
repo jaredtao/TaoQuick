@@ -1,21 +1,38 @@
-﻿#include "Trans.h"
+#include "Trans.h"
 #include "filereadwrite.h"
 #include <QDir>
+#include <QQmlContext>
+#include <QtConcurrent>
 const static auto cEnglisthStr = QStringLiteral("English");
 const static auto cChineseStr = QStringLiteral("简体中文");
 Trans::Trans(QObject* parent)
     : QObject(parent)
 {
 }
+void Trans::init() {}
+
+void Trans::uninit() {}
+
+void Trans::beforeUiReady(QQmlContext* ctx)
+{
+    ctx->setContextProperty("trans", this);
+}
+
+void Trans::afterUiReady() {}
 
 void Trans::loadFolder(const QString& folder)
 {
     QDir dir(folder);
     auto infos = dir.entryInfoList({ "language_*.json" }, QDir::Files);
+    QStringList paths;
+    QString lang;
     for (auto info : infos) {
-        QString lang;
+//        paths.append(info.absoluteFilePath());
         load(lang, info.absoluteFilePath());
     }
+//    auto res = QtConcurrent::map(paths, std::bind(&Trans::load, this, lang, std::placeholders::_1));
+//    res.waitForFinished();
+
     initEnglish();
     auto langs = m_map.uniqueKeys();
     if (langs.contains(cChineseStr)) {
@@ -28,6 +45,7 @@ void Trans::loadFolder(const QString& folder)
     } else {
         setCurrentLang(cEnglisthStr);
     }
+    emit folderLoaded(folder);
     emit transStringChanged();
 }
 
@@ -46,20 +64,21 @@ bool Trans::load(QString& lang, const QString& filePath)
         QString value = transObj.value("value").toString();
         m_map[lang][key] = value;
     }
+    emit langLoaded(lang);
     return true;
 }
 
-const QString &Trans::currentLang() const
+const QString& Trans::currentLang() const
 {
     return m_currentLang;
 }
 
-const QStringList &Trans::languages() const
+const QStringList& Trans::languages() const
 {
     return m_languages;
 }
 
-const QString &Trans::transString() const
+const QString& Trans::transString() const
 {
     return m_transString;
 }
@@ -82,9 +101,9 @@ void Trans::initEnglish()
 QString Trans::trans(const QString& source) const
 {
     return m_map.value(m_currentLang).value(source, source);
-//    auto value = m_map.value(m_currentLang).value(source, source);
-//    qWarning() <<m_currentLang << source << value;
-//    return value;
+    //    auto value = m_map.value(m_currentLang).value(source, source);
+    //    qWarning() <<m_currentLang << source << value;
+    //    return value;
 }
 
 void Trans::setCurrentLang(const QString& currentLang)
