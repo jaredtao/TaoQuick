@@ -1,35 +1,17 @@
-QT += qml quick
-
-CONFIG += plugin c++14 qtquickcompiler
-
 CONFIG += file_copies
 
-#msvc {
-#    HEADERS += $$PWD/Ver-u16.h
-#    DEFINES += VER_Utf16
-#} else {
-#    HEADERS += $$PWD/Ver-u8.h
-#}
-
-msvc {
-    QMAKE_CFLAGS += -source-charset:utf-8
-    QMAKE_CXXFLAGS += -source-charset:utf-8
-}
-#一部分头文件加入编译预处理，提高编译速度
-msvc | gcc | xcode {
-    CONFIG += precompile_header
-    PRECOMPILED_HEADER = $$PWD/Src/stdafx.h
-}
-
-include($${TaoQuick_3RDPARTY_TREE}/TaoCommon/TaoCommon.pri)
-
 HEADERS += \
+    $$PWD/Src/TaoObject.h \
+    $$PWD/Src/TaoFramework.h \
     $$PWD/Src/TaoView.h \
     $$PWD/Src/Trans.h \
+    $$PWD/Src/AppInfo.h
 
 SOURCES += \
+    $$PWD/Src/TaoFramework.cpp \
     $$PWD/Src/TaoView.cpp \
     $$PWD/Src/Trans.cpp \
+    $$PWD/Src/AppInfo.cpp \
     $$PWD/Src/main.cpp
 
 CONFIG(debug, debug|release) {
