@@ -4,16 +4,27 @@
 #include <QHash>
 #include <QList>
 #include <QString>
-class Trans : public QObject
+#include "TaoObject.h"
+class Trans : public QObject, public TaoObject
 {
     Q_OBJECT
     Q_PROPERTY(QString currentLang READ currentLang WRITE setCurrentLang NOTIFY currentLangChanged)
     Q_PROPERTY(QStringList languages READ languages NOTIFY languagesChanged)
     Q_PROPERTY(QString transString READ transString NOTIFY transStringChanged)
 public:
-    explicit Trans(QObject *parent = nullptr);
+    Trans(QObject *parent = nullptr);
+
     Q_INVOKABLE void loadFolder(const QString &folder);
+
     Q_INVOKABLE bool load(QString &lang, const QString &filePath);
+public:
+    void init() override;
+
+    void uninit() override;
+
+    void beforeUiReady(QQmlContext* ctx) override;
+
+    void afterUiReady() override;
 public:
     const QString &currentLang() const;
 
@@ -31,6 +42,10 @@ signals:
     void languagesChanged(const QStringList &languages);
 
     void transStringChanged();
+
+    void langLoaded(const QString &lang);
+
+    void folderLoaded(const QString &folder);
 
 protected:
     void setLanguages(const QStringList &languages);

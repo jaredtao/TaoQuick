@@ -7,7 +7,7 @@ Item {
     width: 1440
     height: 960
     Component.onCompleted: {
-        view.initAppInfo()
+        appInfo.splashShow = false;
         trans.loadFolder(appPath + "/Trans")
     }
     Splash {
