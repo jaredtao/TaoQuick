@@ -15,16 +15,19 @@ Item {
     }
     TitlePage {
         id: titleRect
-        width: rootView.width - 2
+        width: rootView.width
         height: 60
-        color: gConfig.titleBackground
+        color: gConfig.themeColor
     }
     ContentPage {
         id: contentRect
-        width: parent.width
         color: gConfig.background
-        anchors.top: titleRect.bottom
-        anchors.bottom: parent.bottom
+        anchors {
+            top: titleRect.bottom
+            bottom: parent.bottom
+            left: titleRect.left
+            right: titleRect.right
+        }
     }
     NotifyBox {
         id: notifyBox
