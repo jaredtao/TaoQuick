@@ -1,14 +1,15 @@
 #include "TaoView.h"
 
+#include "AppInfo.h"
+#include "ComponentsManager.h"
+#include "TaoFramework.h"
 #include "Trans.h"
 #include "logger.h"
-#include "AppInfo.h"
-#include "TaoFramework.h"
+#include <QDir>
 #include <QGuiApplication>
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QUrl>
-#include <QDir>
 static void prepareApp()
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -29,6 +30,7 @@ int main(int argc, char** argv)
     TaoFramework::instance()->setMainView(&view);
     TaoFramework::instance()->createObject<Trans>();
     TaoFramework::instance()->createObject<AppInfo>();
+    TaoFramework::instance()->createObject<ComponentsMgr>();
 
     TaoFramework::instance()->init();
     TaoFramework::instance()->beforeUiReady(view.rootContext());
@@ -36,18 +38,16 @@ int main(int argc, char** argv)
     view.engine()->addImportPath(qmlPath);
     view.rootContext()->setContextProperty("qmlPath", qmlPath);
     view.rootContext()->setContextProperty("imgPath", imgPath);
+    view.rootContext()->setContextProperty("contentsPath", contentsPath);
     view.rootContext()->setContextProperty("appPath", app.applicationDirPath());
     view.rootContext()->setContextProperty("view", &view);
 
     const QUrl url(qmlPath + QStringLiteral("main.qml"));
-    QObject::connect(&view, &QQuickView::statusChanged, [=](QQuickView::Status status){
+    QObject::connect(&view, &QQuickView::statusChanged, [=](QQuickView::Status status) {
         if (status == QQuickView::Status::Ready) {
             TaoFramework::instance()->afterUiReady();
         }
     });
-//    QObject::connect(&app, &QGuiApplication::aboutToQuit, &app, [](){
-//        TaoFramework::instance()->uninit();
-//    });
     view.setSource(url);
     view.moveToScreenCenter();
     view.show();
