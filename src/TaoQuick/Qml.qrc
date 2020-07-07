@@ -53,5 +53,6 @@
         <file>TaoQuick/BasicComponent/Progress/fail_circle.png</file>
         <file>TaoQuick/BasicComponent/Progress/ok.png</file>
         <file>TaoQuick/BasicComponent/Progress/ok_circle.png</file>
+        <file>TaoQuick/EffectComponent/Animation/ARiseSet.qml</file>
     </qresource>
 </RCC>

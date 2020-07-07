@@ -27,12 +27,12 @@ TImageBtn {
                     anchors.fill: parent
                     anchors.margins: 4
                     height: width
-                    color: model.titleBackground
+                    color: model.themeColor
                 }
                 Rectangle {
                     anchors.fill: parent
                     color: "transparent"
-                    border.color: model.titleBackground
+                    border.color: model.themeColor
                     border.width: 2
                     visible: a.containsMouse
                 }
@@ -52,7 +52,7 @@ TImageBtn {
                     width: 20
                     height: width
                     radius: width / 2
-                    color: model.titleBackground
+                    color: model.themeColor
                     border.width: 3
                     border.color: gConfig.reserverColor
                     visible: gConfig.currentTheme === index

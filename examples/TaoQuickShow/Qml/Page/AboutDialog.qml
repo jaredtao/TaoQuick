@@ -14,7 +14,7 @@ Popup {
         width: root.width
         height: root.height
         radius: 8
-        color: gConfig.titleBackground
+        color: gConfig.themeColor
         border.width: 1
         border.color: gConfig.reserverColor
         TMoveArea {

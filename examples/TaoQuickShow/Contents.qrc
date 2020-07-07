@@ -12,7 +12,6 @@
         <file>Contents/Animation/Rhombus.qml</file>
         <file>Contents/Animation/Square.qml</file>
         <file>Contents/Animation/Wheel.qml</file>
-        <file>Contents/BaseComponent/Buttons.qml</file>
         <file>Contents/BaseComponent/Dialogs.qml</file>
         <file>Contents/BaseComponent/Drags.qml</file>
         <file>Contents/BaseComponent/Gradiants.qml</file>
@@ -48,6 +47,13 @@
         <file>Contents/ShaderEffect/SuperMario.qml</file>
         <file>Contents/Shape/KLine.qml</file>
         <file>Contents/Shape/RoundRect.qml</file>
-        <file>Contents/Welcome/Welcome.qml</file>
+        <file>Contents/Buttons/Buttons.qml</file>
+        <file>Contents/Buttons/icon.png</file>
+        <file>Contents/Animation/icon.png</file>
+        <file>Contents/BaseComponent/icon.png</file>
+        <file>Contents/Effect/icon.png</file>
+        <file>Contents/PageSwitch/icon.png</file>
+        <file>Contents/ShaderEffect/icon.png</file>
+        <file>Contents/Shape/icon.png</file>
     </qresource>
 </RCC>
