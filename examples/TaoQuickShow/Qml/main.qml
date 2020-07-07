@@ -5,10 +5,11 @@ import QtGraphicalEffects 1.0
 Item {
     id: rootView
     width: 1440
-    height: 960
+    height: 900
     Component.onCompleted: {
         appInfo.splashShow = false;
         trans.loadFolder(appPath + "/Trans")
+        componentsMgr.loadFolder(contentsPath)
     }
     Splash {
         id: splash

@@ -26,12 +26,13 @@ TaoView::TaoView(QWindow* parent)
     setFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
     setResizeMode(SizeRootObjectToView);
     setColor(QColor(Qt::transparent));
-    resize(1440, 960);
+    resize(1440, 900);
 #if WIN32
     DWORD style = ::GetWindowLong(HWND(winId()), GWL_STYLE);
     style |= WS_MINIMIZEBOX | WS_THICKFRAME | WS_CAPTION;
     ::SetWindowLong(HWND(winId()), GWL_STYLE, style);
-
+//    MARGINS rect{1, 1, -1, -1};
+//    DwmExtendFrameIntoClientArea(HWND(winId()), &rect);
 #endif
     setIsMax(windowState() == Qt::WindowMaximized);
     connect(this, &QWindow::windowStateChanged, this, [&](Qt::WindowState state){

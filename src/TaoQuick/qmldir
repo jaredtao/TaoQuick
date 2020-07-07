@@ -1,4 +1,4 @@
-﻿module TaoQuick
+module TaoQuick
 plugin TaoQuick
 
 depends QtQuick 2.12
@@ -30,6 +30,7 @@ ADiagonal 1.0 EffectComponent/Animation/ADiagonal.qml
 ADissolve 1.0 EffectComponent/Animation/ADissolve.qml
 AGrad 1.0 EffectComponent/Animation/AGrad.qml
 ALouver 1.0 EffectComponent/Animation/ALouver.qml
+ARiseSet 1.0 EffectComponent/Animation/ARiseSet.qml
 ARhombus 1.0 EffectComponent/Animation/ARhombus.qml
 ASector 1.0 EffectComponent/Animation/ASector.qml
 ASlowEnter 1.0 EffectComponent/Animation/ASlowEnter.qml

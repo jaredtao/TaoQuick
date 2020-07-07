@@ -13,5 +13,9 @@
         <file>Qml/Page/Biz/LangBtn.qml</file>
         <file>Qml/Page/Biz/SkinBtn.qml</file>
         <file>Qml/TBusyIndicator.qml</file>
+        <file>Qml/Page/Biz/CompDetail.qml</file>
+        <file>Qml/Page/Biz/CompCard.qml</file>
+        <file>Qml/Page/Biz/TText.qml</file>
+        <file>Qml/Page/Biz/CircleText.qml</file>
     </qresource>
 </RCC>
