@@ -5,13 +5,15 @@ HEADERS += \
     $$PWD/Src/TaoFramework.h \
     $$PWD/Src/TaoView.h \
     $$PWD/Src/Trans.h \
-    $$PWD/Src/AppInfo.h
+    $$PWD/Src/AppInfo.h \
+    $$PWD/Src/ComponentsManager.h
 
 SOURCES += \
     $$PWD/Src/TaoFramework.cpp \
     $$PWD/Src/TaoView.cpp \
     $$PWD/Src/Trans.cpp \
     $$PWD/Src/AppInfo.cpp \
+    $$PWD/Src/ComponentsManager.cpp \
     $$PWD/Src/main.cpp
 
 CONFIG(debug, debug|release) {

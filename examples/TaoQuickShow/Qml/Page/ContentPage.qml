@@ -4,87 +4,55 @@ import TaoQuick 1.0
 import "qrc:/TaoQuick"
 import "Biz"
 Background {
-    id: root
-    Rectangle {
-        id: vLine
-        width: parent.width - 2
-        height: 1
-        y: parent.height / 8
-        x: 1
-        color: gConfig.splitColor
-    }
-    Rectangle {
-        id: hLine
-        width: 1
-        height: parent.height - 2
-        y: 1
-        x: parent.width / 4
-        color: gConfig.splitColor
-    }
-    Item {
-        id: logoFrame
+    id: background
+    TText {
+        id: titleText
+        font.pixelSize: 22
         anchors {
-            left: parent.left
+            horizontalCenter: parent.horizontalCenter
             top: parent.top
-            right: hLine.left
-            bottom: vLine.top
+            topMargin: 60
         }
-        Text {
-            text: trans.trans("Menu") + trans.transString
-            anchors.centerIn: parent
-            color: gConfig.textColor
+        text: "Component List"
+    }
+    GridView {
+        id: gridView
+        anchors.centerIn: background
+        width: cellWidth *  4
+        height: cellHeight * 4
+        model: componentsMgr.comps
+        currentIndex: -1
+        cellWidth: 220
+        cellHeight: 100
+        visible: opacity > 0
+        delegate: Item {
+            width: 220
+            height: 100
+            CompCard {
+                anchors.centerIn: parent
+                name: modelData.name
+                count: modelData.count
+                icon: modelData.icon
+                onClicked: {
+                    gridView.currentIndex = index
+                }
+            }
         }
     }
-    Item {
-        id: titleFrame
-        anchors {
-            left: hLine.right
-            right: parent.right
-            top: parent.top
-            bottom: vLine.top
-        }
-        Text {
-            id: titleText
-            text: trans.trans(menuPage.currentTitle) + trans.transString
-            anchors.centerIn: parent
-            font.pixelSize: 26
-            color: gConfig.titleBackground
-        }
-        TFPS {
-            width: 100
-            height: 40
-            anchors.right: parent.right
-            anchors.top: parent.top
-            textColor: gConfig.titleBackground
-        }
-    }
-    Item {
-        id: menuFrame
-        anchors {
-            left: parent.left
-            right: hLine.left
-            top: vLine.bottom
-            bottom: parent.bottom
-        }
-        MenuPage {
-            id: menuPage
-            anchors.fill: parent
-            model:gConfig.contentData
-        }
-    }
-    Item {
-        id: contentFrame
-        anchors {
-            left: hLine.right
-            right: parent.right
-            top: vLine.bottom
-            bottom: parent.bottom
-        }
-        clip: true
-        Loader {
-            id: contentPage
-            anchors.fill: parent
-            source: menuPage.currentUrl
-        }
-    }
+
+//    CompBtn {
+//        anchors.centerIn: parent
+//        targetParent: background
+//        name: modelData.name
+//        count: modelData.count
+//        icon: modelData.icon
+//        compNames: modelData.compNames
+//        visible: gridView.currentIndex === -1 || gridView.currentIndex === index
+//        //                onClicked: {
+//        //                    gridView.currentIndex = index
+//        //                }
+//        //                onClosed: {
+//        //                    gridView.currentIndex = -1
+//        //                }
+//    }
 }
