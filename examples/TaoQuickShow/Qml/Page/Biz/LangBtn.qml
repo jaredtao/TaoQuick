@@ -26,6 +26,7 @@ TImageBtn {
                 text: trans.trans(modelData) + trans.transString
                 color: trans.currentLang === modelData ? gConfig.themeColor :( containsMouse ? "lightgray" : pop.barColor)
                 textColor: gConfig.textColor
+                radius: 4
                 onClicked: {
 //                    pop.hide()
                     trans.setCurrentLang(modelData)
