@@ -13,6 +13,7 @@ TImageBtn {
         barColor: gConfig.reserverColor
         backgroundWidth: 280
         backgroundHeight: 180
+        borderColor: gConfig.themeColor
         contentItem: GridView {
             anchors.fill: parent
             anchors.margins: 10
@@ -38,10 +39,7 @@ TImageBtn {
                 }
                 Text {
                     anchors {
-                        left: parent.left
-                        bottom: parent.bottom
-                        leftMargin: 8
-                        bottomMargin: 8
+                        centerIn: parent
                     }
                     color: "white"
                     text: trans.trans(model.name) + trans.transString

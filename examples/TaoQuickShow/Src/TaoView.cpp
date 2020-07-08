@@ -135,7 +135,7 @@ bool TaoView::nativeEvent(const QByteArray& eventType, void* message, long* resu
         }
         double dpr = qApp->devicePixelRatio();
         QPoint pos = mapFromGlobal(QPoint(x/dpr,y/dpr));
-        QRect titleRect(border_width, border_width, width() * 0.8, 40);
+        QRect titleRect(border_width, border_width, width() * 0.8, 50);
         if (titleRect.contains(pos))
         {
             *result = HTCAPTION;
