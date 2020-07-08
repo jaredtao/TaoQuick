@@ -27,15 +27,16 @@ build_pass {
             VER_PAT = $${PAT}
             VERSION = $${Ver}
         }
-
-        DEFINES += TaoREVISION=$${REVISION}
-        DEFINES += TaoREVISIONSTR=\"\\\"$${REVISION}\\\"\"
-        DEFINES += TaoVer=\"\\\"$${Ver}\\\"\"
-        DEFINES += TaoMAJ=$${MAJ}
-        DEFINES += TaoMIN=$${MIN}
-        DEFINES += TaoPAT=$${PAT}
-        DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
-        DEFINES += TaoCompilerVendor=\"\\\"$${QT_VERSION} $${QMAKE_PLATFORM} $${QMAKE_COMPILER} $${QMAKE_TARGET.arch}\\\"\"
-        message(DEFINES $$DEFINES)
+        !exists(TaoDefined) {
+            TaoDefined=1
+            DEFINES += TaoREVISION=$${REVISION}
+            DEFINES += TaoREVISIONSTR=\"\\\"$${REVISION}\\\"\"
+            DEFINES += TaoVer=\"\\\"$${Ver}\\\"\"
+            DEFINES += TaoMAJ=$${MAJ}
+            DEFINES += TaoMIN=$${MIN}
+            DEFINES += TaoPAT=$${PAT}
+            DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
+            DEFINES += TaoCompilerVendor=\"\\\"$${QT_VERSION} $${QMAKE_PLATFORM} $${QMAKE_COMPILER} $${QMAKE_TARGET.arch}\\\"\"
+        }
     }
 }
