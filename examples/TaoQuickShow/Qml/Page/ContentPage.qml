@@ -13,7 +13,7 @@ Background {
             top: parent.top
             topMargin: 60
         }
-        text: "Component List"
+        text: trans.trans("Component List") + trans.transString
     }
     GridView {
         id: gridView
@@ -30,7 +30,7 @@ Background {
             height: 100
             CompCard {
                 anchors.centerIn: parent
-                name: modelData.name
+                name: trans.trans(modelData.name) + trans.transString
                 count: modelData.count
                 icon: modelData.icon
                 onClicked: {
