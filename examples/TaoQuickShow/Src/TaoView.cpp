@@ -23,7 +23,7 @@ const LONG border_width = 6;
 TaoView::TaoView(QWindow* parent)
     : QQuickView(parent)
 {
-    setFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
+    setFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint);
     setResizeMode(SizeRootObjectToView);
     setColor(QColor(Qt::transparent));
     resize(1440, 900);
