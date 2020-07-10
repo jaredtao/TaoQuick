@@ -181,10 +181,7 @@
             "key": "Menu",
             "value": "菜单"
         },
-        {
-            "key": "Green",
-            "value": " 清爽绿"
-        },
+
         {
             "key": "QRcode",
             "value": "二维码"
@@ -212,6 +209,10 @@
         {
             "key": "Cool",
             "value": "酷炫组件"
+        },
+        {
+            "key": "Green",
+            "value": " 清爽绿"
         },
         {
             "key": "Pink",
@@ -388,6 +389,42 @@
         {
             "key": "FadeInOut",
             "value": "淡入淡出"
+        },
+        {
+            "key": "Component List",
+            "value":"组件列表"
+        },
+        {
+            "key": "Animation",
+            "value":"动画"
+        },
+        {
+            "key": "BaseComponent",
+            "value":"基础组件"
+        },
+        {
+            "key": "Buttons",
+            "value":"按钮"
+        },
+        {
+            "key": "Effect",
+            "value":"效果"
+        },
+        {
+            "key": "PageSwitch",
+            "value":"页面切换"
+        },
+        {
+            "key": "ShaderEffect",
+            "value":"着色器特效"
+        },
+        {
+            "key": "Shape",
+            "value":"图元"
+        },
+        {
+            "key": "Component Name: %1, Count: %2",
+            "value":"组件名称: %1, 数量: %2"
         }
 
     ]
