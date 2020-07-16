@@ -20,7 +20,7 @@ void ComponentsMgr::loadFolder(const QString& folder)
         QStringList comps;
         QStringList compNames;
         for (auto subInfo : subInfos) {
-            comps.push_back(subInfo.absoluteFilePath());
+            comps.push_back(QUrl::fromLocalFile(subInfo.absoluteFilePath()).toString());
             compNames.push_back(subInfo.fileName());
         }
         module["comps"] = QJsonArray::fromStringList(comps);

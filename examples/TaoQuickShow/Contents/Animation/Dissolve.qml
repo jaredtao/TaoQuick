@@ -6,17 +6,17 @@ Item {
     anchors.fill: parent
     Image {
         id: src
-        source: "qrc:/EffectImage/Img/girl.jpg"
+        source: imgPath + "Effect/Girls/girl5.jpeg"
         visible: false
     }
     Image {
         id: dissolveSrc1
-        source: "qrc:/EffectImage/Img/Dissolve_1.jpg"
+        source: imgPath + "Effect/Dissolve_1.jpg"
         visible: false
     }
     Image {
         id: dissolveSrc2
-        source: "qrc:/EffectImage/Img/Dissolve_2.png"
+        source: imgPath + "Effect/Dissolve_2.png"
         visible: false
     }
     Row {
