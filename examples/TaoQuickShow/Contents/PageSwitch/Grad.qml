@@ -6,20 +6,20 @@ Item {
     anchors.fill: parent
 
     property var images:[
-        "qrc:/EffectImage/Img/Girls/girl1.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl2.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl3.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl4.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl5.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl6.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl7.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl8.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl9.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl10.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl11.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl12.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl14.jpeg",
-        "qrc:/EffectImage/Img/Girls/girl15.jpeg"
+        imgPath + "Effect/Girls/girl1.jpeg",
+        imgPath + "Effect/Girls/girl2.jpeg",
+        imgPath + "Effect/Girls/girl3.jpeg",
+        imgPath + "Effect/Girls/girl4.jpeg",
+        imgPath + "Effect/Girls/girl5.jpeg",
+        imgPath + "Effect/Girls/girl6.jpeg",
+        imgPath + "Effect/Girls/girl7.jpeg",
+        imgPath + "Effect/Girls/girl8.jpeg",
+        imgPath + "Effect/Girls/girl9.jpeg",
+        imgPath + "Effect/Girls/girl10.jpeg",
+        imgPath + "Effect/Girls/girl11.jpeg",
+        imgPath + "Effect/Girls/girl12.jpeg",
+        imgPath + "Effect/Girls/girl14.jpeg",
+        imgPath + "Effect/Girls/girl15.jpeg"
     ]
     PageSwitchBase {
         id: c
@@ -45,6 +45,7 @@ Item {
             id: autoPlaySwitch
 
             text: "Auto Play"
+            checked: true
         }
         ComboBox {
             model: ["FromLeft", "FromRight", "FromTop", "FromBottom"]

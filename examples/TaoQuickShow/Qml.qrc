@@ -18,5 +18,7 @@
         <file>Qml/Page/Biz/TText.qml</file>
         <file>Qml/Page/Biz/CircleText.qml</file>
         <file>Qml/Page/Biz/CloseBtn.qml</file>
+        <file>Qml/Page/Biz/CompBtn.qml</file>
+        <file>Qml/Page/Biz/BackBtn.qml</file>
     </qresource>
 </RCC>

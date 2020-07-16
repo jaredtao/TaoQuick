@@ -1,6 +1,8 @@
 import QtQuick 2.12
 QtObject {
 
+    property string fontFamily: "微软雅黑"
+    property int fontPixel: 14
     property color themeColor: themes.get(0).themeColor
     property color background: themes.get(0).background
     property color textColor: themes.get(0).textColor

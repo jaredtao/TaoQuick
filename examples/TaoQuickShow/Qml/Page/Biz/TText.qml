@@ -2,8 +2,8 @@ import QtQuick 2.0
 import QtQuick.Controls 2.0
 Text {
     font {
-        pixelSize: 14
-        family: "微软雅黑"
+        pixelSize: gConfig.fontPixel
+        family:  gConfig.fontFamily
     }
     color: gConfig.textColor
 }
