@@ -1,10 +1,10 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 Image {
     id: root
     x: 10
     y: 10
-    source: "qrc:/EffectImage/Img/arrow.png"
+    source: imgPath + "Effect/arrow.png"
     visible: false
     function run() {
         visible = true;

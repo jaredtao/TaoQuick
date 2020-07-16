@@ -13,7 +13,7 @@ Item {
         dir: ASlowEnter.Direct.FromBottom
         Image {
             anchors.fill: parent
-            source: "qrc:/EffectImage/Img/baby.jpg"
+            source: imgPath + "Effect/baby.jpg"
         }
     }
     ASlowEnter {
@@ -25,7 +25,7 @@ Item {
         dir: ASlowEnter.Direct.FromTop
         Image {
             anchors.fill: parent
-            source: "qrc:/EffectImage/Img/baby.jpg"
+            source: imgPath + "Effect/baby.jpg"
         }
     }
     ASlowEnter {
@@ -37,7 +37,7 @@ Item {
         dir: ASlowEnter.Direct.FromLeft
         Image {
             anchors.fill: parent
-            source: "qrc:/EffectImage/Img/baby.jpg"
+            source: imgPath + "Effect/baby.jpg"
         }
     }
     ASlowEnter {
@@ -49,7 +49,7 @@ Item {
         dir: ASlowEnter.Direct.FromRight
         Image {
             anchors.fill: parent
-            source: "qrc:/EffectImage/Img/baby.jpg"
+            source: imgPath + "Effect/baby.jpg"
         }
     }
     ParallelAnimation {

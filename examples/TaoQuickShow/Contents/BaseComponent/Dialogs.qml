@@ -10,6 +10,7 @@ Item {
     }
     Row {
         spacing: 10
+        anchors.centerIn: parent
         Button {
             text: "create file"
             onClicked: {

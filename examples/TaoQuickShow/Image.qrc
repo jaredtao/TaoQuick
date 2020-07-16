@@ -49,5 +49,10 @@
         <file>Image/Tao/weixin_connect.jpg</file>
         <file>Image/Tao/weixingongzhonghao.jpg</file>
         <file>Image/Tao/zhifubao.jpg</file>
+        <file>Image/Common/left.png</file>
+        <file>Image/Common/left_hovered.png</file>
+        <file>Image/Common/right.png</file>
+        <file>Image/Common/right_hovered.png</file>
+        <file>Image/Common/windmill.png</file>
     </qresource>
 </RCC>

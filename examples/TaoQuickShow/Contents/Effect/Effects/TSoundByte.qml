@@ -1,4 +1,4 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 
 Item {
     id: r
@@ -7,7 +7,7 @@ Item {
     Component {
         id: soundComp
         Image {
-            source: "qrc:/EffectImage/Img/soundRect.png"
+            source: imgPath + "Effect/soundRect.png"
             width: soundWidth
             height: soundHeight
         }

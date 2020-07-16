@@ -7,7 +7,7 @@ Item {
     Image {
         id: src
 
-        source: "qrc:/EffectImage/Img/girl.jpg"
+        source: imgPath + "Effect/Girls/girl6.jpeg"
         visible: false
     }
     Grid {
