@@ -17,5 +17,6 @@
         <file>Qml/Page/Biz/CompCard.qml</file>
         <file>Qml/Page/Biz/TText.qml</file>
         <file>Qml/Page/Biz/CircleText.qml</file>
+        <file>Qml/Page/Biz/CloseBtn.qml</file>
     </qresource>
 </RCC>
