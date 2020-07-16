@@ -53,10 +53,7 @@ Rectangle {
                 view.showNormal()
             }
         }
-        TImageBtn {
-            width: 20
-            height: 20
-            imageUrl: imgPath + (containsMouse ? "Window/close_white.png" : "Window/close_gray.png")
+        CloseBtn {
             onClicked: {
                 view.close()
             }
