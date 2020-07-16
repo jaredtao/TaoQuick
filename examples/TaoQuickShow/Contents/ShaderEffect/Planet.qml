@@ -188,6 +188,6 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 }
 "
     iChannel0: Image {
-        source: "qrc:/Qml/Contents/ShaderEffect/Planet1.png"
+        source: contentsPath + "ShaderEffect/Planet1.png"
     }
 }

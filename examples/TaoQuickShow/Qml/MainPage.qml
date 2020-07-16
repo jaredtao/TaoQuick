@@ -14,19 +14,19 @@ Item {
         id: aboutDialog
     }
     TitlePage {
-        id: titleRect
+        id: titlePage
         width: rootView.width
         height: 60
         color: gConfig.themeColor
     }
     ContentPage {
-        id: contentRect
+        id: contentPage
         color: gConfig.background
         anchors {
-            top: titleRect.bottom
+            top: titlePage.bottom
             bottom: parent.bottom
-            left: titleRect.left
-            right: titleRect.right
+            left: titlePage.left
+            right: titlePage.right
         }
     }
     NotifyBox {

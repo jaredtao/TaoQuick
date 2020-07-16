@@ -1,4 +1,4 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 import TaoQuick 1.0
 import "qrc:/TaoQuick"
@@ -81,7 +81,7 @@ Item {
             }
             border.width: containsMouse ? 2 : 0
             border.color: btnBorderColor
-//            color: btnColor
+            //            color: btnColor
             //color: containsPress ? Qt.darker(btnColor, 1.2) : (containsMouse ? Qt.lighter(btnColor, 1.2) : btnColor)
             onClicked: {
                 console.log("你按下了圆角文本按钮")
@@ -106,9 +106,9 @@ Item {
         TImageBtn {
             width: 48
             height: 48
-            normalUrl: "qrc:/Image/Button/smile-fill.png"
-            hoveredUrl: "qrc:/Image/Button/smile-fill-hover.png"
-            pressedUrl: "qrc:/Image/Button/cry-fill.png"
+            normalUrl: imgPath + "Button/smile-fill.png"
+            hoveredUrl: imgPath + "Button/smile-fill-hover.png"
+            pressedUrl: imgPath + "Button/cry-fill.png"
             onClicked: {
                 console.log("你按下了图片按钮")
             }
@@ -117,9 +117,9 @@ Item {
         TImgTextBtn {
             width: 100
             height: 48
-            normalUrl: "qrc:/Image/Button/smile-fill.png"
-            hoveredUrl: "qrc:/Image/Button/smile-fill-hover.png"
-            pressedUrl: "qrc:/Image/Button/cry-fill.png"
+            normalUrl: imgPath + "Button/smile-fill.png"
+            hoveredUrl: imgPath + "Button/smile-fill-hover.png"
+            pressedUrl: imgPath + "Button/cry-fill.png"
             text: qsTr("图文按钮")
             color: containsPress ? Qt.darker(btnColor, 1.2) : (containsMouse ? Qt.lighter(btnColor, 1.2) : btnColor)
             border.width: containsMouse ? 2 : 0
@@ -132,9 +132,9 @@ Item {
         TImgTextBtn {
             width: 100
             height: 48
-            normalUrl: "qrc:/Image/Button/smile-fill.png"
-            hoveredUrl: "qrc:/Image/Button/smile-fill-hover.png"
-            pressedUrl: "qrc:/Image/Button/cry-fill.png"
+            normalUrl: imgPath + "Button/smile-fill.png"
+            hoveredUrl: imgPath + "Button/smile-fill-hover.png"
+            pressedUrl: imgPath + "Button/cry-fill.png"
             text: qsTr("图文按钮")
             color: containsPress ? Qt.darker(btnColor, 1.2) : (containsMouse ? Qt.lighter(btnColor, 1.2) : btnColor)
             border.width: containsMouse ? 2 : 0
@@ -147,9 +147,9 @@ Item {
         TImgTextBtn {
             width: 80
             height: 60
-            normalUrl: "qrc:/Image/Button/smile-fill.png"
-            hoveredUrl: "qrc:/Image/Button/smile-fill-hover.png"
-            pressedUrl: "qrc:/Image/Button/cry-fill.png"
+            normalUrl: imgPath + "Button/smile-fill.png"
+            hoveredUrl: imgPath + "Button/smile-fill-hover.png"
+            pressedUrl: imgPath + "Button/cry-fill.png"
             text: qsTr("图文按钮")
             color: containsPress ? Qt.darker(btnColor, 1.2) : (containsMouse ? Qt.lighter(btnColor, 1.2) : btnColor)
             border.width: containsMouse ? 2 : 0
@@ -162,9 +162,9 @@ Item {
         TImgTextBtn {
             width: 80
             height: 60
-            normalUrl: "qrc:/Image/Button/smile-fill.png"
-            hoveredUrl: "qrc:/Image/Button/smile-fill-hover.png"
-            pressedUrl: "qrc:/Image/Button/cry-fill.png"
+            normalUrl: imgPath + "Button/smile-fill.png"
+            hoveredUrl: imgPath + "Button/smile-fill-hover.png"
+            pressedUrl: imgPath + "Button/cry-fill.png"
             text: qsTr("图文按钮")
             color: containsPress ? Qt.darker(btnColor, 1.2) : (containsMouse ? Qt.lighter(btnColor, 1.2) : btnColor)
             border.width: containsMouse ? 2 : 0
