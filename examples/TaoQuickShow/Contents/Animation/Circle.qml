@@ -6,7 +6,7 @@ Item {
     anchors.fill: parent
     Image {
         id: src
-        source: "qrc:/EffectImage/Img/girl.jpg"
+        source: imgPath + "Effect/Girls/girl1.jpeg"
         visible: false
     }
     Grid {
