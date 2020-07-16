@@ -13,18 +13,23 @@ Background {
             top: parent.top
             topMargin: 60
         }
-        text: trans.trans("Component List") + trans.transString
+        property string title: gridView.currentIndex === -1 ?
+                                   "Component List" :
+                                   componentsMgr.comps[gridView.currentIndex]["name"]
+        text: trans.trans(title) + trans.transString
     }
     GridView {
         id: gridView
         anchors.centerIn: background
         width: cellWidth *  4
         height: cellHeight * 4
-        model: componentsMgr.comps
-        currentIndex: -1
         cellWidth: 220
         cellHeight: 100
+        model: componentsMgr.comps
+        currentIndex: -1
+        opacity: 1
         visible: opacity > 0
+
         delegate: Item {
             width: 220
             height: 100
@@ -34,25 +39,83 @@ Background {
                 count: modelData.count
                 icon: modelData.icon
                 onClicked: {
-                    gridView.currentIndex = index
+                    showDetail(index)
                 }
             }
         }
     }
+    CompDetail {
+        id: compDetail
+        readonly property int initOpacity: 0
+        readonly property real initScale: 0.5
+        width: 400
+        height: 600
+        anchors.centerIn: parent
 
-//    CompBtn {
-//        anchors.centerIn: parent
-//        targetParent: background
-//        name: modelData.name
-//        count: modelData.count
-//        icon: modelData.icon
-//        compNames: modelData.compNames
-//        visible: gridView.currentIndex === -1 || gridView.currentIndex === index
-//        //                onClicked: {
-//        //                    gridView.currentIndex = index
-//        //                }
-//        //                onClosed: {
-//        //                    gridView.currentIndex = -1
-//        //                }
-//    }
+        scale: initScale
+        opacity:  initOpacity
+        visible: opacity > 0
+        comps: gridView.currentIndex=== -1 ? [] : componentsMgr.comps[gridView.currentIndex]["comps"]
+        compNames: gridView.currentIndex=== -1 ? [] : componentsMgr.comps[gridView.currentIndex]["compNames"]
+        count: gridView.currentIndex=== -1 ? "" : componentsMgr.comps[gridView.currentIndex]["count"]
+        icon: gridView.currentIndex=== -1 ? "" : componentsMgr.comps[gridView.currentIndex]["icon"]
+        onClosed: {
+            hideDetail()
+        }
+    }
+    SequentialAnimation {
+        id: showDetailAni
+        NumberAnimation {
+            target: gridView
+            property : "opacity"
+            to: 0
+            duration: 240
+        }
+        ParallelAnimation {
+            NumberAnimation {
+                target: compDetail
+                property: "opacity"
+                to: 1.0
+                duration: 260
+            }
+            NumberAnimation {
+                target: compDetail
+                property: "scale"
+                to: 1.0
+                duration: 260
+            }
+        }
+    }
+    SequentialAnimation {
+        id: hideDetailAni
+        ParallelAnimation {
+            NumberAnimation {
+                target: compDetail
+                property: "opacity"
+                to: compDetail.initOpacity
+                duration: 260
+            }
+            NumberAnimation {
+                target: compDetail
+                property: "scale"
+                to: compDetail.initScale
+                duration: 260
+            }
+        }
+        NumberAnimation {
+            target: gridView
+            property : "opacity"
+            to: 1
+            duration: 240
+        }
+
+    }
+    function showDetail(index) {
+        gridView.currentIndex = index
+        showDetailAni.start()
+    }
+    function hideDetail() {
+        gridView.currentIndex = -1
+        hideDetailAni.start()
+    }
 }
