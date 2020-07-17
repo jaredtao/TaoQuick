@@ -3,6 +3,7 @@
 #include <QDir>
 #include <QQmlContext>
 #include <QtConcurrent>
+#include <QCoreApplication>
 const static auto cEnglisthStr = QStringLiteral("English");
 const static auto cChineseStr = QStringLiteral("简体中文");
 Trans::Trans(QObject* parent)
@@ -18,13 +19,16 @@ void Trans::beforeUiReady(QQmlContext* ctx)
     ctx->setContextProperty("trans", this);
 }
 
-void Trans::afterUiReady() {}
+void Trans::afterUiReady()
+{
+    loadFolder(qApp->applicationDirPath() + "/Trans");
+}
 
 void Trans::loadFolder(const QString& folder)
 {
     QDir dir(folder);
     auto infos = dir.entryInfoList({ "language_*.json" }, QDir::Files);
-    QStringList paths;
+//    QStringList paths;
     QString lang;
     for (auto info : infos) {
 //        paths.append(info.absoluteFilePath());

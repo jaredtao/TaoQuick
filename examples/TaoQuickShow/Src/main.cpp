@@ -22,8 +22,8 @@ int main(int argc, char** argv)
 {
     prepareApp();
     QGuiApplication app(argc, argv);
-    qWarning() << "appPath" << app.applicationDirPath();
     Logger::initLog();
+    qWarning() << "appPath" << app.applicationDirPath();
 
     TaoView view;
 

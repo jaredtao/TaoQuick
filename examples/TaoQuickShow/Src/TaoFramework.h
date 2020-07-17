@@ -6,13 +6,9 @@ class QQmlContext;
 class QQuickView;
 class TaoFramework {
 public:
-    static TaoFramework* instance()
-    {
-        static TaoFramework framework;
-        return &framework;
-    }
-    ~TaoFramework();
+    static TaoFramework* instance();
 
+    ~TaoFramework();
 public:
     //初始化
     void init();
