@@ -9,45 +9,29 @@
 
 ## 代码结构
 
-![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/1.png)
-
-src文件夹下包含四个子项目：
-
-1. TaoQuick
+1. src文件夹下包含核心库TaoQuick
    
    核心库，包括基础组件、动画效果的实现。 
 
-   ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/2.png)
-   
+   其主要代码为qml实现，cpp部分仅将qml做成资源插件（兼容Qt5.12及Qt5.15）
+
    核心库支持 make install 安装进QTDIR。
 
-2. TaoQuickApp
+   核心库支持在QtDesigner中拖拽式使用。
+
+2. examples文件夹下包含演示程序
    
-   Demo项目，示例如何使用TaoQuick库。
+   TaoQuickShow，示例如何使用TaoQuick库。
 
-   本质是一个内容加载器，提供基本的窗口和菜单栏等功能，并以插件的方式加载内容。
-
-   ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/3.png)
-
-3. TaoQuickPlugin
-
-    插件，由TaoQuickApp加载。展示TaoQuick中的基础组件。
-
-    ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/5.png)
-
-4. TaoEffectPlugin
-
-    插件，由TaoQuickApp加载。展示TaoQuick中的动画效果。
-
-    ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/4.png)
+   本质是一个内容加载器，提供基本的窗口和菜单栏等功能，并动态加载内容。
 
 ## TaoQuick 安装
 
 可以使用生成的dll库，dll生成目录在项目的bin/debug/TaoQuick 或者 bin/release/TaoQuick目录下。
 
-也可以将TaoQuick安装进Qt环境，支持在QtCreator中使用Designer进行拖拽式设计。
+也可以将TaoQuick安装进Qt环境。
 
-安装方法可以用命令行安装， 可以直接用QtCreator进行安装。
+安装方法可以用命令行安装, 可以直接用QtCreator进行安装。
 
 ### 命令行安装TaoQuick
 
@@ -75,7 +59,11 @@ TaoQuick库将被安装到{QTDIR}/qml/TaoQuick/ 路径下。
 
 ## TaoQuick dll的使用
 
-1. 将编译好的bin/debug/TaoQuick或者bin/release/TaoQuick文件夹，复制到你的可执行程序对应的debug或release的目录下
+1. 将编译好的bin/debug/TaoQuick或者bin/release/TaoQuick文件夹，复制到你的可执行程序对应的debug或release的目录下。
+
+或者是直接make install的方式，将TaoQuick安装进Qt路径，无需再拷贝。
+
+两种方法任选其一即可。
 
 2. 在你的Qml中写上这两句，就完成了TaoQuick的导入
 ```
@@ -91,14 +79,18 @@ import "qrc:/TaoQuick"
 
 导入过后就能使用全部的组件了。
 
-这种方式TaoQuick的Qml是以资源文件的方式编译进dll的，所以不支持QtCreator的语法高亮。（商业版有内建资源功能，或许可以支持）
+这种方式TaoQuick的Qml是以资源文件的方式编译进dll的，所以不支持QtCreator的语法高亮。
 
 ## TaoQuick Designer的使用
 
 1. 确保TaoQuick库被安装到{QTDIR}/qml/TaoQuick/目录下
-2. 重启QtCreator，并在你的Qt项目的Designer 模式，Importer列表中，选择TaoQuick。选完记得按一下Ctrl + S保存一下，让Designer正确加载TaoQuick。
+
+2. 重启QtCreator，并在你的Qt项目的Designer 模式，Importer列表中，选择TaoQuick。
+
+选完按一下Ctrl + S保存一下，让Designer正确加载TaoQuick。
 
 ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/Import.png)
 
 3. 拖拽创建组件，修改属性
+
 ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/Drag.gif)
