@@ -16,31 +16,31 @@ Item {
         spacing: 40
         AGrad {
             id: g1
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             effectSource.sourceItem: src
         }
 
         AGrad {
             id: g2
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ASlowEnter.Direct.FromRight
             effectSource.sourceItem: src
         }
 
         AGrad {
             id: g3
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ASlowEnter.Direct.FromTop
             effectSource.sourceItem: src
         }
         AGrad {
             id: g4
             dir: ASlowEnter.Direct.FromBottom
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             effectSource.sourceItem:  src
 
         }

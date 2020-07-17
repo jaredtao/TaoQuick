@@ -17,29 +17,29 @@ Item {
         spacing: 40
         ACleavage {
             id: s1
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ACleavage.Direct.HorizonToInner
             effectSource.sourceItem: src
         }
         ACleavage {
             id: s2
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ACleavage.Direct.HorizonToOuter
             effectSource.sourceItem: src
         }
         ACleavage {
             id: s3
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ACleavage.Direct.VerticalToInner
             effectSource.sourceItem: src
         }
         ACleavage {
             id: s4
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ACleavage.Direct.VerticalToOuter
             effectSource.sourceItem: src
         }
