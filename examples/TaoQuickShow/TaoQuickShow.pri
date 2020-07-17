@@ -33,7 +33,7 @@ CONFIG(debug, debug|release) {
     DEFINES += imgPath=\\\"qrc:/Image/\\\"
 }
 
-!android {
+!android:!ios {
     trans.files = $$files($$_PRO_FILE_PWD_/Trans/language_*.json)
     trans.path = $$DESTDIR/Trans
     COPIES += trans
