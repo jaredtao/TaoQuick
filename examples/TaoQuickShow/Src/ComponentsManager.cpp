@@ -2,6 +2,7 @@
 #include <QDir>
 #include <QQmlContext>
 #include <QUrl>
+#include <QDebug>
 ComponentsMgr::ComponentsMgr(QObject* parent)
     : QObject(parent)
 {
@@ -9,7 +10,17 @@ ComponentsMgr::ComponentsMgr(QObject* parent)
 
 void ComponentsMgr::loadFolder(const QString& folder)
 {
-    QDir d(QUrl(folder).toLocalFile());
+    QString dirPath;
+    qWarning() << "folder" << folder;
+#ifdef _DEBUG
+    dirPath = QUrl(folder).toLocalFile();
+
+#else
+    //'qrc:/xxx' remove 'qrc' leave ':/xxx'
+    dirPath = QString(folder).remove(0, 3);
+#endif
+    qWarning() << "dirPath" << dirPath;
+    QDir d(dirPath);
     QJsonArray modules;
     auto infos = d.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
     for (auto info : infos) {
@@ -20,7 +31,12 @@ void ComponentsMgr::loadFolder(const QString& folder)
         QStringList comps;
         QStringList compNames;
         for (auto subInfo : subInfos) {
+#ifdef _DEBUG
             comps.push_back(QUrl::fromLocalFile(subInfo.absoluteFilePath()).toString());
+#else
+            comps.push_back("qrc" + subInfo.absoluteFilePath());
+#endif
+            qWarning() << "comp" << comps.back();
             compNames.push_back(subInfo.fileName());
         }
         module["comps"] = QJsonArray::fromStringList(comps);
