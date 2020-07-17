@@ -16,28 +16,28 @@ Item {
 
         ALouver {
             id: l1
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             effectSource.sourceItem:  src
         }
         ALouver {
             id: l2
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ALouver.Direct.HorizonReverse
             effectSource.sourceItem: src
         }
         ALouver {
             id: l3
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ALouver.Direct.Vertical
             effectSource.sourceItem: src
         }
         ALouver {
             id: l4
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ALouver.Direct.VerticalReverse
             effectSource.sourceItem: src
         }

@@ -15,22 +15,22 @@ Item {
         spacing: 40
         AWheel {
             id: s1
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: AWheel.Direct.Clockwise
             effectSource.sourceItem: src
         }
         AWheel {
             id: s2
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: AWheel.Direct.CounterClockwise
             effectSource.sourceItem: src
         }
         ASector {
             id: s3
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             effectSource.sourceItem: src
         }
     }

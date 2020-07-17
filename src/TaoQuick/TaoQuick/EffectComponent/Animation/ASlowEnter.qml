@@ -30,6 +30,6 @@ Item {
         to: __toList[dir]
         duration: r.duration
         loops: 1
-        alwaysRunToEnd: true
+//        alwaysRunToEnd: true
     }
 }

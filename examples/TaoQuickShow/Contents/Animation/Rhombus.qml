@@ -16,15 +16,15 @@ Item {
 
         ARhombus {
             id: l1
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ARhombus.Direct.FromInner
             effectSource.sourceItem:  src
         }
         ARhombus {
             id: l2
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ARhombus.Direct.FromOuter
             effectSource.sourceItem: src
         }
