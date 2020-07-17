@@ -6,6 +6,7 @@
 #include <QQmlEngine>
 #include <QQuickItem>
 #include <QScreen>
+
 #if WIN32
 
 #include <WinUser.h>
@@ -18,7 +19,6 @@
 
 #endif
 
-const LONG border_width = 6;
 
 TaoView::TaoView(QWindow* parent)
     : QQuickView(parent)
@@ -62,6 +62,8 @@ void TaoView::setIsMax(bool isMax)
 }
 
 #if WIN32
+const long border_width = 6;
+
 bool TaoView::nativeEvent(const QByteArray& eventType, void* message, long* result)
 {
 #if (QT_VERSION == QT_VERSION_CHECK(5, 11, 1))
