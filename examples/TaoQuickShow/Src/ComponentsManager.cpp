@@ -63,6 +63,7 @@ void ComponentsMgr::beforeUiReady(QQmlContext* ctx)
 
 void ComponentsMgr::afterUiReady()
 {
+    loadFolder(contentsPath);
 }
 
 const QJsonArray& ComponentsMgr::comps() const
