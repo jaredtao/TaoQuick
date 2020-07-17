@@ -33,6 +33,7 @@ Rectangle {
                 text: modelData
                 anchors.fill: parent
                 onClicked: {
+                    console.log("compClicked", comps[index])
                     root.compClicked(comps[index],modelData,index)
                 }
             }

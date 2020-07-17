@@ -72,6 +72,9 @@ Background {
         anchors.fill: parent
         visible: opacity > 0
         opacity: 0
+        onSourceChanged: {
+            console.log("source changed", source)
+        }
         onLoaded: {
             item.anchors.centerIn = compLoader
             item.anchors.margins = 100
@@ -190,6 +193,7 @@ Background {
         hideDetailAni.start()
     }
     function showComp(compPath) {
+        console.log("showComp", compPath)
         compLoader.source = compPath
         showCompAni.start()
     }
