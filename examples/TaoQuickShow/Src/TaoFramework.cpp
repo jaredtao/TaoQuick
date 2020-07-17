@@ -1,5 +1,11 @@
 #include "TaoFramework.h"
 #include <QQmlContext>
+TaoFramework *TaoFramework::instance()
+{
+    static TaoFramework framework;
+    return &framework;
+}
+
 TaoFramework::~TaoFramework()
 {
     uninit();

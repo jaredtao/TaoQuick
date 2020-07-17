@@ -8,8 +8,6 @@ Item {
     height: 900
     Component.onCompleted: {
         appInfo.splashShow = false;
-        trans.loadFolder(appPath + "/Trans")
-        componentsMgr.loadFolder(contentsPath)
     }
     Splash {
         id: splash
