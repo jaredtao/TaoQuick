@@ -1,4 +1,4 @@
-﻿TGradientBtn 1.0 BasicComponent/Button/TGradientBtn.qml
+TGradientBtn 1.0 BasicComponent/Button/TGradientBtn.qml
 TImageBtn 1.0 BasicComponent/Button/TImageBtn.qml
 TImgTextBtn 1.0 BasicComponent/Button/TImgTextBtn.qml
 TTextBtn 1.0 BasicComponent/Button/TTextBtn.qml
@@ -25,6 +25,7 @@ ADissolve 1.0 EffectComponent/Animation/ADissolve.qml
 AGrad 1.0 EffectComponent/Animation/AGrad.qml
 ALouver 1.0 EffectComponent/Animation/ALouver.qml
 ARhombus 1.0 EffectComponent/Animation/ARhombus.qml
+ARiseSet 1.0 EffectComponent/Animation/ARiseSet.qml
 ASector 1.0 EffectComponent/Animation/ASector.qml
 ASlowEnter 1.0 EffectComponent/Animation/ASlowEnter.qml
 ASquare 1.0 EffectComponent/Animation/ASquare.qml

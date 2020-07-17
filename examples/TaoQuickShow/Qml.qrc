@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Qml/main.qml</file>
+        <file>Qml/Page/MenuPage.qml</file>
+        <file>Qml/Page/ContentPage.qml</file>
+        <file>Qml/Page/TitlePage.qml</file>
+        <file>Qml/Page/NotifyBox.qml</file>
+        <file>Qml/Splash.qml</file>
+        <file>Qml/MainPage.qml</file>
+        <file>Qml/Page/ContentData.qml</file>
+        <file>Qml/Page/AboutDialog.qml</file>
+        <file>Qml/Page/Biz/Background.qml</file>
+        <file>Qml/Page/Biz/LangBtn.qml</file>
+        <file>Qml/Page/Biz/SkinBtn.qml</file>
+        <file>Qml/TBusyIndicator.qml</file>
+        <file>Qml/Page/Biz/CompDetail.qml</file>
+        <file>Qml/Page/Biz/CompCard.qml</file>
+        <file>Qml/Page/Biz/TText.qml</file>
+        <file>Qml/Page/Biz/CircleText.qml</file>
+        <file>Qml/Page/Biz/CloseBtn.qml</file>
+        <file>Qml/Page/Biz/CompBtn.qml</file>
+        <file>Qml/Page/Biz/BackBtn.qml</file>
+    </qresource>
+</RCC>
