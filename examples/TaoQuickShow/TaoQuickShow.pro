@@ -15,6 +15,7 @@ setBuildPath($${TaoQuick_BUILD_TREE}/$${TARGET})
 
 CONFIG(debug,debug|release) {
     DESTDIR = $${TaoQuick_RUN_TREE}/debug
+    DEFINES += TAODEBUG
 } else {
     DESTDIR = $${TaoQuick_RUN_TREE}/release
 }
