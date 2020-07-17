@@ -24,16 +24,16 @@ Item {
         spacing: 40
         ADissolve {
             id: a1
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             duration: 1800
             effectSource.sourceItem: src
             dissolveSource.sourceItem: dissolveSrc1
         }
         ADissolve {
             id: a2
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             duration: 1800
             effectSource.sourceItem: src
             dissolveSource.sourceItem: dissolveSrc2

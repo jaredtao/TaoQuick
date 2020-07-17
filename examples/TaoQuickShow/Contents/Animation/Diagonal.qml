@@ -15,29 +15,29 @@ Item {
         spacing: 40
         ADiagonal {
             id: d1
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ADiagonal.Direct.FromLeftTop
             effectSource.sourceItem: src
         }
         ADiagonal {
             id: d2
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ADiagonal.Direct.FromRightBottom
             effectSource.sourceItem: src
         }
         ADiagonal {
             id: d3
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ADiagonal.Direct.FromRightTop
             effectSource.sourceItem: src
         }
         ADiagonal {
             id: d4
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ADiagonal.Direct.FromLeftBottom
             effectSource.sourceItem: src
         }

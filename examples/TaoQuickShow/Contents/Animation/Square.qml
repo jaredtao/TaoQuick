@@ -15,15 +15,15 @@ Item {
         spacing: 40
         ASquare {
             id: s1
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ASquare.Direct.FromInner
             effectSource.sourceItem: src
         }
         ASquare {
             id: s2
-            width: 460
-            height: 280
+            width: 250
+            height: 375
             dir: ASquare.Direct.FromOuter
             effectSource.sourceItem: src
         }
