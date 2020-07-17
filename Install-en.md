@@ -8,37 +8,22 @@
 
 ## Code Struct
 
-![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/1.png)
 
-'src' folder contains 4 sub-project：
+1. 'src' folder contains core library TaoQuick
 
-1. TaoQuick
+   core library contains basic component, animation effect ans so and.
+
+   main code is qml, cpp only warp qmls to resource plugin. (support Qt5.12 and Qt5.15)
+
+   support use ' make install ' install  into QTDIR
+
+   support Drag & Drop in QtDesigner.
+
+2. 'exmaples' folder contains demo
    
-   main library.
+   TaoQuickShow，show how to use TaoQuick。
 
-   ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/2.png)
-   
-   support use ' make install ' install  into QTDIR。
-
-2. TaoQuickApp
-   
-   Demo，show how use TaoQuick。
-
-    It's a content loader, provide  basic window and menu, load content by plugin.
-
-   ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/3.png)
-
-3. TaoQuickPlugin
-
-    one plugin, show Basic Component in TaoQuick.
-
-    ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/5.png)
-
-4. TaoEffectPlugin
-
-    one plugin, show Effect Component in TaoQuick.
-
-    ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/CodeStruct/4.png)
+    It's a content loader, provide  basic window and menu, dynamic load content .
 
 ## TaoQuick Build
 
@@ -66,6 +51,8 @@ QtCreator also can use build argument.
 ## TaoQuick Use
 
 1. copy "bin/debug/TaoQuick" or "bin/release/TaoQuick" to you binary folder
+
+or you can install TaoQuick to QTDIR.
 
 2. import in you qml
 ```
