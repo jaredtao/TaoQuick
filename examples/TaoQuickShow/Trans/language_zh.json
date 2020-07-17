@@ -1,0 +1,431 @@
+{
+    "lang": "简体中文",
+    "trans":[
+        {
+            "key": "Chinese",
+            "value": "简体中文"
+        },
+        {
+            "key": "traditional Chinese",
+            "value": "繁体中文"
+        },
+        {
+            "key": "Cantonese",
+            "value": "粤语"
+        },
+        {
+            "key": "classical Chinese",
+            "value": "文言文"
+        },
+        {
+            "key": "Japanese",
+            "value": "日语"
+        },
+        {
+            "key": "Korean",
+            "value": "韩语"
+        },
+        {
+            "key": "French",
+            "value": "法语"
+        },
+        {
+            "key": "Spanish",
+            "value": "西班牙语"
+        },
+        {
+            "key": "Thai",
+            "value": "泰语"
+        },
+        {
+            "key": "Arabic",
+            "value": "阿拉伯语"
+        },
+        {
+            "key": "Russian",
+            "value": "俄语"
+        },
+        {
+            "key": "Portuguese",
+            "value": "葡萄牙语"
+        },
+        {
+            "key": "German",
+            "value": "德语"
+        },
+        {
+            "key": "Italian",
+            "value": "意大利语"
+        },
+        {
+            "key": "Greek",
+            "value": "希腊语"
+        },
+        {
+            "key": "Dutch",
+            "value": "荷兰语"
+        },
+        {
+            "key": "Polish",
+            "value": "波兰语"
+        },
+        {
+            "key": "Bulgarian",
+            "value": "保加利亚语"
+        },
+        {
+            "key": "Estonian",
+            "value": "爱沙尼亚语"
+        },
+        {
+            "key": "Danish",
+            "value": "丹麦语"
+        },
+        {
+            "key": "Finnish",
+            "value": "芬兰语"
+        },
+        {
+            "key": "Czech",
+            "value": "捷克语"
+        },
+        {
+            "key": "Romanian",
+            "value": "罗马尼亚语"
+        },
+        {
+            "key": "Slovenian",
+            "value": "斯洛文尼亚语"
+        },
+        {
+            "key": "Swedish",
+            "value": "瑞典语"
+        },
+        {
+            "key": "Hungarian",
+            "value": "匈牙利语"
+        },
+        {
+            "key": "Vietnamese",
+            "value": "越南语"
+        },
+        {
+            "key": "Corner",
+            "value": "圆角文本按钮"
+        },
+        {
+            "key": "Elemkeytary streams",
+            "value": "元素流"
+        },
+        {
+            "key": "Fireworks dancing",
+            "value": "烟花漫舞"
+        },
+        {
+            "key": "Round",
+            "value": "圆按钮"
+        },
+        {
+            "key": "Gradiant",
+            "value": "渐变"
+        },
+        {
+            "key": "Badget",
+            "value": "徽章"
+        },
+        {
+            "key": "Barrage",
+            "value": "弹幕"
+        },
+        {
+            "key": "Label",
+            "value": "标签页组件"
+        },
+        {
+            "key": "ProgressBar",
+            "value": "进度条组件"
+        },
+        {
+            "key": "Scrolling",
+            "value": "滚动列表"
+        },
+        {
+            "key": "Mkeyu",
+            "value": "菜单"
+        },
+        {
+            "key": "TaoQuick",
+            "value": "TaoQuick"
+        },
+        {
+            "key": "Blue",
+            "value": "苍穹蓝"
+        },
+        {
+            "key": "Frostmourne",
+            "value": "霜之哀伤"
+        },
+        {
+            "key": "Welcome to the 'TaoQuick' demo program",
+            "value": "<p> 欢迎使用TaoQuick演示程序，此程序罗列了<br/>TaoQuick的所有功能，并全面支持动态切换UI风格<br/>(换皮肤)、动态翻译多国语言等功能。<br/></p><p>    更多功能正在路上，敬请期待。</p>"
+        },
+        {
+            "key": "Welcome",
+            "value": "欢迎"
+        },
+        {
+            "key": "Close",
+            "value": "关闭"
+        },
+        {
+            "key": "Menu",
+            "value": "菜单"
+        },
+
+        {
+            "key": "QRcode",
+            "value": "二维码"
+        },
+        {
+            "key": "Shadow flow",
+            "value": "暗影之流"
+        },
+        {
+            "key": "Drop-down",
+            "value": "下拉组件"
+        },
+        {
+            "key": "Graphic",
+            "value": "图文按钮"
+        },
+        {
+            "key": "Basic",
+            "value": "基础组件"
+        },
+        {
+            "key": "Joy of fire",
+            "value": "焰之欢愉"
+        },
+        {
+            "key": "Cool",
+            "value": "酷炫组件"
+        },
+        {
+            "key": "Green",
+            "value": " 清爽绿"
+        },
+        {
+            "key": "Pink",
+            "value": "淑女粉"
+        },
+        {
+            "key": "IP address",
+            "value": "IP地址"
+        },
+        {
+            "key": "Home",
+            "value": "首页"
+        },
+        {
+            "key": "Drag",
+            "value": "拖动组件"
+        },
+        {
+            "key": "Text",
+            "value": "文本按钮"
+        },
+        {
+            "key": "keyergy ball",
+            "value": "能量球"
+        },
+        {
+            "key": "Red",
+            "value": "一品红"
+        },
+        {
+            "key": "Button",
+            "value": "按钮组件"
+        },
+        {
+            "key": "Gold",
+            "value": "富贵金"
+        },
+        {
+            "key": "Black",
+            "value": "高冷黑"
+        },
+        {
+            "key": "Functional",
+            "value": "功能组件"
+        },
+        {
+            "key": "Comet Halley",
+            "value": "哈雷彗星"
+        },
+        {
+            "key": "Gradient",
+            "value": "渐变"
+        },
+        {
+            "key": "Background",
+            "value": "背景"
+        },
+        {
+            "key": "Dialog",
+            "value": "对话框"
+        },
+        {
+            "key": "ShaderEffect",
+            "value": "着色器特效"
+        },
+        {
+            "key": "Cloud Hole",
+            "value": "穿云洞"
+        },
+        {
+            "key": "Star Light",
+            "value": "星球之光"
+        },
+        {
+            "key": "Snail",
+            "value": "蜗牛"
+        },
+        {
+            "key": "Super Mario",
+            "value": "超级马里奥"
+        },
+        {
+            "key": "Effect",
+            "value": "特效"
+        },
+        {
+            "key": "Ring",
+            "value": "环"
+        },
+        {
+            "key": "Brilliant Starry Sky",
+            "value": "璀璨星空"
+        },
+        {
+            "key": "Keep up with the pace",
+            "value": "跟上节奏"
+        },
+        {
+            "key": "Undercurrent surge",
+            "value": "暗流涌动"
+        },
+        {
+            "key": "Magic Circle",
+            "value": "魔力圈圈"
+        },
+        {
+            "key": "Painter",
+            "value": "自绘"
+        },
+        {
+            "key": "RoundRect",
+            "value": "圆角矩形"
+        },
+        {
+            "key": "KLine",
+            "value": "K线"
+        },
+        {
+            "key": "Animation",
+            "value": "动画"
+        },
+        {
+            "key": "Enter",
+            "value": "飞入"
+        },
+        {
+            "key": "Grad",
+            "value": "梯度"
+        },
+        {
+            "key": "Cleavage",
+            "value": "劈裂"
+        },
+        {
+            "key": "Diagonal",
+            "value": "对角线"
+        },
+        {
+            "key": "Louver",
+            "value": "百叶窗"
+        },
+        {
+            "key": "Square",
+            "value": "方盒"
+        },
+        {
+            "key": "Circle",
+            "value": "圆盒"
+        },
+        {
+            "key": "Cross",
+            "value": "十字"
+        },
+        {
+            "key": "Rhombus",
+            "value": "菱形"
+        },
+        {
+            "key": "Wheel",
+            "value": "轮子"
+        },
+        {
+            "key": "Board",
+            "value": "棋盘"
+        },
+        {
+            "key": "Dissolve",
+            "value": "溶解"
+        },
+        {
+            "key": "PageSwitch",
+            "value": "页面切换"
+        },
+        {
+            "key": "FadeInOut",
+            "value": "淡入淡出"
+        },
+        {
+            "key": "Component List",
+            "value":"组件列表"
+        },
+        {
+            "key": "Animation",
+            "value":"动画"
+        },
+        {
+            "key": "BaseComponent",
+            "value":"基础组件"
+        },
+        {
+            "key": "Buttons",
+            "value":"按钮"
+        },
+        {
+            "key": "Effect",
+            "value":"效果"
+        },
+        {
+            "key": "PageSwitch",
+            "value":"页面切换"
+        },
+        {
+            "key": "ShaderEffect",
+            "value":"着色器特效"
+        },
+        {
+            "key": "Shape",
+            "value":"图元"
+        },
+        {
+            "key": "Component Name: %1, Count: %2",
+            "value":"组件名称: %1, 数量: %2"
+        }
+
+    ]
+}

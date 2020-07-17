@@ -7,10 +7,13 @@ lessThan(QT_MAJOR_VERSION, 5) {
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    src
+    src \
+    examples
+CONFIG+= ordered
 
 OTHER_FILES += *.md \
     LICENSE \
     .clang-format \
     .qmake.conf \
-    .github/workflows/*
+    .github/workflows/* \
+    mkspecs/features/*
