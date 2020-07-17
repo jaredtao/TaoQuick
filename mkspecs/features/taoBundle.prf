@@ -8,5 +8,6 @@ defineReplace(getBundlePath) {
             BundlePath=$${appName}.app/Contents/MacOS/
         }
     }
+    export(CONFIG)
     return ($$BundlePath)
 }
