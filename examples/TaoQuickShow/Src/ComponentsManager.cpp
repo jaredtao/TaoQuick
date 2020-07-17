@@ -1,8 +1,8 @@
 #include "ComponentsManager.h"
+#include <QDebug>
 #include <QDir>
 #include <QQmlContext>
 #include <QUrl>
-#include <QDebug>
 ComponentsMgr::ComponentsMgr(QObject* parent)
     : QObject(parent)
 {
@@ -12,9 +12,8 @@ void ComponentsMgr::loadFolder(const QString& folder)
 {
     QString dirPath;
     qWarning() << "folder" << folder;
-#ifdef _DEBUG
+#ifdef TAODEBUG
     dirPath = QUrl(folder).toLocalFile();
-
 #else
     //'qrc:/xxx' remove 'qrc' leave ':/xxx'
     dirPath = QString(folder).remove(0, 3);
@@ -31,7 +30,7 @@ void ComponentsMgr::loadFolder(const QString& folder)
         QStringList comps;
         QStringList compNames;
         for (auto subInfo : subInfos) {
-#ifdef _DEBUG
+#ifdef TAODEBUG
             comps.push_back(QUrl::fromLocalFile(subInfo.absoluteFilePath()).toString());
 #else
             comps.push_back("qrc" + subInfo.absoluteFilePath());
