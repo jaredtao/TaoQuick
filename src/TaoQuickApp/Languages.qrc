@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>Trans/language_zh.json</file>
-    </qresource>
-</RCC>
