@@ -10,6 +10,7 @@ Rectangle {
     y: control.height * 1.1
     color: gConfig.reserverColor
     opacity: 0.7
+    visible: false
     Text {
         id: t
         anchors.centerIn: parent
@@ -17,6 +18,9 @@ Rectangle {
     SequentialAnimation {
         id: ani
         alwaysRunToEnd: false
+        ScriptAction {
+            script: root.visible = true
+        }
         NumberAnimation {
             target: root
             property: "y"
@@ -34,6 +38,9 @@ Rectangle {
             duration: 500
             easing.type: Easing.Linear
             to: control.height * 1.1
+        }
+        ScriptAction {
+            script: root.visible = false
         }
 
     }
