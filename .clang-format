@@ -1,4 +1,6 @@
 ---
+# 关闭格式化
+DisableFormat:   false
 # 语言: None, Cpp, Java, JavaScript, ObjC, Proto, TableGen, TextProto
 Language:        Cpp
 # BasedOnStyle:  WebKit
@@ -9,7 +11,7 @@ AlignAfterOpenBracket: AlwaysBreak
 # 连续赋值时，对齐所有等号
 AlignConsecutiveAssignments: false
 # 连续声明时，对齐所有声明的变量名
-AlignConsecutiveDeclarations: false
+AlignConsecutiveDeclarations: true
 # 左对齐逃脱换行(使用反斜杠换行)的反斜杠
 AlignEscapedNewlines: Right
 # 水平对齐二元和三元表达式的操作数
@@ -74,18 +76,18 @@ BraceWrapping:
   # 缩进大括号
   IndentBraces: false
 
-SplitEmptyFunction: true
+#SplitEmptyFunction: true
 
-SplitEmptyRecord: true
+#SplitEmptyRecord: true
 
-SplitEmptyNamespace: true
+#SplitEmptyNamespace: true
 # 在二元运算符前换行: None(在操作符后换行), NonAssignment(在非赋值的操作符前换行), All(在操作符前换行)
 BreakBeforeBinaryOperators: All
 
 # 继承列表的逗号前换行
 BreakBeforeInheritanceComma: true
 # 继承列表换行
-#BreakInheritanceList: BeforeColon
+BreakInheritanceList: BeforeColon
 # 在三元运算符前换行
 BreakBeforeTernaryOperators: true
 # 在构造函数的初始化列表的逗号前换行
@@ -93,7 +95,7 @@ BreakConstructorInitializersBeforeComma: true
 # 初始化列表前换行
 BreakConstructorInitializers: BeforeComma
 # Java注解后换行
-BreakAfterJavaFieldAnnotations: false
+BreakAfterJavaFieldAnnotations: true
 
 BreakStringLiterals: true
 # 每行字符的限制，0表示没有限制
@@ -103,7 +105,7 @@ CommentPragmas:  '^ IWYU pragma:'
 # 紧凑 命名空间
 CompactNamespaces: false
 # 构造函数的初始化列表要么都在同一行，要么都各自一行
-ConstructorInitializerAllOnOneLineOrOnePerLine: true
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
 # 构造函数的初始化列表的缩进宽度
 ConstructorInitializerIndentWidth: 4
 # 延续的行的缩进宽度
@@ -112,8 +114,7 @@ ContinuationIndentWidth: 4
 Cpp11BracedListStyle: false
 # 继承最常用的指针和引用的对齐方式
 DerivePointerAlignment: false
-# 关闭格式化
-DisableFormat:   false
+
 # 自动检测函数的调用和定义是否被格式为每行一个参数(Experimental)
 ExperimentalAutoDetectBinPacking: false
 # 固定命名空间注释
@@ -150,7 +151,7 @@ IndentWrappedFunctionNames: true
 JavaScriptQuotes: Leave
 
 JavaScriptWrapImports: true
-KeepLineBreaksForNonEmptyLines: false
+#KeepLineBreaksForNonEmptyLines: false
 # 保留在块开始处的空行
 KeepEmptyLinesAtTheStartOfBlocks: true
 # 开始一个块的宏的正则表达式
@@ -230,4 +231,3 @@ TabWidth:        4
 # 使用tab字符: Never, ForIndentation, ForContinuationAndIndentation, Always
 UseTab:          Never
 ...
-
