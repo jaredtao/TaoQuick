@@ -1,6 +1,6 @@
 #pragma once
-#include <QtGlobal>
 #include <QDebug>
+#include <QtGlobal>
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
 #include <QQmlEngineExtensionPlugin>
