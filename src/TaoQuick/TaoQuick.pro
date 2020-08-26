@@ -12,6 +12,7 @@ versionAtLeast(QT_VERSION, 5.15.0) {
 
 uri = $$TARGET
 load(taoVersion)
+setTaoVersion()
 
 load(taoBundle)
 BundlePath = $$getBundlePath("TaoQuickApp")
