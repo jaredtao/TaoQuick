@@ -2,7 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtGraphicalEffects 1.0
 
-Item {
+Rectangle {
     id: rootView
     width: 1440
     height: 900

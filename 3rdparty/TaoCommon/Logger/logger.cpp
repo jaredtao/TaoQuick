@@ -6,7 +6,7 @@
 #include <QDir>
 #include <QMutex>
 #include <QDebug>
-
+#include <QTextStream>
 #include <string>
 
 #ifdef Q_OS_WIN
@@ -81,7 +81,11 @@ namespace Logger
             bool exist = file.exists();
             file.open(QIODevice::WriteOnly | QIODevice::Append);
             textStream.setDevice(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            textStream.setEncoding(QStringConverter::Utf8);
+#else
             textStream.setCodec("UTF-8");
+#endif
             if (!exist)
             {
                 textStream << logTemplate << "\r\n";
@@ -127,7 +131,11 @@ namespace Logger
         bool exist = file.exists();
         file.open(QIODevice::WriteOnly | QIODevice::Append);
         QTextStream textStream(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        textStream.setEncoding(QStringConverter::Utf8);
+#else
         textStream.setCodec("UTF-8");
+#endif
         if (!exist)
         {
             textStream << logTemplate << "\r\n";
