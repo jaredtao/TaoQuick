@@ -11,7 +11,6 @@ class Trans : public QTranslator, public TaoObject
     Q_OBJECT
     Q_PROPERTY(QString currentLang READ currentLang WRITE setCurrentLang NOTIFY currentLangChanged)
     Q_PROPERTY(QStringList languages READ languages NOTIFY languagesChanged)
-    Q_PROPERTY(QString transString READ transString NOTIFY transStringChanged)
 public:
     Trans(QObject *parent = nullptr);
 
@@ -43,8 +42,6 @@ signals:
     void currentLangChanged(const QString &currentLang);
 
     void languagesChanged(const QStringList &languages);
-
-    void transStringChanged();
 
     void langLoaded(const QString &lang);
 
