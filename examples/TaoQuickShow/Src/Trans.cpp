@@ -7,7 +7,7 @@
 const static auto cEnglisthStr = QStringLiteral("English");
 const static auto cChineseStr = QStringLiteral("简体中文");
 Trans::Trans(QObject* parent)
-    : QObject(parent)
+    : QTranslator(parent)
 {
 }
 void Trans::init() {}
@@ -17,11 +17,22 @@ void Trans::uninit() {}
 void Trans::beforeUiReady(QQmlContext* ctx)
 {
     ctx->setContextProperty("trans", this);
+    loadFolder(qApp->applicationDirPath() + "/Trans");
+    qApp->installTranslator(this);
 }
 
 void Trans::afterUiReady()
 {
-    loadFolder(qApp->applicationDirPath() + "/Trans");
+
+}
+
+QString Trans::translate(const char *context, const char *sourceText, const char *disambiguation, int n) const
+{
+    Q_UNUSED(context)
+    Q_UNUSED(disambiguation)
+    Q_UNUSED(n)
+
+    return trans(sourceText);
 }
 
 void Trans::loadFolder(const QString& folder)
