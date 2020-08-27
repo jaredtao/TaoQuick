@@ -30,7 +30,7 @@ Popup {
         }
         TTextBtn {
             id: closeBtn
-            text: trans.trans("Close") + trans.transString
+            text: qsTr("Close") 
             width: 80
             height: 38
             radius: 8

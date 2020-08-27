@@ -5,7 +5,8 @@
 #include <QList>
 #include <QString>
 #include "TaoObject.h"
-class Trans : public QObject, public TaoObject
+#include <QTranslator>
+class Trans : public QTranslator, public TaoObject
 {
     Q_OBJECT
     Q_PROPERTY(QString currentLang READ currentLang WRITE setCurrentLang NOTIFY currentLangChanged)
@@ -25,6 +26,8 @@ public:
     void beforeUiReady(QQmlContext* ctx) override;
 
     void afterUiReady() override;
+
+    QString translate(const char *context, const char *sourceText, const char *disambiguation = nullptr, int n = -1) const override;
 public:
     const QString &currentLang() const;
 

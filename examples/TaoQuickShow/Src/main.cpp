@@ -37,6 +37,7 @@ int main(int argc, char** argv)
     TaoFramework::instance()->beforeUiReady(view.rootContext());
 
     view.engine()->addImportPath(qmlPath);
+    QObject::connect(TaoFramework::instance()->getObject<Trans>(), &Trans::currentLangChanged, view.engine(), &QQmlEngine::retranslate);
     view.rootContext()->setContextProperty("qmlPath", qmlPath);
     view.rootContext()->setContextProperty("imgPath", imgPath);
     view.rootContext()->setContextProperty("contentsPath", contentsPath);

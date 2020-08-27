@@ -23,7 +23,7 @@ TImageBtn {
             delegate: TTextBtn {
                 width: langListView.width
                 height: 36
-                text: trans.trans(modelData) + trans.transString
+                text: qsTr(modelData) 
                 color: trans.currentLang === modelData ? gConfig.themeColor :( containsMouse ? "lightgray" : pop.barColor)
                 textColor: gConfig.textColor
                 radius: 4
