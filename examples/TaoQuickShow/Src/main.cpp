@@ -23,7 +23,8 @@ int main(int argc, char** argv)
     prepareApp();
     QGuiApplication app(argc, argv);
     Logger::initLog();
-    qWarning() << "appPath" << app.applicationDirPath();
+    const auto appPath = QDir(app.applicationDirPath()).absolutePath();
+    qWarning() << "appPath" << appPath;
 
     TaoView view;
 
@@ -39,7 +40,7 @@ int main(int argc, char** argv)
     view.rootContext()->setContextProperty("qmlPath", qmlPath);
     view.rootContext()->setContextProperty("imgPath", imgPath);
     view.rootContext()->setContextProperty("contentsPath", contentsPath);
-    view.rootContext()->setContextProperty("appPath", app.applicationDirPath());
+    view.rootContext()->setContextProperty("appPath", appPath);
     view.rootContext()->setContextProperty("view", &view);
 
     const QUrl url(qmlPath + QStringLiteral("main.qml"));
