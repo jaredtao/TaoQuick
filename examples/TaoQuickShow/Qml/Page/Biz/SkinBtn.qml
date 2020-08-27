@@ -42,7 +42,7 @@ TImageBtn {
                         centerIn: parent
                     }
                     color: "white"
-                    text: trans.trans(model.name) + trans.transString
+                    text: qsTr(model.name) 
                 }
                 Rectangle {
                     x: parent.width - width

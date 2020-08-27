@@ -50,7 +50,7 @@ Rectangle {
     ToolTip {
         id: tip
         delay: 800
-        text: trans.trans(String("Component Name: %1, Count: %2")).arg(trans.trans(name)).arg(count) + trans.transString
+        text: qsTr(String("Component Name: %1, Count: %2")).arg(qsTr(name)).arg(count)
         visible: area.containsMouse
     }
     MouseArea {
