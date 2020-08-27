@@ -29,7 +29,7 @@ ListView {
             id: btn
             width: root.width
             height: rowHeight
-            text: trans.trans(model.name) + trans.transString
+            text: qsTr(model.name) 
             textItem.leftPadding: 6
             textHorizontalAlignment: Text.AlignLeft
             textColor: text === currentTitle ? gConfig.titleBackground : gConfig.textColor
@@ -68,7 +68,7 @@ ListView {
             delegate: TGradientBtn {
                 width: root.width
                 height: rowHeight
-                text: trans.trans(model.name) + trans.transString
+                text: qsTr(model.name) 
                 textColor: text === currentTitle ? gConfig.titleBackground : gConfig.textColor
                 onClicked: {
                     currentTitle = model.name

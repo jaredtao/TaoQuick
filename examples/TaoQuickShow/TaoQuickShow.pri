@@ -1,5 +1,11 @@
 CONFIG += file_copies
 
+#一部分头文件加入编译预处理，提高编译速度
+msvc | gcc | xcode {
+    CONFIG += precompile_header
+    PRECOMPILED_HEADER = $$PWD/Src/stdafx.h
+}
+
 HEADERS += \
     $$PWD/Src/TaoObject.h \
     $$PWD/Src/TaoFramework.h \

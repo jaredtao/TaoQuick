@@ -31,11 +31,6 @@ CONFIG(debug,debug|release) {
 #    QMAKE_CFLAGS += -source-charset:utf-8
 #    QMAKE_CXXFLAGS += -source-charset:utf-8
 #}
-#一部分头文件加入编译预处理，提高编译速度
-msvc | gcc | xcode {
-    CONFIG += precompile_header
-    PRECOMPILED_HEADER = $$PWD/Src/stdafx.h
-}
 
 include($${TaoQuick_3RDPARTY_TREE}/3rdparty.pri)
 
