@@ -1,6 +1,4 @@
-!exists(TaoVersionDefined) {
-    TaoVersionDefined=1
-
+defineTest(setTaoVersion) {
     TAO_VERSION_TAG = 1.0
 
     # current commit hash
@@ -26,16 +24,21 @@
         VER_PAT = $${PAT}
         VERSION = $${Ver}
     }
-    !exists(TaoDefined) {
-        TaoDefined=1
-        DEFINES += TaoREVISION=$${REVISION}
-        DEFINES += TaoREVISIONSTR=\"\\\"$${REVISION}\\\"\"
-        DEFINES += TaoVer=\"\\\"$${Ver}\\\"\"
-        DEFINES += TaoMAJ=$${MAJ}
-        DEFINES += TaoMIN=$${MIN}
-        DEFINES += TaoPAT=$${PAT}
-        DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
-        DEFINES += TaoCompilerVendor=\"\\\"$${QT_VERSION} $${QMAKE_PLATFORM} $${QMAKE_COMPILER} $${QMAKE_TARGET.arch}\\\"\"
-    }
+
+    DEFINES += TaoREVISION=$${REVISION}
+    DEFINES += TaoREVISIONSTR=\"\\\"$${REVISION}\\\"\"
+    DEFINES += TaoVer=\"\\\"$${Ver}\\\"\"
+    DEFINES += TaoMAJ=$${MAJ}
+    DEFINES += TaoMIN=$${MIN}
+    DEFINES += TaoPAT=$${PAT}
+    DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
+    DEFINES += TaoCompilerVendor=\"\\\"$${QT_VERSION} $${QMAKE_PLATFORM} $${QMAKE_COMPILER} $${QMAKE_TARGET.arch}\\\"\"
+
+    export(CONFIG)
+    export(VER_MAJ)
+    export(VER_MIN)
+    export(VER_PAT)
+    export(VERSION)
+    export(DEFINES)
 }
 
