@@ -6,6 +6,7 @@ QT += qml quick concurrent
 CONFIG += plugin c++17 qtquickcompiler utf8_source
 
 load(taoVersion)
+setTaoVersion()
 
 load(taoBundle)
 BundlePath = $$getBundlePath("TaoQuickApp")
