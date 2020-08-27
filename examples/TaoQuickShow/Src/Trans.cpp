@@ -61,7 +61,6 @@ void Trans::loadFolder(const QString& folder)
         setCurrentLang(cEnglisthStr);
     }
     emit folderLoaded(folder);
-    emit transStringChanged();
 }
 
 bool Trans::load(QString& lang, const QString& filePath)
@@ -128,7 +127,6 @@ void Trans::setCurrentLang(const QString& currentLang)
 
     m_currentLang = currentLang;
     emit currentLangChanged(m_currentLang);
-    emit transStringChanged();
 }
 
 void Trans::setLanguages(const QStringList& languages)
@@ -138,5 +136,4 @@ void Trans::setLanguages(const QStringList& languages)
 
     m_languages = languages;
     emit languagesChanged(m_languages);
-    emit transStringChanged();
 }
