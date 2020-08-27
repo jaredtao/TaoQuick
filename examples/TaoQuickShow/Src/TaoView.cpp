@@ -94,8 +94,11 @@ void TaoView::setIsMax(bool isMax)
 
 #if WIN32
 const long border_width = 6;
-
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+bool TaoView::nativeEvent(const QByteArray &eventType, void *message, qintptr *result)
+#else
 bool TaoView::nativeEvent(const QByteArray &eventType, void *message, long *result)
+#endif
 {
     if (!result) {
         return false;
