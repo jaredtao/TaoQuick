@@ -45,7 +45,7 @@ Rectangle {
 
     }
     function notify(msg) {
-        t.text = msg  + trans.transString
+        t.text = msg  
         ani.start()
     }
 }

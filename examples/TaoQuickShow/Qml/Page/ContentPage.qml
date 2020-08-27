@@ -15,7 +15,7 @@ Background {
             topMargin: 60
         }
         property string title: defaultTitle
-        text: trans.trans(title) + trans.transString
+        text: qsTr(title) 
     }
     GridView {
         id: gridView
@@ -34,7 +34,7 @@ Background {
             height: 100
             CompCard {
                 anchors.centerIn: parent
-                name: trans.trans(modelData.name) + trans.transString
+                name: qsTr(modelData.name) 
                 count: modelData.count
                 icon: modelData.icon
                 onClicked: {
