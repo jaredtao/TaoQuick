@@ -1,6 +1,4 @@
-lessThan(QT_MAJOR_VERSION, 5) {
-    error("current Qt version $$QT_VERSION, this project need grather than 5.12.0")
-} else: lessThan(QT_MINOR_VERSION, 12){
+lessThan(QT_MAJOR_VERSION, 5): lessThan(QT_MINOR_VERSION, 12) {
     error("current Qt version $$QT_VERSION, this project need grather than 5.12.0")
 }
 

@@ -38,7 +38,7 @@ void Trans::loadFolder(const QString& folder)
 //    res.waitForFinished();
 
     initEnglish();
-    auto langs = m_map.uniqueKeys();
+    auto langs = m_map.keys();
     if (langs.contains(cChineseStr)) {
         langs.removeAll(cChineseStr);
         langs.push_front(cChineseStr);
@@ -96,7 +96,7 @@ void Trans::initEnglish()
         } else {
             map = m_map.value(m_map.keys().first());
         }
-        for (auto key : map.uniqueKeys()) {
+        for (auto key : map.keys()) {
             m_map[cEnglisthStr][key] = key;
         }
     }
