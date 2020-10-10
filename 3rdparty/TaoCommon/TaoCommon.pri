@@ -12,6 +12,7 @@ HEADERS += \
     $$PWD/Common/objectmap.h \
     $$PWD/Common/singleton.h \
     $$PWD/Common/subject.h \
+    $$PWD/Common/package.h \
     $$PWD/Logger/loggertemplate.h \
     $$PWD/Logger/logger.h \
     $$PWD/Thread/threadcommon.h \
