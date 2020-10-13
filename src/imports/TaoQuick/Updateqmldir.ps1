@@ -20,10 +20,10 @@ function WriteLine {
 if (Test-Path qmldir) {
     Clear-Content qmldir
 }
-
-Get-ChildItem -Recurse BasicComponent | ForEach-Object -Process {
+"module TaoQuick" | Out-File -Append -Encoding "utf8" qmldir
+Get-ChildItem -Recurse BasicComponent *.qml | ForEach-Object -Process {
     WriteLine $_
 }
-Get-ChildItem -Recurse EffectComponent | ForEach-Object -Process {
+Get-ChildItem -Recurse EffectComponent *.qml | ForEach-Object -Process {
     WriteLine $_
 }
