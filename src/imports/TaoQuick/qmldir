@@ -1,15 +1,11 @@
-module TaoQuick
-plugin TaoQuick
-
-depends QtQuick 2.12
-depends QtQuick.Controls 2.12
-
+﻿module TaoQuick
 TGradientBtn 1.0 BasicComponent/Button/TGradientBtn.qml
 TImageBtn 1.0 BasicComponent/Button/TImageBtn.qml
 TImgTextBtn 1.0 BasicComponent/Button/TImgTextBtn.qml
 TTextBtn 1.0 BasicComponent/Button/TTextBtn.qml
 TMoveArea 1.0 BasicComponent/Mouse/TMoveArea.qml
 TTransArea 1.0 BasicComponent/Mouse/TTransArea.qml
+CallLatter 1.0 BasicComponent/Others/CallLatter.qml
 TBusyIndicator 1.0 BasicComponent/Others/TBusyIndicator.qml
 TDialog 1.0 BasicComponent/Others/TDialog.qml
 TDragItem 1.0 BasicComponent/Others/TDragItem.qml
@@ -20,8 +16,6 @@ TToolTip 1.0 BasicComponent/Others/TToolTip.qml
 TCircleProgress 1.0 BasicComponent/Progress/TCircleProgress.qml
 TInOut 1.0 BasicComponent/Progress/TInOut.qml
 TNormalProgress 1.0 BasicComponent/Progress/TNormalProgress.qml
-singleton TCommon 1.0 EffectComponent/TCommon.qml
-TShaderToy 1.0 EffectComponent/TShaderToy.qml
 ABoard 1.0 EffectComponent/Animation/ABoard.qml
 ACircle 1.0 EffectComponent/Animation/ACircle.qml
 ACleavage 1.0 EffectComponent/Animation/ACleavage.qml
@@ -30,8 +24,8 @@ ADiagonal 1.0 EffectComponent/Animation/ADiagonal.qml
 ADissolve 1.0 EffectComponent/Animation/ADissolve.qml
 AGrad 1.0 EffectComponent/Animation/AGrad.qml
 ALouver 1.0 EffectComponent/Animation/ALouver.qml
-ARiseSet 1.0 EffectComponent/Animation/ARiseSet.qml
 ARhombus 1.0 EffectComponent/Animation/ARhombus.qml
+ARiseSet 1.0 EffectComponent/Animation/ARiseSet.qml
 ASector 1.0 EffectComponent/Animation/ASector.qml
 ASlowEnter 1.0 EffectComponent/Animation/ASlowEnter.qml
 ASquare 1.0 EffectComponent/Animation/ASquare.qml
@@ -51,5 +45,5 @@ SSquare 1.0 EffectComponent/PageSwitch/SSquare.qml
 SWheel 1.0 EffectComponent/PageSwitch/SWheel.qml
 TKLine 1.0 EffectComponent/Shapes/TKLine.qml
 TRoundRect 1.0 EffectComponent/Shapes/TRoundRect.qml
-
-designersupported
+singleton TCommon 1.0 EffectComponent/TCommon.qml
+TShaderToy 1.0 EffectComponent/TShaderToy.qml
