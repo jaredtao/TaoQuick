@@ -52,4 +52,61 @@ Rectangle {
         y: 10
         x: 10
     }
+
+    TPopup {
+        id: tPopup
+        x: 102
+        y: -58
+        width: 120
+        height: 80
+
+        TResizeBorder {
+            id: tResizeBorder
+            x: 689
+            y: 351
+            width: 120
+            height: 80
+        }
+
+        TDragItem {
+            id: tDragItem
+            x: 720
+            y: 350
+            width: 120
+            height: 80
+
+            TGradientBtn {
+                id: tGradientBtn
+                x: 4
+                y: 43
+                width: 120
+                height: 80
+                text: "Hello"
+            }
+        }
+
+        TBusyIndicator {
+            id: tBusyIndicator
+            x: 546
+            y: 335
+            width: 120
+            height: 80
+        }
+
+        RectDraw {
+            id: rectDraw
+            x: 539
+            y: 447
+            width: 120
+            height: 80
+
+            SGrad {
+                id: sGrad
+                x: 4
+                y: 12
+                width: 120
+                height: 80
+            }
+        }
+    }
 }
