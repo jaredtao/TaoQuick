@@ -1,7 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-
-
+import ".."
+import "../.."
 Item {
     id: root
 
@@ -15,7 +15,7 @@ Item {
     property alias containsMouse: mouseBtn.containsMouse
     property alias containsPress: mouseBtn.containsPress
 
-    signal clicked();
+    signal clicked
 
     Rectangle {
         id: hoverRect
@@ -43,7 +43,8 @@ Item {
                     target: pressRect
                     property: "radius"
                     from: 0
-                    to: Math.max(pressRect.startX, root.width - pressRect.startX)
+                    to: Math.max(pressRect.startX,
+                                 root.width - pressRect.startX)
                     duration: 500
                 }
                 ScriptAction {
@@ -55,21 +56,21 @@ Item {
         }
     }
 
-    Text {
+    BasicText {
         id: t
         anchors.centerIn: parent
         width: parent.width
     }
     MouseArea {
         id: mouseBtn
-        anchors.fill: parent;
-        hoverEnabled: parent.enabled;
+        anchors.fill: parent
+        hoverEnabled: parent.enabled
         onPressed: {
             pressRect.startX = mouseX
             pressRect.startY = mouseY
             pressAnimation.start()
         }
-        onClicked: root.clicked();
+        onClicked: root.clicked()
         cursorShape: Qt.PointingHandCursor
     }
 }

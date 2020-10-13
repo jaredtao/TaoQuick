@@ -6,12 +6,12 @@ QtObject {
     id: config
     objectName: "config"
     property bool isWhiteTheme: true
-    property string imagePathPrefix
+    property string imagePathPrefix: "file:///./../Images/"
 
     Component.onCompleted: {
-        if (typeof (imgPath) != "undefined" && imgPath !== null
-            && imgPath.length > 0) {
-            imagePathPrefix = imgPath
+        if (typeof (taoQuickImagePath) != "undefined" && taoQuickImagePath !== null
+            && taoQuickImagePath.length > 0) {
+            imagePathPrefix = taoQuickImagePath
         }
     }
     property int fixedHeight: 30

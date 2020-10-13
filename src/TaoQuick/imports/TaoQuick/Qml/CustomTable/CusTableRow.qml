@@ -46,9 +46,9 @@ Rectangle {
         CusImage {
             visible: showOnlineState
             readonly property string cameraOnlineImg: Config.imagePathPrefix
-                                                      + "0_Common/Icon_Camera_Online.png"
+                                                      + "Icon_Camera_Online.png"
             readonly property string cameraOfflineImg: Config.imagePathPrefix
-                                                       + "0_Common/Icon_Camera_Offline.png"
+                                                       + "Icon_Camera_Offline.png"
             source: dataObj["online"] ? cameraOnlineImg : cameraOfflineImg
             width: 16
             height: 16

@@ -26,7 +26,7 @@ CusTextField {
                 leftMargin: 4
                 verticalCenter: parent.verticalCenter
             }
-            property string searchIconImg: Config.imagePathPrefix + "0_Common/Search.png"
+            property string searchIconImg: Config.imagePathPrefix + "Search.png"
             source: searchIconImg
         }
         Rectangle {
@@ -43,8 +43,8 @@ CusTextField {
                 rightMargin: 4
                 verticalCenter: parent.verticalCenter
             }
-            btnImgNormal: Config.isWhiteTheme ?  Config.imagePathPrefix + "0_Common/Search_Clear.png" : Config.imagePathPrefix + "B0_Common/Search_Clear.png"
-            btnImgHovered: Config.isWhiteTheme ? Config.imagePathPrefix + "0_Common/Search_Clear_Hover.png" : Config.imagePathPrefix + "B0_Common/Search_Clear_Hover.png"
+            btnImgNormal: Config.isWhiteTheme ?  Config.imagePathPrefix + "Search_Clear.png" : Config.imagePathPrefix + "Search_Clear.png"
+            btnImgHovered: Config.isWhiteTheme ? Config.imagePathPrefix + "Search_Clear_Hover.png" : Config.imagePathPrefix + "Search_Clear_Hover.png"
             btnImgPressed: btnImgHovered
             btnImgDisbaled: btnImgNormal
             onClicked: {

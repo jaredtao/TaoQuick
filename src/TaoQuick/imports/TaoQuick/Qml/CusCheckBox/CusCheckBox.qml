@@ -29,15 +29,12 @@ CheckBox {
         width: sourceSize.width
         height: sourceSize.height
 
-        readonly property string imgUrlNormal: Config.imagePathPrefix + "0_Common/Checkbox_16.png"
-        readonly property string imgUrlChecked: Config.imagePathPrefix
-                                                + "0_Common/Checkbox_16_Checked.png"
-        readonly property string imgUrlHovered: Config.imagePathPrefix
-                                                + "0_Common/Checkbox_16_Hover.png"
-        readonly property string imgUrlDisable: Config.imagePathPrefix
-                                                + "0_Common/Checkbox_16_Disable.png"
+        readonly property string imgUrlNormal: Config.imagePathPrefix + "Checkbox_16.png"
+        readonly property string imgUrlChecked: Config.imagePathPrefix + "Checkbox_16_Checked.png"
+        readonly property string imgUrlHovered: Config.imagePathPrefix + "Checkbox_16_Hover.png"
+        readonly property string imgUrlDisable: Config.imagePathPrefix + "Checkbox_16_Disable.png"
         readonly property string imgUrlCheckedDisable: Config.imagePathPrefix
-                                                       + "0_Common/Checkbox_16_Checked_Disable.png"
+                                                       + "Checkbox_16_Checked_Disable.png"
 
         source: cusCheckBox.enabled ? (cusCheckBox.checked ? imgUrlChecked : (cusCheckBox.hovered ? imgUrlHovered : imgUrlNormal)) : (cusCheckBox.checked ? imgUrlCheckedDisable : imgUrlDisable)
     }
