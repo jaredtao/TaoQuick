@@ -3,6 +3,7 @@
 #include <QDir>
 #include <QQmlContext>
 #include <QCoreApplication>
+#include <QLocale>
 const static auto cEnglisthStr = QStringLiteral("English");
 const static auto cChineseStr = QStringLiteral("简体中文");
 Trans::Trans(QObject* parent)
@@ -125,7 +126,13 @@ void Trans::setCurrentLang(const QString& currentLang)
         return;
 
     m_currentLang = currentLang;
-    emit currentLangChanged(m_currentLang);
+    if (m_currentLang == cChineseStr) {
+        QLocale::setDefault(QLocale(QLocale::Chinese, QLocale::AnyCountry));
+    }
+    else if (m_currentLang == cEnglisthStr)
+    {
+        QLocale::setDefault(QLocale(QLocale::English, QLocale::AnyCountry));
+    }
 }
 
 void Trans::setLanguages(const QStringList& languages)
