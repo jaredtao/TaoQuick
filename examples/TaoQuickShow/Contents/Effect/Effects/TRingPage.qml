@@ -1,4 +1,4 @@
-import QtQuick 2.12
+import QtQuick 2.9
 Item {
     id: root
     property int inRadius: 160
