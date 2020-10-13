@@ -78,7 +78,6 @@
         <file>Qml/Effect/PageSwitch/SSector.qml</file>
         <file>Qml/Effect/PageSwitch/SSquare.qml</file>
         <file>Qml/Effect/PageSwitch/SWheel.qml</file>
-        <file>Qml/Misc/CallLatter.qml</file>
         <file>Qml/Misc/TBusyIndicator.qml</file>
         <file>Qml/Misc/TDialog.qml</file>
         <file>Qml/Misc/TDragItem.qml</file>

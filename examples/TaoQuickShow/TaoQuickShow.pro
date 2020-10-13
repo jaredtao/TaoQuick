@@ -3,7 +3,7 @@ TARGET = TaoQuickApp
 
 QT += qml quick
 
-CONFIG += plugin c++17 qtquickcompiler utf8_source
+CONFIG += c++17 qtquickcompiler utf8_source
 
 load(taoVersion)
 setTaoVersion()
@@ -22,8 +22,7 @@ CONFIG(debug,debug|release) {
 }
 
 include($${TaoQuick_3RDPARTY_TREE}/3rdparty.pri)
-#include($${TaoQuick_SOURCE_TREE}/src/TaoQuick/TaoQuick.pri)
-include($$PWD/../../src/TaoQuick/TaoQuick.pri)
+include($${TaoQuick_SOURCE_TREE}/src/TaoQuick/TaoQuick.pri)
 include(TaoQuickShow.pri)
 
 win32:!mingw {
