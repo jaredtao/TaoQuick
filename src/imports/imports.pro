@@ -1,4 +1,4 @@
 TEMPLATE = subdirs
 SUBDIRS += \
-    imports
+    TaoQuick
 CONFIG+= ordered
