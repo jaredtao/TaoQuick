@@ -1,11 +1,11 @@
-lessThan(QT_MAJOR_VERSION, 5): lessThan(QT_MINOR_VERSION, 12) {
-    error("current Qt version $$QT_VERSION, this project need grather than 5.12.0")
+lessThan(QT_MAJOR_VERSION, 5): lessThan(QT_MINOR_VERSION, 9) {
+    error("current Qt version $$QT_VERSION, this project need grather than 5.9.0")
 }
 
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    src \
+#    src \
     examples
 CONFIG+= ordered
 
