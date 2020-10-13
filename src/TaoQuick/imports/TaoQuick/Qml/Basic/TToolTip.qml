@@ -1,5 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import ".."
+
 Item {
     id: root
     anchors.fill: parent
@@ -7,7 +9,7 @@ Item {
     property alias tipVisible: toolTip.visible
     property alias delay: toolTip.delay
     property alias timeout: toolTip.timeout
-    property color barColor: "white"
+    property color barColor: Config.tipBackgroundColor
     //矩形旋转45度，一半被toolTip遮住(重合)，另一半三角形和ToolTip组成一个带箭头的ToolTip
     Rectangle {
         id: bar
@@ -22,9 +24,9 @@ Item {
         anchors.verticalCenter: toolTip.y > 0 ? parent.bottom : parent.top
         anchors.verticalCenterOffset: toolTip.y > 0 ? 5 : -5
     }
-    ToolTip {
+    BasicTooltip {
         id: toolTip
-        contentItem: Text {
+        contentItem: BasicText {
             text: toolTip.text
         }
         background: Rectangle {
