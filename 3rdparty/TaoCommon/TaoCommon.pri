@@ -10,7 +10,6 @@ INCLUDEPATH += $$PWD \
 HEADERS += \
     $$PWD/Common/filereadwrite.h \
     $$PWD/Common/objectmap.h \
-    $$PWD/Common/singleton.h \
     $$PWD/Common/subject.h \
     $$PWD/Common/package.h \
     $$PWD/Logger/loggertemplate.h \
