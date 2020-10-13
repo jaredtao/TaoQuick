@@ -23,7 +23,7 @@ int main(int argc, char** argv)
     prepareApp();
     QGuiApplication app(argc, argv);
     Logger::initLog();
-    const auto appPath = QDir(app.applicationDirPath()).absolutePath();
+    const auto appPath = QDir::cleanPath(app.applicationDirPath());
     qWarning() << "appPath" << appPath;
 
     TaoView view;
@@ -45,7 +45,6 @@ int main(int argc, char** argv)
 #ifdef TaoQuickImagePath
     view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
 #endif
-//    QObject::connect(TaoFramework::instance()->getObject<Trans>(), &Trans::currentLangChanged, view.engine(), &QQmlEngine::retranslate);
     view.rootContext()->setContextProperty("qmlPath", qmlPath);
     view.rootContext()->setContextProperty("imgPath", imgPath);
     view.rootContext()->setContextProperty("contentsPath", contentsPath);
