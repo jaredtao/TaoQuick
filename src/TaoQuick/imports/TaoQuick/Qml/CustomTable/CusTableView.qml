@@ -1,6 +1,5 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-import "."
 import ".."
 import "../.."
 
@@ -103,7 +102,15 @@ ListView {
     remove: null
     removeDisplaced: null
     populate: null
-
+    BasicText {
+        text: qsTr("No Data")
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            top: parent.top
+            topMargin: 10
+        }
+        visible: cusTableView.count <= 0
+    }
     RectDraw {
         id: tableRectItem
         x: tableAreaX

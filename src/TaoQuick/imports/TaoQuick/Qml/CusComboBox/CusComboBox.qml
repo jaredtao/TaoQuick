@@ -9,9 +9,8 @@ ComboBox {
     leftPadding: 4
     rightPadding: 4
     currentIndex: 0
-    readonly property string imgUrlNormal: Config.imagePathPrefix + "0_Common/ComboBox_Down.png"
-    readonly property string imgUrlHovered: Config.imagePathPrefix
-                                            + "0_Common/ComboBox_Down_Hover.png"
+    readonly property string imgUrlNormal: Config.imagePathPrefix + "ComboBox_Down.png"
+    readonly property string imgUrlHovered: Config.imagePathPrefix + "ComboBox_Down_Hover.png"
 
     property real defaultHeight: Config.fixedHeight * 6
     displayText: qsTr(currentText)
@@ -19,7 +18,8 @@ ComboBox {
         color: cusComboBox.enabled ? Config.controlBackgroundColor : Config.controlBackgroundColor_disabled
         radius: Config.controlBorderRadius
         border.width: 1
-        border.color: cusComboBox.focus || cusComboBox.hovered ? Config.controlBorderColor_hovered : Config.controlBorderColor
+        border.color: cusComboBox.focus
+                      || cusComboBox.hovered ? Config.controlBorderColor_hovered : Config.controlBorderColor
     }
     contentItem: CusLabel {
         leftPadding: cusComboBox.leftPadding
