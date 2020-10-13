@@ -10,8 +10,8 @@ SpinBox {
     leftPadding: 4
     rightPadding: 4
 
-    readonly property string imgUrlNormal : Config.imagePathPrefix + "0_Common/Expanded.png";
-    readonly property string imgUrlHovered : Config.imagePathPrefix + "0_Common/Expanded_Hover.png";
+    readonly property string imgUrlNormal : Config.imagePathPrefix + "Expanded.png";
+    readonly property string imgUrlHovered : Config.imagePathPrefix + "Expanded_Hover.png";
     background: Rectangle {
         radius: Config.controlBorderRadius
         color: Config.controlBackgroundColor

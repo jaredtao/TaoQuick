@@ -9,7 +9,7 @@ namespace Logger
 <html>
 
 <head>
-    <title>Lubansoft log file</title>
+    <title>JaredTao log file</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style type="text/css" id="logCss">
         body {

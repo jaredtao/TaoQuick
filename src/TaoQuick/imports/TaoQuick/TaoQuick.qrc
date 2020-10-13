@@ -4,7 +4,6 @@
         <file>Qml/Config.qml</file>
         <file>Qml/Basic/BasicText.qml</file>
         <file>Qml/Basic/BasicTooltip.qml</file>
-        <file>Qml/Basic/DrawRect.qml</file>
         <file>Qml/Basic/MoveArea.qml</file>
         <file>Qml/Basic/RectDraw.qml</file>
         <file>Qml/Basic/ShortCutKeys.qml</file>
@@ -22,9 +21,6 @@
         <file>Qml/CusButton/CusButton_White.qml</file>
         <file>Qml/CusButton/CusSwitch.qml</file>
         <file>Qml/CusButton/TGradientBtn.qml</file>
-        <file>Qml/CusButton/TImageBtn.qml</file>
-        <file>Qml/CusButton/TImgTextBtn.qml</file>
-        <file>Qml/CusButton/TTextBtn.qml</file>
         <file>Qml/CusCheckBox/CusCheckBox.qml</file>
         <file>Qml/CusComboBox/CusComboBox.qml</file>
         <file>Qml/CusImage/CusImage.qml</file>

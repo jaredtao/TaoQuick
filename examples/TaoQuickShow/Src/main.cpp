@@ -41,6 +41,10 @@ int main(int argc, char** argv)
     view.engine()->addImportPath(TaoQuickImportPath);
     qWarning() << TaoQuickImportPath;
 #endif
+
+#ifdef TaoQuickImagePath
+    view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+#endif
 //    QObject::connect(TaoFramework::instance()->getObject<Trans>(), &Trans::currentLangChanged, view.engine(), &QQmlEngine::retranslate);
     view.rootContext()->setContextProperty("qmlPath", qmlPath);
     view.rootContext()->setContextProperty("imgPath", imgPath);

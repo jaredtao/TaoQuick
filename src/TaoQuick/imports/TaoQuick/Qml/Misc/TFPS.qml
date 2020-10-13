@@ -8,7 +8,7 @@ Item {
     property color textColor: "#f7e08c"
     Image {
         id: spinner
-        source: "../../Images/spinner.png"
+        source: Config.imagePathPrefix + "spinner.png"
         width: 32
         height: 32
         anchors.verticalCenter: parent.verticalCenter

@@ -120,10 +120,10 @@ Item {
                     horizontalCenter: parent.horizontalCenter
                     top: parent.top
                 }
-                readonly property string ascUrl: Config.imagePathPrefix + "0_Common/Table_Asc.png"
-                readonly property string ascUrl_Hovered: Config.imagePathPrefix + "0_Common/Table_Asc_Hover.png"
-                readonly property string descUrl: Config.imagePathPrefix + "0_Common/Table_Desc.png"
-                readonly property string descUrl_Hovered: Config.imagePathPrefix + "0_Common/Table_DescHover.png"
+                readonly property string ascUrl: Config.imagePathPrefix + "Table_Asc.png"
+                readonly property string ascUrl_Hovered: Config.imagePathPrefix + "Table_Asc_Hover.png"
+                readonly property string descUrl: Config.imagePathPrefix + "Table_Desc.png"
+                readonly property string descUrl_Hovered: Config.imagePathPrefix + "Table_DescHover.png"
 
                 property string ascImageUrl: (headerArea.containsMouse
                                               && !Config.isWhiteTheme) ? ascUrl_Hovered : ascUrl
