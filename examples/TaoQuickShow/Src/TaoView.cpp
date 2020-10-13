@@ -6,7 +6,7 @@
 #include <QQmlEngine>
 #include <QQuickItem>
 #include <QScreen>
-
+#include <QWindow>
 #if WIN32
 
 #include <WinUser.h>
@@ -47,11 +47,11 @@ static long hitTest(RECT winrect, long x, long y, int borderWidth)
 
 static bool isMaxWin(QWindow *win)
 {
-    return win->windowStates() & Qt::WindowMaximized;
+    return win->windowState() == Qt::WindowMaximized;
 }
 static bool isFullWin(QQuickView *win)
 {
-    return win->windowStates() & Qt::WindowFullScreen;
+    return win->windowState() == Qt::WindowFullScreen;
 }
 
 TaoView::TaoView(QWindow *parent)

@@ -1,4 +1,4 @@
-import QtQuick 2.12
+import QtQuick 2.9
 QtObject {
 
     property string fontFamily: "微软雅黑"

@@ -2,7 +2,6 @@
 #include "filereadwrite.h"
 #include <QDir>
 #include <QQmlContext>
-#include <QtConcurrent>
 #include <QCoreApplication>
 const static auto cEnglisthStr = QStringLiteral("English");
 const static auto cChineseStr = QStringLiteral("简体中文");
