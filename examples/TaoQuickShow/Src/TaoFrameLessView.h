@@ -2,23 +2,26 @@
 
 #include <QQuickView>
 //无边框窗口，支持拖动和改变大小，支持Windows平台Aero效果
-class TaoView : public QQuickView
+class TaoFrameLessView : public QQuickView
 {
     Q_OBJECT
     using Super = QQuickView;
     Q_PROPERTY(bool isMax READ isMax NOTIFY isMaxChanged)
 public:
-    explicit TaoView(QWindow *parent = nullptr);
-    ~TaoView();
+    explicit TaoFrameLessView(QWindow *parent = nullptr);
+    ~TaoFrameLessView();
     void moveToScreenCenter();
     bool isMax() const
     {
         return m_isMax;
     }
-
+    QQuickItem *titleItem() const
+    {
+        return m_titleItem;
+    }
 public slots:
     void setIsMax(bool isMax);
-
+    void setTitleItem(QQuickItem *item);
 signals:
     void isMaxChanged(bool isMax);
 
@@ -33,5 +36,6 @@ protected:
 #endif
 private:
     bool m_isMax;
+    QQuickItem *m_titleItem = nullptr;
 };
 

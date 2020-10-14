@@ -12,14 +12,15 @@ Button {
     property alias tipVisible: toolTip.visible
     property alias tipDelay: toolTip.delay
     property alias tipTimeout: toolTip.timeout
-
+    property bool containsMouse: hovered
+    property bool containsPressed: pressed
 
     property string btnImgNormal
     property string btnImgHovered
     property string btnImgPressed
     property string btnImgDisbaled
 
-    property string btnImgUr: {
+    property string btnImgUrl: {
         if (!cusButtonImage.enabled) {
             return btnImgDisbaled
         } else if (cusButtonImage.pressed) {
@@ -38,7 +39,7 @@ Button {
     }
     background: Image {
         id: backImage
-        source: btnImgUr
+        source: btnImgUrl
         width: sourceSize.width
         height: sourceSize.height
     }

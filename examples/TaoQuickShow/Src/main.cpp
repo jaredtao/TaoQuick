@@ -1,4 +1,4 @@
-#include "TaoView.h"
+#include "TaoFrameLessView.h"
 
 #include "AppInfo.h"
 #include "ComponentsManager.h"
@@ -22,11 +22,15 @@ int main(int argc, char** argv)
 {
     prepareApp();
     QGuiApplication app(argc, argv);
+#ifdef TAODEBUG
+    qSetMessagePattern("[%{time h:mm:ss.zzz} %{file} row(%{line}) %{function}] %{message}");
+#else
     Logger::initLog();
+#endif
     const auto appPath = QDir::cleanPath(app.applicationDirPath());
     qWarning() << "appPath" << appPath;
 
-    TaoView view;
+    TaoFrameLessView view;
 
     TaoFramework::instance()->setMainView(&view);
     TaoFramework::instance()->createObject<Trans>();
@@ -39,7 +43,7 @@ int main(int argc, char** argv)
     view.engine()->addImportPath(qmlPath);
 #ifdef TaoQuickImportPath
     view.engine()->addImportPath(TaoQuickImportPath);
-    qWarning() << TaoQuickImportPath;
+    qWarning() << "TaoQuickImportPath " << TaoQuickImportPath;
 #endif
 
 #ifdef TaoQuickImagePath
