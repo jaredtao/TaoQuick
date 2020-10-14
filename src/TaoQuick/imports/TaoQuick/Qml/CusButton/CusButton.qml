@@ -38,6 +38,7 @@ Button {
     BasicTooltip {
         id: toolTip
         visible: cusButton.hovered && String(text).length
+        delay: 500
     }
     contentItem: BasicText {
         text: cusButton.text

@@ -3,8 +3,8 @@ import QtQuick.Controls 2.2
 import TaoQuick 1.0
 
 CusButton_Image {
-
     btnImgUrl: imgPath + (containsMouse ? "Window/skin_white.png" : "Window/skin_gray.png")
+    tipText: qsTr("skin")
     onClicked: {
         skinBox.show()
     }

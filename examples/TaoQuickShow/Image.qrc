@@ -54,5 +54,9 @@
         <file>Image/Common/right.png</file>
         <file>Image/Common/right_hovered.png</file>
         <file>Image/Common/windmill.png</file>
+        <file>Image/Window/settings_gray.png</file>
+        <file>Image/Window/settings_white.png</file>
+        <file>Image/logo/milk_32.png</file>
+        <file>Image/logo/milk_48.png</file>
     </qresource>
 </RCC>

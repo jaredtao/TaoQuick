@@ -57,7 +57,7 @@ static bool isFullWin(QQuickView *win)
 TaoFrameLessView::TaoFrameLessView(QWindow *parent)
     : QQuickView(parent)
 {
-    setFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint);
+    setFlags(/*Qt::CustomizeWindowHint | */Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint);
     setResizeMode(SizeRootObjectToView);
     setColor(QColor(Qt::transparent));
     setMinimumSize({1024, 700});
