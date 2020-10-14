@@ -5,6 +5,7 @@ import TaoQuick 1.0
 
 CusButton_Image {
     btnImgUrl: imgPath + (containsMouse ? "Window/lang_white.png" : "Window/lang_gray.png")
+    tipText: qsTr("Language")
     onClicked: {
         pop.show()
     }
