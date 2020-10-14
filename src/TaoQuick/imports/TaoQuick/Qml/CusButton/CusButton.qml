@@ -12,6 +12,8 @@ Button {
     property alias tipDelay: toolTip.delay
     property alias tipTimeout: toolTip.timeout
 
+    property bool containsMouse: hovered
+    property bool containsPressed: pressed
     property color backgroundColorNormal
     property color backgroundColorHovered
     property color backgroundColorPressed
