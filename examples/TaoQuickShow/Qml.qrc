@@ -4,7 +4,6 @@
         <file>Qml/Page/MenuPage.qml</file>
         <file>Qml/Page/ContentPage.qml</file>
         <file>Qml/Page/TitlePage.qml</file>
-        <file>Qml/Page/NotifyBox.qml</file>
         <file>Qml/Page/ContentData.qml</file>
         <file>Qml/Page/AboutDialog.qml</file>
         <file>Qml/Biz/BackBtn.qml</file>
@@ -16,5 +15,6 @@
         <file>Qml/Biz/LangBtn.qml</file>
         <file>Qml/Biz/SkinBtn.qml</file>
         <file>Qml/Biz/TText.qml</file>
+        <file>Qml/Page/SettingsDialog.qml</file>
     </qresource>
 </RCC>

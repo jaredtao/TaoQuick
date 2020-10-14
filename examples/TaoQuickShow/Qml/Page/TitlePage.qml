@@ -2,6 +2,7 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
 import "../Biz"
+
 Rectangle {
     Row {
         anchors.left: parent.left
@@ -21,13 +22,15 @@ Rectangle {
     property bool isMaxed: view.isMax
     Row {
         id: controlButtons
-        height: 32
+        height: 16
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
         anchors.rightMargin: 20
         spacing: 20
         CusButton_Image {
-            btnImgUrl: imgPath + (containsMouse ? "Window/minimal_white.png" : "Window/minimal_gray.png")
+            btnImgUrl: imgPath
+                       + (containsMouse ? "Window/minimal_white.png" : "Window/minimal_gray.png")
+            tipText: qsTr("minimal")
             onClicked: {
                 view.showMinimized()
             }
@@ -35,13 +38,16 @@ Rectangle {
         CusButton_Image {
             visible: !isMaxed
             btnImgUrl: imgPath + (containsMouse ? "Window/max_white.png" : "Window/max_gray.png")
+            tipText: qsTr("maximize")
             onClicked: {
                 view.showMaximized()
             }
         }
         CusButton_Image {
             visible: isMaxed
-            btnImgUrl: imgPath + (containsMouse ? "Window/normal_white.png" : "Window/normal_gray.png")
+            btnImgUrl: imgPath
+                       + (containsMouse ? "Window/normal_white.png" : "Window/normal_gray.png")
+            tipText: qsTr("normal")
             onClicked: {
                 view.showNormal()
             }
@@ -54,15 +60,16 @@ Rectangle {
     }
     Rectangle {
         id: splitLine
-        height: parent.height * 0.6
+        height: parent.height * 0.4
         width: 1
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: controlButtons.left
         anchors.rightMargin: 10
+        color: "#323232"
     }
     Row {
         id: toolRow
-        height: 32
+        height: 16
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: splitLine.left
         anchors.rightMargin: 20
@@ -75,8 +82,18 @@ Rectangle {
         }
         CusButton_Image {
             anchors.verticalCenter: parent.verticalCenter
-
-            btnImgUrl: imgPath + (containsMouse ? "Window/about_white.png" : "Window/about_gray.png")
+            tipText: qsTr("Settings")
+            btnImgUrl: imgPath
+                       + (containsMouse ? "Window/settings_white.png" : "Window/settings_gray.png")
+            onClicked: {
+                settingDialog.show()
+            }
+        }
+        CusButton_Image {
+            anchors.verticalCenter: parent.verticalCenter
+            tipText: qsTr("About")
+            btnImgUrl: imgPath
+                       + (containsMouse ? "Window/about_white.png" : "Window/about_gray.png")
             onClicked: {
                 aboutDialog.show()
             }

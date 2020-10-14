@@ -1,5 +1,3 @@
-CONFIG += file_copies
-
 #一部分头文件加入编译预处理，提高编译速度
 msvc | gcc | xcode {
     CONFIG += precompile_header
@@ -40,7 +38,11 @@ CONFIG(debug, debug|release) {
 }
 
 !android:!ios {
+
+    CONFIG += file_copies
+
     trans.file = $$_PRO_FILE_PWD_/Trans
     trans.path = $$DESTDIR/Trans
     COPIES += trans
 }
+OTHER_FILES += $$_PRO_FILE_PWD_/Trans/*

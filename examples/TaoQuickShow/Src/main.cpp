@@ -61,6 +61,7 @@ int main(int argc, char** argv)
             TaoFramework::instance()->afterUiReady();
         }
     });
+    QObject::connect(view.engine(), &QQmlEngine::quit, qApp, &QCoreApplication::quit);
     view.setSource(url);
     view.moveToScreenCenter();
     view.show();

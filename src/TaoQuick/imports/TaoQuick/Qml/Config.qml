@@ -7,7 +7,8 @@ QtObject {
     objectName: "config"
     property bool isWhiteTheme: true
     property string imagePathPrefix: "file:///./../Images/"
-
+    property string fontFamily: "微软雅黑"
+    property int fontPixel: 14
     Component.onCompleted: {
         if (typeof (taoQuickImagePath) != "undefined" && taoQuickImagePath !== null
             && taoQuickImagePath.length > 0) {
