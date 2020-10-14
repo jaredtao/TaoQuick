@@ -1,8 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
-import "qrc:/TaoQuick"
-import "Biz"
+import "./Biz"
 Rectangle {
     Row {
         anchors.left: parent.left
@@ -22,33 +21,27 @@ Rectangle {
     property bool isMaxed: view.isMax
     Row {
         id: controlButtons
-        height: 20
+        height: 32
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
-        anchors.rightMargin: 12
-        spacing: 10
-        TImageBtn {
-            width: 20
-            height: 20
-            imageUrl: imgPath + (containsMouse ? "Window/minimal_white.png" : "Window/minimal_gray.png")
+        anchors.rightMargin: 20
+        spacing: 20
+        CusButton_Image {
+            btnImgUrl: imgPath + (containsMouse ? "Window/minimal_white.png" : "Window/minimal_gray.png")
             onClicked: {
                 view.showMinimized()
             }
         }
-        TImageBtn {
-            width: 20
-            height: 20
+        CusButton_Image {
             visible: !isMaxed
-            imageUrl: imgPath + (containsMouse ? "Window/max_white.png" : "Window/max_gray.png")
+            btnImgUrl: imgPath + (containsMouse ? "Window/max_white.png" : "Window/max_gray.png")
             onClicked: {
                 view.showMaximized()
             }
         }
-        TImageBtn {
-            width: 20
-            height: 20
+        CusButton_Image {
             visible: isMaxed
-            imageUrl: imgPath + (containsMouse ? "Window/normal_white.png" : "Window/normal_gray.png")
+            btnImgUrl: imgPath + (containsMouse ? "Window/normal_white.png" : "Window/normal_gray.png")
             onClicked: {
                 view.showNormal()
             }
@@ -61,37 +54,45 @@ Rectangle {
     }
     Rectangle {
         id: splitLine
-        height: 16
+        height: parent.height * 0.6
         width: 1
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: controlButtons.left
         anchors.rightMargin: 10
     }
     Row {
-        height: 20
+        id: toolRow
+        height: 32
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: splitLine.left
-        anchors.rightMargin: 10
-        spacing: 10
+        anchors.rightMargin: 20
+        spacing: 20
         SkinBtn {
-            width: 20
-            height: 20
             anchors.verticalCenter: parent.verticalCenter
         }
         LangBtn {
-            width: 20
-            height: 20
             anchors.verticalCenter: parent.verticalCenter
         }
-        TImageBtn {
-            width: 20
-            height: 20
+        CusButton_Image {
             anchors.verticalCenter: parent.verticalCenter
 
-            imageUrl: imgPath + (containsMouse ? "Window/about_white.png" : "Window/about_gray.png")
+            btnImgUrl: imgPath + (containsMouse ? "Window/about_white.png" : "Window/about_gray.png")
             onClicked: {
                 aboutDialog.show()
             }
+        }
+    }
+    property alias blankItem: blankItem
+    Item {
+        id: blankItem
+        anchors {
+            left: parent.left
+            right: toolRow.left
+            top: parent.top
+            bottom: parent.bottom
+        }
+        Component.onCompleted: {
+            view.setTitleItem(blankItem)
         }
     }
 }

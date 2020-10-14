@@ -1,10 +1,10 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
-import "qrc:/TaoQuick"
-TImageBtn {
 
-    imageUrl: imgPath + (containsMouse ? "Window/skin_white.png" : "Window/skin_gray.png")
+CusButton_Image {
+
+    btnImgUrl: imgPath + (containsMouse ? "Window/skin_white.png" : "Window/skin_gray.png")
     onClicked: {
         skinBox.show()
     }

@@ -57,7 +57,7 @@ or you can install TaoQuick to QTDIR.
 2. import in you qml
 ```
 import TaoQuick 1.0
-import "qrc:/TaoQuick"
+
 ```
 
 ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/TaoQuick-use.png)
