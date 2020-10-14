@@ -3,11 +3,9 @@ import QtQuick 2.9
 import TaoQuick 1.0
 
 
-TTextBtn {
+CusButton {
     id: root
     textColor: gConfig.textColor
-    textItem.font.pixelSize: gConfig.fontPixel
-    textItem.font.family:  gConfig.fontFamily
 
     Image {
         anchors {
