@@ -2,58 +2,52 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtGraphicalEffects 1.0
 import TaoQuick 1.0
+import "./Page"
 
-Rectangle {
-    id: rootView
+Item {
+    id: rootItem
     width: 1440
     height: 900
-    color: "lightblue"
-//    Component.onCompleted: {
-//        appInfo.splashShow = false;
-//    }
-//    Splash {
-//        id: splash
-//        anchors.centerIn: parent
-//    }
-//    Loader {
-//        id: loader
-//        source: "MainPage.qml"
-//        asynchronous: true
-//        opacity: 0
-//        anchors{
-//            fill: parent
-//            margins: 2
-//        }
-//        Behavior on opacity {
-//            NumberAnimation { duration: 800 }
-//        }
-//        onLoaded: {
-//            timer.start()
-//        }
-//    }
-//    Timer {
-//        id: timer
-//        interval: 800
-//        repeat: false
-//        triggeredOnStart: false
-//        onTriggered: {
-//            loader.opacity = 1
-//            splash.visible = false
-//        }
-//    }
-    CusButton_Blue {
-        text: "hello"
-        x: 80
-        y: 200
-        width: 120
-        height: 30
+    ContentData {
+        id: gConfig
     }
-    TFPS {
-        y: 10
-        x: 10
+
+    TitlePage {
+        id: title
+        width: parent.width
+        height: 60
+        color: gConfig.themeColor
     }
-    CusButton_Blue {
-        anchors.centerIn: parent
-        text: qsTr("Chinese")
+    Rectangle {
+        id: content
+        width: parent.width
+        anchors {
+            top: title.bottom
+            bottom: parent.bottom
+        }
+        color: gConfig.background
+        TFPS {
+            anchors {
+                right: parent.right
+                top: parent.top
+            }
+        }
+        CusButton_Blue {
+            text: qsTr("hello")
+            x: 80
+            y: 200
+            width: 120
+            height: 30
+        }
+        CusButton_Blue {
+            anchors.centerIn: parent
+            text: qsTr("Chinese")
+        }
+    }
+
+    DropShadow {
+        source: rootItem
+        radius: 8
+        color: "#007acc"
     }
 }

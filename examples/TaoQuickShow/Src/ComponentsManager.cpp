@@ -35,7 +35,7 @@ void ComponentsMgr::loadFolder(const QString& folder)
 #else
             comps.push_back("qrc" + subInfo.absoluteFilePath());
 #endif
-            qWarning() << "comp" << comps.back();
+//            qWarning() << "comp" << comps.back();
             compNames.push_back(subInfo.fileName());
         }
         module["comps"] = QJsonArray::fromStringList(comps);

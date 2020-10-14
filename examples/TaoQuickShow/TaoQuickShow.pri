@@ -7,16 +7,16 @@ msvc | gcc | xcode {
 }
 
 HEADERS += \
+    $$PWD/Src/TaoFrameLessView.h \
     $$PWD/Src/TaoObject.h \
     $$PWD/Src/TaoFramework.h \
-    $$PWD/Src/TaoView.h \
     $$PWD/Src/Trans.h \
     $$PWD/Src/AppInfo.h \
     $$PWD/Src/ComponentsManager.h
 
 SOURCES += \
+    $$PWD/Src/TaoFrameLessView.cpp \
     $$PWD/Src/TaoFramework.cpp \
-    $$PWD/Src/TaoView.cpp \
     $$PWD/Src/Trans.cpp \
     $$PWD/Src/AppInfo.cpp \
     $$PWD/Src/ComponentsManager.cpp \
@@ -40,7 +40,7 @@ CONFIG(debug, debug|release) {
 }
 
 !android:!ios {
-    trans.files = $$files($$_PRO_FILE_PWD_/Trans/language_*.json)
+    trans.file = $$_PRO_FILE_PWD_/Trans
     trans.path = $$DESTDIR/Trans
     COPIES += trans
 }

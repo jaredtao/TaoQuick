@@ -1,4 +1,4 @@
-#include "TaoView.h"
+#include "TaoFrameLessView.h"
 
 #include <QCursor>
 #include <QGuiApplication>
@@ -54,26 +54,32 @@ static bool isFullWin(QQuickView *win)
     return win->windowState() == Qt::WindowFullScreen;
 }
 
-TaoView::TaoView(QWindow *parent)
+TaoFrameLessView::TaoFrameLessView(QWindow *parent)
     : QQuickView(parent)
 {
-    setFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint);
+    setFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint);
     setResizeMode(SizeRootObjectToView);
     setColor(QColor(Qt::transparent));
-    setMinimumSize({1440, 960});
+    setMinimumSize({1024, 700});
     resize(1440, 960);
+
+    //WS_THICKFRAME 带回Areo效果
 #if WIN32
     DWORD style = ::GetWindowLong(HWND(winId()), GWL_STYLE);
-    style |= WS_MINIMIZEBOX | WS_THICKFRAME | WS_CAPTION;
+    style |= WS_THICKFRAME;
     ::SetWindowLong(HWND(winId()), GWL_STYLE, style);
 #endif
+
     setIsMax(isMaxWin(this));
     connect(this, &QWindow::windowStateChanged, this, [&](Qt::WindowState state) { setIsMax(state == Qt::WindowMaximized); });
 }
 
-TaoView::~TaoView() {}
-
-void TaoView::moveToScreenCenter()
+TaoFrameLessView::~TaoFrameLessView() {}
+void TaoFrameLessView::setTitleItem(QQuickItem *item)
+{
+    m_titleItem = item;
+}
+void TaoFrameLessView::moveToScreenCenter()
 {
     auto geo = screen()->availableGeometry();
     int  w = width();
@@ -83,7 +89,7 @@ void TaoView::moveToScreenCenter()
     update();
 }
 
-void TaoView::setIsMax(bool isMax)
+void TaoFrameLessView::setIsMax(bool isMax)
 {
     if (m_isMax == isMax)
         return;
@@ -97,7 +103,7 @@ const long border_width = 6;
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 bool TaoView::nativeEvent(const QByteArray &eventType, void *message, qintptr *result)
 #else
-bool TaoView::nativeEvent(const QByteArray &eventType, void *message, long *result)
+bool TaoFrameLessView::nativeEvent(const QByteArray &eventType, void *message, long *result)
 #endif
 {
     if (!result) {
@@ -113,16 +119,17 @@ bool TaoView::nativeEvent(const QByteArray &eventType, void *message, long *resu
             *result = mode ? WVR_REDRAW : 0;
 
             const auto clientRect = mode ? &(reinterpret_cast<LPNCCALCSIZE_PARAMS>(msg->lParam)->rgrc[0]) : reinterpret_cast<LPRECT>(msg->lParam);
+            //规避 拖动border进行resize时界面闪烁
             if (!isMaxWin(this) && !isFullWin(this)) {
                 if (clientRect->top != 0)
+                {
                     clientRect->top -= 1;
-            } else if (IsMaximized(HWND(winId()))) {
-                const int bw = ::GetSystemMetrics(SM_CXSIZEFRAME) + ::GetSystemMetrics(SM_CXPADDEDBORDER);
-                const int bh = ::GetSystemMetrics(SM_CYSIZEFRAME) + ::GetSystemMetrics(SM_CXPADDEDBORDER);
-                clientRect->top += bh;
-                clientRect->bottom -= bh;
-                clientRect->left += bw;
-                clientRect->right -= bw;
+                }
+            } else {
+                if (clientRect->top != 0)
+                {
+                    clientRect->top += 1;
+                }
             }
             return true;
         }
@@ -142,12 +149,18 @@ bool TaoView::nativeEvent(const QByteArray &eventType, void *message, long *resu
                     return true;
                 }
             }
-            double dpr = qApp->devicePixelRatio();
-            QPoint pos = mapFromGlobal(QPoint(x / dpr, y / dpr));
-            QRect  titleRect(border_width, border_width, width() * 0.8, 50);
-            if (titleRect.contains(pos)) {
-                *result = HTCAPTION;
-                return true;
+
+            if (m_titleItem)
+            {
+                auto titlePos = m_titleItem->mapToGlobal(m_titleItem->position());
+                titlePos = mapFromGlobal(titlePos.toPoint());
+                auto titleRect = QRect(titlePos.x(), titlePos.y(), m_titleItem->width(), m_titleItem->height());
+                double dpr = qApp->devicePixelRatio();
+                QPoint pos = mapFromGlobal(QPoint(x / dpr, y / dpr));
+                if (titleRect.contains(pos)) {
+                    *result = HTCAPTION;
+                    return true;
+                }
             }
             return false;
         } //end case WM_NCHITTEST
