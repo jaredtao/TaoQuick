@@ -26,6 +26,7 @@ CusButton_Image {
                 text: qsTr(modelData) 
                 backgroundColor: trans.currentLang === modelData ? gConfig.themeColor :( containsMouse ? "lightgray" : pop.barColor)
                 textColor: gConfig.textColor
+                borderWidth: 0
                 radius: 4
                 onClicked: {
 //                    pop.hide()

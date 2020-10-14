@@ -5,20 +5,16 @@
         <file>Qml/Page/ContentPage.qml</file>
         <file>Qml/Page/TitlePage.qml</file>
         <file>Qml/Page/NotifyBox.qml</file>
-        <file>Qml/Splash.qml</file>
-        <file>Qml/MainPage.qml</file>
         <file>Qml/Page/ContentData.qml</file>
         <file>Qml/Page/AboutDialog.qml</file>
-        <file>Qml/Page/Biz/Background.qml</file>
-        <file>Qml/Page/Biz/LangBtn.qml</file>
-        <file>Qml/Page/Biz/SkinBtn.qml</file>
-        <file>Qml/TBusyIndicator.qml</file>
-        <file>Qml/Page/Biz/CompDetail.qml</file>
-        <file>Qml/Page/Biz/CompCard.qml</file>
-        <file>Qml/Page/Biz/TText.qml</file>
-        <file>Qml/Page/Biz/CircleText.qml</file>
-        <file>Qml/Page/Biz/CloseBtn.qml</file>
-        <file>Qml/Page/Biz/CompBtn.qml</file>
-        <file>Qml/Page/Biz/BackBtn.qml</file>
+        <file>Qml/Biz/BackBtn.qml</file>
+        <file>Qml/Biz/CircleText.qml</file>
+        <file>Qml/Biz/CloseBtn.qml</file>
+        <file>Qml/Biz/CompBtn.qml</file>
+        <file>Qml/Biz/CompCard.qml</file>
+        <file>Qml/Biz/CompDetail.qml</file>
+        <file>Qml/Biz/LangBtn.qml</file>
+        <file>Qml/Biz/SkinBtn.qml</file>
+        <file>Qml/Biz/TText.qml</file>
     </qresource>
 </RCC>
