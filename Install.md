@@ -68,7 +68,7 @@ TaoQuick库将被安装到{QTDIR}/qml/TaoQuick/ 路径下。
 2. 在你的Qml中写上这两句，就完成了TaoQuick的导入
 ```
 import TaoQuick 1.0
-import "qrc:/TaoQuick"
+
 ```
 
 ![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/TaoQuick-use.png)

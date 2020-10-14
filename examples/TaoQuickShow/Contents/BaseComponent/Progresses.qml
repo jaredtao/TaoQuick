@@ -2,7 +2,7 @@
 import QtQuick.Controls 2.2
 
 import TaoQuick 1.0
-import "qrc:/TaoQuick"
+
 
 Item {
     id: r

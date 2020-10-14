@@ -1,12 +1,11 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
-import "qrc:/TaoQuick"
 
-TImageBtn {
-    imageUrl: imgPath + (containsMouse ? "Window/lang_white.png" : "Window/lang_gray.png")
+
+CusButton_Image {
+    btnImgUrl: imgPath + (containsMouse ? "Window/lang_white.png" : "Window/lang_gray.png")
     onClicked: {
-        //                notifyBox.notify("change language")
         pop.show()
     }
     TPopup {
@@ -20,11 +19,12 @@ TImageBtn {
             anchors.margins: 2
             model: trans.languages
             clip: true
-            delegate: TTextBtn {
+            delegate: CusButton {
+                id: dBtn
                 width: langListView.width
                 height: 36
                 text: qsTr(modelData) 
-                color: trans.currentLang === modelData ? gConfig.themeColor :( containsMouse ? "lightgray" : pop.barColor)
+                backgroundColor: trans.currentLang === modelData ? gConfig.themeColor :( containsMouse ? "lightgray" : pop.barColor)
                 textColor: gConfig.textColor
                 radius: 4
                 onClicked: {

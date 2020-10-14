@@ -1,7 +1,7 @@
 TEMPLATE = app
 TARGET = TaoQuickApp
 
-QT += qml quick
+QT += core gui qml quick
 
 CONFIG += c++17 qtquickcompiler utf8_source
 
@@ -11,8 +11,8 @@ setTaoVersion()
 load(taoBundle)
 BundlePath = $$getBundlePath("TaoQuickApp")
 
-load(taoBuildPath)
-setBuildPath($${TaoQuick_BUILD_TREE}/$${TARGET})
+#load(taoBuildPath)
+#setBuildPath($${TaoQuick_BUILD_TREE}/$${TARGET})
 
 CONFIG(debug,debug|release) {
     DESTDIR = $${TaoQuick_RUN_TREE}/debug
