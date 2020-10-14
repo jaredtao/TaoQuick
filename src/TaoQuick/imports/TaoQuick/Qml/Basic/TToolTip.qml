@@ -26,6 +26,7 @@ Item {
     }
     BasicTooltip {
         id: toolTip
+        delay: 200
         contentItem: BasicText {
             text: toolTip.text
         }

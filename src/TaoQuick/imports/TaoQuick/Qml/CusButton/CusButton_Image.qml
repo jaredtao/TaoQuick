@@ -36,6 +36,7 @@ Button {
     BasicTooltip {
         id: toolTip
         visible: cusButtonImage.hovered && String(text).length
+        delay: 500
     }
     background: Image {
         id: backImage
