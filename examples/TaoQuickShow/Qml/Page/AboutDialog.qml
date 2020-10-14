@@ -17,9 +17,13 @@ Popup {
         color: gConfig.themeColor
         border.width: 1
         border.color: gConfig.reserverColor
-        TMoveArea {
+        MoveArea {
             anchors.fill: parent
             control: root
+            onMove: {
+                root.x += xOffset
+                root.y += yOffset
+            }
         }
         Image {
             id: img
@@ -28,13 +32,13 @@ Popup {
             anchors.verticalCenter: parent.verticalCenter
             source: imgPath + "logo/milk.png"
         }
-        TTextBtn {
+        CusButton {
             id: closeBtn
             text: qsTr("Close") 
             width: 80
             height: 38
             radius: 8
-            color: containsPress ? Qt.darker(gConfig.background, 1.2) : (containsMouse ? Qt.lighter(gConfig.background, 1.2) : gConfig.background)
+            backgroundColor: containsPress ? Qt.darker(gConfig.background, 1.2) : (containsMouse ? Qt.lighter(gConfig.background, 1.2) : gConfig.background)
             textColor: gConfig.textColor
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
