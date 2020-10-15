@@ -5,20 +5,20 @@ import "../.."
 Slider {
     id: cusSlider
     implicitWidth: 200
-    height: Config.fixedHeight
-    property bool showNumber: false
+    height: CusConfig.fixedHeight
+    property bool showNumber: true
     background: Rectangle {
         x: cusSlider.leftPadding
         y: cusSlider.topPadding + cusSlider.availableHeight / 2 - height /2
         implicitHeight: 4
         width: cusSlider.availableWidth
         height: implicitHeight
-        radius: Config.controlBorderRadius
-        color: Config.controlBorderColor
+        radius: CusConfig.controlBorderRadius
+        color: CusConfig.controlBorderColor
         Rectangle {
             width: cusSlider.visualPosition * parent.width
             height: parent.height
-            color: Config.controlBorderColor_hovered
+            color: CusConfig.controlBorderColor_hovered
             radius: parent.radius
         }
     }
@@ -29,8 +29,8 @@ Slider {
         implicitWidth: showNumber ? 24 : 16
         implicitHeight: implicitWidth
         radius: width / 2
-        color: handleArea.handlePressed ? Config.controlBackgroundColor_highlight : (handleArea.handleHovered ? Config.controlBackgroundColor_hovered : Config.controlBackgroundColor)
-        border.color: (handleArea.handleHovered || handleArea.handlePressed || handleArea.focus) ? Config.controlBorderColor_hovered : Config.controlBorderColor
+        color: handleArea.handlePressed ? CusConfig.controlColor_pressed : (handleArea.handleHovered ? CusConfig.controlColor_hovered : CusConfig.controlColor)
+        border.color: (handleArea.handleHovered || handleArea.handlePressed || handleArea.focus) ? CusConfig.controlBorderColor_hovered : CusConfig.controlBorderColor
         border.width: 1
         CusLabel {
             visible: showNumber
@@ -38,7 +38,7 @@ Slider {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             text: parseInt(cusSlider.value)
-            color: (handleArea.handleHovered || handleArea.handlePressed) ? Config.controlTextColor_highlight : Config.textColor
+            color: (handleArea.handleHovered || handleArea.handlePressed) ? CusConfig.textColor_pressed : CusConfig.textColor
         }
         TransArea {
             id: handleArea

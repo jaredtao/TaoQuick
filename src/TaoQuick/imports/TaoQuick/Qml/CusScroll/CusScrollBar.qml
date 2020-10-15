@@ -6,10 +6,10 @@ ScrollBar {
     id: cusTirangleTipBorder
     property bool isSmaller: true
     contentItem: Rectangle {
-        implicitWidth: isSmaller ?  Config.scrollBarSize_Smaller : Config.scrollBarSize
-        implicitHeight: isSmaller ?  Config.scrollBarSize_Smaller : Config.scrollBarSize
-        radius: Config.scrollBarRadius
-        color: Config.scrollBarBackgroundColor
+        implicitWidth: isSmaller ?  CusConfig.scrollBarSize_Smaller : CusConfig.scrollBarSize
+        implicitHeight: isSmaller ?  CusConfig.scrollBarSize_Smaller : CusConfig.scrollBarSize
+        radius: CusConfig.scrollBarRadius
+        color: CusConfig.scrollBarBackgroundColor
         TransArea{
             id: t
             onEntered: {

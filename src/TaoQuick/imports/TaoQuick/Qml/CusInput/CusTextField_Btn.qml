@@ -8,10 +8,10 @@ CusTextField {
     property Component rightBtn: nullptr
 
     background: Rectangle  {
-        color: (cusTextFieldBtn.enabled && !cusTextFieldBtn.readOnly) ? Config.controlBackgroundColor : Config.controlBackgroundColor_disabled
-        radius: Config.controlBorderRadius
+        color: (cusTextFieldBtn.enabled && !cusTextFieldBtn.readOnly) ? CusConfig.controlColor : CusConfig.controlColor_disabled
+        radius: CusConfig.controlBorderRadius
         border.width: 1
-        border.color: (cusTextFieldBtn.enabled && !cusTextFieldBtn.readOnly && (cusTextFieldBtn.hovered || cusTextFieldBtn.focus)) ? Config.controlBorderColor_hovered : Config.controlBorderColor
+        border.color: (cusTextFieldBtn.enabled && !cusTextFieldBtn.readOnly && (cusTextFieldBtn.hovered || cusTextFieldBtn.focus)) ? CusConfig.controlBorderColor_hovered : CusConfig.controlBorderColor
 
         Loader {
             sourceComponent: rightBtn

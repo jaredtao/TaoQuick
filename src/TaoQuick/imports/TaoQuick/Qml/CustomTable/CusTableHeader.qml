@@ -6,7 +6,7 @@ import "../.."
 
 Item {
     id: deviceAddHeader
-    height: Config.fixedHeight
+    height: CusConfig.fixedHeight
     property bool isSpliting: false
     property bool isOut: false
     property real mouseX
@@ -65,13 +65,13 @@ Item {
     }
     Rectangle {
         id: header0
-        color: Config.tableHeaderBackgroundColor
+        color: CusConfig.controlColor
         width: widthList[0]
-        height: Config.fixedHeight
+        height: CusConfig.fixedHeight
         CusCheckBox {
             id: checkAllBox
             anchors.centerIn: parent
-            height: Config.fixedHeight
+            height: CusConfig.fixedHeight
             width: height
             property bool notify: true
             onCheckedChanged: {
@@ -93,15 +93,15 @@ Item {
         model: headerRoles
         Rectangle {
             x: xList[index + 1]
-            height: Config.fixedHeight
+            height: CusConfig.fixedHeight
             width: widthList[index + 1]
-            color: Config.tableHeaderBackgroundColor
+            color: CusConfig.controlColor
             CusLabel {
                 anchors.fill: parent
                 text: qsTr(headerNames[index])
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                color: Config.controlTextColor_highlight
+                color: CusConfig.textColor_pressed
             }
             Rectangle {
                 width: 1
@@ -113,22 +113,20 @@ Item {
                     bottomMargin: 2
                 }
                 color: (moveArea.pressed
-                        || moveArea.containsMouse) ? "#000000" : Config.tableHeaderBorderColor
+                        || moveArea.containsMouse) ? CusConfig.controlBorderColor_pressed : CusConfig.controlBorderColor
             }
             CusImage {
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                     top: parent.top
                 }
-                readonly property string ascUrl: Config.imagePathPrefix + "Table_Asc.png"
-                readonly property string ascUrl_Hovered: Config.imagePathPrefix + "Table_Asc_Hover.png"
-                readonly property string descUrl: Config.imagePathPrefix + "Table_Desc.png"
-                readonly property string descUrl_Hovered: Config.imagePathPrefix + "Table_DescHover.png"
+                readonly property string ascUrl: CusConfig.imagePathPrefix + "Table_Asc.png"
+                readonly property string ascUrl_Hovered: CusConfig.imagePathPrefix + "Table_Asc_Hover.png"
+                readonly property string descUrl: CusConfig.imagePathPrefix + "Table_Desc.png"
+                readonly property string descUrl_Hovered: CusConfig.imagePathPrefix + "Table_DescHover.png"
 
-                property string ascImageUrl: (headerArea.containsMouse
-                                              && !Config.isWhiteTheme) ? ascUrl_Hovered : ascUrl
-                property string descImageUrl: (headerArea.containsMouse
-                                               && !Config.isWhiteTheme) ? descUrl_Hovered : descUrl
+                property string ascImageUrl: (headerArea.containsMouse) ? ascUrl_Hovered : ascUrl
+                property string descImageUrl: (headerArea.containsMouse) ? descUrl_Hovered : descUrl
 
                 source: visible ? (dataObj.sortOrder === 0 ? ascImageUrl : descImageUrl) : ""
 

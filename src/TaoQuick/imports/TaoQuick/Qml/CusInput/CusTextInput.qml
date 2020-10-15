@@ -4,10 +4,10 @@ import ".."
 import "../.."
 TextInput {
     id: cusTextField
-    height: Config.fixedHeight
+    height: CusConfig.fixedHeight
     selectByMouse: true
-    color: Config.textColor
-    maximumLength: Config.maximumLength
-    selectionColor: Config.controlBackgroundColor_highlight
-    selectedTextColor: Config.controlTextColor_highlight
+    color: CusConfig.textColor
+    maximumLength: CusConfig.maximumLength
+    selectionColor: CusConfig.controlColor_pressed
+    selectedTextColor: CusConfig.textColor_pressed
 }

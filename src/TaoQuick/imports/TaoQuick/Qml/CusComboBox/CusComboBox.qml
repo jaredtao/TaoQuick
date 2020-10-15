@@ -5,21 +5,21 @@ import "../.."
 
 ComboBox {
     id: cusComboBox
-    height: Config.fixedHeight
+    height: CusConfig.fixedHeight
     leftPadding: 4
     rightPadding: 4
     currentIndex: 0
-    readonly property string imgUrlNormal: Config.imagePathPrefix + "ComboBox_Down.png"
-    readonly property string imgUrlHovered: Config.imagePathPrefix + "ComboBox_Down_Hover.png"
+    readonly property string imgUrlNormal: CusConfig.imagePathPrefix + "ComboBox_Down.png"
+    readonly property string imgUrlHovered: CusConfig.imagePathPrefix + "ComboBox_Down_Hover.png"
 
-    property real defaultHeight: Config.fixedHeight * 6
+    property real defaultHeight: CusConfig.fixedHeight * 6
     displayText: qsTr(currentText)
     background: Rectangle {
-        color: cusComboBox.enabled ? Config.controlBackgroundColor : Config.controlBackgroundColor_disabled
-        radius: Config.controlBorderRadius
+        color: cusComboBox.enabled ? CusConfig.controlColor : CusConfig.controlColor_disabled
+        radius: CusConfig.controlBorderRadius
         border.width: 1
         border.color: cusComboBox.focus
-                      || cusComboBox.hovered ? Config.controlBorderColor_hovered : Config.controlBorderColor
+                      || cusComboBox.hovered ? CusConfig.controlBorderColor_hovered : CusConfig.controlBorderColor
     }
     contentItem: CusLabel {
         leftPadding: cusComboBox.leftPadding
@@ -29,7 +29,7 @@ ComboBox {
         horizontalAlignment: Text.AlignLeft
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
-        color: cusComboBox.enabled ? Config.textColor : Config.controlTextColor_disable
+        color: cusComboBox.enabled ? CusConfig.textColor : CusConfig.textColor_disabled
         TransArea {
             enabled: cusComboBox.enabled
         }
@@ -71,18 +71,16 @@ ComboBox {
                 policy: (cusComboBox.popup.height
                          >= cusComboBox.defaultHeight) ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
             }
-            TransArea {
-                enabled: cusComboBox.enabled
-            }
         }
 
         background: Rectangle {
-            color: Config.controlBackgroundColor
-            //            radius: Config.comboBoxBorderRadius
+            color: CusConfig.controlColor
+//            radius: CusConfig.controlBorderRadius
             border.width: 1
-            border.color: Config.controlBorderColor
+            border.color: CusConfig.controlBorderColor
         }
     }
+    property int hoveredIndex: -1
     delegate: ItemDelegate {
         width: cusComboBox.width
         height: cusComboBox.height
@@ -94,14 +92,24 @@ ComboBox {
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
-            color: cusComboBox.highlightedIndex
-                   === index ? Config.controlTextColor_highlight : Config.textColor
+            color: cusComboBox.hoveredIndex
+                   === index ? CusConfig.textColor_pressed : CusConfig.textColor
         }
-        highlighted: cusComboBox.highlightedIndex === index
+        highlighted: cusComboBox.hoveredIndex === index
         background: Rectangle {
             width: cusComboBox.width
             height: cusComboBox.height
-            color: cusComboBox.highlightedIndex === index ? Config.controlBackgroundColor_highlight : (cusComboBox.currentIndex === index ? Config.controlBackgroundColor_hovered : Config.controlBackgroundColor)
+            color: cusComboBox.hoveredIndex === index ? CusConfig.controlColor_hovered : (cusComboBox.currentIndex === index ? CusConfig.controlColor_pressed : CusConfig.controlColor)
+        }
+        TransArea {
+            enabled: cusComboBox.enabled
+            onContainsMouseChanged: {
+                if (containsMouse) {
+                    cusComboBox.hoveredIndex = index
+                } else {
+                    cusComboBox.hoveredIndex = -1
+                }
+            }
         }
     }
 }

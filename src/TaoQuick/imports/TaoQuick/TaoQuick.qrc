@@ -1,26 +1,19 @@
 ﻿<RCC>
     <qresource prefix="/TaoQuick">
         <file>qmldir</file>
-        <file>Qml/Config.qml</file>
+        <file>Qml/CusConfig.qml</file>
         <file>Qml/Basic/BasicText.qml</file>
         <file>Qml/Basic/BasicTooltip.qml</file>
         <file>Qml/Basic/MoveArea.qml</file>
-        <file>Qml/Basic/RectDraw.qml</file>
-        <file>Qml/Basic/ShortCutKeys.qml</file>
         <file>Qml/Basic/TransArea.qml</file>
-        <file>Qml/Basic/TToolTip.qml</file>
         <file>Qml/CusBackground/CusBackground.qml</file>
-        <file>Qml/CusBackground/CusBackground_0.qml</file>
-        <file>Qml/CusBackground/CusBackground_1.qml</file>
-        <file>Qml/CusBackground/CusBackground_2.qml</file>
-        <file>Qml/CusBackground/CusBackground_3.qml</file>
         <file>Qml/CusButton/CusButton.qml</file>
         <file>Qml/CusButton/CusButton_Blue.qml</file>
+        <file>Qml/CusButton/CusButton_Gradient.qml</file>
         <file>Qml/CusButton/CusButton_Image.qml</file>
         <file>Qml/CusButton/CusButton_Red.qml</file>
         <file>Qml/CusButton/CusButton_White.qml</file>
         <file>Qml/CusButton/CusSwitch.qml</file>
-        <file>Qml/CusButton/TGradientBtn.qml</file>
         <file>Qml/CusCheckBox/CusCheckBox.qml</file>
         <file>Qml/CusComboBox/CusComboBox.qml</file>
         <file>Qml/CusImage/CusImage.qml</file>
@@ -31,16 +24,10 @@
         <file>Qml/CusInput/CusTextField_Valid.qml</file>
         <file>Qml/CusInput/CusTextInput.qml</file>
         <file>Qml/CusLabel/CusLabel.qml</file>
-        <file>Qml/CusLabel/H0.qml</file>
-        <file>Qml/CusLabel/H1.qml</file>
-        <file>Qml/CusLabel/H2.qml</file>
-        <file>Qml/CusLabel/H3.qml</file>
-        <file>Qml/CusLabel/H4.qml</file>
-        <file>Qml/CusLabel/H5.qml</file>
+        <file>Qml/CusPopup/CusPopup.qml</file>
+        <file>Qml/CusPopup/CusToolTip_Triangle.qml</file>
         <file>Qml/CusPopup/CusTriangleTipBorder.qml</file>
-        <file>Qml/CusPopup/TPopup.qml</file>
         <file>Qml/CusScroll/CusScrollBar.qml</file>
-        <file>Qml/CusScroll/CusScrollBar_Vertical.qml</file>
         <file>Qml/CusSlider/CusSlider.qml</file>
         <file>Qml/CusSlider/CusSlider_Spin.qml</file>
         <file>Qml/CusSpinBox/CusSpinBox.qml</file>
@@ -49,8 +36,8 @@
         <file>Qml/CustomTable/CusTableHeader.qml</file>
         <file>Qml/CustomTable/CusTableRow.qml</file>
         <file>Qml/CustomTable/CusTableView.qml</file>
-        <file>Qml/Effect/TCommon.qml</file>
-        <file>Qml/Effect/TShaderToy.qml</file>
+        <file>Qml/Effect/CusEffectCommon.qml</file>
+        <file>Qml/Effect/CusShaderToy.qml</file>
         <file>Qml/Effect/Animation/ABoard.qml</file>
         <file>Qml/Effect/Animation/ACircle.qml</file>
         <file>Qml/Effect/Animation/ACleavage.qml</file>
@@ -78,11 +65,13 @@
         <file>Qml/Effect/PageSwitch/SSector.qml</file>
         <file>Qml/Effect/PageSwitch/SSquare.qml</file>
         <file>Qml/Effect/PageSwitch/SWheel.qml</file>
-        <file>Qml/Misc/TBusyIndicator.qml</file>
-        <file>Qml/Misc/TDialog.qml</file>
-        <file>Qml/Misc/TDragItem.qml</file>
-        <file>Qml/Misc/TFPS.qml</file>
-        <file>Qml/Misc/TResizeBorder.qml</file>
+        <file>Qml/Misc/CusBusyIndicator.qml</file>
+        <file>Qml/Misc/CusDialog.qml</file>
+        <file>Qml/Misc/CusDragItem.qml</file>
+        <file>Qml/Misc/CusFPS.qml</file>
+        <file>Qml/Misc/CusRectDraw.qml</file>
+        <file>Qml/Misc/CusResizeBorder.qml</file>
+        <file>Qml/Misc/CusShortCutKeys.qml</file>
         <file>Images/Checkbox_16.png</file>
         <file>Images/Checkbox_16_Checked.png</file>
         <file>Images/Checkbox_16_Checked_Disable.png</file>

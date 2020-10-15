@@ -16,7 +16,7 @@ function WriteMetaInfoEnd {
 function WriteMetaInfo {
     $info = $args[0]
     if ($info -is [System.IO.FileInfo]) {
-        if ($info.BaseName -eq "Config" -or $info.BaseName.EndsWith("Constant") -or $info.BaseName -eq "TCommon" ) {
+        if ($info.BaseName.EndsWith("Config") -or $info.BaseName.EndsWith("Constant") -or $info.BaseName.EndsWith("Common" )) {
             return
         }
         $filePath = Resolve-Path -Relative $info.Directory
