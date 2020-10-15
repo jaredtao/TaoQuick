@@ -19,7 +19,7 @@ function WriteQmlDirLine {
         }
 
         $line = ($info.BaseName, $ver, $filePath) -join " "
-        if ($info.BaseName -eq "Config" -or $info.BaseName.EndsWith("Constant") -or $info.BaseName -eq "TCommon" ) {
+        if ($info.BaseName.EndsWith("Config") -or $info.BaseName.EndsWith("Constant") -or $info.BaseName.EndsWith("Common" )) {
             $line = ($single, $line) -join " "
         }
         Out-File -Append -Encoding "utf8"  -FilePath $qmldirFileName  -InputObject $line
