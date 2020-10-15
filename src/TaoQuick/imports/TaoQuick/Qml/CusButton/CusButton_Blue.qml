@@ -1,8 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-import ".."
+
 CusButton {
-    height: Config.fixedHeight
     backgroundColorNormal: "#38a9e4"
     backgroundColorHovered: "#47c0ff"
     backgroundColorPressed: "#108bcd"

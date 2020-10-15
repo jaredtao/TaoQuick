@@ -3,7 +3,7 @@ import QtQuick.Controls 2.2
 import ".."
 import "../.."
 Row {
-    height: Config.fixedHeight
+    height: CusConfig.fixedHeight
     spacing: 0
     property alias value: slider.value
     property alias from: slider.from
@@ -11,16 +11,16 @@ Row {
     property alias stepSize: slider.stepSize
     CusSlider {
         id: slider
-        height: Config.fixedHeight
-        width: parent.width * 0.88
+        height: CusConfig.fixedHeight
+        width: parent.width * 0.8
         onValueChanged: {
             spinBox.value = value
         }
     }
     CusSpinBox {
         id: spinBox
-        height: Config.fixedHeight
-        width: parent.width * 0.12
+        height: CusConfig.fixedHeight
+        width: parent.width * 0.2
         value: slider.value
         from: slider.from
         to: slider.to

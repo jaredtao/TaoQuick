@@ -5,39 +5,39 @@ import "../.."
 
 TextField {
     id: cusTextField
-    height: Config.fixedHeight
+    height: CusConfig.fixedHeight
     hoverEnabled: enabled
     selectByMouse: true
-    color: Config.textColor
-    maximumLength: Config.maximumLength
-    selectionColor: Config.controlBackgroundColor_highlight
-    selectedTextColor: Config.controlTextColor_highlight
+    color: CusConfig.textColor
+    maximumLength: CusConfig.maximumLength
+    selectionColor: CusConfig.controlColor_pressed
+    selectedTextColor: CusConfig.textColor_pressed
     property bool invalid: false
     onTextChanged: {
         invalid = false
     }
     background: Rectangle {
         color: (cusTextField.enabled
-                && !cusTextField.readOnly) ? Config.controlBackgroundColor : Config.controlBackgroundColor_disabled
-        radius: Config.controlBorderRadius
+                && !cusTextField.readOnly) ? CusConfig.controlColor : CusConfig.controlColor_disabled
+        radius: CusConfig.controlBorderRadius
         border.width: 1
         border.color: {
             if (cusTextField.enabled) {
                 if (cusTextField.readOnly) {
-                    return Config.controlBorderColor
+                    return CusConfig.controlBorderColor
                 } else {
                     if (cusTextField.invalid) {
-                        return Config.invalidColor
+                        return CusConfig.invalidColor
                     } else {
                         if (cusTextField.hovered || cusTextField.focus) {
-                            return Config.controlBorderColor_hovered
+                            return CusConfig.controlBorderColor_hovered
                         } else {
-                            return Config.controlBorderColor
+                            return CusConfig.controlBorderColor
                         }
                     }
                 }
             } else {
-                return Config.controlBorderColor
+                return CusConfig.controlBorderColor
             }
         }
     }

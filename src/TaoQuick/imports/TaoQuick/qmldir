@@ -1,27 +1,16 @@
 ﻿module TaoQuick
 BasicText 1.0 Qml/Basic/BasicText.qml
 BasicTooltip 1.0 Qml/Basic/BasicTooltip.qml
-DrawRect 1.0 Qml/Basic/DrawRect.qml
 MoveArea 1.0 Qml/Basic/MoveArea.qml
-RectDraw 1.0 Qml/Basic/RectDraw.qml
-ShortCutKeys 1.0 Qml/Basic/ShortCutKeys.qml
 TransArea 1.0 Qml/Basic/TransArea.qml
-TToolTip 1.0 Qml/Basic/TToolTip.qml
 CusBackground 1.0 Qml/CusBackground/CusBackground.qml
-CusBackground_0 1.0 Qml/CusBackground/CusBackground_0.qml
-CusBackground_1 1.0 Qml/CusBackground/CusBackground_1.qml
-CusBackground_2 1.0 Qml/CusBackground/CusBackground_2.qml
-CusBackground_3 1.0 Qml/CusBackground/CusBackground_3.qml
 CusButton 1.0 Qml/CusButton/CusButton.qml
 CusButton_Blue 1.0 Qml/CusButton/CusButton_Blue.qml
+CusButton_Gradient 1.0 Qml/CusButton/CusButton_Gradient.qml
 CusButton_Image 1.0 Qml/CusButton/CusButton_Image.qml
 CusButton_Red 1.0 Qml/CusButton/CusButton_Red.qml
 CusButton_White 1.0 Qml/CusButton/CusButton_White.qml
 CusSwitch 1.0 Qml/CusButton/CusSwitch.qml
-TGradientBtn 1.0 Qml/CusButton/TGradientBtn.qml
-TImageBtn 1.0 Qml/CusButton/TImageBtn.qml
-TImgTextBtn 1.0 Qml/CusButton/TImgTextBtn.qml
-TTextBtn 1.0 Qml/CusButton/TTextBtn.qml
 CusCheckBox 1.0 Qml/CusCheckBox/CusCheckBox.qml
 CusComboBox 1.0 Qml/CusComboBox/CusComboBox.qml
 CusImage 1.0 Qml/CusImage/CusImage.qml
@@ -32,16 +21,10 @@ CusTextField_Search 1.0 Qml/CusInput/CusTextField_Search.qml
 CusTextField_Valid 1.0 Qml/CusInput/CusTextField_Valid.qml
 CusTextInput 1.0 Qml/CusInput/CusTextInput.qml
 CusLabel 1.0 Qml/CusLabel/CusLabel.qml
-H0 1.0 Qml/CusLabel/H0.qml
-H1 1.0 Qml/CusLabel/H1.qml
-H2 1.0 Qml/CusLabel/H2.qml
-H3 1.0 Qml/CusLabel/H3.qml
-H4 1.0 Qml/CusLabel/H4.qml
-H5 1.0 Qml/CusLabel/H5.qml
+CusPopup 1.0 Qml/CusPopup/CusPopup.qml
+CusToolTip_Triangle 1.0 Qml/CusPopup/CusToolTip_Triangle.qml
 CusTriangleTipBorder 1.0 Qml/CusPopup/CusTriangleTipBorder.qml
-TPopup 1.0 Qml/CusPopup/TPopup.qml
 CusScrollBar 1.0 Qml/CusScroll/CusScrollBar.qml
-CusScrollBar_Vertical 1.0 Qml/CusScroll/CusScrollBar_Vertical.qml
 CusSlider 1.0 Qml/CusSlider/CusSlider.qml
 CusSlider_Spin 1.0 Qml/CusSlider/CusSlider_Spin.qml
 CusSpinBox 1.0 Qml/CusSpinBox/CusSpinBox.qml
@@ -77,14 +60,13 @@ SRhombus 1.0 Qml/Effect/PageSwitch/SRhombus.qml
 SSector 1.0 Qml/Effect/PageSwitch/SSector.qml
 SSquare 1.0 Qml/Effect/PageSwitch/SSquare.qml
 SWheel 1.0 Qml/Effect/PageSwitch/SWheel.qml
-TKLine 1.0 Qml/Effect/Shapes/TKLine.qml
-TRoundRect 1.0 Qml/Effect/Shapes/TRoundRect.qml
-singleton TCommon 1.0 Qml/Effect/TCommon.qml
-TShaderToy 1.0 Qml/Effect/TShaderToy.qml
-CallLatter 1.0 Qml/Misc/CallLatter.qml
-TBusyIndicator 1.0 Qml/Misc/TBusyIndicator.qml
-TDialog 1.0 Qml/Misc/TDialog.qml
-TDragItem 1.0 Qml/Misc/TDragItem.qml
-TFPS 1.0 Qml/Misc/TFPS.qml
-TResizeBorder 1.0 Qml/Misc/TResizeBorder.qml
-singleton Config 1.0 Qml/Config.qml
+singleton CusEffectCommon 1.0 Qml/Effect/CusEffectCommon.qml
+CusShaderToy 1.0 Qml/Effect/CusShaderToy.qml
+CusBusyIndicator 1.0 Qml/Misc/CusBusyIndicator.qml
+CusDialog 1.0 Qml/Misc/CusDialog.qml
+CusDragItem 1.0 Qml/Misc/CusDragItem.qml
+CusFPS 1.0 Qml/Misc/CusFPS.qml
+CusRectDraw 1.0 Qml/Misc/CusRectDraw.qml
+CusResizeBorder 1.0 Qml/Misc/CusResizeBorder.qml
+CusShortCutKeys 1.0 Qml/Misc/CusShortCutKeys.qml
+singleton CusConfig 1.0 Qml/CusConfig.qml

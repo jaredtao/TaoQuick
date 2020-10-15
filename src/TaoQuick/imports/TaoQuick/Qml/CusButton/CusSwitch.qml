@@ -4,8 +4,8 @@ import ".."
 import "../.."
 Switch {
     id: cusSwitch
-    implicitWidth: 26
-    implicitHeight: 16
+    implicitWidth: 36
+    implicitHeight: 20
     property color backgroundColor_on :"#579ee5"
     property color indicatorColor_on: "#ffffff"
 

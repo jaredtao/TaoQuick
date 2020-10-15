@@ -5,7 +5,7 @@ import "../.."
 
 CheckBox {
     id: cusCheckBox
-    height: Config.fixedHeight
+    height: CusConfig.fixedHeight
 
     //    background: Rectangle  {
     //        color: cusCheckBox.enabled ? Config.controlBackgroundColor : Config.controlBackgroundColor_disabled
@@ -21,7 +21,7 @@ CheckBox {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
-        color: cusCheckBox.enabled ? Config.textColor : Config.controlTextColor_disable
+        color: cusCheckBox.enabled ? CusConfig.textColor : CusConfig.textColor_disabled
     }
     indicator: Image {
         x: cusCheckBox.leftPadding
@@ -29,11 +29,11 @@ CheckBox {
         width: sourceSize.width
         height: sourceSize.height
 
-        readonly property string imgUrlNormal: Config.imagePathPrefix + "Checkbox_16.png"
-        readonly property string imgUrlChecked: Config.imagePathPrefix + "Checkbox_16_Checked.png"
-        readonly property string imgUrlHovered: Config.imagePathPrefix + "Checkbox_16_Hover.png"
-        readonly property string imgUrlDisable: Config.imagePathPrefix + "Checkbox_16_Disable.png"
-        readonly property string imgUrlCheckedDisable: Config.imagePathPrefix
+        readonly property string imgUrlNormal: CusConfig.imagePathPrefix + "Checkbox_16.png"
+        readonly property string imgUrlChecked: CusConfig.imagePathPrefix + "Checkbox_16_Checked.png"
+        readonly property string imgUrlHovered: CusConfig.imagePathPrefix + "Checkbox_16_Hover.png"
+        readonly property string imgUrlDisable: CusConfig.imagePathPrefix + "Checkbox_16_Disable.png"
+        readonly property string imgUrlCheckedDisable: CusConfig.imagePathPrefix
                                                        + "Checkbox_16_Checked_Disable.png"
 
         source: cusCheckBox.enabled ? (cusCheckBox.checked ? imgUrlChecked : (cusCheckBox.hovered ? imgUrlHovered : imgUrlNormal)) : (cusCheckBox.checked ? imgUrlCheckedDisable : imgUrlDisable)

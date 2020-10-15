@@ -17,7 +17,7 @@ CusImage {
         id: toolTip
         visible: cusImageTip.enabled && String(text).length && hoverArea.containsMouse
     }
-    MouseArea {
+    TransArea {
         id: hoverArea
         anchors.fill: parent
         hoverEnabled: true
