@@ -1,32 +1,33 @@
 import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQml 2.2
+import QtQuick.Controls 2.9
 import ".."
 import "../.."
 SpinBox {
     id: cusSpinBox
-    height: Config.fixedHeight
+    height: CusConfig.fixedHeight
     implicitWidth: 60
     editable: true
     leftPadding: 4
     rightPadding: 4
 
-    readonly property string imgUrlNormal : Config.imagePathPrefix + "Expanded.png";
-    readonly property string imgUrlHovered : Config.imagePathPrefix + "Expanded_Hover.png";
+    readonly property string imgUrlNormal : CusConfig.imagePathPrefix + "Expanded.png";
+    readonly property string imgUrlHovered : CusConfig.imagePathPrefix + "Expanded_Hover.png";
     background: Rectangle {
-        radius: Config.controlBorderRadius
-        color: Config.controlBackgroundColor
+        radius: CusConfig.controlBorderRadius
+        color: CusConfig.controlColor
         border.width: 1
-        border.color: cusSpinBox.hovered || cusSpinBox.focus ? Config.controlBorderColor_hovered : Config.controlBorderColor
+        border.color: cusSpinBox.hovered || cusSpinBox.focus ? CusConfig.controlBorderColor_hovered : CusConfig.controlBorderColor
     }
     contentItem: CusTextInput {
         id: input
         z: 2
 //        text: cusSpinBox.value
         font: cusSpinBox.font
-        color: Config.textColor
+        color: CusConfig.textColor
         width: cusSpinBox.width - cusSpinBox.up.indicator.width - cusSpinBox.leftPadding - cusSpinBox.rightPadding
-        selectionColor: Config.controlBackgroundColor_highlight
-        selectedTextColor: Config.controlTextColor_highlight
+        selectionColor: CusConfig.controlColor_pressed
+        selectedTextColor: CusConfig.textColor_pressed
         horizontalAlignment: Qt.AlignLeft
         verticalAlignment: Qt.AlignVCenter
 //        onTextChanged: {
@@ -35,12 +36,12 @@ SpinBox {
         Binding {
             target: input
             property: "text"
-            value: cusSpinBox.textFromValue(cusSpinBox.value)
+            value: cusSpinBox.textFromValue(cusSpinBox.value, Qt.locale())
         }
         Binding{
             target: cusSpinBox
             property: "value"
-            value: cusSpinBox.valueFromText(input.text)
+            value: cusSpinBox.valueFromText(input.text, Qt.locale())
         }
         readOnly: !cusSpinBox.editable
         selectByMouse: true

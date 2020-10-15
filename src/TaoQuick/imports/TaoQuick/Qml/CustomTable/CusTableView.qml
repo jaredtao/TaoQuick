@@ -114,7 +114,7 @@ ListView {
     RectDraw {
         id: tableRectItem
         x: tableAreaX
-        width: parent.width - x - Config.scrollBarSize
+        width: parent.width - x - CusConfig.scrollBarSize
         height: parent.height
         onPressed: {
             cusTableView.forceActiveFocus()

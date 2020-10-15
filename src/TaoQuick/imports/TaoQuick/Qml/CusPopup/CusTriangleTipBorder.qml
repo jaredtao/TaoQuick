@@ -4,9 +4,9 @@ import ".."
 import "../.."
 Rectangle {
     id: cusTirangleTipBorder
-    border.color: Config.controlBorderColor
-    color: Config.backgroundColor0
-    radius: Config.controlBorderRadius
+    border.color: CusConfig.controlBorderColor
+    color: CusConfig.backgroundColor
+    radius: CusConfig.controlBorderRadius
 
     readonly property int trianglePosLeft: 0
     readonly property int trianglePosRight: 1
