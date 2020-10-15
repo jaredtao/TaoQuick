@@ -1,12 +1,13 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import ".."
+import "../.."
 Item {
     id: root
     anchors.fill: parent
     property alias popupVisible: popup.visible
     property alias contentItem: popup.contentItem
-    property color barColor: Config.tipBackgroundColor
+    property color barColor: CusConfig.tipBackgroundColor
     property alias backgroundItem: background
     property real backgroundWidth: 200
     property real backgroundHeight: 160

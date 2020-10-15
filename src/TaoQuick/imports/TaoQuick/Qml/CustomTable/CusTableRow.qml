@@ -6,7 +6,7 @@ import "../.."
 
 Rectangle {
     id: deviceRow
-    height: visible ? Config.fixedHeight : 0
+    height: visible ? CusConfig.fixedHeight : 0
     visible: dataObj["isVisible"]
 
     property bool isSelected: dataObj["isSelected"]
@@ -21,11 +21,11 @@ Rectangle {
     property var widthList
     property var xList
     property var roles
-    property color textColor: Config.textColor
+    property color textColor: CusConfig.textColor
     property bool showOnlineState: true
 
     signal checkedChanged(bool checked)
-    color: isAlternate ? (isSelected ? Config.tableRowSelectColor : Config.tableRowColor) : (isSelected ? Config.tableRowAlterSelectColor : Config.tableRowAlterColor)
+    color: isSelected ? CusConfig.controlColor_pressed : ( isAlternate ? CusConfig.controlColor : CusConfig.alterColor )
     Item {
         id: checkBoxItem
         width: widthList[0]
@@ -33,7 +33,7 @@ Rectangle {
 
         CusCheckBox {
             id: checkBox
-            height: Config.fixedHeight
+            height: CusConfig.fixedHeight
             width: height
             anchors.centerIn: parent
             property bool notify: true
@@ -45,9 +45,9 @@ Rectangle {
         }
         CusImage {
             visible: showOnlineState
-            readonly property string cameraOnlineImg: Config.imagePathPrefix
+            readonly property string cameraOnlineImg: CusConfig.imagePathPrefix
                                                       + "Icon_Camera_Online.png"
-            readonly property string cameraOfflineImg: Config.imagePathPrefix
+            readonly property string cameraOfflineImg: CusConfig.imagePathPrefix
                                                        + "Icon_Camera_Offline.png"
             source: dataObj["online"] ? cameraOnlineImg : cameraOfflineImg
             width: 16
@@ -72,7 +72,6 @@ Rectangle {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                font.pixelSize: Config.fontSize_tableContent
                 color: textColor
             }
         }

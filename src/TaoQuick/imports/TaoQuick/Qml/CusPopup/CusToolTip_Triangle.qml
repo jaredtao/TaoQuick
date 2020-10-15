@@ -1,6 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import ".."
+import "../.."
 
 Item {
     id: root
@@ -9,7 +10,7 @@ Item {
     property alias tipVisible: toolTip.visible
     property alias delay: toolTip.delay
     property alias timeout: toolTip.timeout
-    property color barColor: Config.tipBackgroundColor
+    property color barColor: CusConfig.tipBackgroundColor
     //矩形旋转45度，一半被toolTip遮住(重合)，另一半三角形和ToolTip组成一个带箭头的ToolTip
     Rectangle {
         id: bar
@@ -26,14 +27,10 @@ Item {
     }
     BasicTooltip {
         id: toolTip
-        delay: 200
-        contentItem: BasicText {
-            text: toolTip.text
-        }
+        delay: 500
         background: Rectangle {
-            id: background
             color: barColor
-            radius: 8
+            radius: CusConfig.controlBorderRadius
         }
     }
 }
