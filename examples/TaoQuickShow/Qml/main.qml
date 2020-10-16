@@ -28,7 +28,6 @@ CusBackground {
     //    SettingsDialog {
     //        id: settingDialog
     //    }
-
     TitlePage {
         id: title
         width: parent.width
@@ -46,6 +45,20 @@ CusBackground {
                 right: parent.right
                 top: parent.top
             }
+        }
+
+        LeftPane {
+            id: leftPane
+            anchors.fill: parent
+        }
+
+        RightPane {
+            id: rightPane
+            anchors {
+                left: leftPane.right
+                right: parent.right
+            }
+            height: parent.height
         }
     }
 }
