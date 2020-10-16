@@ -23,7 +23,8 @@ int main(int argc, char** argv)
     prepareApp();
     QGuiApplication app(argc, argv);
 #ifdef TAODEBUG
-    qSetMessagePattern("[%{time h:mm:ss.zzz} %{file} row(%{line}) %{function}] %{message}");
+    qSetMessagePattern("[%{time h:mm:ss.zzz} %{function}] %{message}");
+//    qSetMessagePattern("[%{time h:mm:ss.zzz} %{file} row(%{line}) %{function}] %{message}");
 #else
     Logger::initLog();
 #endif

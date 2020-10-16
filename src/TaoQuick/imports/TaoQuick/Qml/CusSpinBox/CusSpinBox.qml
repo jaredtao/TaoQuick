@@ -1,6 +1,7 @@
 import QtQuick 2.9
 import QtQml 2.2
-import QtQuick.Controls 2.9
+import QtQuick.Controls 2.2
+import QtGraphicalEffects 1.0
 import ".."
 import "../.."
 SpinBox {
@@ -48,15 +49,29 @@ SpinBox {
         validator: cusSpinBox.validator
         inputMethodHints: Qt.ImhFormattedNumbersOnly
     }
+    CusImage {
+        id: baseImage
+        source: imgUrlNormal
+        smooth: true
+        visible: false
+    }
+    property color colorNormal: CusConfig.imageColor
+    property color colorHovered: CusConfig.imageColor_hovered
+    property color colorPressed: CusConfig.imageColor_pressed
+    property color colorDisable: CusConfig.imageColor_disabled
     up.indicator: Item {
         x: cusSpinBox.width - width - cusSpinBox.rightPadding
         z: 3
         height: cusSpinBox.height / 2
         implicitWidth: 10
         implicitHeight: 10
-        Image {
+        ColorOverlay {
             anchors.centerIn: parent
-            source: (upArea.hovered || upArea.pressed) ? imgUrlHovered : imgUrlNormal
+            width: baseImage.width
+            height: baseImage.height
+            cached: true
+            source: baseImage
+            color: (upArea.hovered || upArea.pressed) ? colorHovered : colorNormal
             rotation: 180
         }
         MouseArea {
@@ -76,9 +91,13 @@ SpinBox {
         height: cusSpinBox.height / 2
         implicitWidth: 10
         implicitHeight: 10
-        Image {
+        ColorOverlay {
             anchors.centerIn: parent
-            source: (downArea.hovered || downArea.pressed) ? imgUrlHovered : imgUrlNormal
+            width: baseImage.width
+            height: baseImage.height
+            cached: true
+            source: baseImage
+            color: (downArea.hovered || downArea.pressed) ? colorHovered : colorNormal
         }
         MouseArea {
             id: downArea

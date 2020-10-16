@@ -4,6 +4,9 @@
 #include <QQmlContext>
 #include <QCoreApplication>
 #include <QLocale>
+#include <QQuickView>
+#include <QQmlEngine>
+#include "TaoFramework.h"
 const static auto cEnglisthStr = QStringLiteral("English");
 const static auto cChineseStr = QStringLiteral("简体中文");
 Trans::Trans(QObject* parent)
@@ -39,14 +42,10 @@ void Trans::loadFolder(const QString& folder)
 {
     QDir dir(folder);
     auto infos = dir.entryInfoList({ "language_*.json" }, QDir::Files);
-//    QStringList paths;
     QString lang;
     for (auto info : infos) {
-//        paths.append(info.absoluteFilePath());
         load(lang, info.absoluteFilePath());
     }
-//    auto res = QtConcurrent::map(paths, std::bind(&Trans::load, this, lang, std::placeholders::_1));
-//    res.waitForFinished();
 
     initEnglish();
     auto langs = m_map.keys();
@@ -115,9 +114,6 @@ void Trans::initEnglish()
 QString Trans::trans(const QString& source) const
 {
     return m_map.value(m_currentLang).value(source, source);
-    //    auto value = m_map.value(m_currentLang).value(source, source);
-    //    qWarning() <<m_currentLang << source << value;
-    //    return value;
 }
 
 void Trans::setCurrentLang(const QString& currentLang)
@@ -126,13 +122,15 @@ void Trans::setCurrentLang(const QString& currentLang)
         return;
 
     m_currentLang = currentLang;
-    if (m_currentLang == cChineseStr) {
-        QLocale::setDefault(QLocale(QLocale::Chinese, QLocale::AnyCountry));
-    }
-    else if (m_currentLang == cEnglisthStr)
-    {
-        QLocale::setDefault(QLocale(QLocale::English, QLocale::AnyCountry));
-    }
+    emit currentLangChanged(m_currentLang);
+
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+    TaoFramework::instance()->getMainView()->engine()->retranslate();
+#else
+    emit transStringChanged();
+#endif
+
 }
 
 void Trans::setLanguages(const QStringList& languages)

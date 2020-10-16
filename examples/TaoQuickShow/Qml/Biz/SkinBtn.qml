@@ -3,21 +3,22 @@ import QtQuick.Controls 2.2
 import TaoQuick 1.0
 
 CusButton_Image {
-    btnImgUrl: imgPath + (containsMouse ? "Window/skin_white.png" : "Window/skin_gray.png")
-    tipText: qsTr("skin")
+    btnImgUrl: imgPath + (hovered
+                          || pressed ? "Window/skin_white.png" : "Window/skin_gray.png")
+    tipText: qsTr("skin") + trans.transString
     onClicked: {
         skinBox.show()
     }
-    TPopup {
+    CusPopup {
         id: skinBox
-        barColor: gConfig.reserverColor
-        backgroundWidth: 280
+        barColor: CusConfig.controlColor
+        backgroundWidth: 270
         backgroundHeight: 180
-        borderColor: gConfig.themeColor
+        borderColor: CusConfig.controlBorderColor
         contentItem: GridView {
             anchors.fill: parent
             anchors.margins: 10
-            model: gConfig.themes
+            model: CusConfig.themes
             cellWidth: 80
             cellHeight: 80
             clip: true
@@ -27,7 +28,6 @@ CusButton_Image {
                 Rectangle {
                     anchors.fill: parent
                     anchors.margins: 4
-                    height: width
                     color: model.themeColor
                 }
                 Rectangle {
@@ -42,7 +42,7 @@ CusButton_Image {
                         centerIn: parent
                     }
                     color: "white"
-                    text: qsTr(model.name) 
+                    text: qsTr(model.name) + trans.transString
                 }
                 Rectangle {
                     x: parent.width - width
@@ -52,19 +52,19 @@ CusButton_Image {
                     radius: width / 2
                     color: model.themeColor
                     border.width: 3
-                    border.color: gConfig.reserverColor
-                    visible: gConfig.currentTheme === index
+                    border.color: CusConfig.controlBorderColor
+                    visible: CusConfig.currentTheme === index
                 }
                 MouseArea {
                     id: a
                     anchors.fill: parent
                     hoverEnabled: true
+                    cursorShape: Qt.PointingHandCursor
                     onClicked: {
-                        gConfig.currentTheme = index
+                        CusConfig.currentTheme = index
                     }
                 }
             }
         }
-
     }
 }

@@ -9,7 +9,7 @@ ScrollBar {
         implicitWidth: isSmaller ?  CusConfig.scrollBarSize_Smaller : CusConfig.scrollBarSize
         implicitHeight: isSmaller ?  CusConfig.scrollBarSize_Smaller : CusConfig.scrollBarSize
         radius: CusConfig.scrollBarRadius
-        color: CusConfig.scrollBarBackgroundColor
+        color: isSmaller ? CusConfig.scrollBarBackgroundColor : CusConfig.scrollBarBackgroundColor_hovered
         TransArea{
             id: t
             onEntered: {

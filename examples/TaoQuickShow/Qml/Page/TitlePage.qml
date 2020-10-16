@@ -4,6 +4,7 @@ import TaoQuick 1.0
 import "../Biz"
 
 Rectangle {
+    color: CusConfig.themeColor
     Row {
         anchors.left: parent.left
         height: parent.height
@@ -17,6 +18,7 @@ Rectangle {
             font.pixelSize: 28
             font.bold: true
             text: "TaoQuick"
+            color: "#ffffff"
         }
     }
     property bool isMaxed: view.isMax
@@ -28,17 +30,16 @@ Rectangle {
         anchors.rightMargin: 20
         spacing: 20
         CusButton_Image {
-            btnImgUrl: imgPath
-                       + (containsMouse ? "Window/minimal_white.png" : "Window/minimal_gray.png")
-            tipText: qsTr("minimal")
+            btnImgUrl: imgPath + (hovered || pressed ? "Window/minimal_white.png" : "Window/minimal_gray.png")
+            tipText: qsTr("minimal") + trans.transString
             onClicked: {
                 view.showMinimized()
             }
         }
         CusButton_Image {
             visible: !isMaxed
-            btnImgUrl: imgPath + (containsMouse ? "Window/max_white.png" : "Window/max_gray.png")
-            tipText: qsTr("maximize")
+            btnImgUrl: imgPath + (hovered || pressed ? "Window/max_white.png" : "Window/max_gray.png")
+            tipText: qsTr("maximize") + trans.transString
             onClicked: {
                 view.showMaximized()
             }
@@ -46,8 +47,8 @@ Rectangle {
         CusButton_Image {
             visible: isMaxed
             btnImgUrl: imgPath
-                       + (containsMouse ? "Window/normal_white.png" : "Window/normal_gray.png")
-            tipText: qsTr("normal")
+                       + (hovered || pressed ? "Window/normal_white.png" : "Window/normal_gray.png")
+            tipText: qsTr("normal") + trans.transString
             onClicked: {
                 view.showNormal()
             }
@@ -65,7 +66,7 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: controlButtons.left
         anchors.rightMargin: 10
-        color: "#323232"
+        color: CusConfig.splitLineColor
     }
     Row {
         id: toolRow
@@ -82,18 +83,18 @@ Rectangle {
         }
         CusButton_Image {
             anchors.verticalCenter: parent.verticalCenter
-            tipText: qsTr("Settings")
+            tipText: qsTr("Settings") + trans.transString
             btnImgUrl: imgPath
-                       + (containsMouse ? "Window/settings_white.png" : "Window/settings_gray.png")
+                       + (hovered || pressed ? "Window/settings_white.png" : "Window/settings_gray.png")
             onClicked: {
                 settingDialog.show()
             }
         }
         CusButton_Image {
             anchors.verticalCenter: parent.verticalCenter
-            tipText: qsTr("About")
+            tipText: qsTr("About") + trans.transString
             btnImgUrl: imgPath
-                       + (containsMouse ? "Window/about_white.png" : "Window/about_gray.png")
+                       + (hovered || pressed ? "Window/about_white.png" : "Window/about_gray.png")
             onClicked: {
                 aboutDialog.show()
             }
