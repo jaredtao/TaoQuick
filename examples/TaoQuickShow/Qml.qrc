@@ -12,5 +12,7 @@
         <file>Qml/Biz/SkinBtn.qml</file>
         <file>Qml/Page/SettingsDialog.qml</file>
         <file>Qml/Page/ControlsShow.qml</file>
+        <file>Qml/Page/LeftPane.qml</file>
+        <file>Qml/Page/RightPane.qml</file>
     </qresource>
 </RCC>
