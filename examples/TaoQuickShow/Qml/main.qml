@@ -34,21 +34,18 @@ CusBackground {
         width: parent.width
         height: 60
     }
-    //    Rectangle {
-    //        id: content
-    //        width: parent.width
-    //        anchors {
-    //            top: title.bottom
-    //            bottom: parent.bottom
-    //        }
-    //        color: gConfig.background
-    //        CusFPS {
-    //            anchors {
-    //                right: parent.right
-    //                top: parent.top
-    //            }
-    //        }
-    //    }
-
-
+    Item {
+        id: content
+        width: parent.width
+        anchors {
+            top: title.bottom
+            bottom: parent.bottom
+        }
+        CusFPS {
+            anchors {
+                right: parent.right
+                top: parent.top
+            }
+        }
+    }
 }

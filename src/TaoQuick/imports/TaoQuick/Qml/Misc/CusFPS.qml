@@ -8,7 +8,7 @@ Item {
     property color textColor: "#f7e08c"
     Image {
         id: spinner
-        source: Config.imagePathPrefix + "spinner.png"
+        source: CusConfig.imagePathPrefix + "spinner.png"
         width: 32
         height: 32
         anchors.verticalCenter: parent.verticalCenter
@@ -22,14 +22,14 @@ Item {
         }
         onRotationChanged: frameCount++
     }
-    Text {
+    BasicText {
         anchors.left: spinner.right
         anchors.verticalCenter: parent.verticalCenter
         text: "FPS" + fps
         font.pixelSize: 20
         style: Text.Outline
         styleColor: "#606060"
-//        renderType: Text.NativeRendering
+
         color: textColor
     }
     Timer {
