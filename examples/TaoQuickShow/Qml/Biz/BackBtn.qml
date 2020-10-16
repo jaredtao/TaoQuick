@@ -6,5 +6,5 @@ CusButton_Image {
     width: 48
     height: 48
 
-    btnImgUrl: imgPath + (containsMouse ? "Common/left_hovered.png" : "Common/left.png")
+    btnImgUrl: imgPath + (hovered || pressed ? "Common/left_hovered.png" : "Common/left.png")
 }

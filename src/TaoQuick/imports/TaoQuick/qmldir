@@ -8,6 +8,7 @@ CusButton 1.0 Qml/CusButton/CusButton.qml
 CusButton_Blue 1.0 Qml/CusButton/CusButton_Blue.qml
 CusButton_Gradient 1.0 Qml/CusButton/CusButton_Gradient.qml
 CusButton_Image 1.0 Qml/CusButton/CusButton_Image.qml
+CusButton_ImageColorOverlay 1.0 Qml/CusButton/CusButton_ImageColorOverlay.qml
 CusButton_Red 1.0 Qml/CusButton/CusButton_Red.qml
 CusButton_White 1.0 Qml/CusButton/CusButton_White.qml
 CusSwitch 1.0 Qml/CusButton/CusSwitch.qml
@@ -69,4 +70,11 @@ CusFPS 1.0 Qml/Misc/CusFPS.qml
 CusRectDraw 1.0 Qml/Misc/CusRectDraw.qml
 CusResizeBorder 1.0 Qml/Misc/CusResizeBorder.qml
 CusShortCutKeys 1.0 Qml/Misc/CusShortCutKeys.qml
+ThemeData 1.0 Qml/Theme/ThemeData.qml
+ThemeData_Black 1.0 Qml/Theme/ThemeData_Black.qml
+ThemeData_Blue 1.0 Qml/Theme/ThemeData_Blue.qml
+ThemeData_Gold 1.0 Qml/Theme/ThemeData_Gold.qml
+ThemeData_Green 1.0 Qml/Theme/ThemeData_Green.qml
+ThemeData_Pink 1.0 Qml/Theme/ThemeData_Pink.qml
+ThemeData_Red 1.0 Qml/Theme/ThemeData_Red.qml
 singleton CusConfig 1.0 Qml/CusConfig.qml
