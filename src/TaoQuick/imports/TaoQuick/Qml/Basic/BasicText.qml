@@ -10,4 +10,5 @@ Text {
     font.pixelSize: CusConfig.fontPixel
     elide: Text.ElideRight
     color: CusConfig.textColor
+    renderType: Text.NativeRendering
 }

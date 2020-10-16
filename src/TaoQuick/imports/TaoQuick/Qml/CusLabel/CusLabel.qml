@@ -9,4 +9,5 @@ Label {
     color: CusConfig.textColor
     height: CusConfig.fixedHeight
     elide: Text.ElideRight
+    renderType: Text.NativeRendering
 }
