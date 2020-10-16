@@ -7,7 +7,7 @@ Item {
     //默认值为parent
     property var control: parent
     //左上角的拖拽
-    TDragItem {
+    CusDragItem {
         id: leftTopHandle
         posType: posLeftTop
         onPosChange: {
@@ -23,7 +23,7 @@ Item {
         }
     }
     //右上角拖拽
-    TDragItem {
+    CusDragItem {
         id: rightTopHandle
         posType: posRightTop
         x: parent.width - width
@@ -38,7 +38,7 @@ Item {
         }
     }
     //左下角拖拽
-    TDragItem {
+    CusDragItem {
         id: leftBottomHandle
         posType: posLeftBottom
         y: parent.height - height
@@ -52,7 +52,7 @@ Item {
         }
     }
     //右下角拖拽
-    TDragItem {
+    CusDragItem {
         id: rightBottomHandle
         posType: posRightBottom
         x: parent.width - width
@@ -65,7 +65,7 @@ Item {
         }
     }
     //上边拖拽
-    TDragItem {
+    CusDragItem {
         posType: posTop
         width: parent.width - leftTopHandle.width - rightTopHandle.width
         x: leftBottomHandle.width
@@ -78,7 +78,7 @@ Item {
     }
 
     //左边拖拽
-    TDragItem {
+    CusDragItem {
         posType: posLeft
         height: parent.height - leftTopHandle.height - leftBottomHandle.height
         y: leftTopHandle.height
@@ -90,7 +90,7 @@ Item {
         }
     }
     //右边拖拽
-    TDragItem {
+    CusDragItem {
         posType: posRight
         x: parent.width - width
         height: parent.height - rightTopHandle.height - rightBottomHandle.height
@@ -101,7 +101,7 @@ Item {
         }
     }
     //下边拖拽
-    TDragItem {
+    CusDragItem {
         posType: posBottom
         x: leftBottomHandle.width
         y: parent.height - height
