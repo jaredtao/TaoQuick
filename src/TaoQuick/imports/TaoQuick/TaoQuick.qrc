@@ -11,6 +11,7 @@
         <file>Qml/CusButton/CusButton_Blue.qml</file>
         <file>Qml/CusButton/CusButton_Gradient.qml</file>
         <file>Qml/CusButton/CusButton_Image.qml</file>
+        <file>Qml/CusButton/CusButton_ImageColorOverlay.qml</file>
         <file>Qml/CusButton/CusButton_Red.qml</file>
         <file>Qml/CusButton/CusButton_White.qml</file>
         <file>Qml/CusButton/CusSwitch.qml</file>
@@ -72,22 +73,21 @@
         <file>Qml/Misc/CusRectDraw.qml</file>
         <file>Qml/Misc/CusResizeBorder.qml</file>
         <file>Qml/Misc/CusShortCutKeys.qml</file>
-        <file>Images/Checkbox_16.png</file>
-        <file>Images/Checkbox_16_Checked.png</file>
-        <file>Images/Checkbox_16_Checked_Disable.png</file>
-        <file>Images/Checkbox_16_Disable.png</file>
-        <file>Images/Checkbox_16_Hover.png</file>
+        <file>Qml/Theme/ThemeData.qml</file>
+        <file>Qml/Theme/ThemeData_Black.qml</file>
+        <file>Qml/Theme/ThemeData_Blue.qml</file>
+        <file>Qml/Theme/ThemeData_Gold.qml</file>
+        <file>Qml/Theme/ThemeData_Green.qml</file>
+        <file>Qml/Theme/ThemeData_Pink.qml</file>
+        <file>Qml/Theme/ThemeData_Red.qml</file>
+        <file>Images/checkbox_border.png</file>
+        <file>Images/checkbox_check.png</file>
         <file>Images/ComboBox_Down.png</file>
-        <file>Images/ComboBox_Down_Hover.png</file>
         <file>Images/Expanded.png</file>
-        <file>Images/Expanded_Hover.png</file>
         <file>Images/Search.png</file>
         <file>Images/Search_Clear.png</file>
-        <file>Images/Search_Clear_Hover.png</file>
         <file>Images/spinner.png</file>
         <file>Images/Table_Asc.png</file>
-        <file>Images/Table_Asc_Hover.png</file>
         <file>Images/Table_Desc.png</file>
-        <file>Images/Table_DescHover.png</file>
     </qresource>
 </RCC>

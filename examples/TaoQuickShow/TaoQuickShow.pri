@@ -41,8 +41,8 @@ CONFIG(debug, debug|release) {
 
     CONFIG += file_copies
 
-    trans.file = $$_PRO_FILE_PWD_/Trans
-    trans.path = $$DESTDIR/Trans
+    trans.files = $$_PRO_FILE_PWD_/Trans
+    trans.path = $$DESTDIR
     COPIES += trans
 }
 OTHER_FILES += $$_PRO_FILE_PWD_/Trans/*

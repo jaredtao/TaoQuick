@@ -126,6 +126,20 @@
         }
     }
     Type {
+        name: "TaoQuick.Qml.CusButton.CusButton_ImageColorOverlay"
+        icon: "images/CusButton_ImageColorOverlay.png"
+
+        ItemLibraryEntry {
+            name: "CusButton_ImageColorOverlay"
+            category: "TaoQuick - CusButton"
+            libraryIcon: "images/CusButton_ImageColorOverlay.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
         name: "TaoQuick.Qml.CusButton.CusButton_Red"
         icon: "images/CusButton_Red.png"
 
@@ -945,6 +959,104 @@
             name: "CusShortCutKeys"
             category: "TaoQuick - Misc"
             libraryIcon: "images/CusShortCutKeys.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.Qml.Theme.ThemeData"
+        icon: "images/ThemeData.png"
+
+        ItemLibraryEntry {
+            name: "ThemeData"
+            category: "TaoQuick - Theme"
+            libraryIcon: "images/ThemeData.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.Qml.Theme.ThemeData_Black"
+        icon: "images/ThemeData_Black.png"
+
+        ItemLibraryEntry {
+            name: "ThemeData_Black"
+            category: "TaoQuick - Theme"
+            libraryIcon: "images/ThemeData_Black.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.Qml.Theme.ThemeData_Blue"
+        icon: "images/ThemeData_Blue.png"
+
+        ItemLibraryEntry {
+            name: "ThemeData_Blue"
+            category: "TaoQuick - Theme"
+            libraryIcon: "images/ThemeData_Blue.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.Qml.Theme.ThemeData_Gold"
+        icon: "images/ThemeData_Gold.png"
+
+        ItemLibraryEntry {
+            name: "ThemeData_Gold"
+            category: "TaoQuick - Theme"
+            libraryIcon: "images/ThemeData_Gold.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.Qml.Theme.ThemeData_Green"
+        icon: "images/ThemeData_Green.png"
+
+        ItemLibraryEntry {
+            name: "ThemeData_Green"
+            category: "TaoQuick - Theme"
+            libraryIcon: "images/ThemeData_Green.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.Qml.Theme.ThemeData_Pink"
+        icon: "images/ThemeData_Pink.png"
+
+        ItemLibraryEntry {
+            name: "ThemeData_Pink"
+            category: "TaoQuick - Theme"
+            libraryIcon: "images/ThemeData_Pink.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.Qml.Theme.ThemeData_Red"
+        icon: "images/ThemeData_Red.png"
+
+        ItemLibraryEntry {
+            name: "ThemeData_Red"
+            category: "TaoQuick - Theme"
+            libraryIcon: "images/ThemeData_Red.png"
             version: "1.0"
             requiredImport: "TaoQuick"
             Property { name: "width"; type: "int"; value: 120 }

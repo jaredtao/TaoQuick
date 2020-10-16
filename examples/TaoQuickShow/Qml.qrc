@@ -8,12 +8,9 @@
         <file>Qml/Biz/BackBtn.qml</file>
         <file>Qml/Biz/CircleText.qml</file>
         <file>Qml/Biz/CloseBtn.qml</file>
-        <file>Qml/Biz/CompBtn.qml</file>
-        <file>Qml/Biz/CompCard.qml</file>
-        <file>Qml/Biz/CompDetail.qml</file>
         <file>Qml/Biz/LangBtn.qml</file>
         <file>Qml/Biz/SkinBtn.qml</file>
-        <file>Qml/Biz/TText.qml</file>
         <file>Qml/Page/SettingsDialog.qml</file>
+        <file>Qml/Page/ControlsShow.qml</file>
     </qresource>
 </RCC>
