@@ -30,7 +30,7 @@ ListView {
         visible: opacity > 0
         active: visible
     }
-    ShortCutKeys {
+    CusShortCutKeys {
         id: tableKeys
         onSelectAllPressed: {
             cusTableView.model.selectAll()

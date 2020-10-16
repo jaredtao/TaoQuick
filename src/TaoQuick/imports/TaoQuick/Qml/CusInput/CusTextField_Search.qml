@@ -46,9 +46,7 @@ CusTextField {
             }
             visible: cusSearch.text.length > 0
             btnImgNormal: CusConfig.imagePathPrefix + "Search_Clear.png"
-            btnImgHovered: CusConfig.imagePathPrefix + "Search_Clear_Hover.png"
-            btnImgPressed: btnImgHovered
-            btnImgDisbaled: btnImgNormal
+
             onClicked: {
                 cusSearch.clear()
             }

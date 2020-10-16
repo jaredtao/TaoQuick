@@ -1,5 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import QtGraphicalEffects 1.0
 import ".."
 import "../.."
 
@@ -34,13 +35,34 @@ ComboBox {
             enabled: cusComboBox.enabled
         }
     }
-    indicator: Image {
+    property color colorNormal: CusConfig.imageColor
+    property color colorHovered: CusConfig.imageColor_hovered
+    property color colorPressed: CusConfig.imageColor_pressed
+    property color colorDisable: CusConfig.imageColor_disabled
+    CusImage {
+        id: baseImage
+        source: imgUrlNormal
+        smooth: true
+        visible: false
+    }
+    indicator: ColorOverlay {
         x: cusComboBox.width - width - cusComboBox.rightPadding
         y: cusComboBox.topPadding + (cusComboBox.availableHeight - height) / 2
-        width: sourceSize.width
-        height: sourceSize.height
-
-        source: cusComboBox.hovered ? imgUrlHovered : imgUrlNormal
+        source: baseImage
+        width: baseImage.width
+        height: baseImage.height
+        cached: true
+        color: {
+            if (!cusComboBox.enabled) {
+                return colorDisable
+            } else if (cusComboBox.pressed) {
+                return colorPressed
+            } else if (cusComboBox.hovered) {
+                return colorHovered
+            } else {
+                return colorNormal
+            }
+        }
         rotation: cusComboBox.popup.visible ? 180 : 0
         Behavior on rotation {
             NumberAnimation {

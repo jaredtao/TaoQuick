@@ -76,7 +76,7 @@ function baiduTrans {
     }
 }
 function trans() {
-    $json = Get-Content 'keys.json' -Encoding  utf8 | ConvertFrom-Json
+    $json = Get-Content 'Trans/keys.json' -Encoding  utf8 | ConvertFrom-Json
     foreach ($lang in $baiduLangs.Keys) {
         Write-Host $lang
         $tlang = $baiduLangs[$lang]
@@ -95,7 +95,7 @@ function trans() {
             "lang" = $tlang
             "trans" = $res
         }
-        $targetFileName = "language_{0}.json" -f $lang
+        $targetFileName = "Trans/language_{0}.json" -f $lang
         $obj | ConvertTo-Json | Set-Content $targetFileName -Encoding UTF8
     }
 }
