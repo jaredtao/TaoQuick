@@ -17,9 +17,6 @@
         <file>Image/Window/about_gray.png</file>
         <file>Image/Window/about_white.png</file>
         <file>Image/Window/flower.jpg</file>
-        <file>Image/Button/cry-fill.png</file>
-        <file>Image/Button/smile-fill-hover.png</file>
-        <file>Image/Button/smile-fill.png</file>
         <file>Image/Effect/Girls/girl1.jpeg</file>
         <file>Image/Effect/Girls/girl10.jpeg</file>
         <file>Image/Effect/Girls/girl11.jpeg</file>
@@ -59,5 +56,11 @@
         <file>Image/logo/milk_32.png</file>
         <file>Image/logo/milk_48.png</file>
         <file>Image/Common/menu.png</file>
+        <file>Image/Common/view.png</file>
+        <file>Image/Button/download_black.png</file>
+        <file>Image/Button/download_blue.png</file>
+        <file>Image/Button/download_gray.png</file>
+        <file>Image/Button/download_red.png</file>
+        <file>Image/Button/download_white.png</file>
     </qresource>
 </RCC>

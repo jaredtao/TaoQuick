@@ -74,13 +74,6 @@
         <file>Qml/Misc/CusRectDraw.qml</file>
         <file>Qml/Misc/CusResizeBorder.qml</file>
         <file>Qml/Misc/CusShortCutKeys.qml</file>
-        <file>Qml/Theme/ThemeData.qml</file>
-        <file>Qml/Theme/ThemeData_Black.qml</file>
-        <file>Qml/Theme/ThemeData_Blue.qml</file>
-        <file>Qml/Theme/ThemeData_Gold.qml</file>
-        <file>Qml/Theme/ThemeData_Green.qml</file>
-        <file>Qml/Theme/ThemeData_Pink.qml</file>
-        <file>Qml/Theme/ThemeData_Red.qml</file>
         <file>Images/checkbox_border.png</file>
         <file>Images/checkbox_check.png</file>
         <file>Images/ComboBox_Down.png</file>

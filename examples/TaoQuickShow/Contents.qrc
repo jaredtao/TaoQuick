@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>Contents/General/Buttons.qml</file>
         <file>Contents/General/Images.qml</file>
+        <file>Contents/General/Labels.qml</file>
     </qresource>
 </RCC>

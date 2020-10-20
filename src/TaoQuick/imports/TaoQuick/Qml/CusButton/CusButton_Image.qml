@@ -5,8 +5,8 @@ import "../.."
 
 Button {
     id: cusButtonImage
-    implicitWidth: backImage.width
-    implicitHeight: backImage.height
+    implicitWidth: 30
+    implicitHeight: 30
 
     property alias tipText: toolTip.text
     property alias tipItem: toolTip
@@ -30,9 +30,14 @@ Button {
             return btnImgNormal
         }
     }
-    background: CusImage {
-        id: backImage
-        source: btnImgUrl
+    background: Item {
+        width: cusButtonImage.width
+        height: cusButtonImage.height
+        CusImage {
+            id: backImage
+            source: btnImgUrl
+            anchors.centerIn: parent
+        }
     }
     BasicTooltip {
         id: toolTip
