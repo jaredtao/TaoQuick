@@ -14,8 +14,9 @@
         <file>Qml/CusButton/CusButton_ImageColorOverlay.qml</file>
         <file>Qml/CusButton/CusButton_Red.qml</file>
         <file>Qml/CusButton/CusButton_White.qml</file>
-        <file>Qml/CusButton/CusSwitch.qml</file>
+        <file>Qml/CusButton/CusTextButton.qml</file>
         <file>Qml/CusCheckBox/CusCheckBox.qml</file>
+        <file>Qml/CusCheckBox/CusSwitch.qml</file>
         <file>Qml/CusComboBox/CusComboBox.qml</file>
         <file>Qml/CusImage/CusImage.qml</file>
         <file>Qml/CusImage/CusImage_Tip.qml</file>

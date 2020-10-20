@@ -6,8 +6,8 @@ Item {
 
     property int frameCount: 0
     property color textColor: "#f7e08c"
-    implicitWidth: childrenRect.width
-    implicitHeight: childrenRect.height
+    implicitWidth: 100
+    implicitHeight: 32
     Image {
         id: spinner
         source: CusConfig.imagePathPrefix + "spinner.png"
