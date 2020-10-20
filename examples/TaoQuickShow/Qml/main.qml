@@ -8,7 +8,14 @@ CusBackground {
     id: rootItem
     width: 1024
     height: 720
-
+    CusImage {
+        id: bgImg
+        source: imgPath + "Window/flower.jpg"
+        anchors.centerIn: parent
+        width: parent.width
+        height: parent.height
+        opacity: 0.1
+    }
     //    SystemTrayIcon {
     //        id: sysTray
     //        visible: true

@@ -1,7 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file>Contents/General/Buttons.qml</file>
-        <file>Contents/General/Images.qml</file>
-        <file>Contents/General/Labels.qml</file>
+        <file>Contents/Buttons.qml</file>
+        <file>Contents/Images.qml</file>
+        <file>Contents/Labels.qml</file>
+        <file>Contents/DataEntrys.qml</file>
+        <file>Contents/Miscs.qml</file>
     </qresource>
 </RCC>
