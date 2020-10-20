@@ -24,7 +24,7 @@ Button {
             return btnImgDisbaled
         } else if (cusButtonImage.pressed) {
             return btnImgPressed
-        } else if (cusButtonImage.hovered || cusButtonImage.focus) {
+        } else if (cusButtonImage.hovered) {
             return btnImgHovered
         } else {
             return btnImgNormal
