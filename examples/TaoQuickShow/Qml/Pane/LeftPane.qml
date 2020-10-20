@@ -3,7 +3,9 @@ import QtQuick.Controls 2.2
 import TaoQuick 1.0
 
 Item {
-
+    id: leftPaneItem
+    signal loadContent(string path)
+    signal loadHome
     Item {
         width: parent.width
         height: 40
@@ -17,7 +19,6 @@ Item {
                 rightMargin: 4
             }
         }
-
     }
     Rectangle {
         id: hLine
@@ -26,41 +27,11 @@ Item {
         y: 40
         color: CusConfig.controlBorderColor
     }
-    ListModel {
+
+    ContentModel {
         id: demoModel
-        ListElement {
-            name: "Basic"
-            section: "1"
-        }
-        ListElement {
-            name: "Button"
-            section: "1"
-        }
-        ListElement {
-            name: "CheckBox"
-            section: "1"
-        }
-        ListElement {
-            name: "ComboBox"
-            section: "2"
-        }
-        ListElement {
-            name: "Image"
-            section: "3"
-        }
-        ListElement {
-            name: "Input"
-            section: "3"
-        }
-        ListElement {
-            name: "Label"
-            section: "3"
-        }
-        ListElement {
-            name: "Popup"
-            section: "3"
-        }
     }
+
     ListView {
         id: listView
         model: demoModel
@@ -70,23 +41,37 @@ Item {
             topMargin: 4
             bottom: parent.bottom
         }
-        section.property: "section"
-        section.delegate: ItemDelegate {
+        currentIndex: -1
+        header: Rectangle {
+            id: home
             width: listView.width
             height: CusConfig.fixedHeight
-            CusLabel {
-                text: section
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignLeft
+            color: listView.currentIndex === -1 ? CusConfig.controlBorderColor_pressed : "transparent"
+            opacity: 0.8
+            CusTextButton {
+                text: qsTr("Home") + trans.transString
+                backgroundColor: "transparent"
+                borderColor: "transparent"
+                width: parent.width
+                onClicked: {
+                    listView.currentIndex = -1
+                    loadHome()
+                }
             }
         }
-        delegate: ItemDelegate {
+        delegate: Rectangle {
             width: listView.width
             height: CusConfig.fixedHeight
-            CusLabel {
-                anchors.centerIn: parent
-                text: name
-                verticalAlignment: Text.AlignVCenter
+            color: ListView.isCurrentItem ? CusConfig.controlBorderColor_pressed : "transparent"
+            opacity: 0.8
+            CusTextButton {
+                text: qsTr(model.name) + trans.transString
+                backgroundColor: "transparent"
+                borderColor: "transparent"
+                onClicked: {
+                    listView.currentIndex = index
+                    loadContent(model.source)
+                }
             }
         }
     }

@@ -11,8 +11,9 @@ CusButton_Image 1.0 Qml/CusButton/CusButton_Image.qml
 CusButton_ImageColorOverlay 1.0 Qml/CusButton/CusButton_ImageColorOverlay.qml
 CusButton_Red 1.0 Qml/CusButton/CusButton_Red.qml
 CusButton_White 1.0 Qml/CusButton/CusButton_White.qml
-CusSwitch 1.0 Qml/CusButton/CusSwitch.qml
+CusTextButton 1.0 Qml/CusButton/CusTextButton.qml
 CusCheckBox 1.0 Qml/CusCheckBox/CusCheckBox.qml
+CusSwitch 1.0 Qml/CusCheckBox/CusSwitch.qml
 CusComboBox 1.0 Qml/CusComboBox/CusComboBox.qml
 CusImage 1.0 Qml/CusImage/CusImage.qml
 CusImage_Tip 1.0 Qml/CusImage/CusImage_Tip.qml

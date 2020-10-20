@@ -21,7 +21,7 @@ CusButton {
             width: radius * 2
             height: radius * 2
             visible: radius > 0
-            color: "gray"
+            color: backgroundColorPressed
 
             SequentialAnimation {
                 id: pressAnimation

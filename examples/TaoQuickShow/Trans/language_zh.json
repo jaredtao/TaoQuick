@@ -38,26 +38,6 @@
             "value": "关于"
         },
         {
-            "key": "Corner",
-            "value": "圆角文本按钮"
-        },
-        {
-            "key": "Elemkeytary streams",
-            "value": "元素流"
-        },
-        {
-            "key": "Fireworks dancing",
-            "value": "烟花漫舞"
-        },
-        {
-            "key": "Round",
-            "value": "圆按钮"
-        },
-        {
-            "key": "Gradiant",
-            "value": "渐变"
-        },
-        {
             "key": "Badget",
             "value": "徽章"
         },
@@ -67,18 +47,18 @@
         },
         {
             "key": "Label",
-            "value": "标签页组件"
+            "value": "标签"
         },
         {
             "key": "ProgressBar",
-            "value": "进度条组件"
+            "value": "进度条"
         },
         {
             "key": "Scrolling",
             "value": "滚动列表"
         },
         {
-            "key": "Mkeyu",
+            "key": "Menu",
             "value": "菜单"
         },
         {
@@ -88,6 +68,27 @@
         {
             "key": "Blue",
             "value": "苍穹蓝"
+        },
+        {
+            "key": "Green",
+            "value": " 清爽绿"
+        },
+        {
+            "key": "Pink",
+            "value": "淑女粉"
+        },
+        {
+            "key": "Red",
+            "value": "一品红"
+        },
+
+        {
+            "key": "Gold",
+            "value": "富贵金"
+        },
+        {
+            "key": "Black",
+            "value": "高冷黑"
         },
         {
             "key": "Search",
@@ -111,47 +112,12 @@
             "key": "Close",
             "value": "关闭"
         },
-        {
-            "key": "Menu",
-            "value": "菜单"
-        },
 
         {
             "key": "QRcode",
             "value": "二维码"
         },
-        {
-            "key": "Shadow flow",
-            "value": "暗影之流"
-        },
-        {
-            "key": "Drop-down",
-            "value": "下拉组件"
-        },
-        {
-            "key": "Graphic",
-            "value": "图文按钮"
-        },
-        {
-            "key": "Basic",
-            "value": "基础组件"
-        },
-        {
-            "key": "Joy of fire",
-            "value": "焰之欢愉"
-        },
-        {
-            "key": "Cool",
-            "value": "酷炫组件"
-        },
-        {
-            "key": "Green",
-            "value": " 清爽绿"
-        },
-        {
-            "key": "Pink",
-            "value": "淑女粉"
-        },
+
         {
             "key": "IP address",
             "value": "IP地址"
@@ -161,40 +127,8 @@
             "value": "首页"
         },
         {
-            "key": "Drag",
-            "value": "拖动组件"
-        },
-        {
-            "key": "Text",
-            "value": "文本按钮"
-        },
-        {
-            "key": "keyergy ball",
-            "value": "能量球"
-        },
-        {
-            "key": "Red",
-            "value": "一品红"
-        },
-        {
             "key": "Button",
-            "value": "按钮组件"
-        },
-        {
-            "key": "Gold",
-            "value": "富贵金"
-        },
-        {
-            "key": "Black",
-            "value": "高冷黑"
-        },
-        {
-            "key": "Functional",
-            "value": "功能组件"
-        },
-        {
-            "key": "Comet Halley",
-            "value": "哈雷彗星"
+            "value": "按钮"
         },
         {
             "key": "Gradient",
@@ -212,18 +146,7 @@
             "key": "ShaderEffect",
             "value": "着色器特效"
         },
-        {
-            "key": "Cloud Hole",
-            "value": "穿云洞"
-        },
-        {
-            "key": "Star Light",
-            "value": "星球之光"
-        },
-        {
-            "key": "Snail",
-            "value": "蜗牛"
-        },
+
         {
             "key": "Super Mario",
             "value": "超级马里奥"
@@ -251,19 +174,7 @@
         {
             "key": "Magic Circle",
             "value": "魔力圈圈"
-        },
-        {
-            "key": "Painter",
-            "value": "自绘"
-        },
-        {
-            "key": "RoundRect",
-            "value": "圆角矩形"
-        },
-        {
-            "key": "KLine",
-            "value": "K线"
-        },
+        },     
         {
             "key": "Animation",
             "value": "动画"
@@ -325,20 +236,8 @@
             "value": "淡入淡出"
         },
         {
-            "key": "Component List",
-            "value":"组件列表"
-        },
-        {
             "key": "Animation",
             "value":"动画"
-        },
-        {
-            "key": "BaseComponent",
-            "value":"基础组件"
-        },
-        {
-            "key": "Buttons",
-            "value":"按钮"
         },
         {
             "key": "Effect",
@@ -357,8 +256,20 @@
             "value":"图元"
         },
         {
-            "key": "Component Name: %1, Count: %2",
-            "value":"组件名称: %1, 数量: %2"
+            "key": "Text Button has no background and border",
+            "value": "文本按钮 没有背景和边框"
+        },
+        {
+            "key": "Material Button has a gradiant background when clicked",
+            "value":"Material 按钮 在点击时，展示一个渐变的背景"
+        },
+        {
+            "key": "General Button is consist of text, background and tooltip, it has normal, hover, pressed and disable states",
+            "value": "通用按钮由文本、背景和悬浮框组成，状态包含常规、悬浮、按下和禁用"
+        },
+        {
+            "key": "Button can be design with different colors according to importance, example: blue for normal operation, red for danger operation and white for optional operation",
+            "value": "按钮可以按照重要度设计为不同的颜色，例如: 常规操作用蓝色，危险操作用红色，可选操作用白色"
         }
 
     ]

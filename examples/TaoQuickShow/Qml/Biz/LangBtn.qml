@@ -13,7 +13,7 @@ CusButton_Image {
         id: pop
         barColor: CusConfig.controlColor
         backgroundWidth: 100
-        backgroundHeight: langListView.contentHeight > 500 ? 500 : langListView.contentHeight
+        backgroundHeight: langListView.contentHeight > 500 ? 500 : langListView.contentHeight + 2
         contentItem: ListView {
             id: langListView
             anchors.fill: parent
@@ -21,18 +21,23 @@ CusButton_Image {
             model: trans.languages
             interactive: false
             clip: true
-            delegate: CusButton {
-                id: dBtn
+            delegate: Item {
                 width: langListView.width
                 height: 36
-                text: modelData
-                backgroundColor: trans.currentLang === modelData ? CusConfig.controlColor_pressed : (hovered || pressed ? CusConfig.controlColor_hovered : pop.barColor)
-                textColor: CusConfig.textColor
-                borderWidth: 0
-                radius: 4
-                onClicked: {
-                    //                    pop.hide()
-                    trans.setCurrentLang(modelData)
+                CusButton {
+                    id: dBtn
+                    anchors {
+                        fill: parent
+                        margins: 4
+                    }
+                    text: modelData
+                    backgroundColor: trans.currentLang === modelData ? CusConfig.controlColor_pressed : (hovered || pressed ? CusConfig.controlColor_hovered : pop.barColor)
+                    textColor: CusConfig.textColor
+                    borderWidth: 0
+                    radius: 4
+                    onClicked: {
+                        trans.setCurrentLang(modelData)
+                    }
                 }
             }
         }
