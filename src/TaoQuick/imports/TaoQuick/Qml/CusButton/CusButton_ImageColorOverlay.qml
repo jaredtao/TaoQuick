@@ -20,21 +20,6 @@ Button {
     property string btnImgPressed
     property string btnImgDisbaled
 
-    property string btnImgUrl: {
-        if (!cusButtonImage.enabled) {
-            return btnImgDisbaled
-        } else if (cusButtonImage.pressed) {
-            return btnImgPressed
-        } else if (cusButtonImage.hovered || cusButtonImage.focus) {
-            return btnImgHovered
-        } else {
-            return btnImgNormal
-        }
-    }
-    //    background: CusImage {
-    //        id: backImage
-    //        source: btnImgUrl
-    //    }
     property color colorNormal: CusConfig.imageColor
     property color colorHovered: CusConfig.imageColor_hovered
     property color colorPressed: CusConfig.imageColor_pressed
@@ -47,6 +32,8 @@ Button {
     }
     background: ColorOverlay {
         source: baseImage
+        width: baseImage.width
+        height: baseImage.height
         cached: true
         color: {
             if (!cusButtonImage.enabled) {

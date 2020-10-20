@@ -1,18 +1,14 @@
 <RCC>
     <qresource prefix="/">
         <file>Qml/main.qml</file>
-        <file>Qml/Page/MenuPage.qml</file>
-        <file>Qml/Page/ContentPage.qml</file>
-        <file>Qml/Page/TitlePage.qml</file>
-        <file>Qml/Page/AboutDialog.qml</file>
-        <file>Qml/Biz/BackBtn.qml</file>
         <file>Qml/Biz/CircleText.qml</file>
         <file>Qml/Biz/CloseBtn.qml</file>
         <file>Qml/Biz/LangBtn.qml</file>
         <file>Qml/Biz/SkinBtn.qml</file>
-        <file>Qml/Page/SettingsDialog.qml</file>
         <file>Qml/Page/ControlsShow.qml</file>
-        <file>Qml/Page/LeftPane.qml</file>
-        <file>Qml/Page/RightPane.qml</file>
+        <file>Qml/Pane/LeftPane.qml</file>
+        <file>Qml/Pane/RightPane.qml</file>
+        <file>Qml/Pane/TitlePane.qml</file>
+        <file>Qml/Page/Home.qml</file>
     </qresource>
 </RCC>
