@@ -50,6 +50,13 @@ int main(int argc, char** argv)
 #ifdef TaoQuickImagePath
     view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
 #endif
+
+#ifdef TAODEBUG
+    view.rootContext()->setContextProperty("isDebug", true);
+#else
+    view.rootContext()->setContextProperty("isDebug", false);
+#endif
+
     view.rootContext()->setContextProperty("qmlPath", qmlPath);
     view.rootContext()->setContextProperty("imgPath", imgPath);
     view.rootContext()->setContextProperty("contentsPath", contentsPath);
