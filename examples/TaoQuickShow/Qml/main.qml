@@ -50,13 +50,19 @@ CusBackground {
 
         LeftPane {
             id: leftPane
-            property real targetW: parent.width * Math.PI * 0.1 //0.3
+            property real targetW: parent.width * 0.233
             width: targetW
             height: parent.height
             property bool isOpen: true
             x: isOpen ? 0 : -targetW - 1
             Behavior on x {
                 NumberAnimation { duration: 350}
+            }
+            onLoadHome: {
+                rightPane.source = rightPane.homeUrl
+            }
+            onLoadContent: {
+                rightPane.source = contentsPath + path
             }
         }
         CusButton_ImageColorOverlay {
@@ -86,6 +92,7 @@ CusBackground {
             id: rightPane
             anchors {
                 left: leftPane.right
+                leftMargin: 40
                 right: parent.right
             }
             height: parent.height

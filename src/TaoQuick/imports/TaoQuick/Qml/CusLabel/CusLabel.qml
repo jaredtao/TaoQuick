@@ -7,7 +7,6 @@ Label {
     font.family: CusConfig.fontFamily
     font.pixelSize: CusConfig.fontPixel
     color: CusConfig.textColor
-    height: CusConfig.fixedHeight
     elide: Text.ElideRight
     renderType: Text.NativeRendering
 }

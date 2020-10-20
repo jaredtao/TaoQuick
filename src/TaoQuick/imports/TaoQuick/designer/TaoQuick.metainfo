@@ -168,13 +168,13 @@
         }
     }
     Type {
-        name: "TaoQuick.Qml.CusButton.CusSwitch"
-        icon: "images/CusSwitch.png"
+        name: "TaoQuick.Qml.CusButton.CusTextButton"
+        icon: "images/CusTextButton.png"
 
         ItemLibraryEntry {
-            name: "CusSwitch"
+            name: "CusTextButton"
             category: "TaoQuick - CusButton"
-            libraryIcon: "images/CusSwitch.png"
+            libraryIcon: "images/CusTextButton.png"
             version: "1.0"
             requiredImport: "TaoQuick"
             Property { name: "width"; type: "int"; value: 120 }
@@ -189,6 +189,20 @@
             name: "CusCheckBox"
             category: "TaoQuick - CusCheckBox"
             libraryIcon: "images/CusCheckBox.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
+        name: "TaoQuick.Qml.CusCheckBox.CusSwitch"
+        icon: "images/CusSwitch.png"
+
+        ItemLibraryEntry {
+            name: "CusSwitch"
+            category: "TaoQuick - CusCheckBox"
+            libraryIcon: "images/CusSwitch.png"
             version: "1.0"
             requiredImport: "TaoQuick"
             Property { name: "width"; type: "int"; value: 120 }
