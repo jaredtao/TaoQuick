@@ -268,8 +268,12 @@
             "value": "通用按钮 由文本、背景和悬浮框组成，状态包含常规、悬浮、按下和禁用"
         },
         {
-            "key": "Button can be design with different colors according to importance, example: blue for normal operation, red for danger operation and white for optional operation",
-            "value": "按钮可以按照重要度设计为不同的颜色，例如: 常规操作用蓝色，危险操作用红色，可选操作用白色"
+            "key": "Button can be design with different colors according to importance, example: blue for normal operation, red for delete operation and white for cancel operation",
+            "value": "按钮可以按照重要度设计为不同的颜色，例如: 常规操作用蓝色，删除操作用红色，取消操作用白色"
+        },
+        {
+            "key": "General Button can be custom style, such as round background, icon background, icon text ans so on",
+            "value": "通用按钮可以任意自定义风格, 诸如: 圆角背景、图标、带图标文字等等"
         },
         {
             "key": "Image",
@@ -282,6 +286,24 @@
         {
             "key": "Image with tip",
             "value": "带悬浮的图片"
+        },
+        {
+            "key": "View Source Code",
+            "value": "查看源码"
+        },
+        {
+            "key": "Image Button",
+            "value": "图片按钮"
+        },
+        {
+            "key": "Image Text Button",
+            "value": "图文按钮"
+        },
+
+        {
+            "key": "Hello, TaoQuick",
+            "value": "你好, TaoQuick"
         }
+
     ]
 }
