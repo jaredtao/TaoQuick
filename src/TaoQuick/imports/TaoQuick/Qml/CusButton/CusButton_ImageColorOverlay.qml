@@ -6,9 +6,8 @@ import "../.."
 
 Button {
     id: cusButtonImage
-    implicitWidth: baseImage.width
-    implicitHeight: baseImage.height
-
+    implicitWidth: 30
+    implicitHeight: 30
     property alias tipText: toolTip.text
     property alias tipItem: toolTip
     property alias tipVisible: toolTip.visible
@@ -30,20 +29,25 @@ Button {
         smooth: true
         visible: false
     }
-    background: ColorOverlay {
-        source: baseImage
-        width: baseImage.width
-        height: baseImage.height
-        cached: true
-        color: {
-            if (!cusButtonImage.enabled) {
-                return colorDisable
-            } else if (cusButtonImage.pressed) {
-                return colorPressed
-            } else if (cusButtonImage.hovered) {
-                return colorHovered
-            } else {
-                return colorNormal
+    background: Item {
+        width: cusButtonImage.width
+        height: cusButtonImage.height
+        ColorOverlay {
+            source: baseImage
+            width: baseImage.width
+            height: baseImage.height
+            anchors.centerIn: parent
+            cached: true
+            color: {
+                if (!cusButtonImage.enabled) {
+                    return colorDisable
+                } else if (cusButtonImage.pressed) {
+                    return colorPressed
+                } else if (cusButtonImage.hovered) {
+                    return colorHovered
+                } else {
+                    return colorNormal
+                }
             }
         }
     }
