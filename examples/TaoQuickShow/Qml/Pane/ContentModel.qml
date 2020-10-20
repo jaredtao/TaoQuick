@@ -7,6 +7,10 @@ ListModel {
         source: "General/Buttons.qml"
     }
     ListElement {
+        name: "Image"
+        source: "General/Images.qml"
+    }
+    ListElement {
         name: "Switch"
     }
     ListElement {
@@ -22,9 +26,7 @@ ListModel {
     ListElement {
         name: "Label"
     }
-    ListElement {
-        name: "Image"
-    }
+
 
     ListElement {
         name: "Popup"
