@@ -299,11 +299,45 @@
             "key": "Image Text Button",
             "value": "图文按钮"
         },
-
+        {
+            "key": "Data Entry",
+            "value": "数据输入"
+        },
         {
             "key": "Hello, TaoQuick",
             "value": "你好, TaoQuick"
+        },
+        {
+            "key": "Sunday",
+            "value": "星期天"
+        },
+        {
+            "key": "Monday",
+            "value": "星期一"
+        },
+        {
+            "key": "Tuesday",
+            "value": "星期二"
+        },
+        {
+            "key": "Wednesday",
+            "value": "星期三"
+        },
+        {
+            "key": "Thursday",
+            "value": "星期四"
+        },
+        {
+            "key": "Friday",
+            "value": "星期五"
+        },
+        {
+            "key": "Saturday",
+            "value": "星期六"
+        },
+        {
+            "key": "Misc",
+            "value": "杂项"
         }
-
     ]
 }
