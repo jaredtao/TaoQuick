@@ -4,37 +4,23 @@ ListModel {
     id: demoModel
     ListElement {
         name: "Label"
-        source: "General/Labels.qml"
+        source: "Labels.qml"
     }
     ListElement {
         name: "Image"
-        source: "General/Images.qml"
+        source: "Images.qml"
     }
     ListElement {
         name: "Button"
-        source: "General/Buttons.qml"
+        source: "Buttons.qml"
     }
 
     ListElement {
-        name: "Switch"
+        name: "Data Entry"
+        source: "DataEntrys.qml"
     }
     ListElement {
-        name: "CheckBox"
-    }
-    ListElement {
-        name: "ComboBox"
-    }
-    ListElement {
-        name: "Input"
-    }
-
-    ListElement {
-        name: "Popup"
-    }
-    ListElement {
-        name: "Popup"
-    }
-    ListElement {
-        name: "BusyIndicator"
+        name: "Misc"
+        source: "Miscs.qml"
     }
 }

@@ -37,12 +37,14 @@ SpinBox {
         Binding {
             target: input
             property: "text"
-            value: cusSpinBox.textFromValue(cusSpinBox.value, Qt.locale())
+//            value: cusSpinBox.textFromValue ? cusSpinBox.textFromValue(cusSpinBox.value, Qt.locale()) : cusSpinBox.value
+            value: cusSpinBox.value
         }
         Binding{
             target: cusSpinBox
             property: "value"
-            value: cusSpinBox.valueFromText(input.text, Qt.locale())
+//            value: cusSpinBox.valueFromText ? cusSpinBox.valueFromText(input.text, Qt.locale()) : input.text
+            value: input.text
         }
         readOnly: !cusSpinBox.editable
         selectByMouse: true
