@@ -117,8 +117,8 @@ QtObject {
             tipBorderColor: "#767676"
 
             textColor_disabled: "#9f9fcf"
-            textColor_hovered: "#181818"
-            textColor_pressed: "#000000"
+            textColor_hovered: "#ec4141"
+            textColor_pressed: "#bc2121"
 
             controlBorderColor: "#cbcbcb"
             imageColor: "#373737"
