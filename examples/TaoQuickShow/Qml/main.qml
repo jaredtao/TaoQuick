@@ -67,7 +67,7 @@ CusBackground {
         }
         CusButton_ImageColorOverlay {
             btnImgNormal: imgPath + "Common/menu.png"
-            anchors.verticalCenter: parent.verticalCenter
+//            anchors.verticalCenter: parent.verticalCenter
             anchors {
                 left: leftPane.right
                 top: leftPane.top
