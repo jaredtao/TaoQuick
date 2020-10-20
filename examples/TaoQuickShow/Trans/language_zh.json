@@ -265,12 +265,23 @@
         },
         {
             "key": "General Button is consist of text, background and tooltip, it has normal, hover, pressed and disable states",
-            "value": "通用按钮由文本、背景和悬浮框组成，状态包含常规、悬浮、按下和禁用"
+            "value": "通用按钮 由文本、背景和悬浮框组成，状态包含常规、悬浮、按下和禁用"
         },
         {
             "key": "Button can be design with different colors according to importance, example: blue for normal operation, red for danger operation and white for optional operation",
             "value": "按钮可以按照重要度设计为不同的颜色，例如: 常规操作用蓝色，危险操作用红色，可选操作用白色"
+        },
+        {
+            "key": "Image",
+            "value": "图片"
+        },
+        {
+            "key": "General Image",
+            "value": "通用图片"
+        },
+        {
+            "key": "Image with tip",
+            "value": "带悬浮的图片"
         }
-
     ]
 }
