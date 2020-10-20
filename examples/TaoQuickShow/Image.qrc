@@ -58,5 +58,6 @@
         <file>Image/Window/settings_white.png</file>
         <file>Image/logo/milk_32.png</file>
         <file>Image/logo/milk_48.png</file>
+        <file>Image/Common/menu.png</file>
     </qresource>
 </RCC>

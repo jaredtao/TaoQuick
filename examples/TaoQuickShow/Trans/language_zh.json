@@ -100,8 +100,8 @@
             "value": "霜之哀伤"
         },
         {
-            "key": "Welcome to the 'TaoQuick' demo program",
-            "value": "<p> 欢迎使用TaoQuick演示程序，此程序罗列了<br/>TaoQuick的所有功能，并全面支持动态切换UI风格<br/>(换皮肤)、动态翻译多国语言等功能。<br/></p><p>    更多功能正在路上，敬请期待。</p>"
+            "key": "TaoQuick provides a set of controls that can be used to build complete interfaces in Qt Quick.",
+            "value": "TaoQuick 提供一系列功能组件，可用于Qt Quick 构建的应用中。"
         },
         {
             "key": "Welcome",

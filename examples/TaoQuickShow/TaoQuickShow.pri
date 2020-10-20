@@ -41,8 +41,8 @@ CONFIG(debug, debug|release) {
 
     CONFIG += file_copies
 
-    trans.files = $$_PRO_FILE_PWD_/Trans
-    trans.path = $$DESTDIR
+    trans.files = $$PWD/Trans/language_zh.json
+    trans.path = $$DESTDIR/Trans
     COPIES += trans
 }
-OTHER_FILES += $$_PRO_FILE_PWD_/Trans/*
+OTHER_FILES += $$PWD/Trans/language_zh.json

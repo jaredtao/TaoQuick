@@ -6,6 +6,8 @@ Item {
 
     property int frameCount: 0
     property color textColor: "#f7e08c"
+    implicitWidth: childrenRect.width
+    implicitHeight: childrenRect.height
     Image {
         id: spinner
         source: CusConfig.imagePathPrefix + "spinner.png"
@@ -25,7 +27,7 @@ Item {
     BasicText {
         anchors.left: spinner.right
         anchors.verticalCenter: parent.verticalCenter
-        text: "FPS" + fps
+        text: "FPS " + fps
         font.pixelSize: 20
         style: Text.Outline
         styleColor: "#606060"
