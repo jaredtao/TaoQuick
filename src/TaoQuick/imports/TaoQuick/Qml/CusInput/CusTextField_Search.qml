@@ -37,7 +37,7 @@ CusTextField {
             x: icon.x + icon.width
             color: CusConfig.controlBorderColor
         }
-        CusButton_Image {
+        CusButton_ImageColorOverlay {
             z: 3
             anchors {
                 right: parent.right

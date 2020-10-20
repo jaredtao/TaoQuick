@@ -2,12 +2,12 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
 import "./Page"
-
+import "./Pane"
 //import Qt.labs.platform 1.1
 CusBackground {
     id: rootItem
-    width: 1440
-    height: 900
+    width: 1024
+    height: 720
 
     //    SystemTrayIcon {
     //        id: sysTray
@@ -28,7 +28,7 @@ CusBackground {
     //    SettingsDialog {
     //        id: settingDialog
     //    }
-    TitlePage {
+    TitlePane {
         id: title
         width: parent.width
         height: 60
@@ -44,14 +44,44 @@ CusBackground {
             anchors {
                 right: parent.right
                 top: parent.top
+                rightMargin: 5
             }
         }
 
         LeftPane {
             id: leftPane
-            anchors.fill: parent
+            property real targetW: parent.width * Math.PI * 0.1 //0.3
+            width: targetW
+            height: parent.height
+            property bool isOpen: true
+            x: isOpen ? 0 : -targetW - 1
+            Behavior on x {
+                NumberAnimation { duration: 350}
+            }
         }
-
+        CusButton_ImageColorOverlay {
+            btnImgNormal: imgPath + "Common/menu.png"
+            anchors.verticalCenter: parent.verticalCenter
+            anchors {
+                left: leftPane.right
+                top: leftPane.top
+                topMargin: 5
+            }
+            width: 32
+            height: 32
+            onClicked: {
+                leftPane.isOpen = !leftPane.isOpen
+            }
+        }
+        Rectangle {
+            width: 1
+            anchors {
+                top: leftPane.top
+                bottom: leftPane.bottom
+                right: leftPane.right
+            }
+            color: CusConfig.controlBorderColor
+        }
         RightPane {
             id: rightPane
             anchors {
