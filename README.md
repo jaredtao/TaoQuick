@@ -6,7 +6,7 @@
 
 -------------------------------------------------------------
 
-# 目录
+# 目录 table of contents
 
 - [目录](#目录)
 - [TaoQuick](#taoquick)
@@ -42,7 +42,6 @@
 
 [涛哥的博客-国内镜像](https://jaredtao.gitee.io)
 
-[知乎专栏-Qt进阶之路](https://zhuanlan.zhihu.com/TaoQt)
 
 ## 徽章预览
 
@@ -128,90 +127,138 @@
 [release-date]: https://img.shields.io/github/release-date/jaredtao/taoquick.svg
 
 
-## 部分Demo效果预览
+## 部分效果预览
 
-### 启动界面
+### 主页
 
-![](https://gitee.com/jaredtao/TaoQuickPreview/blob/master/Preview/Splash.gif)
+![](preview/main.png)
 
-### 动态换皮肤
+### 换皮肤
 
-![](https://gitee.com/jaredtao/TaoQuickPreview/blob/master/Preview/Skin.gif)
+![](preview/skin.png)
 
-### 百叶窗特效
+### 多语言
 
-![](https://gitee.com/jaredtao/TaoQuickPreview/blob/master/Preview/Animation/5.gif)
+![](preview/I18n.png)
 
-### 棋盘特效
-![](https://gitee.com/jaredtao/TaoQuickPreview/blob/master/Preview/PageSwitch/棋盘效果.gif)
+### 各种按钮组件
 
-## 全部效果预览
+![](preview/Buttons.png)
 
-gif太多，放进单独的仓库了[TaoQuickPreview](https://github.com/jaredtao/TaoQuickPreview)
+### 数据输入组件
 
-也可以访问gitee镜像仓库 [TaoQuickPreview gitee](https://gitee.com/jaredtao/TaoQuickPreview)
+![](preview/Data.png)
+
+### 矩形框组件
+
+![](preview/rect.png)
+
+### 动画特效-箭头流动
+
+![](preview/Arrow.png)
+
+### 动画特效-跟上节奏
+
+![](preview/byte.png)
+
+
+### ShaderToy-蜗牛
+
+![](preview/snail.png)
+
+### ShaderToy-超级玛丽
+
+![](preview/SuperMario.png)
+
 
 ## 开发环境
 
-* Qt 5.12.x 以上
+* Qt 5.9.0 以上
 
-* 已兼容Qt5.15新版插件
- 
-## 功能列表
-|用途|分类|名称|进度|说明|
-|--|--|--|--|--|
-|基础组件|-|-|-|-|
-||按钮|-|-|-|
-|||图片按钮|完成||
-|||文字按钮|完成||
-|||图文按钮|完成|左右或上下布局可调|
-|||渐变背景按钮|完成|Material风格的圆角渐变背景|
-||进度条|-|-|-|
-|||条形进度条|完成|支持圆角、闪光效果、提示性文字或图片|
-|||圆环进度条|完成||
-||鼠标事件|-|-|-|
-|||拖拽区域|完成||
-|||透传区域|完成|透传鼠标事件|
-||功能组件|-|-|-|
-|||等待指示器|完成|小圆点数量、半径、颜色、转动速度都可以调节|
-|||对话框|完成|单个组件支持创建文件、打开文件、打开文件夹、打开多个文件四种用法|
-|||可拖动组件|完成|鼠标在边缘改变大小、鼠标在中间拖动改变位置|
-|||帧率组件|完成|显示帧率|
-|||提示框|完成|Slack风格，带三角箭头|
-|自绘组件|-|-|-|-|
-||Shapes自绘|-|-|-|
-|||圆角矩形|完成|支持任意圆角、支持透明色|
-|动画组件|-|-|-|-|
-||进场动画|-|-|参考ppt的基础动画|
-|||平移|完成|支持上、下、左、右四个方向|
-|||梯度|完成|支持上、下、左、右四个方向|
-|||劈裂|完成|支持水平由内、水平由外、垂直由内、垂直由外四种|
-|||对角线|完成|支持从左上角、从右上角、从左下角、从右下角四种|
-|||百叶窗|完成|支持上、下、左、右四个方向|
-|||方盒|完成|支持由内、由外两种|
-|||圆盒|完成|支持由内、由外两种|
-|||十字|完成|支持由内、由外两种|
-|||菱形|完成|支持由内、由外两种|
-|||轮子|完成|支持顺时针、逆时针、扇形三种|
-|||棋盘|完成|支持向右、向下两种|
-|||溶解|完成||
-|特效组件|-|-|-|-|
-|||跟上节奏|完成|老式DVD上音符抖动的效果|
-|||暗流涌动|完成|流动的箭头和倒影效果|
-|||魔力圈圈|完成|爱的魔力转圈圈|
-||ShaderToy|-|-|在Android上测试过|
-|||穿云洞|完成||
-|||星球之光|完成||
-|||蜗牛|完成||
-|||超级马里奥|完成||
-|研究性组件|-|-|-|-|
-|||圆环视图|研究中||
-|||流体效果|研究中||
+* 已兼容Qt5.15、Qt6
+
+## 项目结构
+
+项目结构如下
+
+![](doc/struct1.png)
+
+各目录说明如下表：
+|目录|说明|备注|
+|----|----|----|
+|src|TaoQuick核心库|主要是qml代码和图片资源,以及designer支持相关的配置和脚本,不包含c++代码|
+|exampes|各种示例程序|演示如何使用TaoQuick核心库,其中TaoQuickShow比较全面地展示TaoQuick的各项功能|
+|3rdparty|第三方库||
+|mkspecs|qmake功能的扩展||
+|.github|github-actions配置|持续集成相关配置，用于自动化构建、发布|
+
+## 核心库 TaoQuick
+
+核心库目录为
+
+src/TaoQuick/imports/TaoQuick/Qml
+
+核心库结构如下
+
+![](doc/core.png)
+
+为了避免与Qt默认组件混淆，组件名称全部以Cus开头 (Custom的缩写)
+
+CusConfig是核心库的全局配置,主要包括字体、颜色等,所有组件都按照此配置显示
+
+其它各目录说明如下表：
+
+|目录|说明|备注|
+|----|----|----|
+|Basic|基础的组件，诸如文本、悬浮提示等|用于统一整个工程中的基础组件，方便在工程变的庞大时，做全局替换|
+|CusBackground|一个简单的背景框|一般放在程序的最开始，用来吸收空白区域的鼠标焦点|
+|CusButton|按钮|已封装一部分用到的按钮，也可以二次定制各种效果|
+|CusCheckBox|勾选||
+|CusComboBox|下拉框||
+|CusImage|基础的图像||
+|CusInput|输入框||
+|CusLabel|文本标签||
+|CusListView|列表|简单的定制了滚动条|
+|CusPopup|弹出框||
+|CusScroll|滚动条||
+|CusSlider|可拖动进度条||
+|CusSpinBox|调节框||
+|CusTable|表格|需要配合特定的C++ model使用|
+|Effect|特效|动画、页面切换效果、ShaderToy等|
+|Misc|其它杂项||
+
+## 使用核心库TaoQuick 
+
+使用核心库，只需要在项目中导入'.pri'文件即可，TaoQuick组件将以本地文件或qrc资源的方式被引用。
+
+此种用法是在长期、多次探索后得出的，比较简洁的用法，与旧的Qml模块、Qml C++插件等方式相比，有以下优势:
+
+* 导入pri后, 不需要额外编译、生成dll或插件
+
+* 发布程序时不需要额外拷贝资源
+
+* 导入pri后, Qt Creater即可支持TaoQuick的Qml代码高亮、双击跳转
+
+* 导入pri后，在Qml中导入模块(import TaoQuick 1.0),即可在Qt Creater 的 designer模式中，通过拖拽使用TaoQuick组件、可视化开发UI (原理: 通过脚本生成designer需要的metainfo)
 
 
-## TaoQuick 安装和使用
+具体使用步骤：
 
-[TaoQuick 安装和使用](Install.md)
+1. 将src/TaoQuick文件夹拷贝到你的项目中，任意位置
+
+2. 在你的项目pro文件中,导入对应的TaoQuick文件夹中的pri文件即可
+
+```qmake
+include(TaoQuick/TaoQuick.pri)
+```
+
+或者
+
+```qmake
+include(src/TaoQuick/imports/imports.pri)
+```
+
+都可以,只要路径对应到实际的文件即可
 
 
 ***
@@ -222,22 +269,13 @@ gif太多，放进单独的仓库了[TaoQuickPreview](https://github.com/jaredta
 
 欢迎联系我，乐于提供技术咨询服务，可洽谈技术支持、商业合作。
 
-邮箱:  jared2020@163.com            
-
 微信:  xsd2410421 
 
 QQ: 759378563
 
+邮箱:  jared2020@163.com            
+
 <img src="https://gitee.com/jaredtao/jaredtao/raw/master/img/weixin_connect.jpg?raw=true" width="30.35%" height="30%" /><img src="https://gitee.com/jaredtao/jaredtao/raw/master/img/qq_connect.jpg?raw=true" width="28%" height="28%" />
-
-*** 
-## 关注作者动态
-
-欢迎关注涛哥的微信公众号： Qt进阶之路
-
-不定期分享Qt相关的高质量教程
-
-<img src="https://gitee.com/jaredtao/jaredtao/raw/master/img/weixingongzhonghao.jpg?raw=true" width="28%" height="28%" />
 
 *****
 ## 寻找同道中人
