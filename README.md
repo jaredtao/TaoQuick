@@ -241,6 +241,7 @@ CusConfig是核心库的全局配置,主要包括字体、颜色等,所有组件
 
 * 导入pri后，在Qml中导入模块(import TaoQuick 1.0),即可在Qt Creater 的 designer模式中，通过拖拽使用TaoQuick组件、可视化开发UI (原理: 通过脚本生成designer需要的metainfo)
 
+![](preview/designer.png)
 
 具体使用步骤：
 
