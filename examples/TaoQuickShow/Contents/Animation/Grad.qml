@@ -25,7 +25,7 @@ Item {
             id: g2
             width: 250
             height: 375
-            dir: ASlowEnter.Direct.FromRight
+            dir: directFromRight
             effectSource.sourceItem: src
         }
 
@@ -33,12 +33,12 @@ Item {
             id: g3
             width: 250
             height: 375
-            dir: ASlowEnter.Direct.FromTop
+            dir: directFromTop
             effectSource.sourceItem: src
         }
         AGrad {
             id: g4
-            dir: ASlowEnter.Direct.FromBottom
+            dir: directFromBottom
             width: 250
             height: 375
             effectSource.sourceItem:  src
