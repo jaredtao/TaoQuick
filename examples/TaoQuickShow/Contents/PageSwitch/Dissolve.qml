@@ -2,10 +2,11 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
 
-Item {
+PageSwitchBase {
+    id: c
     anchors.fill: parent
 
-    property var images:[
+    images:[
         imgPath + "Effect/Girls/girl1.jpeg",
         imgPath + "Effect/Girls/girl2.jpeg",
         imgPath + "Effect/Girls/girl3.jpeg",
@@ -31,12 +32,10 @@ Item {
         source: imgPath + "Effect/Dissolve_2.png"
         visible: false
     }
-    PageSwitchBase {
-        id: c
-        width: 500
-        height: 750
+    Item {
+        width: 400
+        height: 600
         anchors.centerIn: parent
-        maxCount: images.length
         Repeater {
             model: images
             SDissolve {
@@ -44,34 +43,6 @@ Item {
                 sourceItem: Image { source: images[index] }
                 dissolveImage: dissolveSrc1
                 state: index === c.currentIndex ? "show" : "hide"
-            }
-        }
-    }
-    Switch {
-        id: autoPlaySwitch
-        anchors.left: parent.left
-        anchors.bottom: parent.bottom
-
-        text: "Auto Play"
-        checked: true
-    }
-    Timer {
-        id: autoPlayTimer
-        interval: 2800
-        running: autoPlaySwitch.checked
-        repeat: true
-        property bool reserve: false
-        triggeredOnStart: true
-        onTriggered: {
-            if (reserve) {
-                c.currentIndex--;
-            } else {
-                c.currentIndex++;
-            }
-            if (c.currentIndex >= images.length - 1) {
-                reserve = true;
-            } else if(c.currentIndex <= 0) {
-                reserve = false;
             }
         }
     }

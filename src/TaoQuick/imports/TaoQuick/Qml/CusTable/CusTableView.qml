@@ -17,6 +17,7 @@ ListView {
     interactive: false
     snapMode: ListView.SnapToItem
     cacheBuffer: 12000
+    property string noDataText: qsTr("No Data")
 
     ScrollBar.horizontal: CusScrollBar {
         id: hbar
@@ -103,7 +104,7 @@ ListView {
     removeDisplaced: null
     populate: null
     BasicText {
-        text: qsTr("No Data")
+        text: noDataText
         anchors {
             horizontalCenter: parent.horizontalCenter
             top: parent.top
@@ -111,7 +112,7 @@ ListView {
         }
         visible: cusTableView.count <= 0
     }
-    RectDraw {
+    CusRectDraw {
         id: tableRectItem
         x: tableAreaX
         width: parent.width - x - CusConfig.scrollBarSize

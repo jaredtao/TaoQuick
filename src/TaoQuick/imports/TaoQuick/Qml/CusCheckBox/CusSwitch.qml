@@ -4,8 +4,7 @@ import ".."
 import "../.."
 Switch {
     id: cusSwitch
-    implicitWidth: 36
-    implicitHeight: 20
+
     property color backgroundColor_on :"#579ee5"
     property color indicatorColor_on: "#ffffff"
 
@@ -17,11 +16,11 @@ Switch {
 
     property color backgroundColor_off_disable :"#919191"
     property color indicatorColor_off_disable: "#b6bdc5"
-
+    spacing: 10
     indicator: Rectangle {
         id: indicatorRect
-        width: cusSwitch.width
-        height: cusSwitch.height
+        implicitWidth: 36
+        implicitHeight: 20
         x: cusSwitch.leftPadding
         y: (parent.height - height) / 2
         radius: height / 2
@@ -52,6 +51,10 @@ Switch {
             border.width: 1
             border.color: cusSwitch.checked ? backgroundColor_on : backgroundColor_off
         }
+    }
+    contentItem: BasicText {
+        leftPadding: cusSwitch.indicator.width + cusSwitch.spacing
+        text: cusSwitch.text
     }
     TransArea {}
 }

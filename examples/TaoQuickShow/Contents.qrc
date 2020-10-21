@@ -18,5 +18,20 @@
         <file>Contents/Animation/Rhombus.qml</file>
         <file>Contents/Animation/Square.qml</file>
         <file>Contents/Animation/Wheel.qml</file>
+        <file>Contents/PageSwitch/Board.qml</file>
+        <file>Contents/PageSwitch/Circle.qml</file>
+        <file>Contents/PageSwitch/Cleavage.qml</file>
+        <file>Contents/PageSwitch/Cross.qml</file>
+        <file>Contents/PageSwitch/Diagonal.qml</file>
+        <file>Contents/PageSwitch/Dissolve.qml</file>
+        <file>Contents/PageSwitch/FadeInOut.qml</file>
+        <file>Contents/PageSwitch/Grad.qml</file>
+        <file>Contents/PageSwitch/Louver.qml</file>
+        <file>Contents/PageSwitch/PageSwitchBase.qml</file>
+        <file>Contents/PageSwitch/Rhombus.qml</file>
+        <file>Contents/PageSwitch/Sector.qml</file>
+        <file>Contents/PageSwitch/Square.qml</file>
+        <file>Contents/PageSwitch/Wheel.qml</file>
+        <file>Contents/Animation/AnimationBase.qml</file>
     </qresource>
 </RCC>

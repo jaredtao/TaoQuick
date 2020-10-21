@@ -7,8 +7,8 @@ import "./Dialog"
 //import Qt.labs.platform 1.1
 CusBackground {
     id: rootItem
-    width: 1024
-    height: 720
+    width: 1440
+    height: 960
     CusImage {
         id: bgImg
         source: imgPath + "Window/flower.jpg"

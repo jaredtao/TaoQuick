@@ -336,6 +336,20 @@
         }
     }
     Type {
+        name: "TaoQuick.Qml.CusListView.CusListView"
+        icon: "images/CusListView.png"
+
+        ItemLibraryEntry {
+            name: "CusListView"
+            category: "TaoQuick - CusListView"
+            libraryIcon: "images/CusListView.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
         name: "TaoQuick.Qml.CusPopup.CusPopup"
         icon: "images/CusPopup.png"
 
@@ -448,12 +462,12 @@
         }
     }
     Type {
-        name: "TaoQuick.Qml.CustomTable.CusTableHeader"
+        name: "TaoQuick.Qml.CusTable.CusTableHeader"
         icon: "images/CusTableHeader.png"
 
         ItemLibraryEntry {
             name: "CusTableHeader"
-            category: "TaoQuick - CustomTable"
+            category: "TaoQuick - CusTable"
             libraryIcon: "images/CusTableHeader.png"
             version: "1.0"
             requiredImport: "TaoQuick"
@@ -462,12 +476,12 @@
         }
     }
     Type {
-        name: "TaoQuick.Qml.CustomTable.CusTableRow"
+        name: "TaoQuick.Qml.CusTable.CusTableRow"
         icon: "images/CusTableRow.png"
 
         ItemLibraryEntry {
             name: "CusTableRow"
-            category: "TaoQuick - CustomTable"
+            category: "TaoQuick - CusTable"
             libraryIcon: "images/CusTableRow.png"
             version: "1.0"
             requiredImport: "TaoQuick"
@@ -476,12 +490,12 @@
         }
     }
     Type {
-        name: "TaoQuick.Qml.CustomTable.CusTableView"
+        name: "TaoQuick.Qml.CusTable.CusTableView"
         icon: "images/CusTableView.png"
 
         ItemLibraryEntry {
             name: "CusTableView"
-            category: "TaoQuick - CustomTable"
+            category: "TaoQuick - CusTable"
             libraryIcon: "images/CusTableView.png"
             version: "1.0"
             requiredImport: "TaoQuick"

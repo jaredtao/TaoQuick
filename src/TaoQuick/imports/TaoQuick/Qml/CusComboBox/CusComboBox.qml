@@ -102,7 +102,7 @@ ComboBox {
 
         background: Rectangle {
             color: CusConfig.controlColor
-            //            radius: CusConfig.controlBorderRadius
+            radius: CusConfig.controlBorderRadius
             border.width: 1
             border.color: CusConfig.controlBorderColor
         }
@@ -115,7 +115,6 @@ ComboBox {
             leftPadding: cusComboBox.leftPadding
             rightPadding: cusComboBox.indicator.width + cusComboBox.spacing
             text: qsTr(String(modelData))
-            font: cusComboBox.font
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
@@ -123,10 +122,18 @@ ComboBox {
                    === index ? CusConfig.textColor_pressed : CusConfig.textColor
         }
         highlighted: cusComboBox.hoveredIndex === index
-        background: Rectangle {
+        background: Item {
             width: cusComboBox.width
             height: cusComboBox.height
-            color: cusComboBox.hoveredIndex === index ? CusConfig.controlColor_hovered : (cusComboBox.currentIndex === index ? CusConfig.controlColor_pressed : CusConfig.controlColor)
+            Rectangle {
+                anchors {
+                    fill: parent
+                    leftMargin: 4
+                    rightMargin: 14
+                }
+                radius: CusConfig.controlBorderRadius
+                color: cusComboBox.hoveredIndex === index ? CusConfig.controlColor_hovered : (cusComboBox.currentIndex === index ? CusConfig.controlColor_pressed : CusConfig.controlColor)
+            }
         }
         TransArea {
             enabled: cusComboBox.enabled

@@ -374,6 +374,19 @@
         {
             "key": "ShaderEffect",
             "value": "着色器特效"
+        },
+        {
+            "key": "Auto Play",
+            "value": "自动播放"
+        },
+        {
+            "key": "Replay",
+            "value": "重新播放"
+        },
+        {
+            "key": "No Data",
+            "value": "无数据"
         }
+
     ]
 }
