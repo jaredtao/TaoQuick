@@ -342,6 +342,18 @@
         {
             "key": "Sponsors",
             "value": "赞助"
+        },
+        {
+            "key": "RectDraw, can draw rect by mouse press and move",
+            "value": "RectDraw 可以通过鼠标按下和移动来画框"
+        },
+        {
+            "key": "Drag Rect",
+            "value": "拖动框"
+        },
+        {
+            "key": "TemplateDragBorder can be use to resize, move or rotation Rectangle by draging corner or border handler",
+            "value": "TemplateDragBorder 可通过操作器改变尺寸、坐标或旋转"
         }
 
     ]
