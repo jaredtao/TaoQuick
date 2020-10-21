@@ -58,9 +58,9 @@ TaoFrameLessView::TaoFrameLessView(QWindow *parent)
     : QQuickView(parent)
 {
     setFlags(/*Qt::CustomizeWindowHint | */Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint);
-    setResizeMode(SizeRootObjectToView);
+    setResizeMode(SizeViewToRootObject);
     setColor(QColor(Qt::transparent));
-    setMinimumSize({1024, 700});
+    setMinimumSize({1024, 720});
     resize(1440, 960);
 
     //WS_THICKFRAME 带回Areo效果

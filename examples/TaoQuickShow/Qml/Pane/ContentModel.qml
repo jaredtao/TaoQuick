@@ -132,6 +132,93 @@ ListModel {
         groupOpen: true
     }
 
+
+
+    ListElement {
+        name: "FadeInOut"
+        source: "PageSwitch/FadeInOut.qml"
+        visible: true
+        group: "PageSwitch"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Grad"
+        source: "PageSwitch/Grad.qml"
+        visible: true
+        group: "PageSwitch"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Cleavage"
+        source: "PageSwitch/Cleavage.qml"
+        visible: true
+        group: "PageSwitch"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Diagonal"
+        source: "PageSwitch/Diagonal.qml"
+        visible: true
+        group: "PageSwitch"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Louver"
+        source: "PageSwitch/Louver.qml"
+        visible: true
+        group: "PageSwitch"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Square"
+        source: "PageSwitch/Square.qml"
+        visible: true
+        group: "PageSwitch"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Circle"
+        source: "PageSwitch/Circle.qml"
+        visible: true
+        group: "PageSwitch"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Cross"
+        source: "PageSwitch/Cross.qml"
+        visible: true
+        group: "PageSwitch"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Rhombus"
+        source: "PageSwitch/Rhombus.qml"
+        visible: true
+        group: "PageSwitch"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Wheel"
+        source: "PageSwitch/Wheel.qml"
+        visible: true
+        group: "PageSwitch"
+        groupOpen: true
+    }
+
+    ListElement {
+        name: "Board"
+        source: "PageSwitch/Board.qml"
+        visible: true
+        group: "PageSwitch"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Dissolve"
+        source: "PageSwitch/Dissolve.qml"
+        visible: true
+        group: "PageSwitch"
+        groupOpen: true
+    }
     function updateSection(section, isOpen) {
         for (var i = 0; i < count; ++i) {
             var obj = get(i)
