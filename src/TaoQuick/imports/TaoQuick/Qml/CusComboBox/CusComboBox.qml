@@ -11,7 +11,6 @@ ComboBox {
     rightPadding: 4
     currentIndex: 0
     readonly property string imgUrlNormal: CusConfig.imagePathPrefix + "ComboBox_Down.png"
-    readonly property string imgUrlHovered: CusConfig.imagePathPrefix + "ComboBox_Down_Hover.png"
 
     property real defaultHeight: CusConfig.fixedHeight * 6
     displayText: qsTr(currentText)
@@ -26,7 +25,6 @@ ComboBox {
         leftPadding: cusComboBox.leftPadding
         rightPadding: cusComboBox.indicator.width + cusComboBox.spacing
         text: cusComboBox.displayText
-        font: cusComboBox.font
         horizontalAlignment: Text.AlignLeft
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
@@ -45,28 +43,35 @@ ComboBox {
         smooth: true
         visible: false
     }
-    indicator: ColorOverlay {
+    indicator: Item {
+        height: cusComboBox.height - cusComboBox.topPadding - cusComboBox.bottomPadding
+        width: height
         x: cusComboBox.width - width - cusComboBox.rightPadding
-        y: cusComboBox.topPadding + (cusComboBox.availableHeight - height) / 2
-        source: baseImage
-        width: baseImage.width
-        height: baseImage.height
-        cached: true
-        color: {
-            if (!cusComboBox.enabled) {
-                return colorDisable
-            } else if (cusComboBox.pressed) {
-                return colorPressed
-            } else if (cusComboBox.hovered) {
-                return colorHovered
-            } else {
-                return colorNormal
+        y: (cusComboBox.height - height) / 2
+        ColorOverlay {
+            anchors {
+                centerIn: parent
             }
-        }
-        rotation: cusComboBox.popup.visible ? 180 : 0
-        Behavior on rotation {
-            NumberAnimation {
-                duration: 200
+            source: baseImage
+            width: baseImage.width
+            height: baseImage.height
+            cached: true
+            color: {
+                if (!cusComboBox.enabled) {
+                    return colorDisable
+                } else if (cusComboBox.pressed) {
+                    return colorPressed
+                } else if (cusComboBox.hovered) {
+                    return colorHovered
+                } else {
+                    return colorNormal
+                }
+            }
+            rotation: cusComboBox.popup.visible ? 180 : 0
+            Behavior on rotation {
+                NumberAnimation {
+                    duration: 200
+                }
             }
         }
     }
@@ -97,7 +102,7 @@ ComboBox {
 
         background: Rectangle {
             color: CusConfig.controlColor
-//            radius: CusConfig.controlBorderRadius
+            //            radius: CusConfig.controlBorderRadius
             border.width: 1
             border.color: CusConfig.controlBorderColor
         }
