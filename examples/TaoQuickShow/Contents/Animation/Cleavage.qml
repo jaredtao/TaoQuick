@@ -19,28 +19,28 @@ Item {
             id: s1
             width: 250
             height: 375
-            dir: ACleavage.Direct.HorizonToInner
+            dir: directHorizonToInner
             effectSource.sourceItem: src
         }
         ACleavage {
             id: s2
             width: 250
             height: 375
-            dir: ACleavage.Direct.HorizonToOuter
+            dir: directHorizonToOuter
             effectSource.sourceItem: src
         }
         ACleavage {
             id: s3
             width: 250
             height: 375
-            dir: ACleavage.Direct.VerticalToInner
+            dir: directVerticalToInner
             effectSource.sourceItem: src
         }
         ACleavage {
             id: s4
             width: 250
             height: 375
-            dir: ACleavage.Direct.VerticalToOuter
+            dir: directVerticalToOuter
             effectSource.sourceItem: src
         }
     }

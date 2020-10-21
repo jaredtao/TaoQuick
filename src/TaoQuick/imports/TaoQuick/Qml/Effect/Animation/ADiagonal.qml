@@ -1,17 +1,16 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 
+import ".."
 import "../.."
 
 ShaderEffect {
     id: r
-    enum Direct {
-        FromLeftTop = 0,
-        FromRightTop = 1,
-        FromLeftBottom = 2,
-        FromRightBottom = 3
-    }
-    property int dir: ADiagonal.Direct.FromLeftTop
+    readonly property int directFromLeftTop: 0
+    readonly property int directFromRightTop: 1
+    readonly property int directFromLeftBottom: 2
+    readonly property int directFromRightBottom: 3
+    property int dir: directFromLeftTop
     property int duration: 1000
     property ShaderEffectSource effectSource: ShaderEffectSource {
         hideSource: true
