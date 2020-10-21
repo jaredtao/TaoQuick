@@ -252,6 +252,20 @@ MetaInfo {
         }
     }
     Type {
+        name: "TaoQuick.Qml.CusInput.CusIPAddress"
+        icon: "images/CusIPAddress.png"
+
+        ItemLibraryEntry {
+            name: "CusIPAddress"
+            category: "TaoQuick - CusInput"
+            libraryIcon: "images/CusIPAddress.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
         name: "TaoQuick.Qml.CusInput.CusTextField"
         icon: "images/CusTextField.png"
 

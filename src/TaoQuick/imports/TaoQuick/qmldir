@@ -17,6 +17,7 @@ CusSwitch 1.0 Qml/CusCheckBox/CusSwitch.qml
 CusComboBox 1.0 Qml/CusComboBox/CusComboBox.qml
 CusImage 1.0 Qml/CusImage/CusImage.qml
 CusImage_Tip 1.0 Qml/CusImage/CusImage_Tip.qml
+CusIPAddress 1.0 Qml/CusInput/CusIPAddress.qml
 CusTextField 1.0 Qml/CusInput/CusTextField.qml
 CusTextField_Btn 1.0 Qml/CusInput/CusTextField_Btn.qml
 CusTextField_Search 1.0 Qml/CusInput/CusTextField_Search.qml
