@@ -1,4 +1,4 @@
-﻿MetaInfo {
+MetaInfo {
     Type {
         name: "TaoQuick.Qml.Basic.BasicText"
         icon: "images/BasicText.png"
@@ -1008,3 +1008,4 @@
         }
     }
 }
+
