@@ -979,4 +979,18 @@
             Property { name: "height"; type: "int"; value: 80 }
         }
     }
+    Type {
+        name: "TaoQuick.Qml.Misc.CusTemplateDragBorder"
+        icon: "images/CusTemplateDragBorder.png"
+
+        ItemLibraryEntry {
+            name: "CusTemplateDragBorder"
+            category: "TaoQuick - Misc"
+            libraryIcon: "images/CusTemplateDragBorder.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
 }

@@ -71,4 +71,5 @@ CusFPS 1.0 Qml/Misc/CusFPS.qml
 CusRectDraw 1.0 Qml/Misc/CusRectDraw.qml
 CusResizeBorder 1.0 Qml/Misc/CusResizeBorder.qml
 CusShortCutKeys 1.0 Qml/Misc/CusShortCutKeys.qml
+CusTemplateDragBorder 1.0 Qml/Misc/CusTemplateDragBorder.qml
 singleton CusConfig 1.0 Qml/CusConfig.qml
