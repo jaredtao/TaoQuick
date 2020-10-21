@@ -1,18 +1,16 @@
 ﻿import QtQuick 2.9
 import QtQuick.Controls 2.2
-
+import ".."
 import "../.."
 
 ShaderEffect {
     id: r
-    enum Direct {
-        Horizon = 0,
-        Vertical = 1,
-        HorizonReverse = 2,
-        VerticalReverse = 3
-    }
+    readonly property int directHorizon: 0
+    readonly property int directVertical: 1
+    readonly property int directHorizonReverse: 2
+    readonly property int directVerticalReverse: 3
 
-    property int dir: ALouver.Direct.Horizon
+    property int dir: directHorizon
 
     property int count: 4
     property int duration: 1000

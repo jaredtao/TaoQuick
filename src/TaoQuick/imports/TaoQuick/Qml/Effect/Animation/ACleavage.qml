@@ -1,17 +1,16 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-
+import ".."
 import "../.."
 
 ShaderEffect {
     id: r
-    enum Direct {
-        HorizonToInner = 0,
-        HorizonToOuter = 1,
-        VerticalToInner = 2,
-        VerticalToOuter = 3
-    }
-    property int dir : ASquare.ACleavge.HorizonToInner
+    readonly property int directHorizonToInner: 0
+    readonly property int directHorizonToOuter: 1
+    readonly property int directVerticalToInner: 2
+    readonly property int directVerticalToOuter: 3
+
+    property int dir : directVerticalToInner
     property int duration: 1000
     property ShaderEffectSource effectSource: ShaderEffectSource {
         hideSource: true

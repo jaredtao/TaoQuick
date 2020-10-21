@@ -18,14 +18,14 @@ Item {
             id: s1
             width: 250
             height: 375
-            dir: ASquare.Direct.FromInner
+            dir: directFromInner
             effectSource.sourceItem: src
         }
         ACross {
             id: s2
             width: 250
             height: 375
-            dir: ASquare.Direct.FromOuter
+            dir: directFromOuter
             effectSource.sourceItem: src
         }
     }
