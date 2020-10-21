@@ -114,81 +114,140 @@ make the appropriate function expansion to  facilitate development of Qml applic
 
 ## Some Demo Preview
 
-### Splash
+### Main Page
 
-![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/Splash.gif)
+![](preview/main.png)
 
 ### Change Skin
 
-![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/Skin.gif)
+![](preview/skin.png)
 
-### Shutters
+### Multi-Language
 
-![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/Animation/5.gif)
+![](preview/I18n.png)
 
-### Chess
+### Some Button Controls
 
-![](https://github.com/jaredtao/TaoQuickPreview/blob/master/Preview/PageSwitch/棋盘效果.gif)
+![](preview/Buttons.png)
 
-## All effect preview
+### Data entry Controls
 
-There are too many 'gif' files, In a separate repo [TaoQuickPreview](https://github.com/jaredtao/TaoQuickPreview)
+![](preview/Data.png)
 
-## Functions List
-|Use|Category|Name|Progress|Note|
-|--|--|--|--|--|
-|Base Component|-|-|-|-|
-||Button|-|-|-|
-|||ImageButton|Complete||
-|||TextButton|Complete||
-|||TextImageButton|Complete|support left-right or top-bottom layout|
-|||GradiantButton|Complete|RoundButton with gradient background Material style|
-||ProgressBar|-|-|-|
-|||NormalBar|Complete|RoundCorner、flicker、custom text or image|
-|||CircleBar|Complete||
-||MouseArea|-|-|-|
-|||DragMoveArea|Complete||
-|||TransparentArea|Complete|transport mouse event|
-||Function Component|-|-|-|
-|||Indicator|Complete|can set little point count、radis、color、rotate speed|
-|||Dialog|Complete|one component support 4 usage of 'create file','open file','open folder' and 'open mulit files'|
-|||DragMoveItem|Complete|Mouse drag to change size and position|
-|||FPS|Complete|FPS|
-|||TipDialog|Complete|Slack style tip|
-|CustomDraw|-|-|-|-|
-||Shapes|-|-|-|
-|||RoundRectangle|Complete|any of 4 corner can be rounded, support transparent background|
-|Animation Component|-|-|-|-|
-||EnterAnimation|-|-|Reference to ppt animation effect|
-|||move|Complete|support up, down, left, right direction|
-|||Grad show|Complete|up, down, left, right|
-|||Cleavage|Complete|from Inner, from Outter|
-|||Diagonal|Complete|top-Left,top-Right, bottom-left, bottom-right|
-|||Louver|Complete|up, down, left, right|
-|||Square|Complete|from Inner, from Outter|
-|||Circle|Complete|from Inner, from Outter|
-|||Cross|Complete|from Inner, from Outter|
-|||Rhombus|Complete|from Inner, from Outter|
-|||Wheel|Complete|Clockwise,CounterClockwise|
-|||Board|Complete|to right, to bottom|
-|||Dissolve|Complete||
-|Special Effect|-|-|-|-|
-|||Follow rhythm|Complete||
-|||Arrow Flow|Complete||
-|||magic circle|Complete||
-||ShaderToy|-|-|support android|
-|||Cloud Hole|Complete||
-|||Planet|Complete||
-|||Snail|Complete||
-|||Super Mario|Complete||
+### Rect Drag Controls
 
-## Qt Version
+![](preview/rect.png)
 
-* Qt 5.12.x
+### Animation effect: Arrow Flow
 
-## Install 
+![](preview/Arrow.png)
 
-[TaoQuick Install and use](Install-en.md)
+### Animation effect: Byte Dancy
+
+![](preview/byte.png)
+
+### ShaderToy-Snail
+
+![](preview/snail.png)
+
+### ShaderToy-SuperMario
+
+![](preview/SuperMario.png)
+
+
+## Environment
+
+* Qt 5.9.0 or later
+
+* compatibility Qt5.15、Qt6
+
+## Project Struct
+
+Project Struct as flow:
+
+![](doc/struct1.png)
+
+echo content as table：
+
+|Content|Reference|Remark|
+|----|----|----|
+|src|TaoQuick Core Library|some qml code, picture and scripts for support designer, not has c++ code|
+|exampes|some demo|show how to use TaoQuick Core Library|
+|3rdparty|thrid party library||
+|mkspecs|qmake extern||
+|.github|github-actions|CI CD|
+
+## TaoQuick Core Library
+
+Core Library source code path:
+
+src/TaoQuick/imports/TaoQuick/Qml
+
+Content:
+
+![](doc/core.png)
+
+To avoid confusion with Qt default components, TaoQuick components names all begin with Cus (The abbreviation of Custom)
+
+CusConfig is global configuration, mainly contain font、 theme and so on, all components ard displayer in this configuration
+
+Other Contents reference above table：
+
+|Content|Reference|Remark|
+|----|----|----|
+|Basic|Basic Controls| such as Text, ToolTip, It is used to unify the basic components in the whole project and facilitate the global replacement when the project becomes huge|
+|CusBackground|A simple background box|it is usually placed at the beginning of the program to absorb mouse focus from the white space|
+|CusButton|button|Some commonly used buttons have been encapsulated, and various effects can be customized again|
+|CusCheckBox|CheckBox||
+|CusComboBox|ComboBox||
+|CusImage|Basic Image||
+|CusInput|Input||
+|CusLabel|Label||
+|CusListView|List|Simaple custom scrollbars|
+|CusPopup|Popup||
+|CusScroll|ScrollBar||
+|CusSlider|Slider||
+|CusSpinBox|SpinBox||
+|CusTable|Table|It needs to be used with specific C++ model to support the selection, check, draw rect selection, anti-selection, continuous selection and all selection|
+|Effect|Effect|Animation、PageSwitch and ShaderToy|
+|Misc|Others||
+
+## Use TaoQuick 
+
+You just need import '.pri' file to project, TaoQuick will be use as local file or qrc resource.
+
+Compared with 'Qml module' and 'Qml C++ plugin', this usage has the following advantages:
+
+* After importing '.pri', no additional compile, generation of dll or plugin are required
+
+* No additional copy resources are required to deployment the program
+
+* After importing '.pri', Qt Creater can support TaoQuick Qml code highlighting and double-clicking the Follow symbol
+
+* After import the module 'import TaoQuick 1.0' in Qml, you can use the TaoQuick component in The Designer mode of Qt Creater by dragging or visual property editor.(principle: Generate metainfo required by Designer via some script) 
+
+
+detail use step：
+
+1. copy src/TaoQuick to your project, in any location
+
+2. Import 'pri' files in the corresponding TaoQuick folder in your project 'pro' file
+
+for eaxmple: 
+
+```qmake
+include(TaoQuick/TaoQuick.pri)
+```
+
+or
+
+```qmake
+include(src/TaoQuick/imports/imports.pri)
+```
+
+
+***
+
 
 ## Sponsorship
 
