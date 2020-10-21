@@ -17,28 +17,28 @@ Item {
             id: d1
             width: 250
             height: 375
-            dir: ADiagonal.Direct.FromLeftTop
+            dir: directFromLeftTop
             effectSource.sourceItem: src
         }
         ADiagonal {
             id: d2
             width: 250
             height: 375
-            dir: ADiagonal.Direct.FromRightBottom
+            dir: directFromRightBottom
             effectSource.sourceItem: src
         }
         ADiagonal {
             id: d3
             width: 250
             height: 375
-            dir: ADiagonal.Direct.FromRightTop
+            dir: directFromRightTop
             effectSource.sourceItem: src
         }
         ADiagonal {
             id: d4
             width: 250
             height: 375
-            dir: ADiagonal.Direct.FromLeftBottom
+            dir: directFromLeftBottom
             effectSource.sourceItem: src
         }
     }

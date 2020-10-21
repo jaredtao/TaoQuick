@@ -18,14 +18,14 @@ Item {
             id: l1
             width: 250
             height: 375
-            dir: ARhombus.Direct.FromInner
+            dir: directFromInner
             effectSource.sourceItem:  src
         }
         ARhombus {
             id: l2
             width: 250
             height: 375
-            dir: ARhombus.Direct.FromOuter
+            dir: directFromOuter
             effectSource.sourceItem: src
         }
 
