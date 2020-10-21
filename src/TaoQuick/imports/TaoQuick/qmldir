@@ -23,6 +23,7 @@ CusTextField_Search 1.0 Qml/CusInput/CusTextField_Search.qml
 CusTextField_Valid 1.0 Qml/CusInput/CusTextField_Valid.qml
 CusTextInput 1.0 Qml/CusInput/CusTextInput.qml
 CusLabel 1.0 Qml/CusLabel/CusLabel.qml
+CusListView 1.0 Qml/CusListView/CusListView.qml
 CusPopup 1.0 Qml/CusPopup/CusPopup.qml
 CusToolTip_Triangle 1.0 Qml/CusPopup/CusToolTip_Triangle.qml
 CusTriangleTipBorder 1.0 Qml/CusPopup/CusTriangleTipBorder.qml
@@ -31,10 +32,10 @@ CusSlider 1.0 Qml/CusSlider/CusSlider.qml
 CusSlider_Spin 1.0 Qml/CusSlider/CusSlider_Spin.qml
 CusSpinBox 1.0 Qml/CusSpinBox/CusSpinBox.qml
 CusSpinBox_HourMinute 1.0 Qml/CusSpinBox/CusSpinBox_HourMinute.qml
-singleton CusTableConstant 1.0 Qml/CustomTable/CusTableConstant.qml
-CusTableHeader 1.0 Qml/CustomTable/CusTableHeader.qml
-CusTableRow 1.0 Qml/CustomTable/CusTableRow.qml
-CusTableView 1.0 Qml/CustomTable/CusTableView.qml
+singleton CusTableConstant 1.0 Qml/CusTable/CusTableConstant.qml
+CusTableHeader 1.0 Qml/CusTable/CusTableHeader.qml
+CusTableRow 1.0 Qml/CusTable/CusTableRow.qml
+CusTableView 1.0 Qml/CusTable/CusTableView.qml
 ABoard 1.0 Qml/Effect/Animation/ABoard.qml
 ACircle 1.0 Qml/Effect/Animation/ACircle.qml
 ACleavage 1.0 Qml/Effect/Animation/ACleavage.qml

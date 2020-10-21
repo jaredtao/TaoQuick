@@ -2,11 +2,11 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
 
-Item {
-    id: r
+PageSwitchBase {
+    id: c
     anchors.fill: parent
 
-    property var images:[
+    images:[
         imgPath + "Effect/Girls/girl1.jpeg",
         imgPath + "Effect/Girls/girl2.jpeg",
         imgPath + "Effect/Girls/girl3.jpeg",
@@ -22,13 +22,11 @@ Item {
         imgPath + "Effect/Girls/girl14.jpeg",
         imgPath + "Effect/Girls/girl15.jpeg"
     ]
-    property int dir: SLouver.Direct.Horizon
-    PageSwitchBase {
-        id: c
-        width: 500
-        height: 750
+    dirs: ["Horizon", "Vertical", "HorizonReverse", "VerticalReverse"]
+    Item {
+        width: 400
+        height: 600
         anchors.centerIn: parent
-        maxCount: images.length
         Repeater {
             model: images
             SLouver {
@@ -36,41 +34,6 @@ Item {
                 dir: r.dir
                 sourceItem: Image { source: images[index]}
                 state: index === c.currentIndex ? "show" : "hide"
-            }
-        }
-    }
-    Column {
-        anchors.left: parent.left
-        anchors.bottom: parent.bottom
-        Switch {
-            id: autoPlaySwitch
-            text: "Auto Play"
-            checked: true
-        }
-        ComboBox {
-            model: ["Horizon", "Vertical", "HorizonReverse", "VerticalReverse"]
-            onCurrentIndexChanged: {
-                r.dir = currentIndex
-            }
-        }
-    }
-    Timer {
-        id: autoPlayTimer
-        interval: 2400
-        running: autoPlaySwitch.checked
-        repeat: true
-        property bool reserve: false
-        triggeredOnStart: true
-        onTriggered: {
-            if (c.currentIndex >= images.length - 1) {
-                reserve = true;
-            } else if(c.currentIndex <= 0) {
-                reserve = false;
-            }
-            if (reserve) {
-                c.currentIndex--;
-            } else {
-                c.currentIndex++;
             }
         }
     }
