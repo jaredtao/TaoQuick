@@ -4,7 +4,7 @@ import QtQuick.Controls 2.2
 import TaoQuick 1.0
 
 
-TShaderToy {
+CusShaderToy {
     id: r
 
     //step 1: hsv color

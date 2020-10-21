@@ -4,7 +4,7 @@ import QtQuick.Controls 2.2
 import TaoQuick 1.0
 
 
-TShaderToy {
+CusShaderToy {
     anchors.fill: parent
     pixelShader:"// Created by inigo quilez - 2015
     // License Creative Commons Attribution-NonCommercial-ShareAlike 3.0
