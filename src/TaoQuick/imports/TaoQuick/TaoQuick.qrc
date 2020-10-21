@@ -20,6 +20,7 @@
         <file>Qml/CusComboBox/CusComboBox.qml</file>
         <file>Qml/CusImage/CusImage.qml</file>
         <file>Qml/CusImage/CusImage_Tip.qml</file>
+        <file>Qml/CusInput/CusIPAddress.qml</file>
         <file>Qml/CusInput/CusTextField.qml</file>
         <file>Qml/CusInput/CusTextField_Btn.qml</file>
         <file>Qml/CusInput/CusTextField_Search.qml</file>
