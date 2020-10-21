@@ -7,14 +7,12 @@ Item {
 
     property int duration: 800
 
-    enum Direct {
-        Horizon = 0,
-        Vertical = 1,
-        HorizonReverse = 2,
-        VerticalReverse = 3
-    }
+    readonly property int directHorizon: 0
+    readonly property int directVertical: 1
+    readonly property int directHorizonReverse: 2
+    readonly property int directVerticalReverse: 3
 
-    property int dir: SLouver.Direct.Horizon
+    property int dir: directHorizonn
 
     property Item sourceItem
     visible: false

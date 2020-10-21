@@ -13,5 +13,6 @@
         <file>Qml/Pane/ContentModel.qml</file>
         <file>Qml/Dialog/AboutDialog.qml</file>
         <file>Qml/Dialog/SettingsDialog.qml</file>
+        <file>Qml/Biz/ExpandBtn.qml</file>
     </qresource>
 </RCC>

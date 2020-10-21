@@ -26,6 +26,7 @@
         <file>Qml/CusInput/CusTextField_Valid.qml</file>
         <file>Qml/CusInput/CusTextInput.qml</file>
         <file>Qml/CusLabel/CusLabel.qml</file>
+        <file>Qml/CusListView/CusListView.qml</file>
         <file>Qml/CusPopup/CusPopup.qml</file>
         <file>Qml/CusPopup/CusToolTip_Triangle.qml</file>
         <file>Qml/CusPopup/CusTriangleTipBorder.qml</file>
@@ -34,10 +35,10 @@
         <file>Qml/CusSlider/CusSlider_Spin.qml</file>
         <file>Qml/CusSpinBox/CusSpinBox.qml</file>
         <file>Qml/CusSpinBox/CusSpinBox_HourMinute.qml</file>
-        <file>Qml/CustomTable/CusTableConstant.qml</file>
-        <file>Qml/CustomTable/CusTableHeader.qml</file>
-        <file>Qml/CustomTable/CusTableRow.qml</file>
-        <file>Qml/CustomTable/CusTableView.qml</file>
+        <file>Qml/CusTable/CusTableConstant.qml</file>
+        <file>Qml/CusTable/CusTableHeader.qml</file>
+        <file>Qml/CusTable/CusTableRow.qml</file>
+        <file>Qml/CusTable/CusTableView.qml</file>
         <file>Qml/Effect/CusEffectCommon.qml</file>
         <file>Qml/Effect/CusShaderToy.qml</file>
         <file>Qml/Effect/Animation/ABoard.qml</file>

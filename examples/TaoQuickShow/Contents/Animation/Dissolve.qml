@@ -2,7 +2,7 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
 
-Item {
+AnimationBase {
     anchors.fill: parent
     Image {
         id: src
@@ -48,12 +48,7 @@ Item {
         PauseAnimation {duration: 2000}
         ScriptAction {script: {a2.restart() } }
     }
-    Button {
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        text: "replay"
-        onClicked: {
-            ani.restart()
-        }
+    onReplayClicked: {
+        ani.restart()
     }
 }
