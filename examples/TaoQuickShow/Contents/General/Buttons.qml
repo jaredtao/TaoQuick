@@ -236,6 +236,27 @@ Item {
                 }
             }
             CusButton_Image {
+                id: backBtn3_1
+                width: 36
+                height: 36
+                property bool isDownload: false
+                background: Rectangle {
+                    width: 36
+                    height: 36
+                    color: backBtn3_1.pressed ? bluePressed : (backBtn3_1.hovered ? blueHover : blueNormal)
+                    radius: 2
+                    CusImage {
+                        source: imgPath + "Button/expand.png"
+                        anchors.centerIn: parent
+                        rotation: backBtn3_1.isDownload ? 180 : 0
+                        Behavior on rotation { NumberAnimation { duration: 300}}
+                    }
+                }
+                onClicked: {
+                    isDownload = !isDownload
+                }
+            }
+            CusButton_Image {
                 id: backBtn4
                 width: 120
                 height: 36

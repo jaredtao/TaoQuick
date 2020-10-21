@@ -5,13 +5,13 @@ import "../.."
 
 ShaderEffect {
     id: r
-    enum Direct {
-        FromLeft = 0,
-        FromRight = 1,
-        FromTop = 2,
-        FromBottom = 3
-    }
-    property int dir: ASlowEnter.Direct.FromLeft
+
+    readonly property int directFromLeft: 0
+    readonly property int directFromRight: 1
+    readonly property int directFromTop: 2
+    readonly property int directFromBottom: 3
+
+    property int dir: directFromLeft
     property int duration: 1000
     property ShaderEffectSource effectSource: ShaderEffectSource {
         hideSource: true
@@ -29,7 +29,7 @@ ShaderEffect {
         duration: r.duration
     }
 
-    fragmentShader: TCommon.fragmentShaderCommon + "
+    fragmentShader: CusEffectCommon.fragmentShaderCommon + "
         varying vec2 qt_TexCoord0;
         uniform float qt_Opacity;
         uniform sampler2D effectSource;
