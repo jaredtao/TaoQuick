@@ -189,9 +189,9 @@ Content:
 
 To avoid confusion with Qt default components, TaoQuick components names all begin with Cus (The abbreviation of Custom)
 
-CusConfig is global configuration, mainly contain font、 theme and so on, all components ard displayer in this configuration
+CusConfig is global configuration, mainly contain font、 theme and so on, all components are displayed in this configuration
 
-Other Contents reference above table：
+Other Contents reference to above table：
 
 |Content|Reference|Remark|
 |----|----|----|
