@@ -8,7 +8,7 @@ CusTextField {
 
     implicitWidth: 240
     height: CusConfig.fixedHeight
-    placeholderText: qsTr("Search")
+
     leftPadding: 36
     rightPadding: 30
     background: Rectangle {
