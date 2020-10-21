@@ -27,14 +27,14 @@ Item {
     property var map:[]
     property int __arrayRatio: 100
     Component.onCompleted: {
-        let startX = 0
-        let startY = r.height - 12
-        for (let i = 0; i < columnCount; ++i) {
+        var startX = 0
+        var startY = r.height - 12
+        for (var i = 0; i < columnCount; ++i) {
             map.push(getRandomInt(0, rowCount))
 
-            let px = startX + i * (soundWidth + columnSpacing)
-            for (let j = 0; j < rowCount; ++j) {
-                let py =  startY - j * (soundHeight + rowSpacing)
+            var px = startX + i * (soundWidth + columnSpacing)
+            for (var j = 0; j < rowCount; ++j) {
+                var py =  startY - j * (soundHeight + rowSpacing)
 
                 var obj = soundComp.createObject(r, {"x": px, "y": py, "visible": false})
                 objPool[i * __arrayRatio + j] = obj
@@ -48,8 +48,8 @@ Item {
         onTriggered: {
             map.push(getRandomInt(0, rowCount))
             map.shift()
-            for (let i = 0; i < columnCount; ++i) {
-                for (let j = 0; j < rowCount; ++j) {
+            for (var i = 0; i < columnCount; ++i) {
+                for (var j = 0; j < rowCount; ++j) {
                     objPool[i * __arrayRatio + j]["visible"] = j < map[i] ? true : false
                 }
             }
