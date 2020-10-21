@@ -13,12 +13,12 @@
 
 #define VER_COMPANYNAME_STR        "JaredTao\0"
 
-#define VER_FILEDESCRIPTION_STR    "TaoQuickDemo\0"
+#define VER_FILEDESCRIPTION_STR    "TaoQuickShow\0"
 #define VER_INTERNALNAME_STR        "jaredtao.github.io\0"
 #define VER_LEGALCOPYRIGHT_STR      "Copyright(C)2019-2029 JaredTao\0"
 #define VER_LEGALTRADEMARKS_STR    "JaredTao\0"
-#define VER_ORIGINALFILENAME_STR    "TaoQuickDemo.exe\0"
-#define VER_PRODUCTNAME_STR        "TaoQuickDemo\0"
+#define VER_ORIGINALFILENAME_STR    "TaoQuickShow.exe\0"
+#define VER_PRODUCTNAME_STR        "TaoQuickShow\0"
 
 // version number (string)
 #define TOSTRING2(arg) #arg

@@ -13,7 +13,6 @@ SpinBox {
     rightPadding: 4
 
     readonly property string imgUrlNormal : CusConfig.imagePathPrefix + "Expanded.png";
-    readonly property string imgUrlHovered : CusConfig.imagePathPrefix + "Expanded_Hover.png";
     background: Rectangle {
         radius: CusConfig.controlBorderRadius
         color: CusConfig.controlColor
@@ -24,7 +23,6 @@ SpinBox {
         id: input
         z: 2
 //        text: cusSpinBox.value
-        font: cusSpinBox.font
         color: CusConfig.textColor
         width: cusSpinBox.width - cusSpinBox.up.indicator.width - cusSpinBox.leftPadding - cusSpinBox.rightPadding
         selectionColor: CusConfig.controlColor_pressed

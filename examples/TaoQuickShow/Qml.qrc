@@ -11,5 +11,7 @@
         <file>Qml/Pane/TitlePane.qml</file>
         <file>Qml/Page/Home.qml</file>
         <file>Qml/Pane/ContentModel.qml</file>
+        <file>Qml/Dialog/AboutDialog.qml</file>
+        <file>Qml/Dialog/SettingsDialog.qml</file>
     </qresource>
 </RCC>

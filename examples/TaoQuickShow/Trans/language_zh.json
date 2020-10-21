@@ -338,6 +338,11 @@
         {
             "key": "Misc",
             "value": "杂项"
+        },
+        {
+            "key": "Sponsors",
+            "value": "赞助"
         }
+
     ]
 }
