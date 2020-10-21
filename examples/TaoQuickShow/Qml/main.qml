@@ -3,6 +3,7 @@ import QtQuick.Controls 2.2
 import TaoQuick 1.0
 import "./Page"
 import "./Pane"
+import "./Dialog"
 //import Qt.labs.platform 1.1
 CusBackground {
     id: rootItem
@@ -29,9 +30,9 @@ CusBackground {
     //            }
     //        }
     //    }
-    //    AboutDialog {
-    //        id: aboutDialog
-    //    }
+    AboutDialog {
+        id: aboutDialog
+    }
     //    SettingsDialog {
     //        id: settingDialog
     //    }
