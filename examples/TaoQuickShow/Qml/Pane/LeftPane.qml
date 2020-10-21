@@ -19,6 +19,9 @@ Item {
                 rightMargin: 4
             }
             placeholderText: qsTr("Search") + trans.transString
+            onTextChanged: {
+                demoModel.search(text)
+            }
         }
     }
     Rectangle {
@@ -60,12 +63,55 @@ Item {
                 }
             }
         }
-        delegate: Rectangle {
+        section.property: "group"
+        section.delegate: Rectangle {
             width: listView.width
             height: CusConfig.fixedHeight
+            opacity: 0.8
+            CusButton {
+                id: sectionBtn
+                property bool isOpened: true
+                text: qsTr(section) + trans.transString
+                anchors {
+                    left: parent.left
+                }
+                width: parent.width
+                contentItem: BasicText {
+                    x: 0
+                    text: sectionBtn.text
+                    color: sectionBtn.textColor
+                    horizontalAlignment: Text.AlignLeft
+                }
+                background: Rectangle {
+                    width: sectionBtn.width
+                    height: sectionBtn.height
+                    color: sectionBtn.pressed ? CusConfig.controlBorderColor_pressed : (sectionBtn.hovered ? CusConfig.controlBorderColor_hovered : CusConfig.controlBorderColor)
+                    radius: 2
+                    CusImage {
+                        source: imgPath + "Button/expand.png"
+                        anchors.right: parent.right
+                        rotation: sectionBtn.isOpened ? 180 : 0
+                        Behavior on rotation { NumberAnimation { duration: 200}}
+                    }
+                }
+                onClicked: {
+                    isOpened = !isOpened
+                    demoModel.updateSection(section, isOpened)
+                }
+            }
+        }
+
+        delegate: Rectangle {
+            width: listView.width
+            height: visible ? CusConfig.fixedHeight : 0
+            visible: model.visible && model.groupOpen
             color: ListView.isCurrentItem ? CusConfig.controlBorderColor_pressed : "transparent"
             opacity: 0.8
             CusTextButton {
+                anchors {
+                    left: parent.left
+                    leftMargin: 20
+                }
                 text: qsTr(model.name) + trans.transString
                 backgroundColor: "transparent"
                 borderColor: "transparent"

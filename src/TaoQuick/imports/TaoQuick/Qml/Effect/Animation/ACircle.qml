@@ -26,7 +26,7 @@ ShaderEffect {
         loops: 1
         duration: r.duration
     }
-    fragmentShader: TCommon.fragmentShaderCommon + (dir === ASquare.Direct.FromInner ? "
+    fragmentShader: CusEffectCommon.fragmentShaderCommon + (dir === ASquare.Direct.FromInner ? "
         varying vec2 qt_TexCoord0;
         uniform float qt_Opacity;
         uniform sampler2D effectSource;

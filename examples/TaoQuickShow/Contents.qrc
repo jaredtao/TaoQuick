@@ -1,10 +1,22 @@
 <RCC>
     <qresource prefix="/">
-        <file>Contents/Buttons.qml</file>
-        <file>Contents/Images.qml</file>
-        <file>Contents/Labels.qml</file>
-        <file>Contents/DataEntrys.qml</file>
-        <file>Contents/Miscs.qml</file>
-        <file>Contents/Drags.qml</file>
+        <file>Contents/General/Buttons.qml</file>
+        <file>Contents/General/DataEntrys.qml</file>
+        <file>Contents/General/Drags.qml</file>
+        <file>Contents/General/Images.qml</file>
+        <file>Contents/General/Labels.qml</file>
+        <file>Contents/General/Miscs.qml</file>
+        <file>Contents/Animation/Board.qml</file>
+        <file>Contents/Animation/Circle.qml</file>
+        <file>Contents/Animation/Cleavage.qml</file>
+        <file>Contents/Animation/Cross.qml</file>
+        <file>Contents/Animation/Diagonal.qml</file>
+        <file>Contents/Animation/Dissolve.qml</file>
+        <file>Contents/Animation/Enter.qml</file>
+        <file>Contents/Animation/Grad.qml</file>
+        <file>Contents/Animation/Louver.qml</file>
+        <file>Contents/Animation/Rhombus.qml</file>
+        <file>Contents/Animation/Square.qml</file>
+        <file>Contents/Animation/Wheel.qml</file>
     </qresource>
 </RCC>
