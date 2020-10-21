@@ -18,7 +18,7 @@ jobs:
         qt_ver: [5.12.6]
         qt_arch: [clang_64]
     env:
-      targetName: TaoQuickApp
+      targetName: TaoQuickShow
     steps:
       - name: cacheQt
         id: MacosCacheQt

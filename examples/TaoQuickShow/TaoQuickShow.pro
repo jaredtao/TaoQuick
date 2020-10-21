@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = TaoQuickApp
+TARGET = TaoQuickShow
 
 QT += core gui qml quick
 
@@ -9,7 +9,7 @@ load(taoVersion)
 setTaoVersion()
 
 load(taoBundle)
-BundlePath = $$getBundlePath("TaoQuickApp")
+BundlePath = $$getBundlePath("TaoQuickShow")
 
 #load(taoBuildPath)
 #setBuildPath($${TaoQuick_BUILD_TREE}/$${TARGET})
