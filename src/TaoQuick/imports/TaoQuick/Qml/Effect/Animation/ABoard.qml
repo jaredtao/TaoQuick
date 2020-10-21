@@ -1,15 +1,13 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-
+import ".."
 import "../.."
 
 ShaderEffect {
     id: r
-    enum Direct {
-        ToRight = 0,
-        ToBottom = 1
-    }
-    property int dir : ABoard.Direct.ToRight
+    readonly property int directToRight: 0
+    readonly property int directToBottom: 1
+    property int dir :directToRight
     property int rowCount: 10
     property int columnCount: 10
     property int duration: 1000
@@ -28,7 +26,7 @@ ShaderEffect {
         loops: 1
         duration: r.duration
     }
-    fragmentShader: CusEffectCommon.fragmentShaderCommon + (dir === ABoard.Direct.ToRight ? "
+    fragmentShader: CusEffectCommon.fragmentShaderCommon + (dir === directToRight ? "
         varying  vec2 qt_TexCoord0;
         uniform float qt_Opacity;
         uniform sampler2D effectSource;

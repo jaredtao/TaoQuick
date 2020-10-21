@@ -24,21 +24,21 @@ Item {
             id: l2
             width: 250
             height: 375
-            dir: ALouver.Direct.HorizonReverse
+            dir: directHorizonReverse
             effectSource.sourceItem: src
         }
         ALouver {
             id: l3
             width: 250
             height: 375
-            dir: ALouver.Direct.Vertical
+            dir: directVertical
             effectSource.sourceItem: src
         }
         ALouver {
             id: l4
             width: 250
             height: 375
-            dir: ALouver.Direct.VerticalReverse
+            dir: directVerticalReverse
             effectSource.sourceItem: src
         }
 

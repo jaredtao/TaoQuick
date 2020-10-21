@@ -1,5 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import ".."
 import "../.."
 
 Item {
@@ -13,7 +14,7 @@ Item {
     readonly property int directFromTop: 2
     readonly property int directFromBottom: 3
 
-    property int dir: ASlowEnter.directFromBottom
+    property int dir: directFromBottom
     property int duration: 2000
     property int extDistance: 10
     property var __propList: ["x", "x", "y", "y"]
