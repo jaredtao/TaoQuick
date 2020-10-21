@@ -10,27 +10,27 @@ Item {
         height: 216
         x: (parent.width - width) / 2
         targetY: parent.height / 2 - height
-        dir: ASlowEnter.Direct.FromTop
+        dir: directFromTop
         Image {
             anchors.fill: parent
             source: imgPath + "Effect/baby.jpg"
         }
     }
-    Rectangle {
-        width: 320
-        height: 216
-        anchors.centerIn: parent
-        border.width: 1
-        border.color: "red"
-        color: "transparent"
-    }
+//    Rectangle {
+//        width: 320
+//        height: 216
+//        anchors.centerIn: parent
+//        border.width: 1
+//        border.color: "red"
+//        color: "transparent"
+//    }
     ASlowEnter {
         id: a1
         width: 320
         height: 216
         x: (parent.width - width) / 2
         targetY: parent.height / 2
-        dir: ASlowEnter.Direct.FromBottom
+        dir: directFromBottom
         Image {
             anchors.fill: parent
             source: imgPath + "Effect/baby.jpg"
@@ -43,7 +43,7 @@ Item {
         height: 216
         targetX: (parent.width - width) / 2 - width
         y: (parent.height - height) / 2
-        dir: ASlowEnter.Direct.FromLeft
+        dir: directFromLeft
         Image {
             anchors.fill: parent
             source: imgPath + "Effect/baby.jpg"
@@ -55,7 +55,7 @@ Item {
         height: 216
         targetX: parent.width - (parent.width - width)/2
         y: (parent.height - height) / 2
-        dir: ASlowEnter.Direct.FromRight
+        dir: directFromRight
         Image {
             anchors.fill: parent
             source: imgPath + "Effect/baby.jpg"

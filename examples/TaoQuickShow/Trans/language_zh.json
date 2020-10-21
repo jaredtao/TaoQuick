@@ -354,7 +354,26 @@
         {
             "key": "TemplateDragBorder can be use to resize, move or rotation Rectangle by draging corner or border handler",
             "value": "TemplateDragBorder 可通过操作器改变尺寸、坐标或旋转"
+        },
+        {
+            "key": "General",
+            "value": "通用"
+        },
+        {
+            "key": "Animation",
+            "value": "动画"
+        },
+        {
+            "key": "Effect",
+            "value": "特效"
+        },
+        {
+            "key": "PageSwitch",
+            "value": "页面切换"
+        },
+        {
+            "key": "ShaderEffect",
+            "value": "着色器特效"
         }
-
     ]
 }

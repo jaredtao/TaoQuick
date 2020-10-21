@@ -25,7 +25,7 @@ ShaderEffect {
         duration: r.duration
     }
 
-    fragmentShader: TCommon.fragmentShaderCommon + "
+    fragmentShader: CusEffectCommon.fragmentShaderCommon + "
         varying vec2 qt_TexCoord0;
         uniform float qt_Opacity;
         uniform sampler2D effectSource;

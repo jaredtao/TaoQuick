@@ -16,9 +16,24 @@ Item {
             width: 600
             height: 300
             border.color: "lightblue"
-
             Rectangle {
-                x: 30
+                x: 10
+                y: 40
+                width: 100
+                height: 100
+                border.color: "red"
+                smooth: true
+                antialiasing: true
+                MoveArea {
+                    anchors.fill: parent
+                    onMove: {
+                        parent.x += xOffset
+                        parent.y += yOffset
+                    }
+                }
+            }
+            Rectangle {
+                x: 380
                 y: 40
                 width: 200
                 height: 160
