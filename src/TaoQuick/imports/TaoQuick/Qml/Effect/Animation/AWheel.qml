@@ -27,7 +27,7 @@ ShaderEffect {
         duration: r.duration
 
     }
-    fragmentShader: TCommon.fragmentShaderCommon + (dir === AWheel.Direct.CounterClockwise ? "
+    fragmentShader: CusEffectCommon.fragmentShaderCommon + (dir === AWheel.Direct.CounterClockwise ? "
         varying vec2 qt_TexCoord0;
         uniform float qt_Opacity;
         uniform sampler2D effectSource;
