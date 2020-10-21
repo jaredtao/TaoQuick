@@ -226,6 +226,7 @@ Compared with 'Qml module' and 'Qml C++ plugin', this usage has the following ad
 
 * After import the module 'import TaoQuick 1.0' in Qml, you can use the TaoQuick component in The Designer mode of Qt Creater by dragging or visual property editor.(principle: Generate metainfo required by Designer via some script) 
 
+![](preview/designer.png)
 
 detail use step：
 
