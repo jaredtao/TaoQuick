@@ -71,6 +71,10 @@ function Main {
 
     $header="}"
     Out-File -Append -Encoding "utf8" -FilePath $metaInfoFileName -InputObject $header
+
+    $MyRawString = Get-Content -Raw $metaInfoFileName
+    $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding $False
+    [System.IO.File]::WriteAllLines($metaInfoFileName, $MyRawString, $Utf8NoBomEncoding)
 }
 
 Main $args
