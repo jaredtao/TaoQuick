@@ -20,6 +20,11 @@ ListModel {
         source: "DataEntrys.qml"
     }
     ListElement {
+        name: "Drag Rect"
+        source: "Drags.qml"
+    }
+
+    ListElement {
         name: "Misc"
         source: "Miscs.qml"
     }

@@ -16,6 +16,7 @@ Item {
     signal doubleClicked(real mouseX, real mouseY)
     signal wheelEvent(real angle)
     property bool bPressed: false
+    property color rectBorderColor: "lightblue"
     MouseArea {
         id: drawArea
         anchors.fill: parent
@@ -56,7 +57,7 @@ Item {
         y: Math.max(0, minY)
         width: Math.min(w, drawRectItem.width - x)
         height: Math.min(h, drawRectItem.height - y)
-        color: Config.tableSelectRectColor
+        color: rectBorderColor
         border.color: Qt.darker(color, 1.4)
         opacity: 0.3
     }
