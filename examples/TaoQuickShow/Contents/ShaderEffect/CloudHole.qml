@@ -4,7 +4,7 @@ import QtQuick.Controls 2.2
 import TaoQuick 1.0
 
 
-TShaderToy {
+CusShaderToy {
     anchors.fill: parent
     pixelShader:"
 // Protean clouds by nimitz (twitter: @stormoid)
