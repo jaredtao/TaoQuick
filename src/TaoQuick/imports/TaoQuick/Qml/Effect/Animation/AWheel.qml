@@ -1,15 +1,14 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 
+import ".."
 import "../.."
 
 ShaderEffect {
     id: r
-    enum Direct {
-        Clockwise = 0,
-        CounterClockwise = 1
-    }
-    property int dir : AWheel.Direct.Clockwise
+    readonly property int directClockwise: 0
+    readonly property int directCounterClockwise: 1
+    property int dir: directClockwise
     property int duration: 1000
     property ShaderEffectSource effectSource: ShaderEffectSource {
         hideSource: true
@@ -27,7 +26,7 @@ ShaderEffect {
         duration: r.duration
 
     }
-    fragmentShader: CusEffectCommon.fragmentShaderCommon + (dir === AWheel.Direct.CounterClockwise ? "
+    fragmentShader: CusEffectCommon.fragmentShaderCommon + (dir === directCounterClockwise ? "
         varying vec2 qt_TexCoord0;
         uniform float qt_Opacity;
         uniform sampler2D effectSource;

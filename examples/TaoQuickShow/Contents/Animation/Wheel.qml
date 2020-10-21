@@ -17,14 +17,14 @@ Item {
             id: s1
             width: 250
             height: 375
-            dir: AWheel.Direct.Clockwise
+            dir: directClockwise
             effectSource.sourceItem: src
         }
         AWheel {
             id: s2
             width: 250
             height: 375
-            dir: AWheel.Direct.CounterClockwise
+            dir: directCounterClockwise
             effectSource.sourceItem: src
         }
         ASector {

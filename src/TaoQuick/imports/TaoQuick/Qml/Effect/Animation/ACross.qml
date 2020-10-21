@@ -1,15 +1,13 @@
 ﻿import QtQuick 2.9
 import QtQuick.Controls 2.2
-
+import ".."
 import "../.."
 
 ShaderEffect {
     id: r
-    enum Direct {
-        FromInner = 0,
-        FromOuter = 1
-    }
-    property int dir : ASquare.Direct.FromInner
+    readonly property int directFromInner: 0
+    readonly property int directFromOuter: 1
+    property int dir : directFromInner
     property int duration: 1000
     property ShaderEffectSource effectSource: ShaderEffectSource {
         hideSource: true
@@ -26,7 +24,7 @@ ShaderEffect {
         loops: 1
         duration: r.duration
     }
-    fragmentShader: CusEffectCommon.fragmentShaderCommon + (dir === ASquare.Direct.FromInner ? "
+    fragmentShader: CusEffectCommon.fragmentShaderCommon + (dir === directFromInner ? "
         varying vec2 qt_TexCoord0;
         uniform float qt_Opacity;
         uniform sampler2D effectSource;
