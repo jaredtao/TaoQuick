@@ -4,7 +4,7 @@ import QtQuick.Controls 2.2
 import TaoQuick 1.0
 
 
-TShaderToy {
+CusShaderToy {
     anchors.fill: parent
     pixelShader:"
 // Interesting findings from original NES Super Mario Bros.:

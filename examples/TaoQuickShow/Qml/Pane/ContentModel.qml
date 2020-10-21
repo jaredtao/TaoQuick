@@ -219,6 +219,72 @@ ListModel {
         group: "PageSwitch"
         groupOpen: true
     }
+
+    ListElement {
+        name: "Magic Circle"
+        source: "Effect/ARound.qml"
+        visible: true
+        group: "Effect"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Undercurrent surge"
+        source: "Effect/Arrow.qml"
+        visible: true
+        group: "Effect"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Ring"
+        source: "Effect/RingPage.qml"
+        visible: true
+        group: "Effect"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Keep up with the pace"
+        source: "Effect/SoundByte.qml"
+        visible: true
+        group: "Effect"
+        groupOpen: true
+    }
+//    ListElement {
+//        name: "Brilliant Starry Sky"
+//        source: "Effect/Swapper.qml"
+//        visible: true
+//        group: "Effect"
+//        groupOpen: true
+//    }
+
+
+    ListElement {
+        name: "Super Mario"
+        source: "ShaderEffect/SuperMario.qml"
+        visible: true
+        group: "ShaderEffect"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Snail"
+        source: "ShaderEffect/Snail.qml"
+        visible: true
+        group: "ShaderEffect"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Brilliant Starry Sky"
+        source: "ShaderEffect/Planet.qml"
+        visible: true
+        group: "ShaderEffect"
+        groupOpen: true
+    }
+    ListElement {
+        name: "CloudHole"
+        source: "ShaderEffect/CloudHole.qml"
+        visible: true
+        group: "ShaderEffect"
+        groupOpen: true
+    }
     function updateSection(section, isOpen) {
         for (var i = 0; i < count; ++i) {
             var obj = get(i)

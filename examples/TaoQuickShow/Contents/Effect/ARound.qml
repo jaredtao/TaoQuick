@@ -1,6 +1,8 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import TaoQuick 1.0
 import "./Effects"
+
 Item {
     anchors.fill: parent
 
@@ -20,12 +22,13 @@ Item {
     }
     Column {
         Row {
-            Text {
+            BasicText {
                 text: "wave " + around.wave.toFixed(2)
                 anchors.verticalCenter: parent.verticalCenter
                 color: "black"
+                width: 200
             }
-            Slider {
+            CusSlider {
                 id: waveSlider
                 from: 1
                 to: 100
@@ -33,12 +36,13 @@ Item {
             }
         }
         Row {
-            Text {
+            BasicText {
                 text: "speed " + around.speed.toFixed(2)
                 anchors.verticalCenter: parent.verticalCenter
                 color: "black"
+                width: 200
             }
-            Slider {
+            CusSlider {
                 id: speedSlider
                 from: 1
                 to: 32
@@ -46,12 +50,13 @@ Item {
             }
         }
         Row {
-            Text {
+            BasicText {
                 text: "ringWidth " + around.ringWidth.toFixed(2)
                 anchors.verticalCenter: parent.verticalCenter
                 color: "black"
+                width: 200
             }
-            Slider {
+            CusSlider {
                 id: ringWidthSlider
                 from: 0
                 to: 100
@@ -59,12 +64,13 @@ Item {
             }
         }
         Row {
-            Text {
+            BasicText {
                 text: "rotationSpeed" + around.rotationSpeed.toFixed(2)
                 anchors.verticalCenter: parent.verticalCenter
                 color: "black"
+                width: 200
             }
-            Slider {
+            CusSlider {
                 id: rotationSpeedSlider
                 from: 0
                 to: 100
@@ -72,12 +78,13 @@ Item {
             }
         }
         Row {
-            Text {
+            BasicText {
                 text: "holeSize" + around.holeSize.toFixed(2)
                 anchors.verticalCenter: parent.verticalCenter
                 color: "black"
+                width: 200
             }
-            Slider {
+            CusSlider {
                 id: holeSizeSlider
                 from: 0
                 to: 100
@@ -85,12 +92,13 @@ Item {
             }
         }
         Row {
-            Text {
+            BasicText {
                 text: "holeSmooth" + around.holeSmooth.toFixed(2)
                 anchors.verticalCenter: parent.verticalCenter
                 color: "black"
+                width: 200
             }
-            Slider {
+            CusSlider {
                 id: holeSmoothSlider
                 from: 0
                 to: 100
@@ -98,12 +106,13 @@ Item {
             }
         }
         Row {
-            Text {
+            BasicText {
                 text: "colorValue" + around.colorValue.toFixed(2)
                 anchors.verticalCenter: parent.verticalCenter
                 color: "black"
+                width: 200
             }
-            Slider {
+            CusSlider {
                 id: colorValueSlider
                 from: 0
                 to: 200
@@ -111,12 +120,13 @@ Item {
             }
         }
         Row {
-            Text {
+            BasicText {
                 text: "colorSaturation" + around.colorSaturation.toFixed(2)
                 anchors.verticalCenter: parent.verticalCenter
                 color: "black"
+                width: 200
             }
-            Slider {
+            CusSlider {
                 id: colorSaturationSlider
                 from: 0
                 to: 100

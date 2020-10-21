@@ -6,8 +6,8 @@ TRingPage {
     anchors.fill: parent
 
     property var names: ["一", "二 ", "三", "四", "五", "六", "七", "八", "九", " 十", "百", "千", "万", "亿", "兆", "京", "垓 ", "杼", "穰", "沟", "涧", "正", "载", "极"]
-    radiusOffset: 60
-    inRadius: width / 2 - radiusOffset * 4
+    radiusOffset: 40
+    inRadius: width / 3 - radiusOffset * 4
     property bool add: false
     onIndexAdded: {
         add = true;

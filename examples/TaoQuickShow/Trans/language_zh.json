@@ -94,12 +94,6 @@
             "key": "Search",
             "value": "搜索"
         },
-
-
-        {
-            "key": "Frostmourne",
-            "value": "霜之哀伤"
-        },
         {
             "key": "TaoQuick provides a set of controls that can be used to build complete interfaces in Qt Quick.",
             "value": "TaoQuick 提供一系列功能组件，可用于Qt Quick 构建的应用中。"
@@ -158,6 +152,14 @@
         {
             "key": "Ring",
             "value": "环"
+        },
+        {
+            "key": "Snail",
+            "value": "蜗牛"
+        },
+        {
+            "key": "CloudHole",
+            "value": "穿云洞"
         },
         {
             "key": "Brilliant Starry Sky",

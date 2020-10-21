@@ -33,5 +33,20 @@
         <file>Contents/PageSwitch/Square.qml</file>
         <file>Contents/PageSwitch/Wheel.qml</file>
         <file>Contents/Animation/AnimationBase.qml</file>
+        <file>Contents/Effect/ARound.qml</file>
+        <file>Contents/Effect/Arrow.qml</file>
+        <file>Contents/Effect/RingPage.qml</file>
+        <file>Contents/Effect/SoundByte.qml</file>
+        <file>Contents/Effect/Swapper.qml</file>
+        <file>Contents/Effect/Effects/TAround.qml</file>
+        <file>Contents/Effect/Effects/TArrow.qml</file>
+        <file>Contents/Effect/Effects/TRingPage.qml</file>
+        <file>Contents/Effect/Effects/TSoundByte.qml</file>
+        <file>Contents/Effect/Effects/TSwapper.qml</file>
+        <file>Contents/ShaderEffect/CloudHole.qml</file>
+        <file>Contents/ShaderEffect/Planet.qml</file>
+        <file>Contents/ShaderEffect/Planet1.png</file>
+        <file>Contents/ShaderEffect/Snail.qml</file>
+        <file>Contents/ShaderEffect/SuperMario.qml</file>
     </qresource>
 </RCC>
