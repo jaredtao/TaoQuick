@@ -18,6 +18,7 @@ Item {
                 right: parent.right
                 rightMargin: 4
             }
+            placeholderText: qsTr("Search") + trans.transString
         }
     }
     Rectangle {

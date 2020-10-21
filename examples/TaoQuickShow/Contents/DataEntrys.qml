@@ -63,10 +63,12 @@ Item {
             CusComboBox {
                 model: 10
                 width: 120
+                displayText: qsTr(currentText) + trans.transString
             }
             CusComboBox {
                 model: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
                 width: 120
+                displayText: qsTr(currentText) + trans.transString
             }
         }
         Item {

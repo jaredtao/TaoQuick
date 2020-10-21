@@ -15,7 +15,7 @@ static void prepareApp()
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QCoreApplication::setOrganizationName("JaredTao");
     QCoreApplication::setOrganizationDomain("https://JaredTao.gitee.io");
-    QCoreApplication::setApplicationName("TaoQuickApp");
+    QCoreApplication::setApplicationName("TaoQuickShow");
 }
 
 int main(int argc, char** argv)
