@@ -1,9 +1,6 @@
 #include "TaoFrameLessView.h"
 
-#include <QCursor>
 #include <QGuiApplication>
-#include <QQmlContext>
-#include <QQmlEngine>
 #include <QQuickItem>
 #include <QScreen>
 #include <QWindow>
