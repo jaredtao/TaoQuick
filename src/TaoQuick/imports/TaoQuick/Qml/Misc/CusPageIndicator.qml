@@ -8,7 +8,7 @@ Item {
     implicitHeight: CusConfig.fixedHeight
     width: childrenRect.width
     //every indicator width
-    property int indicatorWidth: 40
+    property int indicatorWidth: 46
 
     property int spacing: 10
 

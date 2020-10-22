@@ -121,5 +121,9 @@ Item {
             count: 10
             currentIndex: 5
         }
+        CusPageIndicator {
+            count: 100
+            currentIndex: 50
+        }
     }
 }
