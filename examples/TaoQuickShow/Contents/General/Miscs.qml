@@ -74,5 +74,14 @@ Item {
                 busyColor: Qt.lighter("#008b8b", 1.6)
             }
         }
+        CusLabel {
+            text: qsTr("PageIndicator") + trans.transString
+            wrapMode: Label.WordWrap
+            width: 400
+        }
+        CusPageIndicator {
+            width: 200
+            count: 15
+        }
     }
 }
