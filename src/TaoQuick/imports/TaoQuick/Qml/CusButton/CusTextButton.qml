@@ -17,10 +17,11 @@ Button {
     property color backgroundColorHovered: CusConfig.controlColor_hovered
     property color backgroundColorPressed: CusConfig.controlColor_pressed
     property color backgroundColorDisable: CusConfig.controlColor_disabled
+    property bool selected: false
     property color borderColor: {
         if (!cusButton.enabled) {
             return CusConfig.controlBorderColor_disabled
-        } else if (cusButton.pressed) {
+        } else if (cusButton.pressed || selected) {
             return CusConfig.controlBorderColor_pressed
         } else if (cusButton.hovered) {
             return CusConfig.controlBorderColor_hovered
@@ -33,7 +34,7 @@ Button {
     property color textColor: {
         if (!cusButton.enabled) {
             return CusConfig.textColor_disabled
-        } else if (cusButton.pressed) {
+        } else if (cusButton.pressed || selected) {
             return CusConfig.textColor_pressed
         } else if (cusButton.hovered) {
             return CusConfig.textColor_hovered
@@ -44,7 +45,7 @@ Button {
     property color backgroundColor: {
         if (!cusButton.enabled) {
             return backgroundColorDisable
-        } else if (cusButton.pressed) {
+        } else if (cusButton.pressed || selected) {
             return backgroundColorPressed
         } else if (cusButton.hovered) {
             return backgroundColorHovered
@@ -68,5 +69,6 @@ Button {
         border.color: cusButton.borderColor
         border.width: cusButton.borderWidth
     }
-    TransArea {}
+    TransArea {
+    }
 }

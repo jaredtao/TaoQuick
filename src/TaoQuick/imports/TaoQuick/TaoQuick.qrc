@@ -80,7 +80,12 @@
         <file>Qml/Misc/CusTemplateDragBorder.qml</file>
         <file>Images/Check.png</file>
         <file>Images/ComboBox_Down.png</file>
+        <file>Images/ellipsis.png</file>
         <file>Images/Expanded.png</file>
+        <file>Images/last.png</file>
+        <file>Images/left.png</file>
+        <file>Images/next.png</file>
+        <file>Images/right.png</file>
         <file>Images/rotate.png</file>
         <file>Images/Search.png</file>
         <file>Images/Search_Clear.png</file>
