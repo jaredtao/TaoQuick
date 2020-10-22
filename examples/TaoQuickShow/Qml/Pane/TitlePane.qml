@@ -24,12 +24,14 @@ Rectangle {
     property bool isMaxed: view.isMax
     Row {
         id: controlButtons
-        height: 16
+        height: 24
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
         anchors.rightMargin: 20
         spacing: 20
         CusButton_Image {
+            width: 24
+            height: 24
             btnImgUrl: imgPath + (hovered || pressed ? "Window/minimal_white.png" : "Window/minimal_gray.png")
             tipText: qsTr("minimal") + trans.transString
             onClicked: {
@@ -37,6 +39,8 @@ Rectangle {
             }
         }
         CusButton_Image {
+            width: 24
+            height: 24
             visible: !isMaxed
             btnImgUrl: imgPath + (hovered || pressed ? "Window/max_white.png" : "Window/max_gray.png")
             tipText: qsTr("maximize") + trans.transString
@@ -45,6 +49,8 @@ Rectangle {
             }
         }
         CusButton_Image {
+            width: 24
+            height: 24
             visible: isMaxed
             btnImgUrl: imgPath
                        + (hovered || pressed ? "Window/normal_white.png" : "Window/normal_gray.png")
@@ -54,6 +60,8 @@ Rectangle {
             }
         }
         CloseBtn {
+            width: 24
+            height: 24
             onClicked: {
                 view.close()
             }
@@ -70,18 +78,24 @@ Rectangle {
     }
     Row {
         id: toolRow
-        height: 16
+        height: 24
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: splitLine.left
         anchors.rightMargin: 20
         spacing: 20
         SkinBtn {
+            width: 24
+            height: 24
             anchors.verticalCenter: parent.verticalCenter
         }
         LangBtn {
+            width: 24
+            height: 24
             anchors.verticalCenter: parent.verticalCenter
         }
         CusButton_Image {
+            width: 24
+            height: 24
             anchors.verticalCenter: parent.verticalCenter
             tipText: qsTr("Settings") + trans.transString
             btnImgUrl: imgPath
@@ -91,6 +105,8 @@ Rectangle {
             }
         }
         CusButton_Image {
+            width: 24
+            height: 24
             anchors.verticalCenter: parent.verticalCenter
             tipText: qsTr("About") + trans.transString
             btnImgUrl: imgPath

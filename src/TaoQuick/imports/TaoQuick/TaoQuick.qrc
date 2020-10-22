@@ -73,6 +73,7 @@
         <file>Qml/Misc/CusDialog.qml</file>
         <file>Qml/Misc/CusDragItem.qml</file>
         <file>Qml/Misc/CusFPS.qml</file>
+        <file>Qml/Misc/CusPageIndicator.qml</file>
         <file>Qml/Misc/CusRectDraw.qml</file>
         <file>Qml/Misc/CusResizeBorder.qml</file>
         <file>Qml/Misc/CusShortCutKeys.qml</file>
