@@ -5,8 +5,8 @@ import "../.."
 
 Button {
     id: cusButtonImage
-    implicitWidth: 30
-    implicitHeight: 30
+    implicitWidth: 24
+    implicitHeight: 24
 
     property alias tipText: toolTip.text
     property alias tipItem: toolTip
