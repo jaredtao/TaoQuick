@@ -1,9 +1,6 @@
-#include "TaoFrameLessView.h"
-
 #include "AppInfo.h"
-#include "ComponentsManager.h"
-#include "TaoFramework.h"
-#include "Trans.h"
+#include "Trans/Trans.h"
+#include "Frameless/TaoFrameLessView.h"
 #include "logger.h"
 #include <QDir>
 #include <QGuiApplication>
@@ -32,14 +29,10 @@ int main(int argc, char** argv)
     qWarning() << "appPath" << appPath;
 
     TaoFrameLessView view;
-
-    TaoFramework::instance()->setMainView(&view);
-    TaoFramework::instance()->createObject<Trans>();
-    TaoFramework::instance()->createObject<AppInfo>();
-    TaoFramework::instance()->createObject<ComponentsMgr>();
-
-    TaoFramework::instance()->init();
-    TaoFramework::instance()->beforeUiReady(view.rootContext());
+    Trans trans;
+    AppInfo appInfo;
+    trans.beforeUiReady(view.rootContext());
+    appInfo.beforeUiReady(view.rootContext());
 
     view.engine()->addImportPath(qmlPath);
 #ifdef TaoQuickImportPath
@@ -64,9 +57,10 @@ int main(int argc, char** argv)
     view.rootContext()->setContextProperty("view", &view);
 
     const QUrl url(qmlPath + QStringLiteral("main.qml"));
-    QObject::connect(&view, &QQuickView::statusChanged, [=](QQuickView::Status status) {
+    QObject::connect(&view, &QQuickView::statusChanged, [&](QQuickView::Status status) {
         if (status == QQuickView::Status::Ready) {
-            TaoFramework::instance()->afterUiReady();
+            trans.afterUiReady();
+            appInfo.afterUiReady();
         }
     });
     QObject::connect(view.engine(), &QQmlEngine::quit, qApp, &QCoreApplication::quit);
