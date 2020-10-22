@@ -338,8 +338,8 @@
             "value": "星期六"
         },
         {
-            "key": "Misc",
-            "value": "杂项"
+            "key": "Others",
+            "value": "其它"
         },
         {
             "key": "Sponsors",
@@ -388,6 +388,34 @@
         {
             "key": "No Data",
             "value": "无数据"
+        },
+        {
+            "key": "last %1 item",
+            "value": "前%1项"
+        },
+        {
+            "key": "last %1 items",
+            "value": "前%1项"
+        },
+        {
+            "key": "next %1 item",
+            "value": "后%1项"
+        },
+        {
+            "key": "next %1 items",
+            "value": "后%1项"
+        },
+        {
+            "key": "Total %1 item",
+            "value": "共计%1项"
+        },
+        {
+            "key": "Total %1 items",
+            "value": "共计%1项"
+        },
+        {
+            "key": "Go to",
+            "value": "转到"
         }
 
     ]

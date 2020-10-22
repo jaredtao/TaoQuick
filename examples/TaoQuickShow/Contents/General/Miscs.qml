@@ -74,14 +74,52 @@ Item {
                 busyColor: Qt.lighter("#008b8b", 1.6)
             }
         }
+        Item {
+            width: 1
+            height: 20
+        }
         CusLabel {
             text: qsTr("PageIndicator") + trans.transString
             wrapMode: Label.WordWrap
             width: 400
         }
         CusPageIndicator {
-            width: 200
-            count: 15
+            count: 0
+        }
+        CusPageIndicator {
+            count: 1
+        }
+        CusPageIndicator {
+            count: 2
+            currentIndex: 1
+        }
+        CusPageIndicator {
+            count: 3
+            currentIndex: 1
+        }
+        CusPageIndicator {
+            count: 5
+            currentIndex: 4
+        }
+        CusPageIndicator {
+            count: 6
+            currentIndex: 5
+        }
+        CusPageIndicator {
+            count: 7
+            currentIndex: 3
+        }
+        CusPageIndicator {
+            count: 8
+            currentIndex: 4
+        }
+        CusPageIndicator {
+            count: 9
+            currentIndex: 6
+        }
+        CusPageIndicator {
+            count: 10
+            currentIndex: 5
         }
     }
 }

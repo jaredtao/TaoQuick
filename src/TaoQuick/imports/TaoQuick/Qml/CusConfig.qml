@@ -21,8 +21,7 @@ QtObject {
 
     property string imagePathPrefix: "file:///./../Images/"
     Component.onCompleted: {
-        if (typeof (taoQuickImagePath) != "undefined"
-            && taoQuickImagePath !== null && taoQuickImagePath.length > 0) {
+        if (typeof (taoQuickImagePath) != "undefined" && taoQuickImagePath !== null && taoQuickImagePath.length > 0) {
             imagePathPrefix = taoQuickImagePath
         }
         currentTheme = 0
