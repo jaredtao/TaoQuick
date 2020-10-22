@@ -13,7 +13,7 @@ Button {
     property alias tipVisible: toolTip.visible
     property alias tipDelay: toolTip.delay
     property alias tipTimeout: toolTip.timeout
-
+    property bool selected: false
     property string btnImgNormal
     property string btnImgHovered
     property string btnImgPressed
@@ -22,7 +22,7 @@ Button {
     property string btnImgUrl: {
         if (!cusButtonImage.enabled) {
             return btnImgDisbaled
-        } else if (cusButtonImage.pressed) {
+        } else if (cusButtonImage.pressed || selected) {
             return btnImgPressed
         } else if (cusButtonImage.hovered) {
             return btnImgHovered
@@ -44,5 +44,6 @@ Button {
         visible: cusButtonImage.hovered && String(text).length
         delay: 500
     }
-    TransArea {}
+    TransArea {
+    }
 }
