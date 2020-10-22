@@ -4,9 +4,10 @@
 #include <QHash>
 #include <QList>
 #include <QString>
-#include "TaoObject.h"
 #include <QTranslator>
-class Trans : public QTranslator, public TaoObject
+#include "taocommonglobal.h"
+class QQmlContext;
+class Trans : public QTranslator
 {
     Q_OBJECT
     Q_PROPERTY(QString currentLang READ currentLang WRITE setCurrentLang NOTIFY currentLangChanged)
@@ -19,13 +20,9 @@ public:
 
     Q_INVOKABLE bool load(QString &lang, const QString &filePath);
 public:
-    void init() override;
+    void beforeUiReady(QQmlContext* ctx);
 
-    void uninit() override;
-
-    void beforeUiReady(QQmlContext* ctx) override;
-
-    void afterUiReady() override;
+    void afterUiReady();
 
     QString translate(const char *context, const char *sourceText, const char *disambiguation = nullptr, int n = -1) const override;
 public:
@@ -59,5 +56,6 @@ private:
     QHash<QString, QHash<QString, QString>> m_map;
     QStringList m_languages;
     QString m_transString;
+    QQmlContext *m_ctx;
 };
 
