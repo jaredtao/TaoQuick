@@ -4,6 +4,7 @@ import TaoQuick 1.0
 
 Item {
     anchors.fill: parent
+    property color oneBusyColor: CusConfig.themeColor
     Column {
         anchors.centerIn: parent
         spacing: 10
@@ -19,28 +20,28 @@ Item {
                 height: 32
                 busyRadius: 2
                 busyCount: 3
-                busyColor: "#008b8b"
+                busyColor: oneBusyColor
             }
             CusBusyIndicator {
                 width: 32
                 height: 32
                 busyRadius: 3
                 busyCount: 4
-                busyColor: Qt.darker("#008b8b", 1.2)
+                busyColor: Qt.darker(oneBusyColor, 1.2)
             }
             CusBusyIndicator {
                 width: 64
                 height: 64
                 busyRadius: 4
                 busyCount: 5
-                busyColor: Qt.darker("#008b8b", 1.4)
+                busyColor: Qt.darker(oneBusyColor, 1.4)
             }
             CusBusyIndicator {
                 width: 64
                 height: 64
                 busyRadius: 5
                 busyCount: 6
-                busyColor: Qt.darker("#008b8b", 1.6)
+                busyColor: Qt.darker(oneBusyColor, 1.6)
             }
         }
         Row {
@@ -50,28 +51,28 @@ Item {
                 height: 32
                 busyRadius: 2
                 busyCount: 4
-                busyColor: "#008b8b"
+                busyColor: oneBusyColor
             }
             CusBusyIndicator {
                 width: 64
                 height: 64
                 busyRadius: 4
                 busyCount: 4
-                busyColor: Qt.lighter("#008b8b", 1.2)
+                busyColor: Qt.lighter(oneBusyColor, 1.2)
             }
             CusBusyIndicator {
                 width: 96
                 height: 96
                 busyRadius: 10
                 busyCount: 6
-                busyColor: Qt.lighter("#008b8b", 1.4)
+                busyColor: Qt.lighter(oneBusyColor, 1.4)
             }
             CusBusyIndicator {
                 width: 128
                 height: 128
                 busyRadius: 12
                 busyCount: 8
-                busyColor: Qt.lighter("#008b8b", 1.6)
+                busyColor: Qt.lighter(oneBusyColor, 1.6)
             }
         }
         Item {
