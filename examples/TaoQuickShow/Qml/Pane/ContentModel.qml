@@ -40,7 +40,7 @@ ListModel {
     }
 
     ListElement {
-        name: "Misc"
+        name: "Others"
         source: "General/Miscs.qml"
         visible: true
         group: "General"
