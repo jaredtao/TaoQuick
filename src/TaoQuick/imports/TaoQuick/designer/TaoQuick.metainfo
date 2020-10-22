@@ -966,6 +966,20 @@ MetaInfo {
         }
     }
     Type {
+        name: "TaoQuick.Qml.Misc.CusPageIndicator"
+        icon: "images/CusPageIndicator.png"
+
+        ItemLibraryEntry {
+            name: "CusPageIndicator"
+            category: "TaoQuick - Misc"
+            libraryIcon: "images/CusPageIndicator.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
         name: "TaoQuick.Qml.Misc.CusRectDraw"
         icon: "images/CusRectDraw.png"
 

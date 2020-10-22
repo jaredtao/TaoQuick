@@ -70,6 +70,7 @@ CusBusyIndicator 1.0 Qml/Misc/CusBusyIndicator.qml
 CusDialog 1.0 Qml/Misc/CusDialog.qml
 CusDragItem 1.0 Qml/Misc/CusDragItem.qml
 CusFPS 1.0 Qml/Misc/CusFPS.qml
+CusPageIndicator 1.0 Qml/Misc/CusPageIndicator.qml
 CusRectDraw 1.0 Qml/Misc/CusRectDraw.qml
 CusResizeBorder 1.0 Qml/Misc/CusResizeBorder.qml
 CusShortCutKeys 1.0 Qml/Misc/CusShortCutKeys.qml
