@@ -6,7 +6,7 @@ MouseArea {
     hoverEnabled: true
     propagateComposedEvents: true
     //鼠标图标， hovered 或者 pressed时显示此图标
-    cursorShape: Qt.PointingHandCursor
+    cursorShape: enabled ? Qt.PointingHandCursor : Qt.ForbiddenCursor
     onDoubleClicked: { mouse.accepted = false;}
     onPositionChanged: { mouse.accepted = false;}
     onPressed:  {  mouse.accepted = false; }

@@ -18,20 +18,24 @@ Button {
     property string btnImgHovered
     property string btnImgPressed
     property string btnImgDisbaled
-
+    property bool selected: false
     property color colorNormal: CusConfig.imageColor
     property color colorHovered: CusConfig.imageColor_hovered
     property color colorPressed: CusConfig.imageColor_pressed
     property color colorDisable: CusConfig.imageColor_disabled
+
+    property color backgroundColor: "transparent"
     CusImage {
         id: baseImage
         source: btnImgNormal
         smooth: true
         visible: false
     }
-    background: Item {
+    background: Rectangle {
         width: cusButtonImage.width
         height: cusButtonImage.height
+        radius: CusConfig.controlBorderRadius
+        color: backgroundColor
         ColorOverlay {
             source: baseImage
             width: baseImage.width
@@ -41,7 +45,7 @@ Button {
             color: {
                 if (!cusButtonImage.enabled) {
                     return colorDisable
-                } else if (cusButtonImage.pressed) {
+                } else if (cusButtonImage.pressed || selected) {
                     return colorPressed
                 } else if (cusButtonImage.hovered) {
                     return colorHovered
@@ -56,5 +60,6 @@ Button {
         visible: cusButtonImage.hovered && String(text).length
         delay: 500
     }
-    TransArea {}
+    TransArea {
+    }
 }
