@@ -6,19 +6,16 @@
 #include <QLocale>
 #include <QQuickView>
 #include <QQmlEngine>
-#include "TaoFramework.h"
 const static auto cEnglisthStr = QStringLiteral("English");
 const static auto cChineseStr = QStringLiteral("简体中文");
 Trans::Trans(QObject* parent)
     : QTranslator(parent)
 {
 }
-void Trans::init() {}
-
-void Trans::uninit() {}
 
 void Trans::beforeUiReady(QQmlContext* ctx)
 {
+    m_ctx = ctx;
     ctx->setContextProperty("trans", this);
     loadFolder(qApp->applicationDirPath() + "/Trans");
     qApp->installTranslator(this);
@@ -124,9 +121,8 @@ void Trans::setCurrentLang(const QString& currentLang)
     m_currentLang = currentLang;
     emit currentLangChanged(m_currentLang);
 
-
 #if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
-    TaoFramework::instance()->getMainView()->engine()->retranslate();
+    m_ctx->engine()->retranslate();
 #else
     emit transStringChanged();
 #endif

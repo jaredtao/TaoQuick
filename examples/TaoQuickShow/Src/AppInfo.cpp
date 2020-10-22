@@ -13,16 +13,6 @@ AppInfo::AppInfo(QObject *parent) : QObject(parent)
     m_compilerVendor = TaoCompilerVendor;
 }
 
-void AppInfo::init()
-{
-
-}
-
-void AppInfo::uninit()
-{
-
-}
-
 void AppInfo::beforeUiReady(QQmlContext *ctx)
 {
     ctx->setContextProperty("appInfo", this);

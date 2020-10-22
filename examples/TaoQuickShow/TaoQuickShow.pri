@@ -5,19 +5,10 @@ msvc | gcc | xcode {
 }
 
 HEADERS += \
-    $$PWD/Src/TaoFrameLessView.h \
-    $$PWD/Src/TaoObject.h \
-    $$PWD/Src/TaoFramework.h \
-    $$PWD/Src/Trans.h \
-    $$PWD/Src/AppInfo.h \
-    $$PWD/Src/ComponentsManager.h
+    $$PWD/Src/AppInfo.h
 
 SOURCES += \
-    $$PWD/Src/TaoFrameLessView.cpp \
-    $$PWD/Src/TaoFramework.cpp \
-    $$PWD/Src/Trans.cpp \
     $$PWD/Src/AppInfo.cpp \
-    $$PWD/Src/ComponentsManager.cpp \
     $$PWD/Src/main.cpp
 
 CONFIG(debug, debug|release) {

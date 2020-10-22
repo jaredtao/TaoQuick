@@ -2,8 +2,8 @@
 
 #include <QObject>
 #include <QString>
-#include "TaoObject.h"
-class AppInfo : public QObject, public TaoObject
+#include <QQmlContext>
+class AppInfo : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString appName READ appName WRITE setAppName NOTIFY appNameChanged)
@@ -20,13 +20,9 @@ public:
     explicit AppInfo(QObject *parent = nullptr);
 
 public:
-    void init() override;
+    void beforeUiReady(QQmlContext* ctx) ;
 
-    void uninit() override;
-
-    void beforeUiReady(QQmlContext* ctx) override;
-
-    void afterUiReady() override;
+    void afterUiReady() ;
 
     const QString & appName() const
     {
