@@ -18,10 +18,7 @@ void AppInfo::beforeUiReady(QQmlContext *ctx)
     ctx->setContextProperty("appInfo", this);
 }
 
-void AppInfo::afterUiReady()
-{
-
-}
+void AppInfo::afterUiReady() {}
 
 void AppInfo::setAppName(const QString &appName)
 {
