@@ -15,7 +15,7 @@ static void prepareApp()
     QCoreApplication::setApplicationName("TaoQuickShow");
 }
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
     prepareApp();
     QGuiApplication app(argc, argv);
@@ -29,6 +29,8 @@ int main(int argc, char** argv)
     qWarning() << "appPath" << appPath;
 
     TaoFrameLessView view;
+    view.setMinimumSize({ 800, 600 });
+    view.resize(1440, 960);
     Trans trans;
     AppInfo appInfo;
     trans.beforeUiReady(view.rootContext());
