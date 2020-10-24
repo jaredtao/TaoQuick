@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 #include <QByteArray>
 #include <QByteArrayList>
 #include <QDataStream>
-
+#include <QIODevice>
 const int static headerLength = sizeof(quint32);
 
 static QByteArray pack(const QByteArray &data)
@@ -19,12 +19,10 @@ static QByteArrayList unpack(const QByteArray &data)
     quint32 sum = data.size();
     quint32 pos = 0;
     quint32 packageLen = 0;
-    while (pos + headerLength < sum)
-    {
+    while (pos + headerLength < sum) {
         packageLen = 0;
         inStream >> packageLen;
-        if (packageLen <= 0 || packageLen + headerLength > sum - pos)
-        {
+        if (packageLen <= 0 || packageLen + headerLength > sum - pos) {
             break;
         }
         QByteArray subPackage = data.mid(pos + headerLength, packageLen);

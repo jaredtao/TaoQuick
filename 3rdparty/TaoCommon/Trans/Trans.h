@@ -19,15 +19,17 @@ public:
     Q_INVOKABLE void loadFolder(const QString &folder);
 
     Q_INVOKABLE bool load(QString &lang, const QString &filePath);
+
 public:
-    void beforeUiReady(QQmlContext* ctx);
+    void beforeUiReady(QQmlContext *ctx);
 
     void afterUiReady();
 
-    QString translate(const char *context, const char *sourceText, const char *disambiguation = nullptr, int n = -1) const override;
+    QString translate(const char *context, const char *sourceText,
+                      const char *disambiguation = nullptr, int n = -1) const override;
+
 public:
     const QString &currentLang() const;
-
 
     const QStringList &languages() const;
 
@@ -46,10 +48,12 @@ signals:
     void folderLoaded(const QString &folder);
 
     void transStringChanged();
+
 protected:
     void setLanguages(const QStringList &languages);
 
     void initEnglish();
+
 private:
     QString m_currentLang;
     // <"English", <"key", "value">>
@@ -58,4 +62,3 @@ private:
     QString m_transString;
     QQmlContext *m_ctx;
 };
-
