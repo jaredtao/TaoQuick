@@ -11,14 +11,8 @@ public:
     explicit TaoFrameLessView(QWindow *parent = nullptr);
     ~TaoFrameLessView();
     void moveToScreenCenter();
-    bool isMax() const
-    {
-        return m_isMax;
-    }
-    QQuickItem *titleItem() const
-    {
-        return m_titleItem;
-    }
+    bool isMax() const { return m_isMax; }
+    QQuickItem *titleItem() const { return m_titleItem; }
 public slots:
     void setIsMax(bool isMax);
     void setTitleItem(QQuickItem *item);
@@ -26,16 +20,14 @@ signals:
     void isMaxChanged(bool isMax);
 
 protected:
-
 #if WIN32
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#    if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     bool nativeEvent(const QByteArray &eventType, void *message, qintptr *result) override;
-#else
+#    else
     bool nativeEvent(const QByteArray &eventType, void *message, long *result) override;
-#endif
+#    endif
 #endif
 private:
     bool m_isMax;
     QQuickItem *m_titleItem = nullptr;
 };
-

@@ -1,6 +1,5 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-import QtGraphicalEffects 1.0
 import TaoQuick 1.0
 import "../Biz"
 
@@ -115,13 +114,6 @@ Popup {
                     source: imgPath + "Tao/zhifubao.jpg"
                 }
             }
-        }
-        DropShadow {
-            source: back
-            anchors.fill: back
-            radius: 4
-            samples: 16
-            color: "#80000000"
         }
     }
 
