@@ -1,38 +1,37 @@
 import QtQuick 2.9
 import QtQuick.Dialogs 1.3
+
 Item {
     //顶层使用Item，不用FileDialog，屏蔽FileDialog内部属性和函数
-    enum Type {
-        CreateFile,
-        OpenFile,
-        OpenFiles,
-        OpenFolder
-    }
+    readonly property int typeCreateFile: 0
+    readonly property int typeOpenFile: 1
+    readonly property int typeOpenFiles: 2
+    readonly property int typeOpenFolder: 3
     property int __type
-    property var __acceptCallback: function(file) {}
+    property var __acceptCallback: function (file) {}
 
     FileDialog {
         id: d
         folder: shortcuts.home
         onAccepted: {
-            switch(__type) {
-            case TDialog.Type.CreateFile:
+            switch (__type) {
+            case typeCreateFile:
                 __acceptCallback(d.fileUrl)
                 break
-            case TDialog.Type.OpenFile:
+            case typeOpenFile:
                 __acceptCallback(d.fileUrl)
                 break
-            case TDialog.Type.OpenFiles:
+            case typeOpenFiles:
                 __acceptCallback(d.fileUrls)
                 break
-            case TDialog.Type.OpenFolder:
+            case typeOpenFolder:
                 __acceptCallback(d.folder)
                 break
             }
         }
     }
     function createFile(title, nameFilters, callback) {
-        __type = TDialog.Type.CreateFile
+        __type = typeCreateFile
         d.selectExisting = false
         d.selectFolder = false
         d.selectMultiple = false
@@ -42,7 +41,7 @@ Item {
         d.open()
     }
     function openFile(title, nameFilters, callback) {
-        __type = TDialog.Type.OpenFile
+        __type = typeOpenFile
         d.selectExisting = true
         d.selectFolder = false
         d.selectMultiple = false
@@ -52,7 +51,7 @@ Item {
         d.open()
     }
     function openFiles(title, nameFilters, callback) {
-        __type = TDialog.Type.OpenFiles
+        __type = typeOpenFiles
         d.selectExisting = true
         d.selectFolder = false
         d.selectMultiple = true
@@ -62,7 +61,7 @@ Item {
         d.open()
     }
     function openFolder(title, callback) {
-        __type = TDialog.Type.OpenFolder
+        __type = typeOpenFolder
         d.selectExisting = true
         d.selectFolder = true
         d.selectMultiple = false
