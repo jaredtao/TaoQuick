@@ -23,10 +23,16 @@ ListModel {
         group: "General"
         groupOpen: true
     }
-
     ListElement {
         name: "Data Entry"
         source: "General/DataEntrys.qml"
+        visible: true
+        group: "General"
+        groupOpen: true
+    }
+    ListElement {
+        name: "Table"
+        source: "General/Tables.qml"
         visible: true
         group: "General"
         groupOpen: true

@@ -70,8 +70,9 @@ Item {
         height: CusConfig.fixedHeight
         CusCheckBox {
             id: checkAllBox
-            anchors.centerIn: parent
-            height: CusConfig.fixedHeight
+            anchors.verticalCenter: parent.verticalCenter
+            x: 6
+            height: 24
             width: height
             property bool notify: true
             onCheckedChanged: {
@@ -104,7 +105,7 @@ Item {
                 color: CusConfig.textColor_pressed
             }
             Rectangle {
-                width: 1
+                width: 2
                 anchors {
                     left: parent.left
                     top: parent.top
@@ -121,9 +122,11 @@ Item {
                     top: parent.top
                 }
                 readonly property string ascUrl: CusConfig.imagePathPrefix + "Table_Asc.png"
-                readonly property string ascUrl_Hovered: CusConfig.imagePathPrefix + "Table_Asc_Hover.png"
+                readonly property string ascUrl_Hovered: CusConfig.imagePathPrefix
+                                                         + "Table_Asc_Hovered.png"
                 readonly property string descUrl: CusConfig.imagePathPrefix + "Table_Desc.png"
-                readonly property string descUrl_Hovered: CusConfig.imagePathPrefix + "Table_DescHover.png"
+                readonly property string descUrl_Hovered: CusConfig.imagePathPrefix
+                                                          + "Table_Desc_Hovered.png"
 
                 property string ascImageUrl: (headerArea.containsMouse) ? ascUrl_Hovered : ascUrl
                 property string descImageUrl: (headerArea.containsMouse) ? descUrl_Hovered : descUrl
@@ -136,8 +139,11 @@ Item {
                 id: headerArea
                 hoverEnabled: true
                 anchors {
-                    fill: parent
+                    left: parent.left
                     leftMargin: 4
+                    right: parent.right
+                    top: parent.top
+                    bottom: parent.bottom
                 }
                 onClicked: {
                     if (dataObj.sortRole !== headerRoles[index]) {
@@ -157,6 +163,7 @@ Item {
                 width: 4
                 height: parent.height
                 enabled: index > 0
+                hoverEnabled: true
                 anchors {
                     left: parent.left
                 }

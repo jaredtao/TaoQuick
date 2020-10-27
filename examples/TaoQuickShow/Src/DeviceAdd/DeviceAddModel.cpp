@@ -32,3 +32,17 @@ DeviceAddModel::DeviceAddModel(QObject *parent)
     };
     setSortCallbacks(callBacks);
 }
+
+void DeviceAddModel::doUpdateName(int row, const QString &name)
+{
+    if (row < 0 || row >= rowCount({}))
+    {
+        return;
+    }
+    const auto &n = name.simplified();
+    if (n.isEmpty())
+    {
+        return;
+    }
+    static_cast<DeviceAddItem *>(mObjs.at(row))->setName(name);
+}
