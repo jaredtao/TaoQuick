@@ -111,7 +111,7 @@ QtObject {
 
             splitLineColor:"#f38d8d"
             invalidColor: "#e29696"
-            alterColor: "#6a6a6b"
+            alterColor: "#8a8a9b"
             tipBackgroundColor: "#ffffff"
             tipBorderColor: "#767676"
 
@@ -155,7 +155,7 @@ QtObject {
 
             splitLineColor:"#c62f2f"
             invalidColor: "#e29696"
-            alterColor: "#6a6a6b"
+            alterColor: "#8a8a9b"
             tipBackgroundColor: "#ffffff"
             tipBorderColor: "#767676"
 
@@ -177,7 +177,7 @@ QtObject {
 
             splitLineColor:"#c62f2f"
             invalidColor: "#e29696"
-            alterColor: "#6a6a6b"
+            alterColor: "#8a8a9b"
             tipBackgroundColor: "#ffffff"
             tipBorderColor: "#767676"
 
@@ -199,7 +199,7 @@ QtObject {
 
             splitLineColor:"#c62f2f"
             invalidColor: "#e29696"
-            alterColor: "#6a6a6b"
+            alterColor: "#8a8a9b"
             tipBackgroundColor: "#ffffff"
             tipBorderColor: "#767676"
 
@@ -221,7 +221,7 @@ QtObject {
 
             splitLineColor:"#c62f2f"
             invalidColor: "#e29696"
-            alterColor: "#6a6a6b"
+            alterColor: "#8a8a9b"
             tipBackgroundColor: "#ffffff"
             tipBorderColor: "#767676"
 
