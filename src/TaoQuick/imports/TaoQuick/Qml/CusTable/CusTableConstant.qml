@@ -3,7 +3,7 @@ pragma Singleton
 import QtQuick 2.9
 
 QtObject {
-    readonly property int column0Width: 40
+    readonly property int column0Width: 50
     readonly property int minWidth: 30
     readonly property int maxWidth: 400
     function bound(minValue, midValue, maxValue) {

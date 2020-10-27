@@ -8,6 +8,8 @@ class DeviceAddModel : public QuickListModel
 public:
     explicit DeviceAddModel(QObject *parent = nullptr);
 
+public slots:
+    void doUpdateName(int row, const QString &name);
 signals:
 
 };
