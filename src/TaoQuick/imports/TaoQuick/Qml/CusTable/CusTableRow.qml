@@ -22,10 +22,9 @@ Rectangle {
     property var xList
     property var roles
     property color textColor: CusConfig.textColor
-    property bool showOnlineState: true
 
     signal checkedChanged(bool checked)
-    color: isSelected ? CusConfig.controlColor_pressed : ( isAlternate ? CusConfig.controlColor : CusConfig.alterColor )
+    color: isSelected ? CusConfig.controlColor_pressed : ( isAlternate ? CusConfig.controlColor : Qt.darker(CusConfig.controlColor, 1.1) )
     Item {
         id: checkBoxItem
         width: widthList[0]
@@ -33,29 +32,15 @@ Rectangle {
 
         CusCheckBox {
             id: checkBox
-            height: CusConfig.fixedHeight
+            anchors.verticalCenter: parent.verticalCenter
+            x: 6
+            height: 24
             width: height
-            anchors.centerIn: parent
             property bool notify: true
             onCheckedChanged: {
                 if(notify) {
                     deviceRow.checkedChanged(checked)
                 }
-            }
-        }
-        CusImage {
-            visible: showOnlineState
-            readonly property string cameraOnlineImg: CusConfig.imagePathPrefix
-                                                      + "Icon_Camera_Online.png"
-            readonly property string cameraOfflineImg: CusConfig.imagePathPrefix
-                                                       + "Icon_Camera_Offline.png"
-            source: dataObj["online"] ? cameraOnlineImg : cameraOfflineImg
-            width: 16
-            height: 16
-            anchors {
-                verticalCenter: parent.verticalCenter
-                left: checkBox.right
-                leftMargin: -10
             }
         }
     }
