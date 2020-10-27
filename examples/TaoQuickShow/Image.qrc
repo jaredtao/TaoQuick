@@ -56,5 +56,6 @@
         <file>Image/Button/download_gray.png</file>
         <file>Image/Button/download_red.png</file>
         <file>Image/Button/download_white.png</file>
+        <file>Image/Common/wizard.png</file>
     </qresource>
 </RCC>

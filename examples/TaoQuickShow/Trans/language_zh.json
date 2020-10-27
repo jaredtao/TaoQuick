@@ -436,6 +436,11 @@
         {
             "key": "visibledCount: %1",
             "value": "可见数量: %1"
+        },
+        {
+            "key": "Wizard",
+            "value": "向导"
         }
+
     ]
 }
