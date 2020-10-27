@@ -6,7 +6,7 @@ import "./Pane"
 import "./Dialog"
 //import Qt.labs.platform 1.1
 CusBackground {
-    id: rootItem
+    id: rootBackground
     width: 1440
     height: 960
     CusImage {

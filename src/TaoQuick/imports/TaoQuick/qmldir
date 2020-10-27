@@ -37,6 +37,8 @@ singleton CusTableConstant 1.0 Qml/CusTable/CusTableConstant.qml
 CusTableHeader 1.0 Qml/CusTable/CusTableHeader.qml
 CusTableRow 1.0 Qml/CusTable/CusTableRow.qml
 CusTableView 1.0 Qml/CusTable/CusTableView.qml
+CusWizard 1.0 Qml/CusWizard/CusWizard.qml
+CusWizardPage 1.0 Qml/CusWizard/CusWizardPage.qml
 ABoard 1.0 Qml/Effect/Animation/ABoard.qml
 ACircle 1.0 Qml/Effect/Animation/ACircle.qml
 ACleavage 1.0 Qml/Effect/Animation/ACleavage.qml
