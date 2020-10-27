@@ -1,0 +1,34 @@
+#include "DeviceAddModel.h"
+#include "DeviceAddItem.h"
+#include <QHostAddress>
+DeviceAddModel::DeviceAddModel(QObject *parent)
+    : QuickListModel(parent)
+{
+    QList<QuickItemBase *> objs;
+    for (int i = 0; i < 20; ++i) {
+        auto item = new DeviceAddItem;
+        item->setOnline(i % 7 == 0);
+        item->setName(QString("item %1").arg(i));
+        item->setAddress(QString("192.168.1.%1").arg(100 - i));
+        item->setModelString(QString("model %1").arg(i % 2 == 0 ? i : 100 - i));
+        objs.append(item);
+    }
+    resetData(objs);
+    setHeaderRoles({ "name", "address", "modelString" });
+    QMap<QString, SortCallback> callBacks;
+    callBacks["name"]
+        = [](QuickItemBase *b1, QuickItemBase *b2) -> bool { return (static_cast<DeviceAddItem *>(b1))->name() < (static_cast<DeviceAddItem *>(b2))->name(); };
+    callBacks["address"] = [](QuickItemBase *b1, QuickItemBase *b2) -> bool {
+        QHostAddress add1(static_cast<DeviceAddItem *>(b1)->address());
+        QHostAddress add2(static_cast<DeviceAddItem *>(b2)->address());
+        return add1.toIPv4Address() < add2.toIPv4Address();
+    };
+    callBacks["modelString"] = [](QuickItemBase *b1, QuickItemBase *b2) -> bool {
+        const QString &s1 = static_cast<DeviceAddItem *>(b1)->modelString();
+        const QString &s2 = static_cast<DeviceAddItem *>(b2)->modelString();
+        auto m1 = s1.mid(6, s1.length() - 6).toInt();
+        auto m2 = s2.mid(6, s2.length() - 6).toInt();
+        return m1 < m2;
+    };
+    setSortCallbacks(callBacks);
+}

@@ -5,10 +5,14 @@ msvc | gcc | xcode {
 }
 
 HEADERS += \
-    $$PWD/Src/AppInfo.h
+    $$PWD/Src/AppInfo.h \
+    $$PWD/Src/DeviceAdd/DeviceAddItem.h \
+    $$PWD/Src/DeviceAdd/DeviceAddModel.h
 
 SOURCES += \
     $$PWD/Src/AppInfo.cpp \
+    $$PWD/Src/DeviceAdd/DeviceAddItem.cpp \
+    $$PWD/Src/DeviceAdd/DeviceAddModel.cpp \
     $$PWD/Src/main.cpp
 
 CONFIG(debug, debug|release) {
