@@ -15,6 +15,9 @@ HEADERS += \
     $$PWD/Frameless/TaoFrameLessView.h \
     $$PWD/Logger/loggertemplate.h \
     $$PWD/Logger/logger.h \
+    $$PWD/QuickModel/QuickItemBase.h \
+    $$PWD/QuickModel/QuickListModel.h \
+    $$PWD/QuickModel/QuickListModelBase.h \
     $$PWD/Thread/threadcommon.h \
     $$PWD/Thread/threadpool.h \
     $$PWD/Thread/threadworkercontroller.h \
@@ -24,6 +27,9 @@ HEADERS += \
 SOURCES += \
     $$PWD/Frameless/TaoFrameLessView.cpp \
     $$PWD/Logger/logger.cpp \
+    $$PWD/QuickModel/QuickItemBase.cpp \
+    $$PWD/QuickModel/QuickListModel.cpp \
+    $$PWD/QuickModel/QuickListModelBase.cpp \
     $$PWD/Thread/threadpool.cpp \
     $$PWD/Trans/Trans.cpp
 
