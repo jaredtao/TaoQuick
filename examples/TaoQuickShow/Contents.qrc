@@ -48,5 +48,6 @@
         <file>Contents/ShaderEffect/Planet1.png</file>
         <file>Contents/ShaderEffect/Snail.qml</file>
         <file>Contents/ShaderEffect/SuperMario.qml</file>
+        <file>Contents/General/Tables.qml</file>
     </qresource>
 </RCC>

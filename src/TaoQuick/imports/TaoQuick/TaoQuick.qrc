@@ -82,6 +82,8 @@
         <file>Images/ComboBox_Down.png</file>
         <file>Images/ellipsis.png</file>
         <file>Images/Expanded.png</file>
+        <file>Images/Icon_Camera_Offline.png</file>
+        <file>Images/Icon_Camera_Online.png</file>
         <file>Images/last.png</file>
         <file>Images/left.png</file>
         <file>Images/next.png</file>
@@ -91,6 +93,8 @@
         <file>Images/Search_Clear.png</file>
         <file>Images/spinner.png</file>
         <file>Images/Table_Asc.png</file>
+        <file>Images/Table_Asc_Hovered.png</file>
         <file>Images/Table_Desc.png</file>
+        <file>Images/Table_Desc_Hovered.png</file>
     </qresource>
 </RCC>

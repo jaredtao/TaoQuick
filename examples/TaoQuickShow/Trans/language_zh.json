@@ -416,7 +416,26 @@
         {
             "key": "Go to",
             "value": "转到"
+        },
+        {
+            "key": "Table",
+            "value": "表格"
+        },
+        {
+            "key": "Tree",
+            "value": "树"
+        },
+        {
+            "key": "selectCount: %1",
+            "value": "选中数量: %1"
+        },
+        {
+            "key": "checkedCount: %1",
+            "value": "打勾数量: %1"
+        },
+        {
+            "key": "visibledCount: %1",
+            "value": "可见数量: %1"
         }
-
     ]
 }
