@@ -2,6 +2,7 @@
 #include "Trans/Trans.h"
 #include "Frameless/TaoFrameLessView.h"
 #include "logger.h"
+#include "DeviceAdd/DeviceAddModel.h"
 #include <QDir>
 #include <QGuiApplication>
 #include <QQmlContext>
@@ -58,6 +59,9 @@ int main(int argc, char **argv)
     view.rootContext()->setContextProperty("appPath", appPath);
     view.rootContext()->setContextProperty("view", &view);
 
+    DeviceAddModel model;
+
+     view.rootContext()->setContextProperty("deviceAddModel", &model);
     const QUrl url(qmlPath + QStringLiteral("main.qml"));
     QObject::connect(&view, &QQuickView::statusChanged, [&](QQuickView::Status status) {
         if (status == QQuickView::Status::Ready) {
