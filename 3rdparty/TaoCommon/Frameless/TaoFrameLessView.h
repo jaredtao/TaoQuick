@@ -13,6 +13,8 @@ public:
     void moveToScreenCenter();
     bool isMax() const { return m_isMax; }
     QQuickItem *titleItem() const { return m_titleItem; }
+
+    static QRect calcCenterGeo(const QRect &screenGeo, const QSize &normalSize);
 public slots:
     void setIsMax(bool isMax);
     void setTitleItem(QQuickItem *item);
