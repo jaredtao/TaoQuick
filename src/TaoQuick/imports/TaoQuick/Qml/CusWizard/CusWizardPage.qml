@@ -8,18 +8,26 @@ Item {
     id: pageItem
     z: 998
     anchors.fill: parent
-    property rect focusRect
-    property string wizardText
+    property string wizardName
+    property string wizardDescript
+    property string targetObjectName
+    property int pageType: pageTypeDown
 
     property color maskColor: "black"
     property real maskOpacity: 0.75
 
-    property int pageType: pageTypeDown
+    property rect focusRect
 
-    readonly property int pageTypeDown: 0
-    readonly property int pageTypeUp: 1
-    readonly property int pageTypeLeft: 2
-    readonly property int pageTypeRight: 3
+    readonly property int pageTypeDown: Qt.DownArrow
+    readonly property int pageTypeUp: Qt.UpArrow
+    readonly property int pageTypeLeft: Qt.LeftArrow
+    readonly property int pageTypeRight: Qt.RightArrow
+
+
+    Component.onCompleted: {
+        var rect = quickTool.getItemGeometryToScene(targetObjectName)
+        focusRect = rect
+    }
     Item {
         id: focusItem
         x: focusRect.x
@@ -85,13 +93,6 @@ Item {
             source: CusConfig.imagePathPrefix + "arrow-left.png"
             anchors.verticalCenter: parent.verticalCenter
         }
-        CusLabel {
-            width: 300
-            text: wizardText
-            font.pixelSize: 18
-            color: "white"
-            anchors.verticalCenter: parent.verticalCenter
-        }
     }
     Row {
         id: rightRow
@@ -108,13 +109,6 @@ Item {
             source: CusConfig.imagePathPrefix + "arrow-right.png"
             anchors.verticalCenter: parent.verticalCenter
         }
-        CusLabel {
-            width: 300
-            text: wizardText
-            font.pixelSize: 18
-            color: "white"
-            anchors.verticalCenter: parent.verticalCenter
-        }
     }
     Column {
         id: downColumn
@@ -126,13 +120,6 @@ Item {
             bottom: focusItem.top
             bottomMargin: 5
             horizontalCenter: focusItem.horizontalCenter
-        }
-        CusLabel {
-            width: 300
-            text: wizardText
-            font.pixelSize: 18
-            color: "white"
-            anchors.horizontalCenter: parent.horizontalCenter
         }
         CusImage {
             source: CusConfig.imagePathPrefix + "arrow-down.png"
@@ -154,12 +141,29 @@ Item {
             source: CusConfig.imagePathPrefix + "arrow-up.png"
             anchors.horizontalCenter: parent.horizontalCenter
         }
-        CusLabel {
-            width: 300
-            text: wizardText
-            font.pixelSize: 18
-            color: "white"
-            anchors.horizontalCenter: parent.horizontalCenter
+    }
+    CusLabel {
+        id: wizardDescriptLabel
+        z: 998
+        text: qsTr(wizardDescript) + CusConfig.transString
+        font.pixelSize: 16
+        color: "white"
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            verticalCenter: parent.verticalCenter
+            verticalCenterOffset: 50
+            horizontalCenterOffset: -50
+        }
+    }
+    CusLabel {
+        z: 998
+        text: qsTr(wizardName) +  CusConfig.transString
+        font.pixelSize: 26
+        color: "white"
+        anchors {
+            left: wizardDescriptLabel.left
+            bottom: wizardDescriptLabel.top
+            bottomMargin: 30
         }
     }
 

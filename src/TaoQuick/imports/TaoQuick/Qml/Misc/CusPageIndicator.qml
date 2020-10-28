@@ -1,4 +1,4 @@
-﻿import QtQuick 2.9
+import QtQuick 2.9
 import QtQuick.Controls 2.2
 import ".."
 import "../.."
@@ -28,8 +28,7 @@ Item {
         spacing: cusPageIndicator.spacing
         CusLabel {
             height: parent.height
-            text: qsTr(count > 1 ? "Total %1 items" : "Total %1 item").arg(
-                      count) + trans.transString
+            text: qsTr(count > 1 ? "Total %1 items" : "Total %1 item").arg(count) +  + CusConfig.transString
         }
         //left button for last current
         CusButton_ImageColorOverlay {
@@ -70,9 +69,7 @@ Item {
             width: indicatorWidth
             height: parent.height
             visible: startBtn.visible && middleStartIndex > 1
-            tipText: qsTr(
-                         middleStep > 1 ? "last %1 items" : "last %1 item").arg(
-                         middleStep) + trans.transString
+            tipText: qsTr(middleStep > 1 ? "last %1 items" : "last %1 item").arg(middleStep) +  + CusConfig.transString
             onClicked: {
                 gotoLast()
             }
@@ -103,7 +100,7 @@ Item {
                      && ((count - 1) - (middleStartIndex + generater.count) >= 1)
             tipText: qsTr(
                          middleStep > 1 ? "next %1 items" : "next %1 item").arg(
-                         middleStep) + trans.transString
+                         middleStep) + CusConfig.transString
             onClicked: {
                 gotoNext()
             }

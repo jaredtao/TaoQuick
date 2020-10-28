@@ -99,7 +99,7 @@ Item {
             color: CusConfig.controlColor
             CusLabel {
                 anchors.fill: parent
-                text: qsTr(headerNames[index])
+                text: qsTr(headerNames[index]) + CusConfig.transString
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 color: CusConfig.textColor_pressed

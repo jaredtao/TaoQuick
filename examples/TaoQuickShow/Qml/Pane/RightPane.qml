@@ -14,13 +14,18 @@ Loader {
             verticalCenter: parent.verticalCenter
         }
         CusButton_ImageColorOverlay {
+            objectName: "wizardBtn"
             width: 32
             height: 32
-            visible: rootLoader.item && typeof rootLoader.item.hasWizard !== "undefined" && rootLoader.item.hasWizard === true
+            visible: rootLoader.item && typeof (rootLoader.item.wizardModel) !== "undefined" && rootLoader.item.wizardModel.count > 0
             btnImgNormal: imgPath + "Common/wizard.png"
             tipText: qsTr("Wizard") + trans.transString
             onClicked: {
-                rootLoader.item.showWizard()
+                var pRoot = rootLoader
+                while (pRoot.parent !== null) {
+                    pRoot = pRoot.parent
+                }
+                wizardComp.createObject(pRoot, {model: rootLoader.item.wizardModel })
             }
         }
         CusButton_ImageColorOverlay {
@@ -34,5 +39,15 @@ Loader {
             }
         }
     }
-
+    Component {
+        id: wizardComp
+        CusWizard {
+            id: cusWizard
+            anchors.fill: parent
+            currentIndex: 0
+            onWizardFinished: {
+                destroy(cusWizard)
+            }
+        }
+    }
 }
