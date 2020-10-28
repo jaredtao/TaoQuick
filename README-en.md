@@ -13,14 +13,20 @@
     - [Issue](#issue)
     - [Other status](#other-status)
   - [Some Demo Preview](#some-demo-preview)
-    - [Splash](#splash)
+    - [Main Page](#main-page)
     - [Change Skin](#change-skin)
-    - [Shutters](#shutters)
-    - [Chess](#chess)
-  - [All effect preview](#all-effect-preview)
-  - [Functions List](#functions-list)
-  - [Qt Version](#qt-version)
-  - [Install](#install)
+    - [Multi-Language](#multi-language)
+    - [Some Button Controls](#some-button-controls)
+    - [Data entry Controls](#data-entry-controls)
+    - [Table Controls](#table-controls)
+    - [Rect Drag Controls](#rect-drag-controls)
+    - [Wizard](#wizard)
+    - [ShaderToy-Snail](#shadertoy-snail)
+    - [ShaderToy-SuperMario](#shadertoy-supermario)
+  - [Environment](#environment)
+  - [Project Struct](#project-struct)
+  - [TaoQuick Core Library](#taoquick-core-library)
+  - [Use TaoQuick](#use-taoquick)
   - [Sponsorship](#sponsorship)
   
 # TaoQuick
@@ -116,35 +122,36 @@ make the appropriate function expansion to  facilitate development of Qml applic
 
 ### Main Page
 
-![](preview/main.png)
+![](preview/main-en.png)
 
 ### Change Skin
 
-![](preview/skin.png)
+![](preview/skin-en.png)
 
 ### Multi-Language
 
-![](preview/I18n.png)
+![](preview/I18n-en.png)
 
 ### Some Button Controls
 
-![](preview/Buttons.png)
+![](preview/Buttons-en.png)
 
 ### Data entry Controls
 
-![](preview/Data.png)
+![](preview/Data-en.png)
+
+### Table Controls
+
+![](preview/Table-en.png)
 
 ### Rect Drag Controls
 
-![](preview/rect.png)
+![](preview/rect-en.png)
 
-### Animation effect: Arrow Flow
+### Wizard
 
-![](preview/Arrow.png)
-
-### Animation effect: Byte Dancy
-
-![](preview/byte.png)
+![](preview/wizard-en.png)
+![](preview/wizard.gif)
 
 ### ShaderToy-Snail
 
