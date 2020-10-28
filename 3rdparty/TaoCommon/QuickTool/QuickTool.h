@@ -1,5 +1,7 @@
 #pragma once
 #include <QObject>
+#include <QVariant>
+#include <QRect>
 #include "TaoCommonGlobal.h"
 class TAO_API QuickTool : public QObject
 {
