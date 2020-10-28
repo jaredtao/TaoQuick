@@ -37,10 +37,11 @@ CusButton_Image {
                     border.width: 2
                     visible: a.containsMouse
                 }
-                Text {
+                CusLabel {
                     anchors {
                         centerIn: parent
                     }
+                    horizontalAlignment: Text.AlignHCenter
                     color: "white"
                     text: qsTr(model.name) + trans.transString
                 }

@@ -25,19 +25,42 @@ Item {
             id: wizard
             anchors.fill: parent
             currentIndex: 0
-            count: 2
+            count: 5
+            totlaString: qsTr("Wizard %1/%2 >").arg(currentIndex + 1).arg(count) + trans.transString
             onWizardFinished: {
                 destroy(wizard)
             }
             CusWizardPage {
                 visible: wizard.currentIndex === 0
-                wizardText: qsTr("titleRect can control window")
-                focusRect: Qt.rect(0,0, wizard.parent.width, 80)
+                wizardText: qsTr("Control Buttons for control mainWindow") + trans.transString
+                readonly property int controlButtonsWidth: 24 * 4 + 20 * 3
+                focusRect: Qt.rect(wizard.parent.width - controlButtonsWidth, 0, controlButtonsWidth, 60)
+                pageType: pageTypeUp
             }
             CusWizardPage {
                 visible: wizard.currentIndex === 1
-                wizardText: qsTr("middle rect for control")
+                readonly property int skinBtnx: 24 * 8 + 20 * 7
+                wizardText: qsTr("Skin Button for change theme") + trans.transString
+                focusRect: Qt.rect(wizard.parent.width - skinBtnx, 3, 30, 30)
+                pageType: pageTypeUp
+            }
+            CusWizardPage {
+                visible: wizard.currentIndex === 2
+                wizardText: qsTr("middle rect for control") + trans.transString
                 focusRect: Qt.rect(200,200, 200, 200)
+                pageType: pageTypeUp
+            }
+            CusWizardPage {
+                visible: wizard.currentIndex === 3
+                wizardText: qsTr("middle rect for control") + trans.transString
+                focusRect: Qt.rect(200,200, 200, 200)
+                pageType: pageTypeRight
+            }
+            CusWizardPage {
+                visible: wizard.currentIndex === 4
+                wizardText: qsTr("middle rect for control") + trans.transString
+                focusRect: Qt.rect(200,200, 200, 200)
+                pageType: pageTypeDown
             }
         }
     }
