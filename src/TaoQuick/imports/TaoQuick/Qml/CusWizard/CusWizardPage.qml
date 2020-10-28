@@ -6,6 +6,7 @@ import "../.."
 
 Item {
     id: pageItem
+    z: 1
     anchors.fill: parent
     property rect focusRect
     property string wizardText
@@ -24,7 +25,7 @@ Item {
                 GradientStop { position: 0.0; color: "transparent" }
                 GradientStop { position: 0.8; color: maskColor }
             }
-            opacity: maskOpacity
+            opacity: maskOpacity / 2
         }
     }
     Row {
