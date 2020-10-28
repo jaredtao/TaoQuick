@@ -4,8 +4,10 @@ import ".."
 import "../.."
 
 Item {
+
     signal wizardFinished()
     property string totlaString: qsTr("Wizard %1/%2 >").arg(currentIndex + 1).arg(count)
+    property string operatorString: qsTr("Click any area to show next")
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true
@@ -19,10 +21,18 @@ Item {
     property int count: 0
     property int currentIndex: 0
     CusLabel {
-        z: 3
+        z: 999
+        id: centerLabel
         anchors.centerIn: parent
         text: totlaString
-        font.pixelSize: 20
+        font.pixelSize: 22
+        color: "white"
+    }
+    CusLabel {
+        z: 999
+        anchors.centerIn: parent
+        anchors.verticalCenterOffset: centerLabel.height
+        text: operatorString
         color: "white"
     }
 }

@@ -13,5 +13,5 @@ TextInput {
     maximumLength: CusConfig.maximumLength
     selectionColor: CusConfig.controlColor_pressed
     selectedTextColor: CusConfig.textColor_pressed
-    renderType: Text.NativeRendering
+//    renderType: Text.NativeRendering
 }
