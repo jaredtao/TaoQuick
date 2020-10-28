@@ -440,7 +440,18 @@
         {
             "key": "Wizard",
             "value": "向导"
+        },
+        {
+            "key": "Control Buttons for control mainWindow",
+            "value": "主窗口控制按钮"
+        },
+        {
+            "key": "Wizard %1/%2 >",
+            "value": "向导 %1/%2 >"
+        },
+        {
+            "key": "Click any area to show next",
+            "value": "点击任意区域，显示下一步"
         }
-
     ]
 }
