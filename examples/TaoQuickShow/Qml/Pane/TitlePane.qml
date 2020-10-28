@@ -24,6 +24,7 @@ Rectangle {
     property bool isMaxed: view.isMax
     Row {
         id: controlButtons
+        objectName: "controlButtonsRow"
         height: 24
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
@@ -78,6 +79,7 @@ Rectangle {
     }
     Row {
         id: toolRow
+
         height: 24
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: splitLine.left
@@ -87,11 +89,13 @@ Rectangle {
             width: 24
             height: 24
             anchors.verticalCenter: parent.verticalCenter
+            objectName: "skinBtn"
         }
         LangBtn {
             width: 24
             height: 24
             anchors.verticalCenter: parent.verticalCenter
+            objectName: "langBtn"
         }
         CusButton_Image {
             width: 24
@@ -119,6 +123,7 @@ Rectangle {
     property alias blankItem: blankItem
     Item {
         id: blankItem
+        objectName: "blankItem"
         anchors {
             left: parent.left
             right: toolRow.left

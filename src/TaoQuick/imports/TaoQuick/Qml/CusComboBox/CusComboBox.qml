@@ -13,7 +13,7 @@ ComboBox {
     readonly property string imgUrlNormal: CusConfig.imagePathPrefix + "ComboBox_Down.png"
 
     property real defaultHeight: CusConfig.fixedHeight * 6
-    displayText: qsTr(currentText)
+    displayText: qsTr(currentText) + CusConfig.transString
     background: Rectangle {
         color: cusComboBox.enabled ? CusConfig.controlColor : CusConfig.controlColor_disabled
         radius: CusConfig.controlBorderRadius
@@ -114,7 +114,7 @@ ComboBox {
         contentItem: CusLabel {
             leftPadding: cusComboBox.leftPadding
             rightPadding: cusComboBox.indicator.width + cusComboBox.spacing
-            text: qsTr(String(modelData))
+            text: qsTr(String(modelData)) + CusConfig.transString
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight

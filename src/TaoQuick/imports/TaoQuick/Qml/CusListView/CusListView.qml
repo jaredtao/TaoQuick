@@ -16,7 +16,7 @@ ListView {
     interactive: false
     snapMode: ListView.SnapToItem
     cacheBuffer: 12000
-    property string noDataText: qsTr("No Data")
+    property string noDataText: qsTr("No Data") + CusConfig.transString
 
     ScrollBar.horizontal: CusScrollBar {
         id: hbar
