@@ -5,12 +5,14 @@ import TaoQuick 1.0
 Item {
     anchors.fill: parent
 
-    Rectangle {
+    Item {
         id: mainItem
         width: 800
         height: 600
-        border.color: "steelblue"
-        anchors.centerIn: parent
+        anchors{
+            centerIn: parent
+            verticalCenterOffset: -100
+        }
         Row {
             spacing: 10
             CusLabel {
@@ -122,6 +124,38 @@ Item {
                     color: CusConfig.splitLineColor
                 }
             }
+        }
+    }
+    Column {
+        anchors {
+            left: mainItem.left
+            top: mainItem.bottom
+            topMargin: 4
+        }
+        CusLabel {
+            text: qsTr("Table has these feature:") + trans.transString
+        }
+        CusLabel {
+            text: qsTr("    1. select by 'mouse click', 'Ctrl + click' for Multi-select, 'Shift + click' for Continue-select") + trans.transString
+        }
+        CusLabel {
+            text: qsTr("    2. mouse press and move can drag rect and select rows above rect") + trans.transString
+        }
+        CusLabel {
+            text: qsTr("    3. Ctrl + A for select all, Esc for deselect all") + trans.transString
+        }
+        CusLabel {
+            text: qsTr("    4. column width can be reset  by drag header splite line") + trans.transString
+        }
+        CusLabel {
+            text: qsTr("    5. Table can be sort by click header, click again switch Ascending or descending") + trans.transString
+        }
+
+        CusLabel {
+            text: qsTr("    6. Column 1 can be edit by double click, and update data to model after edit") + trans.transString
+        }
+        CusLabel {
+            text: qsTr("    7. fuzzy search") + trans.transString
         }
     }
 }
