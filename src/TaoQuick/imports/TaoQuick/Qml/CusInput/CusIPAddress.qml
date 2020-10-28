@@ -28,6 +28,7 @@ Rectangle {
             id: input1
             width: defaultW
             validator: IntValidator{bottom: 1; top: 255;}
+
         }
         CusLabel {
             text: "."

@@ -1,13 +1,15 @@
 #include "AppInfo.h"
 #include "Trans/Trans.h"
 #include "Frameless/TaoFrameLessView.h"
-#include "logger.h"
+#include "Logger/Logger.h"
+#include "QuickTool/QuickTool.h"
 #include "DeviceAdd/DeviceAddModel.h"
 #include <QDir>
 #include <QGuiApplication>
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QUrl>
+#include <QQuickItem>
 static void prepareApp()
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -35,6 +37,7 @@ int main(int argc, char **argv)
     view.moveToScreenCenter();
     Trans trans;
     AppInfo appInfo;
+    QuickTool quickTool;
     trans.beforeUiReady(view.rootContext());
     appInfo.beforeUiReady(view.rootContext());
 
@@ -59,15 +62,17 @@ int main(int argc, char **argv)
     view.rootContext()->setContextProperty("contentsPath", contentsPath);
     view.rootContext()->setContextProperty("appPath", appPath);
     view.rootContext()->setContextProperty("view", &view);
+    view.rootContext()->setContextProperty("quickTool", &quickTool);
 
     DeviceAddModel model;
 
-     view.rootContext()->setContextProperty("deviceAddModel", &model);
+    view.rootContext()->setContextProperty("deviceAddModel", &model);
     const QUrl url(qmlPath + QStringLiteral("main.qml"));
     QObject::connect(&view, &QQuickView::statusChanged, [&](QQuickView::Status status) {
         if (status == QQuickView::Status::Ready) {
             trans.afterUiReady();
             appInfo.afterUiReady();
+            quickTool.setRootObjet(view.rootObject());
         }
     });
     QObject::connect(view.engine(), &QQmlEngine::quit, qApp, &QCoreApplication::quit);

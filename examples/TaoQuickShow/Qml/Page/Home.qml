@@ -11,57 +11,73 @@ Item {
         wrapMode: Label.Wrap
         anchors.centerIn: parent
     }
-    property bool hasWizard: true
-    function showWizard() {
-        var pRoot = homeItem
-        while (pRoot.parent !== null) {
-            pRoot = pRoot.parent
+    property ListModel wizardModel: ListModel {
+        ListElement {
+            name: "TitleBar"
+            descript: "drag change window pos, double click change window state"
+            targetObjectName: "blankItem"
+            arrowType: Qt.UpArrow
         }
-        wizardComp.createObject(pRoot)
-    }
-    Component {
-        id: wizardComp
-        CusWizard {
-            id: wizard
-            anchors.fill: parent
-            currentIndex: 0
-            count: 5
-            totlaString: qsTr("Wizard %1/%2 >").arg(currentIndex + 1).arg(count) + trans.transString
-            onWizardFinished: {
-                destroy(wizard)
-            }
-            CusWizardPage {
-                visible: wizard.currentIndex === 0
-                wizardText: qsTr("Control Buttons for control mainWindow") + trans.transString
-                readonly property int controlButtonsWidth: 24 * 4 + 20 * 3
-                focusRect: Qt.rect(wizard.parent.width - controlButtonsWidth, 0, controlButtonsWidth, 60)
-                pageType: pageTypeUp
-            }
-            CusWizardPage {
-                visible: wizard.currentIndex === 1
-                readonly property int skinBtnx: 24 * 8 + 20 * 7
-                wizardText: qsTr("Skin Button for change theme") + trans.transString
-                focusRect: Qt.rect(wizard.parent.width - skinBtnx, 3, 30, 30)
-                pageType: pageTypeUp
-            }
-            CusWizardPage {
-                visible: wizard.currentIndex === 2
-                wizardText: qsTr("middle rect for control") + trans.transString
-                focusRect: Qt.rect(200,200, 200, 200)
-                pageType: pageTypeUp
-            }
-            CusWizardPage {
-                visible: wizard.currentIndex === 3
-                wizardText: qsTr("middle rect for control") + trans.transString
-                focusRect: Qt.rect(200,200, 200, 200)
-                pageType: pageTypeRight
-            }
-            CusWizardPage {
-                visible: wizard.currentIndex === 4
-                wizardText: qsTr("middle rect for control") + trans.transString
-                focusRect: Qt.rect(200,200, 200, 200)
-                pageType: pageTypeDown
-            }
+        ListElement {
+            name: "Control Buttons"
+            descript: "minimize, maximize, normal or close main window"
+            targetObjectName: "controlButtonsRow"
+            arrowType: Qt.UpArrow
         }
+        ListElement {
+            name: "Skin Button"
+            descript: "switch theme"
+            targetObjectName: "skinBtn"
+            arrowType: Qt.UpArrow
+        }
+        ListElement {
+            name: "Language Button"
+            descript: "switch language"
+            targetObjectName: "langBtn"
+            arrowType: Qt.UpArrow
+        }
+        ListElement {
+            name: "Left Pane"
+            descript: "show content list"
+            targetObjectName: "leftPane"
+            arrowType: Qt.LeftArrow
+        }
+        ListElement {
+            name: "Drawer Button"
+            descript: "show or hide left pane"
+            targetObjectName: "menuBtn"
+            arrowType: Qt.LeftArrow
+        }
+        ListElement {
+            name: "Search Input"
+            descript: "search content"
+            targetObjectName: "searchInput"
+            arrowType: Qt.LeftArrow
+        }
+        ListElement {
+            name: "Home Button"
+            descript: "go back home page"
+            targetObjectName: "homeBtn"
+            arrowType: Qt.LeftArrow
+        }
+        ListElement {
+            name: "Content List"
+            descript: "switch content"
+            targetObjectName: "contentListView"
+            arrowType: Qt.LeftArrow
+        }
+        ListElement {
+            name: "Content Pane"
+            descript: "show current selected content by list"
+            targetObjectName: "contentRect"
+            arrowType: Qt.LeftArrow
+        }
+        ListElement {
+            name: "Tool Buttons"
+            descript: "special function buttons such as Wizard, View Source Code and so on"
+            targetObjectName: "wizardBtn"
+            arrowType: Qt.RightArrow
+        }
+
     }
 }
