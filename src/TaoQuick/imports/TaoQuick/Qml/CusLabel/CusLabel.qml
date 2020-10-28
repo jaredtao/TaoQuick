@@ -8,7 +8,7 @@ Label {
     font.pixelSize: CusConfig.fontPixel
     color: CusConfig.textColor
     elide: Text.ElideRight
-    renderType: Text.NativeRendering
+//    renderType: Text.NativeRendering
     verticalAlignment: Text.AlignVCenter
     horizontalAlignment: Text.AlignLeft
 }

@@ -26,7 +26,7 @@ TRingPage {
         horizontalAlignment: Text.AlignHCenter
         color: Qt.darker(ringPage.colors[currentIndex], 1.5)
         font.pixelSize: 60
-        renderType: Text.NativeRendering
+//        renderType: Text.NativeRendering
         scale: 1
         Behavior on opacity { NumberAnimation { duration: 300} }
         Behavior on scale { NumberAnimation{ duration: 300} }
