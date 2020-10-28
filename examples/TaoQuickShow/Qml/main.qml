@@ -58,6 +58,7 @@ CusBackground {
 
         LeftPane {
             id: leftPane
+            objectName: "leftPane"
             property real targetW: parent.width * 0.233
             width: targetW
             height: parent.height
@@ -75,7 +76,7 @@ CusBackground {
         }
         CusButton_ImageColorOverlay {
             btnImgNormal: imgPath + "Common/menu.png"
-//            anchors.verticalCenter: parent.verticalCenter
+            objectName: "menuBtn"
             anchors {
                 left: leftPane.right
                 top: leftPane.top
@@ -98,6 +99,7 @@ CusBackground {
         }
         RightPane {
             id: rightPane
+            objectName: "contentRect"
             anchors {
                 left: leftPane.right
                 leftMargin: 40

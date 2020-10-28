@@ -53,7 +53,7 @@ Rectangle {
             height: parent.height
             CusLabel {
                 id: textLabel
-                text: qsTr(String(dataObj[roles[index]]))
+                text: qsTr(String(dataObj[roles[index]])) + CusConfig.transString
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter

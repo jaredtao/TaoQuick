@@ -6,6 +6,7 @@ QtObject {
     id: config
     objectName: "config"
     property string fontFamily: "微软雅黑"
+    property string transString: typeof (trans) != "undefined" ? trans.transString : ""
     property int fontPixel: 14
     property int fixedHeight: 30
 

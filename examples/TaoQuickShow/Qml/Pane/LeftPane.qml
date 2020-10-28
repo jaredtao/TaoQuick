@@ -11,6 +11,7 @@ Item {
         height: 40
         CusTextField_Search {
             id: searchInput
+            objectName: "searchInput"
             anchors {
                 left: parent.left
                 leftMargin: 4
@@ -47,6 +48,7 @@ Item {
         }
         CusTextButton {
             text: qsTr("Home") + trans.transString
+            objectName: "homeBtn"
             backgroundColor: "transparent"
             borderColor: "transparent"
             width: parent.width
@@ -58,6 +60,7 @@ Item {
     }
     CusListView {
         id: listView
+        objectName: "contentListView"
         model: demoModel
         width: parent.width
         anchors {

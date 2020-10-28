@@ -5,7 +5,7 @@ import TaoQuick 1.0
 CusButton_Image {
     btnImgUrl: imgPath + (hovered
                           || pressed ? "Window/lang_white.png" : "Window/lang_gray.png")
-    tipText: qsTr("Language")
+    tipText: qsTr("Language") + trans.transString
     onClicked: {
         pop.show()
     }
