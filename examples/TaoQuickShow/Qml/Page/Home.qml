@@ -18,7 +18,6 @@ Item {
             pRoot = pRoot.parent
         }
         wizardComp.createObject(pRoot)
-//        wizardComp.createObject(pRoot, {x: pRoot.x, y: pRoot.y, width: pRoot.width, height: pRoot.height})
     }
     Component {
         id: wizardComp
@@ -31,13 +30,11 @@ Item {
                 destroy(wizard)
             }
             CusWizardPage {
-                z: 1
                 visible: wizard.currentIndex === 0
                 wizardText: qsTr("titleRect can control window")
                 focusRect: Qt.rect(0,0, wizard.parent.width, 80)
             }
             CusWizardPage {
-                z: 1
                 visible: wizard.currentIndex === 1
                 wizardText: qsTr("middle rect for control")
                 focusRect: Qt.rect(200,200, 200, 200)

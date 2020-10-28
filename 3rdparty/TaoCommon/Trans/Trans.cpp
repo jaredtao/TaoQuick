@@ -6,8 +6,8 @@
 #include <QLocale>
 #include <QQuickView>
 #include <QQmlEngine>
-const static auto cEnglisthStr = QStringLiteral("English");
-const static auto cChineseStr = QStringLiteral("简体中文");
+const static auto cEnglisthStr = u8"English";
+const static auto cChineseStr = u8"简体中文";
 Trans::Trans(QObject *parent) : QTranslator(parent) {}
 
 void Trans::beforeUiReady(QQmlContext *ctx)
