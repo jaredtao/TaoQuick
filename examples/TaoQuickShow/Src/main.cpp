@@ -32,6 +32,7 @@ int main(int argc, char **argv)
     TaoFrameLessView view;
     view.setMinimumSize({ 800, 600 });
     view.resize(1440, 960);
+    view.moveToScreenCenter();
     Trans trans;
     AppInfo appInfo;
     trans.beforeUiReady(view.rootContext());
