@@ -452,6 +452,98 @@
         {
             "key": "Click any area to show next",
             "value": "点击任意区域，显示下一步"
+        },
+        {
+            "key": "TitleBar",
+            "value": "标题栏"
+        },
+        {
+            "key": "drag change window pos, double click change window state",
+            "value": "拖拽改变窗口位置,双击改变窗口状态"
+        },
+        {
+            "key": "Control Buttons",
+            "value": "控制按钮"
+        },
+        {
+            "key": "minimize, maximize, normal or close main window",
+            "value": "最小化、最大化、还原或者关闭窗口"
+        },
+        {
+            "key": "Skin Button",
+            "value": "皮肤按钮"
+        },
+        {
+            "key": "switch theme",
+            "value": "更改主题"
+        },
+        {
+            "key": "Language Button",
+            "value": "语言按钮"
+        },
+        {
+            "key": "switch language",
+            "value": "切换语言"
+        },
+        {
+            "key": "Left Pane",
+            "value": "左侧面板"
+        },
+        {
+            "key": "show content list",
+            "value": "展示内容列表"
+        },
+        {
+            "key": "Left Pane Control Button",
+            "value": "切换语言"
+        },
+        {
+            "key": "Drawer Button",
+            "value": "抽屉按钮"
+        },
+        {
+            "key": "show or hide left pane",
+            "value": "显示或者隐藏左侧面板"
+        },
+        {
+            "key": "Search Input",
+            "value": "搜索框"
+        },
+        {
+            "key": "search content",
+            "value": "搜索内容"
+        },
+        {
+            "key": "Home Button",
+            "value": "主页按钮"
+        },
+        {
+            "key": "go back home page",
+            "value": "返回主页"
+        },
+        {
+            "key": "Content List",
+            "value": "内容列表"
+        },
+        {
+            "key": "switch content",
+            "value": "切换内容"
+        },
+        {
+            "key": "Content Pane",
+            "value": "内容面板"
+        },
+        {
+            "key": "show current selected content by list",
+            "value": "显示列表中当前选中的内容"
+        },
+        {
+            "key": "Tool Buttons",
+            "value": "工具按钮"
+        },
+        {
+            "key": "special function buttons such as Wizard, View Source Code and so on",
+            "value": "特殊功能的按钮，例如 向导按钮、查看源码按钮等等"
         }
     ]
 }
