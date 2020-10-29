@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QAbstractListModel>
-#include "taocommonglobal.h"
+#include "TaoCommonGlobal.h"
 class QuickItemBase;
 class TAO_API QuickListModelBase : public QAbstractListModel
 {
