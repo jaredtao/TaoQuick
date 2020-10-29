@@ -5,7 +5,7 @@
 #include <QList>
 #include <QString>
 #include <QTranslator>
-#include "taocommonglobal.h"
+#include "TaoCommonGlobal.h"
 class QQmlContext;
 class Trans : public QTranslator
 {
