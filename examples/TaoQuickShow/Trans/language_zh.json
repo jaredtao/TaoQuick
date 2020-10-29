@@ -546,36 +546,44 @@
             "value": "特殊功能的按钮，例如 向导按钮、查看源码按钮等等"
         },
         {
-            "key": "Table has these feature:",
+            "key": "Table has these features:",
             "value": "表格具有以下特性:"
         },
         {
-            "key": "    1. select by 'mouse click', 'Ctrl + click' for Multi-select, 'Shift + click' for Continue-select",
-            "value": "  1、 鼠标点击选中，Ctrl + 鼠标点击 多选，Shift + 鼠标点击连续选中"
+            "key": "    * Select row by 'mouse click', 'Ctrl + click' for Multi-select, 'Shift + click' for Continue-select",
+            "value": "  * 鼠标点击选中，Ctrl + 鼠标点击 多选，Shift + 鼠标点击连续选中"
         },
         {
-            "key": "    2. mouse press and move can drag rect and select rows above rect",
-            "value": "  2、鼠标按下并移动，可以画框并框选"
+            "key": "    * Draw rect select, mouse press and move can draw a rect, then these rows above rect will be selected",
+            "value": "  * 框选,鼠标按下并拖动会画框,框内的行可以被选中"
         },
         {
-            "key": "    3. Ctrl + A for select all, Esc for deselect all",
-            "value": "  3、Ctrl + A 全选, Esc全反选"
+            "key": "    * Ctrl + A for select all, Esc for deselect all",
+            "value": "  * Ctrl + A 全选, Esc 反选"
         },
         {
-            "key": "    4. column width can be reset  by drag header splite line",
-            "value": "  4、拖动表头的间隔线可以重新设置列宽"
+            "key": "    * Check row by CheckBox in Column 0; Check/unchecked multi rows flow selected rows",
+            "value": "  * 0列的勾选框可以勾选行;选中多行时,可以勾选/反勾选多行"
         },
         {
-            "key": "    5. Table can be sort by click header, click again switch Ascending or descending",
-            "value": "  5、表格可以点击表头进行排序,再次点击切换升序或降序"
+            "key": "    * Check All rows by header of Column 0",
+            "value": "  * 0列的表头可以勾选所有"
         },
         {
-            "key": "    6. Column 1 can be edit by double click, and update data to model after edit",
-            "value": "  6、第一列可以双击编辑，编辑完成后能够把数据更新到model"
+            "key": "    * Edit Column 1 by double click, and update data to model after edit",
+            "value": "  * 列1可以双击编辑，编辑完成后能够把数据更新到model"
         },
         {
-            "key": "    7. fuzzy search",
-            "value": "  7、模糊查找"
+            "key": "    * Fuzzy search",
+            "value": "  * 模糊查找"
+        },
+        {
+            "key": "    * Sort by click header, click again can switch ascending or descending",
+            "value": "  * 点击表头可以排序,再次点击切换升序或降序"
+        },
+        {
+            "key": "    * Reset column width by drag header splite line",
+            "value": "  * 拖动表头间隔，可以设置列宽"
         }
     ]
 }
