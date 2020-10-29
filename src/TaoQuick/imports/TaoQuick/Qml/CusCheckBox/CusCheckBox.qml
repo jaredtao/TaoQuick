@@ -55,7 +55,7 @@ CheckBox {
                 } else if (cusCheckBox.hovered) {
                     return colorHovered
                 } else {
-                    return colorNormal
+                    return colorPressed
                 }
             }
         }

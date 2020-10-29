@@ -8,7 +8,7 @@ Item {
     Item {
         id: mainItem
         width: 800
-        height: 600
+        height: 500
         anchors{
             centerIn: parent
             verticalCenterOffset: -100
@@ -133,29 +133,34 @@ Item {
             topMargin: 4
         }
         CusLabel {
-            text: qsTr("Table has these feature:") + trans.transString
+            text: qsTr("Table has these features:") + trans.transString
         }
         CusLabel {
-            text: qsTr("    1. select by 'mouse click', 'Ctrl + click' for Multi-select, 'Shift + click' for Continue-select") + trans.transString
+            text: qsTr("    * Select row by 'mouse click', 'Ctrl + click' for Multi-select, 'Shift + click' for Continue-select") + trans.transString
         }
         CusLabel {
-            text: qsTr("    2. mouse press and move can drag rect and select rows above rect") + trans.transString
+            text: qsTr("    * Draw rect select, mouse press and move can draw a rect, then these rows above rect will be selected") + trans.transString
         }
         CusLabel {
-            text: qsTr("    3. Ctrl + A for select all, Esc for deselect all") + trans.transString
+            text: qsTr("    * Ctrl + A for select all, Esc for deselect all") + trans.transString
         }
         CusLabel {
-            text: qsTr("    4. column width can be reset  by drag header splite line") + trans.transString
+            text: qsTr("    * Check row by CheckBox in Column 0; Check/unchecked multi rows flow selected rows") + trans.transString
         }
         CusLabel {
-            text: qsTr("    5. Table can be sort by click header, click again switch Ascending or descending") + trans.transString
-        }
-
-        CusLabel {
-            text: qsTr("    6. Column 1 can be edit by double click, and update data to model after edit") + trans.transString
+            text: qsTr("    * Check All rows by header of Column 0") + trans.transString
         }
         CusLabel {
-            text: qsTr("    7. fuzzy search") + trans.transString
+            text: qsTr("    * Edit Column 1 by double click, and update data to model after edit") + trans.transString
+        }
+        CusLabel {
+            text: qsTr("    * Fuzzy search") + trans.transString
+        }
+        CusLabel {
+            text: qsTr("    * Reset column width by drag header splite line") + trans.transString
+        }
+        CusLabel {
+            text: qsTr("    * Sort by click header, click again can switch ascending or descending") + trans.transString
         }
     }
 }

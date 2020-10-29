@@ -72,8 +72,10 @@ Item {
             id: checkAllBox
             anchors.verticalCenter: parent.verticalCenter
             x: 6
-            height: 24
+            height: 20
             width: height
+            indicator.width: 20
+            indicator.height: 20
             property bool notify: true
             onCheckedChanged: {
                 if (notify) {
