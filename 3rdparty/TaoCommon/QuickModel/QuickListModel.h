@@ -1,7 +1,7 @@
 #pragma once
 
 #include "QuickListModelBase.h"
-#include "taocommonglobal.h"
+#include "TaoCommonGlobal.h"
 class TAO_API QuickListModel : public QuickListModelBase
 {
     Q_OBJECT
