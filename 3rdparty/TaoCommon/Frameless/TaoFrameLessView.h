@@ -1,5 +1,5 @@
 #pragma once
-#include "taocommonglobal.h"
+#include "TaoCommonGlobal.h"
 #include <QQuickView>
 //无边框窗口，支持拖动和改变大小，支持Windows平台Aero效果
 class TAO_API TaoFrameLessView : public QQuickView

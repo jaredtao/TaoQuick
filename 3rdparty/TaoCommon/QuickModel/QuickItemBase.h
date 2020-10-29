@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QObject>
-#include "taocommonglobal.h"
+#include "TaoCommonGlobal.h"
 class TAO_API QuickItemBase : public QObject
 {
     Q_OBJECT
