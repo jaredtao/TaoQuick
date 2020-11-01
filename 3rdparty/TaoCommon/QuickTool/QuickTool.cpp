@@ -32,6 +32,7 @@ QRect QuickTool::getItemGeometryToScene(const QString &targetObjName) const
             return pItem->boundingRect().toRect();
         }
     }
+    return {};
 }
 
 QObject *QuickTool::getObject(const QString &targetObjName) const
