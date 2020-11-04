@@ -166,7 +166,7 @@ make the appropriate function expansion to  facilitate development of Qml applic
 
 * Qt 5.9.0 or later
 
-* compatibility Qt5.15、Qt6
+* compatibility Qt5.15
 
 ## Project Struct
 
