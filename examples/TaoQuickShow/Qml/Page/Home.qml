@@ -70,7 +70,7 @@ Item {
             name: "Content Pane"
             descript: "show current selected content by list"
             targetObjectName: "contentRect"
-            arrowType: Qt.LeftArrow
+            arrowType: Qt.RightArrow
         }
         ListElement {
             name: "Tool Buttons"

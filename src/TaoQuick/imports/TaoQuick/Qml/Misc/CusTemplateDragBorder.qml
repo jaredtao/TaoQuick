@@ -4,7 +4,7 @@ import ".."
 import "../.."
 
 CusResizeBorder {
-    id: root
+    id: cusBorder
     x: 0
     y: 0
     width: parent.width
@@ -16,18 +16,19 @@ CusResizeBorder {
     property bool rotationEnabled: true
 
     property color rotateHandleColor: "lightgreen"
-
+    property color color: CusConfig.themeColor
+    property color borderColor: CusConfig.controlBorderColor
     signal clicked(real x, real y)
     signal doubleClicked(real x, real y)
 
     //big
     Rectangle {
-        border.color: CusConfig.controlBorderColor
+        border.color: cusBorder.borderColor
         border.width: 1
-        color: "transparent"
+        color: cusBorder.color
         radius: borderMargin
         anchors.fill: parent
-        anchors.margins: borderMargin
+        anchors.margins: borderMargin + 1
     }
     //line to rotateHandle and Border
     Rectangle {
@@ -203,10 +204,10 @@ CusResizeBorder {
         cursorShape: Qt.PointingHandCursor
         drag.target: controller
         onClicked: {
-            root.clicked(x, y)
+            cusBorder.clicked(x, y)
         }
         onDoubleClicked: {
-            root.doubleClicked(x, y)
+            cusBorder.doubleClicked(x, y)
         }
     }
 }

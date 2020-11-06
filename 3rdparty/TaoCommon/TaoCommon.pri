@@ -10,16 +10,15 @@ INCLUDEPATH += $$PWD \
 HEADERS += \
     $$PWD/Common/FileReadWrite.h \
     $$PWD/Common/ObjectMap.h \
-    $$PWD/QuickModel/TaoListModelBase.hpp \
     $$PWD/QuickTool/QuickTool.h \
     $$PWD/Common/Subject.h \
     $$PWD/Common/Package.h \
     $$PWD/Frameless/TaoFrameLessView.h \
     $$PWD/Logger/LoggerTemplate.h \
     $$PWD/Logger/Logger.h \
-    $$PWD/QuickModel/QuickItemBase.h \
-    $$PWD/QuickModel/QuickListModel.h \
-    $$PWD/QuickModel/QuickListModelBase.h \
+    $$PWD/TaoModel/TaoListItemBase.h \
+    $$PWD/TaoModel/TaoListModel.h \
+    $$PWD/TaoModel/TaoListModelBase.hpp \
     $$PWD/Thread/ThreadCommon.h \
     $$PWD/Thread/ThreadPool.h \
     $$PWD/Thread/ThreadWorkerController.h \
@@ -29,10 +28,9 @@ HEADERS += \
 SOURCES += \
     $$PWD/Frameless/TaoFrameLessView.cpp \
     $$PWD/Logger/Logger.cpp \
-    $$PWD/QuickModel/QuickItemBase.cpp \
-    $$PWD/QuickModel/QuickListModel.cpp \
-    $$PWD/QuickModel/QuickListModelBase.cpp \
     $$PWD/QuickTool/QuickTool.cpp \
+    $$PWD/TaoModel/TaoListItemBase.cpp \
+    $$PWD/TaoModel/TaoListModel.cpp \
     $$PWD/Thread/ThreadPool.cpp \
     $$PWD/Trans/Trans.cpp
 

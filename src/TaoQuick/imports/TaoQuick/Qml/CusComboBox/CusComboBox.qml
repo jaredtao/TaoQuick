@@ -95,8 +95,11 @@ ComboBox {
             model: cusComboBox.popup.visible ? cusComboBox.delegateModel : null
             currentIndex: cusComboBox.highlightedIndex
             ScrollBar.vertical: CusScrollBar {
-                policy: (cusComboBox.popup.height
-                         >= cusComboBox.defaultHeight) ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
+//                policy: (cusComboBox.popup.height
+//                         >= cusComboBox.defaultHeight) ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
+                opacity: cusComboBox.popup.height >= cusComboBox.defaultHeight ? 1.0 : 0.0
+                visible: opacity > 0
+                active: visible
             }
         }
 
@@ -128,8 +131,8 @@ ComboBox {
             Rectangle {
                 anchors {
                     fill: parent
-                    leftMargin: 4
-                    rightMargin: 14
+                    leftMargin: 2
+                    rightMargin: 16
                 }
                 radius: CusConfig.controlBorderRadius
                 color: cusComboBox.hoveredIndex === index ? CusConfig.controlColor_hovered : (cusComboBox.currentIndex === index ? CusConfig.controlColor_pressed : CusConfig.controlColor)
