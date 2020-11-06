@@ -73,10 +73,9 @@ Item {
         noDataText: qsTr("No Data") + trans.transString
 
         section.property: "group"
-        section.delegate: Rectangle {
+        section.delegate: Item {
             width: listView.width
             height: CusConfig.fixedHeight
-            opacity: 0.8
             ExpandBtn {
                 id: sectionBtn
                 text: qsTr(section) + trans.transString

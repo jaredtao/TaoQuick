@@ -110,7 +110,7 @@ ListView {
             top: parent.top
             topMargin: 10
         }
-        visible: cusTableView.count <= 0
+        visible: cusTableView.model.visibledCount <= 0
     }
     CusRectDraw {
         id: tableRectItem

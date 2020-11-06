@@ -5,10 +5,10 @@ import "../.."
 Switch {
     id: cusSwitch
 
-    property color backgroundColor_on :"#579ee5"
+    property color backgroundColor_on : CusConfig.themeColor
     property color indicatorColor_on: "#ffffff"
 
-    property color backgroundColor_on_disable: "#108bcb"
+    property color backgroundColor_on_disable: Qt.darker(backgroundColor_on, 1.2)
     property color indicatorColor_on_disable: "#b6bdc5"
 
     property color backgroundColor_off :"#808080"
