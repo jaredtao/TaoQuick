@@ -7,8 +7,8 @@ class TAO_API QuickTool : public QObject
 {
     Q_OBJECT
 public:
-    QuickTool(QObject *parent = nullptr);
-    QuickTool(QObject *rootObject, QObject *parent = nullptr);
+    explicit QuickTool(QObject *parent = nullptr);
+    explicit QuickTool(QObject *rootObject, QObject *parent = nullptr);
     virtual ~QuickTool() override;
     void setRootObjet(QObject *rootObj)
     {
@@ -19,6 +19,8 @@ public:
         return pRootObject;
     }
     void findRootByNode(QObject *nodeObject);
+
+
 public slots:
     QObject *getObject(const QString &targetObjName) const;
 
@@ -31,6 +33,12 @@ public slots:
                            const QVariant &value) const;
 
     QRect getItemGeometryToScene(const QString &targetObjName) const;
+
+
+    void setAppOverrideCursor(Qt::CursorShape shape);
+    void restoreAppOverrideCursor();
+
+    QPoint cursorGlobalPos() const;
 
 private:
     QObject *pRootObject = nullptr;

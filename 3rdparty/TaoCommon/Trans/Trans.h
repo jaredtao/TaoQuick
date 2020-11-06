@@ -60,5 +60,5 @@ private:
     QHash<QString, QHash<QString, QString>> m_map;
     QStringList m_languages;
     QString m_transString;
-    QQmlContext *m_ctx;
+    QQmlContext *m_ctx = nullptr;
 };

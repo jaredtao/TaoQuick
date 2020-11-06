@@ -96,5 +96,5 @@ private:
     QString m_copyRight;
     QString m_descript;
     QString m_compilerVendor;
-    bool m_splashShow;
+    bool m_splashShow = false;
 };
