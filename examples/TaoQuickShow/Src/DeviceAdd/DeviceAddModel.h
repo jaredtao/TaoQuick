@@ -1,8 +1,8 @@
 #pragma once
 
 #include <QObject>
-#include "QuickModel/QuickListModel.h"
-class DeviceAddModel : public QuickListModel
+#include "TaoModel/TaoListModel.h"
+class DeviceAddModel : public TaoListModel
 {
     Q_OBJECT
 public:

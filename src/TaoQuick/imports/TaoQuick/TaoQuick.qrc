@@ -19,6 +19,7 @@
         <file>Qml/CusCheckBox/CusSwitch.qml</file>
         <file>Qml/CusComboBox/CusComboBox.qml</file>
         <file>Qml/CusImage/CusImage.qml</file>
+        <file>Qml/CusImage/CusImageOverlay.qml</file>
         <file>Qml/CusImage/CusImage_Tip.qml</file>
         <file>Qml/CusInput/CusIPAddress.qml</file>
         <file>Qml/CusInput/CusTextField.qml</file>

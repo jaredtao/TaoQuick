@@ -1,6 +1,6 @@
 #include "DeviceAddItem.h"
 
 DeviceAddItem::DeviceAddItem(QObject *parent)
-    : QuickItemBase(parent)
+    : TaoListItemBase(parent)
 {
 }

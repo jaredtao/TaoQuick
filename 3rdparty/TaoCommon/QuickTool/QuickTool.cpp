@@ -1,6 +1,7 @@
 #include "QuickTool.h"
 #include <QQuickItem>
 #include <QGuiApplication>
+
 QuickTool::QuickTool(QObject *parent) : QObject(parent) {}
 
 QuickTool::QuickTool(QObject *rootObject, QObject *parent)
@@ -37,9 +38,9 @@ QRect QuickTool::getItemGeometryToScene(const QString &targetObjName) const
     return {};
 }
 
-void QuickTool::setAppOverrideCursor(Qt::CursorShape shape)
+void QuickTool::setAppOverrideCursor(QCursor cursor)
 {
-    qApp->setOverrideCursor(shape);
+    qApp->setOverrideCursor(cursor);
 }
 
 void QuickTool::restoreAppOverrideCursor()
