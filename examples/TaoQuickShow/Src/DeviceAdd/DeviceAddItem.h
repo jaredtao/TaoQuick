@@ -83,5 +83,5 @@ private:
 
     QString m_modelString;
 
-    bool m_online;
+    bool m_online = false;
 };

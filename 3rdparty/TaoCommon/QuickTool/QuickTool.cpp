@@ -1,10 +1,12 @@
 #include "QuickTool.h"
 #include <QQuickItem>
+#include <QGuiApplication>
 QuickTool::QuickTool(QObject *parent) : QObject(parent) {}
 
 QuickTool::QuickTool(QObject *rootObject, QObject *parent)
     : QObject(parent), pRootObject(rootObject)
 {
+
 }
 
 QuickTool::~QuickTool() {}
@@ -33,6 +35,21 @@ QRect QuickTool::getItemGeometryToScene(const QString &targetObjName) const
         }
     }
     return {};
+}
+
+void QuickTool::setAppOverrideCursor(Qt::CursorShape shape)
+{
+    qApp->setOverrideCursor(shape);
+}
+
+void QuickTool::restoreAppOverrideCursor()
+{
+    qApp->restoreOverrideCursor();
+}
+
+QPoint QuickTool::cursorGlobalPos() const
+{
+    return QCursor::pos();
 }
 
 QObject *QuickTool::getObject(const QString &targetObjName) const
