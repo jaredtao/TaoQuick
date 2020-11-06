@@ -1,6 +1,12 @@
 Makefile
 .qmake.cache
 .qmake.super
-*.pro.user*
+*.user
+*.suo
 bin
 *.qmlc
+*temp
+*.VC.*
+*.stash
+*.cbt
+debug
