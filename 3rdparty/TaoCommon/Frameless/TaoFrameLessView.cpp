@@ -58,7 +58,8 @@ static bool isFullWin(QQuickView *win)
 
 TaoFrameLessView::TaoFrameLessView(QWindow *parent) : QQuickView(parent)
 {
-    setFlags(Qt::CustomizeWindowHint |  Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint);
+    setFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint
+             | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint);
     setResizeMode(SizeRootObjectToView);
 
     // WS_THICKFRAME 带回Areo效果
@@ -73,7 +74,7 @@ TaoFrameLessView::TaoFrameLessView(QWindow *parent) : QQuickView(parent)
             [&](Qt::WindowState state) { setIsMax(state == Qt::WindowMaximized); });
 }
 
-TaoFrameLessView::~TaoFrameLessView() {}
+TaoFrameLessView::~TaoFrameLessView() { }
 void TaoFrameLessView::setTitleItem(QQuickItem *item)
 {
     m_titleItem = item;
@@ -84,13 +85,11 @@ QRect TaoFrameLessView::calcCenterGeo(const QRect &screenGeo, const QSize &norma
     int h = normalSize.height();
     int x = screenGeo.x() + (screenGeo.width() - w) / 2;
     int y = screenGeo.y() + (screenGeo.height() - h) / 2;
-    if (screenGeo.width() < w)
-    {
+    if (screenGeo.width() < w) {
         x = screenGeo.x();
         w = screenGeo.width();
     }
-    if (screenGeo.height() < h)
-    {
+    if (screenGeo.height() < h) {
         y = screenGeo.y();
         h = screenGeo.height();
     }
@@ -100,8 +99,7 @@ QRect TaoFrameLessView::calcCenterGeo(const QRect &screenGeo, const QSize &norma
 void TaoFrameLessView::moveToScreenCenter()
 {
     auto geo = calcCenterGeo(screen()->availableGeometry(), size());
-    if (minimumWidth() > geo.width() || minimumHeight() > geo.height())
-    {
+    if (minimumWidth() > geo.width() || minimumHeight() > geo.height()) {
         setMinimumSize(geo.size());
     }
     setGeometry(geo);
@@ -129,7 +127,7 @@ bool TaoFrameLessView::nativeEvent(const QByteArray &eventType, void *message, l
         return false;
     }
     MSG *msg = reinterpret_cast<MSG *>(message);
-    if (!msg || (msg && !msg->hwnd)) {
+    if (!msg || !msg->hwnd) {
         return false;
     }
     switch (msg->message) {
