@@ -16,14 +16,17 @@ Item {
             width: 600
             height: 300
             border.color: "lightblue"
+            color: CusConfig.backgroundColor
             Rectangle {
                 x: 10
                 y: 40
                 width: 100
                 height: 100
                 border.color: "red"
+                color: CusConfig.themeColor
                 smooth: true
                 antialiasing: true
+
                 MoveArea {
                     anchors.fill: parent
                     onMove: {
@@ -38,6 +41,7 @@ Item {
                 width: 200
                 height: 160
                 border.color: "red"
+                color: CusConfig.backgroundColor
                 smooth: true
                 antialiasing: true
                 CusTemplateDragBorder {
@@ -57,7 +61,7 @@ Item {
             width: 600
             height: 300
             border.color: "lightblue"
-
+            color: CusConfig.backgroundColor
             CusRectDraw {
                 anchors.fill: parent
             }

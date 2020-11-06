@@ -1,26 +1,26 @@
-#include "QuickListModel.h"
-#include "QuickItemBase.h"
+#include "TaoListModel.h"
+
 #include <algorithm>
-QuickListModel::QuickListModel(QObject *parent)
-    : QuickListModelBase(parent)
+TaoListModel::TaoListModel(QObject *parent)
+    : TaoListModelBase(parent)
 {
 }
 
-QuickListModel::~QuickListModel()
+TaoListModel::~TaoListModel()
 {
 }
 
-void QuickListModel::check(int row, bool checked)
+void TaoListModel::check(int row, bool checked)
 {
-    if (row < 0 || row >= mObjs.size())
+    if (row < 0 || row >= mDatas.size())
     {
         return;
     }
 
-    mObjs.at(row)->setIsChecked(checked);
-    if (mObjs.at(row)->isSelected())
+    mDatas.at(row)->setIsChecked(checked);
+    if (mDatas.at(row)->isSelected())
     {
-        for (const auto &obj : mObjs)
+        for (const auto &obj : mDatas)
         {
             if (obj->isVisible() && obj->isSelected())
             {
@@ -30,13 +30,13 @@ void QuickListModel::check(int row, bool checked)
     }
 
     bool allCheck = true;
-    if (checked == false || mObjs.count() <= 0)
+    if (checked == false || mDatas.count() <= 0)
     {
         allCheck = false;
     }
     else
     {
-        for (const auto &obj : mObjs)
+        for (const auto &obj : mDatas)
         {
             if (obj->isVisible() && false == obj->isChecked())
             {
@@ -52,9 +52,9 @@ void QuickListModel::check(int row, bool checked)
     }
     updateCheckedCount();
 }
-void QuickListModel::setAllChecked(bool allChecked)
+void TaoListModel::setAllChecked(bool allChecked)
 {
-    for (const auto &obj : mObjs)
+    for (const auto &obj : mDatas)
     {
         if (obj->isVisible())
         {
@@ -68,10 +68,10 @@ void QuickListModel::setAllChecked(bool allChecked)
     mAllChecked = allChecked;
     emit allCheckedChanged(mAllChecked);
 }
-void QuickListModel::search(const QString &searchKey)
+void TaoListModel::search(const QString &searchKey)
 {
     mSearchkey = searchKey.simplified();
-    for (const auto &obj : mObjs)
+    for (const auto &obj : mDatas)
     {
         if (mVisibleCallback && false == mVisibleCallback(obj))
         {
@@ -92,9 +92,9 @@ void QuickListModel::search(const QString &searchKey)
     updateCalcInfo();
 }
 
-void QuickListModel::deselectAll()
+void TaoListModel::deselectAll()
 {
-    for (const auto &obj : mObjs)
+    for (const auto &obj : mDatas)
     {
         if (obj->isVisible())
         {
@@ -104,9 +104,9 @@ void QuickListModel::deselectAll()
     updateSelectedCount();
 }
 
-void QuickListModel::selectAll()
+void TaoListModel::selectAll()
 {
-    for (const auto &obj : mObjs)
+    for (const auto &obj : mDatas)
     {
         if (obj->isVisible())
         {
@@ -116,63 +116,63 @@ void QuickListModel::selectAll()
     updateSelectedCount();
 }
 
-bool QuickListModel::isSelected(int row) const
+bool TaoListModel::isSelected(int row) const
 {
-    if (row < 0 || row >= mObjs.size())
+    if (row < 0 || row >= mDatas.size())
     {
         return false;
     }
-    return mObjs.at(row)->isSelected();
+    return mDatas.at(row)->isSelected();
 }
 
-void QuickListModel::select(int row)
+void TaoListModel::select(int row)
 {
-    if (row < 0 || row >= mObjs.size())
+    if (row < 0 || row >= mDatas.size())
     {
         return;
     }
-    mObjs.at(row)->setIsSelected(true);
+    mDatas.at(row)->setIsSelected(true);
     updateSelectedCount();
 }
 
-void QuickListModel::deselect(int row)
+void TaoListModel::deselect(int row)
 {
-    if (row < 0 || row >= mObjs.size())
+    if (row < 0 || row >= mDatas.size())
     {
         return;
     }
-    mObjs.at(row)->setIsSelected(false);
+    mDatas.at(row)->setIsSelected(false);
     updateSelectedCount();
 }
 
-void QuickListModel::selectRange(int from, int to)
+void TaoListModel::selectRange(int from, int to)
 {
     int minRow = qMin(from, to);
     int maxRow = qMax(from, to);
-    for (int i = 0; i < mObjs.size(); ++i)
+    for (int i = 0; i < mDatas.size(); ++i)
     {
-        mObjs.at(i)->setIsSelected(mObjs.at(i)->isVisible() && minRow <= i && i <= maxRow);
+        mDatas.at(i)->setIsSelected(mDatas.at(i)->isVisible() && minRow <= i && i <= maxRow);
     }
     updateSelectedCount();
 }
 
-void QuickListModel::selectSingle(int row)
+void TaoListModel::selectSingle(int row)
 {
-    for (int i = 0; i < mObjs.size(); ++i)
+    for (int i = 0; i < mDatas.size(); ++i)
     {
-        mObjs.at(i)->setIsSelected(i == row);
+        mDatas.at(i)->setIsSelected(i == row);
     }
     updateSelectedCount();
 }
-void QuickListModel::doPress(int row, bool shift, bool ctrl, bool outRange)
+void TaoListModel::doPress(int row, bool shift, bool ctrl, bool outRange)
 {
     if (outRange) 
     {
-        row = mObjs.size();
+        row = mDatas.size();
     }
     else
     {
-        if (row < 0 || row >= mObjs.size())
+        if (row < 0 || row >= mDatas.size())
         {
             return;
         }
@@ -193,16 +193,16 @@ void QuickListModel::doPress(int row, bool shift, bool ctrl, bool outRange)
         selectSingle(mLastPressedRow);
     }
 }
-void QuickListModel::doMove(int row, bool outRange)
+void TaoListModel::doMove(int row, bool outRange)
 {
     if (outRange)
     {
-        row = mObjs.size();
+        row = mDatas.size();
     }
     else
     {
 
-        if (row < 0 || row >= mObjs.size())
+        if (row < 0 || row >= mDatas.size())
         {
             return;
         }
@@ -211,37 +211,37 @@ void QuickListModel::doMove(int row, bool outRange)
         selectRange(mLastPressedRow, row);
     }
 }
-void QuickListModel::doRelease()
+void TaoListModel::doRelease()
 {
     mIsPressed = false;
 }
 
-void QuickListModel::sortByRole()
+void TaoListModel::sortByRole()
 {
     const static auto addRessStr = QStringLiteral("address");
-    if (mObjs.isEmpty())
+    if (mDatas.isEmpty())
     {
         return;
     }
 
     const auto &addressCallback = mSortCallbacks.value(addRessStr);
 
-    QList<QuickItemBase *> copyObjs;
+    QList<TaoListItemBase *> copyObjs;
     if (mSortRole == addRessStr)
     {
         if (addressCallback)
         {
-            copyObjs = mObjs;
+            copyObjs = mDatas;
             if (mSortOrder == Qt::SortOrder::AscendingOrder)
             {
                 std::sort(copyObjs.begin(), copyObjs.end(), addressCallback);
             }
             else
             {
-                std::sort(copyObjs.begin(), copyObjs.end(), [=](QuickItemBase *obj1, QuickItemBase *obj2) -> bool { return addressCallback(obj2, obj1); });
+                std::sort(copyObjs.begin(), copyObjs.end(), [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool { return addressCallback(obj2, obj1); });
             }
             beginResetModel();
-            mObjs = copyObjs;
+            mDatas = copyObjs;
             endResetModel();
         }
     }
@@ -249,21 +249,21 @@ void QuickListModel::sortByRole()
     {
         if (addressCallback)
         {
-            copyObjs = mObjs;
+            copyObjs = mDatas;
             if (mSortOrder == Qt::SortOrder::AscendingOrder)
             {
                 std::sort(copyObjs.begin(), copyObjs.end(), addressCallback);
             }
             else
             {
-                std::sort(copyObjs.begin(), copyObjs.end(), [=](QuickItemBase *obj1, QuickItemBase *obj2) -> bool { return addressCallback(obj2, obj1); });
+                std::sort(copyObjs.begin(), copyObjs.end(), [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool { return addressCallback(obj2, obj1); });
             }
         }
         if (mSortCallbacks.value(mSortRole))
         {
             if (copyObjs.isEmpty())
             {
-                copyObjs = mObjs;
+                copyObjs = mDatas;
             }
             if (mSortOrder == Qt::SortOrder::AscendingOrder)
             {
@@ -271,19 +271,19 @@ void QuickListModel::sortByRole()
             }
             else
             {
-                std::sort(copyObjs.begin(), copyObjs.end(), [=](QuickItemBase *obj1, QuickItemBase *obj2) -> bool {
+                std::sort(copyObjs.begin(), copyObjs.end(), [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
                     return mSortCallbacks.value(mSortRole)(obj2, obj1);
                 });
             }
             beginResetModel();
-            mObjs = copyObjs;
+            mDatas = copyObjs;
             endResetModel();
         }
     }
     updateAlternate();
 }
 
-void QuickListModel::setHeaderRoles(const QStringList &headerRoles)
+void TaoListModel::setHeaderRoles(const QStringList &headerRoles)
 {
     if (mHeaderRoles == headerRoles)
         return;
@@ -292,7 +292,7 @@ void QuickListModel::setHeaderRoles(const QStringList &headerRoles)
     emit headerRolesChanged(mHeaderRoles);
 }
 
-void QuickListModel::setSortOrder(Qt::SortOrder sortOrder)
+void TaoListModel::setSortOrder(Qt::SortOrder sortOrder)
 {
     if (mSortOrder == sortOrder)
         return;
@@ -301,7 +301,7 @@ void QuickListModel::setSortOrder(Qt::SortOrder sortOrder)
     emit sortOrderChanged(mSortOrder);
 }
 
-void QuickListModel::setSortRole(const QString &sortRole)
+void TaoListModel::setSortRole(const QString &sortRole)
 {
     if (mSortRole == sortRole)
         return;
@@ -310,11 +310,11 @@ void QuickListModel::setSortRole(const QString &sortRole)
     emit sortRoleChanged(mSortRole);
 }
 
-void QuickListModel::updateAllCheck()
+void TaoListModel::updateAllCheck()
 {
     bool allCheck = true;
-    if (!mObjs.empty()) {
-        allCheck = std::all_of(mObjs.begin(), mObjs.end(), [](QuickItemBase *obj){
+    if (!mDatas.empty()) {
+        allCheck = std::all_of(mDatas.begin(), mDatas.end(), [](TaoListItemBase *obj){
             return obj->isVisible() && obj->isChecked();
         });
     }
@@ -325,33 +325,33 @@ void QuickListModel::updateAllCheck()
     emit allCheckedChanged(mAllChecked);
 }
 
-void QuickListModel::updateVisibleCount()
+void TaoListModel::updateVisibleCount()
 {
-    int count = std::count_if(mObjs.begin(), mObjs.end(), [](QuickItemBase *obj){
+    int count = std::count_if(mDatas.begin(), mDatas.end(), [](TaoListItemBase *obj){
         return obj->isVisible();
     });
     setVisibledCount(count);
 }
 
-void QuickListModel::updateSelectedCount()
+void TaoListModel::updateSelectedCount()
 {
-    int count = std::count_if(mObjs.begin(), mObjs.end(), [](QuickItemBase *obj){
+    int count = std::count_if(mDatas.begin(), mDatas.end(), [](TaoListItemBase *obj){
         return obj->isVisible() && obj->isSelected();
     });
     setSelectedCount(count);
 }
 
-void QuickListModel::updateCheckedCount()
+void TaoListModel::updateCheckedCount()
 {
-    int count = std::count_if(mObjs.begin(), mObjs.end(), [](QuickItemBase *obj){
+    int count = std::count_if(mDatas.begin(), mDatas.end(), [](TaoListItemBase *obj){
         return obj->isVisible() && obj->isChecked();
     });
     setCheckedCount(count);
 }
-void QuickListModel::updateAlternate()
+void TaoListModel::updateAlternate()
 {
     bool alter = false;
-    for (const auto &obj : mObjs)
+    for (const auto &obj : mDatas)
     {
         if (obj->isVisible())
         {
@@ -360,7 +360,7 @@ void QuickListModel::updateAlternate()
         }
     }
 }
-void QuickListModel::setVisibledCount(int visibledCount)
+void TaoListModel::setVisibledCount(int visibledCount)
 {
     if (mVisibledCount == visibledCount)
         return;
@@ -369,7 +369,7 @@ void QuickListModel::setVisibledCount(int visibledCount)
     emit visibledCountChanged(mVisibledCount);
 }
 
-void QuickListModel::setSelectedCount(int selectedCount)
+void TaoListModel::setSelectedCount(int selectedCount)
 {
     if (mSelectedCount == selectedCount)
         return;
@@ -378,7 +378,7 @@ void QuickListModel::setSelectedCount(int selectedCount)
     emit selectedCountChanged(mSelectedCount);
 }
 
-void QuickListModel::setCheckedCount(int checkedCount)
+void TaoListModel::setCheckedCount(int checkedCount)
 {
     if (mCheckedCount == checkedCount)
         return;
@@ -387,7 +387,7 @@ void QuickListModel::setCheckedCount(int checkedCount)
     emit checkedCountChanged(mCheckedCount);
 }
 
-void QuickListModel::updateCalcInfo()
+void TaoListModel::updateCalcInfo()
 {
     updateAllCheck();
     updateCheckedCount();

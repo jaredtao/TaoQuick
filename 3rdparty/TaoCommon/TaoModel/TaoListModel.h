@@ -1,8 +1,9 @@
 #pragma once
 
-#include "QuickListModelBase.h"
+#include "TaoListModelBase.hpp"
+#include "TaoListItemBase.h"
 #include "TaoCommonGlobal.h"
-class TAO_API QuickListModel : public QuickListModelBase
+class TAO_API TaoListModel : public TaoListModelBase<TaoListItemBase *>
 {
     Q_OBJECT
     Q_PROPERTY(bool allChecked READ allChecked WRITE setAllChecked NOTIFY allCheckedChanged)
@@ -15,8 +16,8 @@ class TAO_API QuickListModel : public QuickListModelBase
     Q_PROPERTY(QString sortRole READ sortRole WRITE setSortRole NOTIFY sortRoleChanged)
 
 public:
-    explicit QuickListModel(QObject *parent = nullptr);
-    ~QuickListModel() override;
+    explicit TaoListModel(QObject *parent = nullptr);
+    ~TaoListModel() override;
 
     //[begin] check
     bool allChecked() const
@@ -29,7 +30,7 @@ public:
     //[begin] search. control visible
     Q_INVOKABLE void search(const QString &searchKey);
     //控制显示隐藏的回调。返回true则show，返回false则hide
-    using VisibleCallback = std::function<bool(QuickItemBase *)>;
+    using VisibleCallback = std::function<bool(TaoListItemBase *)>;
     void setVisibleFilter(const VisibleCallback &callback)
     {
         mVisibleCallback = callback;
@@ -65,7 +66,7 @@ public:
     {
         return mSortRole;
     }
-    using SortCallback = std::function<bool(QuickItemBase *, QuickItemBase *)>;
+    using SortCallback = std::function<bool(TaoListItemBase *, TaoListItemBase *)>;
     //Map <key, callBack> ,key should match to headerRoles
     void setSortCallbacks(const QMap<QString, SortCallback> &callbacksMap)
     {

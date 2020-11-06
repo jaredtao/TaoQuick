@@ -14,7 +14,7 @@ CusButton {
     background: Rectangle {
         width: expandBtn.width
         height: expandBtn.height
-        color: expandBtn.pressed ? CusConfig.controlBorderColor_pressed : (expandBtn.hovered ? CusConfig.controlBorderColor_hovered : CusConfig.controlBorderColor)
+        color: expandBtn.pressed ? CusConfig.controlBorderColor_pressed : (expandBtn.hovered ? CusConfig.controlBorderColor_hovered : CusConfig.controlColor)
         radius: 2
         CusImage {
             source: imgPath + "Button/expand.png"

@@ -238,6 +238,20 @@ MetaInfo {
         }
     }
     Type {
+        name: "TaoQuick.Qml.CusImage.CusImageOverlay"
+        icon: "images/CusImageOverlay.png"
+
+        ItemLibraryEntry {
+            name: "CusImageOverlay"
+            category: "TaoQuick - CusImage"
+            libraryIcon: "images/CusImageOverlay.png"
+            version: "1.0"
+            requiredImport: "TaoQuick"
+            Property { name: "width"; type: "int"; value: 120 }
+            Property { name: "height"; type: "int"; value: 80 }
+        }
+    }
+    Type {
         name: "TaoQuick.Qml.CusImage.CusImage_Tip"
         icon: "images/CusImage_Tip.png"
 
@@ -525,20 +539,6 @@ MetaInfo {
             name: "CusWizard"
             category: "TaoQuick - CusWizard"
             libraryIcon: "images/CusWizard.png"
-            version: "1.0"
-            requiredImport: "TaoQuick"
-            Property { name: "width"; type: "int"; value: 120 }
-            Property { name: "height"; type: "int"; value: 80 }
-        }
-    }
-    Type {
-        name: "TaoQuick.Qml.CusWizard.CusWizardBackground"
-        icon: "images/CusWizardBackground.png"
-
-        ItemLibraryEntry {
-            name: "CusWizardBackground"
-            category: "TaoQuick - CusWizard"
-            libraryIcon: "images/CusWizardBackground.png"
             version: "1.0"
             requiredImport: "TaoQuick"
             Property { name: "width"; type: "int"; value: 120 }

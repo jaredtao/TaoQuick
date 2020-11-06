@@ -118,11 +118,13 @@ Item {
                 color: (moveArea.pressed
                         || moveArea.containsMouse) ? CusConfig.controlBorderColor_pressed : CusConfig.controlBorderColor
             }
-            CusImage {
+            CusImageOverlay {
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                     top: parent.top
                 }
+                width: 8
+                height: 8
                 readonly property string ascUrl: CusConfig.imagePathPrefix + "Table_Asc.png"
                 readonly property string ascUrl_Hovered: CusConfig.imagePathPrefix
                                                          + "Table_Asc_Hovered.png"
@@ -136,6 +138,7 @@ Item {
                 source: visible ? (dataObj.sortOrder === 0 ? ascImageUrl : descImageUrl) : ""
 
                 visible: dataObj && dataObj.sortRole === headerRoles[index]
+                color: headerArea.containsMouse ? CusConfig.imageColor_hovered : CusConfig.imageColor
             }
             MouseArea {
                 id: headerArea

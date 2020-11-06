@@ -36,6 +36,20 @@ Item {
             }
             placeholderText: qsTr("Search") + trans.transString
         }
+        Rectangle {
+            border.color: CusConfig.controlBorderColor
+            color: CusConfig.backgroundColor
+            anchors {
+                left: cusHeader.left
+                leftMargin: -1
+                right: cusHeader.right
+                rightMargin: -1
+                top: cusHeader.top
+                topMargin: -1
+                bottom: cusView.bottom
+                bottomMargin: -1
+            }
+        }
         CusTableHeader {
             id: cusHeader
             y: 50

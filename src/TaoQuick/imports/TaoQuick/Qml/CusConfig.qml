@@ -54,7 +54,7 @@ QtObject {
     property color controlBorderColor_hovered: Qt.darker(themeColor, 1.2)
     property color controlBorderColor_pressed: Qt.darker(themeColor, 1.4)
 
-    property color controlColor: Qt.darker(backgroundColor, 1.2)
+    property color controlColor
     property color controlColor_hovered: Qt.darker(themeColor, 1.2)
     property color controlColor_pressed: Qt.darker(themeColor, 1.4)
     property color controlColor_disabled: Qt.lighter(controlColor, 2.0)
@@ -95,7 +95,7 @@ QtObject {
         textColor_disabled = t.textColor_disabled
         textColor_hovered = t.textColor_hovered
         textColor_pressed = t.textColor_pressed
-
+        controlColor = t.controlColor
         controlBorderColor = t.controlBorderColor
         imageColor = t.imageColor
         imageColor_disabled = t.imageColor_disabled
@@ -120,6 +120,7 @@ QtObject {
             textColor_hovered: "#686868"
             textColor_pressed: "#212121"
 
+            controlColor: "#f5f5f6"
             controlBorderColor: "#cbcbcb"
             imageColor: "#373737"
             imageColor_disabled: "#9f9fcf"
@@ -129,32 +130,32 @@ QtObject {
         ListElement {
             name: "Black"
             themeColor: "#222225"
-            backgroundColor: "#272c25"
-            textColor: "#adafb2"
+            backgroundColor: "#2b2b2b"
+            textColor: "#d0d0d0"
 
-            splitLineColor:"#c62f2f"
-            invalidColor: "#e29696"
-            alterColor: "#6a6a6b"
+            splitLineColor:"#2d2d30"
+            invalidColor: "#782c2c"
+            alterColor: "#383838"
             tipBackgroundColor: "#ffffff"
             tipBorderColor: "#767676"
 
-            textColor_disabled: "#9f9fcf"
-            textColor_hovered: "#181818"
-            textColor_pressed: "#000000"
-
-            controlBorderColor: "#cbcbcb"
-            imageColor: "#373737"
-            imageColor_disabled: "#9f9fcf"
-            scrollBarBackgroundColor: "#e0e0e0"
-            scrollBarBackgroundColor_hovered: "#cfcfd1"
+            textColor_disabled: "#877a66"
+            textColor_hovered: "#ffffff"
+            textColor_pressed: "#d2d2d2"
+            controlColor: "#333333"
+            controlBorderColor: "#555555"
+            imageColor: "#adafb2"
+            imageColor_disabled: "#989898"
+            scrollBarBackgroundColor: "#3f3f3f"
+            scrollBarBackgroundColor_hovered: "#4a4a4a"
         }
         ListElement {
             name: "Pink"
             themeColor: "#faa0c5"
-            backgroundColor: "#f6f6f6"
+            backgroundColor: "#ffffff"
             textColor: "#5c5c5c"
 
-            splitLineColor:"#c62f2f"
+            splitLineColor:"#fbb8d0"
             invalidColor: "#e29696"
             alterColor: "#8a8a9b"
             tipBackgroundColor: "#ffffff"
@@ -163,7 +164,7 @@ QtObject {
             textColor_disabled: "#9f9fcf"
             textColor_hovered: "#181818"
             textColor_pressed: "#000000"
-
+            controlColor: "#f5f5f6"
             controlBorderColor: "#cbcbcb"
             imageColor: "#373737"
             imageColor_disabled: "#9f9fcf"
@@ -173,10 +174,10 @@ QtObject {
         ListElement {
             name: "Gold"
             themeColor: "#fed98f"
-            backgroundColor: "#f6f6f6"
+            backgroundColor: "#ffffff"
             textColor: "#5c5c5c"
 
-            splitLineColor:"#c62f2f"
+            splitLineColor:"#f0c896"
             invalidColor: "#e29696"
             alterColor: "#8a8a9b"
             tipBackgroundColor: "#ffffff"
@@ -185,7 +186,7 @@ QtObject {
             textColor_disabled: "#9f9fcf"
             textColor_hovered: "#181818"
             textColor_pressed: "#000000"
-
+            controlColor: "#f5f5f6"
             controlBorderColor: "#cbcbcb"
             imageColor: "#373737"
             imageColor_disabled: "#9f9fcf"
@@ -195,10 +196,10 @@ QtObject {
         ListElement {
             name: "Green"
             themeColor: "#58c979"
-            backgroundColor: "#f6f6f6"
+            backgroundColor: "#ffffff"
             textColor: "#5c5c5c"
 
-            splitLineColor:"#c62f2f"
+            splitLineColor:"#89d3ad"
             invalidColor: "#e29696"
             alterColor: "#8a8a9b"
             tipBackgroundColor: "#ffffff"
@@ -207,7 +208,7 @@ QtObject {
             textColor_disabled: "#9f9fcf"
             textColor_hovered: "#181818"
             textColor_pressed: "#000000"
-
+            controlColor: "#f5f5f6"
             controlBorderColor: "#cbcbcb"
             imageColor: "#373737"
             imageColor_disabled: "#9f9fcf"
@@ -217,10 +218,10 @@ QtObject {
         ListElement {
             name: "Blue"
             themeColor: "#67c1fd"
-            backgroundColor: "#f6f6f6"
+            backgroundColor: "#ffffff"
             textColor: "#5c5c5c"
 
-            splitLineColor:"#c62f2f"
+            splitLineColor:"#92cefc"
             invalidColor: "#e29696"
             alterColor: "#8a8a9b"
             tipBackgroundColor: "#ffffff"
@@ -229,7 +230,7 @@ QtObject {
             textColor_disabled: "#9f9fcf"
             textColor_hovered: "#181818"
             textColor_pressed: "#000000"
-
+            controlColor: "#f5f5f6"
             controlBorderColor: "#cbcbcb"
             imageColor: "#373737"
             imageColor_disabled: "#9f9fcf"
