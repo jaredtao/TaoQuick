@@ -10,6 +10,7 @@ INCLUDEPATH += $$PWD \
 HEADERS += \
     $$PWD/Common/FileReadWrite.h \
     $$PWD/Common/ObjectMap.h \
+    $$PWD/QuickModel/TaoListModelBase.hpp \
     $$PWD/QuickTool/QuickTool.h \
     $$PWD/Common/Subject.h \
     $$PWD/Common/Package.h \
