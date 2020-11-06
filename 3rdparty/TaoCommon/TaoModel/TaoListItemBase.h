@@ -2,7 +2,7 @@
 
 #include <QObject>
 #include "TaoCommonGlobal.h"
-class TAO_API QuickItemBase : public QObject
+class TAO_API TaoListItemBase : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool isChecked READ isChecked WRITE setIsChecked NOTIFY isCheckedChanged)
@@ -10,8 +10,8 @@ class TAO_API QuickItemBase : public QObject
     Q_PROPERTY(bool isVisible READ isVisible WRITE setIsVisible NOTIFY isVisibleChanged)
     Q_PROPERTY(bool isAlternate READ isAlternate WRITE setIsAlternate NOTIFY isAlternateChanged)
 public:
-    explicit QuickItemBase(QObject *parent = nullptr);
-    ~QuickItemBase() override;
+    explicit TaoListItemBase(QObject *parent = nullptr);
+    ~TaoListItemBase() override;
     bool isChecked() const
     {
         return mIsChecked;

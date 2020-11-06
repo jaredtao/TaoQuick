@@ -1,8 +1,8 @@
 #pragma once
 
-#include "QuickModel/QuickItemBase.h"
+#include "TaoModel/TaoListItemBase.h"
 #include <QObject>
-class DeviceAddItem : public QuickItemBase
+class DeviceAddItem : public TaoListItemBase
 {
     Q_OBJECT
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
