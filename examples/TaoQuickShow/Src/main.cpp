@@ -12,7 +12,9 @@
 #include <QQuickItem>
 static void prepareApp()
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+#endif
     QCoreApplication::setOrganizationName("JaredTao");
     QCoreApplication::setOrganizationDomain("https://JaredTao.gitee.io");
     QCoreApplication::setApplicationName("TaoQuickShow");
@@ -23,8 +25,8 @@ int main(int argc, char **argv)
     prepareApp();
     QGuiApplication app(argc, argv);
 #ifdef TAODEBUG
-    qSetMessagePattern("[%{time h:mm:ss.zzz} %{function}] %{message}");
-//    qSetMessagePattern("[%{time h:mm:ss.zzz} %{file} row(%{line}) %{function}] %{message}");
+//    qSetMessagePattern("[%{time h:mm:ss.zzz} %{function}] %{message}");
+    qSetMessagePattern("[%{time h:mm:ss.zzz} %{file} row(%{line}) %{function}] %{message}");
 #else
     Logger::initLog();
 #endif

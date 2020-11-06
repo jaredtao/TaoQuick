@@ -1,13 +1,14 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
+//import QtGraphicalEffects 1.0
 import "../Biz"
 
 Popup {
     id: root
     width: 680
     height: 460
-
+    modal: true
     background: Item {
         width: root.width
         height: root.height
@@ -19,6 +20,7 @@ Popup {
             }
             radius: 4
             color: CusConfig.themeColor
+
             MoveArea {
                 anchors.fill: parent
                 control: root
@@ -115,6 +117,15 @@ Popup {
                 }
             }
         }
+//        DropShadow {
+//            anchors.fill: back
+//            horizontalOffset: 0
+//            verticalOffset: 0
+//            radius: 8.0
+//            samples: 16
+//            color: "#ff007acc"
+//            source: back
+//        }
     }
 
     function show() {
