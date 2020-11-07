@@ -3,7 +3,7 @@ TARGET = TaoQuickShow
 
 QT += core gui qml quick
 
-CONFIG += c++17 qtquickcompiler utf8_source
+CONFIG += c++1z qtquickcompiler utf8_source
 
 load(taoVersion)
 setTaoVersion()
