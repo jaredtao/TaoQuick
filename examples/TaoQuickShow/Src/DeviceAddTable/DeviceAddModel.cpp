@@ -2,6 +2,11 @@
 #include "DeviceAddItem.h"
 #include <QHostAddress>
 #include <chrono>
+#include <random>
+const static QString nameTemplate("item %1");
+const static QString ipTemplate("%1.%2.%3.%4");
+const static QString modelTemplate("model %1");
+
 DeviceAddModel::DeviceAddModel(QObject *parent) : TaoListModel(parent)
 {
     setHeaderRoles({ "name", "address", "modelString" });
@@ -26,36 +31,75 @@ DeviceAddModel::DeviceAddModel(QObject *parent) : TaoListModel(parent)
 }
 void DeviceAddModel::initData()
 {
-    QList<TaoListItemBase *> objs;
-    uint64_t num = 0;
-    const int N = 1000;
-    DeviceAddItem *pItem = new DeviceAddItem[N];
-    auto c1 = std::chrono::high_resolution_clock::now();
-    for (int i = 0; i < 256; ++i) {
-        for (int j = 0; j < 256; ++j) {
-            for (int k = 0; k < 256; ++k) {
-                for (int l = 0; l < 256; ++l) {
+    const int N = 500000;
 
-                    auto item = pItem + num;
-                    item->setOnline(num % 7 == 0);
-                    item->setName(QString("item %1").arg(num));
-                    item->setAddress(QString("%1.%2.%3.%4").arg(i).arg(j).arg(k).arg(l));
-                    item->setModelString(
-                            QString("model %1").arg(num % 2 == 0 ? num : 0xffffffff - num));
-                    objs.append(item);
-                    num++;
-                    if (num >= N) {
-                        goto over;
-                    }
-                }
-            }
-        }
+    QList<TaoListItemBase *> objs;
+    objs.reserve(N);
+    auto c1 = std::chrono::high_resolution_clock::now();
+
+    for (int i = 0; i < N; ++i) {
+        auto item = new DeviceAddItem;
+        item->setOnline(i % 7 == 0);
+        item->setName(nameTemplate.arg(i));
+
+        int ip4 = i % 256;
+        int ip3 = i / 256 % 256;
+        int ip2 = i / 256 / 256 % 256;
+        int ip1 = i / 256 / 256 / 256 % 256;
+        item->setAddress(ipTemplate.arg(ip1).arg(ip2).arg(ip3).arg(ip4));
+        item->setModelString(modelTemplate.arg(i % 2 == 0 ? i : 0xffffffff - i));
+        objs.append(item);
     }
-over:
+
     auto c2 = std::chrono::high_resolution_clock::now();
     auto micro = std::chrono::duration_cast<std::chrono::milliseconds>(c2 - c1).count();
     qWarning() << micro;
     resetData(objs);
+}
+
+void DeviceAddModel::addOne()
+{
+    std::default_random_engine e;
+    std::uniform_int_distribution<uint32_t> u65535(0, 0xffffffff);
+
+    uint32_t value = u65535(e);
+
+    auto item = new DeviceAddItem;
+    item->setOnline(value % 2 == 0);
+    item->setName(nameTemplate.arg(value));
+
+    int ip4 = value % 256;
+    int ip3 = value / 256 % 256;
+    int ip2 = value / 256 / 256 % 256;
+    int ip1 = value / 256 / 256 / 256 % 256;
+    item->setAddress(ipTemplate.arg(ip1).arg(ip2).arg(ip3).arg(ip4));
+    item->setModelString(modelTemplate.arg(value % 2 == 0 ? value : 0xffffffff - value));
+    append({item});
+}
+
+void DeviceAddModel::addMulti(int count)
+{
+    QList<TaoListItemBase *> objs;
+    objs.reserve(count);
+    std::default_random_engine e;
+    std::uniform_int_distribution<uint32_t> u65535(0, 0xffffffff);
+    for (int i = 0; i < count; ++i)
+    {
+        uint32_t value = u65535(e);
+
+        auto item = new DeviceAddItem;
+        item->setOnline(value % 2 == 0);
+        item->setName(nameTemplate.arg(value));
+
+        int ip4 = value % 256;
+        int ip3 = value / 256 % 256;
+        int ip2 = value / 256 / 256 % 256;
+        int ip1 = value / 256 / 256 / 256 % 256;
+        item->setAddress(ipTemplate.arg(ip1).arg(ip2).arg(ip3).arg(ip4));
+        item->setModelString(modelTemplate.arg(value % 2 == 0 ? value : 0xffffffff - value));
+        objs.push_back(item);
+    }
+    append(objs);
 }
 void DeviceAddModel::doUpdateName(int row, const QString &name)
 {

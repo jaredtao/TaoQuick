@@ -11,7 +11,7 @@ Item {
         height: 500
         anchors {
             centerIn: parent
-            verticalCenterOffset: -100
+            verticalCenterOffset: -160
         }
         Row {
             spacing: 10
@@ -113,52 +113,96 @@ Item {
                 }
             }
         }
-        Row {
+        Column {
             anchors {
                 left: cusView.left
                 top: cusView.bottom
                 topMargin: 4
             }
             spacing: 10
-            CusButton_Blue {
-                width: 120
-                text: "Generate data"
-                onClicked: {
-                    deviceAddModel.initData()
+            Row {
+                height: CusConfig.fixedHeight
+                spacing: 10
+                CusButton_Blue {
+                    width: 120
+                    text: qsTr("Generate data") + trans.transString
+                    onClicked: {
+                        deviceAddModel.initData()
+                    }
                 }
-            }
 
-            CusButton_Blue {
-                width: 120
-                text: "Add one"
-                onClicked:  {
-                    deviceAddModel.appendOne()
+                CusButton_Blue {
+                    width: 120
+                    text: qsTr("Add one") + trans.transString
+                    onClicked:  {
+                        deviceAddModel.addOne()
+                    }
+                }
+                CusTextField {
+                    id: countInput
+                    width: 120
+                    validator: IntValidator {bottom: 0 ;top: 100 * 10000}
+                    placeholderText: qsTr("Number to add") + trans.transString
+                }
+                CusButton_Blue {
+                    width: 120
+                    text: qsTr("Add") + trans.transString
+                    onClicked:  {
+                        deviceAddModel.addMulti(parseInt(countInput.text))
+                    }
+                }
+                CusButton_Blue {
+                    width: 120
+                    text: qsTr("Remove Selected") + trans.transString
+                    onClicked:  {
+                        deviceAddModel.removeSelected()
+                    }
+                }
+                CusButton_Blue {
+                    width: 120
+                    text: qsTr("Remove Checked") + trans.transString
+                    onClicked:  {
+                        deviceAddModel.removeChecked()
+                    }
                 }
             }
-            CusTextInput {
-                id: countInput
-                width: 60
-                validator: IntValidator {bottom: 0 ;top: 100 * 10000}
-            }
-            CusButton_Blue {
-                width: 120
-                text: "Add"
-                onClicked:  {
-                    deviceAddModel.appendOne()
+            Row {
+                height: CusConfig.fixedHeight
+                spacing: 10
+                CusButton_Blue {
+                    width: 120
+                    text: qsTr("Select All") + trans.transString
+                    onClicked:  {
+                        deviceAddModel.selectAll()
+                    }
                 }
-            }
-            CusButton_Blue {
-                width: 120
-                text: "Remove Selected"
-                onClicked:  {
-                    deviceAddModel.removeSelected()
+                CusButton_Blue {
+                    width: 120
+                    text: qsTr("Deselect All") + trans.transString
+                    onClicked:  {
+                        deviceAddModel.deselectAll()
+                    }
                 }
-            }
-            CusButton_Blue {
-                width: 120
-                text: "Remove Checked"
-                onClicked:  {
-                    deviceAddModel.removeChecked()
+                CusButton_Blue {
+                    width: 120
+                    text: qsTr("Clear All") + trans.transString
+                    onClicked:  {
+                        deviceAddModel.clearAll()
+                    }
+                }
+                CusButton_Blue {
+                    width: 120
+                    text: qsTr("Undo") + trans.transString
+                    onClicked:  {
+                        deviceAddModel.deselectAll()
+                    }
+                }
+                CusButton_Blue {
+                    width: 120
+                    text: qsTr("Redo") + trans.transString
+                    onClicked:  {
+                        deviceAddModel.deselectAll()
+                    }
                 }
             }
         }
@@ -199,7 +243,7 @@ Item {
         anchors {
             left: mainItem.left
             top: mainItem.bottom
-            topMargin: 4
+            topMargin: 90
         }
         CusLabel {
             text: qsTr("Table has these features:") + trans.transString
