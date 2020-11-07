@@ -12,6 +12,14 @@ public slots:
     void doUpdateName(int row, const QString &name);
 
     void initData();
+
+    void addOne();
+    void addMulti(int count);
+
+    void clearAll()
+    {
+        clear();
+    }
 signals:
 
 };

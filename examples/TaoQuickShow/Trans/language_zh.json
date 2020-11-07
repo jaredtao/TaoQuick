@@ -563,11 +563,11 @@
         },
         {
             "key": "    * Check row by CheckBox in Column 0; Check/unchecked multi rows flow selected rows",
-            "value": "  * 0列的勾选框可以勾选行;选中多行时,可以勾选/反勾选多行"
+            "value": "  * 列0的勾选框可以勾选行;选中多行时,可以勾选/反勾选多行"
         },
         {
             "key": "    * Check All rows by header of Column 0",
-            "value": "  * 0列的表头可以勾选所有"
+            "value": "  * 列0的表头可以勾选所有"
         },
         {
             "key": "    * Edit Column 1 by double click, and update data to model after edit",
@@ -584,6 +584,50 @@
         {
             "key": "    * Reset column width by drag header splite line",
             "value": "  * 拖动表头间隔，可以设置列宽"
+        },
+        {
+            "key": "Generate data",
+            "value": "生成数据"
+        },
+        {
+            "key": "Add one",
+            "value": "添加一项"
+        },
+        {
+            "key": "Number to add",
+            "value": "要添加的数量"
+        },
+        {
+            "key": "Add",
+            "value": "添加"
+        },
+        {
+            "key": "Remove Selected",
+            "value": "删除已选中项"
+        },
+        {
+            "key": "Remove Checked",
+            "value": "删除已勾选项"
+        },
+        {
+            "key": "Select All",
+            "value": "全选"
+        },
+        {
+            "key": "Deselect All",
+            "value": "全不选"
+        },
+        {
+            "key": "Undo",
+            "value": "撤销"
+        },
+        {
+            "key": "Redo",
+            "value": "恢复"
+        },
+        {
+            "key": "Clear All",
+            "value": "清空"
         }
     ]
 }
