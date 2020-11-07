@@ -9,20 +9,23 @@ Item {
         id: mainItem
         width: 800
         height: 500
-        anchors{
+        anchors {
             centerIn: parent
             verticalCenterOffset: -100
         }
         Row {
             spacing: 10
             CusLabel {
-                text: qsTr("selectCount: %1").arg(deviceAddModel.selectedCount) + trans.transString
+                text: qsTr("selectCount: %1").arg(
+                          deviceAddModel.selectedCount) + trans.transString
             }
             CusLabel {
-                text: qsTr("checkedCount: %1").arg(deviceAddModel.checkedCount) + trans.transString
+                text: qsTr("checkedCount: %1").arg(
+                          deviceAddModel.checkedCount) + trans.transString
             }
             CusLabel {
-                text: qsTr("visibledCount: %1").arg(deviceAddModel.visibledCount) + trans.transString
+                text: qsTr("visibledCount: %1").arg(
+                          deviceAddModel.visibledCount) + trans.transString
             }
         }
         CusTextField_Search {
@@ -83,10 +86,13 @@ Item {
                 if (index < 0 || index >= count) {
                     return
                 }
-                if (cusHeader.xList[1] <= mouseX && mouseX <= cusHeader.xList[2]) {
+                if (cusHeader.xList[1] <= mouseX
+                        && mouseX <= cusHeader.xList[2]) {
 
                     editInput.x = cusHeader.xList[1]
-                    editInput.y = cusView.y + (parseInt(mouseY / CusConfig.fixedHeight)) * CusConfig.fixedHeight
+                    editInput.y = cusView.y + (parseInt(
+                                                   mouseY / CusConfig.fixedHeight))
+                            * CusConfig.fixedHeight
                     editInput.width = cusHeader.widthList[1]
                     editInput.height = CusConfig.fixedHeight
                     editInput.index = index
@@ -104,6 +110,55 @@ Item {
                 xList: cusHeader.xList
                 onCheckedChanged: {
                     deviceAddModel.check(index, checked)
+                }
+            }
+        }
+        Row {
+            anchors {
+                left: cusView.left
+                top: cusView.bottom
+                topMargin: 4
+            }
+            spacing: 10
+            CusButton_Blue {
+                width: 120
+                text: "Generate data"
+                onClicked: {
+                    deviceAddModel.initData()
+                }
+            }
+
+            CusButton_Blue {
+                width: 120
+                text: "Add one"
+                onClicked:  {
+                    deviceAddModel.appendOne()
+                }
+            }
+            CusTextInput {
+                id: countInput
+                width: 60
+                validator: IntValidator {bottom: 0 ;top: 100 * 10000}
+            }
+            CusButton_Blue {
+                width: 120
+                text: "Add"
+                onClicked:  {
+                    deviceAddModel.appendOne()
+                }
+            }
+            CusButton_Blue {
+                width: 120
+                text: "Remove Selected"
+                onClicked:  {
+                    deviceAddModel.removeSelected()
+                }
+            }
+            CusButton_Blue {
+                width: 120
+                text: "Remove Checked"
+                onClicked:  {
+                    deviceAddModel.removeChecked()
                 }
             }
         }
@@ -165,7 +220,8 @@ Item {
             text: qsTr("    * Check All rows by header of Column 0") + trans.transString
         }
         CusLabel {
-            text: qsTr("    * Edit Column 1 by double click, and update data to model after edit") + trans.transString
+            text: qsTr("    * Edit Column 1 by double click, and update data to model after edit")
+                  + trans.transString
         }
         CusLabel {
             text: qsTr("    * Fuzzy search") + trans.transString
@@ -174,7 +230,8 @@ Item {
             text: qsTr("    * Reset column width by drag header splite line") + trans.transString
         }
         CusLabel {
-            text: qsTr("    * Sort by click header, click again can switch ascending or descending") + trans.transString
+            text: qsTr("    * Sort by click header, click again can switch ascending or descending")
+                  + trans.transString
         }
     }
 }
