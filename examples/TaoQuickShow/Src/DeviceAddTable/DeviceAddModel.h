@@ -10,6 +10,8 @@ public:
 
 public slots:
     void doUpdateName(int row, const QString &name);
+
+    void initData();
 signals:
 
 };

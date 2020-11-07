@@ -3,7 +3,7 @@
 #include "Frameless/TaoFrameLessView.h"
 #include "Logger/Logger.h"
 #include "QuickTool/QuickTool.h"
-#include "DeviceAdd/DeviceAddModel.h"
+#include "DeviceAddTable/DeviceAddModel.h"
 #include <QDir>
 #include <QGuiApplication>
 #include <QQmlContext>
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 #ifdef TAODEBUG
     view.rootContext()->setContextProperty("isDebug", true);
 #else
-    view.rootContext()->setContextProperty("isDebug", false);
+    view.rootContext()->setContextProperty("isDebug", QVariant(false));
 #endif
 
     view.rootContext()->setContextProperty("qmlPath", qmlPath);
