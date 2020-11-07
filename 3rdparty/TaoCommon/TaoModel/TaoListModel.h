@@ -11,7 +11,8 @@ class TAO_API TaoListModel : public TaoListModelBase<TaoListItemBase *>
     Q_PROPERTY(int selectedCount READ selectedCount NOTIFY selectedCountChanged)
     Q_PROPERTY(int checkedCount READ checkedCount NOTIFY checkedCountChanged)
 
-    Q_PROPERTY(QStringList headerRoles READ headerRoles WRITE setHeaderRoles NOTIFY headerRolesChanged)
+    Q_PROPERTY(
+            QStringList headerRoles READ headerRoles WRITE setHeaderRoles NOTIFY headerRolesChanged)
     Q_PROPERTY(Qt::SortOrder sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     Q_PROPERTY(QString sortRole READ sortRole WRITE setSortRole NOTIFY sortRoleChanged)
 
@@ -20,10 +21,7 @@ public:
     ~TaoListModel() override;
 
     //[begin] check
-    bool allChecked() const
-    {
-        return mAllChecked;
-    }
+    bool allChecked() const { return mAllChecked; }
     Q_INVOKABLE void check(int row, bool checked);
     //[end] check
 
@@ -31,10 +29,7 @@ public:
     Q_INVOKABLE void search(const QString &searchKey);
     //控制显示隐藏的回调。返回true则show，返回false则hide
     using VisibleCallback = std::function<bool(TaoListItemBase *)>;
-    void setVisibleFilter(const VisibleCallback &callback)
-    {
-        mVisibleCallback = callback;
-    }
+    void setVisibleFilter(const VisibleCallback &callback) { mVisibleCallback = callback; }
     //[end] search
 
     //[begin] select
@@ -52,22 +47,13 @@ public:
     Q_INVOKABLE void doRelease();
 
     //[begin] sort
-    const QStringList &headerRoles() const
-    {
-        return mHeaderRoles;
-    }
+    const QStringList &headerRoles() const { return mHeaderRoles; }
 
-    Qt::SortOrder sortOrder() const
-    {
-        return mSortOrder;
-    }
+    Qt::SortOrder sortOrder() const { return mSortOrder; }
 
-    const QString &sortRole() const
-    {
-        return mSortRole;
-    }
+    const QString &sortRole() const { return mSortRole; }
     using SortCallback = std::function<bool(TaoListItemBase *, TaoListItemBase *)>;
-    //Map <key, callBack> ,key should match to headerRoles
+    // Map <key, callBack> ,key should match to headerRoles
     void setSortCallbacks(const QMap<QString, SortCallback> &callbacksMap)
     {
         mSortCallbacks = callbacksMap;
@@ -76,24 +62,12 @@ public:
     //[end] sort
 
     //[begin] count
-    int visibledCount() const
-    {
-        return mVisibledCount;
-    }
+    int visibledCount() const { return mVisibledCount; }
 
-    int selectedCount() const
-    {
-        return mSelectedCount;
-    }
+    int selectedCount() const { return mSelectedCount; }
 
-    int checkedCount() const
-    {
-        return mCheckedCount;
-    }
-    const QString &searchKey() const
-    {
-        return mSearchkey;
-    }
+    int checkedCount() const { return mCheckedCount; }
+    const QString &searchKey() const { return mSearchkey; }
     //[end] count
 
     void updateCalcInfo() override;
@@ -127,6 +101,7 @@ signals:
     void sortRoleChanged(const QString &sortRole);
 
     void signalUpdateCalcCount();
+
 private:
     void updateAllCheck();
     void updateVisibleCount();
@@ -135,16 +110,16 @@ private:
     void updateAlternate();
 
 private:
-    bool                        mAllChecked = false;
-    int                         mVisibledCount = 0;
-    int                         mSelectedCount = 0;
-    int                         mCheckedCount = 0;
-    QStringList                 mHeaderRoles;
-    Qt::SortOrder               mSortOrder = Qt::AscendingOrder;
-    QString                     mSortRole;
+    bool mAllChecked = false;
+    bool mIsPressed = false;
+    Qt::SortOrder mSortOrder = Qt::AscendingOrder;
+    int mVisibledCount = 0;
+    int mSelectedCount = 0;
+    int mCheckedCount = 0;
+    int mLastPressedRow = -1;
+    QStringList mHeaderRoles;
+    QString mSortRole;
     QMap<QString, SortCallback> mSortCallbacks;
-    QString                     mSearchkey;
-    VisibleCallback             mVisibleCallback;
-    bool                        mIsPressed = false;
-    int                         mLastPressedRow = -1;
+    QString mSearchkey;
+    VisibleCallback mVisibleCallback;
 };
