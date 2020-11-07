@@ -2,12 +2,14 @@
 
 #include <QObject>
 #include "TaoModel/TaoListModel.h"
+class DeviceAddModelPrivate;
+class DeviceAddItem;
 class DeviceAddModel : public TaoListModel
 {
     Q_OBJECT
 public:
     explicit DeviceAddModel(QObject *parent = nullptr);
-
+    virtual ~DeviceAddModel() override;
 public slots:
     void doUpdateName(int row, const QString &name);
 
@@ -15,12 +17,14 @@ public slots:
 
     void addOne();
     void addMulti(int count);
+    void insertBeforeSelected();
+    void clearAll();
 
-    void clearAll()
-    {
-        clear();
-    }
-signals:
-
+    void removeSelected();
+    void removeChecked();
+private:
+    DeviceAddItem *genOne(uint32_t value);
+private:
+    DeviceAddModelPrivate *d;
 };
 

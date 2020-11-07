@@ -590,16 +590,16 @@
             "value": "生成数据"
         },
         {
-            "key": "Add one",
-            "value": "添加一项"
+            "key": "Append one",
+            "value": "添加一项到末尾"
         },
         {
             "key": "Number to add",
             "value": "要添加的数量"
         },
         {
-            "key": "Add",
-            "value": "添加"
+            "key": "Append",
+            "value": "添加到末尾"
         },
         {
             "key": "Remove Selected",
@@ -609,9 +609,14 @@
             "key": "Remove Checked",
             "value": "删除已勾选项"
         },
+
         {
             "key": "Select All",
             "value": "全选"
+        },
+        {
+            "key": "Insert before selected",
+            "value": "选中项前插入"
         },
         {
             "key": "Deselect All",

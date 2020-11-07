@@ -133,7 +133,7 @@ Item {
 
                 CusButton_Blue {
                     width: 120
-                    text: qsTr("Add one") + trans.transString
+                    text: qsTr("Append one") + trans.transString
                     onClicked:  {
                         deviceAddModel.addOne()
                     }
@@ -146,9 +146,28 @@ Item {
                 }
                 CusButton_Blue {
                     width: 120
-                    text: qsTr("Add") + trans.transString
+                    text: qsTr("Append") + trans.transString
                     onClicked:  {
                         deviceAddModel.addMulti(parseInt(countInput.text))
+                    }
+                }
+                CusButton_Blue {
+                    width: 160
+                    text: qsTr("Insert before selected") + trans.transString
+                    onClicked: {
+                        deviceAddModel.insertBeforeSelected()
+                    }
+                }
+
+            }
+            Row {
+                height: CusConfig.fixedHeight
+                spacing: 10
+                CusButton_Blue {
+                    width: 120
+                    text: qsTr("Clear All") + trans.transString
+                    onClicked:  {
+                        deviceAddModel.clearAll()
                     }
                 }
                 CusButton_Blue {
@@ -183,13 +202,7 @@ Item {
                         deviceAddModel.deselectAll()
                     }
                 }
-                CusButton_Blue {
-                    width: 120
-                    text: qsTr("Clear All") + trans.transString
-                    onClicked:  {
-                        deviceAddModel.clearAll()
-                    }
-                }
+
                 CusButton_Blue {
                     width: 120
                     text: qsTr("Undo") + trans.transString
@@ -243,7 +256,7 @@ Item {
         anchors {
             left: mainItem.left
             top: mainItem.bottom
-            topMargin: 90
+            topMargin: 120
         }
         CusLabel {
             text: qsTr("Table has these features:") + trans.transString
