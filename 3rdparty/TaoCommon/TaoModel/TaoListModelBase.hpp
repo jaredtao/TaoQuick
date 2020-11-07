@@ -24,7 +24,7 @@ public:
 
     //[begin] add data
     void append(const QList<T> &datas);
-    void prepend(T obj);
+    void prepend(T data);
     void insert(int row, const QList<T> &datas);
     //[end] add data
 

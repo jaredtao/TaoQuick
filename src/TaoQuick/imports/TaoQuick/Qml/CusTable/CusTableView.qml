@@ -16,7 +16,7 @@ ListView {
     clip: true
     interactive: false
     snapMode: ListView.SnapToItem
-    cacheBuffer: 12000
+//    cacheBuffer: 12000
     property string noDataText: qsTr("No Data") + CusConfig.transString
 
     ScrollBar.horizontal: CusScrollBar {
@@ -30,6 +30,8 @@ ListView {
         opacity: cusTableView.contentHeight > cusTableView.height ? 1.0 : 0.0
         visible: opacity > 0
         active: visible
+        snapMode: ScrollBar.SnapAlways
+        stepSize: cusTableView.height/(cusTableView.model.visibledCount * CusConfig.fixedHeight)
     }
     CusShortCutKeys {
         id: tableKeys

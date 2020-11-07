@@ -10,3 +10,5 @@ bin
 *.stash
 *.cbt
 debug
+*.ipch
+*qmlcache.qrc
