@@ -22,8 +22,7 @@ defineTest(minQtVersion) {
 }
 
 !minQtVersion(5, 9, 0) {
-    message("Cannot build TaoQuick with Qt version $${QT_VERSION}.")
-    error("Use at least Qt 5.9.0.")
+    error("TaoQuick minimum supported Qt5 version is 5.9.0")
 }
 
 TEMPLATE = subdirs
