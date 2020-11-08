@@ -17,11 +17,15 @@ public slots:
 
     void addOne();
     void addMulti(int count);
+
     void insertBeforeSelected();
+    void insertBeforeRow(int row);
+
     void clearAll();
 
     void removeSelected();
     void removeChecked();
+    void removeRow(int row);
 private:
     DeviceAddItem *genOne(uint32_t value);
 private:

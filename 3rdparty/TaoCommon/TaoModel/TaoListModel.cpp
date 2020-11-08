@@ -1,52 +1,43 @@
 #include "TaoListModel.h"
 
 #include <algorithm>
-TaoListModel::TaoListModel(QObject *parent)
-    : TaoListModelBase(parent)
+#include <QDebug>
+TaoListModel::TaoListModel(QObject *parent) : TaoListModelBase(parent)
 {
+    connect(&mSearchTimer, &QTimer::timeout, this, &TaoListModel::onSearch);
+    mSearchTimer.setInterval(300);
+    mSearchTimer.setSingleShot(true);
 }
 
-TaoListModel::~TaoListModel()
-{
-}
+TaoListModel::~TaoListModel() { }
 
 void TaoListModel::check(int row, bool checked)
 {
-    if (row < 0 || row >= mDatas.size())
-    {
+    if (row < 0 || row >= mDatas.size()) {
         return;
     }
 
     mDatas.at(row)->setIsChecked(checked);
-    if (mDatas.at(row)->isSelected())
-    {
-        for (const auto &obj : mDatas)
-        {
-            if (obj->isVisible() && obj->isSelected())
-            {
+    if (mDatas.at(row)->isSelected()) {
+        for (const auto &obj : mDatas) {
+            if (obj->isVisible() && obj->isSelected()) {
                 obj->setIsChecked(checked);
             }
         }
     }
 
     bool allCheck = true;
-    if (checked == false || mDatas.count() <= 0)
-    {
+    if (checked == false || mDatas.count() <= 0) {
         allCheck = false;
-    }
-    else
-    {
-        for (const auto &obj : mDatas)
-        {
-            if (obj->isVisible() && false == obj->isChecked())
-            {
+    } else {
+        for (const auto &obj : mDatas) {
+            if (obj->isVisible() && false == obj->isChecked()) {
                 allCheck = false;
                 break;
             }
         }
     }
-    if (mAllChecked != allCheck)
-    {
+    if (mAllChecked != allCheck) {
         mAllChecked = allCheck;
         emit allCheckedChanged(mAllChecked);
     }
@@ -54,10 +45,8 @@ void TaoListModel::check(int row, bool checked)
 }
 void TaoListModel::setAllChecked(bool allChecked)
 {
-    for (const auto &obj : mDatas)
-    {
-        if (obj->isVisible())
-        {
+    for (const auto &obj : mDatas) {
+        if (obj->isVisible()) {
             obj->setIsChecked(allChecked);
         }
     }
@@ -71,33 +60,28 @@ void TaoListModel::setAllChecked(bool allChecked)
 void TaoListModel::search(const QString &searchKey)
 {
     mSearchkey = searchKey.simplified();
-    for (const auto &obj : mDatas)
-    {
-        if (mVisibleCallback && false == mVisibleCallback(obj))
-        {
-            obj->setIsVisible(false);
-            continue;
-        }
-        bool found = false;
-        for (const auto &role : mHeaderRoles)
-        {
-            if (obj->property(role.toStdString().c_str()).toString().contains(mSearchkey))
-            {
-                found = true;
-                break;
-            }
-        }
-        obj->setIsVisible(found);
-    }
-    updateCalcInfo();
+    mSearchTimer.start(300);
 }
+void TaoListModel::onSearch()
+{
+    using namespace std::chrono;
 
+    auto c1 = high_resolution_clock::now();
+    for (const auto &obj : mDatas) {
+        obj->setIsVisible(obj->match(mSearchkey));
+    }
+    auto c2 = std::chrono::high_resolution_clock::now();
+    updateCalcInfo();
+    auto c3 = std::chrono::high_resolution_clock::now();
+
+    auto cost1 = std::chrono::duration_cast<std::chrono::milliseconds>(c2 - c1).count();
+    auto cost2 = std::chrono::duration_cast<std::chrono::milliseconds>(c3 - c2).count();
+    qWarning() << cost1 << cost2;
+}
 void TaoListModel::deselectAll()
 {
-    for (const auto &obj : mDatas)
-    {
-        if (obj->isVisible())
-        {
+    for (const auto &obj : mDatas) {
+        if (obj->isVisible()) {
             obj->setIsSelected(false);
         }
     }
@@ -106,10 +90,8 @@ void TaoListModel::deselectAll()
 
 void TaoListModel::selectAll()
 {
-    for (const auto &obj : mDatas)
-    {
-        if (obj->isVisible())
-        {
+    for (const auto &obj : mDatas) {
+        if (obj->isVisible()) {
             obj->setIsSelected(true);
         }
     }
@@ -118,8 +100,7 @@ void TaoListModel::selectAll()
 
 bool TaoListModel::isSelected(int row) const
 {
-    if (row < 0 || row >= mDatas.size())
-    {
+    if (row < 0 || row >= mDatas.size()) {
         return false;
     }
     return mDatas.at(row)->isSelected();
@@ -127,8 +108,7 @@ bool TaoListModel::isSelected(int row) const
 
 void TaoListModel::select(int row)
 {
-    if (row < 0 || row >= mDatas.size())
-    {
+    if (row < 0 || row >= mDatas.size()) {
         return;
     }
     mDatas.at(row)->setIsSelected(true);
@@ -137,8 +117,7 @@ void TaoListModel::select(int row)
 
 void TaoListModel::deselect(int row)
 {
-    if (row < 0 || row >= mDatas.size())
-    {
+    if (row < 0 || row >= mDatas.size()) {
         return;
     }
     mDatas.at(row)->setIsSelected(false);
@@ -149,8 +128,7 @@ void TaoListModel::selectRange(int from, int to)
 {
     int minRow = qMin(from, to);
     int maxRow = qMax(from, to);
-    for (int i = 0; i < mDatas.size(); ++i)
-    {
+    for (int i = 0; i < mDatas.size(); ++i) {
         mDatas.at(i)->setIsSelected(mDatas.at(i)->isVisible() && minRow <= i && i <= maxRow);
     }
     updateSelectedCount();
@@ -158,22 +136,17 @@ void TaoListModel::selectRange(int from, int to)
 
 void TaoListModel::selectSingle(int row)
 {
-    for (int i = 0; i < mDatas.size(); ++i)
-    {
+    for (int i = 0; i < mDatas.size(); ++i) {
         mDatas.at(i)->setIsSelected(i == row);
     }
     updateSelectedCount();
 }
 void TaoListModel::doPress(int row, bool shift, bool ctrl, bool outRange)
 {
-    if (outRange) 
-    {
+    if (outRange) {
         row = mDatas.size();
-    }
-    else
-    {
-        if (row < 0 || row >= mDatas.size())
-        {
+    } else {
+        if (row < 0 || row >= mDatas.size()) {
             return;
         }
     }
@@ -181,7 +154,7 @@ void TaoListModel::doPress(int row, bool shift, bool ctrl, bool outRange)
     mIsPressed = true;
     if (ctrl) {
         mLastPressedRow = row;
-        if(isSelected(mLastPressedRow)) {
+        if (isSelected(mLastPressedRow)) {
             deselect(mLastPressedRow);
         } else {
             select(mLastPressedRow);
@@ -195,15 +168,11 @@ void TaoListModel::doPress(int row, bool shift, bool ctrl, bool outRange)
 }
 void TaoListModel::doMove(int row, bool outRange)
 {
-    if (outRange)
-    {
+    if (outRange) {
         row = mDatas.size();
-    }
-    else
-    {
+    } else {
 
-        if (row < 0 || row >= mDatas.size())
-        {
+        if (row < 0 || row >= mDatas.size()) {
             return;
         }
     }
@@ -219,61 +188,51 @@ void TaoListModel::doRelease()
 void TaoListModel::sortByRole()
 {
     const static auto addRessStr = QStringLiteral("address");
-    if (mDatas.isEmpty())
-    {
+    if (mDatas.isEmpty()) {
         return;
     }
 
     const auto &addressCallback = mSortCallbacks.value(addRessStr);
 
     QList<TaoListItemBase *> copyObjs;
-    if (mSortRole == addRessStr)
-    {
-        if (addressCallback)
-        {
+    if (mSortRole == addRessStr) {
+        if (addressCallback) {
             copyObjs = mDatas;
-            if (mSortOrder == Qt::SortOrder::AscendingOrder)
-            {
+            if (mSortOrder == Qt::SortOrder::AscendingOrder) {
                 std::sort(copyObjs.begin(), copyObjs.end(), addressCallback);
-            }
-            else
-            {
-                std::sort(copyObjs.begin(), copyObjs.end(), [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool { return addressCallback(obj2, obj1); });
+            } else {
+                std::sort(copyObjs.begin(), copyObjs.end(),
+                          [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+                              return addressCallback(obj2, obj1);
+                          });
             }
             beginResetModel();
             mDatas = copyObjs;
             endResetModel();
         }
-    }
-    else
-    {
-        if (addressCallback)
-        {
+    } else {
+        if (addressCallback) {
             copyObjs = mDatas;
-            if (mSortOrder == Qt::SortOrder::AscendingOrder)
-            {
+            if (mSortOrder == Qt::SortOrder::AscendingOrder) {
                 std::sort(copyObjs.begin(), copyObjs.end(), addressCallback);
-            }
-            else
-            {
-                std::sort(copyObjs.begin(), copyObjs.end(), [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool { return addressCallback(obj2, obj1); });
+            } else {
+                std::sort(copyObjs.begin(), copyObjs.end(),
+                          [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+                              return addressCallback(obj2, obj1);
+                          });
             }
         }
-        if (mSortCallbacks.value(mSortRole))
-        {
-            if (copyObjs.isEmpty())
-            {
+        if (mSortCallbacks.value(mSortRole)) {
+            if (copyObjs.isEmpty()) {
                 copyObjs = mDatas;
             }
-            if (mSortOrder == Qt::SortOrder::AscendingOrder)
-            {
+            if (mSortOrder == Qt::SortOrder::AscendingOrder) {
                 std::sort(copyObjs.begin(), copyObjs.end(), mSortCallbacks.value(mSortRole));
-            }
-            else
-            {
-                std::sort(copyObjs.begin(), copyObjs.end(), [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
-                    return mSortCallbacks.value(mSortRole)(obj2, obj1);
-                });
+            } else {
+                std::sort(copyObjs.begin(), copyObjs.end(),
+                          [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+                              return mSortCallbacks.value(mSortRole)(obj2, obj1);
+                          });
             }
             beginResetModel();
             mDatas = copyObjs;
@@ -314,7 +273,7 @@ void TaoListModel::updateAllCheck()
 {
     bool allCheck = true;
     if (!mDatas.empty()) {
-        allCheck = std::all_of(mDatas.begin(), mDatas.end(), [](TaoListItemBase *obj){
+        allCheck = std::all_of(mDatas.begin(), mDatas.end(), [](TaoListItemBase *obj) {
             return obj->isVisible() && obj->isChecked();
         });
     }
@@ -327,15 +286,14 @@ void TaoListModel::updateAllCheck()
 
 void TaoListModel::updateVisibleCount()
 {
-    int count = std::count_if(mDatas.begin(), mDatas.end(), [](TaoListItemBase *obj){
-        return obj->isVisible();
-    });
+    int count = std::count_if(mDatas.begin(), mDatas.end(),
+                              [](TaoListItemBase *obj) { return obj->isVisible(); });
     setVisibledCount(count);
 }
 
 void TaoListModel::updateSelectedCount()
 {
-    int count = std::count_if(mDatas.begin(), mDatas.end(), [](TaoListItemBase *obj){
+    int count = std::count_if(mDatas.begin(), mDatas.end(), [](TaoListItemBase *obj) {
         return obj->isVisible() && obj->isSelected();
     });
     setSelectedCount(count);
@@ -343,7 +301,7 @@ void TaoListModel::updateSelectedCount()
 
 void TaoListModel::updateCheckedCount()
 {
-    int count = std::count_if(mDatas.begin(), mDatas.end(), [](TaoListItemBase *obj){
+    int count = std::count_if(mDatas.begin(), mDatas.end(), [](TaoListItemBase *obj) {
         return obj->isVisible() && obj->isChecked();
     });
     setCheckedCount(count);
@@ -351,10 +309,8 @@ void TaoListModel::updateCheckedCount()
 void TaoListModel::updateAlternate()
 {
     bool alter = false;
-    for (const auto &obj : mDatas)
-    {
-        if (obj->isVisible())
-        {
+    for (const auto &obj : mDatas) {
+        if (obj->isVisible()) {
             obj->setIsAlternate(alter);
             alter = !alter;
         }

@@ -75,7 +75,15 @@ Item {
             onPressed: {
                 doPress(mouseX, mouseY)
             }
+            onRightPressed: {
+                var index = indexAt(mouseX, mouseY + contentY)
+                if (index < 0 || index >= count) {
+                    return
+                }
+                tableMenu.popup(mouseX, mouseY)
+            }
             onReleased: {
+
                 doRelease()
             }
             onPositionChanged: {
@@ -100,6 +108,55 @@ Item {
                     editInput.text = dataObj[deviceAddModel.headerRoles[0]]
                     editInput.visible = true
                     editInput.focus = true
+                }
+            }
+            Menu {
+                id: tableMenu
+                MenuItem {
+                    text: qsTr("Edit row")
+                    onTriggered: {
+                        var mouseX = tableMenu.x
+                        var mouseY = tableMenu.y
+                        var index = cusView.indexAt(mouseX, mouseY + cusView.contentY)
+                        if (index < 0 || index >= cusView.count) {
+                            return
+                        }
+                        if (cusHeader.xList[1] <= mouseX && mouseX <= cusHeader.xList[2]) {
+                            editInput.x = cusHeader.xList[1]
+                            editInput.y = cusView.y + (parseInt(mouseY / CusConfig.fixedHeight)) * CusConfig.fixedHeight
+                            editInput.width = cusHeader.widthList[1]
+                            editInput.height = CusConfig.fixedHeight
+                            editInput.index = index
+                            var dataObj = deviceAddModel.data(index)
+                            editInput.text = dataObj[deviceAddModel.headerRoles[0]]
+                            editInput.visible = true
+                            editInput.focus = true
+                        }
+                    }
+                }
+                MenuItem {
+                    text: qsTr("Insert before row")
+                    onTriggered: {
+                        var mouseX = tableMenu.x
+                        var mouseY = tableMenu.y
+                        var index = cusView.indexAt(mouseX, mouseY + cusView.contentY)
+                        if (index < 0 || index >= cusView.count) {
+                            return
+                        }
+                        deviceAddModel.insertBeforeRow(index)
+                    }
+                }
+                MenuItem {
+                    text: qsTr("Remov row")
+                    onTriggered: {
+                        var mouseX = tableMenu.x
+                        var mouseY = tableMenu.y
+                        var index = cusView.indexAt(mouseX, mouseY + cusView.contentY)
+                        if (index < 0 || index >= cusView.count) {
+                            return
+                        }
+                        deviceAddModel.removeRow(index)
+                    }
                 }
             }
             delegate: CusTableRow {
