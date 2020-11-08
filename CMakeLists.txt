@@ -1,9 +1,8 @@
 ﻿cmake_minimum_required(VERSION 3.14)
 project (TaoQuick LANGUAGES CXX)
 
-SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules)
+SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -26,11 +25,13 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 message("Build Type " ${CMAKE_BUILD_TYPE})
 
-include_directories(${PROJECT_SOURCE_DIR})
-
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+
+
 add_subdirectory(examples)
 
-if (NOT CMAKE_NO_BUILD_TEST) 
-    add_subdirectory(test)
-endif()
+#if (NOT CMAKE_NO_BUILD_TEST) 
+#    add_subdirectory(test)
+#endif()
