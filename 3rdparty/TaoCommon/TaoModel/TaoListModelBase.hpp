@@ -13,8 +13,9 @@ public:
 public:
     //[begin] query data
     int rowCount(const QModelIndex &parent) const override;
-    Q_INVOKABLE QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-    Q_INVOKABLE QVariant data(int row, int role = Qt::DisplayRole) const;
+    QVariant data(int row) const;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+
     //[end] query data
 
     //[begin] reset data
@@ -80,18 +81,9 @@ QVariant TaoListModelBase<T>::data(const QModelIndex &index, int role) const
     return {};
 }
 template<class T>
-QVariant TaoListModelBase<T>::data(int row, int role) const
+QVariant TaoListModelBase<T>::data(int row) const
 {
-    if (row < 0 || row >= mDatas.size()) {
-        return {};
-    }
-
-    if (role == Qt::DisplayRole || role == Qt::EditRole) {
-        auto data = mDatas.at(row);
-        return QVariant::fromValue(data);
-    }
-
-    return {};
+    data(index(row), Qt::DisplayRole);
 }
 template<class T>
 void TaoListModelBase<T>::resetData(const QList<T> &datas)
@@ -106,7 +98,11 @@ void TaoListModelBase<T>::resetData(const QList<T> &datas)
 template<class T>
 void TaoListModelBase<T>::append(const QList<T> &datas)
 {
-    beginInsertRows({}, mDatas.count(), mDatas.count());
+    if (datas.count() <= 0)
+    {
+        return;
+    }
+    beginInsertRows({}, mDatas.count(), mDatas.count() + datas.count() -1);
     mDatas.append(datas);
     endInsertRows();
     updateCalcInfo();
@@ -114,7 +110,7 @@ void TaoListModelBase<T>::append(const QList<T> &datas)
 template<class T>
 void TaoListModelBase<T>::prepend(T data)
 {
-    beginInsertRows({}, 0, 0);
+    beginInsertRows({}, 0, 1);
     mDatas.prepend(data);
     endInsertRows();
     updateCalcInfo();
@@ -122,10 +118,10 @@ void TaoListModelBase<T>::prepend(T data)
 template<class T>
 void TaoListModelBase<T>::insert(int row, const QList<T> &datas)
 {
-    if (row < 0 || row >= mDatas.size()) {
+    if (row < 0 || row > mDatas.size()) {
         return;
     }
-    beginInsertRows({}, row, row);
+    beginInsertRows({}, row,  row + datas.count() - 1);
     int srow = row;
     for (const auto &obj : datas) {
         mDatas.insert(srow, obj);
@@ -137,7 +133,11 @@ void TaoListModelBase<T>::insert(int row, const QList<T> &datas)
 template<class T>
 void TaoListModelBase<T>::clear()
 {
-    beginRemoveRows({}, 0, mDatas.count());
+    if (mDatas.count() <= 0)
+    {
+        return;
+    }
+    beginRemoveRows({}, 0, mDatas.count() - 1);
     qDeleteAll(mDatas);
     mDatas.clear();
     endRemoveRows();

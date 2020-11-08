@@ -8,6 +8,7 @@ ListView {
 
     property real tableAreaX: CusTableConstant.column0Width
     signal pressed(real mouseX, real mouseY)
+    signal rightPressed(real mouseX, real mouseY)
     signal released()
     signal positionChanged(real mouseX, real mouseY)
     signal doubleClicked(real mouseX, real mouseY)
@@ -122,6 +123,9 @@ ListView {
         onPressed: {
             cusTableView.forceActiveFocus()
             cusTableView.pressed(mouseX + tableAreaX, mouseY)
+        }
+        onRightPressed: {
+            cusTableView.rightPressed(mouseX + tableAreaX, mouseY)
         }
         onReleased: {
             cusTableView.released()

@@ -7,11 +7,11 @@ import "../.."
 Rectangle {
     id: deviceRow
     height: visible ? CusConfig.fixedHeight : 0
-    visible: dataObj["isVisible"]
+    visible: dataObj ? dataObj["isVisible"] : false
 
-    property bool isSelected: dataObj["isSelected"]
-    property bool isChecked: dataObj["isChecked"]
-    property bool isAlternate: dataObj["isAlternate"]
+    property bool isSelected: dataObj ? dataObj["isSelected"] : false
+    property bool isChecked: dataObj ? dataObj["isChecked"] : false
+    property bool isAlternate: dataObj ? dataObj["isAlternate"] : false
     onIsCheckedChanged: {
         checkBox.notify = false
         checkBox.checked = isChecked
@@ -55,7 +55,7 @@ Rectangle {
             height: parent.height
             CusLabel {
                 id: textLabel
-                text: qsTr(String(dataObj[roles[index]])) + CusConfig.transString
+                text: dataObj ? (qsTr(String(dataObj[roles[index]])) + CusConfig.transString) : ""
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
