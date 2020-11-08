@@ -11,6 +11,7 @@ Item {
     property int drawW: Math.floor(drawRect.width)
     property int drawH: Math.floor(drawRect.height)
     signal pressed(real mouseX, real mouseY)
+    signal rightPressed(real mouseX, real mouseY)
     signal released
     signal positionChanged(real mouseX, real mouseY)
     signal doubleClicked(real mouseX, real mouseY)
@@ -21,12 +22,18 @@ Item {
         id: drawArea
         anchors.fill: parent
         hoverEnabled: true
-
+        acceptedButtons: Qt.LeftButton | Qt.RightButton
         onPressed: {
-            bPressed = true
-            oldX = Math.floor(mouseX)
-            oldY = Math.floor(mouseY)
-            drawRectItem.pressed(mouseX, mouseY)
+            if (mouse.button === Qt.LeftButton) {
+                bPressed = true
+                oldX = Math.floor(mouseX)
+                oldY = Math.floor(mouseY)
+                drawRectItem.pressed(mouseX, mouseY)
+            } else if (mouse.button == Qt.RightButton) {
+                oldX = Math.floor(mouseX)
+                oldY = Math.floor(mouseY)
+                drawRectItem.rightPressed(mouseX, mouseY)
+            }
         }
         onReleased: {
             drawRectItem.released()
@@ -43,6 +50,7 @@ Item {
         onWheel: {
             drawRectItem.wheelEvent(wheel.angleDelta.y / 8)
         }
+
     }
     Rectangle {
         id: drawRect

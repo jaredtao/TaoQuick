@@ -3,6 +3,7 @@
 #include "TaoListModelBase.hpp"
 #include "TaoListItemBase.h"
 #include "TaoCommonGlobal.h"
+#include <QTimer>
 class TAO_API TaoListModel : public TaoListModelBase<TaoListItemBase *>
 {
     Q_OBJECT
@@ -17,9 +18,10 @@ class TAO_API TaoListModel : public TaoListModelBase<TaoListItemBase *>
     Q_PROPERTY(QString sortRole READ sortRole WRITE setSortRole NOTIFY sortRoleChanged)
 
 public:
+    using Super = TaoListModelBase<TaoListItemBase *>;
     explicit TaoListModel(QObject *parent = nullptr);
     ~TaoListModel() override;
-
+    Q_INVOKABLE QVariant data(int row) const { return Super::data(row); }
     //[begin] check
     bool allChecked() const { return mAllChecked; }
     Q_INVOKABLE void check(int row, bool checked);
@@ -27,9 +29,6 @@ public:
 
     //[begin] search. control visible
     Q_INVOKABLE void search(const QString &searchKey);
-    //控制显示隐藏的回调。返回true则show，返回false则hide
-    using VisibleCallback = std::function<bool(TaoListItemBase *)>;
-    void setVisibleFilter(const VisibleCallback &callback) { mVisibleCallback = callback; }
     //[end] search
 
     //[begin] select
@@ -101,7 +100,8 @@ signals:
     void sortRoleChanged(const QString &sortRole);
 
     void signalUpdateCalcCount();
-
+private slots:
+    void onSearch();
 private:
     void updateAllCheck();
     void updateVisibleCount();
@@ -121,5 +121,5 @@ private:
     QString mSortRole;
     QMap<QString, SortCallback> mSortCallbacks;
     QString mSearchkey;
-    VisibleCallback mVisibleCallback;
+    QTimer mSearchTimer;
 };

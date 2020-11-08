@@ -32,6 +32,8 @@ public:
     {
         return m_online;
     }
+
+    bool match(const QString &key) override;
 public slots:
     void setName(const QString &name)
     {

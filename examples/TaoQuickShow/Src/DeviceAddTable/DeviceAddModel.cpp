@@ -1,6 +1,8 @@
 #include "DeviceAddModel.h"
 #include "DeviceAddItem.h"
 #include <QHostAddress>
+#include <QCoreApplication>
+#include <QEventLoop>
 #include <chrono>
 #include <random>
 const static QString nameTemplate("item %1");
@@ -50,6 +52,10 @@ void DeviceAddModel::initData()
     for (int i = 0; i < N; ++i) {
         auto item = genOne(i);
         objs.append(item);
+//        if (i % 5 == 0)
+//        {
+//            qApp->processEvents(QEventLoop::ExcludeUserInputEvents);
+//        }
     }
 
     auto c2 = std::chrono::high_resolution_clock::now();
@@ -72,6 +78,10 @@ void DeviceAddModel::addMulti(int count)
     for (int i = 0; i < count; ++i) {
         auto item = genOne(d->u65535(d->randomEngine));
         objs.push_back(item);
+//        if (i % 5 == 0)
+//        {
+//            qApp->processEvents(QEventLoop::ExcludeUserInputEvents);
+//        }
     }
     append(objs);
 }
@@ -95,6 +105,12 @@ void DeviceAddModel::insertBeforeSelected()
             insert(pos, { item });
         }
     }
+}
+
+void DeviceAddModel::insertBeforeRow(int row)
+{
+    auto item = genOne(d->u65535(d->randomEngine));
+    insert(row, { item });
 }
 
 void DeviceAddModel::clearAll()
@@ -128,6 +144,11 @@ void DeviceAddModel::removeChecked()
             ++i;
         }
     }
+}
+
+void DeviceAddModel::removeRow(int row)
+{
+    removeAt(row);
 }
 
 DeviceAddItem *DeviceAddModel::genOne(uint32_t value)

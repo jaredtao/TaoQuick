@@ -12,23 +12,17 @@ class TAO_API TaoListItemBase : public QObject
 public:
     explicit TaoListItemBase(QObject *parent = nullptr);
     ~TaoListItemBase() override;
-    bool isChecked() const
-    {
-        return mIsChecked;
-    }
+    bool isChecked() const { return mIsChecked; }
 
-    bool isSelected() const
-    {
-        return mIsSelected;
-    }
+    bool isSelected() const { return mIsSelected; }
 
-    bool isVisible() const
+    bool isVisible() const { return mIsVisible; }
+    bool isAlternate() const { return mIsAlternate; }
+    // Model call this for search. return true if contents match key, others return false.
+    virtual bool match(const QString &key)
     {
-        return mIsVisible;
-    }
-    bool isAlternate() const
-    {
-        return mIsAlternate;
+        Q_UNUSED(key)
+        return true;
     }
 public slots:
     void setIsChecked(bool isChecked)
@@ -59,8 +53,7 @@ public slots:
     }
     void setIsAlternate(bool isAlternate)
     {
-        if (mIsAlternate == isAlternate) 
-        {
+        if (mIsAlternate == isAlternate) {
             return;
         }
         mIsAlternate = isAlternate;
