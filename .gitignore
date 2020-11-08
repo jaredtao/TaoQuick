@@ -12,3 +12,7 @@ bin
 debug
 *.ipch
 *qmlcache.qrc
+build
+bin
+.vc
+.vscode
