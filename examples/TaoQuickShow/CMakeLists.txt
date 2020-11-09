@@ -12,8 +12,12 @@ endif(Qt::Core_Found)
 aux_source_directory(./Src SRC1)
 aux_source_directory(./Src/DeviceAddTable SRC2)
 include(taoVersion)
+
 add_compile_definitions(TaoCommon_NO_LIB)
-include(taoCommon)
+add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty ${CMAKE_SOURCE_DIR}/build/3rdparty)
+message("TaoCommonPath ${TaoCommonPath}")
+message("TaoCommonFiles ${TaoCommonFiles}")
+
 include(taoQuick)
 set (Res Qml.qrc Contents.qrc Image.qrc)
 if (CMAKE_BUILD_TYPE MATCHES "Release")
@@ -67,3 +71,4 @@ target_compile_definitions(${TargetName}
 target_link_libraries(${TargetName}
     PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::QuickControls2)
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Trans/language_zh.json ${EXECUTABLE_OUTPUT_PATH}/Trans/language_zh.json COPYONLY)
