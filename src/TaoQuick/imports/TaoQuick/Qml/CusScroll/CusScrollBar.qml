@@ -5,7 +5,8 @@ import "../.."
 ScrollBar {
     id: cusTirangleTipBorder
     property bool isSmaller: true
-    minimumSize: 0.1
+//    minimumSize: 0.1
+    size: Math.max(height / content.height, 0.1)
     contentItem: Rectangle {
         implicitWidth: isSmaller ?  CusConfig.scrollBarSize_Smaller : CusConfig.scrollBarSize
         implicitHeight: isSmaller ?  CusConfig.scrollBarSize_Smaller : CusConfig.scrollBarSize

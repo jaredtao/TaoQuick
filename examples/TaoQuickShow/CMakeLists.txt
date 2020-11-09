@@ -19,6 +19,7 @@ message("TaoCommonPath ${TaoCommonPath}")
 message("TaoCommonFiles ${TaoCommonFiles}")
 
 include(taoQuick)
+message("TaoQuickRes ${TaoQuickRes}")
 set (Res Qml.qrc Contents.qrc Image.qrc)
 if (CMAKE_BUILD_TYPE MATCHES "Release")
     if(WIN32)
@@ -27,7 +28,7 @@ if (CMAKE_BUILD_TYPE MATCHES "Release")
             ${SRC2}
             ${TaoCommonFiles}
             ${Res}
-            App.rc
+#            App.rc
             ${TaoQuickRes}
             )
     elseif(APPLE)
