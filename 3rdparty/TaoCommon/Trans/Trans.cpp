@@ -1,5 +1,5 @@
 #include "Trans.h"
-#include "FileReadWrite.h"
+#include "Common/FileReadWrite.h"
 #include <QDir>
 #include <QQmlContext>
 #include <QCoreApplication>

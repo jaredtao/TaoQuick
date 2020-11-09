@@ -2,10 +2,7 @@
     DEFINES +=TaoCommon_NO_LIB
 }
 
-INCLUDEPATH += $$PWD \
-    $$PWD/Common \
-    $$PWD/Logger \
-    $$PWD/Thread
+INCLUDEPATH += $$PWD 
 
 HEADERS += \
     $$PWD/Common/FileReadWrite.h \
