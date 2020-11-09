@@ -1,7 +1,1 @@
-set(TaoCommonPath ${CMAKE_SOURCE_DIR}/3rdparty/TaoCommon)
-
-#file(GLOB_RECURSE TaoCommonFiles *.hpp *.cpp *.c)
-
-aux_source_directory(${TaoCommonPath} TaoCommonFiles)
-message("TaoCommonFiles ${TaoCommonFiles}")
-
+add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty ${CMAKE_SOURCE_DIR}/build/3rdparty)
