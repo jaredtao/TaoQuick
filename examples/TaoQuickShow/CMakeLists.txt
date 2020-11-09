@@ -3,9 +3,11 @@ get_filename_component(TargetName ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick QuickControls2 REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick QuickControls2 REQUIRED)
-if(Qt::Core_Found)
+if(Qt${QT_VERSION_MAJOR}Core_Found)
     if (Qt::Core_VERSION VERSION_LESS 5.9.0)
         message(FATAL_ERROR "TaoQuick minimum supported Qt5 version is 5.9.0")
+    else ()
+        message("Qt::Core_VERSION ${Qt::Core_VERSION}")
     endif()
 endif(Qt::Core_Found)
 
