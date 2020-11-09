@@ -2,15 +2,14 @@
 #include <QQuickItem>
 #include <QGuiApplication>
 
-QuickTool::QuickTool(QObject *parent) : QObject(parent) {}
+QuickTool::QuickTool(QObject *parent) : QObject(parent) { }
 
 QuickTool::QuickTool(QObject *rootObject, QObject *parent)
     : QObject(parent), pRootObject(rootObject)
 {
-
 }
 
-QuickTool::~QuickTool() {}
+QuickTool::~QuickTool() { }
 void QuickTool::findRootByNode(QObject *nodeObject)
 {
     pRootObject = nodeObject;
