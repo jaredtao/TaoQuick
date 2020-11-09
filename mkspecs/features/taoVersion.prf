@@ -32,7 +32,7 @@ defineTest(setTaoVersion) {
     DEFINES += TaoMIN=$${MIN}
     DEFINES += TaoPAT=$${PAT}
     DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
-    DEFINES += TaoCompilerVendor=\"\\\"$${QT_VERSION} $${QMAKE_PLATFORM} $${QMAKE_COMPILER} $${QMAKE_TARGET.arch}\\\"\"
+    DEFINES += CXX_COMPILER_ID=\"\\\"$${QMAKE_COMPILER}\\\"\"
 
     export(CONFIG)
     export(VER_MAJ)
