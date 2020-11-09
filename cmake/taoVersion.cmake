@@ -23,3 +23,13 @@ execute_process(
     OUTPUT_VARIABLE TAG)
 message("TAG ${TAG}")
 add_definitions(TaoVer="\"${TAG}\"")
+string(REPLACE "." ";" VERSION_LIST ${TAG})
+list(GET VERSION_LIST 0 TAG_VERSION_MAJOR)
+list(GET VERSION_LIST 1 TAG_VERSION_MINOR)
+list(GET VERSION_LIST 2 TAG_VERSION_PATCH)
+add_definitions(TaoMAJ=${TAG_VERSION_MAJOR})
+add_definitions(TaoMIN=${TAG_VERSION_MINOR})
+add_definitions(TaoPAT=${TAG_VERSION_PATCH})
+
+string(TIMESTAMP DateTime "%Y-%m-%d %H:%M")
+add_definitions(TaoDATETIME="\"${DateTime}\"")
