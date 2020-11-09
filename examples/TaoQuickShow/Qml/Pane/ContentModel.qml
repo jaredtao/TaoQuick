@@ -306,7 +306,6 @@ ListModel {
                 setProperty(i, "visible", true)
             }
         } else {
-            String("").indexOf()
             var lowerText = String(text).toLowerCase()
             for (i = 0; i < count; ++i) {
                 var obj = get(i)
