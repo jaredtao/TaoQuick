@@ -26,8 +26,8 @@ if (CMAKE_BUILD_TYPE MATCHES "Release")
             ${SRC2}
             ${TaoCommonFiles}
             ${Res}
-            App.rc
             ${TaoQuickRes}
+            App.rc
             )
     elseif(APPLE)
         add_executable(${TargetName}
