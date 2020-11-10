@@ -34,7 +34,7 @@ ListView {
         active: visible
         snapMode: ScrollBar.SnapAlways
         stepSize: cusTableView.height/(cusTableView.model.visibledCount * CusConfig.fixedHeight) / 2
-        size: Math.max(cusTableView.height / cusTableView.content.height, 0.1)
+        size: Math.max(cusTableView.height / cusTableView.contentHeight, 0.1)
     }
     CusShortCutKeys {
         id: tableKeys
