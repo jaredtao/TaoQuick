@@ -14,7 +14,7 @@ if (OUTPUT)
 endif()
 message("REVISION ${REVISION}")
 add_compile_definitions(TaoREVISION=${REVISION})
-add_compile_definitions(TaoREVISION="${REVISION}")
+add_compile_definitions(TaoREVISIONSTR="${REVISION}")
 
 set (TAG "0.0.0.0")
 execute_process(
