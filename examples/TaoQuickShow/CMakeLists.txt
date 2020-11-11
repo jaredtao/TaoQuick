@@ -7,8 +7,9 @@ if (QT_VERSION VERSION_LESS 5.9.0)
     message(FATAL_ERROR "TaoQuick minimum supported Qt5 version is 5.9.0")
 endif()
 
-aux_source_directory(./Src SRC1)
-aux_source_directory(./Src/DeviceAddTable SRC2)
+aux_source_directory(Src SRC1)
+aux_source_directory(Src/DeviceAddTable SRC2)
+
 include(taoVersion)
 
 add_compile_definitions(TaoCommon_NO_LIB)
