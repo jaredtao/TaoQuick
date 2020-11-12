@@ -309,7 +309,7 @@ taoQuick.cmake will define two MACRO: TaoQuickImportPath and TaoQuickImagePath.
 
 Debug mode will use TaoQuick as local file, and release mode for qrc resource.
 
-Delease mode taoQuick.cmake also define a MACRO TaoQuickRes, that location to qrc file.
+Release mode taoQuick.cmake also define a MACRO TaoQuickRes, that location to qrc file.
 
 your project should add TaoQuickRes to executable, like this:
 
