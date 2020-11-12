@@ -34,6 +34,8 @@
   - [项目结构](#项目结构)
   - [核心库 TaoQuick](#核心库-taoquick)
   - [使用核心库TaoQuick](#使用核心库taoquick)
+    - [qmake用法](#qmake用法)
+    - [cmake用法](#cmake用法)
   - [联系作者](#联系作者)
   - [寻找同道中人](#寻找同道中人)
   - [赞助](#赞助)
@@ -245,7 +247,11 @@ CusConfig是核心库的全局配置,主要包括字体、颜色等,所有组件
 
 ## 使用核心库TaoQuick 
 
-使用核心库，只需要在项目中导入'.pri'文件即可，TaoQuick组件将以本地文件或qrc资源的方式被引用。
+### qmake用法
+
+使用核心库，只需要在项目中导入'.pri'文件，并将qml路径加入到QmlEngine即可。
+
+TaoQuick组件将以本地文件或qrc资源的方式被引用。
 
 此种用法, 与Qml模块、Qml C++插件等方式相比，有以下优势:
 
@@ -276,6 +282,90 @@ include(src/TaoQuick/imports/imports.pri)
 ```
 
 都可以,只要路径对应到实际的文件即可
+
+(说明：此pri文件会定义两个宏：TaoQuickImportPath 和 TaoQuickImagePath。
+
+debug模式都以本地文件的方式使用，release模型则以qrc资源文件的方式使用)
+
+3. 在CPP代码中，增加导入路径。
+   
+   需要在QmlEngine加载source之前，增加importPath，并把imagePath设置为上下文。
+
+   如果主窗口是由QQuickView加载的，则：
+   
+```C++
+    view.engine()->addImportPath(TaoQuickImportPath);
+    view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+```
+
+   如果主窗口是由QQmlEngine加载的，则:
+
+```C++
+    engine.addImportPath(TaoQuickImportPath);
+    engine.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+```
+
+### cmake用法
+
+TaoQuick 0.5.0以后的版本，增加了cmake支持。
+
+原理和qmake一样，只不过换成了cmake的语法规则。
+
+用法如下：
+
+1. 将src/TaoQuick文件夹拷贝到你的项目中，任意位置
+
+2. 将cmake/TaoQuick.cmake文件拷贝到你的项目中，任意位置，并且
+
+ 确保TaoQuick.cmake文件中，第一行的TaoQuickPath指向正确的TaoQuick路径
+
+3. 在你的项目CMakeLists.txt文件中,导入对应的TaoQuick.cmake
+
+需要先增加cmake扩展路径
+
+```cmake
+  SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+```
+加载好扩展路径，就可以用incude指令导入taoQuick.cmake了
+
+```cmake
+include(taoQuick)
+```
+
+说明：taoQuick.cmake会定义两个宏：TaoQuickImportPath 和 TaoQuickImagePath。
+
+debug模式以本地文件的方式使用，release模型则以qrc资源文件的方式使用, 将qrc文件路径定义在了宏TaoQuickRes中。
+
+因此release模式,要在add_executable中增加TaoQuickRes, 例如
+
+```cmake
+if (CMAKE_BUILD_TYPE MATCHES "Release")
+    add_executable(MyApp ${someSource} ${TaoQuickRes})
+else()
+    add_executable(MyApp ${someSource})
+endif()
+```
+
+
+4. 在CPP代码中，增加导入路径。
+   
+   需要在QmlEngine加载source之前，增加importPath，并把imagePath设置为上下文。
+
+   如果主窗口是由QQuickView加载的，则：
+   
+```C++
+    view.engine()->addImportPath(TaoQuickImportPath);
+    view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+```
+
+   如果主窗口是由QQmlEngine加载的，则:
+
+```C++
+    engine.addImportPath(TaoQuickImportPath);
+    engine.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+```
+
+
 
 
 ***
