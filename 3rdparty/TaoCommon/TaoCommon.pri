@@ -6,6 +6,7 @@ INCLUDEPATH += $$PWD
 
 HEADERS += \
     $$PWD/Common/FileReadWrite.h \
+	$$PWD/Common/PropertyHelper.h \
     $$PWD/Common/ObjectMap.h \
     $$PWD/QuickTool/QuickTool.h \
     $$PWD/Common/Subject.h \
