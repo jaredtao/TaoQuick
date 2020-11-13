@@ -13,7 +13,7 @@ aux_source_directory(Src/DeviceAddTable SRC2)
 include(taoVersion)
 
 add_compile_definitions(TaoCommon_NO_LIB)
-add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty ${CMAKE_SOURCE_DIR}/build/3rdparty)
+add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/TaoCommon ${CMAKE_SOURCE_DIR}/build/3rdparty/TaoCommon)
 #message("TaoCommonPath ${TaoCommonPath}")
 #message("TaoCommonFiles ${TaoCommonFiles}")
 
