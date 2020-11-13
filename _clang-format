@@ -16,7 +16,7 @@ Standard: Cpp11
 # Column width is limited to 100 in accordance with Qt Coding Style.
 # https://wiki.qt.io/Qt_Coding_Style
 # Note that this may be changed at some point in the future.
-ColumnLimit: 100
+ColumnLimit: 160
 # How much weight do extra characters after the line length limit have.
 # PenaltyExcessCharacter: 4
 
@@ -83,3 +83,6 @@ ForEachMacros:   [ foreach, Q_FOREACH, BOOST_FOREACH, forever, Q_FOREVER, QBENCH
 
 # Break constructor initializers before the colon and after the commas.
 BreakConstructorInitializers: BeforeColon
+
+# 允许重新排版注释
+ReflowComments:  false
