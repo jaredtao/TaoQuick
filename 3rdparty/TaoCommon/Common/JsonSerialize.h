@@ -1,78 +1,185 @@
 #pragma once
-#include "CIMCommDef.h"
 
-//json –Ú¡–ªØ
+// json Â∫èÂàóÂåñ
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QJsonDocument>
+
 #include <QVariant>
 #include <QVariantList>
 #include <QVariantMap>
 
-///@brief –Ú¡–ªØ
-#define JsonSerialize_Begin()   \
-public:                         \
-    operator QVariant() const {                           \
-        return QVariant::fromValue(this->operator QVariantMap());\
-    }                           \
-    operator QJsonObject() const {                           \
-        return QJsonObject::fromVariantMap(this->operator QVariantMap());\
-    }                           \
-    operator QVariantMap() const {      \
-        QVariantMap vmap;       
+///@brief Â∫èÂàóÂåñ. object to Json, object to Variant or VariantMap
+#define JsonSerialize_Begin()                                                                      \
+public:                                                                                            \
+    operator QVariant() const { return QVariant::fromValue(this->operator QVariantMap()); }        \
+    operator QJsonObject() const                                                                   \
+    {                                                                                              \
+        return QJsonObject::fromVariantMap(this->operator QVariantMap());                          \
+    }                                                                                              \
+    operator QVariantMap() const                                                                   \
+    {                                                                                              \
+        QVariantMap vmap;
 
-#define JsonSerialize_End() \
-        return vmap;        \
-    } 
-
-///@brief ∑¥–Ú¡–ªØ
-#define JsonDeserialize_Begin(class_name) \
-public:\
-    class_name(const QJsonObject& other)\
-    {\
-        QVariantMap vmap = other.toVariantMap();
-
-#define JsonDeserialize_End() \
+#define JsonSerialize_End()                                                                        \
+    return vmap;                                                                                   \
     }
 
-///@brief ≤ø∑÷∑¥–Ú¡–ªØ
-#define JsonPartialDeserialize_Begin(class_name)\
-public:\
-    class_name& operator=(const QJsonObject& other)\
-    {\
-        QVariantMap vmap = other.toVariantMap();
+///@brief Â∫èÂàóÂåñÂ±ûÊÄßÊò†Â∞Ñ
+#define JsonPureProperty(NAME) vmap.unite((QVariantMap)m_##NAME);
 
-#define JsonPartialDeserialize_End()\
-        return *this;\
-    }\
+#define JsonProperty(NAME)                                                                         \
+    vmap[#NAME] = QVariant::fromValue(m_##NAME);                                                   \
+    if (vmap.value(#NAME).isNull())                                                                \
+        vmap.remove(#NAME);
 
-///@brief –Ú¡–ªØ Ù–‘”≥…‰
-#define JsonPureProperty(val) \
-    vmap.unite((QVariantMap)val);
-
-#define JsonProperty(name, val, atom_type) \
-    vmap[name] = QVariant::fromValue<atom_type>(val);\
-    if(vmap[name].isNull()) vmap.remove(name);
-
-#define JsonContainerProperty(name, val, atom_type)\
-    {\
-        QVariantList lst;\
-        for(atom_type t : val)\
-        {\
-            lst << QVariant::fromValue<atom_type>(t);\
-        }\
-        vmap[name] = lst;\
-    }\
-
-#define JsonDeserializeContainerProperty(name, val, atom_type)\
-    if(vmap[name].canConvert<QVariantList>())\
-    {\
-        QSequentialIterable iterable = vmap[name].value<QSequentialIterable>();\
-        Q_FOREACH(const QVariant &v, iterable) \
-        {\
-            val.push_back(v.value<atom_type>());\
-        }\
+#define JsonContainerProperty(NAME)                                                                \
+    {                                                                                              \
+        QVariantList lst;                                                                          \
+        lst.reserve(m_##NAME.size());                                                              \
+        for (const auto &t : m_##NAME) {                                                           \
+            lst << QVariant::fromValue(t);                                                         \
+        }                                                                                          \
+        vmap[#NAME] = lst;                                                                         \
     }
 
-#define JsonDeserializeProperty(name, val, type)\
-    val = vmap[name].value<type>(); 
+///@brief ÂèçÂ∫èÂàóÂåñ object from json
+#define JsonDeserialize_Begin(class_name)                                                          \
+public:                                                                                            \
+    class_name(const QJsonObject &other)                                                           \
+    {                                                                                              \
+        QVariantMap vmap = other.toVariantMap();
+
+#define JsonDeserialize_End() }
+
+///@brief ÈÉ®ÂàÜÂèçÂ∫èÂàóÂåñ
+#define JsonPartialDeserialize_Begin(class_name)                                                   \
+public:                                                                                            \
+    class_name &operator=(const QJsonObject &other)                                                \
+    {                                                                                              \
+        QVariantMap vmap = other.toVariantMap();
+
+#define JsonPartialDeserialize_End()                                                               \
+    return *this;                                                                                  \
+    }
+
+#define JsonDeserializeContainerProperty(NAME)                                                     \
+    if (vmap.value(#NAME).canConvert<QVariantList>()) {                                            \
+        const auto &list = vmap.value(#NAME).value<QVariantList>();                                \
+        m_##NAME.clear();                                                                          \
+        m_##NAME.reserve(list.size());                                                             \
+        for (const auto &v : list) {                                                               \
+            m_##NAME.push_back(v.value<decltype(m_##NAME)::value_type>());                         \
+        }                                                                                          \
+    }
+
+#define JsonDeserializeProperty(NAME) m_##NAME = vmap.value(#NAME).value<decltype(m_##NAME)>();
+
+
+/**
+* Example:
+*
+class AppInfo : public QObject
+{
+    Q_OBJECT
+
+    AUTO_PROPERTY(QString, appName, "")
+    AUTO_PROPERTY(QString, appVersion, "")
+    AUTO_PROPERTY(QString, latestVersion, "")
+    AUTO_PROPERTY(QString, buildDateTime, "")
+    AUTO_PROPERTY(QString, buildRevision, "")
+    AUTO_PROPERTY(QString, copyRight, "")
+    AUTO_PROPERTY(QString, descript, "")
+    AUTO_PROPERTY(QString, compilerVendor, "")
+    AUTO_PROPERTY(bool, splashShow, false)
+    AUTO_PROPERTY(float, scale, 1.0f)
+    AUTO_PROPERTY(double, ratio, 14.0 / 9.0)
+    AUTO_PROPERTY(QStringList, customs, {})
+
+    JsonSerialize_Begin()
+        JsonProperty(appName)
+        JsonProperty(appVersion)
+        JsonProperty(latestVersion)
+        JsonProperty(buildDateTime)
+        JsonProperty(buildRevision)
+        JsonProperty(copyRight)
+        JsonProperty(descript)
+        JsonProperty(compilerVendor)
+        JsonProperty(splashShow)
+        JsonProperty(scale)
+        JsonProperty(ratio)
+        JsonContainerProperty(customs)
+        JsonSerialize_End()
+
+    JsonDeserialize_Begin(AppInfo)
+        JsonDeserializeProperty(appName)
+        JsonDeserializeProperty(appVersion)
+        JsonDeserializeProperty(latestVersion)
+        JsonDeserializeProperty(buildDateTime)
+        JsonDeserializeProperty(buildRevision)
+        JsonDeserializeProperty(copyRight)
+        JsonDeserializeProperty(descript)
+        JsonDeserializeProperty(compilerVendor)
+        JsonDeserializeProperty(splashShow)
+        JsonDeserializeProperty(scale)
+        JsonDeserializeProperty(ratio)
+        JsonDeserializeContainerProperty(customs)
+    JsonDeserialize_End()
+
+
+    JsonPartialDeserialize_Begin(AppInfo)
+        JsonDeserializeProperty(appName)
+        JsonDeserializeProperty(appVersion)
+        JsonDeserializeProperty(latestVersion)
+        JsonDeserializeProperty(buildDateTime)
+        JsonDeserializeProperty(buildRevision)
+        JsonDeserializeProperty(copyRight)
+        JsonDeserializeProperty(descript)
+        JsonDeserializeProperty(compilerVendor)
+        JsonDeserializeProperty(splashShow)
+        JsonDeserializeProperty(scale)
+        JsonDeserializeProperty(ratio)
+        JsonDeserializeContainerProperty(customs)
+    JsonPartialDeserialize_End()
+
+public:
+    explicit AppInfo(QObject *parent = nullptr);
+    virtual ~AppInfo() override;
+};
+
+these MACOR will generate these function:
+
+AppInfo(const QJsonobject &obj)
+AppInfo &operator=(const QJsonobject &obj)
+
+operator QJsonobject()
+operator QVariantMap()
+operator QVariant()
+
+*/
+
+/**
+* then you can use it.
+*
+* 1. init AppInfo from Json by construct or operator=
+*
+
+*
+*   QJsonObject obj;
+*   AppInfo info = obj;
+*
+* 2. convert object to Json or VariantMap by operator
+*
+*
+*   AppInfo info;
+* ...
+*   QJsonObject obj = info;
+*   QVariant var = info;
+*   QVariantMap map = info;
+*
+**/
+
+
+
+
+
