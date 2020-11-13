@@ -19,5 +19,17 @@ void AppInfo::beforeUiReady(QQmlContext *ctx)
     ctx->setContextProperty("appInfo", this);
 }
 
-void AppInfo::afterUiReady() {}
+void AppInfo::afterUiReady()
+{
 
+//    auto json = QJsonDocument(*this).toJson(QJsonDocument::Indented);
+//    json.replace("\\n\\r","\\\n");
+//    qWarning() << json;
+
+}
+
+
+AppInfo::~AppInfo()
+{
+
+}
