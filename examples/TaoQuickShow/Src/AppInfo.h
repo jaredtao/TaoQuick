@@ -3,98 +3,76 @@
 #include <QObject>
 #include <QString>
 #include <QQmlContext>
+#include "Common/PropertyHelper.h"
+#include "Common/JsonSerialize.h"
 class AppInfo : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString appName READ appName WRITE setAppName NOTIFY appNameChanged)
-    Q_PROPERTY(QString appVersion READ appVersion WRITE setAppVersion NOTIFY appVersionChanged)
-    Q_PROPERTY(QString latestVersion READ latestVersion WRITE setLatestVersion NOTIFY
-                       latestVersionChanged)
-    Q_PROPERTY(QString buildDateTime READ buildDateTime WRITE setBuildDateTime NOTIFY
-                       buildDateTimeChanged)
-    Q_PROPERTY(QString buildRevision READ buildRevision WRITE setBuildRevision NOTIFY
-                       buildRevisionChanged)
-    Q_PROPERTY(QString copyRight READ copyRight WRITE setCopyRight NOTIFY copyRightChanged)
-    Q_PROPERTY(QString descript READ descript WRITE setDescript NOTIFY descriptChanged)
-    Q_PROPERTY(QString compilerVendor READ compilerVendor WRITE setCompilerVendor NOTIFY
-                       compilerVendorChanged)
 
-    Q_PROPERTY(bool splashShow READ splashShow WRITE setSplashShow NOTIFY splashShowChanged)
+    AUTO_PROPERTY(QString, appName, "")
+    AUTO_PROPERTY(QString, appVersion, "")
+    AUTO_PROPERTY(QString, latestVersion, "")
+    AUTO_PROPERTY(QString, buildDateTime, "")
+    AUTO_PROPERTY(QString, buildRevision, "")
+    AUTO_PROPERTY(QString, copyRight, "")
+    AUTO_PROPERTY(QString, descript, "")
+    AUTO_PROPERTY(QString, compilerVendor, "")
+    AUTO_PROPERTY(bool, splashShow, false)
+    AUTO_PROPERTY(float, scale, 1.0f)
+    AUTO_PROPERTY(double, ratio, 14.0 / 9.0)
+    AUTO_PROPERTY(QStringList, customs, {})
+
+    JsonSerialize_Begin()
+        JsonProperty(appName)
+        JsonProperty(appVersion)
+        JsonProperty(latestVersion)
+        JsonProperty(buildDateTime)
+        JsonProperty(buildRevision)
+        JsonProperty(copyRight)
+        JsonProperty(descript)
+        JsonProperty(compilerVendor)
+        JsonProperty(splashShow)
+        JsonProperty(scale)
+        JsonProperty(ratio)
+        JsonContainerProperty(customs)
+    JsonSerialize_End()
+
+    JsonDeserialize_Begin(AppInfo)
+        JsonDeserializeProperty(appName)
+        JsonDeserializeProperty(appVersion)
+        JsonDeserializeProperty(latestVersion)
+        JsonDeserializeProperty(buildDateTime)
+        JsonDeserializeProperty(buildRevision)
+        JsonDeserializeProperty(copyRight)
+        JsonDeserializeProperty(descript)
+        JsonDeserializeProperty(compilerVendor)
+        JsonDeserializeProperty(splashShow)
+        JsonDeserializeProperty(scale)
+        JsonDeserializeProperty(ratio)
+        JsonDeserializeContainerProperty(customs)
+    JsonDeserialize_End()
+
+
+    JsonPartialDeserialize_Begin(AppInfo)
+        JsonDeserializeProperty(appName)
+        JsonDeserializeProperty(appVersion)
+        JsonDeserializeProperty(latestVersion)
+        JsonDeserializeProperty(buildDateTime)
+        JsonDeserializeProperty(buildRevision)
+        JsonDeserializeProperty(copyRight)
+        JsonDeserializeProperty(descript)
+        JsonDeserializeProperty(compilerVendor)
+        JsonDeserializeProperty(splashShow)
+        JsonDeserializeProperty(scale)
+        JsonDeserializeProperty(ratio)
+        JsonDeserializeContainerProperty(customs)
+    JsonPartialDeserialize_End()
+
 public:
     explicit AppInfo(QObject *parent = nullptr);
-
+    virtual ~AppInfo() override;
 public:
     void beforeUiReady(QQmlContext *ctx);
 
     void afterUiReady();
-
-    const QString &appName() const { return m_appName; }
-
-    const QString &appVersion() const { return m_appVersion; }
-
-    const QString &latestVersion() const { return m_latestVersion; }
-
-    const QString &buildDateTime() const { return m_buildDateTime; }
-
-    const QString &buildRevision() const { return m_buildRevision; }
-
-    const QString &copyRight() const { return m_copyRight; }
-
-    const QString &descript() const { return m_descript; }
-
-    const QString &compilerVendor() const { return m_compilerVendor; }
-
-    bool splashShow() const { return m_splashShow; }
-
-public slots:
-
-    void setAppName(const QString &appName);
-
-    void setAppVersion(const QString &appVersion);
-
-    void setLatestVersion(const QString &latestVersion);
-
-    void setBuildDateTime(const QString &buildDateTime);
-
-    void setBuildRevision(const QString &buildRevision);
-
-    void setCopyRight(const QString &copyRight);
-
-    void setDescript(const QString &descript);
-
-    void setCompilerVendor(const QString &compilerVendor);
-
-    void setSplashShow(bool splashShow);
-
-signals:
-
-    void appNameChanged(const QString &appName);
-
-    void appVersionChanged(const QString &appVersion);
-
-    void latestVersionChanged(const QString &latestVersion);
-
-    void buildDateTimeChanged(const QString &buildDateTime);
-
-    void buildRevisionChanged(const QString &buildRevision);
-
-    void copyRightChanged(const QString &copyRight);
-
-    void descriptChanged(const QString &descript);
-
-    void compilerVendorChanged(const QString &compilerVendor);
-
-    void splashShowChanged(bool splashShow);
-
-protected:
-private:
-    QString m_appName;
-    QString m_appVersion;
-    QString m_latestVersion;
-    QString m_buildDateTime;
-    QString m_buildRevision;
-    QString m_copyRight;
-    QString m_descript;
-    QString m_compilerVendor;
-    bool m_splashShow = false;
 };

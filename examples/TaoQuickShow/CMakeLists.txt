@@ -7,12 +7,13 @@ if (QT_VERSION VERSION_LESS 5.9.0)
     message(FATAL_ERROR "TaoQuick minimum supported Qt5 version is 5.9.0")
 endif()
 
-aux_source_directory(./Src SRC1)
-aux_source_directory(./Src/DeviceAddTable SRC2)
+aux_source_directory(Src SRC1)
+aux_source_directory(Src/DeviceAddTable SRC2)
+
 include(taoVersion)
 
 add_compile_definitions(TaoCommon_NO_LIB)
-add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty ${CMAKE_SOURCE_DIR}/build/3rdparty)
+add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/TaoCommon ${CMAKE_SOURCE_DIR}/build/3rdparty/TaoCommon)
 #message("TaoCommonPath ${TaoCommonPath}")
 #message("TaoCommonFiles ${TaoCommonFiles}")
 
@@ -26,8 +27,8 @@ if (CMAKE_BUILD_TYPE MATCHES "Release")
             ${SRC2}
             ${TaoCommonFiles}
             ${Res}
-            App.rc
             ${TaoQuickRes}
+            App.rc
             )
     elseif(APPLE)
         add_executable(${TargetName}
