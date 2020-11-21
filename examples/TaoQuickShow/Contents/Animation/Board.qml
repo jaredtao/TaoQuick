@@ -24,7 +24,7 @@ AnimationBase {
             id: a2
             width: 460
             height: 280
-            dir: ABoard.Direct.ToBottom
+            dir: directToBottom
             effectSource.sourceItem: src
         }
     }
