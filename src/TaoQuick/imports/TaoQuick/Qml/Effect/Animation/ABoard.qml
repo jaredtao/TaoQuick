@@ -7,7 +7,7 @@ ShaderEffect {
     id: r
     readonly property int directToRight: 0
     readonly property int directToBottom: 1
-    property int dir :directToRight
+    property int dir : directToRight
     property int rowCount: 10
     property int columnCount: 10
     property int duration: 1000
