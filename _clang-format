@@ -16,7 +16,7 @@ Standard: Cpp11
 # Column width is limited to 100 in accordance with Qt Coding Style.
 # https://wiki.qt.io/Qt_Coding_Style
 # Note that this may be changed at some point in the future.
-ColumnLimit: 100
+ColumnLimit: 160
 # How much weight do extra characters after the line length limit have.
 # PenaltyExcessCharacter: 4
 
@@ -76,7 +76,7 @@ AllowShortFunctionsOnASingleLine: Inline
 # separate categories with an empty line. It does not specify the order within
 # the categories. Since the SortInclude feature of clang-format does not
 # re-order includes separated by empty lines, the feature is not used.
-SortIncludes: false
+SortIncludes: true
 
 # macros for which the opening brace stays attached.
 ForEachMacros:   [ foreach, Q_FOREACH, BOOST_FOREACH, forever, Q_FOREVER, QBENCHMARK, QBENCHMARK_ONCE ]
