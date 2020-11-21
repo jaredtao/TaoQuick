@@ -1,6 +1,7 @@
 #include "TaoListModel.h"
 
 #include <algorithm>
+#include <chrono>
 #include <QDebug>
 TaoListModel::TaoListModel(QObject *parent) : TaoListModelBase(parent)
 {
