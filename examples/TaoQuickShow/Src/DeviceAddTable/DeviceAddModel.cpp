@@ -154,15 +154,15 @@ void DeviceAddModel::removeRow(int row)
 DeviceAddItem *DeviceAddModel::genOne(uint32_t value)
 {
     auto item = new DeviceAddItem;
-    item->setOnline(value % 2 == 0);
-    item->setName(nameTemplate.arg(value));
+    item->set_online(value % 2 == 0);
+    item->set_name(nameTemplate.arg(value));
 
     int ip4 = value % 256;
     int ip3 = value / 256 % 256;
     int ip2 = value / 256 / 256 % 256;
     int ip1 = value / 256 / 256 / 256 % 256;
-    item->setAddress(ipTemplate.arg(ip1).arg(ip2).arg(ip3).arg(ip4));
-    item->setModelString(modelTemplate.arg(value % 2 == 0 ? value : 0xffffffff - value));
+    item->set_address(ipTemplate.arg(ip1).arg(ip2).arg(ip3).arg(ip4));
+    item->set_modelString(modelTemplate.arg(value % 2 == 0 ? value : 0xffffffff - value));
     return item;
 }
 void DeviceAddModel::doUpdateName(int row, const QString &name)
@@ -174,5 +174,5 @@ void DeviceAddModel::doUpdateName(int row, const QString &name)
     if (n.isEmpty()) {
         return;
     }
-    static_cast<DeviceAddItem *>(mDatas.at(row))->setName(name);
+    static_cast<DeviceAddItem *>(mDatas.at(row))->set_name(name);
 }
