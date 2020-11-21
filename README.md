@@ -27,6 +27,8 @@
   - [Project Struct](#project-struct)
   - [TaoQuick Core Library](#taoquick-core-library)
   - [Use TaoQuick](#use-taoquick)
+    - [qmake](#qmake)
+    - [cmake](#cmake)
   - [Sponsorship](#sponsorship)
   
 # TaoQuick
@@ -221,7 +223,9 @@ Other Contents reference to above table：
 
 ## Use TaoQuick 
 
-You just need import '.pri' file to project, TaoQuick will be use as local file or qrc resource.
+### qmake 
+
+You just need import '.pri' file to project and add import Path to QmlEngine, TaoQuick will be use as local file or qrc resource.
 
 Compared with 'Qml module' and 'Qml C++ plugin', this usage has the following advantages:
 
@@ -253,9 +257,86 @@ or
 include(src/TaoQuick/imports/imports.pri)
 ```
 
+TaoQuick.pri will define two MACRO: TaoQuickImportPath and TaoQuickImagePath.
+
+Debug mode will use TaoQuick as local file, and release mode for qrc resource.
+
+
+3. add import path in cpp
+
+  Before load source qml, TaoQuick need add import path to QmlEngine and set imagePath to context.
+
+  if use QQuickView, TaoQuick can be use as flow:
+   
+```C++
+    view.engine()->addImportPath(TaoQuickImportPath);
+    view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+```
+
+   if use QmlEngine, TaoQuick can be use as flow:
+
+```C++
+    engine.addImportPath(TaoQuickImportPath);
+    engine.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+```
 
 ***
+### cmake
 
+TaoQuick start support cmake after version 0.5.0 , it's same as qmake.
+
+detail use step：
+
+1. copy src/TaoQuick to your project, in any location
+
+2. copy cmake/taoQuick.cmake to your project, in any location
+
+and make sure the first line of taoQuick.cmake location to correct TaoQuick path
+
+3. add cmake extern path in your CMakeLists.txt
+
+add extern path:
+
+```cmake
+  SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+```
+then load taoQuick by 'include'
+
+```cmake
+include(taoQuick)
+```
+taoQuick.cmake will define two MACRO: TaoQuickImportPath and TaoQuickImagePath.
+
+Debug mode will use TaoQuick as local file, and release mode for qrc resource.
+
+Release mode taoQuick.cmake also define a MACRO TaoQuickRes, that location to qrc file.
+
+your project should add TaoQuickRes to executable, like this:
+
+```cmake
+if (CMAKE_BUILD_TYPE MATCHES "Release")
+    add_executable(MyApp ${someSource} ${TaoQuickRes})
+else()
+    add_executable(MyApp ${someSource})
+endif()
+```
+4. add import path in cpp
+
+  Before load source qml, TaoQuick need add import path to QmlEngine and set imagePath to context.
+
+  if use QQuickView, TaoQuick can be use as flow:
+   
+```C++
+    view.engine()->addImportPath(TaoQuickImportPath);
+    view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+```
+
+   if use QmlEngine, TaoQuick can be use as flow:
+
+```C++
+    engine.addImportPath(TaoQuickImportPath);
+    engine.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+```
 
 ## Sponsorship
 

@@ -13,6 +13,7 @@ ListView {
     signal positionChanged(real mouseX, real mouseY)
     signal doubleClicked(real mouseX, real mouseY)
 
+
     focus: true
     clip: true
     interactive: false
@@ -33,6 +34,7 @@ ListView {
         active: visible
         snapMode: ScrollBar.SnapAlways
         stepSize: cusTableView.height/(cusTableView.model.visibledCount * CusConfig.fixedHeight) / 2
+        size: Math.max(cusTableView.height / cusTableView.contentHeight, 0.1)
     }
     CusShortCutKeys {
         id: tableKeys
@@ -59,6 +61,28 @@ ListView {
             if (tableKeys.ctrlPressed) {
                 tableKeys.selectAllPressed()
             }
+            break
+        case Qt.Key_Home:
+            if (tableKeys.ctrlPressed) {
+                cusTableView.positionViewAtBeginning()
+            }
+            break
+        case Qt.Key_End:
+            if (tableKeys.ctrlPressed) {
+                cusTableView.positionViewAtEnd()
+            }
+            break
+        case Qt.Key_PageUp:
+            vBar.decrease()
+            break
+        case Qt.Key_PageDown:
+            vBar.increase()
+            break
+        case Qt.Key_Down:
+            vBar.increase()
+            break
+        case Qt.Key_Up:
+            vBar.decrease()
             break
         default:
             break
