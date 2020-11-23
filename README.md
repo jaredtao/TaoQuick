@@ -2,34 +2,34 @@
 
 -------------------------------------------------------------
 
-# catalogue
-- [catalogue](#catalogue)
+# Contents
+- [Contents](#contents)
 - [TaoQuick](#taoquick)
-  - [Badge preview](#badge-preview)
-    - [Project](#project)
-    - [Build](#build)
-    - [Release](#release)
-    - [Repository status](#repository-status)
-    - [Issue](#issue)
-    - [Other status](#other-status)
-  - [Some Demo Preview](#some-demo-preview)
-    - [Main Page](#main-page)
-    - [Change Skin](#change-skin)
-    - [Multi-Language](#multi-language)
-    - [Some Button Controls](#some-button-controls)
-    - [Data entry Controls](#data-entry-controls)
-    - [Table Controls](#table-controls)
-    - [Rect Drag Controls](#rect-drag-controls)
-    - [Wizard](#wizard)
-    - [ShaderToy-Snail](#shadertoy-snail)
-    - [ShaderToy-SuperMario](#shadertoy-supermario)
-  - [Environment](#environment)
-  - [Project Struct](#project-struct)
-  - [TaoQuick Core Library](#taoquick-core-library)
-  - [Use TaoQuick](#use-taoquick)
-    - [qmake](#qmake)
-    - [cmake](#cmake)
-  - [Sponsorship](#sponsorship)
+- [Badge preview](#badge-preview)
+  - [Project](#project)
+  - [Build](#build)
+  - [Release](#release)
+  - [Repository status](#repository-status)
+  - [Issue](#issue)
+  - [Other status](#other-status)
+- [Some Demo Preview](#some-demo-preview)
+  - [Main Page](#main-page)
+  - [Change Skin](#change-skin)
+  - [Multi-Language](#multi-language)
+  - [Some Button Controls](#some-button-controls)
+  - [Data entry Controls](#data-entry-controls)
+  - [Table Controls](#table-controls)
+  - [Rect Drag Controls](#rect-drag-controls)
+  - [Wizard](#wizard)
+  - [ShaderToy-Snail](#shadertoy-snail)
+  - [ShaderToy-SuperMario](#shadertoy-supermario)
+- [Environment](#environment)
+- [Project Struct](#project-struct)
+- [TaoQuick Core Library](#taoquick-core-library)
+- [Use TaoQuick](#use-taoquick)
+  - [qmake](#qmake)
+  - [cmake](#cmake)
+- [Sponsorship](#sponsorship)
   
 # TaoQuick
 
@@ -37,9 +37,9 @@ This is a QtQuick/Qml Component library, integrated some commonly used QtQuick c
 
 make the appropriate function expansion to  facilitate development of Qml applications.
 
-## Badge preview
+# Badge preview
 
-### Project
+## Project
 
 |[Best Practices plan][CII-link]|[License][license-link]|
 |:--:|:--:|
@@ -50,7 +50,7 @@ make the appropriate function expansion to  facilitate development of Qml applic
 [CII-badge]: https://bestpractices.coreinfrastructure.org/projects/3060/badge
 [CII-link]: https://bestpractices.coreinfrastructure.org/projects/3060
 
-### Build
+## Build
 
 | [Windows][win-link]| [Ubuntu][ubuntu-link]|[MacOS][macos-link]|[Android][android-link]|[IOS][ios-link]|
 |---------------|---------------|-----------------|-----------------|----------------|
@@ -72,7 +72,7 @@ make the appropriate function expansion to  facilitate development of Qml applic
 [ios-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AIOS "IOSAction"
 [ios-badge]: https://github.com/JaredTao/TaoQuick/workflows/IOS/badge.svg "IOS"
 
-### Release
+## Release
 
 |[Released][release-link]|[Download][download-link]|Download count|
 |:--:|:--:|:--:|
@@ -84,7 +84,7 @@ make the appropriate function expansion to  facilitate development of Qml applic
 [download-badge]: https://img.shields.io/github/downloads/jaredtao/TaoQuick/total.svg "Download status"
 [download-latest]: https://img.shields.io/github/downloads/jaredtao/TaoQuick/latest/total.svg "latest status"
 
-### Repository status
+## Repository status
 
 |Tag|Languages|Top Language|code size|repo size|
 |:--: |:--: |:--:|:--:|:--:|
@@ -96,7 +96,7 @@ make the appropriate function expansion to  facilitate development of Qml applic
 [repo-size]: https://img.shields.io/github/repo-size/jaredtao/taoquick.svg "repo-size"
 [tag-latest]: https://img.shields.io/github/tag/jaredtao/taoquick.svg
 
-### Issue
+## Issue
 |[Issues][issues-link]|pull request|
 |:--:|:--:|
 |![issuse-badge]|![pull-request]|
@@ -107,7 +107,7 @@ make the appropriate function expansion to  facilitate development of Qml applic
 [pull-request]: https://img.shields.io/github/issues-pr/jaredtao/taoquick.svg
 [pull-closed]: https://img.shields.io/github/issues-pr-closed/jaredtao/taoquick.svg
 
-### Other status
+## Other status
 
 |commit freq|last commit|date|forks|stars|
 |:--:|:--:|:--:|:--:|:--:|
@@ -120,57 +120,57 @@ make the appropriate function expansion to  facilitate development of Qml applic
 [release-date]: https://img.shields.io/github/release-date/jaredtao/taoquick.svg
 
 
-## Some Demo Preview
+# Some Demo Preview
 
-### Main Page
+## Main Page
 
 ![](preview/main-en.png)
 
-### Change Skin
+## Change Skin
 
 ![](preview/skin-en.png)
 
-### Multi-Language
+## Multi-Language
 
 ![](preview/I18n-en.png)
 
-### Some Button Controls
+## Some Button Controls
 
 ![](preview/Buttons-en.png)
 
-### Data entry Controls
+## Data entry Controls
 
 ![](preview/Data-en.png)
 
-### Table Controls
+## Table Controls
 
 ![](preview/Table-en.png)
 
-### Rect Drag Controls
+## Rect Drag Controls
 
 ![](preview/rect-en.png)
 
-### Wizard
+## Wizard
 
 ![](preview/wizard-en.png)
 ![](preview/wizard.gif)
 
-### ShaderToy-Snail
+## ShaderToy-Snail
 
 ![](preview/snail.png)
 
-### ShaderToy-SuperMario
+## ShaderToy-SuperMario
 
 ![](preview/SuperMario.png)
 
 
-## Environment
+# Environment
 
 * Qt 5.9.0 or later
 
 * compatibility Qt5.15
 
-## Project Struct
+# Project Struct
 
 Project Struct as flow:
 
@@ -186,7 +186,7 @@ echo content as table：
 |mkspecs|qmake extern||
 |.github|github-actions|CI CD|
 
-## TaoQuick Core Library
+# TaoQuick Core Library
 
 Core Library source code path:
 
@@ -221,9 +221,9 @@ Other Contents reference to above table：
 |Effect|Effect|Animation、PageSwitch and ShaderToy|
 |Misc|Others||
 
-## Use TaoQuick 
+# Use TaoQuick 
 
-### qmake 
+## qmake 
 
 You just need import '.pri' file to project and add import Path to QmlEngine, TaoQuick will be use as local file or qrc resource.
 
@@ -281,7 +281,7 @@ Debug mode will use TaoQuick as local file, and release mode for qrc resource.
 ```
 
 ***
-### cmake
+## cmake
 
 TaoQuick start support cmake after version 0.5.0 , it's same as qmake.
 
@@ -338,7 +338,7 @@ endif()
     engine.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
 ```
 
-## Sponsorship
+# Sponsorship
 
 If you feel the share content is good, treat the author a drink.
 
