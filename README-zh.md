@@ -10,36 +10,36 @@
 
 - [目录](#目录)
 - [TaoQuick](#taoquick)
-  - [徽章预览](#徽章预览)
-    - [项目](#项目)
-    - [编译](#编译)
-    - [发布](#发布)
-    - [仓库状态](#仓库状态)
-    - [Issue](#issue)
-    - [其它状态](#其它状态)
-  - [部分效果预览](#部分效果预览)
-    - [主页](#主页)
-    - [换皮肤](#换皮肤)
-    - [多语言](#多语言)
-    - [各种按钮组件](#各种按钮组件)
-    - [数据输入组件](#数据输入组件)
-    - [表格组件](#表格组件)
-    - [矩形框组件](#矩形框组件)
-    - [用户向导](#用户向导)
-    - [动画特效-箭头流动](#动画特效-箭头流动)
-    - [动画特效-跟上节奏](#动画特效-跟上节奏)
-    - [ShaderToy-蜗牛](#shadertoy-蜗牛)
-    - [ShaderToy-超级玛丽](#shadertoy-超级玛丽)
-  - [开发环境](#开发环境)
-  - [项目结构](#项目结构)
-  - [核心库 TaoQuick](#核心库-taoquick)
-  - [使用核心库TaoQuick](#使用核心库taoquick)
-    - [qmake用法](#qmake用法)
-    - [cmake用法](#cmake用法)
-  - [联系作者](#联系作者)
-  - [寻找同道中人](#寻找同道中人)
-  - [赞助](#赞助)
-  - [赞助列表](#赞助列表)
+- [徽章预览](#徽章预览)
+  - [项目](#项目)
+  - [编译](#编译)
+  - [发布](#发布)
+  - [仓库状态](#仓库状态)
+  - [Issue](#issue)
+  - [其它状态](#其它状态)
+- [部分效果预览](#部分效果预览)
+  - [主页](#主页)
+  - [换皮肤](#换皮肤)
+  - [多语言](#多语言)
+  - [各种按钮组件](#各种按钮组件)
+  - [数据输入组件](#数据输入组件)
+  - [表格组件](#表格组件)
+  - [矩形框组件](#矩形框组件)
+  - [用户向导](#用户向导)
+  - [动画特效-箭头流动](#动画特效-箭头流动)
+  - [动画特效-跟上节奏](#动画特效-跟上节奏)
+  - [ShaderToy-蜗牛](#shadertoy-蜗牛)
+  - [ShaderToy-超级玛丽](#shadertoy-超级玛丽)
+- [开发环境](#开发环境)
+- [项目结构](#项目结构)
+- [核心库 TaoQuick](#核心库-taoquick)
+- [使用核心库TaoQuick](#使用核心库taoquick)
+  - [qmake用法](#qmake用法)
+  - [cmake用法](#cmake用法)
+- [联系作者](#联系作者)
+- [寻找同道中人](#寻找同道中人)
+- [赞助](#赞助)
+- [赞助列表](#赞助列表)
   
 # TaoQuick
 
@@ -52,9 +52,9 @@
 [涛哥的博客-国内镜像](https://jaredtao.gitee.io)
 
 
-## 徽章预览
+# 徽章预览
 
-### 项目
+## 项目
 
 |[最佳实践计划][CII-link]|[许可][license-link]|
 |:--:|:--:|
@@ -66,7 +66,7 @@
 [license-link]: https://github.com/jaredtao/TaoQuick/blob/master/LICENSE "LICENSE"
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg "MIT"
 
-### 编译
+## 编译
 
 | [Windows][win-link]| [Ubuntu][ubuntu-link]|[MacOS][macos-link]|[Android][android-link]|[IOS][ios-link]|
 |---------------|---------------|-----------------|-----------------|----------------|
@@ -88,7 +88,7 @@
 [ios-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AIOS "IOSAction"
 [ios-badge]: https://github.com/JaredTao/TaoQuick/workflows/IOS/badge.svg "IOS"
 
-### 发布
+## 发布
 
 |[已发布][release-link]|[下载][download-link]|下载次数|
 |:--:|:--:|:--:|
@@ -100,7 +100,7 @@
 [download-badge]: https://img.shields.io/github/downloads/jaredtao/TaoQuick/total.svg "Download status"
 [download-latest]: https://img.shields.io/github/downloads/jaredtao/TaoQuick/latest/total.svg "latest status"
 
-### 仓库状态
+## 仓库状态
 
 |最新标签|用到的编程语言数量|用最多的编程语言|代码大小|仓库大小|
 |:--: |:--: |:--:|:--:|:--:|
@@ -112,7 +112,7 @@
 [repo-size]: https://img.shields.io/github/repo-size/jaredtao/taoquick.svg "repo-size"
 [tag-latest]: https://img.shields.io/github/tag/jaredtao/taoquick.svg
 
-### Issue
+## Issue
 |[Issues][issues-link]|关掉的issue|pull请求|关掉的pull|
 |:--:|:--:|:--:|:--:|
 |![issuse-badge]|![issue-closed]|![pull-request]|![pull-closed]|
@@ -123,7 +123,7 @@
 [pull-request]: https://img.shields.io/github/issues-pr/jaredtao/taoquick.svg
 [pull-closed]: https://img.shields.io/github/issues-pr-closed/jaredtao/taoquick.svg
 
-### 其它状态
+## 其它状态
 
 |提交频率|最后一次提交|发布时间|forks|stars|
 |:--:|:--:|:--:|:--:|:--:|
@@ -136,66 +136,66 @@
 [release-date]: https://img.shields.io/github/release-date/jaredtao/taoquick.svg
 
 
-## 部分效果预览
+# 部分效果预览
 
-### 主页
+## 主页
 
 ![](preview/main.png)
 
-### 换皮肤
+## 换皮肤
 
 ![](preview/skin.png)
 
-### 多语言
+## 多语言
 
 ![](preview/I18n.png)
 
-### 各种按钮组件
+## 各种按钮组件
 
 ![](preview/Buttons.png)
 
-### 数据输入组件
+## 数据输入组件
 
 ![](preview/Data.png)
 
-### 表格组件
+## 表格组件
 
 ![](preview/Table.png)
 
-### 矩形框组件
+## 矩形框组件
 
 ![](preview/rect.png)
 
-### 用户向导
+## 用户向导
 
 ![](preview/wizard.png)
 ![](preview/wizard.gif)
 
-### 动画特效-箭头流动
+## 动画特效-箭头流动
 
 ![](preview/Arrow.png)
 
-### 动画特效-跟上节奏
+## 动画特效-跟上节奏
 
 ![](preview/byte.png)
 
 
-### ShaderToy-蜗牛
+## ShaderToy-蜗牛
 
 ![](preview/snail.png)
 
-### ShaderToy-超级玛丽
+## ShaderToy-超级玛丽
 
 ![](preview/SuperMario.png)
 
 
-## 开发环境
+# 开发环境
 
 * Qt 5.9.0 以上
 
 * 已兼容Qt5.15
 
-## 项目结构
+# 项目结构
 
 项目结构如下
 
@@ -210,7 +210,7 @@
 |mkspecs|qmake功能的扩展||
 |.github|github-actions配置|持续集成相关配置，用于自动化构建、发布|
 
-## 核心库 TaoQuick
+# 核心库 TaoQuick
 
 核心库目录为
 
@@ -245,11 +245,11 @@ CusConfig是核心库的全局配置,主要包括字体、颜色等,所有组件
 |Effect|特效|动画、页面切换效果、ShaderToy等|
 |Misc|其它杂项||
 
-## 使用核心库TaoQuick 
+# 使用核心库TaoQuick 
 
 详细的使用方法，可以阅读 [入门指南](入门指南.md)
 
-### qmake用法
+## qmake用法
 
 使用核心库，只需要在项目中导入'.pri'文件，并将qml路径加入到QmlEngine即可。
 
@@ -307,7 +307,7 @@ debug模式都以本地文件的方式使用，release模型则以qrc资源文�
     engine.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
 ```
 
-### cmake用法
+## cmake用法
 
 详细的使用方法，可以阅读 [入门指南](入门指南.md)
 
@@ -375,7 +375,7 @@ endif()
 
 ***
 
-## 联系作者
+# 联系作者
 
 作者：武威的涛哥
 
@@ -390,7 +390,7 @@ QQ: 759378563
 <img src="https://gitee.com/jaredtao/jaredtao/raw/master/img/weixin_connect.jpg?raw=true" width="30.35%" height="30%" /><img src="https://gitee.com/jaredtao/jaredtao/raw/master/img/qq_connect.jpg?raw=true" width="28%" height="28%" />
 
 *****
-## 寻找同道中人
+# 寻找同道中人
 
 欢迎加入涛哥的QQ群: Qt进阶之路 
 
@@ -406,7 +406,7 @@ QQ: 759378563
 
 ******
 
-## 赞助
+# 赞助
 
 
  觉得分享的内容还不错, 就请作者喝杯奶茶吧~~
@@ -415,7 +415,7 @@ QQ: 759378563
 <img src="https://gitee.com/jaredtao/jaredtao/raw/master/img/weixin.jpg?raw=true" width="30%" height="30%" /><img src="https://gitee.com/jaredtao/jaredtao/raw/master/img/zhifubao.jpg?raw=true" width="30%" height="30%" />
 
 
-## 赞助列表
+# 赞助列表
 
 感谢以下网友的赞助与支持(排名不分先后)：
 
