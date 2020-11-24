@@ -21,8 +21,8 @@ CONFIG(debug,debug|release) {
     DESTDIR = $${TaoQuick_RUN_TREE}/release
 }
 
-include($${TaoQuick_3RDPARTY_TREE}/3rdparty.pri)
-include($${TaoQuick_SOURCE_TREE}/src/TaoQuick/TaoQuick.pri)
+include($${TaoQuick_3RDPARTY_TREE}/TaoCommon/TaoCommon.pri)
+include($${TaoQuick_SOURCE_TREE}/src/TaoQuick/imports/imports.pri)
 include(TaoQuickShow.pri)
 
 win32:!mingw {
