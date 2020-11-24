@@ -33,7 +33,7 @@ Item {
     Component.onCompleted: {
         updateWidthList()
     }
-    function updateWidthList() {
+    property var updateWidthList: function() {
         var wL = [CusTableConstant.column0Width]
         //实际可以平均处理的数量
         var count = Math.min(averageCount, headerRoles.length)
