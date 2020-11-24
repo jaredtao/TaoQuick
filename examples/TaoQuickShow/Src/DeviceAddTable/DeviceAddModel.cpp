@@ -43,7 +43,7 @@ DeviceAddModel::~DeviceAddModel()
 }
 void DeviceAddModel::initData()
 {
-    const int N = 500000;
+    const int N = 50000;
 
     QList<TaoListItemBase *> objs;
     objs.reserve(N);
