@@ -10,9 +10,11 @@ bool DeviceAddItem::match(const QString &key)
     }
     if (m_name.contains(key, Qt::CaseInsensitive)) {
         return true;
-    } else if (m_address.contains(key, Qt::CaseInsensitive)) {
+    }
+    if (m_address.contains(key, Qt::CaseInsensitive)) {
         return true;
-    } else if (m_modelString.contains(key, Qt::CaseInsensitive)) {
+    }
+    if (m_modelString.contains(key, Qt::CaseInsensitive)) {
         return true;
     }
     return false;

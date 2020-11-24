@@ -57,7 +57,7 @@ public:
     {
         mSortCallbacks = callbacksMap;
     }
-    Q_INVOKABLE void sortByRole();
+    Q_INVOKABLE virtual void sortByRole();
     //[end] sort
 
     //[begin] count
@@ -66,6 +66,7 @@ public:
     int selectedCount() const { return mSelectedCount; }
 
     int checkedCount() const { return mCheckedCount; }
+
     const QString &searchKey() const { return mSearchkey; }
     //[end] count
 
@@ -100,16 +101,16 @@ signals:
     void sortRoleChanged(const QString &sortRole);
 
     void signalUpdateCalcCount();
-private slots:
+protected slots:
     void onSearch();
-private:
+protected:
     void updateAllCheck();
     void updateVisibleCount();
     void updateSelectedCount();
     void updateCheckedCount();
     void updateAlternate();
 
-private:
+protected:
     bool mAllChecked = false;
     bool mIsPressed = false;
     Qt::SortOrder mSortOrder = Qt::AscendingOrder;
