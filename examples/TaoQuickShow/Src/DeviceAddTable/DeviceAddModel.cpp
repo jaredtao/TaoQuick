@@ -1,13 +1,14 @@
 #include "DeviceAddModel.h"
 #include "DeviceAddItem.h"
-#include <QHostAddress>
 #include <QCoreApplication>
 #include <QEventLoop>
+#include <QHostAddress>
 #include <chrono>
 #include <random>
 const static QString nameTemplate("item %1");
 const static QString ipTemplate("%1.%2.%3.%4");
 const static QString modelTemplate("model %1");
+const static QStringList sHeaderRoles = { "name", "address", "modelString" };
 class DeviceAddModelPrivate
 {
 public:
@@ -16,30 +17,38 @@ public:
 };
 DeviceAddModel::DeviceAddModel(QObject *parent) : TaoListModel(parent), d(new DeviceAddModelPrivate)
 {
-    setHeaderRoles({ "name", "address", "modelString" });
-    QMap<QString, SortCallback> callBacks;
-    callBacks["name"] = [](TaoListItemBase *b1, TaoListItemBase *b2) -> bool {
-        return (static_cast<DeviceAddItem *>(b1))->name()
-                < (static_cast<DeviceAddItem *>(b2))->name();
-    };
-    callBacks["address"] = [](TaoListItemBase *b1, TaoListItemBase *b2) -> bool {
-        QHostAddress add1(static_cast<DeviceAddItem *>(b1)->address());
-        QHostAddress add2(static_cast<DeviceAddItem *>(b2)->address());
-        return add1.toIPv4Address() < add2.toIPv4Address();
-    };
-    callBacks["modelString"] = [](TaoListItemBase *b1, TaoListItemBase *b2) -> bool {
-        const QString &s1 = static_cast<DeviceAddItem *>(b1)->modelString();
-        const QString &s2 = static_cast<DeviceAddItem *>(b2)->modelString();
-        auto m1 = s1.mid(6, s1.length() - 6).toInt();
-        auto m2 = s2.mid(6, s2.length() - 6).toInt();
-        return m1 < m2;
-    };
-    setSortCallbacks(callBacks);
+    setHeaderRoles(sHeaderRoles);
+
 }
 
 DeviceAddModel::~DeviceAddModel()
 {
     delete d;
+}
+
+void DeviceAddModel::sortByRole()
+{
+    if (mDatas.count() <= 1) {
+        return;
+    }
+    int index = sHeaderRoles.indexOf(mSortRole);
+    switch (index) {
+    case 0: {
+        sortByName(mSortOrder);
+        break;
+    }
+    case 1: {
+        sortByAddress(mSortOrder);
+        break;
+    }
+    case 2: {
+        sortByModel(mSortOrder);
+        break;
+    }
+    default:
+        break;
+    }
+    updateAlternate();
 }
 void DeviceAddModel::initData()
 {
@@ -52,10 +61,10 @@ void DeviceAddModel::initData()
     for (int i = 0; i < N; ++i) {
         auto item = genOne(i);
         objs.append(item);
-//        if (i % 5 == 0)
-//        {
-//            qApp->processEvents(QEventLoop::ExcludeUserInputEvents);
-//        }
+        //        if (i % 5 == 0)
+        //        {
+        //            qApp->processEvents(QEventLoop::ExcludeUserInputEvents);
+        //        }
     }
 
     auto c2 = std::chrono::high_resolution_clock::now();
@@ -78,10 +87,10 @@ void DeviceAddModel::addMulti(int count)
     for (int i = 0; i < count; ++i) {
         auto item = genOne(d->u65535(d->randomEngine));
         objs.push_back(item);
-//        if (i % 5 == 0)
-//        {
-//            qApp->processEvents(QEventLoop::ExcludeUserInputEvents);
-//        }
+        //        if (i % 5 == 0)
+        //        {
+        //            qApp->processEvents(QEventLoop::ExcludeUserInputEvents);
+        //        }
     }
     append(objs);
 }
@@ -120,11 +129,9 @@ void DeviceAddModel::clearAll()
 
 void DeviceAddModel::removeSelected()
 {
-    for (int i = 0; i < mDatas.count();)
-    {
+    for (int i = 0; i < mDatas.count();) {
         const auto &obj = mDatas.at(i);
-        if (obj->isVisible() && obj->isSelected())
-        {
+        if (obj->isVisible() && obj->isSelected()) {
             removeAt(i);
         } else {
             ++i;
@@ -134,11 +141,9 @@ void DeviceAddModel::removeSelected()
 
 void DeviceAddModel::removeChecked()
 {
-    for (int i = 0; i < mDatas.count();)
-    {
+    for (int i = 0; i < mDatas.count();) {
         const auto &obj = mDatas.at(i);
-        if (obj->isVisible() && obj->isChecked())
-        {
+        if (obj->isVisible() && obj->isChecked()) {
             removeAt(i);
         } else {
             ++i;
@@ -149,6 +154,64 @@ void DeviceAddModel::removeChecked()
 void DeviceAddModel::removeRow(int row)
 {
     removeAt(row);
+}
+
+void DeviceAddModel::sortByName(Qt::SortOrder order)
+{
+    QList<TaoListItemBase *> copyObjs = mDatas;
+    if (order == Qt::SortOrder::AscendingOrder) {
+        std::sort(copyObjs.begin(), copyObjs.end(), [](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+            return (static_cast<DeviceAddItem *>(obj1))->name() < (static_cast<DeviceAddItem *>(obj2))->name();
+        });
+    } else {
+        std::sort(copyObjs.begin(), copyObjs.end(), [](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+            return (static_cast<DeviceAddItem *>(obj1))->name() > (static_cast<DeviceAddItem *>(obj2))->name();
+        });
+    }
+    beginResetModel();
+    mDatas = copyObjs;
+    endResetModel();
+}
+
+void DeviceAddModel::sortByAddress(Qt::SortOrder order)
+{
+    const auto addressToUint = [](const QString &address)->uint32_t {
+        auto list = address.split('.');
+        if (list.size() != 4) {
+            return 0;
+        }
+        return list.at(0).toUInt() * 256^3 + list.at(1).toUInt()* 256^2 + list.at(2).toUInt()* 256 + list.at(3).toUInt();
+    };
+    QList<TaoListItemBase *> copyObjs = mDatas;
+    if (order == Qt::SortOrder::AscendingOrder) {
+        std::sort(copyObjs.begin(), copyObjs.end(), [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+            return addressToUint(static_cast<DeviceAddItem *>(obj1)->address()) < addressToUint(static_cast<DeviceAddItem *>(obj2)->address());
+        });
+    } else {
+        std::sort(copyObjs.begin(), copyObjs.end(), [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+            return addressToUint(static_cast<DeviceAddItem *>(obj1)->address()) > addressToUint(static_cast<DeviceAddItem *>(obj2)->address());
+        });
+    }
+    beginResetModel();
+    mDatas = copyObjs;
+    endResetModel();
+}
+
+void DeviceAddModel::sortByModel(Qt::SortOrder order)
+{
+    QList<TaoListItemBase *> copyObjs = mDatas;
+    if (order == Qt::SortOrder::AscendingOrder) {
+        std::sort(copyObjs.begin(), copyObjs.end(), [](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+            return (static_cast<DeviceAddItem *>(obj1))->modelString().toULongLong() < (static_cast<DeviceAddItem *>(obj2))->modelString().toULongLong();
+        });
+    } else {
+        std::sort(copyObjs.begin(), copyObjs.end(), [](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+            return (static_cast<DeviceAddItem *>(obj1))->modelString().toULongLong() > (static_cast<DeviceAddItem *>(obj2))->modelString().toULongLong();
+        });
+    }
+    beginResetModel();
+    mDatas = copyObjs;
+    endResetModel();
 }
 
 DeviceAddItem *DeviceAddModel::genOne(uint32_t value)
