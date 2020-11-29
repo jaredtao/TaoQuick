@@ -20,42 +20,53 @@ struct Compare<double>
 {
     static bool isEqual(double d1, double d2) { return qFuzzyCompare(d1, d2); }
 };
+//member variant
+#define PROP_MEM(T, NAME, InitValue) T m_##NAME = InitValue;
 
-#define READ_PROPERTY(T, NAME, InitValue)                                                          \
-private:                                                                                           \
-    Q_PROPERTY(T NAME READ NAME NOTIFY NAME##Changed)                                              \
-public:                                                                                            \
-    const T &NAME() const { return m_##NAME; }                                                     \
-    Q_SIGNAL void NAME##Changed(const T &value);                                                   \
-                                                                                                   \
-private:                                                                                           \
-    T m_##NAME = InitValue;
+//get method
+#define PROP_GET(T, NAME)                                                                                                                                      \
+    const T &NAME() const { return m_##NAME; }
+//change signal
+#define PROP_CHANGE(T, NAME) Q_SIGNAL void NAME##Changed(const T &value);
 
-#define READONLY_PROPERTY(T, NAME, InitValue)                                                      \
-private:                                                                                           \
-    Q_PROPERTY(T NAME READ NAME CONSTANT)                                                          \
-public:                                                                                            \
-    const T &NAME() const { return m_##NAME; }                                                     \
-                                                                                                   \
-private:                                                                                           \
-    T m_##NAME = InitValue;
+//set method
+#define PROP_SET(T, NAME)                                                                                                                                      \
+    void set_##NAME(const T &value)                                                                                                                            \
+    {                                                                                                                                                          \
+        if (Compare<T>::isEqual(m_##NAME, value))                                                                                                              \
+            return;                                                                                                                                            \
+        m_##NAME = value;                                                                                                                                      \
+        emit NAME##Changed(value);                                                                                                                             \
+    }
+//ReadOnly property
+#define READONLY_PROPERTY(T, NAME, InitValue)                                                                                                                  \
+private:                                                                                                                                                       \
+    Q_PROPERTY(T NAME READ NAME CONSTANT)                                                                                                                      \
+public:                                                                                                                                                        \
+    PROP_GET(T, NAME)                                                                                                                                          \
+private:                                                                                                                                                       \
+    PROP_MEM(T, NAME, InitValue)
 
-#define AUTO_PROPERTY(T, NAME, InitValue)                                                          \
-private:                                                                                           \
-    Q_PROPERTY(T NAME READ NAME WRITE set_##NAME NOTIFY NAME##Changed)                             \
-public:                                                                                            \
-    const T &NAME() const { return m_##NAME; }                                                     \
-    Q_SIGNAL void NAME##Changed(const T &value);                                                   \
-    Q_SLOT void set_##NAME(const T &value)                                                         \
-    {                                                                                              \
-        if (Compare<T>::isEqual(m_##NAME, value))                                                  \
-            return;                                                                                \
-        m_##NAME = value;                                                                          \
-        emit NAME##Changed(value);                                                                 \
-    }                                                                                              \
-                                                                                                   \
-private:                                                                                           \
-    T m_##NAME = InitValue;
+//Readable property
+#define READ_PROPERTY(T, NAME, InitValue)                                                                                                                      \
+private:                                                                                                                                                       \
+    Q_PROPERTY(T NAME READ NAME NOTIFY NAME##Changed)                                                                                                          \
+public:                                                                                                                                                        \
+    PROP_GET(T, NAME)                                                                                                                                          \
+    PROP_SET(T, NAME)                                                                                                                                          \
+    PROP_CHANGE(T, NAME)                                                                                                                                       \
+private:                                                                                                                                                       \
+    PROP_MEM(T, NAME, InitValue)
+//Read Write property
+#define AUTO_PROPERTY(T, NAME, InitValue)                                                                                                                      \
+private:                                                                                                                                                       \
+    Q_PROPERTY(T NAME READ NAME WRITE set_##NAME NOTIFY NAME##Changed)                                                                                         \
+public:                                                                                                                                                        \
+    PROP_GET(T, NAME)                                                                                                                                          \
+    Q_SLOT PROP_SET(T, NAME)                                                                                                                                           \
+    PROP_CHANGE(T, NAME)                                                                                                                                       \
+private:                                                                                                                                                       \
+    PROP_MEM(T, NAME, InitValue)
 
 /**
 * Example:
