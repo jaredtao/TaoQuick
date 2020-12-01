@@ -32,8 +32,8 @@ jobs:
         qt_target: [android]
         qt_arch: [android_x86,android_armv7,android_arm64_v8a]
         include:
-          qt_ver: 5.15.2
-          qt_arch: ''
+          - qt_ver: 5.15.2
+            qt_arch: ''
     steps:
       - name: Install Qt 5.12.10
         if: ${{ matrix.qt_ver }} != '5.15.2'
