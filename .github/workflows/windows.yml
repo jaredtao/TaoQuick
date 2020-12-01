@@ -88,7 +88,7 @@ jobs:
           target: ${{ matrix.qt_target }}
           # Architecture for Windows/Android
           arch: ${{ matrix.qt_arch }}
-          dir: ${{ github.workspace }}/Qt
+          dir: ${{ github.workspace }}\\Qt
           # cached: ${{ steps.WindowsCacheQt.outputs.cache-hit }}
           cached: 'false'
       # 拉取代码
