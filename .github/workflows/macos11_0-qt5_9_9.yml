@@ -55,7 +55,13 @@ jobs:
           version: ${{ matrix.qt_ver }}
           # cached: ${{ steps.MacosCacheQt.outputs.cache-hit }}
           cached: 'false'
-      
+      - name: prepare env
+        run: |
+          softwareupdate --all --install --force
+          sudo rm -rf /Library/Developer/CommandLineTools
+          pip install multidict
+          sudo xcode-select --install
+          sudo xcode-select --switch /Library/Developer/CommandLineTools      
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
