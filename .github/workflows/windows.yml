@@ -32,7 +32,6 @@ jobs:
     strategy:
       # 矩阵配置
       matrix:
-        qt_target: desktop
         include:
           # 5.9.9 参考 https://mirrors.cloud.tencent.com/qt/online/qtsdkrepository/windows_x86/desktop/qt5_599/
           - qt_ver: 5.9.9
@@ -89,7 +88,7 @@ jobs:
           # Version of Qt to install
           version: ${{ matrix.qt_ver }}
           # Target platform for build
-          target: ${{ matrix.qt_target }}
+          # target: ${{ matrix.qt_target }}
           # dir: 'C:\'
           # Architecture for Windows/Android
           arch: ${{ matrix.qt_arch }}
