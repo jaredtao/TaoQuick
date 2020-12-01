@@ -1,30 +1,36 @@
 name: Ubuntu
 # Qt官方没有linux平台的x86包
 on: 
+  # push代码时触发workflow
   push:
     paths-ignore:
-      - 'README.md'
+      - '*.md'
       - 'LICENSE'
+      - "doc/**"
+      - "preview/**"
+  # pull_request时触发workflow
   pull_request:
     paths-ignore:
       - 'README.md'
       - 'LICENSE'
+      - "doc/**"
+      - "preview/**"
 jobs:
   build:
     name: Build
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-16.04,ubuntu-18.04]
-        qt_ver: [5.12.6]
+        os: [ubuntu-16.04,ubuntu-18.04,ubuntu-20.04]
+        qt_ver: [5.9.9,5.12.10,5.15.2]
         qt_arch: [gcc_64]
     steps:
-      - name: cacheQt
-        id: UbuntuCacheQt
-        uses: actions/cache@v1
-        with:
-          path: ../Qt/${{matrix.qt_ver}}/${{matrix.qt_arch}}
-          key: ${{ runner.os }}-Qt/${{matrix.qt_ver}}/${{matrix.qt_arch}}    
+      # - name: cacheQt
+      #   id: UbuntuCacheQt
+      #   uses: actions/cache@v1
+      #   with:
+      #     path: ../Qt/${{matrix.qt_ver}}/${{matrix.qt_arch}}
+      #     key: ${{ runner.os }}-Qt/${{matrix.qt_ver}}/${{matrix.qt_arch}}    
       # - name: setupQt
       #   if: steps.UbuntuCacheQt.outputs.cache-hit == 'true'
       #   shell: pwsh
@@ -36,10 +42,11 @@ jobs:
       #     echo "::add-path::$qt_Path/bin"
       - name: Install Qt
         # if: steps.UbuntuCacheQt.outputs.cache-hit != 'true'
-        uses: jurplel/install-qt-action@v2.6.3
+        uses: jurplel/install-qt-action@v2.10.0
         with:
           version: ${{ matrix.qt_ver }}
-          cached: ${{ steps.UbuntuCacheQt.outputs.cache-hit }}
+          # cached: ${{ steps.UbuntuCacheQt.outputs.cache-hit }}
+          cached: 'false'
       - name: ubuntu install GL library
         run: sudo apt-get install -y libglew-dev libglfw3-dev
       - uses: actions/checkout@v1
