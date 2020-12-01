@@ -8,6 +8,10 @@ on:
       - 'LICENSE'
       - "doc/**"
       - "preview/**"
+      - ".github/workflows/android.yml"
+      - ".github/workflows/ios.yml"
+      - ".github/workflows/macos.yml"
+      - ".github/workflows/ubuntu.yml"
   # pull_request时触发workflow
   pull_request:
     paths-ignore:
@@ -15,6 +19,10 @@ on:
       - 'LICENSE'
       - "doc/**"
       - "preview/**"
+      - ".github/workflows/android.yml"
+      - ".github/workflows/ios.yml"
+      - ".github/workflows/macos.yml"
+      - ".github/workflows/ubuntu.yml"  
 jobs:
   build:
     name: Build
@@ -80,7 +88,7 @@ jobs:
       - name: Install Qt
         # if: steps.WindowsCacheQt.outputs.cache-hit != 'true'
         # 使用外部action。这个action专门用来安装Qt
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v2.10.0
         with:
           # Version of Qt to install
           version: ${{ matrix.qt_ver }}
@@ -88,6 +96,7 @@ jobs:
           target: ${{ matrix.qt_target }}
           # Architecture for Windows/Android
           arch: ${{ matrix.qt_arch }}
+          aqtversion: '==0.10.0'
           # dir: 'C:\'
           # dir: ${{ github.workspace }}
           # dir: '${{ github.workspace }}'
