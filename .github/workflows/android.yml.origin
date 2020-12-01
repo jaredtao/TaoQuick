@@ -27,7 +27,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04,ubuntu-20.04]
+        os: [ubuntu-20.04]
         # 5.9.8 版本低，需要额外设置工具链。这里暂不支持。
         qt_ver: [5.12.10]
         qt_target: [android]
