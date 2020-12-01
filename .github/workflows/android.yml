@@ -2,32 +2,37 @@ name: Android
 on: 
   push:
     paths-ignore:
-      - 'README.md'
-      - 'LICENSE'      
+      - '*.md'
+      - 'LICENSE'
+      - "doc/**"
+      - "preview/**"
+  # pull_request时触发workflow
   pull_request:
     paths-ignore:
       - 'README.md'
-      - 'LICENSE'      
+      - 'LICENSE'
+      - "doc/**"
+      - "preview/**"  
 jobs:
   build:
     name: Build
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-18.04,ubuntu-20.04]
         # 5.9.8 版本低，需要额外设置工具链。这里暂不支持。
-        qt_ver: [5.12.6]
+        qt_ver: [5.12.10]
         qt_target: [android]
+        qt_arch: [android_x86,android_armv7,android_arm64_v8a]
         # android_arm64_v8a 暂时不支持. install-qt-action 依赖的aqtinstall版本为0.5*,需要升级
-        # qt_arch: [android_x86,android_armv7,android_arm64_v8a]
-        qt_arch: [android_x86,android_armv7]
+        # qt_arch: [android_x86,android_armv7]
         # exclude:
         #   - qt_ver: 5.9.8
         #     qt_arch: android_arm64_v8a
     steps:
       - name: Install Qt
         # if: steps.cacheqt.outputs.cache-hit != 'true'
-        uses: jurplel/install-qt-action@v2.6.3
+        uses: jurplel/install-qt-action@v2.10.0
         with:
           # Version of Qt to install
           version: ${{ matrix.qt_ver }}
