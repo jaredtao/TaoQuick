@@ -89,7 +89,6 @@ jobs:
           version: ${{ matrix.qt_ver }}
           # Target platform for build
           # target: ${{ matrix.qt_target }}
-          # dir: 'C:\'
           # Architecture for Windows/Android
           arch: ${{ matrix.qt_arch }}
           # aqtversion: '==0.7.9'
@@ -116,7 +115,7 @@ jobs:
         if: startsWith(github.event.ref, 'refs/tags/')
         env:
           VCINSTALLDIR: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC'
-          archiveName: ${{ matrix.qt_ver }}-${{ matrix.qt_target }}-${{ matrix.qt_arch }}
+          archiveName: ${{ matrix.qt_ver }}-${{ matrix.qt_arch }}
         shell: pwsh
         run: |
           # 创建文件夹
