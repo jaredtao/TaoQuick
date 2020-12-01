@@ -68,87 +68,25 @@
 
 ## 编译
 
-|平台|架构|Qt版本|状态|
-|--|--|--|--|
-|Windows|x86|5.9.9|![windows-qt5_9_9-win32_msvc2015-badge]|
-|Windows|x64|5.9.9|![windows-qt5_9_9-win64_msvc2017-badge]|
-|Windows|x86|5.12.10|![windows-qt5_12_10-win32_msvc2017-badge]|
-|Windows|x64|5.12.10|![windows-qt5_12_10-win64_msvc2017-badge]|
-|Windows|x86|5.15.2|![windows-qt5_15_2-win32_msvc2019-badge]|
-|Windows|x64|5.15.2|![windows-qt5_15_2-win64_msvc2019-badge]|
-|ubuntu18_04|x64|5.9.9|![ubuntu18_04-qt5_9_9-badge]|
-|ubuntu18_04|x64|5.12.10|![ubuntu18_04-qt5_12_10-badge]|
-|ubuntu18_04|x64|5.15.2|![ubuntu18_04-qt5_15_2-badge]|
-|ubuntu20_04|x64|5.9.9|![ubuntu20_04-qt5_9_9-badge]|
-|ubuntu20_04|x64|5.12.10|![ubuntu20_04-qt5_12_10-badge]|
-|ubuntu20_04|x64|5.15.2|![ubuntu20_04-qt5_15_2-badge]|
-|macos10_15|x64|5.9.9|![macos10_15-qt5_9_9-badge]|
-|macos10_15|x64|5.12.10|![macos10_15-qt5_12_10-badge]|
-|macos10_15|x64|5.15.2|![macos10_15-qt5_15_2-badge]|
-|macos11_0|x64|5.9.9|![macos11_0-qt5_9_9-badge]|
-|macos11_0|x64|5.12.10|![macos11_0-qt5_12_10-badge]|
-|macos11_0|x64|5.15.2|![macos11_0-qt5_15_2-badge]|
-|ios-macos10_15|x64|5.12.10|![ios-macos10_15-qt5_12_10-badge]|
-|ios-macos10_15|x64|5.15.2|![ios-macos10_15-qt5_15_2-badge]|
-|ios-macos11_0|x64|5.12.10|![ios-macos11_0-qt5_12_10-badge]|
-|ios-macos11_0|x64|5.15.2|![ios-macos11_0-qt5_15_2-badge]|
-|android-x86|x86|5.12.10|![android-x86-qt5_12_10-badge]|
-|android-armv7|armv7|5.12.10|![android-armv7-qt5_12_10-badge]|
-|android-arm64_v8a|arm64_v8a|5.12.10|![android-arm64_v8a-qt5_12_10-badge]|
-|android|android|5.15.2|![android-qt5_15_2-badge]|
+| [Windows][win-link]| [Ubuntu][ubuntu-link]|[MacOS][macos-link]|[Android][android-link]|[IOS][ios-link]|
+|---------------|---------------|-----------------|-----------------|----------------|
+| ![win-badge]  | ![ubuntu-badge]      | ![macos-badge] |![android-badge]   |![ios-badge]   |
 
-[windows-qt5_9_9-win32_msvc2015-badge]: https://github.com/JaredTao/TaoQuick/workflows/windows-qt5_9_9-win32_msvc2015/badge.svg  "windows-qt5_9_9-win32_msvc2015"
 
-[windows-qt5_9_9-win64_msvc2017-badge]: https://github.com/JaredTao/TaoQuick/workflows/windows-qt5_9_9-win64_msvc2017/badge.svg  "windows-qt5_9_9-win64_msvc2017"
+[win-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AWindows "WindowsAction"
+[win-badge]: https://github.com/JaredTao/TaoQuick/workflows/Windows/badge.svg  "Windows"
 
-[windows-qt5_12_10-win32_msvc2017-badge]: https://github.com/JaredTao/TaoQuick/workflows/windows-qt5_12_10-win32_msvc2017/badge.svg  "windows-qt5_12_10-win32_msvc2017"
+[ubuntu-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AUbuntu "UbuntuAction"
+[ubuntu-badge]: https://github.com/JaredTao/TaoQuick/workflows/Ubuntu/badge.svg "Ubuntu"
 
-[windows-qt5_12_10-win64_msvc2017-badge]: https://github.com/JaredTao/TaoQuick/workflows/windows-qt5_12_10-win64_msvc2017/badge.svg  "windows-qt5_12_10-win64_msvc2017"
+[macos-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AMacOS "MacOSAction"
+[macos-badge]: https://github.com/JaredTao/TaoQuick/workflows/MacOS/badge.svg "MacOS"
 
-[windows-qt5_15_2-win32_msvc2019-badge]: https://github.com/JaredTao/TaoQuick/workflows/windows-qt5_15_2-win32_msvc2019/badge.svg  "windows-qt5_15_2-win32_msvc2019"
+[android-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AAndroid "AndroidAction"
+[android-badge]: https://github.com/JaredTao/TaoQuick/workflows/Android/badge.svg "Android"
 
-[windows-qt5_15_2-win64_msvc2019-badge]: https://github.com/JaredTao/TaoQuick/workflows/windows-qt5_15_2-win64_msvc2019/badge.svg  "windows-qt5_15_2-win64_msvc2019"
-
-[ubuntu18_04-qt5_9_9-badge]: https://github.com/JaredTao/TaoQuick/workflows/ubuntu18_04-qt5_9_9/badge.svg  "ubuntu18_04-qt5_9_9"
-
-[ubuntu18_04-qt5_12_10-badge]: https://github.com/JaredTao/TaoQuick/workflows/ubuntu18_04-qt5_12_10/badge.svg  "ubuntu18_04-qt5_12_10"
-
-[ubuntu18_04-qt5_15_2-badge]: https://github.com/JaredTao/TaoQuick/workflows/ubuntu18_04-qt5_15_2/badge.svg  "ubuntu18_04-qt5_15_2"
-
-[ubuntu20_04-qt5_9_9-badge]: https://github.com/JaredTao/TaoQuick/workflows/ubuntu20_04-qt5_9_9/badge.svg  "ubuntu20_04-qt5_9_9"
-
-[ubuntu20_04-qt5_12_10-badge]: https://github.com/JaredTao/TaoQuick/workflows/ubuntu20_04-qt5_12_10/badge.svg  "ubuntu20_04-qt5_12_10"
-
-[ubuntu20_04-qt5_15_2-badge]: https://github.com/JaredTao/TaoQuick/workflows/ubuntu20_04-qt5_15_2/badge.svg  "ubuntu20_04-qt5_15_2"
-
-[macos10_15-qt5_9_9-badge]: https://github.com/JaredTao/TaoQuick/workflows/macos10_15-qt5_9_9/badge.svg  "macos10_15-qt5_9_9"
-
-[macos10_15-qt5_12_10-badge]: https://github.com/JaredTao/TaoQuick/workflows/macos10_15-qt5_12_10/badge.svg  "macos10_15-qt5_12_10"
-
-[macos10_15-qt5_15_2-badge]: https://github.com/JaredTao/TaoQuick/workflows/macos10_15-qt5_15_2/badge.svg  "macos10_15-qt5_15_2"
-
-[macos11_0-qt5_9_9-badge]: https://github.com/JaredTao/TaoQuick/workflows/macos11_0-qt5_9_9/badge.svg  "macos11_0-qt5_9_9"
-
-[macos11_0-qt5_12_10-badge]: https://github.com/JaredTao/TaoQuick/workflows/macos11_0-qt5_12_10/badge.svg  "macos11_0-qt5_12_10"
-
-[macos11_0-qt5_15_2-badge]: https://github.com/JaredTao/TaoQuick/workflows/macos11_0-qt5_15_2/badge.svg  "macos11_0-qt5_15_2"
-
-[ios-macos10_15-qt5_12_10-badge]: https://github.com/JaredTao/TaoQuick/workflows/ios-macos10_15-qt5_12_10/badge.svg  "ios-macos10_15-qt5_12_10"
-
-[ios-macos10_15-qt5_15_2-badge]: https://github.com/JaredTao/TaoQuick/workflows/ios-macos10_15-qt5_15_2/badge.svg  "ios-macos10_15-qt5_15_2"
-
-[ios-macos11_0-qt5_12_10-badge]: https://github.com/JaredTao/TaoQuick/workflows/ios-macos11_0-qt5_12_10/badge.svg  "ios-macos11_0-qt5_12_10"
-
-[ios-macos11_0-qt5_15_2-badge]: https://github.com/JaredTao/TaoQuick/workflows/ios-macos11_0-qt5_15_2/badge.svg  "ios-macos11_0-qt5_15_2"
-
-[android-x86-qt5_12_10-badge]: https://github.com/JaredTao/TaoQuick/workflows/android-x86-qt5_12_10/badge.svg  "android-x86-qt5_12_10"
-
-[android-armv7-qt5_12_10-badge]: https://github.com/JaredTao/TaoQuick/workflows/android-armv7-qt5_12_10/badge.svg  "android-armv7-qt5_12_10"
-
-[android-arm64_v8a-qt5_12_10-badge]: https://github.com/JaredTao/TaoQuick/workflows/android-arm64_v8a-qt5_12_10/badge.svg  "android-arm64_v8a-qt5_12_10"
-
-[android-qt5_15_2-badge]: https://github.com/JaredTao/TaoQuick/workflows/android-qt5_15_2/badge.svg  "android-qt5_15_2"
-
+[ios-link]: https://github.com/JaredTao/TaoQuick/actions?query=workflow%3AIOS "IOSAction"
+[ios-badge]: https://github.com/JaredTao/TaoQuick/workflows/IOS/badge.svg "IOS"
 
 ## 发布
 
