@@ -28,18 +28,15 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-20.04]
-        # 5.9.8 版本低，需要额外设置工具链。这里暂不支持。
         qt_ver: [5.12.10]
         qt_target: [android]
         qt_arch: [android_x86,android_armv7,android_arm64_v8a]
-        # android_arm64_v8a 暂时不支持. install-qt-action 依赖的aqtinstall版本为0.5*,需要升级
-        # qt_arch: [android_x86,android_armv7]
-        # exclude:
-        #   - qt_ver: 5.9.8
-        #     qt_arch: android_arm64_v8a
+        include:
+          qt_ver: 5.15.2
+          qt_arch: ''
     steps:
-      - name: Install Qt
-        # if: steps.cacheqt.outputs.cache-hit != 'true'
+      - name: Install Qt 5.12.10
+        if: ${{ matrix.qt_ver }} != '5.15.2'
         uses: jurplel/install-qt-action@v2.10.0
         with:
           # Version of Qt to install
@@ -48,6 +45,16 @@ jobs:
           target: ${{ matrix.qt_target }}
           # Architecture for Windows/Android
           arch: ${{ matrix.qt_arch }}
+      - name: Install Qt 5.15.2
+        if: ${{ matrix.qt_ver }} == '5.15.2'
+        uses: jurplel/install-qt-action@v2.10.0
+        with:
+          # Version of Qt to install
+          version: ${{ matrix.qt_ver }}
+          # Target platform for build
+          target: ${{ matrix.qt_target }}
+          # Architecture for Windows/Android
+          # arch: ${{ matrix.qt_arch }}          
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
