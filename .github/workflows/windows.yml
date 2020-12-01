@@ -88,14 +88,13 @@ jobs:
       - name: Install Qt
         # if: steps.WindowsCacheQt.outputs.cache-hit != 'true'
         # 使用外部action。这个action专门用来安装Qt
-        uses: KomodoPlatform/install-qt-action@v2.9.0
+        uses: jurplel/install-qt-action@v2.7.1
         with:
           # Version of Qt to install
           version: ${{ matrix.qt_ver }}
           # Target platform for build
-          host: 'windows'
           target: ${{ matrix.qt_target }}
-          dir: 'C:\'
+          # dir: 'C:\'
           # Architecture for Windows/Android
           arch: ${{ matrix.qt_arch }}
           # aqtversion: '==0.7.9'
