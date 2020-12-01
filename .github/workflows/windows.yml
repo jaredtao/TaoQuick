@@ -32,7 +32,7 @@ jobs:
     strategy:
       # 矩阵配置
       matrix:
-        qt_target: [desktop]
+        qt_target: desktop
         include:
           # 5.9.9 参考 https://mirrors.cloud.tencent.com/qt/online/qtsdkrepository/windows_x86/desktop/qt5_599/
           - qt_ver: 5.9.9
