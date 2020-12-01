@@ -1,4 +1,4 @@
-name: ios-macos11_10-qt5_12_10
+name: ios-macos11_0-qt5_12_10
 on: 
   push:
     paths-ignore:
@@ -39,6 +39,13 @@ jobs:
           version: ${{ matrix.qt_ver }}
           # Target platform for build
           target: ${{ matrix.qt_target }}
+      - name: prepare env
+        run: |
+          softwareupdate --all --install --force
+          sudo rm -rf /Library/Developer/CommandLineTools
+          pip install multidict
+          sudo xcode-select --install
+          sudo xcode-select --switch /Library/Developer/CommandLineTools          
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
