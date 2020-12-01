@@ -3,7 +3,6 @@ name: Windows
 on: 
   # push代码时触发workflow
   push:
-    # 忽略README.md
     paths-ignore:
       - '*.md'
       - 'LICENSE'
@@ -11,7 +10,6 @@ on:
       - "preview/**"
   # pull_request时触发workflow
   pull_request:
-    # 忽略README.md
     paths-ignore:
       - 'README.md'
       - 'LICENSE'
@@ -90,6 +88,7 @@ jobs:
           target: ${{ matrix.qt_target }}
           # Architecture for Windows/Android
           arch: ${{ matrix.qt_arch }}
+          dir: ${{ github.workspace }}/Qt
           # cached: ${{ steps.WindowsCacheQt.outputs.cache-hit }}
           cached: 'false'
       # 拉取代码
@@ -126,10 +125,10 @@ jobs:
           $name = ${env:archiveName}
           echo "::set-output name=packageName::$name"
       # 上传artifacts          
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ${{ steps.package.outputs.packageName }}
-          path: ${{ steps.package.outputs.packageName }}.zip
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: ${{ steps.package.outputs.packageName }}
+      #     path: ${{ steps.package.outputs.packageName }}.zip
       # tag 上传Release
       - name: uploadRelease
         if: startsWith(github.event.ref, 'refs/tags/')
