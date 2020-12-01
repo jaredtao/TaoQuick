@@ -80,7 +80,7 @@ jobs:
       - name: Install Qt
         # if: steps.WindowsCacheQt.outputs.cache-hit != 'true'
         # 使用外部action。这个action专门用来安装Qt
-        uses: jurplel/install-qt-action@v2.9.0
+        uses: jurplel/install-qt-action@v2.8.0
         with:
           # Version of Qt to install
           version: ${{ matrix.qt_ver }}
@@ -88,7 +88,7 @@ jobs:
           target: ${{ matrix.qt_target }}
           # Architecture for Windows/Android
           arch: ${{ matrix.qt_arch }}
-          dir: 'C:\'
+          # dir: 'C:\'
           # dir: ${{ github.workspace }}
           # dir: '${{ github.workspace }}'
           # cached: ${{ steps.WindowsCacheQt.outputs.cache-hit }}
