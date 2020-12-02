@@ -1,28 +1,25 @@
 name: Android
 on: 
+  # push代码时触发workflow
   push:
-    paths-ignore:
-      - '*.md'
-      - 'LICENSE'
-      - "doc/**"
-      - "preview/**"
-      - ".github/workflows/ios*.yml"
-      - ".github/workflows/macos*.yml"
-      - ".github/workflows/ubuntu*.yml"
-      - ".github/workflows/windows*.yml"      
-      - ".github/workflows/android-*.yml"      
+    paths:
+      - '3rdparty/**'
+      - 'examples/**'
+      - 'mkspecs/**'
+      - 'src/**'
+      - '.qmake.conf'
+      - 'TaoQuick.pro'
+      - '.github/workflows/android.yml'
   # pull_request时触发workflow
   pull_request:
-    paths-ignore:
-      - 'README.md'
-      - 'LICENSE'
-      - "doc/**"
-      - "preview/**"  
-      - ".github/workflows/ios*.yml"
-      - ".github/workflows/macos*.yml"
-      - ".github/workflows/ubuntu*.yml"
-      - ".github/workflows/windows*.yml"          
-      - ".github/workflows/android-*.yml"            
+    paths:
+      - '3rdparty/**'
+      - 'examples/**'
+      - 'mkspecs/**'
+      - 'src/**'
+      - '.qmake.conf'
+      - 'TaoQuick.pro'
+      - '.github/workflows/android.yml'            
 jobs:
   build:
     name: Build
