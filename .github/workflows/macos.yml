@@ -33,11 +33,6 @@ jobs:
     env:
       targetName: TaoQuickShow
     steps: 
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v2.10.0
-        with:
-          version: ${{ matrix.qt_ver }}
-          cached: 'false'
       - name: prepare env
         if: ${{ matrix.os }} == 'macos-11.0'
         run: |
@@ -45,7 +40,12 @@ jobs:
           sudo rm -rf /Library/Developer/CommandLineTools
           pip install multidict
           sudo xcode-select --install
-          sudo xcode-select --switch /Library/Developer/CommandLineTools            
+          sudo xcode-select --switch /Library/Developer/CommandLineTools         
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v2.10.0
+        with:
+          version: ${{ matrix.qt_ver }}
+          cached: 'false'
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
