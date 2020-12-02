@@ -10,6 +10,7 @@ on:
       - ".github/workflows/macos*.yml"
       - ".github/workflows/ubuntu*.yml"
       - ".github/workflows/windows*.yml"      
+      - ".github/workflows/android-*.yml"      
   # pull_request时触发workflow
   pull_request:
     paths-ignore:
@@ -21,6 +22,7 @@ on:
       - ".github/workflows/macos*.yml"
       - ".github/workflows/ubuntu*.yml"
       - ".github/workflows/windows*.yml"          
+      - ".github/workflows/android-*.yml"            
 jobs:
   build:
     name: Build
