@@ -36,7 +36,6 @@ jobs:
       - name: prepare env
         run: |
           softwareupdate --all --install --force
-          sudo xcode-select --install
           sudo xcode-select --switch /Library/Developer/CommandLineTools 
                
       - name: Install Qt
