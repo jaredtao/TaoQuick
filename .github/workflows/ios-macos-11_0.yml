@@ -1,4 +1,4 @@
-name: IOS
+name: ios-macos-11_0
 on: 
   push:
     paths-ignore:
@@ -27,10 +27,18 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-10.15]
+        os: [macos-11.0]
         qt_ver: [5.12.10,5.15.2]
         qt_target: [ios]
     steps:
+      - name: prepare env
+        run: |
+          softwareupdate --all --install --force
+          sudo rm -rf /Library/Developer/CommandLineTools
+          pip install multidict
+          sudo xcode-select --install
+          sudo xcode-select --switch /Library/Developer/CommandLineTools 
+               
       - name: Install Qt
         # if: steps.cacheqt.outputs.cache-hit != 'true'
         uses: jurplel/install-qt-action@v2.10.0
