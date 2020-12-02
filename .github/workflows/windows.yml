@@ -8,10 +8,10 @@ on:
       - 'LICENSE'
       - "doc/**"
       - "preview/**"
-      - ".github/workflows/android.yml"
-      - ".github/workflows/ios.yml"
-      - ".github/workflows/macos.yml"
-      - ".github/workflows/ubuntu.yml"
+      - ".github/workflows/android*.yml"
+      - ".github/workflows/ios*.yml"
+      - ".github/workflows/macos*.yml"
+      - ".github/workflows/ubuntu*.yml"
   # pull_request时触发workflow
   pull_request:
     paths-ignore:
@@ -19,10 +19,10 @@ on:
       - 'LICENSE'
       - "doc/**"
       - "preview/**"
-      - ".github/workflows/android.yml"
-      - ".github/workflows/ios.yml"
-      - ".github/workflows/macos.yml"
-      - ".github/workflows/ubuntu.yml"  
+      - ".github/workflows/android*.yml"
+      - ".github/workflows/ios*.yml"
+      - ".github/workflows/macos*.yml"
+      - ".github/workflows/ubuntu*.yml"  
 jobs:
   build:
     name: Build
