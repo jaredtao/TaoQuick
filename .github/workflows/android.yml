@@ -39,7 +39,7 @@ jobs:
 
     steps:
       - name: Install Qt 5.12.10
-        if: ${{ matrix.qt_ver }} != '5.15.2'
+        if: ${{ matrix.qt_ver }} == '5.12.10'
         uses: jurplel/install-qt-action@v2.10.0
         with:
           # Version of Qt to install
