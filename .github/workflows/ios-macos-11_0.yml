@@ -10,6 +10,7 @@ on:
       - ".github/workflows/macos*.yml"
       - ".github/workflows/ubuntu*.yml"
       - ".github/workflows/windows*.yml"      
+      - ".github/workflows/ios.yml"  
   # pull_request时触发workflow
   pull_request:
     paths-ignore:
@@ -21,6 +22,7 @@ on:
       - ".github/workflows/macos*.yml"
       - ".github/workflows/ubuntu*.yml"
       - ".github/workflows/windows*.yml"      
+      - ".github/workflows/ios.yml"  
 jobs:
   build:
     name: Build
@@ -34,8 +36,6 @@ jobs:
       - name: prepare env
         run: |
           softwareupdate --all --install --force
-          sudo rm -rf /Library/Developer/CommandLineTools
-          pip3 install multidict
           sudo xcode-select --install
           sudo xcode-select --switch /Library/Developer/CommandLineTools 
                
