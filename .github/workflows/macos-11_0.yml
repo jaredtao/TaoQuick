@@ -37,7 +37,7 @@ jobs:
         run: |
           softwareupdate --all --install --force
           sudo rm -rf /Library/Developer/CommandLineTools
-          pip install multidict
+          pip3 install multidict
           sudo xcode-select --install
           sudo xcode-select --switch /Library/Developer/CommandLineTools         
       - name: Install Qt
