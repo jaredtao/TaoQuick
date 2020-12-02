@@ -3,26 +3,24 @@ name: Ubuntu
 on: 
   # push代码时触发workflow
   push:
-    paths-ignore:
-      - '*.md'
-      - 'LICENSE'
-      - "doc/**"
-      - "preview/**"
-      - ".github/workflows/android*.yml"
-      - ".github/workflows/ios*.yml"
-      - ".github/workflows/macos*.yml"
-      - ".github/workflows/windows*.yml"      
+    paths:
+      - '3rdparty/**'
+      - 'examples/**'
+      - 'mkspecs/**'
+      - 'src/**'
+      - '.qmake.conf'
+      - 'TaoQuick.pro'
+      - '.github/workflows/ubuntu.yml'
   # pull_request时触发workflow
   pull_request:
-    paths-ignore:
-      - 'README.md'
-      - 'LICENSE'
-      - "doc/**"
-      - "preview/**"
-      - ".github/workflows/android*.yml"
-      - ".github/workflows/ios*.yml"
-      - ".github/workflows/macos*.yml"
-      - ".github/workflows/windows*.yml"      
+    paths:
+      - '3rdparty/**'
+      - 'examples/**'
+      - 'mkspecs/**'
+      - 'src/**'
+      - '.qmake.conf'
+      - 'TaoQuick.pro'
+      - '.github/workflows/ubuntu.yml'     
 jobs:
   build:
     name: Build
