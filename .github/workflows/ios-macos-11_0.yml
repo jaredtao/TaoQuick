@@ -1,28 +1,25 @@
 name: ios-macos-11_0
 on: 
+  # push代码时触发workflow
   push:
-    paths-ignore:
-      - '*.md'
-      - 'LICENSE'
-      - "doc/**"
-      - "preview/**"
-      - ".github/workflows/android*.yml"
-      - ".github/workflows/macos*.yml"
-      - ".github/workflows/ubuntu*.yml"
-      - ".github/workflows/windows*.yml"      
-      - ".github/workflows/ios.yml"  
+    paths:
+      - '3rdparty/**'
+      - 'examples/**'
+      - 'mkspecs/**'
+      - 'src/**'
+      - '.qmake.conf'
+      - 'TaoQuick.pro'
+      - '.github/workflows/ios-macos-11_0.yml'
   # pull_request时触发workflow
   pull_request:
-    paths-ignore:
-      - 'README.md'
-      - 'LICENSE'
-      - "doc/**"
-      - "preview/**"
-      - ".github/workflows/android*.yml"
-      - ".github/workflows/macos*.yml"
-      - ".github/workflows/ubuntu*.yml"
-      - ".github/workflows/windows*.yml"      
-      - ".github/workflows/ios.yml"  
+    paths:
+      - '3rdparty/**'
+      - 'examples/**'
+      - 'mkspecs/**'
+      - 'src/**'
+      - '.qmake.conf'
+      - 'TaoQuick.pro'
+      - '.github/workflows/ios-macos-11_0.yml' 
 jobs:
   build:
     name: Build
