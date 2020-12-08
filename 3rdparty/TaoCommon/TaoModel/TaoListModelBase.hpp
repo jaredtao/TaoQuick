@@ -21,6 +21,8 @@ public:
     //[begin] reset data
     void resetData(const QList<T> &datas);
     const QList<T> &datas() const { return mDatas; }
+    // quick reset
+    void quickResetData(const QList<T> &datas);
     //[end] reset data
 
     //[begin] add data
@@ -50,8 +52,7 @@ TaoListModelBase<T>::TaoListModelBase(QObject *parent) : Super(parent)
 {
 }
 template<class T>
-TaoListModelBase<T>::TaoListModelBase(const QList<T> &datas, QObject *parent)
-    : Super(parent), mDatas(datas)
+TaoListModelBase<T>::TaoListModelBase(const QList<T> &datas, QObject *parent) : Super(parent), mDatas(datas)
 {
 }
 template<class T>
@@ -95,14 +96,64 @@ void TaoListModelBase<T>::resetData(const QList<T> &datas)
     qDeleteAll(oldObjs);
     updateCalcInfo();
 }
+
+template<class T>
+void TaoListModelBase<T>::quickResetData(const QList<T> &datas)
+{
+    if (datas.isEmpty()) {
+        clear();
+        return;
+    }
+    if (mDatas.isEmpty()) {
+        append(datas);
+    } else {
+        auto delta = mDatas.count() - datas.count();
+        if (delta > 0) {
+            //删掉多余的
+            beginRemoveRows({}, datas.count(), mDatas.count() - 1);
+            for (int i = 0; i < delta; ++i) {
+                auto pObj = mDatas.last();
+                mDatas.removeLast();
+                pObj->deleteLater();
+            }
+            endRemoveRows();
+            //标记旧的
+            auto copy = mDatas;
+            //存储新的
+            mDatas = datas;
+            //刷新数据
+            emit dataChanged(index(0, 0), index(datas.count() - 1, 0));
+            qDeleteAll(copy);
+        } else if (delta < 0) {
+            //标记旧的
+            auto copy = mDatas;
+            beginInsertRows({}, mDatas.count(), mDatas.count() - delta);
+            //存储新的
+            mDatas = datas;
+            endInsertRows();
+            //刷新数据
+            emit dataChanged(index(0, 0), index(datas.count() - 1, 0));
+            qDeleteAll(copy);
+        } else {
+            //标记旧的
+            auto copy = mDatas;
+            //存储新的
+            mDatas = datas;
+            //刷新数据
+            emit dataChanged(index(0, 0), index(datas.count() - 1, 0));
+            qDeleteAll(copy);
+        }
+        updateCalcInfo();
+    }
+}
+
 template<class T>
 void TaoListModelBase<T>::append(const QList<T> &datas)
 {
-    if (datas.count() <= 0)
-    {
+    if (datas.count() <= 0) {
         return;
     }
-    beginInsertRows({}, mDatas.count(), mDatas.count() + datas.count() -1);
+    beginInsertRows({}, mDatas.count(), mDatas.count() + datas.count() - 1);
     mDatas.append(datas);
     endInsertRows();
     updateCalcInfo();
@@ -121,7 +172,7 @@ void TaoListModelBase<T>::insert(int row, const QList<T> &datas)
     if (row < 0 || row > mDatas.size()) {
         return;
     }
-    beginInsertRows({}, row,  row + datas.count() - 1);
+    beginInsertRows({}, row, row + datas.count() - 1);
     int srow = row;
     for (const auto &obj : datas) {
         mDatas.insert(srow, obj);
@@ -133,8 +184,7 @@ void TaoListModelBase<T>::insert(int row, const QList<T> &datas)
 template<class T>
 void TaoListModelBase<T>::clear()
 {
-    if (mDatas.count() <= 0)
-    {
+    if (mDatas.count() <= 0) {
         return;
     }
     beginRemoveRows({}, 0, mDatas.count() - 1);

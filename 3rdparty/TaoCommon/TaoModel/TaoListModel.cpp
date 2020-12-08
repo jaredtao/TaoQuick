@@ -189,7 +189,7 @@ void TaoListModel::doRelease()
 void TaoListModel::sortByRole()
 {
     const static auto addRessStr = QStringLiteral("address");
-    if (mDatas.isEmpty()) {
+    if (mDatas.size() <= 1) {
         return;
     }
 
@@ -207,9 +207,9 @@ void TaoListModel::sortByRole()
                               return addressCallback(obj2, obj1);
                           });
             }
-            beginResetModel();
             mDatas = copyObjs;
-            endResetModel();
+            emit dataChanged(index(0, 0), index(mDatas.count() - 1, 0));
+
         }
     } else {
         if (addressCallback) {
@@ -235,9 +235,9 @@ void TaoListModel::sortByRole()
                               return mSortCallbacks.value(mSortRole)(obj2, obj1);
                           });
             }
-            beginResetModel();
             mDatas = copyObjs;
-            endResetModel();
+            emit dataChanged(index(0, 0), index(mDatas.count() - 1, 0));
+
         }
     }
     updateAlternate();
