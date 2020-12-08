@@ -12,6 +12,22 @@ class TAO_API TaoListItemBase : public QObject
 public:
     explicit TaoListItemBase(QObject *parent = nullptr);
     ~TaoListItemBase() override;
+    TaoListItemBase(const TaoListItemBase &other)
+    {
+        setIsChecked(other.isChecked());
+        setIsSelected(other.isSelected());
+        setIsVisible(other.isVisible());
+        setIsAlternate(other.isAlternate());
+    }
+
+    TaoListItemBase &operator=(const TaoListItemBase &other)
+    {
+        setIsChecked(other.isChecked());
+        setIsSelected(other.isSelected());
+        setIsVisible(other.isVisible());
+        setIsAlternate(other.isAlternate());
+        return *this;
+    }
     bool isChecked() const { return mIsChecked; }
 
     bool isSelected() const { return mIsSelected; }

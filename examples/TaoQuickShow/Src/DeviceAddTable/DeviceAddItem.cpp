@@ -1,6 +1,9 @@
 #include "DeviceAddItem.h"
-
-DeviceAddItem::DeviceAddItem(QObject *parent) : TaoListItemBase(parent) { }
+#include <QHostAddress>
+DeviceAddItem::DeviceAddItem(QObject *parent) : TaoListItemBase(parent)
+{
+    connect(this, &DeviceAddItem::addressChanged, this, [this]() { m_ipv4Address = QHostAddress(address()).toIPv4Address(); });
+}
 
 DeviceAddItem::~DeviceAddItem() { }
 bool DeviceAddItem::match(const QString &key)

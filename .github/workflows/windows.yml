@@ -89,6 +89,7 @@ jobs:
           nmake
       # tag 打包
       - name: package
+        id: package
         if: startsWith(github.event.ref, 'refs/tags/')
         env:
           VCINSTALLDIR: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC'
@@ -99,9 +100,12 @@ jobs:
           New-Item -ItemType Directory ${env:archiveName}
           # 拷贝exe
           Copy-Item bin\release\${env:targetName} ${env:archiveName}\
-          Copy-Item bin\release\Trans ${env:archiveName}\Trans -Recurse -Exclude *.ilk,*.exp,*.lib,*.pdb
+          Copy-Item bin\release\Trans ${env:archiveName}\Trans -Recurse
           # 拷贝依赖
           windeployqt --qmldir . ${env:archiveName}\${env:targetName}
+          # 删除不必要的库
+          $excludeList=@("*.qmlc", "*.ilk", "*.exp", "*.lib", "*.pdb")
+          Remove-Item -Path Qml -Include $excludeList -Recurse -Force
           # 打包zip
           Compress-Archive -Path ${env:archiveName} ${env:archiveName}'.zip'
           # 记录packageName给后续step

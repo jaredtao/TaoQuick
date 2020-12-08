@@ -72,6 +72,10 @@ public:
 
     void updateCalcInfo() override;
 
+    Q_INVOKABLE void notifyScrollTo(int index)
+    {
+        emit scrollTo(index);
+    }
 public slots:
     void setAllChecked(bool allChecked);
 
@@ -86,7 +90,7 @@ public slots:
     void setCheckedCount(int checkedCount);
 
 signals:
-
+    void scrollTo(int index);
     void allCheckedChanged(bool allChecked);
     void visibledCountChanged(int visibledCount);
 

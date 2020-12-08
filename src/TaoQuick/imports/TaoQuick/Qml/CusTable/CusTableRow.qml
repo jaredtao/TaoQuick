@@ -48,19 +48,22 @@ Rectangle {
     }
     Repeater {
         model: roles
-        Item {
-            id: columnItem
+        Loader {
             x: xList[index + 1]
             width: widthList[index + 1]
             height: parent.height
-            CusLabel {
-                id: textLabel
-                text: dataObj ? (qsTr(String(dataObj[roles[index]])) + CusConfig.transString) : ""
+            asynchronous: true
+            sourceComponent: Item {
                 anchors.fill: parent
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                color: textColor
+                CusLabel {
+                    text: dataObj ? (qsTr(String(dataObj[roles[index]])) + CusConfig.transString) : ""
+                    anchors.fill: parent
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    color: textColor
+                }
             }
         }
+
     }
 }
