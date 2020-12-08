@@ -18,7 +18,6 @@ public:
 DeviceAddModel::DeviceAddModel(QObject *parent) : TaoListModel(parent), d(new DeviceAddModelPrivate)
 {
     setHeaderRoles(sHeaderRoles);
-
 }
 
 DeviceAddModel::~DeviceAddModel()
@@ -70,7 +69,7 @@ void DeviceAddModel::initData()
     auto c2 = std::chrono::high_resolution_clock::now();
     auto micro = std::chrono::duration_cast<std::chrono::milliseconds>(c2 - c1).count();
     qWarning() << "general" << N << "cost" << micro << "ms";
-    resetData(objs);
+    quickResetData(objs);
 }
 
 void DeviceAddModel::addOne()
@@ -168,33 +167,24 @@ void DeviceAddModel::sortByName(Qt::SortOrder order)
             return (static_cast<DeviceAddItem *>(obj1))->name() > (static_cast<DeviceAddItem *>(obj2))->name();
         });
     }
-    beginResetModel();
     mDatas = copyObjs;
-    endResetModel();
+    emit dataChanged(index(0, 0), index(mDatas.count() - 1, 0));
 }
 
 void DeviceAddModel::sortByAddress(Qt::SortOrder order)
 {
-    const auto addressToUint = [](const QString &address)->uint32_t {
-        auto list = address.split('.');
-        if (list.size() != 4) {
-            return 0;
-        }
-        return list.at(0).toUInt() * 256^3 + list.at(1).toUInt()* 256^2 + list.at(2).toUInt()* 256 + list.at(3).toUInt();
-    };
     QList<TaoListItemBase *> copyObjs = mDatas;
     if (order == Qt::SortOrder::AscendingOrder) {
         std::sort(copyObjs.begin(), copyObjs.end(), [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
-            return addressToUint(static_cast<DeviceAddItem *>(obj1)->address()) < addressToUint(static_cast<DeviceAddItem *>(obj2)->address());
+            return static_cast<DeviceAddItem *>(obj1)->toIPv4Address() < static_cast<DeviceAddItem *>(obj2)->toIPv4Address();
         });
     } else {
         std::sort(copyObjs.begin(), copyObjs.end(), [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
-            return addressToUint(static_cast<DeviceAddItem *>(obj1)->address()) > addressToUint(static_cast<DeviceAddItem *>(obj2)->address());
+            return static_cast<DeviceAddItem *>(obj1)->toIPv4Address() > static_cast<DeviceAddItem *>(obj2)->toIPv4Address();
         });
     }
-    beginResetModel();
     mDatas = copyObjs;
-    endResetModel();
+    emit dataChanged(index(0, 0), index(mDatas.count() - 1, 0));
 }
 
 void DeviceAddModel::sortByModel(Qt::SortOrder order)
@@ -209,9 +199,8 @@ void DeviceAddModel::sortByModel(Qt::SortOrder order)
             return (static_cast<DeviceAddItem *>(obj1))->modelString().toULongLong() > (static_cast<DeviceAddItem *>(obj2))->modelString().toULongLong();
         });
     }
-    beginResetModel();
     mDatas = copyObjs;
-    endResetModel();
+    emit dataChanged(index(0, 0), index(mDatas.count() - 1, 0));
 }
 
 DeviceAddItem *DeviceAddModel::genOne(uint32_t value)
