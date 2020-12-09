@@ -1,6 +1,7 @@
+import QtQml 2.0
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-import QtGraphicalEffects 1.0
+//import QtGraphicalEffects 1.0
 import ".."
 import "../.."
 
@@ -36,24 +37,24 @@ Button {
         height: cusButtonImage.height
         radius: CusConfig.controlBorderRadius
         color: backgroundColor
-        ColorOverlay {
-            source: baseImage
-            width: baseImage.width
-            height: baseImage.height
-            anchors.centerIn: parent
-            cached: true
-            color: {
-                if (!cusButtonImage.enabled) {
-                    return colorDisable
-                } else if (cusButtonImage.pressed || selected) {
-                    return colorPressed
-                } else if (cusButtonImage.hovered) {
-                    return colorHovered
-                } else {
-                    return colorNormal
-                }
-            }
-        }
+//        ColorOverlay {
+//            source: baseImage
+//            width: baseImage.width
+//            height: baseImage.height
+//            anchors.centerIn: parent
+//            cached: true
+//            color: {
+//                if (!cusButtonImage.enabled) {
+//                    return colorDisable
+//                } else if (cusButtonImage.pressed || selected) {
+//                    return colorPressed
+//                } else if (cusButtonImage.hovered) {
+//                    return colorHovered
+//                } else {
+//                    return colorNormal
+//                }
+//            }
+//        }
     }
     BasicTooltip {
         id: toolTip

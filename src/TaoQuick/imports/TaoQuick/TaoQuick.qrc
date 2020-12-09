@@ -11,9 +11,11 @@
         <file>Qml/CusButton/CusButton_Blue.qml</file>
         <file>Qml/CusButton/CusButton_Gradient.qml</file>
         <file>Qml/CusButton/CusButton_Image.qml</file>
+        <file>Qml/CusButton/CusButton_ImageBackground.qml</file>
         <file>Qml/CusButton/CusButton_ImageColorOverlay.qml</file>
         <file>Qml/CusButton/CusButton_Red.qml</file>
         <file>Qml/CusButton/CusButton_White.qml</file>
+        <file>Qml/CusButton/CusRadioButton.qml</file>
         <file>Qml/CusButton/CusTextButton.qml</file>
         <file>Qml/CusCheckBox/CusCheckBox.qml</file>
         <file>Qml/CusCheckBox/CusSwitch.qml</file>
@@ -28,6 +30,8 @@
         <file>Qml/CusInput/CusTextField_Valid.qml</file>
         <file>Qml/CusInput/CusTextInput.qml</file>
         <file>Qml/CusLabel/CusLabel.qml</file>
+        <file>Qml/CusLabel/CusLabel_Center.qml</file>
+        <file>Qml/CusLabel/CusLabel_Left.qml</file>
         <file>Qml/CusListView/CusListView.qml</file>
         <file>Qml/CusPopup/CusPopup.qml</file>
         <file>Qml/CusPopup/CusToolTip_Triangle.qml</file>
