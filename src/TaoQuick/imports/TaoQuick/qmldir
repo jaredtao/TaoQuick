@@ -8,9 +8,11 @@ CusButton 1.0 Qml/CusButton/CusButton.qml
 CusButton_Blue 1.0 Qml/CusButton/CusButton_Blue.qml
 CusButton_Gradient 1.0 Qml/CusButton/CusButton_Gradient.qml
 CusButton_Image 1.0 Qml/CusButton/CusButton_Image.qml
+CusButton_ImageBackground 1.0 Qml/CusButton/CusButton_ImageBackground.qml
 CusButton_ImageColorOverlay 1.0 Qml/CusButton/CusButton_ImageColorOverlay.qml
 CusButton_Red 1.0 Qml/CusButton/CusButton_Red.qml
 CusButton_White 1.0 Qml/CusButton/CusButton_White.qml
+CusRadioButton 1.0 Qml/CusButton/CusRadioButton.qml
 CusTextButton 1.0 Qml/CusButton/CusTextButton.qml
 CusCheckBox 1.0 Qml/CusCheckBox/CusCheckBox.qml
 CusSwitch 1.0 Qml/CusCheckBox/CusSwitch.qml
@@ -25,6 +27,8 @@ CusTextField_Search 1.0 Qml/CusInput/CusTextField_Search.qml
 CusTextField_Valid 1.0 Qml/CusInput/CusTextField_Valid.qml
 CusTextInput 1.0 Qml/CusInput/CusTextInput.qml
 CusLabel 1.0 Qml/CusLabel/CusLabel.qml
+CusLabel_Center 1.0 Qml/CusLabel/CusLabel_Center.qml
+CusLabel_Left 1.0 Qml/CusLabel/CusLabel_Left.qml
 CusListView 1.0 Qml/CusListView/CusListView.qml
 CusPopup 1.0 Qml/CusPopup/CusPopup.qml
 CusToolTip_Triangle 1.0 Qml/CusPopup/CusToolTip_Triangle.qml

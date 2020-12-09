@@ -1,6 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
- import QtGraphicalEffects 1.0
+// import QtGraphicalEffects 1.0
 import ".."
 import "../.."
 
@@ -34,14 +34,14 @@ Item {
         y: focusRect.y
         width: focusRect.width
         height: focusRect.height
-        RadialGradient {
-            anchors.fill: parent
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "transparent" }
-                GradientStop { position: 0.6; color: maskColor }
-            }
-            opacity: maskOpacity / 2
-        }
+//        RadialGradient {
+//            anchors.fill: parent
+//            gradient: Gradient {
+//                GradientStop { position: 0.0; color: "transparent" }
+//                GradientStop { position: 0.6; color: maskColor }
+//            }
+//            opacity: maskOpacity / 2
+//        }
     }
     //left
     Rectangle {
