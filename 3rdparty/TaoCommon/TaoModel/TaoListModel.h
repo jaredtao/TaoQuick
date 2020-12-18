@@ -29,6 +29,15 @@ public:
 
     //[begin] search. control visible
     Q_INVOKABLE void search(const QString &searchKey);
+    const QString &  searchKey() const
+    {
+        return mSearchkey;
+    }
+    Q_INVOKABLE void searchImmediate(const QString &searchKey);
+    void             clearSearchKey()
+    {
+        mSearchkey.clear();
+    }
     //[end] search
 
     //[begin] select
@@ -53,10 +62,15 @@ public:
     const QString &sortRole() const { return mSortRole; }
     using SortCallback = std::function<bool(TaoListItemBase *, TaoListItemBase *)>;
     // Map <key, callBack> ,key should match to headerRoles
-    void setSortCallbacks(const QMap<QString, SortCallback> &callbacksMap)
+    void setSortCallbacksAscend(const QMap<QString, SortCallback> &callbacksMap)
     {
-        mSortCallbacks = callbacksMap;
+        mSortCallbacksAscend = callbacksMap;
     }
+    void setSortCallbacksDescend(const QMap<QString, SortCallback> &callbacksMap)
+    {
+        mSortCallbacksDescend = callbacksMap;
+    }
+    
     Q_INVOKABLE virtual void sortByRole();
     //[end] sort
 
@@ -67,7 +81,6 @@ public:
 
     int checkedCount() const { return mCheckedCount; }
 
-    const QString &searchKey() const { return mSearchkey; }
     //[end] count
 
     void updateCalcInfo() override;
@@ -124,7 +137,8 @@ protected:
     int mLastPressedRow = -1;
     QStringList mHeaderRoles;
     QString mSortRole;
-    QMap<QString, SortCallback> mSortCallbacks;
+    QMap<QString, SortCallback> mSortCallbacksAscend;
+    QMap<QString, SortCallback> mSortCallbacksDescend;
     QString mSearchkey;
     QTimer mSearchTimer;
 };

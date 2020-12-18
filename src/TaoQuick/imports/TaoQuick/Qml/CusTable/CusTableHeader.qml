@@ -7,67 +7,51 @@ import "../.."
 Item {
     id: deviceAddHeader
     height: CusConfig.fixedHeight
-    property bool isSpliting: false
+    clip: true
+
+    property int splitingIndex: -1
     property bool isOut: false
-    property real mouseX
     property var dataObj
     property var headerRoles
     property var headerNames
-    clip: true
+    property bool needSort: true
     //表头宽度要平均处理的数量
     property int averageCount: 5
     //表头平均处理的宽度占比（不包含0列checkbox宽度）
     property real averageSize: 0.7
-    property var widthList: [CusTableConstant.column0Width]
-    property var xList: [0]
+    property var widthList
+    property var xList
+    property real totalW
+
     onWidthListChanged: {
-        var xL = [0]
-        for (var i = 0; i < widthList.length; ++i) {
-            xL.push(xL[i] + widthList[i])
-        }
-        xList = xL
+        updateXList()
     }
     onWidthChanged: {
         updateWidthList()
+        updateXList()
     }
     Component.onCompleted: {
         updateWidthList()
+        updateXList()
     }
-    property var updateWidthList: function() {
-        var wL = [CusTableConstant.column0Width]
-        //实际可以平均处理的数量
-        var count = Math.min(averageCount, headerRoles.length)
-        if (count <= 0) {
-            return
+    property var updateXList: function() {
+        var xL = [0]
+        var tw = 0;
+        for (var i = 0; i < widthList.length; ++i) {
+            xL.push(xL[i] + widthList[i])
+            tw += widthList[i]
         }
-        //剩下的数量
-        var leftCount = headerRoles.length - count
-        //有效宽度
-        var avalidWidth = width - CusTableConstant.column0Width
-        //平均宽度
-        var averageWidth = (avalidWidth * averageSize) / count
-        averageWidth = CusTableConstant.bound(CusTableConstant.minWidth,
-                                              averageWidth,
-                                              CusTableConstant.maxWidth)
-        //剩下的宽度
-        var leftWidth = 0
-        if (leftCount > 0) {
-            leftWidth = (avalidWidth - averageWidth * count) / leftCount
-        }
-        for (var i = 0; i < headerRoles.length; ++i) {
-            if (i < count) {
-                wL.push(averageWidth)
-            } else {
-                wL.push(leftWidth)
-            }
-        }
-        widthList = wL
+        xList = xL
+        totalW = tw
     }
+    property var updateWidthList: function () {}
+
     Rectangle {
         id: header0
         color: CusConfig.controlColor
         width: widthList[0]
         height: CusConfig.fixedHeight
+        visible: width > 0
         CusCheckBox {
             id: checkAllBox
             anchors.verticalCenter: parent.verticalCenter
@@ -107,7 +91,7 @@ Item {
                 color: CusConfig.textColor_pressed
             }
             Rectangle {
-                width: 2
+                width: 1
                 anchors {
                     left: parent.left
                     top: parent.top
@@ -172,15 +156,11 @@ Item {
                 anchors {
                     left: parent.left
                 }
-                onMouseXChanged: {
-                    deviceAddHeader.mouseX = mapToItem(deviceAddHeader,
-                                                       mouseX, 0).x
-                }
                 onPressedChanged: {
                     if (pressed) {
-                        isSpliting = true
+                        splitingIndex = index
                     } else {
-                        isSpliting = false
+                        splitingIndex = -1
                     }
                 }
                 cursorShape: (pressed
@@ -190,14 +170,9 @@ Item {
                     if (index === 0) {
                         return
                     }
-                    if (CusTableConstant.minWidth <= wList[index] + xOffset
-                            && wList[index] + xOffset
-                            <= CusTableConstant.maxWidth && CusTableConstant.minWidth
-                            <= wList[index + 1] - xOffset && wList[index + 1] - xOffset
-                            <= CusTableConstant.maxWidth) {
+                    if (CusTableConstant.minWidth <= wList[index] + xOffset && wList[index] + xOffset <= CusTableConstant.maxWidth ) {
                         isOut = false
                         wList[index] += xOffset
-                        wList[index + 1] -= xOffset
                         widthList = wList
                     } else {
                         isOut = true
