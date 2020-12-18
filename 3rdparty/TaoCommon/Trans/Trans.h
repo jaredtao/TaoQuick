@@ -7,7 +7,7 @@
 #include <QTranslator>
 #include "TaoCommonGlobal.h"
 class QQmlContext;
-class Trans : public QTranslator
+class TAO_API Trans : public QTranslator
 {
     Q_OBJECT
     Q_PROPERTY(QString currentLang READ currentLang WRITE setCurrentLang NOTIFY currentLangChanged)
@@ -21,7 +21,7 @@ public:
     Q_INVOKABLE bool load(QString &lang, const QString &filePath);
 
 public:
-    void beforeUiReady(QQmlContext *ctx);
+    void beforeUiReady(QQmlContext *ctx, const QString &folder = {});
 
     void afterUiReady();
 

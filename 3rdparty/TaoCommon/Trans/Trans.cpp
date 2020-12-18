@@ -10,11 +10,15 @@ const static auto cEnglisthStr = u8"English";
 const static auto cChineseStr = u8"简体中文";
 Trans::Trans(QObject *parent) : QTranslator(parent) {}
 
-void Trans::beforeUiReady(QQmlContext *ctx)
+void Trans::beforeUiReady(QQmlContext *ctx, const QString &folder)
 {
     m_ctx = ctx;
     ctx->setContextProperty("trans", this);
-    loadFolder(qApp->applicationDirPath() + "/Trans");
+    if (folder.isEmpty()) {
+        loadFolder(qApp->applicationDirPath() + "/Trans");
+    } else {
+        loadFolder(folder);
+    }
     qApp->installTranslator(this);
 }
 
