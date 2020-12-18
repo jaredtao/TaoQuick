@@ -50,7 +50,11 @@ jobs:
         run: |
           # 拷贝依赖
           macdeployqt bin/release/${targetName}.app -qmldir=. -verbose=1 -dmg
-
+      # 上传artifacts          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ${targetName}.zip
+          path: bin/release/${targetName}.app
       # tag 上传Release
       - name: uploadRelease
         if: startsWith(github.event.ref, 'refs/tags/')
