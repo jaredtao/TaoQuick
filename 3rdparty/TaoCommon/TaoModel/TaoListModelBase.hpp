@@ -52,7 +52,8 @@ TaoListModelBase<T>::TaoListModelBase(QObject *parent) : Super(parent)
 {
 }
 template<class T>
-TaoListModelBase<T>::TaoListModelBase(const QList<T> &datas, QObject *parent) : Super(parent), mDatas(datas)
+TaoListModelBase<T>::TaoListModelBase(const QList<T> &datas, QObject *parent) 
+	: Super(parent), mDatas(datas)
 {
 }
 template<class T>

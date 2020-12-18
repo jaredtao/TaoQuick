@@ -18,23 +18,27 @@ ListView {
     clip: true
     interactive: false
     snapMode: ListView.SnapToItem
-//    cacheBuffer: 12000
     property string noDataText: qsTr("No Data") + CusConfig.transString
 
     ScrollBar.horizontal: CusScrollBar {
         id: hbar
+        z: 10
         opacity: cusTableView.contentWidth > cusTableView.width ? 1.0 : 0.0
         visible: opacity > 0
         active: visible
+        stepSize: cusTableView.width / cusTableView.contentWidth / 2
+        size: Math.max(cusTableView.width / cusTableView.contentWidth, minimumSize)
+        minimumSize: CusConfig.scrollBarMinLen / cusTableView.width
     }
     ScrollBar.vertical: CusScrollBar {
         id: vBar
+        z: 10
         opacity: cusTableView.contentHeight > cusTableView.height ? 1.0 : 0.0
         visible: opacity > 0
         active: visible
-        snapMode: ScrollBar.SnapAlways
-        stepSize: cusTableView.height/(cusTableView.model.visibledCount * CusConfig.fixedHeight) / 2
-        size: Math.max(cusTableView.height / cusTableView.contentHeight, 0.1)
+        stepSize: cusTableView.height / cusTableView.contentHeight / 2
+        size: Math.max(cusTableView.height / (cusTableView.model.visibledCount * CusConfig.fixedHeight), minimumSize)
+        minimumSize: CusConfig.scrollBarMinLen / cusTableView.height
     }
     CusShortCutKeys {
         id: tableKeys

@@ -62,7 +62,13 @@ Item {
             headerRoles: deviceAddModel.headerRoles
             widthList: cusView.widthList
             xList: cusView.xList
+            property real avalidWidth
+            updateWidthList: function() {
+                avalidWidth = width - CusTableConstant.column0Width
+                widthList = [CusTableConstant.column0Width, avalidWidth * 0.33,avalidWidth * 0.33,avalidWidth * 0.33]
+            }
         }
+
         CusTableView {
             id: cusView
             y: cusHeader.y + cusHeader.height
@@ -162,6 +168,23 @@ Item {
                 xList: cusHeader.xList
                 onCheckedChanged: {
                     deviceAddModel.check(index, checked)
+                }
+            }
+        }
+        Column {
+            x: cusHeader.splitingIndex > 0 ? (cusHeader.x + cusHeader.xList[cusHeader.splitingIndex + 1]) : 0
+            y: cusView.y
+            height: cusView.height
+            width: 1
+            spacing: 2
+            visible: cusHeader.splitingIndex > 0 && !cusHeader.isOut
+            Repeater {
+                model: parent.height / 6
+                enabled: parent.visible
+                Rectangle {
+                    width: 1
+                    height: 4
+                    color: CusConfig.themeColor
                 }
             }
         }
