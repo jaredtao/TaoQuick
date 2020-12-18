@@ -63,21 +63,20 @@ void TaoListModel::search(const QString &searchKey)
     mSearchkey = searchKey.simplified();
     mSearchTimer.start(300);
 }
+void TaoListModel::searchImmediate(const QString &searchKey)
+{
+    mSearchkey = searchKey.simplified();
+    onSearch();
+}
 void TaoListModel::onSearch()
 {
-    using namespace std::chrono;
 
-    auto c1 = high_resolution_clock::now();
-    for (const auto &obj : mDatas) {
+    for (const auto &obj : mDatas)
+    {
         obj->setIsVisible(obj->match(mSearchkey));
     }
-    auto c2 = std::chrono::high_resolution_clock::now();
-    updateCalcInfo();
-    auto c3 = std::chrono::high_resolution_clock::now();
 
-    auto cost1 = std::chrono::duration_cast<std::chrono::milliseconds>(c2 - c1).count();
-    auto cost2 = std::chrono::duration_cast<std::chrono::milliseconds>(c3 - c2).count();
-    qWarning() << cost1 << cost2;
+    updateCalcInfo();
 }
 void TaoListModel::deselectAll()
 {
@@ -188,59 +187,34 @@ void TaoListModel::doRelease()
 
 void TaoListModel::sortByRole()
 {
-    const static auto addRessStr = QStringLiteral("address");
-    if (mDatas.size() <= 1) {
+    if (mDatas.size() <= 1)
+    {
         return;
     }
-
-    const auto &addressCallback = mSortCallbacks.value(addRessStr);
-
-    QList<TaoListItemBase *> copyObjs;
-    if (mSortRole == addRessStr) {
-        if (addressCallback) {
+    if (mSortOrder == Qt::SortOrder::AscendingOrder) 
+    {
+        if (const auto &sortCall = mSortCallbacksAscend.value(mSortRole)) 
+        {
+            QList<TaoListItemBase *> copyObjs;
             copyObjs = mDatas;
-            if (mSortOrder == Qt::SortOrder::AscendingOrder) {
-                std::sort(copyObjs.begin(), copyObjs.end(), addressCallback);
-            } else {
-                std::sort(copyObjs.begin(), copyObjs.end(),
-                          [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
-                              return addressCallback(obj2, obj1);
-                          });
-            }
+            std::sort(copyObjs.begin(), copyObjs.end(), sortCall);
             mDatas = copyObjs;
             emit dataChanged(index(0, 0), index(mDatas.count() - 1, 0));
-
-        }
-    } else {
-        if (addressCallback) {
-            copyObjs = mDatas;
-            if (mSortOrder == Qt::SortOrder::AscendingOrder) {
-                std::sort(copyObjs.begin(), copyObjs.end(), addressCallback);
-            } else {
-                std::sort(copyObjs.begin(), copyObjs.end(),
-                          [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
-                              return addressCallback(obj2, obj1);
-                          });
-            }
-        }
-        if (mSortCallbacks.value(mSortRole)) {
-            if (copyObjs.isEmpty()) {
-                copyObjs = mDatas;
-            }
-            if (mSortOrder == Qt::SortOrder::AscendingOrder) {
-                std::sort(copyObjs.begin(), copyObjs.end(), mSortCallbacks.value(mSortRole));
-            } else {
-                std::sort(copyObjs.begin(), copyObjs.end(),
-                          [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
-                              return mSortCallbacks.value(mSortRole)(obj2, obj1);
-                          });
-            }
-            mDatas = copyObjs;
-            emit dataChanged(index(0, 0), index(mDatas.count() - 1, 0));
-
+            updateAlternate();
         }
     }
-    updateAlternate();
+    else
+    {
+        if (const auto &sortCall = mSortCallbacksDescend.value(mSortRole))
+        {
+            QList<TaoListItemBase *> copyObjs;
+            copyObjs = mDatas;
+            std::sort(copyObjs.begin(), copyObjs.end(), sortCall);
+            mDatas = copyObjs;
+            emit dataChanged(index(0, 0), index(mDatas.count() - 1, 0));
+            updateAlternate();
+        }
+    }
 }
 
 void TaoListModel::setHeaderRoles(const QStringList &headerRoles)
@@ -272,7 +246,7 @@ void TaoListModel::setSortRole(const QString &sortRole)
 
 void TaoListModel::updateAllCheck()
 {
-    bool allCheck = true;
+    bool allCheck = false;
     if (!mDatas.empty()) {
         allCheck = std::all_of(mDatas.begin(), mDatas.end(), [](TaoListItemBase *obj) {
             return obj->isVisible() && obj->isChecked();
