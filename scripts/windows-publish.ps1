@@ -1,31 +1,33 @@
-$scriptDir=$PSScriptRoot
-$currentDir=Get-Location
+[CmdletBinding()]
+param (
+    [string] $archiveName, [string] $targetName
+)
+
+
+$scriptDir = $PSScriptRoot
+$currentDir = Get-Location
 Write-Host "currentDir" $currentDir
 Write-Host "scriptDir" $scriptDir
 
-
 function Main() {
-    if ($args.Length -le 1 ) {
-        Write-Host "args missing, need at last 2, real " $args.Length
-        return
-    }
 
-    [string]$archiveName=$args[0]
-    [string]$targetName=$args[1]
-    
     New-Item -ItemType Directory $archiveName
     # 拷贝exe
     Copy-Item bin\release\$targetName $archiveName\
     Copy-Item bin\release\Trans $archiveName\Trans -Recurse
     # 拷贝依赖
-    windeployqt --qmldir . $archiveName\$targetName
-    # 删除不必要的库
-    #$excludeList = @("*.qmlc", "*.ilk", "*.exp", "*.lib", "*.pdb")
-    #Remove-Item -Path Qml -Include $excludeList -Recurse -Force
+    windeployqt --qmldir . --plugindir $archiveName\plugins --no-translations --compiler-runtime $archiveName\$targetName
+    # 删除不必要的文件
+    $excludeList = @("*.qmlc", "*.ilk", "*.exp", "*.lib", "*.pdb")
+    Remove-Item -Path $archiveName -Include $excludeList -Recurse -Force
     # 打包zip
     Compress-Archive -Path $archiveName $archiveName'.zip'
 }
 
-Main $args
+if ($null -eq $archiveName || $null -eq $targetName) {
+    Write-Host "args missing, archiveName is" $archiveName ", targetName is" $targetName
+    return
+}
+Main
 
 
