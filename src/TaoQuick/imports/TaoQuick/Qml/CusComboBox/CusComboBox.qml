@@ -70,23 +70,19 @@ ComboBox {
             rotation: cusComboBox.popup.visible ? 180 : 0
             Behavior on rotation {
                 NumberAnimation {
-                    duration: 200
+                    duration: 150
                 }
             }
         }
     }
 
     popup: Popup {
-        y: cusComboBox.height - 1
+        y: cusComboBox.height 
         width: cusComboBox.width
         implicitHeight: Math.min(contentItem.implicitHeight, defaultHeight)
         height: visible ? implicitHeight : 0
-        Behavior on height {
-            NumberAnimation {
-                duration: 200
-            }
-        }
-        padding: 1
+
+        padding: 0
 
         contentItem: ListView {
             id: list
@@ -95,9 +91,7 @@ ComboBox {
             model: cusComboBox.popup.visible ? cusComboBox.delegateModel : null
             currentIndex: cusComboBox.highlightedIndex
             ScrollBar.vertical: CusScrollBar {
-//                policy: (cusComboBox.popup.height
-//                         >= cusComboBox.defaultHeight) ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
-                opacity: cusComboBox.popup.height >= cusComboBox.defaultHeight ? 1.0 : 0.0
+                opacity: cusComboBox.popup.contentHeight >= cusComboBox.popup.height ? 1.0 : 0.0
                 visible: opacity > 0
                 active: visible
             }
