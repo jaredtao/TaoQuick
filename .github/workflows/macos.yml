@@ -53,7 +53,7 @@ jobs:
       # 上传artifacts          
       - uses: actions/upload-artifact@v2
         with:
-          name: ${targetName}.zip
+          name: ${targetName}-${{matrix.qt_ver}}.zip
           path: bin/release/${targetName}.app
       # tag 上传Release
       - name: uploadRelease
