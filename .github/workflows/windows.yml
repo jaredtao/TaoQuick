@@ -60,6 +60,7 @@ jobs:
             qt_arch_install: msvc2019_64          
     env:
       targetName: TaoQuickShow.exe
+      VCINSTALLDIR: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC'
     # 步骤
     steps:
       # 安装Qt
@@ -81,10 +82,8 @@ jobs:
       # 编译msvc
       - name: build-msvc
         shell: cmd
-        env:
-          vc_arch: ${{ matrix.msvc_arch }}
         run: |
-          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch%
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ matrix.msvc_arch }}
           qmake
           nmake
       # tag 打包
@@ -96,26 +95,15 @@ jobs:
           archiveName: ${{ matrix.qt_ver }}-${{ matrix.qt_arch }}
         shell: pwsh
         run: |
-          # 创建文件夹
-          New-Item -ItemType Directory ${env:archiveName}
-          # 拷贝exe
-          Copy-Item bin\release\${env:targetName} ${env:archiveName}\
-          Copy-Item bin\release\Trans ${env:archiveName}\Trans -Recurse
-          # 拷贝依赖
-          windeployqt --qmldir . ${env:archiveName}\${env:targetName}
-          # 删除不必要的库
-          $excludeList=@("*.qmlc", "*.ilk", "*.exp", "*.lib", "*.pdb")
-          Remove-Item -Path Qml -Include $excludeList -Recurse -Force
-          # 打包zip
-          Compress-Archive -Path ${env:archiveName} ${env:archiveName}'.zip'
+          & scripts\windows-publish.ps1 ${env.archiveName} ${env.targetName}
           # 记录packageName给后续step
-          $name = ${env:archiveName}
-          echo "::set-output name=packageName::$name"
+           $name = ${env:archiveName}
+           echo "::set-output name=packageName::$name"
       # 上传artifacts          
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: ${{ steps.package.outputs.packageName }}
-      #     path: ${{ steps.package.outputs.packageName }}.zip
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ${{ steps.package.outputs.packageName }}
+          path: ${{ steps.package.outputs.packageName }}.zip
       # tag 上传Release
       - name: uploadRelease
         if: startsWith(github.event.ref, 'refs/tags/')
