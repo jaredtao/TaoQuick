@@ -5,7 +5,7 @@ import ".."
 import "../.."
 
 Rectangle {
-    id: deviceRow
+    id: cusTableRow
     height: visible ? CusConfig.fixedHeight : 0
     visible: dataObj ? dataObj["isVisible"] : false
 
@@ -41,7 +41,7 @@ Rectangle {
             property bool notify: true
             onCheckedChanged: {
                 if(notify) {
-                    deviceRow.checkedChanged(checked)
+                    cusTableRow.checkedChanged(checked)
                 }
             }
         }
