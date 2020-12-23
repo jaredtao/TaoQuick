@@ -5,7 +5,7 @@ import ".."
 import "../.."
 
 Item {
-    id: deviceAddHeader
+    id: cusTableHeader
     height: CusConfig.fixedHeight
     clip: true
 
@@ -15,10 +15,7 @@ Item {
     property var headerRoles
     property var headerNames
     property bool needSort: true
-    //表头宽度要平均处理的数量
-    property int averageCount: 5
-    //表头平均处理的宽度占比（不包含0列checkbox宽度）
-    property real averageSize: 0.7
+
     property var widthList
     property var xList
     property real totalW
