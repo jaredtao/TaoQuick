@@ -55,8 +55,6 @@ Item {
             y: 50
             width: parent.width
             height: 30
-            averageCount: 4
-            averageSize: 1.0
             dataObj: deviceAddModel
             headerNames: deviceAddModel.headerRoles
             headerRoles: deviceAddModel.headerRoles
