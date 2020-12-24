@@ -104,8 +104,10 @@ CusBackground {
                 left: leftPane.right
                 leftMargin: 40
                 right: parent.right
+                top: parent.top
+                bottom: parent.bottom
             }
-            height: parent.height
+//            height: parent.height
         }
     }
 }
