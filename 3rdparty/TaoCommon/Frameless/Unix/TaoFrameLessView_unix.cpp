@@ -141,11 +141,11 @@ bool TaoFrameLessView::nativeEvent(const QByteArray &eventType, void *message, l
         //规避 拖动border进行resize时界面闪烁
         if (!isMaxWin(this) && !isFullWin(this)) {
             if (clientRect->top != 0) {
-                clientRect->top -= 1;
+                clientRect->top -= 0.1;
             }
         } else {
             if (clientRect->top != 0) {
-                clientRect->top += 1;
+                clientRect->top += 0.1;
             }
         }
         return true;
