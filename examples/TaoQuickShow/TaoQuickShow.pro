@@ -3,7 +3,7 @@ TARGET = TaoQuickShow
 
 QT += core gui qml quick
 
-CONFIG += c++1z qtquickcompiler utf8_source
+CONFIG += c++1z qtquickcompiler utf8_source windeployqt
 
 load(taoVersion)
 setTaoVersion()
