@@ -1,15 +1,15 @@
 #include "AppInfo.h"
-#include "Trans/Trans.h"
+#include "DeviceAddTable/DeviceAddModel.h"
 #include "Frameless/TaoFrameLessView.h"
 #include "Logger/Logger.h"
 #include "QuickTool/QuickTool.h"
-#include "DeviceAddTable/DeviceAddModel.h"
+#include "Trans/Trans.h"
 #include <QDir>
 #include <QGuiApplication>
 #include <QQmlContext>
 #include <QQmlEngine>
-#include <QUrl>
 #include <QQuickItem>
+#include <QUrl>
 static void prepareApp()
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -25,7 +25,7 @@ int main(int argc, char **argv)
     prepareApp();
     QGuiApplication app(argc, argv);
 #ifdef TAODEBUG
-//    qSetMessagePattern("[%{time h:mm:ss.zzz} %{function}] %{message}");
+    //    qSetMessagePattern("[%{time h:mm:ss.zzz} %{function}] %{message}");
     qSetMessagePattern("[%{time h:mm:ss.zzz} %{file} row(%{line}) %{function}] %{message}");
 #else
     Logger::initLog();
@@ -33,13 +33,15 @@ int main(int argc, char **argv)
     const auto appPath = QDir::cleanPath(app.applicationDirPath());
     qWarning() << "appPath" << appPath;
 
+    Trans trans;
+    AppInfo appInfo;
+    QuickTool quickTool;
+
     TaoFrameLessView view;
     view.setMinimumSize({ 800, 600 });
     view.resize(1440, 960);
     view.moveToScreenCenter();
-    Trans trans;
-    AppInfo appInfo;
-    QuickTool quickTool;
+
     trans.beforeUiReady(view.rootContext());
     appInfo.beforeUiReady(view.rootContext());
 
@@ -77,7 +79,9 @@ int main(int argc, char **argv)
             quickTool.setRootObjet(view.rootObject());
         }
     });
+    //qml call 'Qt.quit()' will emit engine::quit, here should call qApp->quit
     QObject::connect(view.engine(), &QQmlEngine::quit, qApp, &QCoreApplication::quit);
+
     view.setSource(url);
     view.moveToScreenCenter();
     view.show();
