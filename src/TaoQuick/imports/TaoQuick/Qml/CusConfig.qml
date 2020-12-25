@@ -108,7 +108,7 @@ QtObject {
             name: "Red"
             themeColor: "#ec4141"
             backgroundColor: "#ffffff"
-            textColor: "#373737"
+            textColor: "#282828"
 
             splitLineColor:"#f38d8d"
             invalidColor: "#e29696"
