@@ -1,4 +1,4 @@
-#include "TaoFrameLessView.h"
+#include "Frameless/TaoFrameLessView.h"
 
 #include <QGuiApplication>
 #include <QQuickItem>
@@ -52,8 +52,7 @@ TaoFrameLessView::TaoFrameLessView(QWindow *parent) : QQuickView(parent)
     setFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint);
     setResizeMode(SizeRootObjectToView);
 
-    // WS_THICKFRAME 带回Areo效果
-
+    // WS_THICKFRAME 带回Areo效果, 在NC_CALCSIZE中再去掉
     DWORD style = ::GetWindowLong(HWND(winId()), GWL_STYLE);
     style |= WS_THICKFRAME;
     ::SetWindowLong(HWND(winId()), GWL_STYLE, style);
@@ -111,9 +110,16 @@ bool TaoFrameLessView::nativeEvent(const QByteArray &eventType, void *message, l
 #endif
 {
     if (!result) {
+        //防御式编程
+        //一般不会发生这种情况，win7一些特殊情况，会传空指针进来。解决方案是升级驱动、切换到basic主题。
         return false;
     }
-    MSG *msg = reinterpret_cast<MSG *>(message);
+#if (QT_VERSION == QT_VERSION_CHECK(5, 11, 1))
+    // Work-around a bug caused by typo which only exists in Qt 5.11.1
+    const auto msg = *reinterpret_cast<MSG **>(message);
+#else
+    const auto msg = static_cast<LPMSG>(message);
+#endif
     if (!msg || !msg->hwnd) {
         return false;
     }
