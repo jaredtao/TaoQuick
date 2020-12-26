@@ -6,7 +6,7 @@ Loader {
     property string homeUrl: qmlPath + "Page/Home.qml"
 
     source: homeUrl
-
+    clip: true
     Column {
         spacing: 10
         anchors {
