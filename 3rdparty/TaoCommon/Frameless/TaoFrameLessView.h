@@ -1,7 +1,8 @@
 #pragma once
 #include "TaoCommonGlobal.h"
 #include <QQuickView>
-//无边框窗口，支持拖动和改变大小，支持Windows平台Aero效果
+//无边框窗口，实现自定义标题栏。支持拖动和改变大小，支持Windows平台Aero效果
+class TaoFrameLessViewPrivate;
 class TAO_API TaoFrameLessView : public QQuickView
 {
     Q_OBJECT
@@ -11,8 +12,8 @@ public:
     explicit TaoFrameLessView(QWindow *parent = nullptr);
     ~TaoFrameLessView();
     void moveToScreenCenter();
-    bool isMax() const { return m_isMax; }
-    QQuickItem *titleItem() const { return m_titleItem; }
+    bool isMax() const;
+    QQuickItem *titleItem() const;
 
     static QRect calcCenterGeo(const QRect &screenGeo, const QSize &normalSize);
 public slots:
@@ -30,6 +31,5 @@ protected:
 #    endif
 #endif
 private:
-    bool m_isMax;
-    QQuickItem *m_titleItem = nullptr;
+    TaoFrameLessViewPrivate *d;
 };
