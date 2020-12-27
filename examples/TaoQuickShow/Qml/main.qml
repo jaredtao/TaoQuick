@@ -30,6 +30,9 @@ CusBackground {
     //            }
     //        }
     //    }
+
+    //Windows use native event for frameless
+    //Other platform use CusResizeBorder
     CusResizeBorder {
         id: resizeBorder
         visible: Qt.platform.os !== "windows"
