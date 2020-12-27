@@ -14,9 +14,18 @@ SOURCES += \
 
 CONFIG(debug, debug|release) {
     #debug模式直接用本地qml文件,不要qrc资源文件。这样调试快一些。
-    DEFINES += qmlPath=\\\"file:///$$PWD/Qml/\\\"
-    DEFINES += contentsPath=\\\"file:///$$PWD/Contents/\\\"
-    DEFINES += imgPath=\\\"file:///$$PWD/Image/\\\"
+    win32{
+        path=$$system("cd")
+        path ~=s,\\\\,/,g
+    } else {
+        path=$$system("pwd")
+    }
+    qmlPath = \"$${path}/Qml/\"
+    contentsPath = \"file:///$${path}/Contents/\"
+    imgPath = \"file:///$${path}/Image/\"
+#    DEFINES += qmlPath=\\\"file:///$$PWD/Qml/\\\"
+#    DEFINES += contentsPath=\\\"file:///$$PWD/Contents/\\\"
+#    DEFINES += imgPath=\\\"file:///$$PWD/Image/\\\"
 } else {
     #release模式用qrc、走资源文件。这样发布不会携带源码。
     RESOURCES += \
@@ -24,9 +33,12 @@ CONFIG(debug, debug|release) {
         $$PWD/Image.qrc \
         $$PWD/Contents.qrc
 
-    DEFINES += qmlPath=\\\"qrc:/Qml/\\\"
-    DEFINES += contentsPath=\\\"qrc:/Contents/\\\"
-    DEFINES += imgPath=\\\"qrc:/Image/\\\"
+    qmlPath = \"qrc:/Qml/\"
+    contentsPath = \"qrc:/Contents/\"
+    imgPath = \"qrc:/Image/\"
+#    DEFINES += qmlPath=\\\"qrc:/Qml/\\\"
+#    DEFINES += contentsPath=\\\"qrc:/Contents/\\\"
+#    DEFINES += imgPath=\\\"qrc:/Image/\\\"
 }
 
 !android:!ios {
