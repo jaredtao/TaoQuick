@@ -4,6 +4,7 @@
 #include "Logger/Logger.h"
 #include "QuickTool/QuickTool.h"
 #include "Trans/Trans.h"
+#include "taoMacro.h"
 #include <QDir>
 #include <QGuiApplication>
 #include <QQmlContext>

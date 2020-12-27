@@ -1,4 +1,5 @@
 #pragma once
+#include "taoMacro.h"
 
 #define RELEASE_VER 1  // 0: beta version; 1: release version
 #define RELEASE_DATE __DATE__ //yyyy-mm-dd; only used for RELEASE_VER=1
