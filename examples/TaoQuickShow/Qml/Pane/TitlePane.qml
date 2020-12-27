@@ -126,12 +126,21 @@ Rectangle {
         objectName: "blankItem"
         anchors {
             left: parent.left
+            leftMargin: 4
             right: toolRow.left
             top: parent.top
+            topMargin: 4
             bottom: parent.bottom
         }
         Component.onCompleted: {
             view.setTitleItem(blankItem)
+        }
+        MoveArea {
+            anchors.fill: parent
+            onMove: {
+                view.x += xOffset
+                view.y += yOffset
+            }
         }
     }
 }
