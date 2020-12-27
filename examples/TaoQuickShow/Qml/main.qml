@@ -30,6 +30,14 @@ CusBackground {
     //            }
     //        }
     //    }
+    CusResizeBorder {
+        id: resizeBorder
+        visible: Qt.platform.os !== "windows"
+        borderWidth: 4
+        enabled: visible
+        anchors.fill: rootBackground
+        control: view
+    }
     AboutDialog {
         id: aboutDialog
     }
@@ -43,10 +51,12 @@ CusBackground {
     }
     Item {
         id: content
-        width: parent.width
+        width: parent.width - resizeBorder.borderWidth * 2
+        x: resizeBorder.borderWidth
         anchors {
             top: title.bottom
             bottom: parent.bottom
+            bottomMargin: resizeBorder.borderWidth
         }
         CusFPS {
             anchors {

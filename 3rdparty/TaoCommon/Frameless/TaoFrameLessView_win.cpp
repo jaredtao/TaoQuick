@@ -180,7 +180,7 @@ bool TaoFrameLessView::nativeEvent(const QByteArray &eventType, void *message, l
 #endif
 
 {
-    const long border_width = 6;
+    const long border_width = 4;
     if (!result) {
         //防御式编程
         //一般不会发生这种情况，win7一些极端情况，会传空指针进来。解决方案是升级驱动、切换到basic主题。
@@ -226,23 +226,6 @@ bool TaoFrameLessView::nativeEvent(const QByteArray &eventType, void *message, l
         }
         break;
     }
-        //    case WM_NCCALCSIZE: {
-        //        const auto mode = static_cast<BOOL>(msg->wParam);
-        //        *result = mode ? WVR_REDRAW : 0;
-
-        //        const auto clientRect = mode ? &(reinterpret_cast<LPNCCALCSIZE_PARAMS>(msg->lParam)->rgrc[0]) : reinterpret_cast<LPRECT>(msg->lParam);
-        //        //规避 拖动border进行resize时界面闪烁
-        //        if (!isMaxWin(this) && !isFullWin(this)) {
-        //            if (clientRect->top != 0) {
-        //                clientRect->top -= 0.1;
-        //            }
-        //        } else {
-        //            if (clientRect->top != 0) {
-        //                clientRect->top += 0.1;
-        //            }
-        //        }
-        //        return true;
-        //    }
     case WM_NCHITTEST: {
         if (d->borderless) {
             RECT winrect;
