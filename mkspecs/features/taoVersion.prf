@@ -24,21 +24,38 @@ defineTest(setTaoVersion) {
         VER_PAT = $${PAT}
         VERSION = $${Ver}
     }
+    TaoREVISION=$${REVISION}
+    TaoREVISIONSTR=\"$${REVISION}\"
+    TaoVer=\"$${Ver}\"
+    TaoMAJ=$${MAJ}
+    TaoMIN=$${MIN}
+    TaoPAT=$${PAT}
+    TaoDATETIME=\"$${_DATE_}\"
+    CXX_COMPILER_ID=\"$${QMAKE_COMPILER}\"
 
-    DEFINES += TaoREVISION=$${REVISION}
-    DEFINES += TaoREVISIONSTR=\"\\\"$${REVISION}\\\"\"
-    DEFINES += TaoVer=\"\\\"$${Ver}\\\"\"
-    DEFINES += TaoMAJ=$${MAJ}
-    DEFINES += TaoMIN=$${MIN}
-    DEFINES += TaoPAT=$${PAT}
-    DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
-    DEFINES += CXX_COMPILER_ID=\"\\\"$${QMAKE_COMPILER}\\\"\"
+    export(TaoREVISION)
+    export(TaoREVISIONSTR)
+    export(TaoVer)
+    export(TaoMAJ)
+    export(TaoMIN)
+    export(TaoPAT)
+    export(TaoDATETIME)
+    export(CXX_COMPILER_ID)
+
+#    DEFINES += TaoREVISION=$${REVISION}
+#    DEFINES += TaoREVISIONSTR=\"\\\"$${REVISION}\\\"\"
+#    DEFINES += TaoVer=\"\\\"$${Ver}\\\"\"
+#    DEFINES += TaoMAJ=$${MAJ}
+#    DEFINES += TaoMIN=$${MIN}
+#    DEFINES += TaoPAT=$${PAT}
+#    DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
+#    DEFINES += CXX_COMPILER_ID=\"\\\"$${QMAKE_COMPILER}\\\"\"
 
     export(CONFIG)
     export(VER_MAJ)
     export(VER_MIN)
     export(VER_PAT)
     export(VERSION)
-    export(DEFINES)
+#    export(DEFINES)
 }
 
