@@ -86,6 +86,8 @@ int main(int argc, char **argv)
     });
     //qml call 'Qt.quit()' will emit engine::quit, here should call qApp->quit
     QObject::connect(view.engine(), &QQmlEngine::quit, qApp, &QCoreApplication::quit);
+    //qml clear content before quit
+    QObject::connect(qApp, &QGuiApplication::aboutToQuit, qApp, [&view](){view.setSource({});});
 
     view.setSource(url);
     view.moveToScreenCenter();
