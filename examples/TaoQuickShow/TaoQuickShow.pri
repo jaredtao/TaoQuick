@@ -20,7 +20,7 @@ CONFIG(debug, debug|release) {
     } else {
         path=$$system("pwd")
     }
-    qmlPath = \"$${path}/Qml/\"
+    qmlPath = \"file:///$${path}/Qml/\"
     contentsPath = \"file:///$${path}/Contents/\"
     imgPath = \"file:///$${path}/Image/\"
 #    DEFINES += qmlPath=\\\"file:///$$PWD/Qml/\\\"
