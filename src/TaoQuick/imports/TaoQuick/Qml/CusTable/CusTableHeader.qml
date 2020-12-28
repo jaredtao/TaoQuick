@@ -126,7 +126,7 @@ Item {
                 hoverEnabled: true
                 anchors {
                     left: parent.left
-                    leftMargin: 4
+                    leftMargin: 2
                     right: parent.right
                     top: parent.top
                     bottom: parent.bottom
@@ -146,10 +146,11 @@ Item {
             }
             MoveArea {
                 id: moveArea
-                width: 4
+                width: 2
                 height: parent.height
                 enabled: index > 0
                 hoverEnabled: true
+                z: 9
                 anchors {
                     left: parent.left
                 }
@@ -160,8 +161,7 @@ Item {
                         splitingIndex = -1
                     }
                 }
-                cursorShape: (pressed
-                              || containsMouse) ? Qt.SplitHCursor : Qt.ArrowCursor
+                cursorShape: (pressed || containsMouse) ? Qt.SplitHCursor : Qt.ArrowCursor
                 onMove: {
                     var wList = widthList
                     if (index === 0) {
