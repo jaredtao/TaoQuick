@@ -310,7 +310,7 @@ Item {
         Column {
             x: cusHeader.x + cusHeader.mouseX
             y: cusView.y
-            visible: cusHeader.isSpliting && !cusHeader.isOut
+            visible: cusHeader.splitingIndex >= 1
             height: cusView.height
             width: 1
             spacing: 2
