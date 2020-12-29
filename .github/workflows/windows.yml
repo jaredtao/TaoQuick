@@ -98,7 +98,7 @@ jobs:
       # tag 打包
       - name: package
         id: package
-        if: startsWith(github.event.ref, 'refs/tags/')
+#        if: startsWith(github.event.ref, 'refs/tags/')
         env:
           VCINSTALLDIR: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC'
           archiveName: ${{ matrix.qt_ver }}-${{ matrix.qt_arch }}
