@@ -88,10 +88,10 @@ jobs:
           call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ matrix.msvc_arch }}
           qmake
           nmake
-          echo winSdkDir=%WindowsSdkDir% >> %GITHUB_ENV%
-          echo winSdkVer=%WindowsSdkVersion% >> %GITHUB_ENV%
-          echo vcToolsInstallDir=%VCToolsInstallDir% >> %GITHUB_ENV%
-          echo vcToolsRedistDir=%VCToolsRedistDir% >> %GITHUB_ENV%
+          echo winSdkDir="%WindowsSdkDir%" >> %GITHUB_ENV%
+          echo winSdkVer="%WindowsSdkVersion%" >> %GITHUB_ENV%
+          echo vcToolsInstallDir="%VCToolsInstallDir%" >> %GITHUB_ENV%
+          echo vcToolsRedistDir="%VCToolsRedistDir%" >> %GITHUB_ENV%
       # tag 打包
       - name: package
         id: package
