@@ -28,9 +28,9 @@ function Main() {
     $excludeList = @("*.qmlc", "*.ilk", "*.exp", "*.lib", "*.pdb")
     Remove-Item -Path $archiveName -Include $excludeList -Recurse -Force
     # 拷贝vcRedist dll
-    Copy-Item "$env:vcToolsRedistDir\onecore\$env:msvcArch\*.CRT\*.dll" $archiveName\
+    Copy-Item "${env:vcToolsRedistDir}onecore\$env:msvcArch\*.CRT\*.dll" $archiveName\
     # 拷贝WinSDK dll
-    Copy-Item "$env:winSdkDir\Redist\${env:winSdkVer}ucrt\DLLs\$env:msvcArch\*.dll" $archiveName\
+    Copy-Item "${env:winSdkDir}Redist\${env:winSdkVer}ucrt\DLLs\$env:msvcArch\*.dll" $archiveName\
     # 打包zip
     Compress-Archive -Path $archiveName $archiveName'.zip'
 }
