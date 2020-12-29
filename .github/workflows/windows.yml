@@ -87,10 +87,10 @@ jobs:
           qmake
           nmake
           # 记录build环境给后续step
-          $winSdkDir = ${env:WindowsSdkDir}
-          $winSdkVer = ${env:WindowsSdkVersion}
-          $vcToolsInstallDir = ${env:VCToolsInstallDir}
-          $vcToolsRedistDir = ${env:VCToolsRedistDir}
+          set winSdkDir=%WindowsSdkDir%
+          set winSdkVer=%WindowsSdkVersion%
+          set vcToolsInstallDir=%VCToolsInstallDir%
+          set vcToolsRedistDir=%VCToolsRedistDir%
           echo "::set-output name=winSdkDir::$winSdkDir"
           echo "::set-output name=winSdkVer::$winSdkVer"
           echo "::set-output name=vcToolsInstallDir::$vcToolsInstallDir"
