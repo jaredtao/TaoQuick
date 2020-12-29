@@ -86,15 +86,11 @@ jobs:
           call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ matrix.msvc_arch }}
           qmake
           nmake
-          # 记录build环境给后续step
-          set winSdkDir=%WindowsSdkDir%
-          set winSdkVer=%WindowsSdkVersion%
-          set vcToolsInstallDir=%VCToolsInstallDir%
-          set vcToolsRedistDir=%VCToolsRedistDir%
-          echo "::set-output name=winSdkDir::$winSdkDir"
-          echo "::set-output name=winSdkVer::$winSdkVer"
-          echo "::set-output name=vcToolsInstallDir::$vcToolsInstallDir"
-          echo "::set-output name=vcToolsRedistDir::$vcToolsRedistDir"
+          # 记录build环境到ENV
+          echo "{winSdkDir}={%WindowsSdkDir%}" >> $GITHUB_ENV
+          echo "{winSdkVer}={%WindowsSdkVersion%}" >> $GITHUB_ENV
+          echo "{vcToolsInstallDir}={%VCToolsInstallDir%}" >> $GITHUB_ENV
+          echo "{vcToolsRedistDir}={%VCToolsRedistDir%}" >> $GITHUB_ENV
       # tag 打包
       - name: package
         id: package
@@ -102,10 +98,6 @@ jobs:
         env:
           VCINSTALLDIR: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC'
           archiveName: ${{ matrix.qt_ver }}-${{ matrix.qt_arch }}
-          winSdkDir: ${{ steps.build.outputs.winSdkDir }}
-          winSdkVer: ${{ steps.build.outputs.winSdkVer }}
-          vcToolsInstallDir: ${{ steps.build.outputs.vcToolsInstallDir }}
-          vcToolsRedistDir: ${{ steps.build.outputs.vcToolsRedistDir }}
           msvcArch: ${{ matrix.msvc_arch }}
         shell: pwsh
         run: |
