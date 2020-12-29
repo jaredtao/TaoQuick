@@ -60,7 +60,6 @@ jobs:
             qt_arch_install: msvc2019_64          
     env:
       targetName: TaoQuickShow.exe
-      VCINSTALLDIR: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC'
     # 步骤
     steps:
       # 安装Qt
@@ -81,11 +80,21 @@ jobs:
           fetch-depth: 1
       # 编译msvc
       - name: build-msvc
+        id: build
         shell: cmd
         run: |
           call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ matrix.msvc_arch }}
           qmake
           nmake
+          # 记录build环境给后续step
+          $winSdkDir = ${env:WindowsSdkDir}
+          $winSdkVer = ${env:WindowsSdkVersion}
+          $vcToolsInstallDir = ${env:VCToolsInstallDir}
+          $vcToolsRedistDir = ${env:VCToolsRedistDir}
+          echo "::set-output name=winSdkDir::$winSdkDir"
+          echo "::set-output name=winSdkVer::$winSdkVer"
+          echo "::set-output name=vcToolsInstallDir::$vcToolsInstallDir"
+          echo "::set-output name=vcToolsRedistDir::$vcToolsRedistDir"
       # tag 打包
       - name: package
         id: package
@@ -93,6 +102,11 @@ jobs:
         env:
           VCINSTALLDIR: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC'
           archiveName: ${{ matrix.qt_ver }}-${{ matrix.qt_arch }}
+          winSdkDir: ${{ steps.build.outputs.winSdkDir }}
+          winSdkVer: ${{ steps.build.outputs.winSdkVer }}
+          vcToolsInstallDir: ${{ steps.build.outputs.vcToolsInstallDir }}
+          vcToolsRedistDir: ${{ steps.build.outputs.vcToolsRedistDir }}
+          msvcArch: ${{ matrix.msvc_arch }}
         shell: pwsh
         run: |
           & scripts\windows-publish.ps1 ${env:archiveName} ${env:targetName}
