@@ -46,8 +46,7 @@ int main(int argc, char **argv)
     view.setMinimumSize({ 800, 600 });
     view.resize(1440, 960);
     view.moveToScreenCenter();
-
-    trans.beforeUiReady(view.rootContext());
+    trans.beforeUiReady(view.rootContext(), transDir);
     appInfo.beforeUiReady(view.rootContext());
 
     view.engine()->addImportPath(qmlPath);
