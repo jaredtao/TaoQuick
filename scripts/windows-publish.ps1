@@ -40,7 +40,7 @@ function Main() {
     $redistDll="{0}onecore\{1}\*.CRT\*.dll" -f $env:vcToolsRedistDir.Trim(),$env:msvcArch
     Copy-Item $redistDll $archiveName\
     # 拷贝WinSDK dll
-    $sdkDll="{0}Redist\{1}ucrt\DLLs\{2}\*.dll" -f $env:winSdkDir.Trim(),$env:winSdkVer,$env:msvcArch
+    $sdkDll="{0}Redist\{1}ucrt\DLLs\{2}\*.dll" -f $env:winSdkDir.Trim(),$env:winSdkVer.Trim(),$env:msvcArch
     Copy-Item $sdkDll $archiveName\
     # 打包zip
     Compress-Archive -Path $archiveName $archiveName'.zip'
