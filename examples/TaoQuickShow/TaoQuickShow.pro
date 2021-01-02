@@ -40,7 +40,9 @@ include(TaoQuickShow.pri)
         "$${LITERAL_HASH}define TaoQuickImagePath $${TaoQuickImagePath}" \
         "$${LITERAL_HASH}define qmlPath $${qmlPath}" \
         "$${LITERAL_HASH}define contentsPath $${contentsPath}" \
-        "$${LITERAL_HASH}define imgPath $${imgPath}"
+        "$${LITERAL_HASH}define imgPath $${imgPath}" \
+        "$${LITERAL_HASH}define transDir $${transDir}"
+
 
     write_file(taoMacro.h, headerContents)
 }
