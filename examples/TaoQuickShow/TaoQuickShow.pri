@@ -23,6 +23,7 @@ CONFIG(debug, debug|release) {
     qmlPath = \"file:///$${path}/Qml/\"
     contentsPath = \"file:///$${path}/Contents/\"
     imgPath = \"file:///$${path}/Image/\"
+    transDir=\"$${path}/Trans/\"
 #    DEFINES += qmlPath=\\\"file:///$$PWD/Qml/\\\"
 #    DEFINES += contentsPath=\\\"file:///$$PWD/Contents/\\\"
 #    DEFINES += imgPath=\\\"file:///$$PWD/Image/\\\"
@@ -36,17 +37,18 @@ CONFIG(debug, debug|release) {
     qmlPath = \"qrc:/Qml/\"
     contentsPath = \"qrc:/Contents/\"
     imgPath = \"qrc:/Image/\"
+    transDir= \"qrc:/Trans/\"
 #    DEFINES += qmlPath=\\\"qrc:/Qml/\\\"
 #    DEFINES += contentsPath=\\\"qrc:/Contents/\\\"
 #    DEFINES += imgPath=\\\"qrc:/Image/\\\"
 }
 
-!android:!ios {
+#!android:!ios {
 
-    CONFIG += file_copies
+#    CONFIG += file_copies
 
-    trans.files = $$PWD/Trans/language_zh.json
-    trans.path = $$DESTDIR/Trans
-    COPIES += trans
-}
-OTHER_FILES += $$PWD/Trans/language_zh.json
+#    trans.files = $$PWD/Trans/language_zh.json
+#    trans.path = $$DESTDIR/Trans
+#    COPIES += trans
+#}
+#OTHER_FILES += $$PWD/Trans/language_zh.json

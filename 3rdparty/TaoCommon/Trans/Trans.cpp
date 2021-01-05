@@ -36,6 +36,7 @@ QString Trans::translate(const char *context, const char *sourceText, const char
 
 void Trans::loadFolder(const QString &folder)
 {
+    qWarning() << "Trans loadFolder" << folder;
     QDir dir(folder);
     auto infos = dir.entryInfoList({ "language_*.json" }, QDir::Files);
     QString lang;
