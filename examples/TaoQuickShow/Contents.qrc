@@ -49,5 +49,6 @@
         <file>Contents/ShaderEffect/Snail.qml</file>
         <file>Contents/ShaderEffect/SuperMario.qml</file>
         <file>Contents/General/Tables.qml</file>
+        <file>Trans/language_zh.json</file>
     </qresource>
 </RCC>
