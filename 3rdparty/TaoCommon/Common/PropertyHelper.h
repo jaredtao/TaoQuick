@@ -63,10 +63,7 @@ private:                                                                        
     Q_PROPERTY(T NAME READ NAME WRITE set_##NAME NOTIFY NAME##Changed)                                                                                         \
 public:                                                                                                                                                        \
     PROP_GET(T, NAME)                                                                                                                                          \
-    Q_SLOT PROP_SET(T, NAME)                                                                                                                                           \
-    PROP_CHANGE(T, NAME)                                                                                                                                       \
-private:                                                                                                                                                       \
-    PROP_MEM(T, NAME, InitValue)
+    Q_SLOT PROP_SET(T, NAME) PROP_CHANGE(T, NAME) private : PROP_MEM(T, NAME, InitValue)
 
 /**
 * Example:
