@@ -11,6 +11,15 @@ param (
 # vcToolsRedistDir: ${{ steps.build.outputs.vcToolsRedistDir }}
 # msvcArch: ${{ matrix.msvc_arch }}
 
+
+# winSdkDir: C:\Program Files (x86)\Windows Kits\10\ 
+# winSdkVer: 10.0.19041.0\ 
+# vcToolsInstallDir: C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.28.29333\ 
+# vcToolsRedistDir: C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Redist\MSVC\14.28.29325\ 
+# VCINSTALLDIR: C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC
+# archiveName: 5.9.9-win32_msvc2015
+# msvcArch: x86
+
 $scriptDir = $PSScriptRoot
 $currentDir = Get-Location
 Write-Host "currentDir" $currentDir
@@ -28,9 +37,11 @@ function Main() {
     $excludeList = @("*.qmlc", "*.ilk", "*.exp", "*.lib", "*.pdb")
     Remove-Item -Path $archiveName -Include $excludeList -Recurse -Force
     # 拷贝vcRedist dll
-    Copy-Item "$($env:vcToolsRedistDir)onecore\$env:msvcArch\*.CRT\*.dll" $archiveName\
+    $redistDll="{0}onecore\{1}\*.CRT\*.dll" -f $env:vcToolsRedistDir.Trim(),$env:msvcArch
+    Copy-Item $redistDll $archiveName\
     # 拷贝WinSDK dll
-    Copy-Item "$($env:winSdkDir)Redist\$($env:winSdkVer)ucrt\DLLs\$env:msvcArch\*.dll" $archiveName\
+    $sdkDll="{0}Redist\{1}ucrt\DLLs\{2}\*.dll" -f $env:winSdkDir.Trim(),$env:winSdkVer.Trim(),$env:msvcArch
+    Copy-Item $sdkDll $archiveName\
     # 打包zip
     Compress-Archive -Path $archiveName $archiveName'.zip'
 }
