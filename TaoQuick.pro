@@ -37,4 +37,5 @@ OTHER_FILES += *.md \
     _clang-format \
     .qmake.conf \
     .github/workflows/* \
+    scripts/* \
     mkspecs/features/*
