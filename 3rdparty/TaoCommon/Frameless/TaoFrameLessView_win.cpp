@@ -11,8 +11,6 @@
 #include <windows.h>
 #include <windowsx.h>
 
-#pragma comment(lib, "Dwmapi.lib") // Adds missing library, fixes error LNK2019: unresolved
-#pragma comment(lib, "User32.lib")
 // we cannot just use WS_POPUP style
 // WS_THICKFRAME: without this the window cannot be resized and so aero snap, de-maximizing and minimizing won't work
 // WS_SYSMENU: enables the context menu with the move, close, maximize, minize... commands (shift + right-click on the task bar item)
