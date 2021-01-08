@@ -35,6 +35,8 @@ SOURCES += \
 win32 {
     SOURCES += \
         $$PWD/Frameless/TaoFrameLessView_win.cpp
+LIBS += -lDwmapi -lUser32
+
 } else {
     SOURCES += \
         $$PWD/Frameless/TaoFrameLessView_unix.cpp
