@@ -56,6 +56,6 @@ defineTest(setTaoVersion) {
     export(VER_MIN)
     export(VER_PAT)
     export(VERSION)
-#    export(DEFINES)
+    export(DEFINES)
 }
 
