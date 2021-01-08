@@ -42,14 +42,14 @@ defineTest(setTaoVersion) {
     export(TaoDATETIME)
     export(CXX_COMPILER_ID)
 
-#    DEFINES += TaoREVISION=$${REVISION}
-#    DEFINES += TaoREVISIONSTR=\"\\\"$${REVISION}\\\"\"
-#    DEFINES += TaoVer=\"\\\"$${Ver}\\\"\"
-#    DEFINES += TaoMAJ=$${MAJ}
-#    DEFINES += TaoMIN=$${MIN}
-#    DEFINES += TaoPAT=$${PAT}
-#    DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
-#    DEFINES += CXX_COMPILER_ID=\"\\\"$${QMAKE_COMPILER}\\\"\"
+    DEFINES += TaoREVISION=$${REVISION}
+    DEFINES += TaoREVISIONSTR=\"\\\"$${REVISION}\\\"\"
+    DEFINES += TaoVer=\"\\\"$${Ver}\\\"\"
+    DEFINES += TaoMAJ=$${MAJ}
+    DEFINES += TaoMIN=$${MIN}
+    DEFINES += TaoPAT=$${PAT}
+    DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
+    DEFINES += CXX_COMPILER_ID=\"\\\"$${QMAKE_COMPILER}\\\"\"
 
     export(CONFIG)
     export(VER_MAJ)
