@@ -6,18 +6,18 @@ CONFIG(debug,debug|release){
     } else {
         path=$$system("pwd")
     }
-    TaoQuickImportPath=\"file:///$$path\"
-    TaoQuickImagePath=\"file:///$$path/TaoQuick/Images/\"
-#    DEFINES += TaoQuickImportPath=\\\"file:///$${path}\\\"
-#    DEFINES += TaoQuickImagePath=\\\"file:///$${path}/TaoQuick/Images/\\\"
+    TaoQuickImport=\"file:///$$path\"
+    TaoQuickImage=\"file:///$$path/TaoQuick/Images/\"
+    DEFINES += TaoQuickImportPath=\\\"file:///$${path}\\\"
+    DEFINES += TaoQuickImagePath=\\\"file:///$${path}/TaoQuick/Images/\\\"
 } else {
     # release mode use qrc file
     RESOURCES += $$PWD/TaoQuick/TaoQuick.qrc
     # release mode set importPath with 'qrc:///'
-    TaoQuickImportPath=\"qrc:///\"
-    TaoQuickImagePath=\"qrc:/TaoQuick/Images/\"
-#    DEFINES += TaoQuickImportPath=\\\"qrc:///\\\"
-#    DEFINES += TaoQuickImagePath=\\\"qrc:/TaoQuick/Images/\\\"
+    TaoQuickImport=\"qrc:///\"
+    TaoQuickImage=\"qrc:/TaoQuick/Images/\"
+    DEFINES += TaoQuickImportPath=\\\"qrc:///\\\"
+    DEFINES += TaoQuickImagePath=\\\"qrc:/TaoQuick/Images/\\\"
 }
 
 # Additional import path used to resolve QML modules in Qt Creator's code model

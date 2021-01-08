@@ -36,8 +36,8 @@ include(TaoQuickShow.pri)
         "$${LITERAL_HASH}define TaoPAT $${TaoPAT}" \
         "$${LITERAL_HASH}define TaoDATETIME $${TaoDATETIME}" \
         "$${LITERAL_HASH}define CXX_COMPILER_ID $${CXX_COMPILER_ID}" \
-        "$${LITERAL_HASH}define TaoQuickImportPath $${TaoQuickImportPath}" \
-        "$${LITERAL_HASH}define TaoQuickImagePath $${TaoQuickImagePath}" \
+        "$${LITERAL_HASH}define TaoQuickImport $${TaoQuickImport}" \
+        "$${LITERAL_HASH}define TaoQuickImage $${TaoQuickImage}" \
         "$${LITERAL_HASH}define qmlPath $${qmlPath}" \
         "$${LITERAL_HASH}define contentsPath $${contentsPath}" \
         "$${LITERAL_HASH}define imgPath $${imgPath}" \
