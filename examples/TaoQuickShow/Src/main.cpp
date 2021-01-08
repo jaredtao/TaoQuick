@@ -50,13 +50,13 @@ int main(int argc, char **argv)
     appInfo.beforeUiReady(view.rootContext());
 
     view.engine()->addImportPath(qmlPath);
-#ifdef TaoQuickImportPath
-    view.engine()->addImportPath(TaoQuickImportPath);
-    qWarning() << "TaoQuickImportPath " << TaoQuickImportPath;
+#ifdef TaoQuickImport
+    view.engine()->addImportPath(TaoQuickImport);
+    qWarning() << "TaoQuickImportPath " << TaoQuickImport;
 #endif
 
-#ifdef TaoQuickImagePath
-    view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+#ifdef TaoQuickImage
+    view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImage);
 #endif
 
 #ifdef TAODEBUG
