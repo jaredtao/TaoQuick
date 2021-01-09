@@ -4,13 +4,17 @@
 #include "Logger/Logger.h"
 #include "QuickTool/QuickTool.h"
 #include "Trans/Trans.h"
-#include "taoMacro.h"
 #include <QDir>
 #include <QGuiApplication>
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickItem>
 #include <QUrl>
+
+#ifdef QMAKE_GEN_TAOMACRO
+    #include "taoMacro.h"
+#endif
+
 static void prepareApp()
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)

@@ -10,6 +10,9 @@ else()
     set(TaoQuickImage "file:///${TaoQuickPath}/TaoQuick/Images/" CACHE STRING "tao quick image path")
 endif()
 
+add_compile_definitions(TaoQuickImport="${TaoQuickImport}")
+add_compile_definitions(TaoQuickImage="${TaoQuickImage}")
+
 add_compile_definitions(TaoQuickImportPath="${TaoQuickImport}")
 add_compile_definitions(TaoQuickImagePath="${TaoQuickImage}")
 
