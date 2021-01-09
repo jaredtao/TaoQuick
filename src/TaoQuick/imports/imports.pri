@@ -14,7 +14,7 @@ CONFIG(debug,debug|release){
     # release mode use qrc file
     RESOURCES += $$PWD/TaoQuick/TaoQuick.qrc
     # release mode set importPath with 'qrc:///'
-    TaoQuickImport=\"qrc:///\"
+    TaoQuickImport=\"qrc:/\"
     TaoQuickImage=\"qrc:/TaoQuick/Images/\"
     DEFINES += TaoQuickImportPath=\\\"qrc:///\\\"
     DEFINES += TaoQuickImagePath=\\\"qrc:/TaoQuick/Images/\\\"
