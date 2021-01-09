@@ -238,22 +238,6 @@
             "value": "淡入淡出"
         },
         {
-            "key": "Animation",
-            "value":"动画"
-        },
-        {
-            "key": "Effect",
-            "value":"效果"
-        },
-        {
-            "key": "PageSwitch",
-            "value":"页面切换"
-        },
-        {
-            "key": "ShaderEffect",
-            "value":"着色器特效"
-        },
-        {
             "key": "Shape",
             "value":"图元"
         },
@@ -360,22 +344,6 @@
         {
             "key": "General",
             "value": "通用"
-        },
-        {
-            "key": "Animation",
-            "value": "动画"
-        },
-        {
-            "key": "Effect",
-            "value": "特效"
-        },
-        {
-            "key": "PageSwitch",
-            "value": "页面切换"
-        },
-        {
-            "key": "ShaderEffect",
-            "value": "着色器特效"
         },
         {
             "key": "Auto Play",
