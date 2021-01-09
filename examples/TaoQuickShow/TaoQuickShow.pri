@@ -37,7 +37,7 @@ CONFIG(debug, debug|release) {
     qmlPath = \"qrc:/Qml/\"
     contentsPath = \"qrc:/Contents/\"
     imgPath = \"qrc:/Image/\"
-    transDir= \"qrc:/Trans/\"
+    transDir= \":/Trans/\"
 #    DEFINES += qmlPath=\\\"qrc:/Qml/\\\"
 #    DEFINES += contentsPath=\\\"qrc:/Contents/\\\"
 #    DEFINES += imgPath=\\\"qrc:/Image/\\\"

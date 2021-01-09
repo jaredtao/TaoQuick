@@ -24,7 +24,7 @@ CONFIG(debug,debug|release) {
 include($${TaoQuick_3RDPARTY_TREE}/TaoCommon/TaoCommon.pri)
 include($${TaoQuick_SOURCE_TREE}/src/TaoQuick/imports/imports.pri)
 include(TaoQuickShow.pri)
-
+DEFINES += QMAKE_GEN_TAOMACRO
 !build_pass {
     headerContents = \
         "$${LITERAL_HASH}pragma once" \
