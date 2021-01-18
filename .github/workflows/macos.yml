@@ -44,7 +44,7 @@ jobs:
         run: |
           qmake
           make
-      # tag 打包
+      # 打包
       - name: package
         run: |
           # 拷贝依赖

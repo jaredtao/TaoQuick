@@ -80,8 +80,8 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
-      # 编译msvc
-      - name: build-msvc
+      # msvc编译
+      - name: msvc-build
         id: build
         shell: cmd
         run: |
