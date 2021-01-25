@@ -1,1 +1,2 @@
-include($$PWD/TaoCommon/TaoCommon.pri)
+include($$PWD/TaoCommon/src/TaoCommon.pri)
+

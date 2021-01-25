@@ -1,0 +1,3 @@
+[submodule "3rdparty/TaoCommon"]
+	path = 3rdparty/TaoCommon
+	url = https://github.com/jaredtao/TaoCommon.git

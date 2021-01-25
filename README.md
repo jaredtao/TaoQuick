@@ -223,6 +223,13 @@ Other Contents reference to above table：
 
 # Use TaoQuick 
 
+## get code
+```shell
+git clone https://githun.com/jaredtao/TaoQuick.git
+cd TaoQuick 
+git submodule update
+```
+
 ## qmake 
 
 You just need import '.pri' file to project and add import Path to QmlEngine, TaoQuick will be use as local file or qrc resource.
