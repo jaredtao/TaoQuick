@@ -13,9 +13,15 @@ aux_source_directory(Src/DeviceAddTable SRC2)
 include(taoVersion)
 
 add_compile_definitions(TaoCommon_NO_LIB)
-add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/TaoCommon ${CMAKE_SOURCE_DIR}/build/3rdparty/TaoCommon)
-#message("TaoCommonPath ${TaoCommonPath}")
-#message("TaoCommonFiles ${TaoCommonFiles}")
+if (EXISTS ${CMAKE_SOURCE_DIR}/3rdparty/TaoCommon/src/TaoCommon)
+    add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/TaoCommon/src/TaoCommon ${CMAKE_SOURCE_DIR}/build/3rdparty/TaoCommon)
+    #message("TaoCommonPath ${TaoCommonPath}")
+    #message("TaoCommonFiles ${TaoCommonFiles}")
+else()
+    message(FATAL_ERROR "3rdparty library TaoCommon missing, please update by command: git submodule update")
+endif()
+
+
 
 include(taoQuick)
 message("TaoQuickRes ${TaoQuickRes}")

@@ -20,8 +20,10 @@ CONFIG(debug,debug|release) {
 } else {
     DESTDIR = $${TaoQuick_RUN_TREE}/release
 }
-
-include($${TaoQuick_3RDPARTY_TREE}/TaoCommon/TaoCommon.pri)
+!exists($${TaoQuick_3RDPARTY_TREE}/TaoCommon/src/TaoCommon/TaoCommon.pri) {
+    error("3rdparty library TaoCommon missing, please update by command: git submodule update")
+}
+include($${TaoQuick_3RDPARTY_TREE}/TaoCommon/src/TaoCommon/TaoCommon.pri)
 include($${TaoQuick_SOURCE_TREE}/src/TaoQuick/imports/imports.pri)
 include(TaoQuickShow.pri)
 DEFINES += QMAKE_GEN_TAOMACRO
