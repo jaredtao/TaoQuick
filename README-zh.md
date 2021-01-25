@@ -247,6 +247,15 @@ CusConfig是核心库的全局配置,主要包括字体、颜色等,所有组件
 
 # 使用核心库TaoQuick 
 
+## 获取代码
+
+```shell
+git clone https://githun.com/jaredtao/TaoQuick.git
+cd TaoQuick 
+git submodule update
+```
+
+
 详细的使用方法，可以阅读 [入门指南](入门指南.md)
 
 ## qmake用法
