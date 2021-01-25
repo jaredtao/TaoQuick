@@ -43,6 +43,7 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
+          submodules: 'true'
       - name: build android
         run: |
           export ANDROID_SDK_ROOT=$ANDROID_HOME
