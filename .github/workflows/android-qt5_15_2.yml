@@ -31,7 +31,7 @@ jobs:
         qt_target: [android]
 
     steps:
-      - name: Install Qt 5.15.2
+      - name: Install Qt
         uses: jurplel/install-qt-action@v2.10.0
         with:
           # Version of Qt to install
