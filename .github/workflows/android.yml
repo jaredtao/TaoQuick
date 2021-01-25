@@ -31,7 +31,7 @@ jobs:
         qt_target: [android]
         qt_arch: [android_x86,android_armv7,android_arm64_v8a]
     steps:
-      - name: Install Qt 5.12.10
+      - name: Install Qt
         uses: jurplel/install-qt-action@v2.10.0
         with:
           # Version of Qt to install
