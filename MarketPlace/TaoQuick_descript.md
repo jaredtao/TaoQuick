@@ -1,6 +1,6 @@
 # TaoQuick Library
 
-![TaoQuick logo](https://github.com/jaredtao/TaoQuick/blob/master/examples/TaoQuickShow/Image/logo/milk.png) 
+![TaoQuick logo](https://github.com/jaredtao/TaoQuick/raw/master/examples/TaoQuickShow/Image/logo/milk.png) 
 
 TaoQuick Library
 
