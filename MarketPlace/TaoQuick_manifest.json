@@ -1,0 +1,39 @@
+{
+    "$schema": "http://qt.io/schema/extension-schema-v1#",
+    "title": "TaoQuick",
+    "extensionType": [
+        "library"
+    ],
+    "version": "1.0.0",
+    "vendor": {
+        "name": "jaredtao",
+        "url": "https://jaredtao.github.io"
+    },
+    "contact": "jared2020@163.com",
+    "copyright": [ "jaredtao (jared2020@163.com)" ],
+    "author": "jared",
+    "icon": "https://github.com/jaredtao/TaoQuick/blob/master/examples/TaoQuickShow/Image/logo/milk.png",
+    "licenses": [
+      { "licenseType": "MIT",
+        "licenseUrl": "https://github.com/jaredtao/TaoQuick/blob/master/LICENSE" }
+    ],
+    "created": "2018-12-03",
+    "lastUpdate": "2021-01-26",
+    "platforms": [
+        "macOS 10.14", "Windows 1803"
+    ],
+    "qtVersions": [
+        "5.9.0", "5.12.10", "5.15.2"
+    ],
+    "tags": [
+        "Component Library", "Quick Controls 2" ],
+    "price": {
+        "listprice": 0
+    },
+    "support": "jared2020@163.com",
+    "bugUrl": "https://github.com/jaredtao/TaoQuick/issues",
+    "sourceRepoUrl": "https://github.com/jaredtao/TaoQuick",
+    "dependencies": [
+        "Quick"
+    ]
+}
