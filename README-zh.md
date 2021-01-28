@@ -12,6 +12,7 @@
 - [TaoQuick](#taoquick)
 - [徽章预览](#徽章预览)
   - [项目](#项目)
+  - [Qt 官方商城](#qt-官方商城)
   - [编译](#编译)
   - [发布](#发布)
   - [仓库状态](#仓库状态)
@@ -66,6 +67,12 @@
 
 [license-link]: https://github.com/jaredtao/TaoQuick/blob/master/LICENSE "LICENSE"
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg "MIT"
+
+## Qt 官方商城
+
+TaoQuick项目已同步在Qt官方商城上架
+
+https://marketplace.qt.io/collections/newest/products/taoquick
 
 ## 编译
 

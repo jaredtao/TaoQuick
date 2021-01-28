@@ -7,6 +7,7 @@
 - [TaoQuick](#taoquick)
 - [Badge preview](#badge-preview)
   - [Project](#project)
+  - [Qt marketplace](#qt-marketplace)
   - [Build](#build)
   - [Release](#release)
   - [Repository status](#repository-status)
@@ -50,6 +51,10 @@ make the appropriate function expansion to  facilitate development of Qml applic
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg "MIT"
 [CII-badge]: https://bestpractices.coreinfrastructure.org/projects/3060/badge
 [CII-link]: https://bestpractices.coreinfrastructure.org/projects/3060
+
+## Qt marketplace
+
+https://marketplace.qt.io/collections/newest/products/taoquick
 
 ## Build
 
