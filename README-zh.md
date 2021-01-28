@@ -34,6 +34,7 @@
 - [项目结构](#项目结构)
 - [核心库 TaoQuick](#核心库-taoquick)
 - [使用核心库TaoQuick](#使用核心库taoquick)
+  - [获取代码](#获取代码)
   - [qmake用法](#qmake用法)
   - [cmake用法](#cmake用法)
 - [联系作者](#联系作者)
@@ -252,7 +253,7 @@ CusConfig是核心库的全局配置,主要包括字体、颜色等,所有组件
 ```shell
 git clone https://githun.com/jaredtao/TaoQuick.git
 cd TaoQuick 
-git submodule update
+git submodule update --init
 ```
 
 
