@@ -74,7 +74,7 @@ Other Contents reference to above table：
 ```shell
 git clone https://githun.com/jaredtao/TaoQuick.git
 cd TaoQuick 
-git submodule update
+git submodule update --init
 ```
 
 ## qmake 
