@@ -18,7 +18,7 @@ if (EXISTS ${CMAKE_SOURCE_DIR}/3rdparty/TaoCommon/src/TaoCommon)
     #message("TaoCommonPath ${TaoCommonPath}")
     #message("TaoCommonFiles ${TaoCommonFiles}")
 else()
-    message(FATAL_ERROR "3rdparty library TaoCommon missing, please update by command: git submodule update")
+    message(FATAL_ERROR "3rdparty library TaoCommon missing, please update by command: git submodule update --init")
 endif()
 
 
