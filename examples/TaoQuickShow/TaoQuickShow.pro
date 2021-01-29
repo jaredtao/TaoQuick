@@ -21,7 +21,7 @@ CONFIG(debug,debug|release) {
     DESTDIR = $${TaoQuick_RUN_TREE}/release
 }
 !exists($${TaoQuick_3RDPARTY_TREE}/TaoCommon/src/TaoCommon/TaoCommon.pri) {
-    error("3rdparty library TaoCommon missing, please update by command: git submodule update")
+    error("3rdparty library TaoCommon missing, please update by command: git submodule update --init")
 }
 include($${TaoQuick_3RDPARTY_TREE}/TaoCommon/src/TaoCommon/TaoCommon.pri)
 include($${TaoQuick_SOURCE_TREE}/src/TaoQuick/imports/imports.pri)
