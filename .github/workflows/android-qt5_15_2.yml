@@ -32,7 +32,7 @@ jobs:
 
     steps:
       - name: Install Qt
-        uses: jurplel/install-qt-action@v2.10.0
+        uses: jurplel/install-qt-action@v2.13.0
         with:
           # Version of Qt to install
           version: ${{ matrix.qt_ver }}
@@ -40,7 +40,7 @@ jobs:
           target: android
           # Architecture for Windows/Android
           # arch: ${{ matrix.qt_arch }}          
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 1
           submodules: 'true'
