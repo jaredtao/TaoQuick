@@ -4,6 +4,9 @@ TARGET = TaoQuickShow
 QT += core gui qml quick
 
 CONFIG += c++17 qtquickcompiler utf8_source
+win32:mingw  {
+    LIBS += -lDwmapi
+}
 
 load(taoVersion)
 setTaoVersion()
@@ -20,9 +23,9 @@ CONFIG(debug,debug|release) {
 } else {
     DESTDIR = $${TaoQuick_RUN_TREE}/release
 }
-!exists($${TaoQuick_3RDPARTY_TREE}/TaoCommon/src/TaoCommon/TaoCommon.pri) {
-    error("3rdparty library TaoCommon missing, please update by command: git submodule update --init")
-}
+#!exists($${TaoQuick_3RDPARTY_TREE}/TaoCommon/src/TaoCommon/TaoCommon.pri) {
+#    error("3rdparty library TaoCommon missing, please update by command: git submodule update --init")
+#}
 include($${TaoQuick_3RDPARTY_TREE}/TaoCommon/src/TaoCommon/TaoCommon.pri)
 include($${TaoQuick_SOURCE_TREE}/src/TaoQuick/imports/imports.pri)
 include(TaoQuickShow.pri)
