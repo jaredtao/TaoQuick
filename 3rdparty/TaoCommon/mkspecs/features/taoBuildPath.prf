@@ -1,0 +1,21 @@
+defineTest(setBuildPath) {
+    buildPath = $$1
+    CONFIG(debug,debug|release){
+        MOC_DIR = $${buildPath}/debug/moc
+        RCC_DIR = $${buildPath}/debug/rcc
+        UI_DIR = $${buildPath}/debug/ui
+        OBJECTS_DIR = $${buildPath}/debug/obj
+        QMLCACHE_DIR = $${buildPath}/debug/qmlcache
+    } else {
+        MOC_DIR = $${buildPath}/release/moc
+        RCC_DIR = $${buildPath}/release/rcc
+        UI_DIR = $${buildPath}/release/ui
+        OBJECTS_DIR = $${buildPath}/release/obj
+        QMLCACHE_DIR = $${buildPath}/release/qmlcache
+    }
+    export(MOC_DIR)
+    export(RCC_DIR)
+    export(UI_DIR)
+    export(OBJECTS_DIR)
+    export(QMLCACHE_DIR)
+}

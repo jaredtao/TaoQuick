@@ -1,0 +1,44 @@
+defineTest(setTaoVersion) {
+    TAO_VERSION_TAG = 1.0
+
+    # current commit hash
+    REVISION=$$system("git rev-parse HEAD")
+    REVISION=$$str_member($${REVISION}, 0, $$num_add(10, -1))
+    isEmpty(REVISION) {
+        REVISION = 0000000000
+    }
+
+    # last tag
+    Ver=$$system("git describe --abbrev=0 --tags")
+    isEmpty(Ver) {
+        Ver=0.0.0
+    }
+    VerList =$$split(Ver, .)
+    MAJ = $$take_first(VerList)
+    MIN = $$take_first(VerList)
+    PAT = $$take_first(VerList)
+    equals(TEMPLATE, lib) {
+        CONFIG += skip_target_version_ext
+        VER_MAJ = $${MAJ}
+        VER_MIN = $${MIN}
+        VER_PAT = $${PAT}
+        VERSION = $${Ver}
+    }
+
+    DEFINES += TaoREVISION=$${REVISION}
+    DEFINES += TaoREVISIONSTR=\"\\\"$${REVISION}\\\"\"
+    DEFINES += TaoVer=\"\\\"$${Ver}\\\"\"
+    DEFINES += TaoMAJ=$${MAJ}
+    DEFINES += TaoMIN=$${MIN}
+    DEFINES += TaoPAT=$${PAT}
+    DEFINES += TaoDATETIME=\"\\\"$${_DATE_}\\\"\"
+    DEFINES += TaoCompilerVendor=\"\\\"$${QT_VERSION} $${QMAKE_PLATFORM} $${QMAKE_COMPILER} $${QMAKE_TARGET.arch}\\\"\"
+
+    export(CONFIG)
+    export(VER_MAJ)
+    export(VER_MIN)
+    export(VER_PAT)
+    export(VERSION)
+    export(DEFINES)
+}
+
