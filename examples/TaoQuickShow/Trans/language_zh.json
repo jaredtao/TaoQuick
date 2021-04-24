@@ -601,6 +601,14 @@
         {
             "key": "Clear All",
             "value": "清空"
+        },
+        {
+            "key": "Last Page",
+            "value": "上一页"
+        },
+        {
+            "key": "Next Page",
+            "value": "下一页"
         }
     ]
 }
