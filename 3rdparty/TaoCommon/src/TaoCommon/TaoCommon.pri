@@ -11,6 +11,7 @@ HEADERS += \
     $$PWD/Common/Package.h \
     $$PWD/Common/PropertyHelper.h \
     $$PWD/Common/Subject.h \
+    $$PWD/Common/MathHelp.h \
     $$PWD/Frameless/TaoFrameLessView.h \
     $$PWD/Logger/Logger.h \
     $$PWD/Logger/LoggerTemplate.h \
