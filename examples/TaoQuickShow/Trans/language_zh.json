@@ -610,5 +610,14 @@
             "key": "Next Page",
             "value": "下一页"
         }
+        {
+            "key": "Append Txt Items",
+            "value": "导入TXT"
+        }
+        {
+            "key": "Save Txt Items",
+            "value": "导出TXT"
+        }
+
     ]
 }
