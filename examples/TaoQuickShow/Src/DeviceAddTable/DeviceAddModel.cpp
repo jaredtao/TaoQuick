@@ -228,3 +228,87 @@ void DeviceAddModel::doUpdateName(int row, const QString &name)
     }
     static_cast<DeviceAddItem *>(mDatas.at(row))->set_name(name);
 }
+
+
+void DeviceAddModel::saveTxtItems()
+{
+    QFile file("testdata.txt");
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        qDebug()<<"testdata.txt no exit!";
+        return ;
+    }
+
+    QTextStream out(&file);
+    qDebug()<<"saveTxtItems--->mDatas.count()"<< mDatas.count();
+    if (mDatas.count() <= 0) {
+        qDebug()<<"mDatas.count() is null!";
+    }
+    else
+    {
+        for (int i = 0; i < mDatas.count(); ++i) {
+            const auto &obj = mDatas.at(i);
+            if (obj->isVisible() && obj->isChecked())
+            {
+                auto name= static_cast<DeviceAddItem *>(obj)->name();
+                auto address= static_cast<DeviceAddItem *>(obj)->address();
+                auto modelString= static_cast<DeviceAddItem *>(obj)->modelString();
+
+                qDebug()<<"saveTxtItems--->name"<< name;
+                out << name << ";"
+                    << address << ";"
+                    << modelString << ";"
+                    << "\n";
+            }
+        }
+    }
+}
+
+void DeviceAddModel::genTxtItems()
+{
+    QList<TaoListItemBase *> objs;
+//    objs.reserve(count);
+
+    QFile file("testdata.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        qDebug()<<"testdata.txt no exit!";
+        return ;
+    }
+    QTextStream in(&file);
+    while (!in.atEnd())
+    {
+        QString line = in.readLine();
+        auto words=line.split(';', QString::SkipEmptyParts);
+        int count = 0;
+        for(auto word:words){
+            word=word.trimmed();
+            ++count;
+        }
+        qDebug()<<"count"<<count;
+
+        if(count == 3)
+        {
+            auto item = new DeviceAddItem;
+            item->set_name(nameTemplate.arg(words[0]));
+            auto ip=words[1].split('.', QString::SkipEmptyParts);
+            int ipcount = 0;
+            for(auto ipitem:ip){
+                ipitem=ipitem.trimmed();
+                ++ipcount;
+            }
+            qDebug()<<"ip"<<ip;
+            if(ipcount==4)
+            {
+                item->set_address(ipTemplate.arg(ip[0])
+                                            .arg(ip[1])
+                                            .arg(ip[2])
+                                            .arg(ip[3]));
+            }
+            item->set_modelString(modelTemplate.arg(words[2]));
+            objs.append(item);
+        }
+    }
+    qDebug()<<"append(objs)";
+    append(objs);
+}
