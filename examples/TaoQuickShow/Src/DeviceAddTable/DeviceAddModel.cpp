@@ -3,6 +3,8 @@
 #include <QCoreApplication>
 #include <QEventLoop>
 #include <QHostAddress>
+#include <QFile>
+#include <QString>
 #include <chrono>
 #include <random>
 const static QString nameTemplate("item %1");
