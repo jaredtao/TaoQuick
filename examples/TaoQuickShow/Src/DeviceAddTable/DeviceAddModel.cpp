@@ -17,7 +17,7 @@ public:
     std::default_random_engine randomEngine;
     std::uniform_int_distribution<uint32_t> u65535 { 0, 0xffffffff };
 };
-DeviceAddModel::DeviceAddModel(QObject *parent) : TaoListModel(parent), d(new DeviceAddModelPrivate)
+DeviceAddModel::DeviceAddModel(QObject *parent) : QuickListModel(parent), d(new DeviceAddModelPrivate)
 {
     setHeaderRoles(sHeaderRoles);
 }
@@ -55,7 +55,7 @@ void DeviceAddModel::initData()
 {
     const int N = 50000;
 
-    QList<TaoListItemBase *> objs;
+    QList<QuickListItemBase *> objs;
     objs.reserve(N);
     auto c1 = std::chrono::high_resolution_clock::now();
 
@@ -71,7 +71,7 @@ void DeviceAddModel::initData()
     auto c2 = std::chrono::high_resolution_clock::now();
     auto micro = std::chrono::duration_cast<std::chrono::milliseconds>(c2 - c1).count();
     qWarning() << "general" << N << "cost" << micro << "ms";
-    quickResetData(objs);
+    resetData(objs);
 }
 
 void DeviceAddModel::addOne()
@@ -82,7 +82,7 @@ void DeviceAddModel::addOne()
 
 void DeviceAddModel::addMulti(int count)
 {
-    QList<TaoListItemBase *> objs;
+    QList<QuickListItemBase *> objs;
     objs.reserve(count);
 
     for (int i = 0; i < count; ++i) {
@@ -159,13 +159,13 @@ void DeviceAddModel::removeRow(int row)
 
 void DeviceAddModel::sortByName(Qt::SortOrder order)
 {
-    QList<TaoListItemBase *> copyObjs = mDatas;
+    QList<QuickListItemBase *> copyObjs = mDatas;
     if (order == Qt::SortOrder::AscendingOrder) {
-        std::sort(copyObjs.begin(), copyObjs.end(), [](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+        std::sort(copyObjs.begin(), copyObjs.end(), [](QuickListItemBase *obj1, QuickListItemBase *obj2) -> bool {
             return (static_cast<DeviceAddItem *>(obj1))->name() < (static_cast<DeviceAddItem *>(obj2))->name();
         });
     } else {
-        std::sort(copyObjs.begin(), copyObjs.end(), [](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+        std::sort(copyObjs.begin(), copyObjs.end(), [](QuickListItemBase *obj1, QuickListItemBase *obj2) -> bool {
             return (static_cast<DeviceAddItem *>(obj1))->name() > (static_cast<DeviceAddItem *>(obj2))->name();
         });
     }
@@ -175,13 +175,13 @@ void DeviceAddModel::sortByName(Qt::SortOrder order)
 
 void DeviceAddModel::sortByAddress(Qt::SortOrder order)
 {
-    QList<TaoListItemBase *> copyObjs = mDatas;
+    QList<QuickListItemBase *> copyObjs = mDatas;
     if (order == Qt::SortOrder::AscendingOrder) {
-        std::sort(copyObjs.begin(), copyObjs.end(), [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+        std::sort(copyObjs.begin(), copyObjs.end(), [=](QuickListItemBase *obj1, QuickListItemBase *obj2) -> bool {
             return static_cast<DeviceAddItem *>(obj1)->toIPv4Address() < static_cast<DeviceAddItem *>(obj2)->toIPv4Address();
         });
     } else {
-        std::sort(copyObjs.begin(), copyObjs.end(), [=](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+        std::sort(copyObjs.begin(), copyObjs.end(), [=](QuickListItemBase *obj1, QuickListItemBase *obj2) -> bool {
             return static_cast<DeviceAddItem *>(obj1)->toIPv4Address() > static_cast<DeviceAddItem *>(obj2)->toIPv4Address();
         });
     }
@@ -191,13 +191,13 @@ void DeviceAddModel::sortByAddress(Qt::SortOrder order)
 
 void DeviceAddModel::sortByModel(Qt::SortOrder order)
 {
-    QList<TaoListItemBase *> copyObjs = mDatas;
+    QList<QuickListItemBase *> copyObjs = mDatas;
     if (order == Qt::SortOrder::AscendingOrder) {
-        std::sort(copyObjs.begin(), copyObjs.end(), [](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+        std::sort(copyObjs.begin(), copyObjs.end(), [](QuickListItemBase *obj1, QuickListItemBase *obj2) -> bool {
             return (static_cast<DeviceAddItem *>(obj1))->modelString().toULongLong() < (static_cast<DeviceAddItem *>(obj2))->modelString().toULongLong();
         });
     } else {
-        std::sort(copyObjs.begin(), copyObjs.end(), [](TaoListItemBase *obj1, TaoListItemBase *obj2) -> bool {
+        std::sort(copyObjs.begin(), copyObjs.end(), [](QuickListItemBase *obj1, QuickListItemBase *obj2) -> bool {
             return (static_cast<DeviceAddItem *>(obj1))->modelString().toULongLong() > (static_cast<DeviceAddItem *>(obj2))->modelString().toULongLong();
         });
     }
@@ -268,7 +268,7 @@ void DeviceAddModel::saveTxtItems()
 
 void DeviceAddModel::genTxtItems()
 {
-    QList<TaoListItemBase *> objs;
+    QList<QuickListItemBase *> objs;
 //    objs.reserve(count);
 
     QFile file("testdata.txt");

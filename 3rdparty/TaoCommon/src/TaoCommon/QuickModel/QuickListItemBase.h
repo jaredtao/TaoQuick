@@ -2,7 +2,7 @@
 
 #include <QObject>
 #include "TaoCommonGlobal.h"
-class TAO_API TaoListItemBase : public QObject
+class TAO_API QuickListItemBase : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool isChecked READ isChecked WRITE setIsChecked NOTIFY isCheckedChanged)
@@ -10,9 +10,9 @@ class TAO_API TaoListItemBase : public QObject
     Q_PROPERTY(bool isVisible READ isVisible WRITE setIsVisible NOTIFY isVisibleChanged)
     Q_PROPERTY(bool isAlternate READ isAlternate WRITE setIsAlternate NOTIFY isAlternateChanged)
 public:
-    explicit TaoListItemBase(QObject *parent = nullptr);
-    ~TaoListItemBase() override;
-    TaoListItemBase(const TaoListItemBase &other)
+    explicit QuickListItemBase(QObject *parent = nullptr);
+    ~QuickListItemBase() override;
+    QuickListItemBase(const QuickListItemBase &other)
     {
         setIsChecked(other.isChecked());
         setIsSelected(other.isSelected());
@@ -20,7 +20,7 @@ public:
         setIsAlternate(other.isAlternate());
     }
 
-    TaoListItemBase &operator=(const TaoListItemBase &other)
+    QuickListItemBase &operator=(const QuickListItemBase &other)
     {
         setIsChecked(other.isChecked());
         setIsSelected(other.isSelected());
@@ -28,12 +28,24 @@ public:
         setIsAlternate(other.isAlternate());
         return *this;
     }
-    bool isChecked() const { return mIsChecked; }
+    bool isChecked() const
+    {
+        return mIsChecked;
+    }
 
-    bool isSelected() const { return mIsSelected; }
+    bool isSelected() const
+    {
+        return mIsSelected;
+    }
 
-    bool isVisible() const { return mIsVisible; }
-    bool isAlternate() const { return mIsAlternate; }
+    bool isVisible() const
+    {
+        return mIsVisible;
+    }
+    bool isAlternate() const
+    {
+        return mIsAlternate;
+    }
     // Model call this for search. return true if contents match key, others return false.
     virtual bool match(const QString &key)
     {
@@ -61,15 +73,16 @@ public slots:
 
     void setIsVisible(bool isVisible)
     {
-        if (mIsVisible == isVisible)
-            return;
+        //if (mIsVisible == isVisible)
+        //    return;
 
         mIsVisible = isVisible;
         emit isVisibleChanged(mIsVisible);
     }
     void setIsAlternate(bool isAlternate)
     {
-        if (mIsAlternate == isAlternate) {
+        if (mIsAlternate == isAlternate)
+        {
             return;
         }
         mIsAlternate = isAlternate;

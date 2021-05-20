@@ -1,9 +1,9 @@
 #pragma once
 
 #include "Common/PropertyHelper.h"
-#include "TaoModel/TaoListItemBase.h"
+#include "QuickModel/QuickListItemBase.h"
 #include <QObject>
-class DeviceAddItem : public TaoListItemBase
+class DeviceAddItem : public QuickListItemBase
 {
     Q_OBJECT
 
