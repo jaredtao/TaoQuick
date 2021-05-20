@@ -17,9 +17,9 @@ HEADERS += \
     $$PWD/Logger/LoggerTemplate.h \
     $$PWD/QuickTool/QuickTool.h \
     $$PWD/TaoCommonGlobal.h \
-    $$PWD/TaoModel/TaoListItemBase.h \
-    $$PWD/TaoModel/TaoListModel.h \
-    $$PWD/TaoModel/TaoListModelBase.hpp \
+    $$PWD/QuickModel/QuickListItemBase.h \
+    $$PWD/QuickModel/QuickListModel.h \
+    $$PWD/QuickModel/QuickModelBase.hpp \
     $$PWD/Thread/ThreadCommon.h \
     $$PWD/Thread/ThreadPool.h \
     $$PWD/Thread/ThreadWorkerController.h \
@@ -28,8 +28,8 @@ HEADERS += \
 SOURCES += \
     $$PWD/Logger/Logger.cpp \
     $$PWD/QuickTool/QuickTool.cpp \
-    $$PWD/TaoModel/TaoListItemBase.cpp \
-    $$PWD/TaoModel/TaoListModel.cpp \
+    $$PWD/QuickModel/QuickListItemBase.cpp \
+    $$PWD/QuickModel/QuickListModel.cpp \
     $$PWD/Thread/ThreadPool.cpp \
     $$PWD/Trans/Trans.cpp
 
