@@ -1,0 +1,109 @@
+---
+# 关闭格式化
+DisableFormat:   false
+
+# 语言: None, Cpp, Java, JavaScript, ObjC, Proto, TableGen, TextProto
+Language:        Cpp
+
+# 标准: Cpp03, Cpp11, Auto
+Standard:        Cpp11
+
+BasedOnStyle:  WebKit
+
+# 每行字符的限制，0表示没有限制
+ColumnLimit:     160
+
+# tab宽度
+TabWidth:        4
+
+# 使用tab字符: Never, ForIndentation, ForContinuationAndIndentation, Always
+UseTab:          Never
+
+# 开括号(开圆括号、开尖括号、开方括号)后的对齐: Align, DontAlign, AlwaysBreak(总是在开括号后换行)
+AlignAfterOpenBracket: AlwaysBreak
+
+# 左对齐逃脱换行(使用反斜杠换行)的反斜杠
+AlignEscapedNewlines: Right
+
+
+# 在大括号前换行: Attach(始终将大括号附加到周围的上下文), Linux(除函数、命名空间和类定义，与Attach类似),
+#   Mozilla(除枚举、函数、记录定义，与Attach类似), Stroustrup(除函数定义、catch、else，与Attach类似),
+#   Allman(总是在大括号前换行), GNU(总是在大括号前换行，并对于控制语句的大括号增加额外的缩进), WebKit(在函数前换行), Custom
+#   注：这里认为语句块也属于函数
+BreakBeforeBraces: Custom
+# 大括号换行，只有当BreakBeforeBraces设置为Custom时才有效
+BraceWrapping:   
+  # class定义后面
+  AfterClass: true
+  # 控制语句后面
+  AfterControlStatement: true
+  # enum定义后面
+  AfterEnum: true
+  # 函数定义后面
+  AfterFunction: true
+  # 命名空间定义后面
+  AfterNamespace: true 
+  # ObjC定义后面
+  AfterObjCDeclaration: true
+  # struct定义后面
+  AfterStruct: true
+  # union定义后面
+  AfterUnion: true
+  # extern 定义后面
+  AfterExternBlock: true
+  # catch之前
+  BeforeCatch: true
+  # else 之前
+  BeforeElse: true
+  # 缩进大括号
+  IndentBraces: false
+
+  
+# 继承列表的逗号前换行
+BreakBeforeInheritanceComma: true
+
+# 继承列表换行
+#BreakInheritanceList: BeforeColon
+
+# 在构造函数的初始化列表的逗号前换行
+BreakConstructorInitializersBeforeComma: true
+
+# 初始化列表前换行
+BreakConstructorInitializers: BeforeComma
+
+# 总是在template声明后换行
+AlwaysBreakTemplateDeclarations: true
+
+# 描述具有特殊意义的注释的正则表达式，它不应该被分割为多行或以其它方式改变
+CommentPragmas:  '^ IWYU pragma:'
+
+# 固定命名空间注释
+FixNamespaceComments: true
+
+# 对齐连续的尾随的注释
+AlignTrailingComments:	true
+
+# 允许短的函数放在同一行: None, InlineOnly(定义在类中), Empty(空函数), Inline(定义在类中，空函数), All
+AllowShortFunctionsOnASingleLine: Empty
+
+# 需要被解读为foreach循环而不是函数调用的宏
+ForEachMacros:   
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+
+
+IncludeBlocks:   Preserve
+# 对#include进行排序，匹配了某正则表达式的#include拥有对应的优先级，匹配不到的则默认优先级为INT_MAX(优先级越小排序越靠前)，
+#   可以定义负数优先级从而保证某些#include永远在最前面
+IncludeCategories: 
+  - Regex:           '^"(llvm|llvm-c|clang|clang-c)/'
+    Priority:        2
+  - Regex:           '^(<|"(gtest|gmock|isl|json)/)'
+    Priority:        3
+  - Regex:           'stdafx\.'  
+    Priority:        1
+  - Regex:           '.*'
+    Priority:        1
+
+...
