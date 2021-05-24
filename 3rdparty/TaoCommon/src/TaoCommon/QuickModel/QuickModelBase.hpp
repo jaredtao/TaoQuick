@@ -1,6 +1,7 @@
 #pragma once
 #include <QAbstractListModel>
 #include <QList>
+#include <QSet>
 #include "TaoCommonGlobal.h"
 template <class T>
 class QuickModelBase : public QAbstractListModel
