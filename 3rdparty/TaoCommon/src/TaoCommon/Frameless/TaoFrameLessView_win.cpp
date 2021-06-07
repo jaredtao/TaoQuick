@@ -111,7 +111,7 @@ TaoFrameLessView::TaoFrameLessView(QWindow *parent) : QQuickView(parent), d(new 
     setFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint);
     setResizeMode(SizeRootObjectToView);
 
-    d->setBorderLess((HWND)(winId()), d->borderless);
+    // d->setBorderLess((HWND)(winId()), d->borderless);
     d->setBorderLessShadow((HWND)(winId()), d->borderless_shadow);
 
     setIsMax(isMaxWin(this));

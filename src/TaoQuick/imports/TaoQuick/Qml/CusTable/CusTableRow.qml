@@ -60,6 +60,7 @@ Rectangle {
                     anchors.fill: parent
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
+                    font.pixelSize: CusConfig.fontSize_tableContent
                     color: textColor
                 }
             }
