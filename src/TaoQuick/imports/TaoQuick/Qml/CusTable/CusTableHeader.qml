@@ -19,11 +19,12 @@ Item {
     property var widthList
     property var xList
     property real totalW
+    property real visualWidth
 
     onWidthListChanged: {
         updateXList()
     }
-    onWidthChanged: {
+    onVisualWidthChanged: {
         updateWidthList()
         updateXList()
     }
@@ -39,6 +40,10 @@ Item {
             tw += widthList[i]
         }
         xList = xL
+        if (tw < visualWidth) {
+            widthList[widthList.length - 1] += visualWidth - tw
+            tw = visualWidth
+        }
         totalW = tw
     }
     property var updateWidthList: function () {}
@@ -123,13 +128,11 @@ Item {
             }
             MouseArea {
                 id: headerArea
-                hoverEnabled: true
+                enabled: needSort
+                hoverEnabled: enabled
                 anchors {
-                    left: parent.left
-                    leftMargin: 2
-                    right: parent.right
-                    top: parent.top
-                    bottom: parent.bottom
+                    fill: parent
+                    leftMargin: 4
                 }
                 onClicked: {
                     if (dataObj.sortRole !== headerRoles[index]) {
@@ -146,11 +149,9 @@ Item {
             }
             MoveArea {
                 id: moveArea
-                width: 2
+                width: 4
                 height: parent.height
                 enabled: index > 0
-                hoverEnabled: true
-                z: 9
                 anchors {
                     left: parent.left
                 }
@@ -163,19 +164,37 @@ Item {
                 }
                 cursorShape: (pressed || containsMouse) ? Qt.SplitHCursor : Qt.ArrowCursor
                 onMove: {
-                    var wList = widthList
                     if (index === 0) {
                         return
                     }
-                    if (CusTableConstant.minWidth <= wList[index] + xOffset && wList[index] + xOffset <= CusTableConstant.maxWidth ) {
+                    var wList = widthList
+                    //                    if (index === widthList.length - 2) {
+                    //                        if (validWidth(wList[index] + xOffset) && validWidth(wList[index + 1] - xOffset)) {
+                    //                            isOut = false
+                    //                            wList[index] += xOffset
+                    //                            wList[index + 1] -= xOffset
+                    //                            widthList = wList
+                    //                        } else {
+                    //                            isOut = true
+                    //                        }
+
+                    //                    } else {
+                    if (validWidth(wList[index] + xOffset) ) {
                         isOut = false
                         wList[index] += xOffset
                         widthList = wList
                     } else {
                         isOut = true
                     }
+                    //                    }
                 }
             }
         }
+    }
+    function validWidth(targetWidth) {
+        return inRange(targetWidth,CusTableConstant.minWidth,CusTableConstant.maxWidth  )
+    }
+    function inRange(value, min, max) {
+        return (min <= value && value <= max)
     }
 }
