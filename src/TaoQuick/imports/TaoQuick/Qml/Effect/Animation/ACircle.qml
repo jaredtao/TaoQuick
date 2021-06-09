@@ -35,7 +35,8 @@ ShaderEffect {
             vec4 color = texture2D(effectSource, qt_TexCoord0);
             float p = float(percent) / 100.0;
             float dis = distance(qt_TexCoord0, vec2(0.5, 0.5));
-            float alpha = 1.0 - step(p, dis);
+            float antialiseRadius = 0.01;
+            float alpha = 1.0 - smoothstep(p, p + antialiseRadius,  dis);
             alpha *= qt_Opacity;
             gl_FragColor = vec4(color.rgb * alpha, alpha);
        }
@@ -50,7 +51,8 @@ ShaderEffect {
             vec4 color = texture2D(effectSource, qt_TexCoord0);
             float p = float(percent) / 100.0;
             float dis = distance(qt_TexCoord0, vec2(0.5, 0.5));
-            float alpha = step(1.0 - p, dis);
+            float antialiseRadius = 0.01;
+            float alpha = smoothstep(1.0 - p ,1.0 - p + antialiseRadius, dis);
             alpha *= qt_Opacity;
             gl_FragColor = vec4(color.rgb * alpha, alpha);
         }
