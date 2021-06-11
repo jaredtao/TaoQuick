@@ -75,7 +75,6 @@ public:                                                                         
 
 #define JsonDeserializeProperty(NAME) m_##NAME = vmap.value(#NAME).value<decltype(m_##NAME)>();
 
-
 /**
 * Example:
 *
@@ -95,7 +94,7 @@ class AppInfo : public QObject
         JsonProperty(scale)
         JsonProperty(ratio)
         JsonContainerProperty(customs)
-        JsonSerialize_End()
+    JsonSerialize_End()
 
     JsonDeserialize_Begin(AppInfo)
         JsonDeserializeProperty(appName)
