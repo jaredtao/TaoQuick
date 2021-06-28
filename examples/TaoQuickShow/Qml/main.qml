@@ -123,4 +123,7 @@ CusBackground {
 //            height: parent.height
         }
     }
+    ClickShow {
+        anchors.fill: parent
+    }
 }

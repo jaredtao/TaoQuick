@@ -13,7 +13,7 @@ static bool inRange(const T &value, const T &min, const T &max)
     }
     return false;
 }
-//inRange<double> 模版偏特化，遇到double时，使用std的浮点数比较代替 常规比较。规避精度误差
+// inRange<double> 模版偏特化，遇到double时，使用std的 "浮点数比较" 代替 "常规比较", 规避精度误差
 template<>
 static bool inRange<double>(const double &value, const double &min, const double &max)
 {
@@ -22,7 +22,7 @@ static bool inRange<double>(const double &value, const double &min, const double
     }
     return false;
 }
-//inRange<float> 模版偏特化，遇到float时，使用std的浮点数比较代替 常规比较。规避精度误差
+// inRange<float> 模版偏特化，遇到float时，使用std的"浮点数比较" 代替 "常规比较", 规避精度误差
 template<>
 static bool inRange<float>(const float &value, const float &min, const float &max)
 {
