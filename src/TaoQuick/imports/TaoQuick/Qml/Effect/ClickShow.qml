@@ -63,29 +63,25 @@ Item {
             }
         }
     }
-    property color dodgerBlue: "#FF1E90FF"
-    property color green: "#FF008000"
-    property color orangeRed: "#FFFF4500"
-    property color gray: "#FF808080"
-    property color blueViolet: "#FF8A2BE2"
+
     function getButtonColor(button)
     {
-        var c = dodgerBlue;
+        var c = "dodgerblue";
         switch (button)
         {
         case Qt.LeftButton:
             break;
         case Qt.MiddleButton:
-            c = green;
+            c = "green";
             break;
         case Qt.RightButton:
-            c = orangeRed;
+            c = "orangered";
             break;
         case Qt.XButton1:
-            c = gray;
+            c = "grey";
             break;
         case Qt.XButton2:
-            c = blueViolet;
+            c = "blueviolet";
             break;
         default:
             break;
