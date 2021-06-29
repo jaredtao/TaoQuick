@@ -25,7 +25,7 @@ static void prepareApp()
 #    endif
 #endif
     QCoreApplication::setOrganizationName("JaredTao");
-    QCoreApplication::setOrganizationDomain("https://JaredTao.gitee.io");
+    QCoreApplication::setOrganizationDomain("https://jaredtao.github.io");
     QCoreApplication::setApplicationName("TaoQuickShow");
 }
 
