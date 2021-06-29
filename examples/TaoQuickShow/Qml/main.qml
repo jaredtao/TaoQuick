@@ -120,7 +120,6 @@ CusBackground {
                 top: parent.top
                 bottom: parent.bottom
             }
-//            height: parent.height
         }
     }
     ClickShow {
