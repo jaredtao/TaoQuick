@@ -49,7 +49,7 @@ public slots:
     }
 signals:
     void isMaxChanged(bool isMax);
-    void mousePressed(int x, int y, Qt::MouseButton button);
+    void mousePressed(int xPos, int yPos, int button);
 
 protected:
 #    if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)

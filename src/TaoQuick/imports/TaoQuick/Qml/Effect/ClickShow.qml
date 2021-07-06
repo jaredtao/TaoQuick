@@ -3,23 +3,20 @@ import QtQuick.Controls 2.2
 
 Item {
     id: clickShow
-//    MouseArea {
-//        anchors.fill: parent
-//        hoverEnabled: false
-//        acceptedButtons:  Qt.AllButtons
-//        onDoubleClicked: { mouse.accepted = false;}
-//        onPositionChanged: { mouse.accepted = false;}
-//        onPressed:  {
-//            brust(mouseX, mouseY, mouse.button)
-//            mouse.accepted = false;
-//        }
-//        onPressAndHold: { mouse.accepted = false; }
-//        onClicked:  { mouse.accepted = false;}
-//        onReleased: { mouse.accepted = false;}
-//        onWheel: { wheel.accepted = false; }
+//    Component.onCompleted: {
+//        view.mousePressed.connect(brust)
 //    }
-    Component.onCompleted: {
-        view.mousePressed.connect(brust)
+    Connections {
+        target: view
+        ignoreUnknownSignals: true
+        //Qt5.15 and after
+        function onMousePressed(xPos, yPos, button) {
+            clickShow.brust(xPos, yPos, button)
+        }
+        //5.12 and before
+        onMousePressed: {
+            clickShow.brust(xPos, yPos, button)
+        }
     }
     Component {
         id: brushComp
@@ -94,8 +91,8 @@ Item {
         id: brushAnimation
 
     }
-    function brust(x, y, button)
+    function brust(xPos, yPos, button)
     {
-        brushComp.createObject(clickShow, {x: x, y: y, circleColor: getButtonColor(button)})
+        brushComp.createObject(clickShow, {x: xPos, y: yPos, circleColor: getButtonColor(button)})
     }
 }
