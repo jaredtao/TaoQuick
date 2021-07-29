@@ -50,7 +50,6 @@ int main(int argc, char **argv)
     view.setMinimumSize({ 800, 600 });
     view.resize(1440, 960);
     view.moveToScreenCenter();
-    view.setCornerRadius(5);
     trans.beforeUiReady(view.rootContext(), transDir);
     appInfo.beforeUiReady(view.rootContext());
 

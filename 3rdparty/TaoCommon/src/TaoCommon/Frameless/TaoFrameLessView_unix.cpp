@@ -78,3 +78,7 @@ bool TaoFrameLessView::nativeEvent(const QByteArray &eventType, void *message, l
     return Super::nativeEvent(eventType, message, result);
 }
 
+void TaoFrameLessView::resizeEvent(QResizeEvent *e)
+{
+    Super::resizeEvent(e);
+}
