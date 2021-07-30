@@ -124,5 +124,6 @@ CusBackground {
     }
     ClickShow {
         anchors.fill: parent
+        anchors.margins: 10
     }
 }
