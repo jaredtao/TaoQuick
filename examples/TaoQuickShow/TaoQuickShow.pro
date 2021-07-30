@@ -27,7 +27,7 @@ CONFIG(debug,debug|release) {
 #    error("3rdparty library TaoCommon missing, please update by command: git submodule update --init")
 #}
 include($${TaoQuick_3RDPARTY_TREE}/TaoCommon/src/TaoCommon/TaoCommon.pri)
-include($${TaoQuick_SOURCE_TREE}/src/TaoQuick/imports/imports.pri)
+include($${TaoQuick_SOURCE_TREE}/src/TaoQuick.pri)
 include(TaoQuickShow.pri)
 DEFINES += QMAKE_GEN_TAOMACRO
 !build_pass {

@@ -196,7 +196,7 @@ echo content as table：
 
 Core Library source code path:
 
-src/TaoQuick/imports/TaoQuick/Qml
+src/TaoQuick/Qml
 
 Content:
 
@@ -233,7 +233,6 @@ Other Contents reference to above table：
 ```shell
 git clone https://githun.com/jaredtao/TaoQuick.git
 cd TaoQuick 
-git submodule update --init
 ```
 
 ## qmake 
@@ -254,21 +253,16 @@ Compared with 'Qml module' and 'Qml C++ plugin', this usage has the following ad
 
 detail use step：
 
-1. copy src/TaoQuick to your project, in any location
+1. copy src to your project, in any location
 
-2. Import 'pri' files in the corresponding TaoQuick folder in your project 'pro' file
+2. Import 'TaoQuick.pri' files in the corresponding src folder in your project 'pro' file
 
 for eaxmple: 
 
 ```qmake
-include(TaoQuick/TaoQuick.pri)
+include(src/TaoQuick.pri)
 ```
 
-or
-
-```qmake
-include(src/TaoQuick/imports/imports.pri)
-```
 
 TaoQuick.pri will define two MACRO: TaoQuickImportPath and TaoQuickImagePath.
 
@@ -300,7 +294,7 @@ TaoQuick start support cmake after version 0.5.0 , it's same as qmake.
 
 detail use step：
 
-1. copy src/TaoQuick to your project, in any location
+1. copy src folder to your project, in any location
 
 2. copy cmake/taoQuick.cmake to your project, in any location
 
