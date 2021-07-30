@@ -27,3 +27,4 @@ QML2_IMPORT_PATH = $$PWD
 # Additional import path used to resolve QML modules just for Qt Quick Designer
 QML_DESIGNER_IMPORT_PATH = $$PWD
 
+

@@ -1,4 +1,4 @@
-set(TaoQuickPath ${CMAKE_SOURCE_DIR}/src/TaoQuick/imports)
+set(TaoQuickPath ${CMAKE_SOURCE_DIR}/src)
 
 if (CMAKE_BUILD_TYPE MATCHES "Release")
     set(TaoQuickRes ${TaoQuickPath}/TaoQuick/TaoQuick.qrc CACHE STRING "tao quick res path")

@@ -222,7 +222,7 @@ https://marketplace.qt.io/collections/newest/products/taoquick
 
 核心库目录为
 
-src/TaoQuick/imports/TaoQuick/Qml
+src/TaoQuick/Qml
 
 核心库结构如下
 
@@ -255,8 +255,6 @@ CusConfig是核心库的全局配置,主要包括字体、颜色等,所有组件
 
 # 使用核心库TaoQuick 
 
-
-
 详细的使用方法，可以阅读 [入门指南](入门指南.md)
 
 ## qmake用法
@@ -279,25 +277,27 @@ TaoQuick组件将以本地文件或qrc资源的方式被引用。
 
 具体使用步骤：
 
-1. 将src/TaoQuick文件夹拷贝到你的项目中，任意位置
+1. 将src文件夹拷贝到你的项目中，任意位置
 
-2. 在你的项目pro文件中,导入对应的TaoQuick文件夹中的pri文件即可
-
-```qmake
-include(TaoQuick/TaoQuick.pri)
-```
-
-或者
+2. 在你的项目pro文件中,导入对应的src文件夹中的pri文件即可
 
 ```qmake
-include(src/TaoQuick/imports/imports.pri)
+include(src/TaoQuick.pri)
 ```
 
-都可以,只要路径对应到实际的文件即可
+说明：此pri文件定义两个宏：TaoQuickImportPath 和 TaoQuickImagePath。
 
-(说明：此pri文件会定义两个宏：TaoQuickImportPath 和 TaoQuickImagePath。
+debug模式都以本地文件的方式使用，release模型则以qrc资源文件的方式使用。
 
-debug模式都以本地文件的方式使用，release模型则以qrc资源文件的方式使用)
+另外， 这几个变量用来支持QtCreator的语法高亮
+```
+QML_IMPORT_PATH	= $$PWD
+QML2_IMPORT_PATH = $$PWD
+QML_DESIGNER_IMPORT_PATH = $$PWD
+```
+（如果你的语法高亮有问题，但是程序能运行，可以先不管它。
+
+毕竟QtCreator的bug也不是一天两天了）
 
 3. 在CPP代码中，增加导入路径。
    
@@ -328,20 +328,22 @@ TaoQuick 0.5.0以后的版本，增加了cmake支持。
 
 用法如下：
 
-1. 将src/TaoQuick文件夹拷贝到你的项目中，任意位置
+1. 将src文件夹拷贝到你的项目中，任意位置
 
 2. 将cmake/TaoQuick.cmake文件拷贝到你的项目中，任意位置，并且
 
- 确保TaoQuick.cmake文件中，第一行的TaoQuickPath指向正确的TaoQuick路径
+ 确保TaoQuick.cmake文件中，第一行的TaoQuickPath指向正确的src路径
 
-3. 在你的项目CMakeLists.txt文件中,导入对应的TaoQuick.cmake
+3. 导入TaoQuick
 
-需要先增加cmake扩展路径
+先在你的项目CMakeLists.txt文件中, 增加cmake扩展路径
 
 ```cmake
   SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 ```
-加载好扩展路径，就可以用incude指令导入taoQuick.cmake了
+我这里的扩展路径是仓库根目录下的cmake文件夹，其中包含了一些后缀名为 .cmake的文件。
+
+加载好扩展路径，用incude指令导入TaoQuick.cmake即可
 
 ```cmake
 include(taoQuick)
@@ -390,8 +392,6 @@ endif()
 作者：武威的涛哥
 
 欢迎联系我，乐于提供技术咨询服务，可洽谈技术支持、商业合作。
-
-微信:  xsd2410421 
 
 QQ: 759378563
 

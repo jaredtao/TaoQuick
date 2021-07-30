@@ -6,5 +6,5 @@ SOURCES += main.cpp
 
 RESOURCES += Res.qrc
 
-include(../../src/TaoQuick/TaoQuick.pri)
+include(../../src/TaoQuick.pri)
 
