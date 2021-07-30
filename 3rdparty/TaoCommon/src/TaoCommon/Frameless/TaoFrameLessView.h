@@ -25,33 +25,12 @@ public slots:
     void setIsMax(bool isMax);
     void setTitleItem(QQuickItem* item);
 
-    //设置圆角
-    void setCornerRadius(int radius)
-    {
-        QRect rect(QPoint(), this->geometry().size());
-        QRect circleRect(0, 0, radius * 2, radius * 2);
-
-        QRegion region(circleRect, QRegion::Ellipse);
-
-        circleRect.moveRight(rect.right());
-        region += QRegion(circleRect, QRegion::Ellipse);
-
-        circleRect.moveBottom(rect.bottom());
-        region += QRegion(circleRect, QRegion::Ellipse);
-
-        circleRect.moveLeft(rect.left());
-        region += QRegion(circleRect, QRegion::Ellipse);
-
-        region += QRegion(rect.adjusted(radius, 0, -radius, 0), QRegion::Rectangle);
-        region += QRegion(rect.adjusted(0, radius, 0, -radius), QRegion::Rectangle);
-
-        this->setMask(region);
-    }
 signals:
     void isMaxChanged(bool isMax);
     void mousePressed(int xPos, int yPos, int button);
 
 protected:
+    void resizeEvent(QResizeEvent *e) override;
 #    if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     bool nativeEvent(const QByteArray &eventType, void *message, qintptr *result) override;
 #    else

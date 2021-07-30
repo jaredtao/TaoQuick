@@ -12,6 +12,7 @@
 #include <windowsx.h>
 #pragma comment(lib, "Dwmapi.lib") // Adds missing library, fixes error LNK2019: unresolved
 #pragma comment(lib, "User32.lib")
+#pragma comment(lib, "Gdi32.lib")
 // we cannot just use WS_POPUP style
 // WS_THICKFRAME: without this the window cannot be resized and so aero snap, de-maximizing and minimizing won't work
 // WS_SYSMENU: enables the context menu with the move, close, maximize, minize... commands (shift + right-click on the task bar item)
@@ -111,7 +112,7 @@ TaoFrameLessView::TaoFrameLessView(QWindow *parent) : QQuickView(parent), d(new 
     setFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint);
     setResizeMode(SizeRootObjectToView);
 
-    // d->setBorderLess((HWND)(winId()), d->borderless);
+     d->setBorderLess((HWND)(winId()), d->borderless);
     d->setBorderLessShadow((HWND)(winId()), d->borderless_shadow);
 
     setIsMax(isMaxWin(this));
@@ -170,6 +171,13 @@ void TaoFrameLessView::setIsMax(bool isMax)
     emit isMaxChanged(d->m_isMax);
 }
 
+void TaoFrameLessView::resizeEvent(QResizeEvent *e)
+{
+    SetWindowRgn(HWND(winId()),
+                 CreateRoundRectRgn(0, 0, width(), height(), 4, 4),
+                 true);
+    Super::resizeEvent(e);
+}
 
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
@@ -242,7 +250,7 @@ bool TaoFrameLessView::nativeEvent(const QByteArray &eventType, void *message, l
             }
 
             if (d->m_titleItem) {
-                auto titlePos = d->m_titleItem->mapToGlobal(d->m_titleItem->position());
+                auto titlePos = d->m_titleItem->mapToGlobal({0, 0});
                 titlePos = mapFromGlobal(titlePos.toPoint());
                 auto titleRect = QRect(titlePos.x(), titlePos.y(), d->m_titleItem->width(), d->m_titleItem->height());
                 double dpr = qApp->devicePixelRatio();
