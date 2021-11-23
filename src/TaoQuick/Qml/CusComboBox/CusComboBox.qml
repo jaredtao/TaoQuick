@@ -37,6 +37,7 @@ ComboBox {
     property color colorHovered: CusConfig.imageColor_hovered
     property color colorPressed: CusConfig.imageColor_pressed
     property color colorDisable: CusConfig.imageColor_disabled
+
     CusImage {
         id: baseImage
         source: imgUrlNormal
@@ -111,7 +112,8 @@ ComboBox {
         contentItem: CusLabel {
             leftPadding: cusComboBox.leftPadding
             rightPadding: cusComboBox.indicator.width + cusComboBox.spacing
-            text: qsTr(String(modelData)) + CusConfig.transString
+            property var dData : cusComboBox.textRole ? (Array.isArray(cusComboBox.model) ? modelData[cusComboBox.textRole] : model[cusComboBox.textRole]) : modelData
+            text: qsTr(String(dData)) + CusConfig.transString
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight

@@ -70,6 +70,31 @@ Item {
                 width: 120
                 displayText: qsTr(currentText) + trans.transString
             }
+            CusComboBox {
+                id: comboBox3
+                width: 120
+                height: 26
+                textRole: "name"
+                valueRole: "cost"
+                font.pixelSize: 10
+                model: holdersType
+            }
+
+            ListModel {
+                id: holdersType
+                ListElement {
+                    name: "Apple"
+                    cost: 2.45
+                }
+                ListElement {
+                    name: "Orange"
+                    cost: 3.25
+                }
+                ListElement {
+                    name: "Banana"
+                    cost: 1.95
+                }
+            }
         }
         Item {
             width: 20
