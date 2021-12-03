@@ -76,7 +76,7 @@ CusBackground {
             width: targetW
             height: parent.height
             property bool isOpen: true
-            x: isOpen ? 0 : -targetW - 1
+            x: isOpen ? 0 : -targetW - 4
             Behavior on x {
                 NumberAnimation { duration: 350}
             }
