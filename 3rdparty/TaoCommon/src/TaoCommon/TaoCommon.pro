@@ -12,3 +12,5 @@ CONFIG += build_TaoCommon_lib
 DEFINES += TaoCommon_Library 
 
 include(TaoCommon.pri)
+
+include(TaoCommonInstall.pri)

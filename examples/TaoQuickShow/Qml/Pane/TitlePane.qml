@@ -135,12 +135,5 @@ Rectangle {
         Component.onCompleted: {
             view.setTitleItem(blankItem)
         }
-        MoveArea {
-            anchors.fill: parent
-            onMove: {
-                view.x += xOffset
-                view.y += yOffset
-            }
-        }
     }
 }

@@ -80,7 +80,7 @@ int main(int argc, char **argv)
 
     view.rootContext()->setContextProperty("deviceAddModel", &model);
     const QUrl url(qmlPath + QStringLiteral("main.qml"));
-    QObject::connect(&view, &QQuickView::statusChanged, [&](QQuickView::Status status) {
+    QObject::connect(&view, &QQuickView::statusChanged, &view, [&](QQuickView::Status status) {
         if (status == QQuickView::Status::Ready) {
             trans.afterUiReady();
             appInfo.afterUiReady();
