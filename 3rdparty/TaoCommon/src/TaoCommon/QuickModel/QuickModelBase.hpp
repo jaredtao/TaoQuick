@@ -226,7 +226,7 @@ void QuickModelBase<T>::subtract(const QSet<T> &other)
 		return;
 	beginResetModel();
 	mAllDatas.subtract(other);
-	mDatas = mAllDatas.toList();
+    mDatas = mAllDatas.values();
 	endResetModel();
 	qDeleteAll(other);
 	updateCalcInfo();
