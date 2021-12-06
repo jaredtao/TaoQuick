@@ -1,7 +1,7 @@
 import QtQml 2.0
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-import QtGraphicalEffects 1.0
+
 import ".."
 import "../.."
 
@@ -37,13 +37,12 @@ Button {
         height: cusButtonImage.height
         radius: CusConfig.controlBorderRadius
         color: backgroundColor
-        ColorOverlay {
+        CusColorOverlay {
             source: baseImage
             width: baseImage.width
             height: baseImage.height
             anchors.centerIn: parent
-            cached: true
-            color: {
+            imageColor: {
                 if (!cusButtonImage.enabled) {
                     return colorDisable
                 } else if (cusButtonImage.pressed || selected) {

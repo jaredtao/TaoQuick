@@ -1,9 +1,11 @@
-module TaoQuick
+﻿module TaoQuick
 BasicText 1.0 Qml/Basic/BasicText.qml
 BasicTooltip 1.0 Qml/Basic/BasicTooltip.qml
+CusColorOverlay 1.0 Qml/Basic/CusColorOverlay.qml
 MoveArea 1.0 Qml/Basic/MoveArea.qml
 TransArea 1.0 Qml/Basic/TransArea.qml
 CusBackground 1.0 Qml/CusBackground/CusBackground.qml
+CusButton 1.0 Qml/CusButton/CusButton.qml
 CusButton_Blue 1.0 Qml/CusButton/CusButton_Blue.qml
 CusButton_Gradient 1.0 Qml/CusButton/CusButton_Gradient.qml
 CusButton_Image 1.0 Qml/CusButton/CusButton_Image.qml
@@ -11,33 +13,32 @@ CusButton_ImageBackground 1.0 Qml/CusButton/CusButton_ImageBackground.qml
 CusButton_ImageColorOverlay 1.0 Qml/CusButton/CusButton_ImageColorOverlay.qml
 CusButton_Red 1.0 Qml/CusButton/CusButton_Red.qml
 CusButton_White 1.0 Qml/CusButton/CusButton_White.qml
-CusButton 1.0 Qml/CusButton/CusButton.qml
 CusRadioButton 1.0 Qml/CusButton/CusRadioButton.qml
 CusTextButton 1.0 Qml/CusButton/CusTextButton.qml
 CusCheckBox 1.0 Qml/CusCheckBox/CusCheckBox.qml
 CusSwitch 1.0 Qml/CusCheckBox/CusSwitch.qml
 CusComboBox 1.0 Qml/CusComboBox/CusComboBox.qml
-CusImage_Tip 1.0 Qml/CusImage/CusImage_Tip.qml
 CusImage 1.0 Qml/CusImage/CusImage.qml
 CusImageOverlay 1.0 Qml/CusImage/CusImageOverlay.qml
+CusImage_Tip 1.0 Qml/CusImage/CusImage_Tip.qml
 CusIPAddress 1.0 Qml/CusInput/CusIPAddress.qml
+CusTextField 1.0 Qml/CusInput/CusTextField.qml
 CusTextField_Btn 1.0 Qml/CusInput/CusTextField_Btn.qml
 CusTextField_Search 1.0 Qml/CusInput/CusTextField_Search.qml
 CusTextField_Valid 1.0 Qml/CusInput/CusTextField_Valid.qml
-CusTextField 1.0 Qml/CusInput/CusTextField.qml
 CusTextInput 1.0 Qml/CusInput/CusTextInput.qml
+CusLabel 1.0 Qml/CusLabel/CusLabel.qml
 CusLabel_Center 1.0 Qml/CusLabel/CusLabel_Center.qml
 CusLabel_Left 1.0 Qml/CusLabel/CusLabel_Left.qml
-CusLabel 1.0 Qml/CusLabel/CusLabel.qml
 CusListView 1.0 Qml/CusListView/CusListView.qml
 CusPopup 1.0 Qml/CusPopup/CusPopup.qml
 CusToolTip_Triangle 1.0 Qml/CusPopup/CusToolTip_Triangle.qml
 CusTriangleTipBorder 1.0 Qml/CusPopup/CusTriangleTipBorder.qml
 CusScrollBar 1.0 Qml/CusScroll/CusScrollBar.qml
-CusSlider_Spin 1.0 Qml/CusSlider/CusSlider_Spin.qml
 CusSlider 1.0 Qml/CusSlider/CusSlider.qml
-CusSpinBox_HourMinute 1.0 Qml/CusSpinBox/CusSpinBox_HourMinute.qml
+CusSlider_Spin 1.0 Qml/CusSlider/CusSlider_Spin.qml
 CusSpinBox 1.0 Qml/CusSpinBox/CusSpinBox.qml
+CusSpinBox_HourMinute 1.0 Qml/CusSpinBox/CusSpinBox_HourMinute.qml
 singleton CusTableConstant 1.0 Qml/CusTable/CusTableConstant.qml
 CusTableHeader 1.0 Qml/CusTable/CusTableHeader.qml
 CusTableRow 1.0 Qml/CusTable/CusTableRow.qml
