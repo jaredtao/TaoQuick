@@ -1,12 +1,14 @@
-<RCC>
+﻿<RCC>
     <qresource prefix="/TaoQuick">
         <file>qmldir</file>
         <file>Qml/CusConfig.qml</file>
         <file>Qml/Basic/BasicText.qml</file>
         <file>Qml/Basic/BasicTooltip.qml</file>
+        <file>Qml/Basic/CusColorOverlay.qml</file>
         <file>Qml/Basic/MoveArea.qml</file>
         <file>Qml/Basic/TransArea.qml</file>
         <file>Qml/CusBackground/CusBackground.qml</file>
+        <file>Qml/CusButton/CusButton.qml</file>
         <file>Qml/CusButton/CusButton_Blue.qml</file>
         <file>Qml/CusButton/CusButton_Gradient.qml</file>
         <file>Qml/CusButton/CusButton_Image.qml</file>
@@ -14,33 +16,32 @@
         <file>Qml/CusButton/CusButton_ImageColorOverlay.qml</file>
         <file>Qml/CusButton/CusButton_Red.qml</file>
         <file>Qml/CusButton/CusButton_White.qml</file>
-        <file>Qml/CusButton/CusButton.qml</file>
         <file>Qml/CusButton/CusRadioButton.qml</file>
         <file>Qml/CusButton/CusTextButton.qml</file>
         <file>Qml/CusCheckBox/CusCheckBox.qml</file>
         <file>Qml/CusCheckBox/CusSwitch.qml</file>
         <file>Qml/CusComboBox/CusComboBox.qml</file>
-        <file>Qml/CusImage/CusImage_Tip.qml</file>
         <file>Qml/CusImage/CusImage.qml</file>
         <file>Qml/CusImage/CusImageOverlay.qml</file>
+        <file>Qml/CusImage/CusImage_Tip.qml</file>
         <file>Qml/CusInput/CusIPAddress.qml</file>
+        <file>Qml/CusInput/CusTextField.qml</file>
         <file>Qml/CusInput/CusTextField_Btn.qml</file>
         <file>Qml/CusInput/CusTextField_Search.qml</file>
         <file>Qml/CusInput/CusTextField_Valid.qml</file>
-        <file>Qml/CusInput/CusTextField.qml</file>
         <file>Qml/CusInput/CusTextInput.qml</file>
+        <file>Qml/CusLabel/CusLabel.qml</file>
         <file>Qml/CusLabel/CusLabel_Center.qml</file>
         <file>Qml/CusLabel/CusLabel_Left.qml</file>
-        <file>Qml/CusLabel/CusLabel.qml</file>
         <file>Qml/CusListView/CusListView.qml</file>
         <file>Qml/CusPopup/CusPopup.qml</file>
         <file>Qml/CusPopup/CusToolTip_Triangle.qml</file>
         <file>Qml/CusPopup/CusTriangleTipBorder.qml</file>
         <file>Qml/CusScroll/CusScrollBar.qml</file>
-        <file>Qml/CusSlider/CusSlider_Spin.qml</file>
         <file>Qml/CusSlider/CusSlider.qml</file>
-        <file>Qml/CusSpinBox/CusSpinBox_HourMinute.qml</file>
+        <file>Qml/CusSlider/CusSlider_Spin.qml</file>
         <file>Qml/CusSpinBox/CusSpinBox.qml</file>
+        <file>Qml/CusSpinBox/CusSpinBox_HourMinute.qml</file>
         <file>Qml/CusTable/CusTableConstant.qml</file>
         <file>Qml/CusTable/CusTableHeader.qml</file>
         <file>Qml/CusTable/CusTableRow.qml</file>
@@ -86,6 +87,7 @@
         <file>Qml/Misc/CusResizeBorder.qml</file>
         <file>Qml/Misc/CusShortCutKeys.qml</file>
         <file>Qml/Misc/CusTemplateDragBorder.qml</file>
+        <file>Qml/Basic/cusColorOverlay.qsb</file>
         <file>Images/arrow-down.png</file>
         <file>Images/arrow-left.png</file>
         <file>Images/arrow-right.png</file>
@@ -101,12 +103,12 @@
         <file>Images/next.png</file>
         <file>Images/right.png</file>
         <file>Images/rotate.png</file>
-        <file>Images/Search_Clear.png</file>
         <file>Images/Search.png</file>
+        <file>Images/Search_Clear.png</file>
         <file>Images/spinner.png</file>
-        <file>Images/Table_Asc_Hovered.png</file>
         <file>Images/Table_Asc.png</file>
-        <file>Images/Table_Desc_Hovered.png</file>
+        <file>Images/Table_Asc_Hovered.png</file>
         <file>Images/Table_Desc.png</file>
+        <file>Images/Table_Desc_Hovered.png</file>
     </qresource>
 </RCC>

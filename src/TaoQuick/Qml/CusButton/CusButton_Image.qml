@@ -44,6 +44,6 @@ Button {
         visible: cusButtonImage.hovered && String(text).length
         delay: 500
     }
-    TransArea {
-    }
+//    TransArea {
+//    }
 }
