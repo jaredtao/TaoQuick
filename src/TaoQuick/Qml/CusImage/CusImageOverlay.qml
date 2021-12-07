@@ -1,22 +1,52 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
-import QtGraphicalEffects 1.0
-Item {
-    property alias source: srcImg.source
-    property alias color: overlayImg.color
+import QtQml
+import QtQuick
+import QtQuick.Controls
 
-    Image {
-        id: srcImg
-        anchors.fill: parent
+import TaoQuick
+
+import ".."
+import "../.."
+
+Item {
+    id: cusImage
+
+    property string imgNormal
+
+    property bool imgHovered: hoverHandler.hovered
+    property bool imgPressed
+    property bool imgDisabled
+
+    property color colorNormal: CusConfig.imageColor
+    property color colorHovered: CusConfig.imageColor_hovered
+    property color colorPressed: CusConfig.imageColor_pressed
+    property color colorDisable: CusConfig.imageColor_disabled
+    implicitWidth: baseImage.width
+    implicitHeight: baseImage.height
+    CusImage {
+        id: baseImage
+        source: imgNormal
+        smooth: true
         visible: false
     }
-    ColorOverlay {
-        id: overlayImg
-        source: srcImg
-        anchors.fill: srcImg
-        width: srcImg.width
-        height: srcImg.height
+    CusColorOverlay {
+        width: baseImage.width
+        height: baseImage.height
+        anchors.centerIn: parent
 
+        source : baseImage
+        imageColor: {
+            if (imgDisabled) {
+                return colorDisable
+            } else if (imgPressed) {
+                return colorPressed
+            } else if (imgHovered) {
+                return colorHovered
+            } else {
+                return colorNormal
+            }
+        }
+    }
+    HoverHandler {
+        id: hoverHandler
     }
 }
-

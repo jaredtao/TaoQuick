@@ -87,6 +87,12 @@ function Main {
     Get-ChildItem -Recurse Qml -Filter *.qsb | ForEach-Object -Process {
         WriteQrcLine $_
     }
+    Get-ChildItem -Recurse Qml -Filter *.vert | ForEach-Object -Process {
+        WriteQrcLine $_
+    }
+    Get-ChildItem -Recurse Qml -Filter *.frag | ForEach-Object -Process {
+        WriteQrcLine $_
+    }
     Get-ChildItem -Recurse Images -Filter *.png | ForEach-Object -Process {
         WriteQrcLine $_
     }

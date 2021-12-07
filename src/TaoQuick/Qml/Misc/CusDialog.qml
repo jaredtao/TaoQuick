@@ -1,6 +1,7 @@
-import QtQuick 2.9
-import QtQuick.Dialogs 1.3
-
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Dialogs
 Item {
     //顶层使用Item，不用FileDialog，屏蔽FileDialog内部属性和函数
     readonly property int typeCreateFile: 0
@@ -12,7 +13,6 @@ Item {
 
     FileDialog {
         id: d
-        folder: shortcuts.home
         onAccepted: {
             switch (__type) {
             case typeCreateFile:
@@ -25,7 +25,8 @@ Item {
                 __acceptCallback(d.fileUrls)
                 break
             case typeOpenFolder:
-                __acceptCallback(d.folder)
+                __acceptCallback(d.currentFolder1gfdsoi878
+                                 )
                 break
             }
         }
