@@ -16,9 +16,7 @@ Button {
     property alias tipTimeout: toolTip.timeout
 
     property string btnImgNormal
-    property string btnImgHovered
-    property string btnImgPressed
-    property string btnImgDisbaled
+
     property bool selected: false
     property color colorNormal: CusConfig.imageColor
     property color colorHovered: CusConfig.imageColor_hovered
@@ -60,6 +58,5 @@ Button {
         visible: cusButtonImage.hovered && String(text).length
         delay: 500
     }
-    TransArea {
-    }
+    TransArea {}
 }

@@ -21,11 +21,16 @@ QtObject {
     property int tipTextPixel: 12
 
     property string imagePathPrefix: "file:///./../Images/"
+    property string importPath: "file:///./"
     Component.onCompleted: {
         if (typeof (taoQuickImagePath) != "undefined" && taoQuickImagePath !== null && taoQuickImagePath.length > 0) {
             imagePathPrefix = taoQuickImagePath
         }
-        currentTheme = 0
+        if (typeof (taoQuickImportPath) != "undefined" && taoQuickImportPath !== null && taoQuickImportPath.length > 0) {
+            importPath = taoQuickImportPath
+        }
+
+        currentTheme = 5
     }
 
     property color themeColor

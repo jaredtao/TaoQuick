@@ -87,7 +87,8 @@
         <file>Qml/Misc/CusResizeBorder.qml</file>
         <file>Qml/Misc/CusShortCutKeys.qml</file>
         <file>Qml/Misc/CusTemplateDragBorder.qml</file>
-        <file>Qml/Basic/cusColorOverlay.qsb</file>
+        <file>Qml/Basic/cusColorOverlay.frag.qsb</file>
+        <file>Qml/Basic/cusColorOverlay.frag</file>
         <file>Images/arrow-down.png</file>
         <file>Images/arrow-left.png</file>
         <file>Images/arrow-right.png</file>
