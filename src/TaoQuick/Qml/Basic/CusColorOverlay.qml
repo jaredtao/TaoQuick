@@ -8,5 +8,5 @@ import "../.."
 ShaderEffect {
     property Image source
     property color imageColor
-    fragmentShader: CusConfig.importPath + "/TaoQuick/Qml/Basic/cusColorOverlay.frag.qsb"
+    fragmentShader: CusConfig.importPath + "Basic/cusColorOverlay.frag.qsb"
 }

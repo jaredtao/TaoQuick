@@ -4,7 +4,7 @@ import QtQuick 2.9
 
 QtObject {
     id: config
-    objectName: "config"
+    objectName: "cusConfig"
     property string fontFamily: "微软雅黑"
     property string transString: typeof (trans) != "undefined" ? trans.transString : ""
     property int fontPixel: 14
@@ -27,10 +27,10 @@ QtObject {
             imagePathPrefix = taoQuickImagePath
         }
         if (typeof (taoQuickImportPath) != "undefined" && taoQuickImportPath !== null && taoQuickImportPath.length > 0) {
-            importPath = taoQuickImportPath
+            importPath = taoQuickImportPath + "/TaoQuick/Qml/"
         }
 
-        currentTheme = 5
+        currentTheme = 0
     }
 
     property color themeColor
