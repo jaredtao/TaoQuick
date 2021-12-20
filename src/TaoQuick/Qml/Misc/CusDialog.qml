@@ -1,73 +1,58 @@
 import QtQml
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Dialogs
+import Qt.labs.platform 1.1
 Item {
     //顶层使用Item，不用FileDialog，屏蔽FileDialog内部属性和函数
-    readonly property int typeCreateFile: 0
-    readonly property int typeOpenFile: 1
-    readonly property int typeOpenFiles: 2
-    readonly property int typeOpenFolder: 3
-    property int __type
     property var __acceptCallback: function (file) {}
 
     FileDialog {
         id: d
         onAccepted: {
-            switch (__type) {
-            case typeCreateFile:
-                __acceptCallback(d.fileUrl)
+            switch (fileMode) {
+            case FileDialog.SaveFile:
+                __acceptCallback(d.currentFile)
                 break
-            case typeOpenFile:
-                __acceptCallback(d.fileUrl)
+            case FileDialog.OpenFile:
+                __acceptCallback(d.currentFile)
                 break
-            case typeOpenFiles:
-                __acceptCallback(d.fileUrls)
+            case FileDialog.OpenFiles:
+                __acceptCallback(d.currentFiles)
                 break
-            case typeOpenFolder:
-                __acceptCallback(d.currentFolder1gfdsoi878
-                                 )
-                break
+            default: break
             }
         }
     }
+    FolderDialog {
+        id: f
+        onAccepted: {
+            __acceptCallback(d.currentFolder)
+        }
+    }
     function createFile(title, nameFilters, callback) {
-        __type = typeCreateFile
-        d.selectExisting = false
-        d.selectFolder = false
-        d.selectMultiple = false
+        d.fileMode = FileDialog.SaveFile
         d.title = title
         d.nameFilters = nameFilters
         __acceptCallback = callback
         d.open()
     }
     function openFile(title, nameFilters, callback) {
-        __type = typeOpenFile
-        d.selectExisting = true
-        d.selectFolder = false
-        d.selectMultiple = false
+        d.fileMode = FileDialog.OpenFile
         d.title = title
         d.nameFilters = nameFilters
         __acceptCallback = callback
         d.open()
     }
     function openFiles(title, nameFilters, callback) {
-        __type = typeOpenFiles
-        d.selectExisting = true
-        d.selectFolder = false
-        d.selectMultiple = true
+        d.fileMode = FileDialog.OpenFiles
         d.title = title
         d.nameFilters = nameFilters
         __acceptCallback = callback
         d.open()
     }
     function openFolder(title, callback) {
-        __type = typeOpenFolder
-        d.selectExisting = true
-        d.selectFolder = true
-        d.selectMultiple = false
-        d.title = title
+        f.title = title
         __acceptCallback = callback
-        d.open()
+        f.open()
     }
 }
