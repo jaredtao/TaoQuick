@@ -68,6 +68,6 @@ Button {
         border.color: cusButton.borderColor
         border.width: cusButton.borderWidth
     }
-    TransArea {
-    }
+//    TransArea {
+//    }
 }
