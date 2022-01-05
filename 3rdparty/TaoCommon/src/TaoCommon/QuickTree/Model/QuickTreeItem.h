@@ -3,8 +3,8 @@
 #include <QObject>
 #include <QVariant>
 #include <QVector>
-#include "BizCommon_global.h"
-class BIZCOMMON_EXPORT QuickTreeItem : public QObject
+#include "TaoCommonGlobal.h"
+class TAO_API QuickTreeItem : public QObject
 {
     Q_OBJECT
 public:
