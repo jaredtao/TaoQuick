@@ -62,52 +62,6 @@ QPoint QuickTool::cursorGlobalPos() const
     return QCursor::pos();
 }
 
-void QuickTool::setMoveItemOnWindow(QQuickItem* item, QWindow* window)
-{
-    if (!item || !window)
-    {
-        return;
-    }
-    pMoveItem = item;
-    pMoveWindow = window;
-    pMoveWindow->installEventFilter(this);
-}
-
-bool QuickTool::eventFilter(QObject* watched, QEvent* e)
-{
-    if (watched == pMoveWindow)
-    {
-        if (e->type() == QEvent::MouseButtonPress)
-        {
-            QMouseEvent* pE = static_cast<QMouseEvent*>(e);
-            if (pE && !mPressed)
-            {
-                if (pMoveItem->boundingRect().contains(pE->pos()))
-                {
-                    mPressed = true;
-                }
-            }
-        }
-        else if (e->type() == QEvent::MouseButtonRelease)
-        {
-            mPressed = false;
-        }
-        else if (e->type() == QEvent::MouseMove)
-        {
-            QMouseEvent* pE = static_cast<QMouseEvent*>(e);
-            if (pE && mPressed)
-            {
-                if (pMoveItem->boundingRect().contains(pE->pos()))
-                {
-                    pMoveWindow->startSystemMove();
-                }
-            }
-        }
-    }
-
-    return Super::eventFilter(watched, e);
-}
-
 QObject* QuickTool::getObject(const QString& targetObjName) const
 {
     if (!pRootObject)
