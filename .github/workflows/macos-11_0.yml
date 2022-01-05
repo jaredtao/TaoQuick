@@ -35,7 +35,9 @@ jobs:
       - name: prepare env
         run: |
           softwareupdate --all --install --force
-          sudo xcode-select --switch /Library/Developer/CommandLineTools         
+          sudo xcode-select --print-path
+          sudo xcode-select --switch /Library/Developer/CommandLineTools      
+          
       - name: Install Qt
         uses: jurplel/install-qt-action@v2.13.0
         with:
