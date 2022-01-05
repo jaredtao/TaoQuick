@@ -1,4 +1,4 @@
-#include "Logger"
+#include "Logger/Logger.h"
 #include <QCoreApplication>
 #include <QTimer>
 #include <atomic>

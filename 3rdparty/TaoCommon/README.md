@@ -81,7 +81,7 @@ Qt动态翻译。
 
 可以参考[TaoQuick项目](https://github.com/jaredtao/TaoQuick)
 
-## TaoModel
+## QuickModel
 
 自定义ListModel，为大数据表格结构和树结构提供支持。
 
