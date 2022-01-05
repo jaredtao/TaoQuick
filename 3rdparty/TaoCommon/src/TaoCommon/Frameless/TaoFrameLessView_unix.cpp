@@ -8,6 +8,7 @@ class TaoFrameLessViewPrivate
 {
 public:
     bool m_isMax = false;
+    bool m_isFull = false;
     QQuickItem *m_titleItem = nullptr;
 };
 TaoFrameLessView::TaoFrameLessView(QWindow *parent) : Super(parent), d(new TaoFrameLessViewPrivate)
@@ -16,7 +17,12 @@ TaoFrameLessView::TaoFrameLessView(QWindow *parent) : Super(parent), d(new TaoFr
     setResizeMode(SizeRootObjectToView);
 
     setIsMax(windowState() == Qt::WindowMaximized);
-    connect(this, &QWindow::windowStateChanged, this, [&](Qt::WindowState state) { setIsMax(state == Qt::WindowMaximized); });
+    setIsFull(windowState() == Qt::WindowFullScreen);
+    connect(this, &QWindow::windowStateChanged, this, [&](Qt::WindowState state) {
+        (void)state;
+        setIsMax(windowState() == Qt::WindowMaximized);
+        setIsFull(windowState() == Qt::WindowFullScreen);
+    });
 }
 TaoFrameLessView::~TaoFrameLessView()
 {
@@ -52,6 +58,10 @@ bool TaoFrameLessView::isMax() const
 {
     return d->m_isMax;
 }
+bool TaoFrameLessView::isFull() const
+{
+    return d->m_isFull;
+}
 QQuickItem *TaoFrameLessView::titleItem() const
 {
     return d->m_titleItem;
@@ -63,6 +73,14 @@ void TaoFrameLessView::setIsMax(bool isMax)
 
     d->m_isMax = isMax;
     emit isMaxChanged(d->m_isMax);
+}
+void TaoFrameLessView::setIsFull(bool isFull)
+{
+    if(d->m_isFull == isFull)
+        return;
+
+    d->m_isFull = isFull;
+    emit isFullChanged(d->m_isFull);
 }
 void TaoFrameLessView::setTitleItem(QQuickItem *item)
 {
