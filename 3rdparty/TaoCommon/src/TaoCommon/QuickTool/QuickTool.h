@@ -41,16 +41,6 @@ public:
 
     Q_INVOKABLE QPoint cursorGlobalPos() const;
 
-    Q_INVOKABLE void setMoveItemOnWindow(QQuickItem* item, QWindow* window);
-
-protected:
-    bool eventFilter(QObject* watched, QEvent* e) override;
-
 private:
     QObject* pRootObject = nullptr;
-
-    QQuickItem* pMoveItem = nullptr;
-    QWindow* pMoveWindow = nullptr;
-    QPoint mLastPos;
-    bool mPressed = false;
 };
