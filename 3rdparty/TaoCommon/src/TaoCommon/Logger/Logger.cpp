@@ -96,7 +96,7 @@ static void outputMessageAsync(QtMsgType type, const QMessageLogContext &context
     ::OutputDebugString(message.toStdWString().data());
     ::OutputDebugString(L"\r\n");
 #else
-    fprintf(stderr, message.toStdString().data());
+    fprintf(stderr, "%s", message.toStdString().data());
 #endif
 }
 static void outputMessage(QtMsgType type, const QMessageLogContext &context, const QString &msg)
@@ -138,7 +138,7 @@ static void outputMessage(QtMsgType type, const QMessageLogContext &context, con
     ::OutputDebugString(message.toStdWString().data());
     ::OutputDebugString(L"\r\n");
 #else
-    fprintf(stderr, message.toStdString().data());
+    fprintf(stderr, "%s", message.toStdString().data());
 #endif
 }
 } // namespace Logger
