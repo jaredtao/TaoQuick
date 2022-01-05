@@ -1,9 +1,9 @@
 #pragma once
-#include "quicktreeitem.h"
 #include <QAbstractItemModel>
 #include <QSet>
 #include <QVector>
 #include "TaoCommonGlobal.h"
+#include "QuickTreeItem.h"
 class TAO_API QuickTreeModel : public QAbstractItemModel
 {
     Q_OBJECT
