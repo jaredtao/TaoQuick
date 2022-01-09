@@ -22,6 +22,9 @@ UseTab:          Never
 # 开括号(开圆括号、开尖括号、开方括号)后的对齐: Align, DontAlign, AlwaysBreak(总是在开括号后换行)
 AlignAfterOpenBracket: AlwaysBreak
 
+# 连续声明时，对齐所有声明的变量名
+AlignConsecutiveDeclarations: true
+
 # 左对齐逃脱换行(使用反斜杠换行)的反斜杠
 AlignEscapedNewlines: Right
 
@@ -74,6 +77,12 @@ BreakConstructorInitializers: BeforeComma
 # 总是在template声明后换行
 AlwaysBreakTemplateDeclarations: true
 
+# false表示函数实参要么都在同一行，要么都各自一行
+BinPackArguments: false
+
+# false表示所有形参要么都在同一行，要么都各自一行
+BinPackParameters: false
+
 # 描述具有特殊意义的注释的正则表达式，它不应该被分割为多行或以其它方式改变
 CommentPragmas:  '^ IWYU pragma:'
 
@@ -85,6 +94,12 @@ AlignTrailingComments:	true
 
 # 允许短的函数放在同一行: None, InlineOnly(定义在类中), Empty(空函数), Inline(定义在类中，空函数), All
 AllowShortFunctionsOnASingleLine: Empty
+
+# 构造函数的初始化列表要么都在同一行，要么都各自一行
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+
+# 指针和引用的对齐: Left, Right, Middle
+PointerAlignment: Left
 
 # 需要被解读为foreach循环而不是函数调用的宏
 ForEachMacros:   
