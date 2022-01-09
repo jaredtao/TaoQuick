@@ -28,6 +28,10 @@ TaoFrameLessView::~TaoFrameLessView()
 {
     delete d;
 }
+void TaoFrameLessView::showEvent(QShowEvent *e)
+{
+    Super::showEvent(e);
+}
 QRect TaoFrameLessView::calcCenterGeo(const QRect &screenGeo, const QSize &normalSize)
 {
     int w = normalSize.width();
