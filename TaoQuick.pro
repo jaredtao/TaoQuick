@@ -34,7 +34,7 @@ CONFIG+= ordered
 
 OTHER_FILES += *.md \
     LICENSE \
-    _clang-format \
+    .clang-format \
     .qmake.conf \
     .github/workflows/* \
     scripts/* \

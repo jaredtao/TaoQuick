@@ -34,6 +34,7 @@ signals:
     void mousePressed(int xPos, int yPos, int button);
 
 protected:
+    void showEvent(QShowEvent *e) override;
     void resizeEvent(QResizeEvent *e) override;
 #    if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     bool nativeEvent(const QByteArray &eventType, void *message, qintptr *result) override;
