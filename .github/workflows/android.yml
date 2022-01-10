@@ -27,12 +27,12 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-20.04]
-        qt_ver: [5.12.10]
+        qt_ver: [6.2.2]
         qt_target: [android]
-        qt_arch: [android_x86,android_armv7,android_arm64_v8a]
+        qt_arch: [android_x86,android_x86_64,android_armv7,android_arm64_v8a]
     steps:
       - name: Install Qt
-        uses: jurplel/install-qt-action@v2.10.0
+        uses: jurplel/install-qt-action@v2
         with:
           # Version of Qt to install
           version: ${{ matrix.qt_ver }}

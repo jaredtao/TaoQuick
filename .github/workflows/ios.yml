@@ -27,12 +27,12 @@ jobs:
     strategy:
       matrix:
         os: [macos-10.15]
-        qt_ver: [5.12.10,5.15.2]
+        qt_ver: [6.2.2]
         qt_target: [ios]
     steps:
       - name: Install Qt
         # if: steps.cacheqt.outputs.cache-hit != 'true'
-        uses: jurplel/install-qt-action@v2.10.0
+        uses: jurplel/install-qt-action@v2
         with:
           # Version of Qt to install
           version: ${{ matrix.qt_ver }}
