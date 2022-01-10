@@ -15,7 +15,7 @@ public:
     explicit QuickTool(QObject* parent = nullptr);
     explicit QuickTool(QObject* rootObject, QObject* parent = nullptr);
     virtual ~QuickTool() override;
-    void setRootObjet(QObject* rootObj)
+    Q_INVOKABLE void setRootObjet(QObject* rootObj)
     {
         pRootObject = rootObj;
     }

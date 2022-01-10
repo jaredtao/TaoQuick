@@ -5,13 +5,13 @@
 #include <QScreen>
 #include <QWindow>
 
-#include <windows.h>
 #include <VersionHelpers.h>
-#include <wtypes.h>
 #include <WinUser.h>
 #include <dwmapi.h>
 #include <objidl.h> // Fixes error C2504: 'IUnknown' : base class undefined
+#include <windows.h>
 #include <windowsx.h>
+#include <wtypes.h>
 #pragma comment(lib, "Dwmapi.lib") // Adds missing library, fixes error LNK2019: unresolved
 #pragma comment(lib, "User32.lib")
 #pragma comment(lib, "Gdi32.lib")
@@ -97,6 +97,7 @@ static bool isFullWin(QQuickView* win)
 class TaoFrameLessViewPrivate
 {
 public:
+    bool m_firstRun = true;
     bool m_isMax = false;
     bool m_isFull = false;
     QQuickItem* m_titleItem = nullptr;
@@ -135,11 +136,10 @@ TaoFrameLessView::TaoFrameLessView(QWindow* parent)
     : QQuickView(parent)
     , d(new TaoFrameLessViewPrivate)
 {
-    setFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint);
+    //此处不需要设置flags
+    //    setFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint |
+    //    Qt::WindowSystemMenuHint);
     setResizeMode(SizeRootObjectToView);
-
-    d->setBorderLess((HWND)(winId()), d->borderless);
-    d->setBorderLessShadow((HWND)(winId()), d->borderless_shadow);
 
     setIsMax(windowState() == Qt::WindowMaximized);
     setIsFull(windowState() == Qt::WindowFullScreen);
@@ -148,26 +148,35 @@ TaoFrameLessView::TaoFrameLessView(QWindow* parent)
         setIsMax(windowState() == Qt::WindowMaximized);
         setIsFull(windowState() == Qt::WindowFullScreen);
     });
-
-    {
-        // Qt 5.15.2 的bug; 问题复现及解决方法：当使用WM_NCCALCSIZE 修改非客户区大小后，移动窗口到其他屏幕时，qwindows.dll 源码 qwindowswindow.cpp:2447 updateFullFrameMargins() 函数
-        // 处会调用qwindowswindow.cpp:2453 的 calculateFullFrameMargins函数重新获取默认的非客户区大小，导致最外层窗口移动屏幕时会触发resize消息，引起40像素左右的黑边；故此处创建Menu
-        // 使其调用qwindowswindow.cpp:2451 的 QWindowsContext::forceNcCalcSize() 函数计算非客户区大小
-
-        //已知负面效果: 引入win32 MENU后，Qt程序中如果有alt开头的快捷键，会不生效，被Qt滤掉了，需要修改Qt源码
-        //QWindowsKeyMapper::translateKeyEventInternal 中的
-        //if (msgType == WM_SYSKEYDOWN && (nModifiers & AltAny) != 0 && GetMenu(msg.hwnd) != nullptr)
-        //  return false;
-        // 这两行屏蔽掉
-
-        d->mMenuHandler = ::CreateMenu();
-        ::SetMenu((HWND)winId(), d->mMenuHandler);
-    }
 }
+void TaoFrameLessView::showEvent(QShowEvent* e)
+{
+    if (d->m_firstRun)
+    {
+        d->m_firstRun = false;
+        //第一次show的时候，设置无边框。不在构造函数中设置。取winId会触发QWindowsWindow::create,直接创建win32窗口,引起错乱(win7 或者虚拟机启动即黑屏)。
+        d->setBorderLess((HWND)(winId()), d->borderless);
+        {
+            // Qt 5.15.2 的bug; 问题复现及解决方法：当使用WM_NCCALCSIZE 修改非客户区大小后，移动窗口到其他屏幕时，qwindows.dll 源码 qwindowswindow.cpp:2447
+            // updateFullFrameMargins() 函数 处会调用qwindowswindow.cpp:2453 的
+            // calculateFullFrameMargins函数重新获取默认的非客户区大小，导致最外层窗口移动屏幕时会触发resize消息，引起40像素左右的黑边；故此处创建Menu
+            // 使其调用qwindowswindow.cpp:2451 的 QWindowsContext::forceNcCalcSize() 函数计算非客户区大小
 
+            //已知负面效果: 引入win32 MENU后，Qt程序中如果有alt开头的快捷键，会不生效，被Qt滤掉了，需要修改Qt源码
+            // QWindowsKeyMapper::translateKeyEventInternal 中的
+            // if (msgType == WM_SYSKEYDOWN && (nModifiers & AltAny) != 0 && GetMenu(msg.hwnd) != nullptr)
+            //  return false;
+            // 这两行屏蔽掉
+
+            d->mMenuHandler = ::CreateMenu();
+            ::SetMenu((HWND)winId(), d->mMenuHandler);
+        }
+    }
+    Super::showEvent(e);
+}
 TaoFrameLessView::~TaoFrameLessView()
 {
-    if(d->mMenuHandler != NULL)
+    if (d->mMenuHandler != NULL)
     {
         ::DestroyMenu(d->mMenuHandler);
     }
@@ -231,7 +240,7 @@ void TaoFrameLessView::setIsMax(bool isMax)
 }
 void TaoFrameLessView::setIsFull(bool isFull)
 {
-    if(d->m_isFull == isFull)
+    if (d->m_isFull == isFull)
         return;
 
     d->m_isFull = isFull;
@@ -239,7 +248,7 @@ void TaoFrameLessView::setIsFull(bool isFull)
 }
 void TaoFrameLessView::resizeEvent(QResizeEvent* e)
 {
-    //SetWindowRgn(HWND(winId()), CreateRoundRectRgn(0, 0, width(), height(), 4, 4), true);
+    // SetWindowRgn(HWND(winId()), CreateRoundRectRgn(0, 0, width(), height(), 4, 4), true);
     Super::resizeEvent(e);
 }
 
@@ -272,6 +281,7 @@ bool TaoFrameLessView::nativeEvent(const QByteArray& eventType, void* message, l
     switch (msg->message)
     {
     case WM_NCCALCSIZE: {
+#if 1
         const auto mode = static_cast<BOOL>(msg->wParam);
         const auto clientRect = mode ? &(reinterpret_cast<LPNCCALCSIZE_PARAMS>(msg->lParam)->rgrc[0]) : reinterpret_cast<LPRECT>(msg->lParam);
         if (mode == TRUE && d->borderless)
@@ -294,6 +304,10 @@ bool TaoFrameLessView::nativeEvent(const QByteArray& eventType, void* message, l
             }
             return true;
         }
+#else
+        *result = 0;
+        return true;
+#endif
         break;
     }
     case WM_NCACTIVATE: {
