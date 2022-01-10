@@ -1,10 +1,10 @@
 #pragma once
-#include "quicktreeitem.h"
 #include <QAbstractItemModel>
 #include <QSet>
 #include <QVector>
-#include "BizCommon_global.h"
-class BIZCOMMON_EXPORT QuickTreeModel : public QAbstractItemModel
+#include "TaoCommonGlobal.h"
+#include "QuickTreeItem.h"
+class TAO_API QuickTreeModel : public QAbstractItemModel
 {
     Q_OBJECT
 public:

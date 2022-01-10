@@ -1,5 +1,8 @@
 TEMPLATE = subdirs
+
 SUBDIRS += \
-    ExampleLog \
-    CommonWithSource \
-    CommonWithModule
+    CommonWithSource
+
+qtHaveModule(TaoCommon): SUBDIRS += \
+        ExampleLog \
+        CommonWithModule

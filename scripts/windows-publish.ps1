@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param (
     [string] $archiveName, [string] $targetName
 )
@@ -45,7 +45,7 @@ function Main() {
     Compress-Archive -Path $archiveName $archiveName'.zip'
 }
 
-if ($null -eq $archiveName || $null -eq $targetName) {
+if (($null -eq $archiveName) -or ($null -eq $targetName)) {
     Write-Host "args missing, archiveName is" $archiveName ", targetName is" $targetName
     return
 }

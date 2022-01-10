@@ -7,7 +7,6 @@
 #include <QString>
 #include "Logger/Logger.h"
 namespace TaoCommon {
-[[maybe_unused]]
 static bool readFile(const QString &filePath, QByteArray &content)
 {
     QFile file(filePath);
@@ -19,7 +18,7 @@ static bool readFile(const QString &filePath, QByteArray &content)
     file.close();
     return true;
 }
-[[maybe_unused]]
+
 static bool readJson(const QByteArray &data, QJsonDocument &doc)
 {
     QJsonParseError err;
@@ -30,7 +29,7 @@ static bool readJson(const QByteArray &data, QJsonDocument &doc)
     }
     return true;
 }
-[[maybe_unused]]
+
 static bool readJson(const QByteArray &data, QJsonArray &array)
 {
     QJsonDocument doc;
@@ -40,7 +39,7 @@ static bool readJson(const QByteArray &data, QJsonArray &array)
     }
     return ok;
 }
-[[maybe_unused]]
+
 static bool readJson(const QByteArray &data, QJsonObject &object)
 {
     QJsonDocument doc;
@@ -50,7 +49,7 @@ static bool readJson(const QByteArray &data, QJsonObject &object)
     }
     return ok;
 }
-[[maybe_unused]]
+
 static bool readJsonFile(const QString &filePath, QJsonDocument &jsonDoc)
 {
     QByteArray data;
@@ -59,7 +58,7 @@ static bool readJsonFile(const QString &filePath, QJsonDocument &jsonDoc)
     }
     return readJson(data, jsonDoc);
 }
-[[maybe_unused]]
+
 static bool readJsonFile(const QString &filePath, QJsonObject &jsonObj)
 {
     QByteArray data;
@@ -68,7 +67,7 @@ static bool readJsonFile(const QString &filePath, QJsonObject &jsonObj)
     }
     return readJson(data, jsonObj);
 }
-[[maybe_unused]]
+
 static bool readJsonFile(const QString &filePath, QJsonArray &jsonArray)
 {
     QByteArray data;
@@ -77,7 +76,7 @@ static bool readJsonFile(const QString &filePath, QJsonArray &jsonArray)
     }
     return readJson(data, jsonArray);
 }
-[[maybe_unused]]
+
 static bool writeFile(const QString &filePath, const QByteArray &content)
 {
     QFile file(filePath);
@@ -89,17 +88,17 @@ static bool writeFile(const QString &filePath, const QByteArray &content)
     file.close();
     return true;
 }
-[[maybe_unused]]
+
 static bool writeJsonFile(const QString &filePath, const QJsonDocument &doc)
 {
     return writeFile(filePath, doc.toJson());
 }
-[[maybe_unused]]
+
 static bool writeJsonFile(const QString &filePath, const QJsonArray &jsonArray)
 {
     return writeJsonFile(filePath, QJsonDocument(jsonArray));
 }
-[[maybe_unused]]
+
 static bool writeJsonFile(const QString &filePath, const QJsonObject &jsonObj)
 {
     return writeJsonFile(filePath, QJsonDocument(jsonObj));

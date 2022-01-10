@@ -16,6 +16,8 @@ HEADERS += \
     $$PWD/Logger/Logger.h \
     $$PWD/Logger/LoggerTemplate.h \
     $$PWD/QuickTool/QuickTool.h \
+    $$PWD/QuickTree/Model/QuickTreeItem.h \
+    $$PWD/QuickTree/Model/QuickTreeModel.h \
     $$PWD/TaoCommonGlobal.h \
     $$PWD/QuickModel/QuickListItemBase.h \
     $$PWD/QuickModel/QuickListModel.h \
@@ -30,6 +32,7 @@ SOURCES += \
     $$PWD/QuickTool/QuickTool.cpp \
     $$PWD/QuickModel/QuickListItemBase.cpp \
     $$PWD/QuickModel/QuickListModel.cpp \
+    $$PWD/QuickTree/Model/QuickTreeModel.cpp \
     $$PWD/Thread/ThreadPool.cpp \
     $$PWD/Trans/Trans.cpp
 
