@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param (
     [string] $archiveName, [string] $targetName
 )
@@ -41,11 +41,9 @@ function Main() {
     # 拷贝WinSDK dll
     $sdkDll="{0}Redist\{1}ucrt\DLLs\{2}\*.dll" -f $env:winSdkDir.Trim(),$env:winSdkVer.Trim(),$env:msvcArch
     Copy-Item $sdkDll $archiveName\
-    # 打包zip
-    Compress-Archive -Path $archiveName $archiveName'.zip'
 }
 
-if ($null -eq $archiveName || $null -eq $targetName) {
+if (($null -eq $archiveName) -or ($null -eq $targetName)) {
     Write-Host "args missing, archiveName is" $archiveName ", targetName is" $targetName
     return
 }
