@@ -28,8 +28,7 @@
   - [矩形框组件](#矩形框组件)
   - [用户向导](#用户向导)
   - [鼠标点击特效](#鼠标点击特效)
-  - [动画特效-箭头流动](#动画特效-箭头流动)
-  - [动画特效-跟上节奏](#动画特效-跟上节奏)
+  - [Atom 摇摆](#atom-摇摆)
   - [ShaderToy-蜗牛](#shadertoy-蜗牛)
   - [ShaderToy-超级玛丽](#shadertoy-超级玛丽)
 - [开发环境](#开发环境)
@@ -183,14 +182,9 @@ https://marketplace.qt.io/collections/newest/products/taoquick
 
 ![](preview/ClickShow.gif)
 
-## 动画特效-箭头流动
+## Atom 摇摆
 
-![](preview/Arrow.png)
-
-## 动画特效-跟上节奏
-
-![](preview/byte.png)
-
+![](preview/AtomJoggle.gif)
 
 ## ShaderToy-蜗牛
 
