@@ -22,6 +22,7 @@
   - [Table Controls](#table-controls)
   - [Rect Drag Controls](#rect-drag-controls)
   - [Wizard](#wizard)
+  - [Mouse Click Effect](#mouse-click-effect)
   - [ShaderToy-Snail](#shadertoy-snail)
   - [ShaderToy-SuperMario](#shadertoy-supermario)
 - [Environment](#environment)
@@ -161,6 +162,10 @@ https://marketplace.qt.io/collections/newest/products/taoquick
 ![](preview/wizard-en.png)
 ![](preview/wizard.gif)
 
+## Mouse Click Effect
+
+![](preview/ClickShow.gif)
+
 ## ShaderToy-Snail
 
 ![](preview/snail.png)
@@ -172,9 +177,13 @@ https://marketplace.qt.io/collections/newest/products/taoquick
 
 # Environment
 
-* Qt 5.9.0 or later
+* Qt 5.9
 
-* compatibility Qt5.15
+* Qt 5.12
+
+* Qt 5.15
+
+* Qt6.2 (at branch qt6)
 
 # Project Struct
 
