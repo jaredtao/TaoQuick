@@ -3,9 +3,6 @@ import QtQuick.Controls 2.2
 
 Item {
     id: clickShow
-//    Component.onCompleted: {
-//        view.mousePressed.connect(brust)
-//    }
     Connections {
         target: view
         ignoreUnknownSignals: true
@@ -86,10 +83,6 @@ Item {
             break;
         }
         return c;
-    }
-    SequentialAnimation {
-        id: brushAnimation
-
     }
     function brust(xPos, yPos, button)
     {
