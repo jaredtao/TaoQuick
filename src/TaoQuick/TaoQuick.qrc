@@ -48,6 +48,7 @@
         <file>Qml/CusTable/CusTableView.qml</file>
         <file>Qml/CusWizard/CusWizard.qml</file>
         <file>Qml/CusWizard/CusWizardPage.qml</file>
+        <file>Qml/Effect/AtomJoggle.qml</file>
         <file>Qml/Effect/ClickShow.qml</file>
         <file>Qml/Effect/CusEffectCommon.qml</file>
         <file>Qml/Effect/CusShaderToy.qml</file>
@@ -102,6 +103,7 @@
         <file>Images/last.png</file>
         <file>Images/left.png</file>
         <file>Images/next.png</file>
+        <file>Images/particle.png</file>
         <file>Images/right.png</file>
         <file>Images/rotate.png</file>
         <file>Images/Search.png</file>

@@ -23,6 +23,7 @@
   - [Rect Drag Controls](#rect-drag-controls)
   - [Wizard](#wizard)
   - [Mouse Click Effect](#mouse-click-effect)
+  - [Atom Joggle](#atom-joggle)
   - [ShaderToy-Snail](#shadertoy-snail)
   - [ShaderToy-SuperMario](#shadertoy-supermario)
 - [Environment](#environment)
@@ -165,6 +166,10 @@ https://marketplace.qt.io/collections/newest/products/taoquick
 ## Mouse Click Effect
 
 ![](preview/ClickShow.gif)
+
+## Atom Joggle
+
+![](preview/AtomJoggle.gif)
 
 ## ShaderToy-Snail
 

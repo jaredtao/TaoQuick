@@ -241,6 +241,13 @@ ListModel {
         groupOpen: true
     }
     ListElement {
+        name: "Atom Joggle"
+        source: "Effect/EditJoggle.qml"
+        visible: true
+        group: "Effect"
+        groupOpen: true
+    }
+    ListElement {
         name: "Ring"
         source: "Effect/RingPage.qml"
         visible: true
@@ -254,6 +261,7 @@ ListModel {
         group: "Effect"
         groupOpen: true
     }
+
 //    ListElement {
 //        name: "Brilliant Starry Sky"
 //        source: "Effect/Swapper.qml"

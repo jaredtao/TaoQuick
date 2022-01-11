@@ -617,7 +617,14 @@
         {
             "key": "Save Txt Items",
             "value": "导出TXT"
+        },
+        {
+            "key": "Input on above rect to try Atom-Joggle effect",
+            "value": "在上方输入文本，体验'Atom 摇摆效果' "
+        },
+        {
+            "key": "Atom Joggle",
+            "value": "Atom 摇摆"
         }
-
     ]
 }

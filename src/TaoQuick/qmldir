@@ -72,6 +72,7 @@ SRhombus 1.0 Qml/Effect/PageSwitch/SRhombus.qml
 SSector 1.0 Qml/Effect/PageSwitch/SSector.qml
 SSquare 1.0 Qml/Effect/PageSwitch/SSquare.qml
 SWheel 1.0 Qml/Effect/PageSwitch/SWheel.qml
+AtomJoggle 1.0 Qml/Effect/AtomJoggle.qml
 ClickShow 1.0 Qml/Effect/ClickShow.qml
 singleton CusEffectCommon 1.0 Qml/Effect/CusEffectCommon.qml
 CusShaderToy 1.0 Qml/Effect/CusShaderToy.qml
