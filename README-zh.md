@@ -27,6 +27,7 @@
   - [表格组件](#表格组件)
   - [矩形框组件](#矩形框组件)
   - [用户向导](#用户向导)
+  - [鼠标点击特效](#鼠标点击特效)
   - [动画特效-箭头流动](#动画特效-箭头流动)
   - [动画特效-跟上节奏](#动画特效-跟上节奏)
   - [ShaderToy-蜗牛](#shadertoy-蜗牛)
@@ -35,7 +36,6 @@
 - [项目结构](#项目结构)
 - [核心库 TaoQuick](#核心库-taoquick)
 - [使用核心库TaoQuick](#使用核心库taoquick)
-  - [获取代码](#获取代码)
   - [qmake用法](#qmake用法)
   - [cmake用法](#cmake用法)
 - [联系作者](#联系作者)
@@ -179,6 +179,10 @@ https://marketplace.qt.io/collections/newest/products/taoquick
 ![](preview/wizard.png)
 ![](preview/wizard.gif)
 
+## 鼠标点击特效
+
+![](preview/ClickShow.gif)
+
 ## 动画特效-箭头流动
 
 ![](preview/Arrow.png)
@@ -199,9 +203,13 @@ https://marketplace.qt.io/collections/newest/products/taoquick
 
 # 开发环境
 
-* Qt 5.9.0 以上
+* Qt 5.9
 
-* 已兼容Qt5.15
+* Qt 5.12
+
+* Qt 5.15
+
+* Qt6.2 (在分支 qt6)
 
 # 项目结构
 
