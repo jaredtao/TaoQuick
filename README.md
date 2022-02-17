@@ -245,7 +245,7 @@ Other Contents reference to above table：
 
 ## get code
 ```shell
-git clone https://githun.com/jaredtao/TaoQuick.git
+git clone https://github.com/jaredtao/TaoQuick.git
 cd TaoQuick 
 ```
 
