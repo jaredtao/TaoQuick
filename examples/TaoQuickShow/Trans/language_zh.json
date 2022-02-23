@@ -117,6 +117,10 @@
             "value": "IP地址"
         },
         {
+            "key": "RoundRect",
+            "value": "圆角矩形"
+        },
+        {
             "key": "Home",
             "value": "首页"
         },
