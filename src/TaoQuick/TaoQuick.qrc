@@ -4,6 +4,7 @@
         <file>Qml/CusConfig.qml</file>
         <file>Qml/Basic/BasicText.qml</file>
         <file>Qml/Basic/BasicTooltip.qml</file>
+        <file>Qml/Basic/CusCallLater.qml</file>
         <file>Qml/Basic/MoveArea.qml</file>
         <file>Qml/Basic/RoundRectangle.qml</file>
         <file>Qml/Basic/RoundRectangleShape.qml</file>

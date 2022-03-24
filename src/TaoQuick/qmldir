@@ -1,6 +1,7 @@
 module TaoQuick
 BasicText 1.0 Qml/Basic/BasicText.qml
 BasicTooltip 1.0 Qml/Basic/BasicTooltip.qml
+CusCallLater 1.0 Qml/Basic/CusCallLater.qml
 MoveArea 1.0 Qml/Basic/MoveArea.qml
 RoundRectangle 1.0 Qml/Basic/RoundRectangle.qml
 RoundRectangleShape 1.0 Qml/Basic/RoundRectangleShape.qml
