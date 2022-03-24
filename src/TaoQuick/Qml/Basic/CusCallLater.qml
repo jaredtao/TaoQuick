@@ -8,14 +8,12 @@ Item {
             repeat: false
             property var _cb: function() {}
             onTriggered: {
-                console.log("trigger")
                 _cb()
                 destroy(parent)
             }
             function setTimeout(callback, delayTime) {
                 _cb = callback;
                 interval = delayTime;
-                console.log("setTimeout", interval)
                 start();
             }
         }
