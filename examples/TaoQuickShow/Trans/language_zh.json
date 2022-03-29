@@ -117,6 +117,10 @@
             "value": "IP地址"
         },
         {
+            "key": "RoundRect",
+            "value": "圆角矩形"
+        },
+        {
             "key": "Home",
             "value": "首页"
         },
@@ -324,6 +328,10 @@
         {
             "key": "Others",
             "value": "其它"
+        },
+        {
+            "key": "Shapes",
+            "value": "图形"
         },
         {
             "key": "Sponsors",
