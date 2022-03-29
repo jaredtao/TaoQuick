@@ -43,6 +43,21 @@ ListModel {
         visible: true
         group: "General"
         groupOpen: true
+    }    
+    ListElement {
+        name: "RoundRect"
+        source: "General/RoundRects.qml"
+        visible: true
+        group: "General"
+        groupOpen: true
+    }
+    
+    ListElement {
+        name: "Shapes"
+        source: "General/Shapes.qml"
+        visible: true
+        group: "General"
+        groupOpen: true
     }
     ListElement {
         name: "RoundRect"

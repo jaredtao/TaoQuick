@@ -330,6 +330,10 @@
             "value": "其它"
         },
         {
+            "key": "Shapes",
+            "value": "图形"
+        },
+        {
             "key": "Sponsors",
             "value": "赞助"
         },
