@@ -26,6 +26,18 @@ Rectangle {
             name: "Ellipse"
             shapeUrl: "../ShapeGallery/ShapeEllipse.qml"
         }
+        ListElement {
+            name: "Bezier"
+            shapeUrl: "../ShapeGallery/ShapeBezier.qml"
+        }
+        ListElement {
+            name: "Join Styles"
+            shapeUrl: "../ShapeGallery/ShapeJoinStyles.qml"
+        }
+        ListElement {
+            name: "Cap Styles"
+            shapeUrl: "../ShapeGallery/ShapeCapStyles.qml"
+        }
     }
 
     property int gridSpacing: 10
