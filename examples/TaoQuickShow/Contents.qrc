@@ -51,11 +51,14 @@
         <file>Contents/General/Tables.qml</file>
         <file>Trans/language_zh.json</file>
         <file>Contents/Effect/EditJoggle.qml</file>
-		<file>Contents/General/RoundRects.qml</file>
+        <file>Contents/General/RoundRects.qml</file>
         <file>Contents/General/Shapes.qml</file>
         <file>Contents/ShapeGallery/ShapeRectrangle.qml</file>
         <file>Contents/ShapeGallery/ShapeCircle.qml</file>
         <file>Contents/ShapeGallery/ShapeEllipse.qml</file>
         <file>Contents/ShapeGallery/ShapeTriangle.qml</file>
+        <file>Contents/ShapeGallery/ShapeBezier.qml</file>
+        <file>Contents/ShapeGallery/ShapeCapStyles.qml</file>
+        <file>Contents/ShapeGallery/ShapeJoinStyles.qml</file>
     </qresource>
 </RCC>
