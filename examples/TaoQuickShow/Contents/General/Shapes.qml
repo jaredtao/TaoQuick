@@ -5,6 +5,7 @@ Rectangle {
     id: root
     width: 1024
     height: 768
+    color: "transparent"
 
     property color col: "lightsteelblue"
 
