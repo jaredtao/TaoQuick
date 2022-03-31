@@ -68,6 +68,13 @@ int main(int argc, char **argv)
     view.rootContext()->setContextProperty("isDebug", QVariant(false));
 #endif
 
+
+#if QT_VERSION > QT_VERSION_CHECK(5, 10, 0)
+    view.rootContext()->setContextProperty("hasShape", true);
+#else
+    view.rootContext()->setContextProperty("hasShape", false);
+#endif
+
     view.rootContext()->setContextProperty("qmlPath", qmlPath);
     view.rootContext()->setContextProperty("imgPath", imgPath);
     view.rootContext()->setContextProperty("contentsPath", contentsPath);

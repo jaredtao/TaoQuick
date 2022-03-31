@@ -1,3 +1,4 @@
+import QtQml 2.0
 import QtQuick 2.9
 import QtQuick.Shapes 1.0
 
@@ -47,6 +48,22 @@ Rectangle {
 
     property int gridSpacing: 10
 
+    Rectangle {
+        anchors.fill: parent
+        anchors.margins: 10
+        color: "transparent"
+        clip: true
+
+        GridView {
+            id: grid
+            anchors.fill: parent
+            anchors.margins: root.gridSpacing
+            cellWidth: 300
+            cellHeight: 300
+            delegate: pathGalleryDelegate
+            model: pathGalleryModel
+        }
+    }
     Component {
         id: pathGalleryDelegate
         Rectangle {
@@ -71,23 +88,6 @@ Rectangle {
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
             }
-        }
-    }
-
-    Rectangle {
-        anchors.fill: parent
-        anchors.margins: 10
-        color: "transparent"
-        clip: true
-
-        GridView {
-            id: grid
-            anchors.fill: parent
-            anchors.margins: root.gridSpacing
-            cellWidth: 300
-            cellHeight: 300
-            delegate: pathGalleryDelegate
-            model: pathGalleryModel
         }
     }
 }

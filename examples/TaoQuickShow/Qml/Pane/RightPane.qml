@@ -1,3 +1,4 @@
+import QtQml 2.0
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
@@ -35,6 +36,7 @@ Loader {
             btnImgNormal: imgPath + "Common/view.png"
             tipText: qsTr("View Source Code") + trans.transString
             onClicked: {
+                console.log("source", source)
                 Qt.openUrlExternally(source)
             }
         }

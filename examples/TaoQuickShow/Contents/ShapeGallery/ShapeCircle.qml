@@ -1,4 +1,6 @@
+import QtQml 2.0
 import QtQuick 2.12
+import QtQuick.Controls 2.12
 import QtQuick.Shapes 1.12
 
 
@@ -6,7 +8,6 @@ Rectangle {
     width: 120
     height: 120
     color: th.pressed ? "steelBlue" : "lightGray"
-    containmentMask: ctr
 
     TapHandler { id: th }
 
