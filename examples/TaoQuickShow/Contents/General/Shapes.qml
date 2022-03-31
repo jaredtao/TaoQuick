@@ -5,6 +5,7 @@ Rectangle {
     id: root
     width: 1024
     height: 768
+    color: "transparent"
 
     property color col: "lightsteelblue"
 
@@ -25,6 +26,18 @@ Rectangle {
         ListElement {
             name: "Ellipse"
             shapeUrl: "../ShapeGallery/ShapeEllipse.qml"
+        }
+        ListElement {
+            name: "Bezier"
+            shapeUrl: "../ShapeGallery/ShapeBezier.qml"
+        }
+        ListElement {
+            name: "Join Styles"
+            shapeUrl: "../ShapeGallery/ShapeJoinStyles.qml"
+        }
+        ListElement {
+            name: "Cap Styles"
+            shapeUrl: "../ShapeGallery/ShapeCapStyles.qml"
         }
     }
 
