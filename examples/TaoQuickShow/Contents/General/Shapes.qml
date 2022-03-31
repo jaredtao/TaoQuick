@@ -28,8 +28,12 @@ Rectangle {
             shapeUrl: "../ShapeGallery/ShapeEllipse.qml"
         }
         ListElement {
-            name: "Bezier"
-            shapeUrl: "../ShapeGallery/ShapeBezier.qml"
+            name: "Quadratic Bezier"
+            shapeUrl: "../ShapeGallery/ShapeQuadraticBezier.qml"
+        }
+        ListElement {
+            name: "Cubic Bezier"
+            shapeUrl: "../ShapeGallery/ShapeCubicBezier.qml"
         }
         ListElement {
             name: "Join Styles"
