@@ -44,6 +44,10 @@ Rectangle {
             name: "Cap Styles"
             shapeUrl: "../ShapeGallery/ShapeCapStyles.qml"
         }
+        ListElement {
+            name: "Elliptical Arc"
+            shapeUrl: "../ShapeGallery/ShapeEllipticalArc.qml"
+        }
     }
 
     property int gridSpacing: 10
