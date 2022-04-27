@@ -22,7 +22,7 @@ Item {
         rightTopRound: rt.checked
         leftBottomRound: lb.checked
         rightBottomRound: rb.checked
-        color: "#333666"      //半透明色
+        color: "#A0333666"      //
     }
     Rectangle { //背景红色，衬托一下
         x: 10

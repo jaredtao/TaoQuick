@@ -63,5 +63,6 @@
         <file>Contents/ShapeGallery/ShapeJoinStyles.qml</file>
         <file>Contents/ShapeGallery/ShapeCubicBezier.qml</file>
         <file>Contents/ShapeGallery/ShapeEllipticalArc.qml</file>
+        <file>Contents/General/EdgeTabBar.qml</file>
     </qresource>
 </RCC>

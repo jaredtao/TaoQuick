@@ -60,7 +60,14 @@ ListModel {
         group: "General"
         groupOpen: true
     }
-    
+    ListElement {
+        name: "Edge TabBar"
+        source: "General/EdgeTabBar.qml"
+        visible: true
+        group: "General"
+        groupOpen: true
+    }
+
     ListElement {
         name: "Shapes"
         source: "General/Shapes.qml"

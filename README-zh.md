@@ -173,6 +173,9 @@ https://marketplace.qt.io/collections/newest/products/taoquick
 
 ![](preview/ListViewWithTab.gif)
 
+## Edge浏览器选项卡
+
+![](preview/EdgeTab.gif)
 
 ## 矩形框组件
 
