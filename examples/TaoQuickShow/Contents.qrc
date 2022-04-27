@@ -5,6 +5,7 @@
         <file>Contents/General/Drags.qml</file>
         <file>Contents/General/Images.qml</file>
         <file>Contents/General/Labels.qml</file>
+        <file>Contents/General/ListViewWithTab.qml</file>
         <file>Contents/General/Miscs.qml</file>
         <file>Contents/Animation/Board.qml</file>
         <file>Contents/Animation/Circle.qml</file>

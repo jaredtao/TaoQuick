@@ -398,6 +398,10 @@
             "value": "表格"
         },
         {
+            "key": "ListView With Tab",
+            "value": "带选项卡列表"
+        },
+        {
             "key": "Tree",
             "value": "树"
         },

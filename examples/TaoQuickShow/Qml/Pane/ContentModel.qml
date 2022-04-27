@@ -38,12 +38,21 @@ ListModel {
         groupOpen: true
     }
     ListElement {
+        name: "ListView With Tab"
+        source: "General/ListViewWithTab.qml"
+        visible: true
+        group: "General"
+        groupOpen: true
+    }
+    ListElement {
         name: "Drag Rect"
         source: "General/Drags.qml"
         visible: true
         group: "General"
         groupOpen: true
-    }    
+    }
+
+
     ListElement {
         name: "RoundRect"
         source: "General/RoundRects.qml"
