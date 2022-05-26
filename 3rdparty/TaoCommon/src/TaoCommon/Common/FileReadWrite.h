@@ -7,101 +7,110 @@
 #include <QString>
 #include "Logger/Logger.h"
 namespace TaoCommon {
-static bool readFile(const QString &filePath, QByteArray &content)
+
+static bool readFile(const QString& filePath, QByteArray& content, QString* errStr = nullptr)
 {
     QFile file(filePath);
-    if (!file.open(QFile::ReadOnly)) {
-        LOG_WARN << "open file " << filePath << "failed:" << file.errorString();
+    if (!file.open(QFile::ReadOnly))
+    {
+        if (errStr)
+        {
+            *errStr = file.errorString();
+        }
         return false;
     }
     content = file.readAll();
     file.close();
     return true;
 }
-
-static bool readJson(const QByteArray &data, QJsonDocument &doc)
+static bool readJson(const QByteArray& data, QJsonDocument& doc, QString* errStr = nullptr)
 {
     QJsonParseError err;
     doc = QJsonDocument::fromJson(data, &err);
-    if (doc.isNull()) {
-        LOG_WARN << "parse json failed:" << err.errorString();
+    if (doc.isNull())
+    {
+        if (errStr)
+        {
+            *errStr = err.errorString();
+        }
         return false;
     }
     return true;
 }
-
-static bool readJson(const QByteArray &data, QJsonArray &array)
+static bool readJson(const QByteArray& data, QJsonArray& array, QString* errStr = nullptr)
 {
     QJsonDocument doc;
-    bool ok = readJson(data, doc);
-    if (ok) {
+    bool		  ok = readJson(data, doc, errStr);
+    if (ok)
+    {
         array = doc.array();
     }
     return ok;
 }
-
-static bool readJson(const QByteArray &data, QJsonObject &object)
+static bool readJson(const QByteArray& data, QJsonObject& object, QString* errStr = nullptr)
 {
     QJsonDocument doc;
-    bool ok = readJson(data, doc);
-    if (ok) {
+    bool		  ok = readJson(data, doc, errStr);
+    if (ok)
+    {
         object = doc.object();
     }
     return ok;
 }
-
-static bool readJsonFile(const QString &filePath, QJsonDocument &jsonDoc)
+static bool readJsonFile(const QString& filePath, QJsonDocument& jsonDoc, QString* errStr = nullptr)
 {
     QByteArray data;
-    if (!readFile(filePath, data)) {
+    if (!readFile(filePath, data, errStr))
+    {
         return false;
     }
-    return readJson(data, jsonDoc);
+    return readJson(data, jsonDoc, errStr);
 }
-
-static bool readJsonFile(const QString &filePath, QJsonObject &jsonObj)
+static bool readJsonFile(const QString& filePath, QJsonObject& jsonObj, QString* errStr = nullptr)
 {
     QByteArray data;
-    if (!readFile(filePath, data)) {
+    if (!readFile(filePath, data, errStr))
+    {
         return false;
     }
-    return readJson(data, jsonObj);
+    return readJson(data, jsonObj, errStr);
 }
-
-static bool readJsonFile(const QString &filePath, QJsonArray &jsonArray)
+static bool readJsonFile(const QString& filePath, QJsonArray& jsonArray, QString* errStr = nullptr)
 {
     QByteArray data;
-    if (!readFile(filePath, data)) {
+    if (!readFile(filePath, data, errStr))
+    {
         return false;
     }
-    return readJson(data, jsonArray);
+    return readJson(data, jsonArray, errStr);
 }
-
-static bool writeFile(const QString &filePath, const QByteArray &content)
+static bool writeFile(const QString& filePath, const QByteArray& content, QString* errStr = nullptr)
 {
     QFile file(filePath);
-    if (!file.open(QFile::WriteOnly)) {
-        LOG_WARN << "open file " << filePath << "failed:" << file.errorString();
+    if (!file.open(QFile::WriteOnly))
+    {
+        if (errStr)
+        {
+            *errStr = file.errorString();
+        }
         return false;
     }
     file.write(content);
     file.close();
     return true;
 }
-
-static bool writeJsonFile(const QString &filePath, const QJsonDocument &doc)
+static bool writeJsonFile(const QString& filePath, const QJsonDocument& doc, QString* errStr = nullptr)
 {
-    return writeFile(filePath, doc.toJson());
+    return writeFile(filePath, doc.toJson(), errStr);
+}
+static bool writeJsonFile(const QString& filePath, const QJsonArray& jsonArray, QString* errStr = nullptr)
+{
+    return writeJsonFile(filePath, QJsonDocument(jsonArray), errStr);
+}
+static bool writeJsonFile(const QString& filePath, const QJsonObject& jsonObj, QString* errStr = nullptr)
+{
+    return writeJsonFile(filePath, QJsonDocument(jsonObj), errStr);
 }
 
-static bool writeJsonFile(const QString &filePath, const QJsonArray &jsonArray)
-{
-    return writeJsonFile(filePath, QJsonDocument(jsonArray));
-}
-
-static bool writeJsonFile(const QString &filePath, const QJsonObject &jsonObj)
-{
-    return writeJsonFile(filePath, QJsonDocument(jsonObj));
-}
 
 } // namespace TaoCommon
