@@ -30,7 +30,7 @@ QtObject {
             importPath = taoQuickImportPath + "/TaoQuick/Qml/"
         }
 
-        currentTheme = 0
+		currentTheme = 1
     }
 
     property color themeColor

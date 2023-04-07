@@ -22,6 +22,8 @@ Item {
     property color colorDisable: CusConfig.imageColor_disabled
     implicitWidth: baseImage.width
     implicitHeight: baseImage.height
+
+	property alias imageItem: baseImage
     CusImage {
         id: baseImage
         source: imgNormal
