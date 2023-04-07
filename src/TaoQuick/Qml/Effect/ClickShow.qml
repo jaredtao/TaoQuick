@@ -10,10 +10,6 @@ Item {
         function onMousePressed(xPos, yPos, button) {
             clickShow.brust(xPos, yPos, button)
         }
-        //5.12 and before
-        onMousePressed: {
-            clickShow.brust(xPos, yPos, button)
-        }
     }
     Component {
         id: brushComp
