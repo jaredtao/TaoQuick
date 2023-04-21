@@ -9,7 +9,7 @@ QtObject {
     property string transString: typeof (trans) != "undefined" ? trans.transString : ""
     property int fontPixel: 14
     property int fixedHeight: 30
-
+	property int fontSize_tableContent: 12
     property int maximumLength: 64
 
     property int controlBorderRadius: 4

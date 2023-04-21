@@ -26,6 +26,7 @@ CONFIG(debug, debug|release) {
     transDir=\"$${path}/Trans/\"
 
     OTHER_FILES += $$files($$path/Qml/*.qml, true)
+    OTHER_FILES += $$files($$path/Contents/*.qml, true)
 #    DEFINES += qmlPath=\\\"file:///$$PWD/Qml/\\\"
 #    DEFINES += contentsPath=\\\"file:///$$PWD/Contents/\\\"
 #    DEFINES += imgPath=\\\"file:///$$PWD/Image/\\\"
