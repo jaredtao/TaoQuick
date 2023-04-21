@@ -6,7 +6,7 @@ import "../.."
 RadioButton {
     id: cusRadioButton
 
-    implicitHeight: Config.fixedHeight
+	implicitHeight: CusConfig.fixedHeight
     implicitWidth: 200
     property alias tipText: toolTip.text
     property alias tipItem: toolTip
@@ -14,24 +14,34 @@ RadioButton {
     property alias tipDelay: toolTip.delay
     property alias tipTimeout: toolTip.timeout
 
-    property string btnImgNormal: Config.imagePathPrefix + "0_Common/RadioBtn.png"
-    property string btnImgHovered: Config.imagePathPrefix + "0_Common/RadioBtn_Hover.png"
-    property string btnImgPressed: Config.imagePathPrefix + "0_Common/RadioBtn_Checked.png"
-    property string btnImgDisbaled: Config.imagePathPrefix + "0_Common/RadioBtn_Disabled.png"
+	property string btnImgCheckedNormal: CusConfig.imagePathPrefix + "radio-checked-normal.png"
+	property string btnImgCheckedHovered: CusConfig.imagePathPrefix + "radio-checked-hover.png"
+	property string btnImgCheckedDisabled: CusConfig.imagePathPrefix + "radio-checked-disabled.png"
+	property string btnImgUnCheckedNormal: CusConfig.imagePathPrefix + "radio-unchecked-normal.png"
+	property string btnImgUnCheckedHovered: CusConfig.imagePathPrefix + "radio-unchecked-hover.png"
+	property string btnImgUnCheckedDisabled: CusConfig.imagePathPrefix + "radio-unchecked-disabled.png"
 
     property string btnImgUr: {
-        if (!cusRadioButton.enabled) {
-            return btnImgDisbaled
-        } else if (cusRadioButton.checked || cusRadioButton.pressed) {
-            return btnImgPressed
-        } else if (cusRadioButton.hovered) {
-            return btnImgHovered
-        } else {
-            return btnImgNormal
-        }
+		if (checked) {
+			if(!enabled) {
+				return btnImgCheckedDisabled
+			} else if (hovered) {
+				return btnImgCheckedHovered
+			} else {
+				return btnImgCheckedNormal
+			}
+		} else {
+			if(!enabled) {
+				return btnImgUnCheckedDisabled
+			} else if (hovered) {
+				return btnImgUnCheckedHovered
+			} else {
+				return btnImgUnCheckedNormal
+			}
+		}
     }
 
-    property color textColor: Config.textColor
+	property color textColor: cusRadioButton.enabled ? CusConfig.textColor : CusConfig.textColor_disabled
 
     indicator: CusImage {
         x: cusRadioButton.leftPadding
