@@ -27,7 +27,8 @@ static void showSomeLogger()
     // u8是c++11标准支持的字符串字面量写法，可以参考https://zh.cppreference.com/w/cpp/language/string_literal
     // QStringLiteral是Qt特有的宏，用来在编译期生成字符串字面量
     // QString::fromLocal8Bit可以在运行过程中，动态处理中文字符串。
-    for (int i = 0; i < 1000; ++i) {
+    for (int i = 0; i < 1000; ++i)
+    {
         gCount++;
         int count = gCount;
         LOG_DEBUG << currentThreadId() << u8"山有木兮木有枝，心悦君兮君不知。";
@@ -44,18 +45,20 @@ static void logThread()
     vector<std::thread> threads;
 
     //创建N个线程
-    for (unsigned long long i = 0; i < N; ++i) {
+    for (unsigned long long i = 0; i < N; ++i)
+    {
         threads.emplace_back(thread(showSomeLogger));
     }
 
     // join,等线程结束。
-    for (unsigned long long i = 0; i < N; ++i) {
+    for (unsigned long long i = 0; i < N; ++i)
+    {
         threads[i].join();
     }
     LOG_INFO << currentThreadId() << u8"故事到这就结束了，总共输出log" << gCount;
     qApp->exit();
 }
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QCoreApplication app(argc, argv);
 

@@ -1,18 +1,18 @@
 #pragma once
 
+#include "TaoCommonGlobal.h"
 #include <QObject>
 #include <QVariant>
 #include <QVector>
-#include "TaoCommonGlobal.h"
 class TAO_API QuickTreeItem : public QObject
 {
     Q_OBJECT
 public:
-    explicit QuickTreeItem(QuickTreeItem *parentItem = nullptr)
+    explicit QuickTreeItem(QuickTreeItem* parentItem = nullptr)
         : m_parentItem(parentItem)
     {
     }
-    explicit QuickTreeItem(const QVector<QVariant> &data, QuickTreeItem *parentItem = nullptr)
+    explicit QuickTreeItem(const QVector<QVariant>& data, QuickTreeItem* parentItem = nullptr)
         : m_itemData(data)
         , m_parentItem(parentItem)
     {
@@ -23,19 +23,19 @@ public:
         qDeleteAll(m_childItems);
     }
 
-    void appendChild(QuickTreeItem *child)
+    void appendChild(QuickTreeItem* child)
     {
         m_childItems.append(child);
     }
-	void prependChild(QuickTreeItem *child)
-	{
+    void prependChild(QuickTreeItem* child)
+    {
         m_childItems.prepend(child);
-	}
-    void appendChildren(const QVector<QuickTreeItem *> &children)
+    }
+    void appendChildren(const QVector<QuickTreeItem*>& children)
     {
         m_childItems.append(children);
     }
-    void insert(int row, const QVector<QuickTreeItem *> &children)
+    void insert(int row, const QVector<QuickTreeItem*>& children)
     {
         if (0 <= row && 0 < m_childItems.size())
         {
@@ -45,7 +45,7 @@ public:
             }
         }
     }
-    void insert(int row, QuickTreeItem *child)
+    void insert(int row, QuickTreeItem* child)
     {
         if (0 <= row && row < m_childItems.size())
         {
@@ -67,7 +67,7 @@ public:
         }
     }
 
-    QuickTreeItem *child(int row)
+    QuickTreeItem* child(int row)
     {
         if (row < 0 || row >= m_childItems.size())
             return nullptr;
@@ -90,11 +90,11 @@ public:
         }
         return {};
     }
-    void setDatas(const QVector<QVariant> &datas)
+    void setDatas(const QVector<QVariant>& datas)
     {
         m_itemData = datas;
     }
-    void setData(int index, const QVariant &data)
+    void setData(int index, const QVariant& data)
     {
         if (0 <= index && index < m_itemData.size())
         {
@@ -104,17 +104,17 @@ public:
     int row() const
     {
         if (m_parentItem)
-            return m_parentItem->m_childItems.indexOf(const_cast<QuickTreeItem *>(this));
+            return m_parentItem->m_childItems.indexOf(const_cast<QuickTreeItem*>(this));
         return 0;
     }
 
-    QuickTreeItem *parentItem() const
+    QuickTreeItem* parentItem() const
     {
         return m_parentItem;
     }
 
 private:
-    QVector<QuickTreeItem *> m_childItems;
-    QVector<QVariant>        m_itemData;
-    QuickTreeItem *          m_parentItem = nullptr;
+    QVector<QuickTreeItem*> m_childItems;
+    QVector<QVariant> m_itemData;
+    QuickTreeItem* m_parentItem = nullptr;
 };

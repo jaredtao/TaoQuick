@@ -3,48 +3,52 @@
 
 #include <QCoreApplication>
 #include <QDateTime>
+#include <QDebug>
 #include <QDir>
 #include <QMutex>
-#include <QDebug>
 #include <QTextStream>
 #include <string>
 
 #ifdef Q_OS_WIN
-#    include <Windows.h>
+#include <Windows.h>
 #else
-#    include <cstdio>
+#include <cstdio>
 #endif
 
-namespace Logger {
+namespace Logger
+{
 static QString gLogDir;
 static int gLogMaxCount;
 
-static void outputMessage(QtMsgType type, const QMessageLogContext &context, const QString &msg);
-static void outputMessageAsync(QtMsgType type, const QMessageLogContext &context,
-                               const QString &msg);
+static void outputMessage(QtMsgType type, const QMessageLogContext& context, const QString& msg);
+static void outputMessageAsync(QtMsgType type, const QMessageLogContext& context, const QString& msg);
 
-void initLog(const QString &logPath, int logMaxCount, bool async)
+void initLog(const QString& logPath, int logMaxCount, bool async)
 {
-    if (async) {
+    if (async)
+    {
         qInstallMessageHandler(outputMessageAsync);
-    } else {
+    }
+    else
+    {
         qInstallMessageHandler(outputMessage);
     }
 
     gLogDir = QCoreApplication::applicationDirPath() + QStringLiteral("/") + logPath;
     gLogMaxCount = logMaxCount;
     QDir dir(gLogDir);
-    if (!dir.exists()) {
+    if (!dir.exists())
+    {
         dir.mkpath(dir.absolutePath());
     }
     QStringList infoList = dir.entryList(QDir::Files, QDir::Name);
-    while (infoList.size() > gLogMaxCount) {
+    while (infoList.size() > gLogMaxCount)
+    {
         dir.remove(infoList.first());
         infoList.removeFirst();
     }
 }
-static void outputMessageAsync(QtMsgType type, const QMessageLogContext &context,
-                               const QString &msg)
+static void outputMessageAsync(QtMsgType type, const QMessageLogContext& context, const QString& msg)
 {
     static const QString messageTemp = QStringLiteral("<div class=\"%1\">%2</div>\r\n");
     static const char typeList[] = { 'd', 'w', 'c', 'f', 'i' };
@@ -67,8 +71,10 @@ static void outputMessageAsync(QtMsgType type, const QMessageLogContext &context
     QString htmlMessage = messageTemp.arg(typeList[static_cast<int>(type)]).arg(message);
     QString newfileName = QStringLiteral("%1/%2_log.html").arg(gLogDir).arg(fileNameDt);
     mutex.lock();
-    if (file.fileName() != newfileName) {
-        if (file.isOpen()) {
+    if (file.fileName() != newfileName)
+    {
+        if (file.isOpen())
+        {
             file.close();
         }
         file.setFileName(newfileName);
@@ -80,14 +86,16 @@ static void outputMessageAsync(QtMsgType type, const QMessageLogContext &context
 #else
         textStream.setCodec("UTF-8");
 #endif
-        if (!exist) {
+        if (!exist)
+        {
             textStream << logTemplate << "\r\n";
         }
     }
     textStream << htmlMessage;
     textStream.flush();
     count += htmlMessage.length();
-    if (count >= maxCount) {
+    if (count >= maxCount)
+    {
         file.close();
         file.open(QIODevice::WriteOnly | QIODevice::Append);
     }
@@ -99,7 +107,7 @@ static void outputMessageAsync(QtMsgType type, const QMessageLogContext &context
     fprintf(stderr, "%s", message.toStdString().data());
 #endif
 }
-static void outputMessage(QtMsgType type, const QMessageLogContext &context, const QString &msg)
+static void outputMessage(QtMsgType type, const QMessageLogContext& context, const QString& msg)
 {
     static const QString messageTemp = QStringLiteral("<div class=\"%1\">%2</div>\r\n");
     static const char typeList[] = { 'd', 'w', 'c', 'f', 'i' };
@@ -128,7 +136,8 @@ static void outputMessage(QtMsgType type, const QMessageLogContext &context, con
 #else
     textStream.setCodec("UTF-8");
 #endif
-    if (!exist) {
+    if (!exist)
+    {
         textStream << logTemplate << "\r\n";
     }
     textStream << htmlMessage;
