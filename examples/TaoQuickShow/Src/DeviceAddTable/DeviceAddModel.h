@@ -1,38 +1,40 @@
 #pragma once
 
-#include <QObject>
 #include "QuickModel/QuickListModel.h"
+#include <QObject>
 class DeviceAddModelPrivate;
 class DeviceAddItem;
 class DeviceAddModel : public QuickListModel
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-    explicit DeviceAddModel(QObject *parent = nullptr);
-    virtual ~DeviceAddModel() override;
-    Q_INVOKABLE virtual void sortByRole() override;
+	explicit DeviceAddModel(QObject* parent = nullptr);
+	virtual ~DeviceAddModel() override;
+	Q_INVOKABLE virtual void sortByRole() override;
 public slots:
-    void doUpdateName(int row, const QString &name);
+	void doUpdateName(int row, const QString& name);
 
-    void initData();
+	void initData();
 
-    void addOne();
-    void addMulti(int count);
+	void addOne();
+	void addMulti(int count);
 
-    void insertBeforeSelected();
-    void insertBeforeRow(int row);
+	void insertBeforeSelected();
+	void insertBeforeRow(int row);
 
-    void clearAll();
+	void clearAll();
 
-    void removeSelected();
-    void removeChecked();
-    void removeRow(int row);
+	void removeSelected();
+	void removeChecked();
+	void removeRow(int row);
+
 private:
-    void sortByName(Qt::SortOrder order);
-    void sortByAddress(Qt::SortOrder order);
-    void sortByModel(Qt::SortOrder order);
+	void sortByName(Qt::SortOrder order);
+	void sortByAddress(Qt::SortOrder order);
+	void sortByModel(Qt::SortOrder order);
 
-    DeviceAddItem *genOne(uint32_t value);
+	DeviceAddItem* genOne(uint32_t value);
+
 private:
-    DeviceAddModelPrivate *d;
+	DeviceAddModelPrivate* d;
 };

@@ -1,12 +1,13 @@
 #pragma once
+#include "Logger/Logger.h"
 #include <QDebug>
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QString>
-#include "Logger/Logger.h"
-namespace TaoCommon {
+namespace TaoCommon
+{
 
 static bool readFile(const QString& filePath, QByteArray& content, QString* errStr = nullptr)
 {
@@ -40,7 +41,7 @@ static bool readJson(const QByteArray& data, QJsonDocument& doc, QString* errStr
 static bool readJson(const QByteArray& data, QJsonArray& array, QString* errStr = nullptr)
 {
     QJsonDocument doc;
-    bool		  ok = readJson(data, doc, errStr);
+    bool ok = readJson(data, doc, errStr);
     if (ok)
     {
         array = doc.array();
@@ -50,7 +51,7 @@ static bool readJson(const QByteArray& data, QJsonArray& array, QString* errStr 
 static bool readJson(const QByteArray& data, QJsonObject& object, QString* errStr = nullptr)
 {
     QJsonDocument doc;
-    bool		  ok = readJson(data, doc, errStr);
+    bool ok = readJson(data, doc, errStr);
     if (ok)
     {
         object = doc.object();
@@ -111,6 +112,5 @@ static bool writeJsonFile(const QString& filePath, const QJsonObject& jsonObj, Q
 {
     return writeJsonFile(filePath, QJsonDocument(jsonObj), errStr);
 }
-
 
 } // namespace TaoCommon

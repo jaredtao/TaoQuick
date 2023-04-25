@@ -1,10 +1,8 @@
 #include "QuickModel/QuickListItemBase.h"
 
-QuickListItemBase::QuickListItemBase(QObject *parent)
+QuickListItemBase::QuickListItemBase(QObject* parent)
     : QObject(parent)
 {
 }
 
-QuickListItemBase::~QuickListItemBase()
-{
-}
+QuickListItemBase::~QuickListItemBase() { }

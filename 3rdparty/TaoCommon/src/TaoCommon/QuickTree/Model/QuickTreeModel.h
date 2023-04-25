@@ -1,47 +1,47 @@
 #pragma once
+#include "QuickTreeItem.h"
+#include "TaoCommonGlobal.h"
 #include <QAbstractItemModel>
 #include <QSet>
 #include <QVector>
-#include "TaoCommonGlobal.h"
-#include "QuickTreeItem.h"
 class TAO_API QuickTreeModel : public QAbstractItemModel
 {
     Q_OBJECT
 public:
-    explicit QuickTreeModel(QObject *parent = nullptr);
+    explicit QuickTreeModel(QObject* parent = nullptr);
     ~QuickTreeModel();
-    QuickTreeItem *rootItem() const
+    QuickTreeItem* rootItem() const
     {
         return m_rootItem;
     }
-    QVariant      data(const QModelIndex &index, int role) const override;
-    Qt::ItemFlags flags(const QModelIndex &index) const override;
-    QVariant      headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
-    QModelIndex   index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
-    QModelIndex   parent(const QModelIndex &index) const override;
-    int           rowCount(const QModelIndex &parent = QModelIndex()) const override;
-    int           columnCount(const QModelIndex &parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex& index, int role) const override;
+    Qt::ItemFlags flags(const QModelIndex& index) const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const override;
+    QModelIndex parent(const QModelIndex& index) const override;
+    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    int columnCount(const QModelIndex& parent = QModelIndex()) const override;
 
     //[begin] add data
-    void appendChild(QuickTreeItem *data)
+    void appendChild(QuickTreeItem* data)
     {
         beginInsertRows({}, m_rootItem->childCount(), m_rootItem->childCount() + 1);
         m_rootItem->appendChild(data);
         endInsertRows();
     }
-    void appendChildren(const QVector<QuickTreeItem *> &datas)
+    void appendChildren(const QVector<QuickTreeItem*>& datas)
     {
         beginInsertRows({}, m_rootItem->childCount(), m_rootItem->childCount() + datas.size() - 1);
         m_rootItem->appendChildren(datas);
         endInsertRows();
     }
-	void prependChild(QuickTreeItem *data)
-	{
+    void prependChild(QuickTreeItem* data)
+    {
         beginInsertRows({}, 0, 0);
         m_rootItem->prependChild(data);
         endInsertRows();
-	}
-    void insert(int row, const QVector<QuickTreeItem *> &datas)
+    }
+    void insert(int row, const QVector<QuickTreeItem*>& datas)
     {
         if (row < 0 || row > m_rootItem->childCount())
         {
@@ -83,5 +83,5 @@ public:
     //    //[end] update data
 
 private:
-    QuickTreeItem *m_rootItem;
+    QuickTreeItem* m_rootItem;
 };

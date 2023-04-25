@@ -1,31 +1,36 @@
 #include "Trans.h"
 #include "Common/FileReadWrite.h"
-#include <QDir>
-#include <QQmlContext>
 #include <QCoreApplication>
+#include <QDir>
 #include <QLocale>
-#include <QQuickView>
+#include <QQmlContext>
 #include <QQmlEngine>
+#include <QQuickView>
 const static auto cEnglisthStr = u8"English";
 const static auto cChineseStr = u8"简体中文";
-Trans::Trans(QObject *parent) : QTranslator(parent) {}
+Trans::Trans(QObject* parent)
+    : QTranslator(parent)
+{
+}
 
-void Trans::beforeUiReady(QQmlContext *ctx, const QString &folder)
+void Trans::beforeUiReady(QQmlContext* ctx, const QString& folder)
 {
     m_ctx = ctx;
     ctx->setContextProperty("trans", this);
-    if (folder.isEmpty()) {
+    if (folder.isEmpty())
+    {
         loadFolder(qApp->applicationDirPath() + "/Trans");
-    } else {
+    }
+    else
+    {
         loadFolder(folder);
     }
     qApp->installTranslator(this);
 }
 
-void Trans::afterUiReady() {}
+void Trans::afterUiReady() { }
 
-QString Trans::translate(const char *context, const char *sourceText, const char *disambiguation,
-                         int n) const
+QString Trans::translate(const char* context, const char* sourceText, const char* disambiguation, int n) const
 {
     Q_UNUSED(context)
     Q_UNUSED(disambiguation)
@@ -34,41 +39,48 @@ QString Trans::translate(const char *context, const char *sourceText, const char
     return trans(sourceText);
 }
 
-void Trans::loadFolder(const QString &folder)
+void Trans::loadFolder(const QString& folder)
 {
     qWarning() << "Trans loadFolder" << folder;
     QDir dir(folder);
     auto infos = dir.entryInfoList({ "language_*.json" }, QDir::Files);
     QString lang;
-    for (const auto &info : infos) {
+    for (const auto& info : infos)
+    {
         load(lang, info.absoluteFilePath());
     }
 
     initEnglish();
     auto langs = m_map.keys();
-    if (langs.contains(cChineseStr)) {
+    if (langs.contains(cChineseStr))
+    {
         langs.removeAll(cChineseStr);
         langs.push_front(cChineseStr);
     }
     setLanguages(langs);
-    if (m_map.contains(cChineseStr)) {
+    if (m_map.contains(cChineseStr))
+    {
         setCurrentLang(cChineseStr);
-    } else {
+    }
+    else
+    {
         setCurrentLang(cEnglisthStr);
     }
     emit folderLoaded(folder);
 }
 
-bool Trans::load(QString &lang, const QString &filePath)
+bool Trans::load(QString& lang, const QString& filePath)
 {
     lang.clear();
     QJsonObject rootObj;
-    if (!TaoCommon::readJsonFile(filePath, rootObj)) {
+    if (!TaoCommon::readJsonFile(filePath, rootObj))
+    {
         return false;
     }
     lang = rootObj.value("lang").toString();
-    const auto &trans = rootObj.value("trans").toArray();
-    for (const auto &i : trans) {
+    const auto& trans = rootObj.value("trans").toArray();
+    for (const auto& i : trans)
+    {
         auto transObj = i.toObject();
         QString key = transObj.value("key").toString();
         QString value = transObj.value("value").toString();
@@ -78,42 +90,47 @@ bool Trans::load(QString &lang, const QString &filePath)
     return true;
 }
 
-const QString &Trans::currentLang() const
+const QString& Trans::currentLang() const
 {
     return m_currentLang;
 }
 
-const QStringList &Trans::languages() const
+const QStringList& Trans::languages() const
 {
     return m_languages;
 }
 
-const QString &Trans::transString() const
+const QString& Trans::transString() const
 {
     return m_transString;
 }
 
 void Trans::initEnglish()
 {
-    if (!m_map.contains(cEnglisthStr)) {
+    if (!m_map.contains(cEnglisthStr))
+    {
         QHash<QString, QString> map;
-        if (m_map.contains(cChineseStr)) {
+        if (m_map.contains(cChineseStr))
+        {
             map = m_map.value(cChineseStr);
-        } else {
+        }
+        else
+        {
             map = m_map.value(m_map.keys().first());
         }
-        for (const auto &key : map.keys()) {
+        for (const auto& key : map.keys())
+        {
             m_map[cEnglisthStr][key] = key;
         }
     }
 }
 
-QString Trans::trans(const QString &source) const
+QString Trans::trans(const QString& source) const
 {
     return m_map.value(m_currentLang).value(source, source);
 }
 
-void Trans::setCurrentLang(const QString &currentLang)
+void Trans::setCurrentLang(const QString& currentLang)
 {
     if (m_currentLang == currentLang)
         return;
@@ -128,7 +145,7 @@ void Trans::setCurrentLang(const QString &currentLang)
 #endif
 }
 
-void Trans::setLanguages(const QStringList &languages)
+void Trans::setLanguages(const QStringList& languages)
 {
     if (m_languages == languages)
         return;

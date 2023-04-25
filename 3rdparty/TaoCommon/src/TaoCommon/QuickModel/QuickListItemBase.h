@@ -1,7 +1,7 @@
 #pragma once
 
-#include <QObject>
 #include "TaoCommonGlobal.h"
+#include <QObject>
 class TAO_API QuickListItemBase : public QObject
 {
     Q_OBJECT
@@ -10,9 +10,9 @@ class TAO_API QuickListItemBase : public QObject
     Q_PROPERTY(bool isVisible READ isVisible WRITE setIsVisible NOTIFY isVisibleChanged)
     Q_PROPERTY(bool isAlternate READ isAlternate WRITE setIsAlternate NOTIFY isAlternateChanged)
 public:
-    explicit QuickListItemBase(QObject *parent = nullptr);
+    explicit QuickListItemBase(QObject* parent = nullptr);
     ~QuickListItemBase() override;
-    QuickListItemBase(const QuickListItemBase &other)
+    QuickListItemBase(const QuickListItemBase& other)
     {
         setIsChecked(other.isChecked());
         setIsSelected(other.isSelected());
@@ -20,7 +20,7 @@ public:
         setIsAlternate(other.isAlternate());
     }
 
-    QuickListItemBase &operator=(const QuickListItemBase &other)
+    QuickListItemBase& operator=(const QuickListItemBase& other)
     {
         setIsChecked(other.isChecked());
         setIsSelected(other.isSelected());
@@ -47,7 +47,7 @@ public:
         return mIsAlternate;
     }
     // Model call this for search. return true if contents match key, others return false.
-    virtual bool match(const QString &key)
+    virtual bool match(const QString& key)
     {
         Q_UNUSED(key)
         return true;
@@ -73,7 +73,7 @@ public slots:
 
     void setIsVisible(bool isVisible)
     {
-        //if (mIsVisible == isVisible)
+        // if (mIsVisible == isVisible)
         //    return;
 
         mIsVisible = isVisible;

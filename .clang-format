@@ -17,23 +17,31 @@ ColumnLimit:     160
 TabWidth:        4
 
 # 使用tab字符: Never, ForIndentation, ForContinuationAndIndentation, Always
-UseTab:          Never
+UseTab:          Always
 
 # 开括号(开圆括号、开尖括号、开方括号)后的对齐: Align, DontAlign, AlwaysBreak(总是在开括号后换行)
 AlignAfterOpenBracket: AlwaysBreak
 
+#对齐逃脱换行(使用反斜杠换行)的反斜杠
+AlignEscapedNewlines: Right 
+
+# 连续赋值时，对齐所有等号
+AlignConsecutiveAssignments: true
+
 # 连续声明时，对齐所有声明的变量名
 AlignConsecutiveDeclarations: true
 
-# 左对齐逃脱换行(使用反斜杠换行)的反斜杠
-AlignEscapedNewlines: Right
+# 对齐连续的宏定义
+AlignConsecutiveMacros: true
 
+# 对齐尾注释
+AlignTrailingComments: true
 
 # 在大括号前换行: Attach(始终将大括号附加到周围的上下文), Linux(除函数、命名空间和类定义，与Attach类似),
 #   Mozilla(除枚举、函数、记录定义，与Attach类似), Stroustrup(除函数定义、catch、else，与Attach类似),
 #   Allman(总是在大括号前换行), GNU(总是在大括号前换行，并对于控制语句的大括号增加额外的缩进), WebKit(在函数前换行), Custom
 #   注：这里认为语句块也属于函数
-BreakBeforeBraces: Custom
+BreakBeforeBraces: Allman
 # 大括号换行，只有当BreakBeforeBraces设置为Custom时才有效
 BraceWrapping:   
   # class定义后面
@@ -61,7 +69,10 @@ BraceWrapping:
   # 缩进大括号
   IndentBraces: false
 
-  
+# 在二元运算符前换行: None(在操作符后换行), NonAssignment(在非赋值的操作符前换行), All(在操作符前换行)
+BreakBeforeBinaryOperators: None
+
+
 # 继承列表的逗号前换行
 BreakBeforeInheritanceComma: true
 
@@ -77,12 +88,6 @@ BreakConstructorInitializers: BeforeComma
 # 总是在template声明后换行
 AlwaysBreakTemplateDeclarations: true
 
-# false表示函数实参要么都在同一行，要么都各自一行
-BinPackArguments: false
-
-# false表示所有形参要么都在同一行，要么都各自一行
-BinPackParameters: false
-
 # 描述具有特殊意义的注释的正则表达式，它不应该被分割为多行或以其它方式改变
 CommentPragmas:  '^ IWYU pragma:'
 
@@ -95,11 +100,11 @@ AlignTrailingComments:	true
 # 允许短的函数放在同一行: None, InlineOnly(定义在类中), Empty(空函数), Inline(定义在类中，空函数), All
 AllowShortFunctionsOnASingleLine: Empty
 
-# 构造函数的初始化列表要么都在同一行，要么都各自一行
-ConstructorInitializerAllOnOneLineOrOnePerLine: false
+# false表示函数实参要么都在同一行，要么都各自一行
+BinPackArguments: false
 
-# 指针和引用的对齐: Left, Right, Middle
-PointerAlignment: Left
+# false表示所有形参要么都在同一行，要么都各自一行
+BinPackParameters: false
 
 # 需要被解读为foreach循环而不是函数调用的宏
 ForEachMacros:   
@@ -107,6 +112,7 @@ ForEachMacros:
   - Q_FOREACH
   - BOOST_FOREACH
 
+IndentCaseLabels: true
 
 IncludeBlocks:   Preserve
 # 对#include进行排序，匹配了某正则表达式的#include拥有对应的优先级，匹配不到的则默认优先级为INT_MAX(优先级越小排序越靠前)，
@@ -120,5 +126,4 @@ IncludeCategories:
     Priority:        1
   - Regex:           '.*'
     Priority:        1
-
 ...

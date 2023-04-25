@@ -3,7 +3,8 @@
 #include "ThreadCommon.h"
 #include <QMap>
 #include <QThread>
-namespace TaoCommon {
+namespace TaoCommon
+{
 // 对Qt Worker-Controller 线程模型的简单封装，适合精确控制的任务。
 // 用法: ThreadController::getInstance()->work(workCall, resultCall)
 // workCall是在新线程中执行的任务，resultCall是任务执行完成后，回到调用线程中用来处理执行结果。
@@ -13,8 +14,10 @@ class ThreadWorker : public QObject
 {
     Q_OBJECT
 public:
-    ThreadWorker(uint64_t id, const WorkCallback &workCall, QObject *parent = nullptr)
-        : QObject(parent), m_id(id), m_workCall(workCall)
+    ThreadWorker(uint64_t id, const WorkCallback& workCall, QObject* parent = nullptr)
+        : QObject(parent)
+        , m_id(id)
+        , m_workCall(workCall)
     {
     }
 
@@ -35,7 +38,7 @@ class TAO_API ThreadController : public QObject
 {
     Q_OBJECT
 public:
-    static ThreadController *getInstance()
+    static ThreadController* getInstance()
     {
         static ThreadController controller;
         return &controller;
@@ -43,8 +46,10 @@ public:
 
     ~ThreadController()
     {
-        for (const auto &k : m_threadMap.keys()) {
-            if (m_threadMap.value(k)->isRunning()) {
+        for (const auto& k : m_threadMap.keys())
+        {
+            if (m_threadMap.value(k)->isRunning())
+            {
                 m_threadMap.value(k)->quit();
                 m_threadMap.value(k)->wait();
             }
@@ -53,27 +58,28 @@ public:
         m_threadMap.clear();
         m_resultCallback.clear();
     }
-    uint64_t work(const WorkCallback &workCall, const WorkResultCallback &resultCall)
+    uint64_t work(const WorkCallback& workCall, const WorkResultCallback& resultCall)
     {
-        QThread *thread = new QThread;
+        QThread* thread = new QThread;
         m_rollId++;
-        ThreadWorker *obj = new ThreadWorker(m_rollId, workCall);
+        ThreadWorker* obj = new ThreadWorker(m_rollId, workCall);
         m_threadMap[m_rollId] = thread;
         m_resultCallback[m_rollId] = resultCall;
         obj->moveToThread(thread);
 
         connect(thread, &QThread::finished, obj, &QObject::deleteLater);
         connect(thread, &QThread::started, obj, &ThreadWorker::doWork);
-        connect(obj, &ThreadWorker::workFinished, this, &ThreadController::onWorkFinished,
-                Qt::QueuedConnection);
+        connect(obj, &ThreadWorker::workFinished, this, &ThreadController::onWorkFinished, Qt::QueuedConnection);
         thread->start();
         return m_rollId;
     }
     void cancle(uint64_t id)
     {
         auto it = m_threadMap.find(id);
-        if (it != m_threadMap.end()) {
-            if ((*it)->isRunning()) {
+        if (it != m_threadMap.end())
+        {
+            if ((*it)->isRunning())
+            {
                 (*it)->terminate();
             }
         }
@@ -82,8 +88,10 @@ public:
     void quit(uint64_t id)
     {
         auto it = m_threadMap.find(id);
-        if (it != m_threadMap.end()) {
-            if ((*it)->isRunning()) {
+        if (it != m_threadMap.end())
+        {
+            if ((*it)->isRunning())
+            {
                 (*it)->quit();
                 (*it)->wait();
                 (*it)->deleteLater();
@@ -91,13 +99,18 @@ public:
         }
         m_resultCallback.remove(id);
     }
-    QList<uint64_t> getAllWorkId() const { return m_threadMap.keys(); }
+    QList<uint64_t> getAllWorkId() const
+    {
+        return m_threadMap.keys();
+    }
 protected slots:
     void onWorkFinished(bool ok, uint64_t id)
     {
         auto it = m_threadMap.find(id);
-        if (it != m_threadMap.end()) {
-            if ((*it)->isRunning()) {
+        if (it != m_threadMap.end())
+        {
+            if ((*it)->isRunning())
+            {
                 (*it)->quit();
                 (*it)->wait();
                 (*it)->deleteLater();
@@ -105,18 +118,22 @@ protected slots:
             m_threadMap.remove(id);
         }
         auto caller = m_resultCallback.find(id);
-        if (caller != m_resultCallback.end()) {
+        if (caller != m_resultCallback.end())
+        {
             (*caller)(ok);
             m_resultCallback.remove(id);
         }
     }
 
 protected:
-    ThreadController(QObject *parent = nullptr) : QObject(parent) {}
+    ThreadController(QObject* parent = nullptr)
+        : QObject(parent)
+    {
+    }
 
 private:
     uint64_t m_rollId = 0;
-    QMap<uint64_t, QThread *> m_threadMap;
+    QMap<uint64_t, QThread*> m_threadMap;
     QMap<uint64_t, WorkResultCallback> m_resultCallback;
 };
-} // namespace LCIM
+} // namespace TaoCommon
