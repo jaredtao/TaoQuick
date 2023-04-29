@@ -12,13 +12,7 @@ class TAO_API QuickListItemBase : public QObject
 public:
     explicit QuickListItemBase(QObject* parent = nullptr);
     ~QuickListItemBase() override;
-    QuickListItemBase(const QuickListItemBase& other)
-    {
-        setIsChecked(other.isChecked());
-        setIsSelected(other.isSelected());
-        setIsVisible(other.isVisible());
-        setIsAlternate(other.isAlternate());
-    }
+    QuickListItemBase(const QuickListItemBase& other);
 
     QuickListItemBase& operator=(const QuickListItemBase& other)
     {
