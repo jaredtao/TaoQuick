@@ -6,9 +6,9 @@ CONFIG(debug,debug|release){
     } else {
         path=$$system("pwd")
     }
-    TaoQuickImport=\"file:///$$path\"
+    TaoQuickImport=\"file:///$$path/\"
     TaoQuickImage=\"file:///$$path/TaoQuick/Images/\"
-    DEFINES += TaoQuickImportPath=\\\"file:///$${path}\\\"
+    DEFINES += TaoQuickImportPath=\\\"file:///$${path}/\\\"
     DEFINES += TaoQuickImagePath=\\\"file:///$${path}/TaoQuick/Images/\\\"
 
     OTHER_FILES += $$files($$path/TaoQuick/Qml/*.qml, true)

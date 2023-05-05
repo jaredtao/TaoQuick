@@ -1,4 +1,4 @@
-import QtQuick 2.10
+import QtQuick 2.9
 import QtQuick.Controls 2.2
 import ".."
 import "../.."
@@ -6,7 +6,7 @@ import "../.."
 RadioButton {
     id: cusRadioButton
 
-	implicitHeight: CusConfig.fixedHeight
+    implicitHeight: CusConfig.fixedHeight
     implicitWidth: 200
     property alias tipText: toolTip.text
     property alias tipItem: toolTip

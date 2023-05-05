@@ -1,15 +1,15 @@
 pragma Singleton
 
 import QtQuick 2.9
-
+import QtQml 2.0
 QtObject {
-    id: config
-    objectName: "config"
+    id: cusConfig
+    objectName: "cusConfig"
     property string fontFamily: "微软雅黑"
     property string transString: typeof (trans) != "undefined" ? trans.transString : ""
     property int fontPixel: 14
     property int fixedHeight: 30
-	property int fontSize_tableContent: 12
+    property int fontSize_tableContent: 12
     property int maximumLength: 64
 
     property int controlBorderRadius: 4
@@ -27,7 +27,6 @@ QtObject {
         }
         currentTheme = 0
     }
-
     property color themeColor
     property color backgroundColor
     property color textColor

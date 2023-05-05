@@ -1,5 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import QtQml 2.0
 import ".."
 import "../.."
 
@@ -27,8 +28,14 @@ ListView {
         visible: opacity > 0
         active: visible
         stepSize: cusTableView.width / cusTableView.contentWidth / 2
-        size: Math.max(cusTableView.width / cusTableView.contentWidth, minimumSize)
-        minimumSize: CusConfig.scrollBarMinLen / cusTableView.width
+        size: Math.max(cusTableView.width / cusTableView.contentWidth, CusConfig.scrollBarMinLen / cusTableView.width)
+        Component.onCompleted: {
+            if (scrollBarHasMinimumSize) {
+                minimumSize = Qt.binding(function(){
+                    return CusConfig.scrollBarMinLen / cusTableView.width
+                })
+            }
+        }
     }
     ScrollBar.vertical: CusScrollBar {
         id: vBar
@@ -37,8 +44,14 @@ ListView {
         visible: opacity > 0
         active: visible
         stepSize: cusTableView.height / cusTableView.contentHeight / 2
-        size: Math.max(cusTableView.height / (cusTableView.model.visibledCount * CusConfig.fixedHeight), minimumSize)
-        minimumSize: CusConfig.scrollBarMinLen / cusTableView.height
+        size: Math.max(cusTableView.height / (cusTableView.model.visibledCount * CusConfig.fixedHeight), CusConfig.scrollBarMinLen / cusTableView.height)
+        Component.onCompleted: {
+            if (scrollBarHasMinimumSize) {
+                minimumSize = Qt.binding(function(){
+                    return CusConfig.scrollBarMinLen / cusTableView.height
+                })
+            }
+        }
     }
     CusShortCutKeys {
         id: tableKeys

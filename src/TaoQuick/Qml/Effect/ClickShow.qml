@@ -3,12 +3,12 @@ import QtQuick.Controls 2.2
 
 Item {
     id: clickShow
-	function onMousePressed(xPos, yPos, button) {
-		clickShow.brust(xPos, yPos, button)
-	}
-	Component.onCompleted: {
-		view.mousePressed.connect(onMousePressed)
-	}
+    function onMousePressed(xPos, yPos, button) {
+	clickShow.brust(xPos, yPos, button)
+    }
+    Component.onCompleted: {
+	view.mousePressed.connect(onMousePressed)
+    }
     Component {
         id: brushComp
         Item {

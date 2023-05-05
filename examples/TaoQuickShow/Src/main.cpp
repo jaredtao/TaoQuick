@@ -55,6 +55,7 @@ int main(int argc, char** argv)
 	view.engine()->addImportPath(qmlPath);
 #ifdef TaoQuickImport
 	view.engine()->addImportPath(TaoQuickImport);
+	view.rootContext()->setContextProperty("taoQuickImportPath", TaoQuickImport);
 	qWarning() << "TaoQuickImportPath " << TaoQuickImport;
 #endif
 
@@ -72,6 +73,18 @@ int main(int argc, char** argv)
 	view.rootContext()->setContextProperty("hasShape", true);
 #else
 	view.rootContext()->setContextProperty("hasShape", false);
+#endif
+
+#if QT_VERSION > QT_VERSION_CHECK(5, 14, 0)
+	view.rootContext()->setContextProperty("comboBoxHasValueRole", true);
+#else
+	view.rootContext()->setContextProperty("comboBoxHasValueRole", false);
+#endif
+
+#if QT_VERSION > QT_VERSION_CHECK(5, 11, 0)
+	view.rootContext()->setContextProperty("scrollBarHasMinimumSize", true);
+#else
+	view.rootContext()->setContextProperty("scrollBarHasMinimumSize", false);
 #endif
 
 	view.rootContext()->setContextProperty("qmlPath", qmlPath);

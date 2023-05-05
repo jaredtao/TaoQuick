@@ -1,4 +1,5 @@
 import QtQuick 2.9
+import QtQml 2.0
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
 
@@ -30,19 +31,36 @@ Item {
         width: 100
         height: 160
         color: "red"
+        visible: hasShape
     }
-    RoundRectangleShape{
+    Item {
+        id: roundRectShapeItem
         x: 40
         y: 340
         width: 200
         height: 160
-        radius: 40
-        leftTopRound: lt.checked
-        rightTopRound: rt.checked
-        leftBottomRound: lb.checked
-        rightBottomRound: rb.checked
-        color: "#A0333666"      //半透明色
-
+    }
+    Component.onCompleted: {
+        if (hasShape) {
+            var path = taoQuickImportPath + "TaoQuick/Qml/Basic/RoundRectangleShape.qml"
+            console.log(path)
+            var comp = Qt.createComponent(path)
+            if (comp.status === Component.Ready) {
+                var obj = comp.createObject(roundRectShapeItem)
+                console.log("RoundRectangleShape ready")
+                obj.radius = 40
+                obj.width = 200
+                obj.height = 160
+                obj.leftTopRound = Qt.binding(function(){return lt.checked})
+                obj.rightTopRound = Qt.binding(function(){return rt.checked})
+                obj.leftBottomRound = Qt.binding(function(){return lb.checked})
+                obj.rightBottomRound = Qt.binding(function(){return rb.checked})
+                obj.color = "#A0333666"
+                obj.visible = true
+            } else {
+                console.log("RoundRectangleShape error:", comp.errorString())
+            }
+        }
     }
     Grid {
         x: 300

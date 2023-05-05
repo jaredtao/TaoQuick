@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import QtQml 2.0
 import QtQml.Models 2.1
 ListModel {
     id: demoModel
@@ -352,6 +353,17 @@ ListModel {
                     setProperty(i, "visible", true)
                 } else {
                     setProperty(i, "visible", false)
+                }
+            }
+        }
+    }
+    Component.onCompleted: {
+        for (var i = 0; i < count; i++) {
+            var obj = get(i)
+            if (obj["name"] === "Shapes") {
+                if(!hasShape) {
+                    remove(i, 1)
+                    break
                 }
             }
         }

@@ -16,7 +16,7 @@ Item {
     property var headerNames
     property bool needSort: true
 
-	property var widthList: []
+    property var widthList: []
     property var xList
     property real totalW
     property real visualWidth
@@ -35,9 +35,9 @@ Item {
     property var updateXList: function() {
         var xL = [0]
         var tw = 0;
-		if (!widthList) {
-			return;
-		}
+	if (!widthList) {
+		return;
+	}
         for (var i = 0; i < widthList.length; ++i) {
             xL.push(xL[i] + widthList[i])
             tw += widthList[i]
@@ -71,14 +71,14 @@ Item {
                     dataObj.setAllChecked(checked)
                 }
             }
-			Component.onCompleted: {
-				dataObj.allCheckedChanged.connect(doAllCheckedChanged)
-			}
-			function doAllCheckedChanged(allChecked) {
-				checkAllBox.notify = false
-				checkAllBox.checked = allChecked
-				checkAllBox.notify = true
-			}
+	    Component.onCompleted: {
+			dataObj.allCheckedChanged.connect(doAllCheckedChanged)
+	    }
+	    function doAllCheckedChanged(allChecked) {
+	    	checkAllBox.notify = false
+		checkAllBox.checked = allChecked
+		checkAllBox.notify = true
+	    }
         }
     }
     Repeater {

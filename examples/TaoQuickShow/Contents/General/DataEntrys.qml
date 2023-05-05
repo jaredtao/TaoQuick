@@ -1,3 +1,4 @@
+import QtQml 2.0
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
@@ -73,11 +74,15 @@ Item {
             CusComboBox {
                 id: comboBox3
                 width: 120
-                height: 26
+                height: 30
                 textRole: "name"
-                valueRole: "cost"
                 font.pixelSize: 10
                 model: holdersType
+                Component.onCompleted: {
+                    if(comboBoxHasValueRole) {
+                        valueRole = "cost"
+                    }
+                }
             }
 
             ListModel {
@@ -117,9 +122,10 @@ Item {
                 from: 0
                 to: 100
             }
-            CusSpinBox_HourMinute {
-                width: 200
-            }
+
+        }
+        CusSpinBox_HourMinute {
+            width: 200
         }
         Item {
             width: 20
