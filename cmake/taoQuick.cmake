@@ -6,7 +6,7 @@ if (CMAKE_BUILD_TYPE MATCHES "Release")
     set(TaoQuickImage "qrc:/TaoQuick/Images/" CACHE STRING "tao quick image path")
 
 else()
-    set(TaoQuickImport "file:///${TaoQuickPath}" CACHE STRING "tao quick import path")
+    set(TaoQuickImport "file:///${TaoQuickPath}/" CACHE STRING "tao quick import path")
     set(TaoQuickImage "file:///${TaoQuickPath}/TaoQuick/Images/" CACHE STRING "tao quick image path")
 endif()
 
