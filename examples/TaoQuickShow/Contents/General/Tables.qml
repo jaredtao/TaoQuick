@@ -151,24 +151,24 @@ Item {
             width: parent.width
             height: parent.height - y - 40
             model: deviceAddModel
-            onPressed: {
+            onPressed: function(mouseX, mouseY){
                 doPress(mouseX, mouseY)
             }
-            onRightPressed: {
+            onRightPressed: function(mouseX, mouseY){
                 var index = indexAt(mouseX, mouseY + contentY)
                 if (index < 0 || index >= count) {
                     return
                 }
                 tableMenu.popup(mouseX, mouseY)
             }
-            onReleased: {
+            onReleased: function(){
 
                 doRelease()
             }
-            onPositionChanged: {
+            onPositionChanged: function(mouseX, mouseY){
                 doPositionChanged(mouseX, mouseY)
             }
-            onDoubleClicked: {
+            onDoubleClicked: function(mouseX, mouseY){
                 var index = indexAt(mouseX, mouseY + contentY)
                 if (index < 0 || index >= count) {
                     return

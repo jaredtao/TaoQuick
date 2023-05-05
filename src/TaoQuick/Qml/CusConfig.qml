@@ -1,15 +1,15 @@
 pragma Singleton
 
 import QtQuick 2.9
-
+import QtQml 2.0
 QtObject {
-    id: config
+    id: cusConfig
     objectName: "cusConfig"
     property string fontFamily: "微软雅黑"
     property string transString: typeof (trans) != "undefined" ? trans.transString : ""
     property int fontPixel: 14
     property int fixedHeight: 30
-
+    property int fontSize_tableContent: 12
     property int maximumLength: 64
 
     property int controlBorderRadius: 4
@@ -21,18 +21,12 @@ QtObject {
     property int tipTextPixel: 12
 
     property string imagePathPrefix: "file:///./../Images/"
-    property string importPath: "file:///./"
     Component.onCompleted: {
         if (typeof (taoQuickImagePath) != "undefined" && taoQuickImagePath !== null && taoQuickImagePath.length > 0) {
             imagePathPrefix = taoQuickImagePath
         }
-        if (typeof (taoQuickImportPath) != "undefined" && taoQuickImportPath !== null && taoQuickImportPath.length > 0) {
-            importPath = taoQuickImportPath + "/TaoQuick/Qml/"
-        }
-
-		currentTheme = 1
+        currentTheme = 0
     }
-
     property color themeColor
     property color backgroundColor
     property color textColor

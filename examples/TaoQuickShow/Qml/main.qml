@@ -1,4 +1,5 @@
 import QtQuick 2.9
+import QtQml 2.0
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
 import "./Page"
@@ -80,10 +81,10 @@ CusBackground {
             Behavior on x {
                 NumberAnimation { duration: 350}
             }
-            onLoadHome: {
+            onLoadHome: function() {
                 rightPane.source = rightPane.homeUrl
             }
-            onLoadContent: {
+            onLoadContent: function(path) {
                 rightPane.source = contentsPath + path
             }
         }

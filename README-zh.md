@@ -169,6 +169,14 @@ https://marketplace.qt.io/collections/newest/products/taoquick
 
 ![](preview/Table.png)
 
+## 带选项卡的列表
+
+![](preview/ListViewWithTab.gif)
+
+## Edge浏览器选项卡
+
+![](preview/EdgeTab.gif)
+
 ## 矩形框组件
 
 ![](preview/rect.png)

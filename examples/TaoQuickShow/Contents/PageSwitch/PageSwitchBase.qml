@@ -1,3 +1,4 @@
+import QtQml 2.0
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
@@ -27,7 +28,7 @@ Item {
         CusComboBox {
             model: dirs
             visible: count > 0
-            currentIndex: base.currentDir
+            currentIndex: base.currentIndex
             implicitWidth: 180
             onCurrentIndexChanged: {
                 if (base.dir !== currentIndex) {

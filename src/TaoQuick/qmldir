@@ -3,6 +3,8 @@ BasicText 1.0 Qml/Basic/BasicText.qml
 BasicTooltip 1.0 Qml/Basic/BasicTooltip.qml
 CusColorOverlay 1.0 Qml/Basic/CusColorOverlay.qml
 MoveArea 1.0 Qml/Basic/MoveArea.qml
+RoundRectangle 1.0 Qml/Basic/RoundRectangle.qml
+RoundRectangleShape 1.0 Qml/Basic/RoundRectangleShape.qml
 TransArea 1.0 Qml/Basic/TransArea.qml
 CusBackground 1.0 Qml/CusBackground/CusBackground.qml
 CusButton 1.0 Qml/CusButton/CusButton.qml
@@ -14,6 +16,7 @@ CusButton_ImageColorOverlay 1.0 Qml/CusButton/CusButton_ImageColorOverlay.qml
 CusButton_Red 1.0 Qml/CusButton/CusButton_Red.qml
 CusButton_White 1.0 Qml/CusButton/CusButton_White.qml
 CusRadioButton 1.0 Qml/CusButton/CusRadioButton.qml
+CusRoundTabButton 1.0 Qml/CusButton/CusRoundTabButton.qml
 CusTextButton 1.0 Qml/CusButton/CusTextButton.qml
 CusCheckBox 1.0 Qml/CusCheckBox/CusCheckBox.qml
 CusSwitch 1.0 Qml/CusCheckBox/CusSwitch.qml

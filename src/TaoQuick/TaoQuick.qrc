@@ -6,6 +6,8 @@
         <file>Qml/Basic/BasicTooltip.qml</file>
         <file>Qml/Basic/CusColorOverlay.qml</file>
         <file>Qml/Basic/MoveArea.qml</file>
+        <file>Qml/Basic/RoundRectangle.qml</file>
+        <file>Qml/Basic/RoundRectangleShape.qml</file>
         <file>Qml/Basic/TransArea.qml</file>
         <file>Qml/CusBackground/CusBackground.qml</file>
         <file>Qml/CusButton/CusButton.qml</file>
@@ -17,6 +19,7 @@
         <file>Qml/CusButton/CusButton_Red.qml</file>
         <file>Qml/CusButton/CusButton_White.qml</file>
         <file>Qml/CusButton/CusRadioButton.qml</file>
+        <file>Qml/CusButton/CusRoundTabButton.qml</file>
         <file>Qml/CusButton/CusTextButton.qml</file>
         <file>Qml/CusCheckBox/CusCheckBox.qml</file>
         <file>Qml/CusCheckBox/CusSwitch.qml</file>
@@ -104,6 +107,12 @@
         <file>Images/left.png</file>
         <file>Images/next.png</file>
         <file>Images/particle.png</file>
+        <file>Images/radio-checked-disabled.png</file>
+        <file>Images/radio-checked-hover.png</file>
+        <file>Images/radio-checked-normal.png</file>
+        <file>Images/radio-unchecked-disabled.png</file>
+        <file>Images/radio-unchecked-hover.png</file>
+        <file>Images/radio-unchecked-normal.png</file>
         <file>Images/right.png</file>
         <file>Images/rotate.png</file>
         <file>Images/Search.png</file>

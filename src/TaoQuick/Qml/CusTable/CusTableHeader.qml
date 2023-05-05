@@ -16,7 +16,7 @@ Item {
     property var headerNames
     property bool needSort: true
 
-    property var widthList
+    property var widthList: []
     property var xList
     property real totalW
     property real visualWidth
@@ -35,6 +35,9 @@ Item {
     property var updateXList: function() {
         var xL = [0]
         var tw = 0;
+	if (!widthList) {
+		return;
+	}
         for (var i = 0; i < widthList.length; ++i) {
             xL.push(xL[i] + widthList[i])
             tw += widthList[i]
@@ -68,14 +71,14 @@ Item {
                     dataObj.setAllChecked(checked)
                 }
             }
-            Connections {
-                target: dataObj
-                onAllCheckedChanged: {
-                    checkAllBox.notify = false
-                    checkAllBox.checked = allChecked
-                    checkAllBox.notify = true
-                }
-            }
+	    Component.onCompleted: {
+			dataObj.allCheckedChanged.connect(doAllCheckedChanged)
+	    }
+	    function doAllCheckedChanged(allChecked) {
+	    	checkAllBox.notify = false
+		checkAllBox.checked = allChecked
+		checkAllBox.notify = true
+	    }
         }
     }
     Repeater {
@@ -121,7 +124,7 @@ Item {
                 property string ascImageUrl: (headerArea.containsMouse) ? ascUrl_Hovered : ascUrl
                 property string descImageUrl: (headerArea.containsMouse) ? descUrl_Hovered : descUrl
 
-                source: visible ? (dataObj.sortOrder === 0 ? ascImageUrl : descImageUrl) : ""
+                imgNormal: visible ? (dataObj.sortOrder === 0 ? ascImageUrl : descImageUrl) : ""
 
                 visible: dataObj && dataObj.sortRole === headerRoles[index]
                 color: headerArea.containsMouse ? CusConfig.imageColor_hovered : CusConfig.imageColor

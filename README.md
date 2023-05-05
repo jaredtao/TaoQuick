@@ -154,6 +154,10 @@ https://marketplace.qt.io/collections/newest/products/taoquick
 
 ![](preview/Table-en.png)
 
+## ListView with tab 
+
+![](preview/ListViewWithTab.gif)
+
 ## Rect Drag Controls
 
 ![](preview/rect-en.png)
@@ -245,7 +249,7 @@ Other Contents reference to above table：
 
 ## get code
 ```shell
-git clone https://githun.com/jaredtao/TaoQuick.git
+git clone https://github.com/jaredtao/TaoQuick.git
 cd TaoQuick 
 ```
 

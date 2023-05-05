@@ -22,7 +22,7 @@ Item {
     property color colorDisable: CusConfig.imageColor_disabled
     implicitWidth: baseImage.width
     implicitHeight: baseImage.height
-
+    property alias color: overlay.imageColor
 	property alias imageItem: baseImage
     CusImage {
         id: baseImage
@@ -31,6 +31,7 @@ Item {
         visible: false
     }
     CusColorOverlay {
+        id: overlay
         width: baseImage.width
         height: baseImage.height
         anchors.centerIn: parent

@@ -3,13 +3,11 @@ import QtQuick.Controls 2.2
 
 Item {
     id: clickShow
-    Connections {
-        target: view
-        ignoreUnknownSignals: true
-        //Qt5.15 and after
-        function onMousePressed(xPos, yPos, button) {
-            clickShow.brust(xPos, yPos, button)
-        }
+    function onMousePressed(xPos, yPos, button) {
+	clickShow.brust(xPos, yPos, button)
+    }
+    Component.onCompleted: {
+	view.mousePressed.connect(onMousePressed)
     }
     Component {
         id: brushComp

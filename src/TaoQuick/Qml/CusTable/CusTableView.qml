@@ -1,5 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import QtQml 2.0
 import ".."
 import "../.."
 
@@ -148,23 +149,23 @@ ListView {
         x: tableAreaX
         width: parent.width - x - CusConfig.scrollBarSize
         height: parent.height
-        onPressed: {
+        onPressed: function(mouseX, mouseY){
             cusTableView.forceActiveFocus()
             cusTableView.pressed(mouseX + tableAreaX, mouseY)
         }
-        onRightPressed: {
+        onRightPressed: function(mouseX, mouseY){
             cusTableView.rightPressed(mouseX + tableAreaX, mouseY)
         }
-        onReleased: {
+        onReleased: function() {
             cusTableView.released()
         }
-        onPositionChanged: {
+        onPositionChanged: function(mouseX, mouseY){
             cusTableView.positionChanged(mouseX + tableAreaX, mouseY)
         }
-        onDoubleClicked: {
+        onDoubleClicked: function(mouseX, mouseY){
             cusTableView.doubleClicked(mouseX + tableAreaX, mouseY)
         }
-        onWheelEvent: {
+        onWheelEvent: function (angle){
             //angle
             if (vBar.visible) {
                 if (angle > 0) {

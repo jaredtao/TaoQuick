@@ -55,7 +55,7 @@ Item {
     }
     MouseArea {
         anchors.fill: parent
-        onWheel: {
+        onWheel: function(wheel){
             var t = 0
             if (wheel.angleDelta.y > 100) {
                 t = currentIndex + 1

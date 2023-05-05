@@ -1,7 +1,6 @@
 import QtQuick 2.9
 import QtQml 2.2
 import QtQuick.Controls 2.2
-import QtGraphicalEffects 1.0
 import ".."
 import "../.."
 SpinBox {
@@ -65,13 +64,12 @@ SpinBox {
         height: cusSpinBox.height / 2
         implicitWidth: 10
         implicitHeight: 10
-        ColorOverlay {
+        CusColorOverlay {
             anchors.centerIn: parent
             width: baseImage.width
             height: baseImage.height
-            cached: true
             source: baseImage
-            color: (upArea.hovered || upArea.pressed) ? colorHovered : colorNormal
+            imageColor: (upArea.hovered || upArea.pressed) ? colorHovered : colorNormal
             rotation: 180
         }
         MouseArea {
@@ -91,13 +89,12 @@ SpinBox {
         height: cusSpinBox.height / 2
         implicitWidth: 10
         implicitHeight: 10
-        ColorOverlay {
+        CusColorOverlay {
             anchors.centerIn: parent
             width: baseImage.width
             height: baseImage.height
-            cached: true
             source: baseImage
-            color: (downArea.hovered || downArea.pressed) ? colorHovered : colorNormal
+            imageColor: (downArea.hovered || downArea.pressed) ? colorHovered : colorNormal
         }
         MouseArea {
             id: downArea

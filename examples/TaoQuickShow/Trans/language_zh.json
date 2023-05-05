@@ -117,6 +117,10 @@
             "value": "IP地址"
         },
         {
+            "key": "RoundRect",
+            "value": "圆角矩形"
+        },
+        {
             "key": "Home",
             "value": "首页"
         },
@@ -326,6 +330,10 @@
             "value": "其它"
         },
         {
+            "key": "Shapes",
+            "value": "图形"
+        },
+        {
             "key": "Sponsors",
             "value": "赞助"
         },
@@ -388,6 +396,10 @@
         {
             "key": "Table",
             "value": "表格"
+        },
+        {
+            "key": "ListView With Tab",
+            "value": "带选项卡列表"
         },
         {
             "key": "Tree",

@@ -31,7 +31,7 @@ PageSwitchBase {
             model: images
             SLouver {
                 anchors.fill: parent
-                dir: r.dir
+                dir: c.dir
                 sourceItem: Image { source: images[index]}
                 state: index === c.currentIndex ? "show" : "hide"
             }

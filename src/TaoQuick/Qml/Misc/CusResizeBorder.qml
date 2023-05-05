@@ -13,7 +13,7 @@ Item {
         posType: posLeftTop
         width: borderWidth
         height: borderWidth
-        onPosChange: {
+        onPosChange: function(xOffset, yOffset){
             //不要简化这个判断条件，化简之后不容易看懂. Qml引擎会自动简化
             if (control.x + xOffset < control.x + control.width)
                 control.x += xOffset;
@@ -32,7 +32,7 @@ Item {
         x: parent.width - width
         width: borderWidth
         height: borderWidth
-        onPosChange: {
+        onPosChange: function(xOffset, yOffset){
             //向左拖动时，xOffset为负数
             if (control.width + xOffset > 0)
                 control.width += xOffset;
@@ -49,7 +49,7 @@ Item {
         y: parent.height - height
         width: borderWidth
         height: borderWidth
-        onPosChange: {
+        onPosChange:function(xOffset, yOffset){
             if (control.x + xOffset < control.x + control.width)
                 control.x += xOffset;
             if (control.width - xOffset > 0)
@@ -66,7 +66,7 @@ Item {
         y: parent.height - height
         width: borderWidth
         height: borderWidth
-        onPosChange: {
+        onPosChange: function(xOffset, yOffset) {
             if (control.width + xOffset > 0)
                 control.width += xOffset;
             if (control.height + yOffset > 0)
@@ -79,7 +79,7 @@ Item {
         width: parent.width - leftTopHandle.width - rightTopHandle.width
         height: borderWidth
         x: leftBottomHandle.width
-        onPosChange: {
+        onPosChange: function(xOffset, yOffset){
             if (control.y + yOffset < control.y + control.height)
                 control.y += yOffset;
             if (control.height - yOffset > 0)
@@ -94,7 +94,7 @@ Item {
         width: borderWidth
 
         y: leftTopHandle.height
-        onPosChange: {
+        onPosChange: function(xOffset, yOffset){
             if (control.x + xOffset < control.x + control.width)
                 control.x += xOffset;
             if (control.width - xOffset > 0)
@@ -109,7 +109,7 @@ Item {
         width: borderWidth
 
         y: rightTopHandle.height
-        onPosChange: {
+        onPosChange: function(xOffset, yOffset) {
             if (control.width + xOffset > 0)
                 control.width += xOffset;
         }
@@ -121,7 +121,7 @@ Item {
         y: parent.height - height
         width: parent.width - leftBottomHandle.width - rightBottomHandle.width
         height: borderWidth
-        onPosChange: {
+        onPosChange: function(xOffset, yOffset){
             if (control.height + yOffset > 0)
                 control.height += yOffset;
         }
