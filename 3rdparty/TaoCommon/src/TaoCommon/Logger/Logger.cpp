@@ -60,11 +60,11 @@ static void outputMessageAsync(QtMsgType type, const QMessageLogContext& context
     Q_UNUSED(context)
     QDateTime dt = QDateTime::currentDateTime();
 
-    //每小时一个文件
+    // 每小时一个文件
     QString fileNameDt = dt.toString(QStringLiteral("yyyy-MM-dd_hh"));
 
-    //每分钟一个文件
-    // QString fileNameDt = dt.toString("yyyy-MM-dd_hh_mm");
+    // 每分钟一个文件
+    //  QString fileNameDt = dt.toString("yyyy-MM-dd_hh_mm");
 
     QString contentDt = dt.toString(QStringLiteral("yyyy-MM-dd hh:mm:ss"));
     QString message = QStringLiteral("%1 %2").arg(contentDt).arg(msg);
@@ -116,11 +116,11 @@ static void outputMessage(QtMsgType type, const QMessageLogContext& context, con
     Q_UNUSED(context)
     QDateTime dt = QDateTime::currentDateTime();
 
-    //每小时一个文件
+    // 每小时一个文件
     QString fileNameDt = dt.toString(QStringLiteral("yyyy-MM-dd_hh"));
 
-    //每分钟一个文件
-    // QString fileNameDt = dt.toString("yyyy-MM-dd_hh_mm");
+    // 每分钟一个文件
+    //  QString fileNameDt = dt.toString("yyyy-MM-dd_hh_mm");
 
     QString contentDt = dt.toString(QStringLiteral("yyyy-MM-dd hh:mm:ss"));
     QString message = QStringLiteral("%1 %2").arg(contentDt).arg(msg);

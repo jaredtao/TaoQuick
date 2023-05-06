@@ -5,11 +5,13 @@
 #include <QScreen>
 #include <QWindow>
 
+#include <windows.h>
+
 #include <VersionHelpers.h>
 #include <WinUser.h>
 #include <dwmapi.h>
 #include <objidl.h> // Fixes error C2504: 'IUnknown' : base class undefined
-#include <windows.h>
+
 #include <windowsx.h>
 #include <wtypes.h>
 #pragma comment(lib, "Dwmapi.lib") // Adds missing library, fixes error LNK2019: unresolved
@@ -136,9 +138,9 @@ TaoFrameLessView::TaoFrameLessView(QWindow* parent)
     : QQuickView(parent)
     , d(new TaoFrameLessViewPrivate)
 {
-    //此处不需要设置flags
-    //    setFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint |
-    //    Qt::WindowSystemMenuHint);
+    // 此处不需要设置flags
+    //     setFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint |
+    //     Qt::WindowSystemMenuHint);
     setResizeMode(SizeRootObjectToView);
 
     setIsMax(windowState() == Qt::WindowMaximized);
@@ -154,7 +156,7 @@ void TaoFrameLessView::showEvent(QShowEvent* e)
     if (d->m_firstRun)
     {
         d->m_firstRun = false;
-        //第一次show的时候，设置无边框。不在构造函数中设置。取winId会触发QWindowsWindow::create,直接创建win32窗口,引起错乱(win7 或者虚拟机启动即黑屏)。
+        // 第一次show的时候，设置无边框。不在构造函数中设置。取winId会触发QWindowsWindow::create,直接创建win32窗口,引起错乱(win7 或者虚拟机启动即黑屏)。
         d->setBorderLess((HWND)(winId()), d->borderless);
         {
             // Qt 5.15.2 的bug; 问题复现及解决方法：当使用WM_NCCALCSIZE 修改非客户区大小后，移动窗口到其他屏幕时，qwindows.dll 源码 qwindowswindow.cpp:2447
@@ -162,11 +164,11 @@ void TaoFrameLessView::showEvent(QShowEvent* e)
             // calculateFullFrameMargins函数重新获取默认的非客户区大小，导致最外层窗口移动屏幕时会触发resize消息，引起40像素左右的黑边；故此处创建Menu
             // 使其调用qwindowswindow.cpp:2451 的 QWindowsContext::forceNcCalcSize() 函数计算非客户区大小
 
-            //已知负面效果: 引入win32 MENU后，Qt程序中如果有alt开头的快捷键，会不生效，被Qt滤掉了，需要修改Qt源码
-            // QWindowsKeyMapper::translateKeyEventInternal 中的
-            // if (msgType == WM_SYSKEYDOWN && (nModifiers & AltAny) != 0 && GetMenu(msg.hwnd) != nullptr)
-            //  return false;
-            // 这两行屏蔽掉
+            // 已知负面效果: 引入win32 MENU后，Qt程序中如果有alt开头的快捷键，会不生效，被Qt滤掉了，需要修改Qt源码
+            //  QWindowsKeyMapper::translateKeyEventInternal 中的
+            //  if (msgType == WM_SYSKEYDOWN && (nModifiers & AltAny) != 0 && GetMenu(msg.hwnd) != nullptr)
+            //   return false;
+            //  这两行屏蔽掉
 
             d->mMenuHandler = ::CreateMenu();
             ::SetMenu((HWND)winId(), d->mMenuHandler);
@@ -262,8 +264,8 @@ bool TaoFrameLessView::nativeEvent(const QByteArray& eventType, void* message, l
     const long border_width = 4;
     if (!result)
     {
-        //防御式编程
-        //一般不会发生这种情况，win7一些极端情况，会传空指针进来。解决方案是升级驱动、切换到basic主题。
+        // 防御式编程
+        // 一般不会发生这种情况，win7一些极端情况，会传空指针进来。解决方案是升级驱动、切换到basic主题。
         return false;
     }
 
@@ -287,7 +289,7 @@ bool TaoFrameLessView::nativeEvent(const QByteArray& eventType, void* message, l
         if (mode == TRUE && d->borderless)
         {
             *result = WVR_REDRAW;
-            //规避 拖动border进行resize时界面闪烁
+            // 规避 拖动border进行resize时界面闪烁
             if (!isMaxWin(this) && !isFullWin(this))
             {
                 if (clientRect->top != 0)
@@ -331,7 +333,7 @@ bool TaoFrameLessView::nativeEvent(const QByteArray& eventType, void* message, l
 
             *result = 0;
             if (!isMaxWin(this) && !isFullWin(this))
-            { //非最大化、非全屏时，进行命中测试，处理边框拖拽
+            { // 非最大化、非全屏时，进行命中测试，处理边框拖拽
                 *result = hitTest(winrect, x, y, border_width);
                 if (0 != *result)
                 {
