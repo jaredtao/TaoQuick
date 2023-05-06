@@ -67,84 +67,6 @@ Item {
             }
         }
 
-        //12 items in one page
-        property int itemCountPerPage:12
-        property int currentPage:1
-
-        //Pages round down
-        property int page:cusView.count/itemCountPerPage
-
-        //Actual number of pages (exactly divide pageCount = page, otherwise pageCount is 1 page more than page)
-        property int pageCount: page*itemCountPerPage<cusView.count?page+1:page
-
-        //--listView Page turning function
-        function changePage(next){
-            var currentViewIndex = cusView.indexAt(cusView.contentX,cusView.contentY)
-            if(currentViewIndex%itemCountPerPage!==0)
-            {   //the last page
-                if(!next){//Page forward
-                    cusView.positionViewAtIndex((page-1)*itemCountPerPage,ListView.Beginning)
-                }
-            }
-            else
-            {
-                var i = 0
-                for(; i<pageCount;i++){
-                    if(i*itemCountPerPage<=currentViewIndex&&currentViewIndex<(i+1)*itemCountPerPage){
-                        //Find which page the current ViewIndex belongs to
-                        break
-                    }
-                }
-
-                console.log("currentViewIndex ",currentViewIndex)
-
-                //Page forward and backward
-                currentViewIndex =(next?(i+1):(i-1))*itemCountPerPage
-
-                //Ranges
-                currentViewIndex = currentViewIndex<0?0:currentViewIndex
-                currentViewIndex = currentViewIndex>=cusView.count - 1?cusView.count - 1:currentViewIndex
-
-                console.log("nextViewIndex ",currentViewIndex)
-
-                cusView.positionViewAtIndex(currentViewIndex,ListView.Beginning)
-
-            }
-        }
-
-        //--Calculate page number
-        function showPage(){
-            var currentViewIndex = cusView.indexAt(cusView.contentX,cusView.contentY)
-            if(currentViewIndex%itemCountPerPage!==0){
-                //the last page
-                console.log("final")
-                currentPage = pageCount
-            }else{
-                for(var i = 0; i<pageCount;i++){
-                    if(i*itemCountPerPage<=currentViewIndex&&currentViewIndex<(i+1)*itemCountPerPage){
-                        //Find which page the current ViewIndex belongs to
-                        currentPage = i + 1
-                        break
-                    }
-                }
-            }
-            console.log("currentPage",currentPage)
-            console.log("page",page)
-            console.log("pageCount",pageCount)
-
-        }
-
-        signal lastpage()
-        onLastpage:{
-            changePage(false)
-            showPage()
-        }
-        signal nextpage()
-        onNextpage:{
-            changePage(true)
-            showPage()
-        }
-
         CusTableView {
             id: cusView
             y: cusHeader.y + cusHeader.height
@@ -247,7 +169,6 @@ Item {
                 }
             }
         }
-
         Column {
             x: cusHeader.splitingIndex > 0 ? (cusHeader.x + cusHeader.xList[cusHeader.splitingIndex + 1]) : 0
             y: cusView.y
@@ -369,26 +290,6 @@ Item {
                         deviceAddModel.deselectAll()
                     }
                 }
-                CusButton_Blue {
-                    width: 120
-                    text: qsTr("Last Page") + trans.transString
-                    onClicked:  {
-                        mainItem.lastpage()
-//                        changePage(false)
-//                        showPage()
-                    }
-                }
-                CusButton_Blue {
-                    width: 120
-                    text: qsTr("Next Page") + trans.transString
-                    onClicked:  {
-                        mainItem.nextpage()
-//                        changePage(true)
-//                        showPage()
-                    }
-                }
-
-
             }
         }
         CusTextField {

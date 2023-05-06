@@ -19,14 +19,14 @@ void QuickListModel::check(int row, bool checked)
         return;
     }
 
-    mDatas.at(row)->setIsChecked(checked);
+    mDatas.at(row)->set_isChecked(checked);
     if (mDatas.at(row)->isSelected())
     {
         for (const auto& obj : mDatas)
         {
-            if (obj->isVisible() && obj->isSelected())
+            if (obj->isSelected())
             {
-                obj->setIsChecked(checked);
+                obj->set_isChecked(checked);
             }
         }
     }
@@ -40,7 +40,7 @@ void QuickListModel::check(int row, bool checked)
     {
         for (const auto& obj : mDatas)
         {
-            if (obj->isVisible() && false == obj->isChecked())
+            if (false == obj->isChecked())
             {
                 allCheck = false;
                 break;
@@ -58,10 +58,8 @@ void QuickListModel::setAllChecked(bool allChecked)
 {
     for (const auto& obj : mDatas)
     {
-        if (obj->isVisible())
-        {
-            obj->setIsChecked(allChecked);
-        }
+
+        obj->set_isChecked(allChecked);
     }
     updateCheckedCount();
     if (mAllChecked == allChecked)
@@ -120,10 +118,8 @@ void QuickListModel::deselectAll()
 {
     for (const auto& obj : mDatas)
     {
-        if (obj->isVisible())
-        {
-            obj->setIsSelected(false);
-        }
+
+        obj->set_isSelected(false);
     }
     updateSelectedCount();
     emit selectedAction();
@@ -133,10 +129,8 @@ void QuickListModel::selectAll()
 {
     for (const auto& obj : mDatas)
     {
-        if (obj->isVisible())
-        {
-            obj->setIsSelected(true);
-        }
+
+        obj->set_isSelected(true);
     }
     updateSelectedCount();
     emit selectedAction();
@@ -157,7 +151,7 @@ void QuickListModel::select(int row)
     {
         return;
     }
-    mDatas.at(row)->setIsSelected(true);
+    mDatas.at(row)->set_isSelected(true);
     updateSelectedCount();
     emit selectedAction();
 }
@@ -168,7 +162,7 @@ void QuickListModel::deselect(int row)
     {
         return;
     }
-    mDatas.at(row)->setIsSelected(false);
+    mDatas.at(row)->set_isSelected(false);
     updateSelectedCount();
     emit selectedAction();
 }
@@ -179,7 +173,7 @@ void QuickListModel::selectRange(int from, int to)
     int maxRow = qMax(from, to);
     for (int i = 0; i < mDatas.size(); ++i)
     {
-        mDatas.at(i)->setIsSelected(mDatas.at(i)->isVisible() && minRow <= i && i <= maxRow);
+        mDatas.at(i)->set_isSelected(minRow <= i && i <= maxRow);
     }
     updateSelectedCount();
     emit selectedAction();
@@ -189,7 +183,7 @@ void QuickListModel::selectSingle(int row)
 {
     for (int i = 0; i < mDatas.size(); ++i)
     {
-        mDatas.at(i)->setIsSelected(i == row);
+        mDatas.at(i)->set_isSelected(i == row);
     }
     updateSelectedCount();
     emit selectedAction();
@@ -261,57 +255,37 @@ void QuickListModel::sortByRole()
     {
         return;
     }
-    if (mSortOrder == Qt::SortOrder::AscendingOrder)
+    if (const auto& sortCall = mSortCallbacksAscend.value(sortRole()))
     {
-        if (const auto& sortCall = mSortCallbacksAscend.value(mSortRole))
+        QList<QuickListItemBase*> copyObjs;
+        copyObjs = mDatas;
+        if (sortOrder() == Qt::SortOrder::AscendingOrder)
         {
-            QList<QuickListItemBase*> copyObjs;
-            copyObjs = mDatas;
             std::sort(copyObjs.begin(), copyObjs.end(), sortCall);
-            mDatas = copyObjs;
-            emit dataChanged(index(0, 0), index(mDatas.count() - 1, 0));
-            updateAlternate();
         }
-    }
-    else
-    {
-        if (const auto& sortCall = mSortCallbacksDescend.value(mSortRole))
+        else
         {
-            QList<QuickListItemBase*> copyObjs;
-            copyObjs = mDatas;
-            std::sort(copyObjs.begin(), copyObjs.end(), sortCall);
-            mDatas = copyObjs;
-            emit dataChanged(index(0, 0), index(mDatas.count() - 1, 0));
-            updateAlternate();
+            // swap param position
+            std::sort(copyObjs.begin(), copyObjs.end(), [=](QuickListItemBase* a, QuickListItemBase* b) { return sortCall(b, a); });
         }
+
+        mDatas = copyObjs;
+        emit dataChanged(index(0, 0), index(mDatas.count() - 1, 0));
+        updateAlternate();
     }
 }
 
-void QuickListModel::setHeaderRoles(const QStringList& headerRoles)
+QList<QuickListItemBase*> QuickListModel::allCheckedDatas() const
 {
-    if (mHeaderRoles == headerRoles)
-        return;
-
-    mHeaderRoles = headerRoles;
-    emit headerRolesChanged(mHeaderRoles);
-}
-
-void QuickListModel::setSortOrder(Qt::SortOrder sortOrder)
-{
-    if (mSortOrder == sortOrder)
-        return;
-
-    mSortOrder = sortOrder;
-    emit sortOrderChanged(mSortOrder);
-}
-
-void QuickListModel::setSortRole(const QString& sortRole)
-{
-    if (mSortRole == sortRole)
-        return;
-
-    mSortRole = sortRole;
-    emit sortRoleChanged(mSortRole);
+    QList<QuickListItemBase*> dataList;
+    for (auto data : mAllDatas)
+    {
+        if (data->isChecked())
+        {
+            dataList.push_back(data);
+        }
+    }
+    return dataList;
 }
 
 void QuickListModel::updateAllCheck()
@@ -319,7 +293,7 @@ void QuickListModel::updateAllCheck()
     bool allCheck = false;
     if (!mDatas.empty())
     {
-        allCheck = std::all_of(mDatas.begin(), mDatas.end(), [](QuickListItemBase* obj) { return obj->isVisible() && obj->isChecked(); });
+        allCheck = std::all_of(mDatas.begin(), mDatas.end(), [](QuickListItemBase* obj) { return obj->isChecked(); });
     }
     if (mAllChecked == allCheck)
         return;
@@ -330,58 +304,29 @@ void QuickListModel::updateAllCheck()
 
 void QuickListModel::updateVisibleCount()
 {
-    int count = mDatas.count(); // std::count_if(mDatas.begin(), mDatas.end(), [](QuickListItemBase *obj) { return obj->isVisible(); });
-    setVisibledCount(count);
+    int count = mDatas.count();
+    set_visibledCount(count);
 }
 
 void QuickListModel::updateSelectedCount()
 {
-    int count = std::count_if(mDatas.begin(), mDatas.end(), [](QuickListItemBase* obj) { return obj->isVisible() && obj->isSelected(); });
-    setSelectedCount(count);
+    int count = std::count_if(mDatas.begin(), mDatas.end(), [](QuickListItemBase* obj) { return obj->isSelected(); });
+    set_selectedCount(count);
 }
 
 void QuickListModel::updateCheckedCount()
 {
-    int count = std::count_if(mDatas.begin(), mDatas.end(), [](QuickListItemBase* obj) { return obj->isVisible() && obj->isChecked(); });
-    setCheckedCount(count);
+    int count = std::count_if(mDatas.begin(), mDatas.end(), [](QuickListItemBase* obj) { return obj->isChecked(); });
+    set_checkedCount(count);
 }
 void QuickListModel::updateAlternate()
 {
     bool alter = false;
     for (const auto& obj : mDatas)
     {
-        if (obj->isVisible())
-        {
-            obj->setIsAlternate(alter);
-            alter = !alter;
-        }
+        obj->set_isAlternate(alter);
+        alter = !alter;
     }
-}
-void QuickListModel::setVisibledCount(int visibledCount)
-{
-    if (mVisibledCount == visibledCount)
-        return;
-
-    mVisibledCount = visibledCount;
-    emit visibledCountChanged(mVisibledCount);
-}
-
-void QuickListModel::setSelectedCount(int selectedCount)
-{
-    if (mSelectedCount == selectedCount)
-        return;
-
-    mSelectedCount = selectedCount;
-    emit selectedCountChanged(mSelectedCount);
-}
-
-void QuickListModel::setCheckedCount(int checkedCount)
-{
-    if (mCheckedCount == checkedCount)
-        return;
-
-    mCheckedCount = checkedCount;
-    emit checkedCountChanged(mCheckedCount);
 }
 
 void QuickListModel::updateCalcInfo()

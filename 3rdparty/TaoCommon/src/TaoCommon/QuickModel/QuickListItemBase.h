@@ -1,44 +1,30 @@
 #pragma once
 
+#include "Common/PropertyHelper.h"
 #include "TaoCommonGlobal.h"
 #include <QObject>
 class TAO_API QuickListItemBase : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(bool isChecked READ isChecked WRITE setIsChecked NOTIFY isCheckedChanged)
-    Q_PROPERTY(bool isSelected READ isSelected WRITE setIsSelected NOTIFY isSelectedChanged)
-    Q_PROPERTY(bool isVisible READ isVisible WRITE setIsVisible NOTIFY isVisibleChanged)
-    Q_PROPERTY(bool isAlternate READ isAlternate WRITE setIsAlternate NOTIFY isAlternateChanged)
+    AUTO_PROPERTY(bool, isChecked, false)
+    AUTO_PROPERTY(bool, isSelected, false)
+    AUTO_PROPERTY(bool, isAlternate, false)
 public:
     explicit QuickListItemBase(QObject* parent = nullptr);
-    ~QuickListItemBase() override;
-    QuickListItemBase(const QuickListItemBase& other);
+    virtual ~QuickListItemBase() override;
+    QuickListItemBase(const QuickListItemBase& other)
+    {
+        set_isChecked(other.isChecked());
+        set_isSelected(other.isSelected());
+        set_isAlternate(other.isAlternate());
+    }
 
     QuickListItemBase& operator=(const QuickListItemBase& other)
     {
-        setIsChecked(other.isChecked());
-        setIsSelected(other.isSelected());
-        setIsVisible(other.isVisible());
-        setIsAlternate(other.isAlternate());
+        set_isChecked(other.isChecked());
+        set_isSelected(other.isSelected());
+        set_isAlternate(other.isAlternate());
         return *this;
-    }
-    bool isChecked() const
-    {
-        return mIsChecked;
-    }
-
-    bool isSelected() const
-    {
-        return mIsSelected;
-    }
-
-    bool isVisible() const
-    {
-        return mIsVisible;
-    }
-    bool isAlternate() const
-    {
-        return mIsAlternate;
     }
     // Model call this for search. return true if contents match key, others return false.
     virtual bool match(const QString& key)
@@ -46,55 +32,6 @@ public:
         Q_UNUSED(key)
         return true;
     }
-public slots:
-    void setIsChecked(bool isChecked)
-    {
-        if (mIsChecked == isChecked)
-            return;
-
-        mIsChecked = isChecked;
-        emit isCheckedChanged(mIsChecked);
-    }
-
-    void setIsSelected(bool isSelected)
-    {
-        if (mIsSelected == isSelected)
-            return;
-
-        mIsSelected = isSelected;
-        emit isSelectedChanged(mIsSelected);
-    }
-
-    void setIsVisible(bool isVisible)
-    {
-        // if (mIsVisible == isVisible)
-        //    return;
-
-        mIsVisible = isVisible;
-        emit isVisibleChanged(mIsVisible);
-    }
-    void setIsAlternate(bool isAlternate)
-    {
-        if (mIsAlternate == isAlternate)
-        {
-            return;
-        }
-        mIsAlternate = isAlternate;
-        emit isAlternateChanged(mIsAlternate);
-    }
-
-signals:
-    void isCheckedChanged(bool isChecked);
-
-    void isSelectedChanged(bool isSelected);
-
-    void isVisibleChanged(bool isVisible);
-
-    void isAlternateChanged(bool isAlternate);
 
 private:
-    bool mIsChecked = false;
-    bool mIsSelected = false;
-    bool mIsVisible = true;
-    bool mIsAlternate = false;
 };

@@ -96,7 +96,9 @@ QuickModelBase<T>::QuickModelBase(const QList<T>& datas, QObject* parent)
     , mDatas(datas)
 {
     for (auto it = datas.begin(); it != datas.end(); it++)
+    {
         mAllDatas.insert(*it);
+    }
 }
 template <class T>
 QuickModelBase<T>::~QuickModelBase()
@@ -140,9 +142,14 @@ void QuickModelBase<T>::resetData(const QList<T>& datas)
     beginResetModel();
     mDatas = datas;
     for (auto it = datas.begin(); it != datas.end(); it++)
+    {
         mAllDatas.insert(*it);
+    }
     endResetModel();
-    qDeleteAll(oldObjs);
+    if (!oldObjs.isEmpty())
+    {
+        qDeleteAll(oldObjs);
+    }
     updateCalcInfo();
 }
 
@@ -156,7 +163,9 @@ void QuickModelBase<T>::append(const QList<T>& datas)
     beginInsertRows({}, mDatas.count(), mDatas.count() + datas.count() - 1);
     mDatas.append(datas);
     for (auto it = datas.begin(); it != datas.end(); it++)
+    {
         mAllDatas.insert(*it);
+    }
     endInsertRows();
     updateCalcInfo();
 }
@@ -195,7 +204,10 @@ void QuickModelBase<T>::clear()
     {
         beginRemoveRows({}, 0, mdatacount - 1);
     }
-    qDeleteAll(mAllDatas);
+    if (!mAllDatas.isEmpty())
+    {
+        qDeleteAll(mAllDatas);
+    }
     mDatas.clear();
     mAllDatas.clear();
 

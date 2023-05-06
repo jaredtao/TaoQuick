@@ -7,7 +7,6 @@ import "../.."
 Rectangle {
     id: cusTableRow
     height: visible ? CusConfig.fixedHeight : 0
-    visible: dataObj ? dataObj["isVisible"] : false
 
     property bool isSelected: dataObj ? dataObj["isSelected"] : false
     property bool isChecked: dataObj ? dataObj["isChecked"] : false
