@@ -1,4 +1,5 @@
 Makefile
 .qmake.cache
 .qmake.super
-*.pro.user*
+*.user
+*.bak
