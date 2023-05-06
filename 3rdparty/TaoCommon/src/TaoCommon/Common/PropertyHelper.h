@@ -2,11 +2,11 @@
 #include <QObject>
 #include <QtGlobal>
 
-//比较器的 声明
+// 比较器的 声明
 template <typename T>
 struct Compare;
 
-//通用比较器
+// 通用比较器
 template <typename T>
 struct Compare
 {
@@ -37,14 +37,14 @@ struct Compare<double>
 // 成员变量
 #define PROP_MEM(T, NAME, InitValue) T m_##NAME = InitValue;
 
-//普通 get 函数
+// 普通 get 函数
 #define MEM_GET(T, NAME)                                                                                                                                       \
     const T& NAME() const                                                                                                                                      \
     {                                                                                                                                                          \
         return m_##NAME;                                                                                                                                       \
     }
 
-//普通 set 函数
+// 普通 set 函数
 #define MEM_SET(T, NAME)                                                                                                                                       \
     void set_##NAME(const T& value)                                                                                                                            \
     {                                                                                                                                                          \
@@ -61,13 +61,13 @@ private:                                                                        
 
 //**********************************QObject 属性**********************************
 
-//属性 change 信号
+// 属性 change 信号
 #define PROP_CHANGE(T, NAME) Q_SIGNAL void NAME##Changed(const T& value);
 
-//属性 get 函数 (和普通get没区别)
+// 属性 get 函数 (和普通get没区别)
 #define PROP_GET(T, NAME) MEM_GET(T, NAME)
 
-//属性 set 函数 (比普通set 多 changeCheck，change 时发信号. check 时处理 float 和 double 数据的精度)
+// 属性 set 函数 (比普通set 多 changeCheck，change 时发信号. check 时处理 float 和 double 数据的精度)
 #define PROP_SET(T, NAME)                                                                                                                                      \
     void set_##NAME(const T& value)                                                                                                                            \
     {                                                                                                                                                          \
@@ -135,10 +135,10 @@ public:
 
 //**********************************QObject 属性 二进制兼容版, 头文件声明 与 源文件定义 分离**********************************
 
-//属性 get 函数声明
+// 属性 get 函数声明
 #define PROP_GET_DECL(T, NAME) const T& NAME() const;
 
-//属性 set 函数声明
+// 属性 set 函数声明
 #define PROP_SET_DECL(T, NAME) void set_##NAME(const T& value);
 
 // d 指针类型名
@@ -159,13 +159,13 @@ private:                                                                        
 // d 类的成员
 #define D_MEM(T, NAME, InitValue) PROP_MEM(T, NAME, InitValue)
 
-//属性 get 函数定义
+// 属性 get 函数定义
 #define PROP_GET_IMPL(ClasName, T, NAME)                                                                                                                       \
     const T& ClasName::NAME() const                                                                                                                            \
     {                                                                                                                                                          \
         return D_NAME->m_##NAME;                                                                                                                               \
     }
-//属性 set 函数定义
+// 属性 set 函数定义
 #define PROP_SET_IMPL(ClasName, T, NAME)                                                                                                                       \
     void ClasName::set_##NAME(const T& value)                                                                                                                  \
     {                                                                                                                                                          \

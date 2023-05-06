@@ -6,4 +6,3 @@ QuickListItemBase::QuickListItemBase(QObject* parent)
 }
 
 QuickListItemBase::~QuickListItemBase() { }
-

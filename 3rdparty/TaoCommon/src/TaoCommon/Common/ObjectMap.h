@@ -9,7 +9,7 @@
 namespace TaoCommon
 {
 
-//对象存储器
+// 对象存储器
 template <typename Key, typename Value>
 class ObjectMap
 {
@@ -54,7 +54,7 @@ public:
 protected:
     std::unordered_map<Key, Value> m_objMap;
 };
-//智能对象存储器。自动生成key，自动管理对象。
+// 智能对象存储器。自动生成key，自动管理对象。
 template <typename ObjectType>
 class CObjectMap
 {
@@ -98,7 +98,7 @@ public:
 protected:
     ObjectMap<std::type_index, std::shared_ptr<ObjectType>> m_objMap;
 };
-//优先级对象存储器。自动生成key，自动管理对象。支持按优先级处理
+// 优先级对象存储器。自动生成key，自动管理对象。支持按优先级处理
 template <typename ObjectType>
 class CLevelObjectMap
 {

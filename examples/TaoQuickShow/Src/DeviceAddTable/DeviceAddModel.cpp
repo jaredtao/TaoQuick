@@ -24,17 +24,20 @@ DeviceAddModel::DeviceAddModel(QObject* parent)
 	set_headerRoles(sHeaderRoles);
 	set_sortRole("name");
 	QMap<QString, SortCallback> maps;
-	maps["name"] = [](QuickListItemBase* b1, QuickListItemBase* b2) -> bool {
+	maps["name"] = [](QuickListItemBase* b1, QuickListItemBase* b2) -> bool
+	{
 		const auto& d1 = static_cast<DeviceAddItem*>(b1);
 		const auto& d2 = static_cast<DeviceAddItem*>(b2);
 		return d1->name() < d2->name();
 	};
-	maps["address"] = [](QuickListItemBase* b1, QuickListItemBase* b2) -> bool {
+	maps["address"] = [](QuickListItemBase* b1, QuickListItemBase* b2) -> bool
+	{
 		const auto& d1 = static_cast<DeviceAddItem*>(b1);
 		const auto& d2 = static_cast<DeviceAddItem*>(b2);
 		return d1->toIPv4Address() < d2->toIPv4Address();
 	};
-	maps["modelString"] = [](QuickListItemBase* b1, QuickListItemBase* b2) -> bool {
+	maps["modelString"] = [](QuickListItemBase* b1, QuickListItemBase* b2) -> bool
+	{
 		const auto& d1 = static_cast<DeviceAddItem*>(b1);
 		const auto& d2 = static_cast<DeviceAddItem*>(b2);
 		return d1->modelString() < d2->modelString();

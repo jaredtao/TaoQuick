@@ -98,14 +98,19 @@ int main(int argc, char** argv)
 
 	view.rootContext()->setContextProperty("deviceAddModel", &model);
 	const QUrl url(qmlPath + QStringLiteral("main.qml"));
-	QObject::connect(&view, &QQuickView::statusChanged, &view, [&](QQuickView::Status status) {
-		if (status == QQuickView::Status::Ready)
+	QObject::connect(
+		&view,
+		&QQuickView::statusChanged,
+		&view,
+		[&](QQuickView::Status status)
 		{
-			trans.afterUiReady();
-			appInfo.afterUiReady();
-			quickTool.setRootObjet(view.rootObject());
-		}
-	});
+			if (status == QQuickView::Status::Ready)
+			{
+				trans.afterUiReady();
+				appInfo.afterUiReady();
+				quickTool.setRootObjet(view.rootObject());
+			}
+		});
 	// qml call 'Qt.quit()' will emit engine::quit, here should call qApp->quit
 	QObject::connect(view.engine(), &QQmlEngine::quit, qApp, &QCoreApplication::quit);
 	// qml clear content before quit
