@@ -7,11 +7,3 @@ QuickListItemBase::QuickListItemBase(QObject* parent)
 
 QuickListItemBase::~QuickListItemBase() { }
 
-QuickListItemBase::QuickListItemBase(const QuickListItemBase& other)
-    : QuickListItemBase(nullptr)
-{
-    setIsChecked(other.isChecked());
-    setIsSelected(other.isSelected());
-    setIsVisible(other.isVisible());
-    setIsAlternate(other.isAlternate());
-}
