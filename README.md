@@ -20,6 +20,7 @@
   - [Some Button Controls](#some-button-controls)
   - [Data entry Controls](#data-entry-controls)
   - [Table Controls](#table-controls)
+  - [ListView with tab](#listview-with-tab)
   - [Rect Drag Controls](#rect-drag-controls)
   - [Wizard](#wizard)
   - [Mouse Click Effect](#mouse-click-effect)
@@ -271,18 +272,18 @@ Compared with 'Qml module' and 'Qml C++ plugin', this usage has the following ad
 
 detail use step：
 
-1. copy src to your project, in any location
+1. copy 'TaoQuick' directory and 'TaoQuick.pri' file from TaoQuick/src to your project
 
-2. Import 'TaoQuick.pri' files in the corresponding src folder in your project 'pro' file
+2. Import 'TaoQuick.pri' files in your project 'pro' file
 
 for eaxmple: 
 
 ```qmake
-include(src/TaoQuick.pri)
+include(TaoQuick.pri)
 ```
 
 
-TaoQuick.pri will define two MACRO: TaoQuickImportPath and TaoQuickImagePath.
+TaoQuick.pri will define a MACRO: TaoQuickImportPath.
 
 Debug mode will use TaoQuick as local file, and release mode for qrc resource.
 
@@ -295,14 +296,14 @@ Debug mode will use TaoQuick as local file, and release mode for qrc resource.
    
 ```C++
     view.engine()->addImportPath(TaoQuickImportPath);
-    view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+    view.rootContext()->setContextProperty("taoQuickImportPath", TaoQuickImportPath);
 ```
 
    if use QmlEngine, TaoQuick can be use as flow:
 
 ```C++
     engine.addImportPath(TaoQuickImportPath);
-    engine.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+    engine.rootContext()->setContextProperty("taoQuickImportPath", TaoQuickImportPath);
 ```
 
 ***
@@ -312,25 +313,15 @@ TaoQuick start support cmake after version 0.5.0 , it's same as qmake.
 
 detail use step：
 
-1. copy src folder to your project, in any location
+1. copy 'TaoQuick' directory and 'taoQuick.cmake' file from TaoQuick/src to your project
 
-2. copy cmake/taoQuick.cmake to your project, in any location
-
-and make sure the first line of taoQuick.cmake location to correct TaoQuick path
-
-3. add cmake extern path in your CMakeLists.txt
-
-add extern path:
+2. Import 'taoQuick.cmake' files in your project 'CMakeLists.txt' file
 
 ```cmake
-  SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+include(taoQuick.cmake)
 ```
-then load taoQuick by 'include'
 
-```cmake
-include(taoQuick)
-```
-taoQuick.cmake will define two MACRO: TaoQuickImportPath and TaoQuickImagePath.
+taoQuick.cmake will define a MACRO: TaoQuickImportPath.
 
 Debug mode will use TaoQuick as local file, and release mode for qrc resource.
 
@@ -353,14 +344,14 @@ endif()
    
 ```C++
     view.engine()->addImportPath(TaoQuickImportPath);
-    view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+    view.rootContext()->setContextProperty("taoQuickImportPath", TaoQuickImportPath);
 ```
 
    if use QmlEngine, TaoQuick can be use as flow:
 
 ```C++
     engine.addImportPath(TaoQuickImportPath);
-    engine.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+    engine.rootContext()->setContextProperty("taoQuickImportPath", TaoQuickImportPath);
 ```
 
 # Sponsorship
