@@ -9,7 +9,6 @@ CONFIG(debug,debug|release){
     TaoQuickImport=\"file:///$$path/\"
     TaoQuickImage=\"file:///$$path/TaoQuick/Images/\"
     DEFINES += TaoQuickImportPath=\\\"file:///$${path}/\\\"
-    DEFINES += TaoQuickImagePath=\\\"file:///$${path}/TaoQuick/Images/\\\"
 
     OTHER_FILES += $$files($$path/TaoQuick/Qml/*.qml, true)
 
@@ -20,7 +19,6 @@ CONFIG(debug,debug|release){
     TaoQuickImport=\"qrc:/\"
     TaoQuickImage=\"qrc:/TaoQuick/Images/\"
     DEFINES += TaoQuickImportPath=\\\"qrc:///\\\"
-    DEFINES += TaoQuickImagePath=\\\"qrc:/TaoQuick/Images/\\\"
 }
 
 # Additional import path used to resolve QML modules in Qt Creator's code model

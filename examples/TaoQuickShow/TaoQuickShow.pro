@@ -34,7 +34,6 @@ DEFINES += QMAKE_GEN_TAOMACRO
     headerContents = \
         "$${LITERAL_HASH}pragma once" \
         "$${LITERAL_HASH}define TaoQuickImport $${TaoQuickImport}" \
-        "$${LITERAL_HASH}define TaoQuickImage $${TaoQuickImage}" \
         "$${LITERAL_HASH}define qmlPath $${qmlPath}" \
         "$${LITERAL_HASH}define contentsPath $${contentsPath}" \
         "$${LITERAL_HASH}define imgPath $${imgPath}" \

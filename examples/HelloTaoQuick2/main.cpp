@@ -9,7 +9,7 @@ int main(int argc, char* argv[])
 
 	QQmlApplicationEngine engine;
 	engine.addImportPath(TaoQuickImportPath);
-	engine.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+	engine.rootContext()->setContextProperty("taoQuickImportPath", TaoQuickImportPath);
 	const QUrl url(QStringLiteral("qrc:/main.qml"));
 	QObject::connect(
 		&engine,
