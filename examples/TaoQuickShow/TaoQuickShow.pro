@@ -33,7 +33,7 @@ DEFINES += QMAKE_GEN_TAOMACRO
 !build_pass {
     headerContents = \
         "$${LITERAL_HASH}pragma once" \
-        "$${LITERAL_HASH}define TaoQuickImport $${TaoQuickImport}" \
+        "$${LITERAL_HASH}define TaoQuickImportPath $${TaoQuickImportPath}" \
         "$${LITERAL_HASH}define qmlPath $${qmlPath}" \
         "$${LITERAL_HASH}define contentsPath $${contentsPath}" \
         "$${LITERAL_HASH}define imgPath $${imgPath}" \

@@ -26,7 +26,8 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/TaoCommon/src/TaoCommon ${CMAKE_SO
 
 
 
-include(taoQuick)
+include(${PROJECT_SOURCE_DIR}/src/taoQuick.cmake)
+
 message("TaoQuickRes ${TaoQuickRes}")
 set (Res Qml.qrc Contents.qrc Image.qrc)
 if (CMAKE_BUILD_TYPE MATCHES "Release")
