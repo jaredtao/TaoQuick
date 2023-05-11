@@ -12,7 +12,11 @@ add_compile_definitions(TaoQuickImage="${TaoQuickImage}")
 
 add_compile_definitions(TaoQuickImportPath="${TaoQuickImport}")
 
-add_compile_definitions(QML_IMPORT_PATH="${TaoQuickPath}")
-add_compile_definitions(QML2_IMPORT_PATH="${TaoQuickPath}")
-add_compile_definitions(QML_DESIGNER_IMPORT_PATH="${TaoQuickPath}")
+#add_compile_definitions(QML_IMPORT_PATH="${TaoQuickPath}")
+#add_compile_definitions(QML2_IMPORT_PATH="${TaoQuickPath}")
+#add_compile_definitions(QML_DESIGNER_IMPORT_PATH="${TaoQuickPath}")
+
+set(QML_IMPORT_PATH ${TaoQuickPath} CACHE STRING "")
+set(QML2_IMPORT_PATH ${TaoQuickPath} CACHE STRING "")
+set(QML_DESIGNER_IMPORT_PATH ${TaoQuickPath} CACHE STRING "")
 
