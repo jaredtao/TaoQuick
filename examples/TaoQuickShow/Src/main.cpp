@@ -59,10 +59,6 @@ int main(int argc, char** argv)
 	qWarning() << "TaoQuickImportPath " << TaoQuickImport;
 #endif
 
-#ifdef TaoQuickImage
-	view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImage);
-#endif
-
 #ifdef TAODEBUG
 	view.rootContext()->setContextProperty("isDebug", true);
 #else

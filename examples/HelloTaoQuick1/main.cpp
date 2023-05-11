@@ -7,7 +7,7 @@ int main(int argc, char** argv)
 	QGuiApplication app(argc, argv);
 	QQuickView		view;
 	view.engine()->addImportPath(TaoQuickImportPath);
-	view.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
+	view.rootContext()->setContextProperty("taoQuickImportPath", TaoQuickImportPath);
 
 	view.setSource(QUrl("qrc:/main.qml"));
 	view.show();
