@@ -1,7 +1,11 @@
 #include "AppInfo.h"
 #include "DeviceAddTable/DeviceAddModel.h"
 #include "Frameless/TaoFrameLessView.h"
+
+#ifndef TAODEBUG
 #include "Logger/Logger.h"
+#endif
+
 #include "QuickTool/QuickTool.h"
 #include "Trans/Trans.h"
 #include <QDir>
@@ -10,10 +14,6 @@
 #include <QQmlEngine>
 #include <QQuickItem>
 #include <QUrl>
-
-#ifdef QMAKE_GEN_TAOMACRO
-#include "taoMacro.h"
-#endif
 
 static void prepareApp()
 {
@@ -42,6 +42,22 @@ int main(int argc, char** argv)
 	const auto appPath = QDir::cleanPath(app.applicationDirPath());
 	qWarning() << "appPath" << appPath;
 
+	QString taoQuickShowPath = TaoQuickShowPath;
+	QString transDir		 = taoQuickShowPath + "Trans/";
+	if (transDir.startsWith("file:///"))
+	{
+		transDir = transDir.remove("file:///");
+	}
+	if (transDir.startsWith("qrc:/"))
+	{
+		transDir = transDir.remove("qrc");
+	}
+	QString qmlPath		 = taoQuickShowPath + "Qml/";
+	QString imgPath		 = taoQuickShowPath + "Image/";
+	QString contentsPath = taoQuickShowPath + "Contents/";
+	qWarning() << "qmlPath" << qmlPath;
+	qWarning() << "imgPath" << imgPath;
+	qWarning() << "contentsPath" << contentsPath;
 	Trans	  trans;
 	AppInfo	  appInfo;
 	QuickTool quickTool;
@@ -83,10 +99,10 @@ int main(int argc, char** argv)
 	view.rootContext()->setContextProperty("scrollBarHasMinimumSize", false);
 #endif
 
+	view.rootContext()->setContextProperty("appPath", appPath);
 	view.rootContext()->setContextProperty("qmlPath", qmlPath);
 	view.rootContext()->setContextProperty("imgPath", imgPath);
 	view.rootContext()->setContextProperty("contentsPath", contentsPath);
-	view.rootContext()->setContextProperty("appPath", appPath);
 	view.rootContext()->setContextProperty("view", &view);
 	view.rootContext()->setContextProperty("quickTool", &quickTool);
 

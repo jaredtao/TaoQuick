@@ -20,38 +20,17 @@ CONFIG(debug, debug|release) {
     } else {
         path=$$system("pwd")
     }
-    qmlPath = \"file:///$${path}/Qml/\"
-    contentsPath = \"file:///$${path}/Contents/\"
-    imgPath = \"file:///$${path}/Image/\"
-    transDir=\"$${path}/Trans/\"
+    DEFINES +=TaoQuickShowPath=\\\"file:///$${path}/\\\"
 
     OTHER_FILES += $$files($$path/Qml/*.qml, true)
     OTHER_FILES += $$files($$path/Contents/*.qml, true)
-#    DEFINES += qmlPath=\\\"file:///$$PWD/Qml/\\\"
-#    DEFINES += contentsPath=\\\"file:///$$PWD/Contents/\\\"
-#    DEFINES += imgPath=\\\"file:///$$PWD/Image/\\\"
+
 } else {
     #release模式用qrc、走资源文件。这样发布不会携带源码。
     RESOURCES += \
         $$PWD/Qml.qrc \
         $$PWD/Image.qrc \
         $$PWD/Contents.qrc
-
-    qmlPath = \"qrc:/Qml/\"
-    contentsPath = \"qrc:/Contents/\"
-    imgPath = \"qrc:/Image/\"
-    transDir= \":/Trans/\"
-#    DEFINES += qmlPath=\\\"qrc:/Qml/\\\"
-#    DEFINES += contentsPath=\\\"qrc:/Contents/\\\"
-#    DEFINES += imgPath=\\\"qrc:/Image/\\\"
+    DEFINES +=TaoQuickShowPath=\\\"qrc:/\\\"
 }
 
-#!android:!ios {
-
-#    CONFIG += file_copies
-
-#    trans.files = $$PWD/Trans/language_zh.json
-#    trans.path = $$DESTDIR/Trans
-#    COPIES += trans
-#}
-#OTHER_FILES += $$PWD/Trans/language_zh.json

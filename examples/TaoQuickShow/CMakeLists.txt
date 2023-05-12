@@ -58,10 +58,7 @@ if (CMAKE_BUILD_TYPE MATCHES "Release")
             ${TaoQuickRes}
             )
     endif()
-    add_compile_definitions(qmlPath="qrc:/Qml/")
-    add_compile_definitions(contentsPath="qrc:/Contents/")
-    add_compile_definitions(imgPath="qrc:/Image/")
-    add_compile_definitions(transDir=":/Trans/")
+    add_compile_definitions(TaoQuickShowPath="qrc:/")
 else()
     add_executable(${TargetName}
         ${SRC1}
@@ -69,10 +66,7 @@ else()
         ${TaoCommonFiles}
         )
     add_compile_definitions(TAODEBUG)
-    add_compile_definitions(qmlPath="file:///${CMAKE_CURRENT_SOURCE_DIR}/Qml/")
-    add_compile_definitions(contentsPath="file:///${CMAKE_CURRENT_SOURCE_DIR}/Contents/")
-    add_compile_definitions(imgPath="file:///${CMAKE_CURRENT_SOURCE_DIR}/Image/")
-    add_compile_definitions(transDir="${CMAKE_CURRENT_SOURCE_DIR}/Trans/")
+    add_compile_definitions(TaoQuickShowPath="file:///${CMAKE_CURRENT_SOURCE_DIR}/")
 endif()
 
 target_include_directories(${TargetName} PUBLIC . ./Src ${TaoCommonPath})

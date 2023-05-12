@@ -29,19 +29,6 @@ CONFIG(debug,debug|release) {
 include($${TaoQuick_3RDPARTY_TREE}/TaoCommon/src/TaoCommon/TaoCommon.pri)
 include($${TaoQuick_SOURCE_TREE}/src/TaoQuick.pri)
 include(TaoQuickShow.pri)
-DEFINES += QMAKE_GEN_TAOMACRO
-!build_pass {
-    headerContents = \
-        "$${LITERAL_HASH}pragma once" \
-        "$${LITERAL_HASH}define TaoQuickImportPath $${TaoQuickImportPath}" \
-        "$${LITERAL_HASH}define qmlPath $${qmlPath}" \
-        "$${LITERAL_HASH}define contentsPath $${contentsPath}" \
-        "$${LITERAL_HASH}define imgPath $${imgPath}" \
-        "$${LITERAL_HASH}define transDir $${transDir}"
-
-    write_file(taoMacro.h, headerContents)
-}
-
 
 win32:!mingw {
     RC_FILE = App.rc
