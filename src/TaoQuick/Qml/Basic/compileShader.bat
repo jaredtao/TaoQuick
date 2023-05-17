@@ -1,4 +1,4 @@
 @echo off
-D:\Qt\Online\6.2.2\msvc2019_64\bin\qsb.exe cusColorOverlay.frag -o cusColorOverlay.frag.qsb --hlsl 50
-rem D:\Qt\6.2.2\msvc2019_64\bin\qsb.exe cusColorOverlay.frag -o cusColorOverlay.frag.qsb --hlsl 50
-rem D:\Qt\6.2.2\msvc2019_64\bin\qsb.exe cusColorOverlay.vert -o cusColorOverlay.vert.qsb --hlsl 50
+set QTDIR=D:\Qt\Online\6.2.4\msvc2019_64
+set PATH=%QTDIR%\bin;%PATH%
+qsb -b --glsl "150,120,100 es" --hlsl 50 --msl 12 -o cusColorOverlay.frag.qsb cusColorOverlay.frag
