@@ -9,5 +9,5 @@ ShaderEffect {
     id: cusColorOverlay
     property Image source
     property color imageColor
-    fragmentShader: CusConfig.importPath + "Basic/cusColorOverlay.frag.qsb"
+    fragmentShader: CusConfig.shaderPath + "cusColorOverlay.frag.qsb"
 }
