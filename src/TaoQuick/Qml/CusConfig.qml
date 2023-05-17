@@ -27,7 +27,7 @@ QtObject {
             imagePathPrefix = taoQuickImportPath + "TaoQuick/Images/"
             shaderPath = taoQuickImportPath + "TaoQuick/Qml/Basic/"
         }
-        currentTheme = 0
+        currentTheme = 1
     }
     property color themeColor
     property color backgroundColor
@@ -49,15 +49,15 @@ QtObject {
         }
     }
 
-    property color imageColor_hovered: Qt.darker(themeColor, 1.2)
-    property color imageColor_pressed: Qt.darker(themeColor, 1.4)
+    property color imageColor_hovered: Qt.darker(imageColor, 1.2)
+    property color imageColor_pressed: Qt.darker(imageColor, 1.4)
 
-    property color controlBorderColor_hovered: Qt.darker(themeColor, 1.2)
-    property color controlBorderColor_pressed: Qt.darker(themeColor, 1.4)
+    property color controlBorderColor_hovered: Qt.darker(controlBorderColor, 1.2)
+    property color controlBorderColor_pressed: Qt.darker(controlBorderColor, 1.4)
 
     property color controlColor
-    property color controlColor_hovered: Qt.darker(themeColor, 1.2)
-    property color controlColor_pressed: Qt.darker(themeColor, 1.4)
+    property color controlColor_hovered: Qt.darker(controlColor, 1.2)
+    property color controlColor_pressed: Qt.darker(controlColor, 1.4)
     property color controlColor_disabled: Qt.lighter(controlColor, 2.0)
     property color controlBorderColor_disabled: controlColor_disabled
 
