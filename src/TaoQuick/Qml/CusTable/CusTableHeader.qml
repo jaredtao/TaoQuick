@@ -54,7 +54,7 @@ Item {
     Rectangle {
         id: header0
         color: CusConfig.controlColor
-        width: widthList[0]
+		width: widthList ? widthList[0] : 0
         height: CusConfig.fixedHeight
         visible: width > 0
         CusCheckBox {
@@ -84,9 +84,9 @@ Item {
     Repeater {
         model: headerRoles
         Rectangle {
-            x: xList[index + 1]
+			x: xList ? xList[index + 1] : 0
             height: CusConfig.fixedHeight
-            width: widthList[index + 1]
+			width: widthList ? widthList[index + 1] : 0
             color: CusConfig.controlColor
             CusLabel {
                 anchors.fill: parent
@@ -171,17 +171,6 @@ Item {
                         return
                     }
                     var wList = widthList
-                    //                    if (index === widthList.length - 2) {
-                    //                        if (validWidth(wList[index] + xOffset) && validWidth(wList[index + 1] - xOffset)) {
-                    //                            isOut = false
-                    //                            wList[index] += xOffset
-                    //                            wList[index + 1] -= xOffset
-                    //                            widthList = wList
-                    //                        } else {
-                    //                            isOut = true
-                    //                        }
-
-                    //                    } else {
                     if (validWidth(wList[index] + xOffset) ) {
                         isOut = false
                         wList[index] += xOffset
@@ -189,7 +178,6 @@ Item {
                     } else {
                         isOut = true
                     }
-                    //                    }
                 }
             }
         }

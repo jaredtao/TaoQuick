@@ -27,7 +27,7 @@ QtObject {
             imagePathPrefix = taoQuickImportPath + "TaoQuick/Images/"
             shaderPath = taoQuickImportPath + "TaoQuick/Qml/Basic/"
         }
-        currentTheme = 1
+		currentTheme = 0
     }
     property color themeColor
     property color backgroundColor
