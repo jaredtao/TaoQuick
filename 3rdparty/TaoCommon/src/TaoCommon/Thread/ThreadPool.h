@@ -37,6 +37,6 @@ public:
 	void work(const WorkCallback& workCall, const WorkResultCallback& resultCall);
 
 private:
-	ThreadPool() { }
+	ThreadPool() {}
 };
 } // namespace TaoCommon

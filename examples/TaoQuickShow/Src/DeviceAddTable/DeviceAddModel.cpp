@@ -15,11 +15,9 @@ class DeviceAddModelPrivate
 {
 public:
 	std::default_random_engine				randomEngine;
-	std::uniform_int_distribution<uint32_t> u65535 { 0, 0xffffffff };
+	std::uniform_int_distribution<uint32_t> u65535{ 0, 0xffffffff };
 };
-DeviceAddModel::DeviceAddModel(QObject* parent)
-	: QuickListModel(parent)
-	, d(new DeviceAddModelPrivate)
+DeviceAddModel::DeviceAddModel(QObject* parent) : QuickListModel(parent), d(new DeviceAddModelPrivate)
 {
 	set_headerRoles(sHeaderRoles);
 	set_sortRole("name");

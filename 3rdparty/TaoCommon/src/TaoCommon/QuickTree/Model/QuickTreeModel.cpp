@@ -1,6 +1,5 @@
 #include "QuickTreeModel.h"
-QuickTreeModel::QuickTreeModel(QObject* parent)
-	: QAbstractItemModel(parent)
+QuickTreeModel::QuickTreeModel(QObject* parent) : QAbstractItemModel(parent)
 {
 	m_rootItem = new QuickTreeItem(nullptr);
 	QVector<QVariant> datas;

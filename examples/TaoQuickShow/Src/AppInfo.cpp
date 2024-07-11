@@ -2,8 +2,7 @@
 #include "Ver-u8.h"
 #include <QQmlContext>
 #include <QSysInfo>
-AppInfo::AppInfo(QObject* parent)
-	: QObject(parent)
+AppInfo::AppInfo(QObject* parent) : QObject(parent)
 {
 	m_appName		 = VER_PRODUCTNAME_STR;
 	m_appVersion	 = TaoVer;
@@ -28,4 +27,4 @@ void AppInfo::afterUiReady()
 	//    qWarning() << json;
 }
 
-AppInfo::~AppInfo() { }
+AppInfo::~AppInfo() {}

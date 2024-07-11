@@ -14,12 +14,7 @@ class ThreadWorker : public QObject
 {
 	Q_OBJECT
 public:
-	ThreadWorker(uint64_t id, const WorkCallback& workCall, QObject* parent = nullptr)
-		: QObject(parent)
-		, m_id(id)
-		, m_workCall(workCall)
-	{
-	}
+	ThreadWorker(uint64_t id, const WorkCallback& workCall, QObject* parent = nullptr) : QObject(parent), m_id(id), m_workCall(workCall) {}
 
 signals:
 	void workFinished(bool, uint64_t);
@@ -126,10 +121,7 @@ protected slots:
 	}
 
 protected:
-	ThreadController(QObject* parent = nullptr)
-		: QObject(parent)
-	{
-	}
+	ThreadController(QObject* parent = nullptr) : QObject(parent) {}
 
 private:
 	uint64_t						   m_rollId = 0;

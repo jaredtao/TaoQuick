@@ -11,9 +11,7 @@ public:
 	bool		m_isFull	= false;
 	QQuickItem* m_titleItem = nullptr;
 };
-TaoFrameLessView::TaoFrameLessView(QWindow* parent)
-	: Super(parent)
-	, d(new TaoFrameLessViewPrivate)
+TaoFrameLessView::TaoFrameLessView(QWindow* parent) : Super(parent), d(new TaoFrameLessViewPrivate)
 {
 	setFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint);
 	setResizeMode(SizeRootObjectToView);

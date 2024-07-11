@@ -8,10 +8,7 @@
 #include <QQuickView>
 const static auto cEnglisthStr = u8"English";
 const static auto cChineseStr  = u8"简体中文";
-Trans::Trans(QObject* parent)
-	: QTranslator(parent)
-{
-}
+Trans::Trans(QObject* parent) : QTranslator(parent) {}
 
 void Trans::beforeUiReady(QQmlContext* ctx, const QString& folder)
 {
@@ -28,7 +25,7 @@ void Trans::beforeUiReady(QQmlContext* ctx, const QString& folder)
 	qApp->installTranslator(this);
 }
 
-void Trans::afterUiReady() { }
+void Trans::afterUiReady() {}
 
 QString Trans::translate(const char* context, const char* sourceText, const char* disambiguation, int n) const
 {

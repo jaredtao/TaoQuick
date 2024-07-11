@@ -3,10 +3,7 @@
 #include <QThreadPool>
 namespace TaoCommon
 {
-ThreadObject::ThreadObject(const WorkCallback& work)
-	: m_workCall(work)
-{
-}
+ThreadObject::ThreadObject(const WorkCallback& work) : m_workCall(work) {}
 void ThreadObject::run()
 {
 	bool ok = m_workCall();

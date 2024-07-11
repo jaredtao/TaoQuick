@@ -8,15 +8,8 @@ class TAO_API QuickTreeItem : public QObject
 {
 	Q_OBJECT
 public:
-	explicit QuickTreeItem(QuickTreeItem* parentItem = nullptr)
-		: m_parentItem(parentItem)
-	{
-	}
-	explicit QuickTreeItem(const QVector<QVariant>& data, QuickTreeItem* parentItem = nullptr)
-		: m_itemData(data)
-		, m_parentItem(parentItem)
-	{
-	}
+	explicit QuickTreeItem(QuickTreeItem* parentItem = nullptr) : m_parentItem(parentItem) {}
+	explicit QuickTreeItem(const QVector<QVariant>& data, QuickTreeItem* parentItem = nullptr) : m_itemData(data), m_parentItem(parentItem) {}
 
 	virtual ~QuickTreeItem()
 	{

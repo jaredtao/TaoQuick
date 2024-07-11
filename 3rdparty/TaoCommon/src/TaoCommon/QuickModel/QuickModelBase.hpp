@@ -48,7 +48,7 @@ public:
 	//[end] update data
 
 public:
-	virtual void updateCalcInfo() { }
+	virtual void updateCalcInfo() {}
 	bool		 compareDataChanged(const QList<T>& data1, const QList<T>& data2)
 	{
 		bool changed = false;
@@ -86,14 +86,11 @@ protected:
 };
 
 template <class T>
-QuickModelBase<T>::QuickModelBase(QObject* parent)
-	: Super(parent)
+QuickModelBase<T>::QuickModelBase(QObject* parent) : Super(parent)
 {
 }
 template <class T>
-QuickModelBase<T>::QuickModelBase(const QList<T>& datas, QObject* parent)
-	: Super(parent)
-	, mDatas(datas)
+QuickModelBase<T>::QuickModelBase(const QList<T>& datas, QObject* parent) : Super(parent), mDatas(datas)
 {
 	for (auto it = datas.begin(); it != datas.end(); it++)
 	{

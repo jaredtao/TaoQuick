@@ -1,18 +1,11 @@
 #include "QuickTool.h"
 #include <QGuiApplication>
 #include <QQuickItem>
-QuickTool::QuickTool(QObject* parent)
-	: QObject(parent)
-{
-}
+QuickTool::QuickTool(QObject* parent) : QObject(parent) {}
 
-QuickTool::QuickTool(QObject* rootObject, QObject* parent)
-	: QObject(parent)
-	, pRootObject(rootObject)
-{
-}
+QuickTool::QuickTool(QObject* rootObject, QObject* parent) : QObject(parent), pRootObject(rootObject) {}
 
-QuickTool::~QuickTool() { }
+QuickTool::~QuickTool() {}
 void QuickTool::findRootByNode(QObject* nodeObject)
 {
 	pRootObject = nodeObject;
@@ -37,7 +30,7 @@ QRect QuickTool::getItemGeometryToScene(const QString& targetObjName) const
 		if (pItem->parentItem())
 		{
 			auto pos = pItem->parentItem()->mapToScene(pItem->position());
-			return QRectF { pos.x(), pos.y(), pItem->width(), pItem->height() }.toRect();
+			return QRectF{ pos.x(), pos.y(), pItem->width(), pItem->height() }.toRect();
 		}
 		else
 		{

@@ -2,15 +2,14 @@
 
 #include <QDebug>
 #include <algorithm>
-QuickListModel::QuickListModel(QObject* parent)
-	: QuickModelBase(parent)
+QuickListModel::QuickListModel(QObject* parent) : QuickModelBase(parent)
 {
 	connect(&mSearchTimer, &QTimer::timeout, this, &QuickListModel::onSearch);
 	mSearchTimer.setInterval(300);
 	mSearchTimer.setSingleShot(true);
 }
 
-QuickListModel::~QuickListModel() { }
+QuickListModel::~QuickListModel() {}
 
 void QuickListModel::check(int row, bool checked)
 {

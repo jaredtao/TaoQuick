@@ -3,7 +3,7 @@
 #include "Frameless/TaoFrameLessView.h"
 
 #ifndef TAODEBUG
-#include "Logger/Logger.h"
+#	include "Logger/Logger.h"
 #endif
 
 #include "QuickTool/QuickTool.h"
@@ -20,9 +20,9 @@ static void prepareApp()
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 	QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+#	if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
 	QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
-#endif
+#	endif
 #endif
 	QCoreApplication::setOrganizationName("JaredTao");
 	QCoreApplication::setOrganizationDomain("https://jaredtao.github.io");

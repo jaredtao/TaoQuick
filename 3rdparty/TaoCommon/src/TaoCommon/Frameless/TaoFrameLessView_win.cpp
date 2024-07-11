@@ -42,7 +42,7 @@ static void setShadow(HWND handle, bool enabled)
 {
 	if (isCompositionEnabled())
 	{
-		static const MARGINS shadow_state[2] { { 0, 0, 0, 0 }, { 1, 1, 1, 1 } };
+		static const MARGINS shadow_state[2]{ { 0, 0, 0, 0 }, { 1, 1, 1, 1 } };
 		::DwmExtendFrameIntoClientArea(handle, &shadow_state[enabled]);
 	}
 }
@@ -134,9 +134,7 @@ public:
 		}
 	}
 };
-TaoFrameLessView::TaoFrameLessView(QWindow* parent)
-	: QQuickView(parent)
-	, d(new TaoFrameLessViewPrivate)
+TaoFrameLessView::TaoFrameLessView(QWindow* parent) : QQuickView(parent), d(new TaoFrameLessViewPrivate)
 {
 	// 此处不需要设置flags
 	//     setFlags(Qt::CustomizeWindowHint | Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint | Qt::WindowTitleHint |

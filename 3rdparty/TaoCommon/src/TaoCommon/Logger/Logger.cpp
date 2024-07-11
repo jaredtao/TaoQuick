@@ -10,9 +10,9 @@
 #include <string>
 
 #ifdef Q_OS_WIN
-#include <Windows.h>
+#	include <Windows.h>
 #else
-#include <cstdio>
+#	include <cstdio>
 #endif
 
 namespace Logger
