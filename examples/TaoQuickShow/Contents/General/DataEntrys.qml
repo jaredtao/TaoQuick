@@ -145,5 +145,20 @@ Item {
                 width: 200
             }
         }
+
+        CusLabel {
+            text: qsTr("IPv4") + trans.transString
+            wrapMode: Label.WordWrap
+            width: 400
+        }
+        CusIPAddress {
+            id: ip
+            Component.onCompleted: {
+                inputIP("192.168.1.1")
+            }
+        }
+        CusLabel {
+            text: "IP Addr: " + (ip.isValid ? ip.ipAddr : "")
+        }
     }
 }
