@@ -132,7 +132,9 @@ public:
 
 
 */
-// 可读可写 属性。属性set函数 提升为 slot ，可被 invok / qml 调用
+// 可读可写 属性。属性set函数 提升为 slot ，可被 invok / qml 调用.
+// V2去掉了 signal的定义部分，外面用的地方额外定义一下 signal 部分。
+// visual studio解决方案中存在无法通过 Q_SIGNAL 生成signal的情况，所以有了V2
 #define AUTO_PROPERTY_V2(T, NAME, InitValue)                                                                                                                      \
 private:                                                                                                                                                       \
     Q_PROPERTY(T NAME READ NAME WRITE set_##NAME NOTIFY NAME##Changed)                                                                                         \
