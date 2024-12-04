@@ -6,9 +6,14 @@
 class TAO_API QuickListItemBase : public QObject
 {
     Q_OBJECT
-    AUTO_PROPERTY(bool, isChecked, false)
-    AUTO_PROPERTY(bool, isSelected, false)
-    AUTO_PROPERTY(bool, isAlternate, false)
+    AUTO_PROPERTY_V2(bool, isChecked, false)
+    AUTO_PROPERTY_V2(bool, isSelected, false)
+    AUTO_PROPERTY_V2(bool, isAlternate, false)
+signals:
+    void isCheckedChanged(bool);
+    void isSelectedChanged(bool);
+    void isAlternateChanged(bool);
+
 public:
     explicit QuickListItemBase(QObject* parent = nullptr);
     virtual ~QuickListItemBase() override;

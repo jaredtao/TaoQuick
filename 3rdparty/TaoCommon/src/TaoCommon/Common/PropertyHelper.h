@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <QObject>
 #include <QtGlobal>
 
@@ -132,6 +132,16 @@ public:
 
 
 */
+// 可读可写 属性。属性set函数 提升为 slot ，可被 invok / qml 调用
+#define AUTO_PROPERTY_V2(T, NAME, InitValue)                                                                                                                      \
+private:                                                                                                                                                       \
+    Q_PROPERTY(T NAME READ NAME WRITE set_##NAME NOTIFY NAME##Changed)                                                                                         \
+public:                                                                                                                                                        \
+    PROP_GET(T, NAME);                                                                                                                                         \
+    Q_SLOT PROP_SET(T, NAME);                                                                                                                                  \
+                                                                                                                                                               \
+private:                                                                                                                                                       \
+    PROP_MEM(T, NAME, InitValue)
 
 //**********************************QObject 属性 二进制兼容版, 头文件声明 与 源文件定义 分离**********************************
 

@@ -10,6 +10,7 @@ bin
 *.stash
 *.cbt
 debug
+release
 *.ipch
 *qmlcache.qrc
 build
@@ -17,3 +18,4 @@ bin
 .vc
 .vscode
 .vs
+**/GeneratedFiles/**

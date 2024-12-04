@@ -7,10 +7,15 @@ class DeviceAddItem : public QuickListItemBase
 {
 	Q_OBJECT
 
-	AUTO_PROPERTY(QString, name, "")
-	AUTO_PROPERTY(QString, address, "")
-	AUTO_PROPERTY(QString, modelString, "")
-	AUTO_PROPERTY(bool, online, false)
+	AUTO_PROPERTY_V2(QString, name, "")
+	AUTO_PROPERTY_V2(QString, address, "")
+	AUTO_PROPERTY_V2(QString, modelString, "")
+	AUTO_PROPERTY_V2(bool, online, false)
+signals:
+	void nameChanged(const QString&);
+	void addressChanged(const QString&);
+	void modelStringChanged(const QString&);
+	void onlineChanged(bool);
 
 public:
 	explicit DeviceAddItem(QObject* parent = nullptr);

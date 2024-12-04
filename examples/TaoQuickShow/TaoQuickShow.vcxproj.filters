@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="Source Files\DeviceAddTable">
+      <UniqueIdentifier>{0780f67f-1677-41e7-a3fd-38e8c9b0218b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaoCommon">
+      <UniqueIdentifier>{2e55065f-d815-466c-8d37-d14cd7977af3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaoCommon\Common">
+      <UniqueIdentifier>{c6a242b6-b744-4887-8c32-f90124eb9748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaoCommon\Frameless">
+      <UniqueIdentifier>{4c8b6cca-d44b-4fd1-b1ac-4df5da432066}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaoCommon\Logger">
+      <UniqueIdentifier>{c8da1b71-eb0a-4b33-ac71-b48a36df99db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaoCommon\QuickModel">
+      <UniqueIdentifier>{d7fa3a1f-ae61-40c4-a5f9-48d267c880d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaoCommon\QuickTool">
+      <UniqueIdentifier>{a670327f-344e-44d9-aca4-69b4069f6fd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaoCommon\QuickTree">
+      <UniqueIdentifier>{038ed288-0f7f-4954-a9bd-92e6e3a8cd4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaoCommon\Thread">
+      <UniqueIdentifier>{d99a6fb6-65e0-4523-b1da-44a3cf1baa52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaoCommon\Trans">
+      <UniqueIdentifier>{66d20328-4363-489c-9e78-0187bd5b9796}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaoCommon\QuickTree\Model">
+      <UniqueIdentifier>{be6c7c5e-a8cd-4a06-b23a-56023751c219}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{23e94e10-78b9-4d83-a4e4-26dd2941ebea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaoQuick">
+      <UniqueIdentifier>{d49c24fe-0f88-409b-9aee-958d402d102e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Qml.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="Contents.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="Image.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="..\..\src\TaoQuick\TaoQuick.qrc">
+      <Filter>TaoQuick</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\AppInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DeviceAddTable\DeviceAddItem.cpp">
+      <Filter>Source Files\DeviceAddTable</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DeviceAddTable\DeviceAddModel.cpp">
+      <Filter>Source Files\DeviceAddTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Frameless\TaoFrameLessView_win.cpp">
+      <Filter>TaoCommon\Frameless</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Logger\Logger.cpp">
+      <Filter>TaoCommon\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickModel\QuickListItemBase.cpp">
+      <Filter>TaoCommon\QuickModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickModel\QuickListModel.cpp">
+      <Filter>TaoCommon\QuickModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickTool\QuickTool.cpp">
+      <Filter>TaoCommon\QuickTool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickTree\Model\QuickTreeModel.cpp">
+      <Filter>TaoCommon\QuickTree\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Thread\ThreadPool.cpp">
+      <Filter>TaoCommon\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Trans\Trans.cpp">
+      <Filter>TaoCommon\Trans</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Src\AppInfo.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\DeviceAddTable\DeviceAddItem.h">
+      <Filter>Source Files\DeviceAddTable</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\DeviceAddTable\DeviceAddModel.h">
+      <Filter>Source Files\DeviceAddTable</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Frameless\TaoFrameLessView.h">
+      <Filter>TaoCommon\Frameless</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickModel\QuickListItemBase.h">
+      <Filter>TaoCommon\QuickModel</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickTool\QuickTool.h">
+      <Filter>TaoCommon\QuickTool</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickTree\Model\QuickTreeItem.h">
+      <Filter>TaoCommon\QuickTree\Model</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickTree\Model\QuickTreeModel.h">
+      <Filter>TaoCommon\QuickTree\Model</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Thread\ThreadPool.h">
+      <Filter>TaoCommon\Thread</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Thread\ThreadWorkerController.h">
+      <Filter>TaoCommon\Thread</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Trans\Trans.h">
+      <Filter>TaoCommon\Trans</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickModel\QuickListModel.h">
+      <Filter>TaoCommon\QuickModel</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\TaoCommonGlobal.h">
+      <Filter>TaoCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\FileReadWrite.h">
+      <Filter>TaoCommon\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\JsonSerialize.h">
+      <Filter>TaoCommon\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\MathHelp.h">
+      <Filter>TaoCommon\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\ObjectMap.h">
+      <Filter>TaoCommon\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\Package.h">
+      <Filter>TaoCommon\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\PropertyHelper.h">
+      <Filter>TaoCommon\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\Subject.h">
+      <Filter>TaoCommon\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Logger\Logger.h">
+      <Filter>TaoCommon\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Logger\LoggerTemplate.h">
+      <Filter>TaoCommon\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Thread\ThreadCommon.h">
+      <Filter>TaoCommon\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\taoVersionInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ver-u8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ver-u16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickModel\QuickModelBase.hpp">
+      <Filter>TaoCommon\QuickModel</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,3 +1,4 @@
+
 #include "AppInfo.h"
 #include "DeviceAddTable/DeviceAddModel.h"
 #include "Frameless/TaoFrameLessView.h"
@@ -126,7 +127,11 @@ int main(int argc, char** argv)
 	// qml call 'Qt.quit()' will emit engine::quit, here should call qApp->quit
 	QObject::connect(view.engine(), &QQmlEngine::quit, qApp, &QCoreApplication::quit);
 	// qml clear content before quit
-	QObject::connect(qApp, &QGuiApplication::aboutToQuit, qApp, [&view]() { view.setSource({}); });
+	QObject::connect(qApp, &QGuiApplication::aboutToQuit, qApp, [&view]()
+	{
+		view.setSource({});
+		qInstallMessageHandler(nullptr);
+	});
 
 	view.setSource(url);
 	view.moveToScreenCenter();

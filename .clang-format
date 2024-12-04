@@ -94,9 +94,6 @@ CommentPragmas:  '^ IWYU pragma:'
 # 固定命名空间注释
 FixNamespaceComments: true
 
-# 对齐连续的尾随的注释
-AlignTrailingComments:	true
-
 # 允许短的函数放在同一行: None, InlineOnly(定义在类中), Empty(空函数), Inline(定义在类中，空函数), All
 AllowShortFunctionsOnASingleLine: Empty
 

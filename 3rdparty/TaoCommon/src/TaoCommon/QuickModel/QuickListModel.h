@@ -8,16 +8,27 @@
 
 class TAO_API QuickListModel : public QuickModelBase<QuickListItemBase*>
 {
+private:
     Q_OBJECT
     Q_PROPERTY(bool allChecked READ allChecked WRITE setAllChecked NOTIFY allCheckedChanged)
-    AUTO_PROPERTY(int, visibledCount, 0)
-    AUTO_PROPERTY(int, selectedCount, 0)
-    AUTO_PROPERTY(int, checkedCount, 0)
 
-    AUTO_PROPERTY(QStringList, headerRoles, {})
-    AUTO_PROPERTY(Qt::SortOrder, sortOrder, Qt::AscendingOrder)
-    AUTO_PROPERTY(QString, sortRole, {})
-    AUTO_PROPERTY(QStringList, noSortRoles, {})
+     AUTO_PROPERTY_V2(int, visibledCount, 0)
+     AUTO_PROPERTY_V2(int, selectedCount, 0)
+     AUTO_PROPERTY_V2(int, checkedCount, 0)
+
+     AUTO_PROPERTY_V2(QStringList, headerRoles, {})
+     AUTO_PROPERTY_V2(Qt::SortOrder, sortOrder, Qt::AscendingOrder)
+     AUTO_PROPERTY_V2(QString, sortRole, {})
+     AUTO_PROPERTY_V2(QStringList, noSortRoles, {})
+signals:
+     void visibledCountChanged(int);
+     void selectedCountChanged(int);
+     void checkedCountChanged(int);
+     void headerRolesChanged(const QStringList&);
+     void sortOrderChanged(Qt::SortOrder);
+     void sortRoleChanged(const QString&);
+     void noSortRolesChanged(const QStringList&);
+     
 public:
     using Super = QuickModelBase<QuickListItemBase*>;
     explicit QuickListModel(QObject* parent = nullptr);

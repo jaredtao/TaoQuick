@@ -1,5 +1,6 @@
 #include "AppInfo.h"
 #include "Ver-u8.h"
+#include "taoVersionInfo.h"
 #include <QQmlContext>
 #include <QSysInfo>
 AppInfo::AppInfo(QObject* parent)

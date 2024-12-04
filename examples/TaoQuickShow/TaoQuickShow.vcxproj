@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="..\..\src\TaoQuick\TaoQuick.qrc" />
+    <QtRcc Include="Contents.qrc" />
+    <QtRcc Include="Image.qrc" />
+    <QtRcc Include="Qml.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Frameless\TaoFrameLessView_win.cpp" />
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Logger\Logger.cpp" />
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickModel\QuickListItemBase.cpp" />
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickModel\QuickListModel.cpp" />
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickTool\QuickTool.cpp" />
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickTree\Model\QuickTreeModel.cpp" />
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Thread\ThreadPool.cpp" />
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Trans\Trans.cpp" />
+    <ClCompile Include="Src\AppInfo.cpp" />
+    <ClCompile Include="Src\DeviceAddTable\DeviceAddItem.cpp" />
+    <ClCompile Include="Src\DeviceAddTable\DeviceAddModel.cpp" />
+    <ClCompile Include="Src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Src\DeviceAddTable\DeviceAddItem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Src\DeviceAddTable\DeviceAddModel.h">
+      <DynamicSource>output</DynamicSource>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Src\AppInfo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\FileReadWrite.h" />
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\JsonSerialize.h" />
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\MathHelp.h" />
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\ObjectMap.h" />
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\Package.h" />
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\PropertyHelper.h" />
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Common\Subject.h" />
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Logger\Logger.h" />
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Logger\LoggerTemplate.h" />
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickModel\QuickListModel.h">
+      <DynamicSource>output</DynamicSource>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <ParallelProcess Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ParallelProcess>
+    </QtMoc>
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickModel\QuickModelBase.hpp" />
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Thread\ThreadCommon.h" />
+    <ClInclude Include="..\..\taoVersionInfo.h" />
+    <ClInclude Include="Ver-u16.h" />
+    <ClInclude Include="Ver-u8.h" />
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Trans\Trans.h" />
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Thread\ThreadWorkerController.h" />
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Thread\ThreadPool.h" />
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickTree\Model\QuickTreeModel.h" />
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickTree\Model\QuickTreeItem.h" />
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickTool\QuickTool.h" />
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickModel\QuickListItemBase.h">
+      <DynamicSource>output</DynamicSource>
+    </QtMoc>
+    <QtMoc Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Frameless\TaoFrameLessView.h" />
+    <ClInclude Include="..\..\3rdparty\TaoCommon\src\TaoCommon\TaoCommonGlobal.h" />
+    <ClInclude Include="Src\stdafx.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{459D668B-0F88-4B38-9C16-E28F89505358}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.15.12_msvc2019_64</QtInstall>
+    <QtModules>quick</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+    <QtQMLDebugEnable>true</QtQMLDebugEnable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.15.12_msvc2019_64</QtInstall>
+    <QtModules>quick</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>$(SolutionDir)3rdparty\TaoCommon\src\TaoCommon;$(SolutionDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>$(SolutionDir)3rdparty\TaoCommon\src\TaoCommon;$(SolutionDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <LanguageStandard>Default</LanguageStandard>
+      <PreprocessorDefinitions>TaoCommon_NO_LIB;TaoQuickShowPath="qrc:/";TaoQuickImportPath="qrc:/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <LanguageStandard>Default</LanguageStandard>
+      <PreprocessorDefinitions>TaoCommon_NO_LIB;TaoQuickShowPath="qrc:/";TaoQuickImportPath="qrc:/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <QtMoc>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <QtMocDir>.\GeneratedFiles\$(ConfigurationName)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>.\GeneratedFiles</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <QtMoc>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <QtMocDir>.\GeneratedFiles\$(ConfigurationName)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>.\GeneratedFiles</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

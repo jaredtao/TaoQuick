@@ -6,6 +6,7 @@
 template <class T>
 class QuickModelBase : public QAbstractListModel
 {
+    
 public:
     using Super = QAbstractListModel;
     explicit QuickModelBase(QObject* parent = nullptr);
