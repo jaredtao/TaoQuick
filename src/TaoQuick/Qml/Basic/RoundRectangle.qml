@@ -1,5 +1,7 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
 
 //Rectangle 模拟圆角矩形。没有其它模块依赖，很基础的Qt版本都可以用。
 // 四个角可控。

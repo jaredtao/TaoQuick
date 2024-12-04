@@ -1,6 +1,8 @@
-import QtQuick 2.9
-import QtQml 2.2
-import QtQuick.Controls 2.2
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
+
 import ".."
 import "../.."
 SpinBox {

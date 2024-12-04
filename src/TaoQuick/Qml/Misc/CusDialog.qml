@@ -1,7 +1,9 @@
 import QtQml
 import QtQuick
 import QtQuick.Controls
-import Qt.labs.platform 1.1
+import QtQuick.Controls.Basic
+
+import Qt.labs.platform
 Item {
     //顶层使用Item，不用FileDialog，屏蔽FileDialog内部属性和函数
     property var __acceptCallback: function (file) {}

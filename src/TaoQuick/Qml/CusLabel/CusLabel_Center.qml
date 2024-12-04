@@ -1,5 +1,8 @@
-import QtQuick 2.10
-import QtQuick.Controls 2.2
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
+
 import ".."
 import "../.."
 Label {

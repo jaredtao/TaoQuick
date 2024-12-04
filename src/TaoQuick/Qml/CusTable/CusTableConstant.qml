@@ -1,6 +1,10 @@
 pragma Singleton
 
-import QtQuick 2.9
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
+
 
 QtObject {
     readonly property int column0Width: 50

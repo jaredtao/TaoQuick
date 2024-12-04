@@ -1,6 +1,8 @@
-import QtQuick 2.10
-import QtQuick.Controls 2.5
-import QtQuick.Shapes 1.10
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
+import QtQuick.Shapes
 Shape {
     id: root
     //左上角是否圆角

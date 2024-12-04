@@ -1,5 +1,8 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
+
 import "."
 import ".."
 import "../.."
@@ -48,8 +51,8 @@ Rectangle {
     Repeater {
         model: roles
         Loader {
-            x: xList[index + 1]
-            width: widthList[index + 1]
+            x: xList ? xList[index + 1] : 0
+            width: widthList ? widthList[index + 1] : 0
             height: parent.height
             asynchronous: true
             sourceComponent: Item {

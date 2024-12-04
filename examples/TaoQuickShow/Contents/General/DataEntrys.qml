@@ -1,6 +1,8 @@
-import QtQml 2.0
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
+
 import TaoQuick 1.0
 
 Item {

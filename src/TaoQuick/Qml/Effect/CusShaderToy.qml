@@ -1,5 +1,8 @@
-﻿import QtQuick 2.9
-import QtQuick.Controls 2.2
+﻿import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
+
 /*
 vec3        iResolution             image/buffer        The viewport resolution (z is pixel aspect ratio, usually 1.0)
 float       iTime                   image/sound/buffer	Current time in seconds

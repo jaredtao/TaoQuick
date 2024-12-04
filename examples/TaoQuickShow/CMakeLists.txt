@@ -25,7 +25,6 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/TaoCommon/src/TaoCommon ${CMAKE_SO
 #endif()
 
 
-
 include(${PROJECT_SOURCE_DIR}/src/taoQuick.cmake)
 
 message("TaoQuickRes ${TaoQuickRes}")

@@ -1,4 +1,8 @@
-import QtQuick 2.0
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
+
 
 Item {
     property int setX: 0

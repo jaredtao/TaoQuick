@@ -1,7 +1,10 @@
 pragma Singleton
 
-import QtQuick 2.9
-import QtQml 2.0
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
+
 QtObject {
     id: cusConfig
     objectName: "cusConfig"

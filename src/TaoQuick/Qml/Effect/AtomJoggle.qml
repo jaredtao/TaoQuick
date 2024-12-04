@@ -1,7 +1,9 @@
-import QtQml 2.0
-import QtQuick 2.0
-import QtQuick.Controls 2.0
-import QtQuick.Particles 2.0
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
+
+import QtQuick.Particles
 
 import TaoQuick  1.0
 Item {

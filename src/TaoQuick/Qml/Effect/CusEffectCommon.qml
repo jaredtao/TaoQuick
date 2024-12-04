@@ -1,5 +1,9 @@
 pragma Singleton
-import QtQuick 2.9
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
+
 QtObject {
     property string versionString: GraphicsInfo.renderableType === GraphicsInfo.SurfaceFormatOpenGLES ?
                                        "#version 100 es" : "#version 130"
