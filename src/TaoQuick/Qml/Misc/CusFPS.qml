@@ -1,10 +1,13 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Basic
+
 import "../.."
 Item {
     property int fps: 60
 
-    property int frameCount: 0
+    property int frameNum: 0
     property color textColor: "#f7e08c"
     implicitWidth: 100
     implicitHeight: 36
@@ -22,7 +25,7 @@ Item {
             loops: Animation.Infinite
             duration: 1000
         }
-        onRotationChanged: frameCount++
+        onRotationChanged: frameNum++
     }
     BasicText {
         anchors.left: spinner.right
@@ -39,8 +42,8 @@ Item {
         repeat: true
         running: true
         onTriggered: {
-            fps = frameCount
-            frameCount = 0
+            fps = frameNum
+            frameNum = 0
         }
     }
 }
