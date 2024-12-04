@@ -21,8 +21,8 @@ defineTest(minQtVersion) {
     return(false)
 }
 
-!minQtVersion(5, 9, 0) {
-    error("TaoQuick minimum supported Qt5 version is 5.9.0")
+!minQtVersion(6, 8, 0) {
+    error("TaoQuick minimum supported Qt5 version is 6.8.0")
 }
 
 TEMPLATE = subdirs

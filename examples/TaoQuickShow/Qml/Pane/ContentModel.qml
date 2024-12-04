@@ -84,13 +84,13 @@ ListModel {
         group: "General"
         groupOpen: true
     }
-//    ListElement {
-//        name: "Enter"
-//        source: "Animation/Enter.qml"
-//        visible: true
-//        group: "Animation"
-//        groupOpen: true
-//    }
+   ListElement {
+       name: "Enter"
+       source: "Animation/Enter.qml"
+       visible: true
+       group: "Animation"
+       groupOpen: true
+   }
 //    ListElement {
 //        name: "Grad"
 //        source: "Animation/Grad.qml"

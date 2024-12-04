@@ -2,9 +2,7 @@
 #include "DeviceAddTable/DeviceAddModel.h"
 #include "Frameless/TaoFrameLessView.h"
 
-#ifndef TAODEBUG
 #	include "Logger/Logger.h"
-#endif
 
 #include "QuickTool/QuickTool.h"
 #include "Trans/Trans.h"
@@ -34,8 +32,7 @@ int main(int argc, char** argv)
 	prepareApp();
 	QGuiApplication app(argc, argv);
 #ifdef TAODEBUG
-	//    qSetMessagePattern("[%{time h:mm:ss.zzz} %{function}] %{message}");
-	qSetMessagePattern("[%{time h:mm:ss.zzz} %{file} row(%{line}) %{function}] %{message}");
+	Logger::initDebugMessageFormat();
 #else
 	Logger::initLog();
 #endif
