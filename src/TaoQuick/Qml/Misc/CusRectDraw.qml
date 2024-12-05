@@ -26,7 +26,7 @@ Item {
         anchors.fill: parent
         hoverEnabled: true
         acceptedButtons: Qt.LeftButton | Qt.RightButton
-        onPressed: {
+        onPressed: function(mouse) {
             if (mouse.button === Qt.LeftButton) {
                 bPressed = true
                 oldX = Math.floor(mouseX)

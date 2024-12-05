@@ -32,7 +32,7 @@ Item {
 
                 MoveArea {
                     anchors.fill: parent
-                    onMove: {
+                    onMove: function(xOffset, yOffset){
                         parent.x += xOffset
                         parent.y += yOffset
                     }
