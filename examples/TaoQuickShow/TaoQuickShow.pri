@@ -4,12 +4,14 @@ PRECOMPILED_HEADER = $$PWD/Src/stdafx.h
 HEADERS += \
     $$PWD/Src/AppInfo.h \
     $$PWD/Src/DeviceAddTable/DeviceAddItem.h \
-    $$PWD/Src/DeviceAddTable/DeviceAddModel.h
+    $$PWD/Src/DeviceAddTable/DeviceAddModel.h \
+    $$PWD/Src/SimpleFramelessView.h
 
 SOURCES += \
     $$PWD/Src/AppInfo.cpp \
     $$PWD/Src/DeviceAddTable/DeviceAddItem.cpp \
     $$PWD/Src/DeviceAddTable/DeviceAddModel.cpp \
+    $$PWD/Src/SimpleFramelessView.cpp \
     $$PWD/Src/main.cpp
 
 CONFIG(debug, debug|release) {

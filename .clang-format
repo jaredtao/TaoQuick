@@ -1,4 +1,7 @@
 ﻿---
+# 关闭格式化
+DisableFormat:   false
+
 # 语言: None, Cpp, Java, JavaScript, ObjC, Proto, TableGen, TextProto
 Language:        Cpp
 # 标准: Cpp03, Cpp11, Auto
@@ -115,8 +118,7 @@ ContinuationIndentWidth: 4
 Cpp11BracedListStyle: false
 # 继承最常用的指针和引用的对齐方式
 DerivePointerAlignment: false
-# 关闭格式化
-DisableFormat:   false
+
 # 自动检测函数的调用和定义是否被格式为每行一个参数(Experimental)
 ExperimentalAutoDetectBinPacking: false
 # 固定命名空间注释

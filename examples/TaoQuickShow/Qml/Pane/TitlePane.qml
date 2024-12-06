@@ -21,7 +21,7 @@ Rectangle {
             color: "#ffffff"
         }
     }
-    property bool isMaxed: view.isMax
+    property bool isMaxed: rootView.visibility == Window.Maximized
     Row {
         id: controlButtons
         objectName: "controlButtonsRow"
@@ -36,7 +36,7 @@ Rectangle {
             btnImgUrl: imgPath + (hovered || pressed ? "Window/minimal_white.png" : "Window/minimal_gray.png")
             tipText: qsTr("minimal") + trans.transString
             onClicked: {
-                view.showMinimized()
+                rootView.showMinimized()
             }
         }
         CusButton_Image {
@@ -46,7 +46,7 @@ Rectangle {
             btnImgUrl: imgPath + (hovered || pressed ? "Window/max_white.png" : "Window/max_gray.png")
             tipText: qsTr("maximize") + trans.transString
             onClicked: {
-                view.showMaximized()
+                rootView.showMaximized()
             }
         }
         CusButton_Image {
@@ -64,7 +64,7 @@ Rectangle {
             width: 24
             height: 24
             onClicked: {
-                view.close()
+                rootView.close()
             }
         }
     }
@@ -132,8 +132,31 @@ Rectangle {
             topMargin: 4
             bottom: parent.bottom
         }
-        Component.onCompleted: {
-            view.setTitleItem(blankItem)
+        MouseArea {
+            anchors.fill: parent
+            onDoubleClicked: {
+                if (rootView.visibility == Window.Windowed) {
+                    rootView.showMaximized()
+                } else {
+                    rootView.showNormal()
+                }
+            }
+            property point windowOffsetPos
+            property point curGlobalPos
+            onPressed: {
+                // 鼠标按下时记录窗口上鼠标点击的位置, 后面无论鼠标移动到哪里，窗口的坐标就是鼠标实际位置减去这个点击位置。保证不会跑丢。
+                // 直接通过c++获取全局鼠标坐标，映射为窗口坐标。如果用MouseArea提供的坐标或者event的坐标，会莫名其妙的抖动。
+                windowOffsetPos =  rootView.globalPosToWindowPos(rootView.mousePosition())
+            }
+            onPositionChanged: function(mouse){
+                if (rootView.visibility == Window.Maximized) {
+                    rootView.showNormal()
+                }
+                // 当前鼠标的全局坐标。
+                curGlobalPos = rootView.mousePosition()
+                // 鼠标到哪，窗口就跟到那。偏移量是点击时记录的窗口内坐标。
+                rootView.move(curGlobalPos.x - windowOffsetPos.x, curGlobalPos.y - windowOffsetPos.y)
+            }
         }
     }
 }

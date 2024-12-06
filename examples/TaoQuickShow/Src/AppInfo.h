@@ -22,22 +22,22 @@ class AppInfo : public QObject
 	AUTO_PROPERTY(double, ratio, 14.0 / 9.0)
 	AUTO_PROPERTY(QStringList, customs, {})
 
-	JsonSerialize_Begin() JsonProperty(appName) JsonProperty(appVersion) JsonProperty(latestVersion) JsonProperty(buildDateTime) JsonProperty(buildRevision)
-		JsonProperty(copyRight) JsonProperty(descript) JsonProperty(compilerVendor) JsonProperty(splashShow) JsonProperty(scale) JsonProperty(ratio)
-			JsonContainerProperty(customs) JsonSerialize_End()
+JsonSerialize_Begin() JsonProperty(appName) JsonProperty(appVersion) JsonProperty(latestVersion) JsonProperty(buildDateTime) JsonProperty(buildRevision)
+	JsonProperty(copyRight) JsonProperty(descript) JsonProperty(compilerVendor) JsonProperty(splashShow) JsonProperty(scale) JsonProperty(ratio)
+		JsonContainerProperty(customs) JsonSerialize_End()
 
-				JsonDeserialize_Begin(AppInfo) JsonDeserializeProperty(appName) JsonDeserializeProperty(appVersion) JsonDeserializeProperty(latestVersion)
-					JsonDeserializeProperty(buildDateTime) JsonDeserializeProperty(buildRevision) JsonDeserializeProperty(copyRight)
-						JsonDeserializeProperty(descript) JsonDeserializeProperty(compilerVendor) JsonDeserializeProperty(splashShow)
-							JsonDeserializeProperty(scale) JsonDeserializeProperty(ratio) JsonDeserializeContainerProperty(customs) JsonDeserialize_End()
+			JsonDeserialize_Begin(AppInfo) JsonDeserializeProperty(appName) JsonDeserializeProperty(appVersion) JsonDeserializeProperty(latestVersion)
+				JsonDeserializeProperty(buildDateTime) JsonDeserializeProperty(buildRevision) JsonDeserializeProperty(copyRight)
+					JsonDeserializeProperty(descript) JsonDeserializeProperty(compilerVendor) JsonDeserializeProperty(splashShow) JsonDeserializeProperty(scale)
+						JsonDeserializeProperty(ratio) JsonDeserializeContainerProperty(customs) JsonDeserialize_End()
 
-								JsonPartialDeserialize_Begin(AppInfo) JsonDeserializeProperty(appName) JsonDeserializeProperty(appVersion)
-									JsonDeserializeProperty(latestVersion) JsonDeserializeProperty(buildDateTime) JsonDeserializeProperty(buildRevision)
-										JsonDeserializeProperty(copyRight) JsonDeserializeProperty(descript) JsonDeserializeProperty(compilerVendor)
-											JsonDeserializeProperty(splashShow) JsonDeserializeProperty(scale) JsonDeserializeProperty(ratio)
-												JsonDeserializeContainerProperty(customs) JsonPartialDeserialize_End()
+							JsonPartialDeserialize_Begin(AppInfo) JsonDeserializeProperty(appName) JsonDeserializeProperty(appVersion)
+								JsonDeserializeProperty(latestVersion) JsonDeserializeProperty(buildDateTime) JsonDeserializeProperty(buildRevision)
+									JsonDeserializeProperty(copyRight) JsonDeserializeProperty(descript) JsonDeserializeProperty(compilerVendor)
+										JsonDeserializeProperty(splashShow) JsonDeserializeProperty(scale) JsonDeserializeProperty(ratio)
+											JsonDeserializeContainerProperty(customs) JsonPartialDeserialize_End()
 
-													public : explicit AppInfo(QObject* parent = nullptr);
+												public : explicit AppInfo(QObject* parent = nullptr);
 	virtual ~AppInfo() override;
 
 public:

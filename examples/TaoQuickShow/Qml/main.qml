@@ -7,7 +7,7 @@ import TaoQuick
 import "./Page"
 import "./Pane"
 import "./Dialog"
-//import Qt.labs.platform 1.1
+import Qt.labs.platform
 CusBackground {
     id: rootBackground
     width: 1440
@@ -20,29 +20,28 @@ CusBackground {
         height: parent.height
         opacity: 0.1
     }
-    //    SystemTrayIcon {
-    //        id: sysTray
-    //        visible: true
-    //        icon.source: imgPath + "logo/milk.png"
-    //        menu: Menu {
-    //            MenuItem {
-    //                text: qsTr("Quit")
-    //                onTriggered: {
-    //                    Qt.quit()
-    //                }
-    //            }
-    //        }
-    //    }
+    SystemTrayIcon {
+        id: sysTray
+        visible: true
+        icon.source: imgPath + "logo/milk.png"
+        menu: Menu {
+            MenuItem {
+                text: qsTr("Quit")
+                onTriggered: {
+                    rootView.close()
+                }
+            }
+        }
+    }
 
     //Windows use native event for frameless
     //Other platform use CusResizeBorder
     CusResizeBorder {
         id: resizeBorder
-        visible: Qt.platform.os !== "windows"
         borderWidth: 4
         enabled: visible
         anchors.fill: rootBackground
-        control: view
+        control: rootView
     }
     AboutDialog {
         id: aboutDialog
@@ -125,6 +124,8 @@ CusBackground {
             }
         }
     }
+
+
     ClickShow {
         anchors.fill: parent
         anchors.margins: 10

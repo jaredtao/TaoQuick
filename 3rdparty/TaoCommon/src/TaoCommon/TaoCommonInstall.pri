@@ -7,9 +7,6 @@ gHeader.path=$$headersTargetPath
 commonHeader.files=$$PWD/Common/*.h
 commonHeader.path=$$headersTargetPath/Common
 
-framelessHeader.files=$$PWD/Frameless/*.h
-framelessHeader.path=$$headersTargetPath/Frameless
-
 loggerHeader.files=$$PWD/Logger/*.h
 loggerHeader.path=$$headersTargetPath/Logger
 

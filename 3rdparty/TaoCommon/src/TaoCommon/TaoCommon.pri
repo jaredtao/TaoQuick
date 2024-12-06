@@ -12,7 +12,6 @@ HEADERS += \
     $$PWD/Common/PropertyHelper.h \
     $$PWD/Common/Subject.h \
     $$PWD/Common/MathHelp.h \
-    $$PWD/Frameless/TaoFrameLessView.h \
     $$PWD/Logger/Logger.h \
     $$PWD/Logger/LoggerTemplate.h \
     $$PWD/QuickTool/QuickTool.h \
@@ -35,11 +34,3 @@ SOURCES += \
     $$PWD/QuickTree/Model/QuickTreeModel.cpp \
     $$PWD/Thread/ThreadPool.cpp \
     $$PWD/Trans/Trans.cpp
-
-win32 {
-    SOURCES += \
-        $$PWD/Frameless/TaoFrameLessView_win.cpp
-} else {
-    SOURCES += \
-        $$PWD/Frameless/TaoFrameLessView_unix.cpp
-}
