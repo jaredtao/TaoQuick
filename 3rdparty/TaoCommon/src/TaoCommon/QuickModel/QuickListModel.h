@@ -12,23 +12,32 @@ private:
     Q_OBJECT
     Q_PROPERTY(bool allChecked READ allChecked WRITE setAllChecked NOTIFY allCheckedChanged)
 
-     AUTO_PROPERTY_V2(int, visibledCount, 0)
-     AUTO_PROPERTY_V2(int, selectedCount, 0)
-     AUTO_PROPERTY_V2(int, checkedCount, 0)
+    Q_PROPERTY(int visibledCount READ visibledCount WRITE set_visibledCount NOTIFY visibledCountChanged FINAL)
+    Q_PROPERTY(int selectedCount READ selectedCount WRITE set_selectedCount NOTIFY selectedCountChanged FINAL)
+    Q_PROPERTY(int checkedCount READ checkedCount WRITE set_checkedCount NOTIFY checkedCountChanged FINAL)
 
-     AUTO_PROPERTY_V2(QStringList, headerRoles, {})
-     AUTO_PROPERTY_V2(Qt::SortOrder, sortOrder, Qt::AscendingOrder)
-     AUTO_PROPERTY_V2(QString, sortRole, {})
-     AUTO_PROPERTY_V2(QStringList, noSortRoles, {})
-signals:
-     void visibledCountChanged(int);
-     void selectedCountChanged(int);
-     void checkedCountChanged(int);
-     void headerRolesChanged(const QStringList&);
-     void sortOrderChanged(Qt::SortOrder);
-     void sortRoleChanged(const QString&);
-     void noSortRolesChanged(const QStringList&);
-     
+    Q_PROPERTY(QStringList headerRoles READ headerRoles WRITE set_headerRoles NOTIFY headerRolesChanged FINAL)
+    Q_PROPERTY(Qt::SortOrder sortOrder READ sortOrder WRITE set_sortOrder NOTIFY sortOrderChanged FINAL)
+    Q_PROPERTY(QString sortRole READ sortRole WRITE set_sortRole NOTIFY sortRoleChanged FINAL)
+    Q_PROPERTY(QStringList noSortRoles READ noSortRoles WRITE set_noSortRoles NOTIFY noSortRolesChanged FINAL)
+
+    //      AUTO_PROPERTY_V2(int, visibledCount, 0)
+    //      AUTO_PROPERTY_V2(int, selectedCount, 0)
+    //      AUTO_PROPERTY_V2(int, checkedCount, 0)
+
+    //      AUTO_PROPERTY_V2(QStringList, headerRoles, {})
+    //      AUTO_PROPERTY_V2(Qt::SortOrder, sortOrder, Qt::AscendingOrder)
+    //      AUTO_PROPERTY_V2(QString, sortRole, {})
+    //      AUTO_PROPERTY_V2(QStringList, noSortRoles, {})
+    // signals:
+    //      void visibledCountChanged(int);
+    //      void selectedCountChanged(int);
+    //      void checkedCountChanged(int);
+    //      void headerRolesChanged(const QStringList&);
+    //      void sortOrderChanged(Qt::SortOrder);
+    //      void sortRoleChanged(const QString&);
+    //      void noSortRolesChanged(const QStringList&);
+
 public:
     using Super = QuickModelBase<QuickListItemBase*>;
     explicit QuickListModel(QObject* parent = nullptr);
@@ -98,6 +107,27 @@ public:
     {
         emit scrollTo(index);
     }
+    int visibledCount() const;
+    void set_visibledCount(int newVisibleCount);
+
+    int selectedCount() const;
+    void set_selectedCount(int newSelectedCount);
+
+    int checkedCount() const;
+    void set_checkedCount(int newCheckedCount);
+
+    QStringList headerRoles() const;
+    void set_headerRoles(const QStringList& newHeaderRoles);
+
+    Qt::SortOrder sortOrder() const;
+    void set_sortOrder(Qt::SortOrder newSortOrder);
+
+    QString sortRole() const;
+    void set_sortRole(const QString& newSortRole);
+
+    QStringList noSortRoles() const;
+    void set_noSortRoles(const QStringList& newNoSortRoles);
+
 public slots:
     void setAllChecked(bool allChecked);
 
@@ -111,6 +141,20 @@ signals:
 
     void beginSearch();
     void endSearch();
+    void visibledCountChanged();
+
+    void selectedCountChanged();
+
+    void checkedCountChanged();
+
+    void headerRolesChanged();
+
+    void sortOrderChanged();
+
+    void sortRoleChanged();
+
+    void noSortRolesChanged();
+
 protected slots:
     void onSearch();
 
@@ -124,7 +168,19 @@ protected:
 protected:
     bool mAllChecked = false;
     bool mIsPressed = false;
+    int m_visibledCount = 0;
 
+    int m_selectedCount = 0;
+
+    int m_checkedCount = 0;
+
+    QStringList m_headerRoles;
+
+    Qt::SortOrder m_sortOrder = Qt::AscendingOrder;
+
+    QString m_sortRole;
+
+    QStringList m_noSortRoles;
     int mLastPressedRow = -1;
 
     QMap<QString, SortCallback> mSortCallbacksAscend;

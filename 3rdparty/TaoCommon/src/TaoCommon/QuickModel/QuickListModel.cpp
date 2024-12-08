@@ -338,3 +338,94 @@ void QuickListModel::updateCalcInfo()
     updateAlternate();
     emit signalUpdateCalcCount();
 }
+
+int QuickListModel::visibledCount() const
+{
+    return m_visibledCount;
+}
+
+void QuickListModel::set_visibledCount(int newVisibleCount)
+{
+    if (m_visibledCount == newVisibleCount)
+        return;
+    m_visibledCount = newVisibleCount;
+    emit visibledCountChanged();
+}
+
+int QuickListModel::selectedCount() const
+{
+    return m_selectedCount;
+}
+
+void QuickListModel::set_selectedCount(int newSelectedCount)
+{
+    if (m_selectedCount == newSelectedCount)
+        return;
+    m_selectedCount = newSelectedCount;
+    emit selectedCountChanged();
+}
+
+int QuickListModel::checkedCount() const
+{
+    return m_checkedCount;
+}
+
+void QuickListModel::set_checkedCount(int newCheckedCount)
+{
+    if (m_checkedCount == newCheckedCount)
+        return;
+    m_checkedCount = newCheckedCount;
+    emit checkedCountChanged();
+}
+
+QStringList QuickListModel::headerRoles() const
+{
+    return m_headerRoles;
+}
+
+void QuickListModel::set_headerRoles(const QStringList& newHeaderRoles)
+{
+    if (m_headerRoles == newHeaderRoles)
+        return;
+    m_headerRoles = newHeaderRoles;
+    emit headerRolesChanged();
+}
+
+Qt::SortOrder QuickListModel::sortOrder() const
+{
+    return m_sortOrder;
+}
+
+void QuickListModel::set_sortOrder(Qt::SortOrder newSortOrder)
+{
+    if (m_sortOrder == newSortOrder)
+        return;
+    m_sortOrder = newSortOrder;
+    emit sortOrderChanged();
+}
+
+QString QuickListModel::sortRole() const
+{
+    return m_sortRole;
+}
+
+void QuickListModel::set_sortRole(const QString& newSortRole)
+{
+    if (m_sortRole == newSortRole)
+        return;
+    m_sortRole = newSortRole;
+    emit sortRoleChanged();
+}
+
+QStringList QuickListModel::noSortRoles() const
+{
+    return m_noSortRoles;
+}
+
+void QuickListModel::set_noSortRoles(const QStringList& newNoSortRoles)
+{
+    if (m_noSortRoles == newNoSortRoles)
+        return;
+    m_noSortRoles = newNoSortRoles;
+    emit noSortRolesChanged();
+}
