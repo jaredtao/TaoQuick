@@ -135,6 +135,9 @@
       <PreprocessorDefinitions>TaoCommon_NO_LIB;TaoQuickShowPath="qrc:/";TaoQuickImportPath="qrc:/";USE_VISUAL_STUDIO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+    </QtMoc>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -142,6 +145,9 @@
       <PreprocessorDefinitions>TaoCommon_NO_LIB;TaoQuickShowPath="qrc:/";TaoQuickImportPath="qrc:/";USE_VISUAL_STUDIO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+    </QtMoc>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>

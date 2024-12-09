@@ -68,7 +68,7 @@ Item {
             property bool notify: true
             onCheckedChanged: {
                 if (notify) {
-                    dataObj.setAllChecked(checked)
+                    dataObj.updateAllChecked(checked)
                 }
             }
 	    Component.onCompleted: {

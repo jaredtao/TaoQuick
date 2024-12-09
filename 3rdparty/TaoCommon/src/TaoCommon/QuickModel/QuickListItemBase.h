@@ -6,17 +6,10 @@
 class TAO_API QuickListItemBase : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(bool isChecked READ isChecked WRITE set_isChecked NOTIFY isCheckedChanged)
-    Q_PROPERTY(bool isSelected READ isSelected WRITE set_isSelected NOTIFY isSelectedChanged)
-    Q_PROPERTY(bool isAlternate READ isAlternate WRITE set_isAlternate NOTIFY isAlternateChanged FINAL)
 
-    // AUTO_PROPERTY_V2(bool, isChecked, false)
-    // AUTO_PROPERTY_V2(bool, isSelected, false)
-    // AUTO_PROPERTY_V2(bool, isAlternate, false)
-    // signals:
-    // void isCheckedChanged(bool);
-    // void isSelectedChanged(bool);
-    // void isAlternateChanged(bool);
+    AUTO_PROPERTY(bool, isChecked, false)
+    AUTO_PROPERTY(bool, isSelected, false)
+    AUTO_PROPERTY(bool, isAlternate, false)
 
 public:
     explicit QuickListItemBase(QObject* parent = nullptr);
@@ -41,25 +34,5 @@ public:
         Q_UNUSED(key)
         return true;
     }
-
-    bool isChecked() const;
-    void set_isChecked(bool newIsChecked);
-
-    bool isSelected() const;
-    void set_isSelected(bool newIsSelected);
-
-    bool isAlternate() const;
-    void set_isAlternate(bool newIsAlternate);
-
-signals:
-    void isCheckedChanged();
-
-    void isSelectedChanged();
-
-    void isAlternateChanged();
-
-private:
-    bool m_isChecked = false;
-    bool m_isSelected = false;
-    bool m_isAlternate = false;
+    
 };
