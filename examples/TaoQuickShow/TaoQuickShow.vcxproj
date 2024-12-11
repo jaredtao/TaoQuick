@@ -17,7 +17,7 @@
     <QtRcc Include="Qml.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Frameless\TaoFrameLessView_win.cpp" />
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Frameless\TaoFrameLessView.cpp" />
     <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Logger\Logger.cpp" />
     <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickModel\QuickListItemBase.cpp" />
     <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\QuickModel\QuickListModel.cpp" />

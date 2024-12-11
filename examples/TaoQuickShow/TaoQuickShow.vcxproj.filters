@@ -80,9 +80,6 @@
     <ClCompile Include="Src\DeviceAddTable\DeviceAddModel.cpp">
       <Filter>Source Files\DeviceAddTable</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Frameless\TaoFrameLessView_win.cpp">
-      <Filter>TaoCommon\Frameless</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Logger\Logger.cpp">
       <Filter>TaoCommon\Logger</Filter>
     </ClCompile>
@@ -103,6 +100,9 @@
     </ClCompile>
     <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Trans\Trans.cpp">
       <Filter>TaoCommon\Trans</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdparty\TaoCommon\src\TaoCommon\Frameless\TaoFrameLessView.cpp">
+      <Filter>TaoCommon\Frameless</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

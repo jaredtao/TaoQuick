@@ -34,12 +34,7 @@ SOURCES += \
     $$PWD/QuickModel/QuickListModel.cpp \
     $$PWD/QuickTree/Model/QuickTreeModel.cpp \
     $$PWD/Thread/ThreadPool.cpp \
-    $$PWD/Trans/Trans.cpp
+    $$PWD/Trans/Trans.cpp \
+    $$PWD/Frameless/TaoFrameLessView.cpp
 
-win32 {
-    SOURCES += \
-        $$PWD/Frameless/TaoFrameLessView_win.cpp
-} else {
-    SOURCES += \
-        $$PWD/Frameless/TaoFrameLessView_unix.cpp
-}
+

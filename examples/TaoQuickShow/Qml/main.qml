@@ -2,14 +2,24 @@ import QtQuick 2.9
 import QtQml 2.0
 import QtQuick.Controls 2.2
 import TaoQuick 1.0
+import QtGraphicalEffects 1.0
 import "./Page"
 import "./Pane"
 import "./Dialog"
-//import Qt.labs.platform 1.1
+import Qt.labs.platform 1.1
 CusBackground {
     id: rootBackground
     width: 1440
     height: 960
+    // Rectangle {
+    //     id: borderRect
+    //     anchors.fill: parent
+    //     color: "transparent"
+    //     border.color: "#459bac"
+    //     border.width: 2
+    //     visible: false
+    // }
+
     CusImage {
         id: bgImg
         source: imgPath + "Window/flower.jpg"
@@ -17,31 +27,22 @@ CusBackground {
         width: parent.width
         height: parent.height
         opacity: 0.1
+        // visible: false
     }
-    //    SystemTrayIcon {
-    //        id: sysTray
-    //        visible: true
-    //        icon.source: imgPath + "logo/milk.png"
-    //        menu: Menu {
-    //            MenuItem {
-    //                text: qsTr("Quit")
-    //                onTriggered: {
-    //                    Qt.quit()
-    //                }
-    //            }
-    //        }
-    //    }
+    SystemTrayIcon {
+        id: sysTray
+        visible: true
+        icon.source: imgPath + "logo/milk.png"
+        menu: Menu {
+            MenuItem {
+                text: qsTr("Quit")
+                onTriggered: {
+                    rootView.close()
+                }
+            }
+        }
+    }
 
-    //Windows use native event for frameless
-    //Other platform use CusResizeBorder
-    CusResizeBorder {
-        id: resizeBorder
-        visible: Qt.platform.os !== "windows"
-        borderWidth: 4
-        enabled: visible
-        anchors.fill: rootBackground
-        control: view
-    }
     AboutDialog {
         id: aboutDialog
     }
@@ -55,12 +56,12 @@ CusBackground {
     }
     Item {
         id: content
-        width: parent.width - resizeBorder.borderWidth * 2
-        x: resizeBorder.borderWidth
+        width: parent.width - 8
+        x: 8
         anchors {
             top: title.bottom
             bottom: parent.bottom
-            bottomMargin: resizeBorder.borderWidth
+            bottomMargin: 8
         }
         CusFPS {
             anchors {
